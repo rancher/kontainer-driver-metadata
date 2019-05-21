@@ -8,6 +8,7 @@ import (
 
 	"github.com/rancher/kontainer-driver-metadata/rke/templates"
 
+	v3 "github.com/rancher/types/apis/management.cattle.io/v3"
 	"github.com/rancher/types/image"
 )
 
