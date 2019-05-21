@@ -39,7 +39,7 @@
 
 - Follow same for K8sVersionWindowsSystemImages, K8sVersionWindowsServiceOptions from 1 and 2
 
-- For detailed explanations, 
+- For detailed explanations,
 	- [rke_example](examples/rke_example.yml)
 	- [rancher_example](examples/rancher_example.yml)
 
