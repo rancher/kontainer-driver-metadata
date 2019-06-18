@@ -1,0 +1,84 @@
+Flow
+  Introduce min only when need to introduce for some later versions of Rancher
+  Introduce max only when need to deprecate the version for some versions of Rancher
+  K8sToRancherVersionData = everything present in data (don't consider min/max - for upgraded clusters)
+  K8sVersionsCurrent = []max from major versions of K8sToRancherVersionData (including min/max logic)
+  K8sVersionsBad = Versions with curr > max
+ 
+Data v0
+K8sToRancherVersionData  min:- v2.3, max:- v2.3
+  (rke-tools=v0.1.16)
+  v1.11.5-rancher1-1
+  v1.11.6-rancher1-1
+  v1.11.8-rancher1-1
+  v1.11.9-rancher1-1
+  1.11.9-rancher1-2
+  (all 1.12.x versions)
+  1.12.7-rancher1-3
+  (all 1.13.x versions)
+  1.13.5-rancher1-3
+  1.14.1-rancher1-2
+ 
+Rancher v2.3 calls v0
+  K8sToRancherVersionData = everything from above
+  K8sVersionsCurrent = 1.11.9-rancher1-2, 1.12.7-rancher1-3, 1.13.5-rancher1-3, 1.14.1-rancher1-2
+  K8sVersionsBad = None
+ 
+Data v1
+  - Introduce 1.15.1-rancher1-1 only for Rancher v2.4
+ 
+v1
+K8sToRancherVersionData min:- v2.3, max:- v2.3
+  // same as above
+  1.15.1-rancher1-1 (rke-tools=v0.1.18)
+    min: v2.4
+ 
+Rancher v2.3 calls v1
+  K8sToRancherVersionData = everything from above
+  K8sVersionsCurrent = 1.11.9-rancher1-2, 1.12.7-rancher1-3, 1.13.5-rancher1-3, 1.14.1-rancher1-2
+  K8sVersionsBad = None
+ 
+Rancher v2.4 calls v1
+  K8sToRancherVersionData = everything from above
+  K8sVersionsCurrent = 1.11.9-rancher1-2, 1.12.7-rancher1-3, 1.13.5-rancher1-3, 1.14.1-rancher1-2, 1.15.1-rancher1-1
+  K8sVersionsBad = None
+ 
+Data v2
+  - Introduce security patch - 1.14.2-rancher1-1 Also back port security patch to 2.3
+  - Introduce security patch - 1.15.2-rancher1-1 Also back port security patch to 2.4
+  - Deprecate - 1.11 for new version 2.5
+ 
+Notes
+  - Need to deprecate 1.11 for 2.5, so put max = 2.4
+  - Introducing 1.14.2-rancher1-1 to 2.3 and 2.4 needs to have rke-tools 0.1.16 because rke inside rancher 2.3 doesn't support rke-tools 0.1.18
+  - Now need 1.14.2-rancher1-2 for 2.5, because that has separate rke-tools 0.1.18 and put min = 2.5
+  - for 1.15.2-rancher1-1, rke-tools hasn't changed, so can be back ported to 2.4 easily
+ 
+v2
+K8sToRancherVersionData
+  min:- v2.3, max :- 2.4
+   // All v1.11.x versions
+  min:- v2.3, max:- v2.5
+   (all 1.12.x and 1.13.x versions)
+   1.14.1-rancher1-2 rke-tools=v0.1.16
+   1.14.2-rancher1-1 rke-tools=v0.1.16
+  min:- v2.4
+   1.14.2-rancher1-2 rke-tools=v0.1.18
+   1.15.1-rancher1-1
+   1.15.1-rancher1-2
+ 
+Rancher v2.3 calls v2
+  K8sToRancherVersionData = everything from above
+  K8sVersionsCurrent = 1.11.9-rancher1-2, 1.12.7-rancher1-3, 1.13.5-rancher1-3, 1.14.2-rancher1-1
+  K8sVersionsBad = None
+ 
+Rancher v2.4 calls v2
+  K8sToRancherVersionData = everything from above
+  K8sVersionsCurrent = 1.11.9-rancher1-2, 1.12.7-rancher1-3, 1.13.5-rancher1-3, 1.14.2-rancher1-2, 1.15.1-rancher1-2
+  K8sVersionsBad = None
+ 
+Rancher v2.5 calls v2
+  K8sToRancherVersionData = everything from above
+  K8sVersionsCurrent = 1.12.7-rancher1-3, 1.13.5-rancher1-3, 1.14.2-rancher1-2, 1.15.1-rancher1-2
+  K8sVersionsBad = Major version 1.11, still works for upgraded setups because K8sToRancherVersionData has the values
+  
