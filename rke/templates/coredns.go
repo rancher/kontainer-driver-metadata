@@ -72,6 +72,7 @@ data:
           pods insecure
           upstream
           fallthrough in-addr.arpa ip6.arpa
+          ttl 30
         }
         prometheus :9153
 	{{- if .UpstreamNameservers }}
@@ -121,7 +122,7 @@ spec:
       nodeSelector:
         beta.kubernetes.io/os: linux
       {{ range $k, $v := .NodeSelector }}
-        {{ $k }}: {{ $v }}
+        {{ $k }}: "{{ $v }}"
       {{ end }}
       containers:
       - name: coredns
