@@ -305,7 +305,7 @@
     "allow-privileged": "true",
     "anonymous-auth": "false",
     "bind-address": "0.0.0.0",
-    "enable-admission-plugins": "NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,NodeRestriction,TaintNodesByCondition,PersistentVolumeClaimResize",
+    "enable-admission-plugins": "NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,NodeRestriction,Priority,TaintNodesByCondition,PersistentVolumeClaimResize",
     "insecure-port": "0",
     "kubelet-preferred-address-types": "InternalIP,ExternalIP,Hostname",
     "profiling": "false",
