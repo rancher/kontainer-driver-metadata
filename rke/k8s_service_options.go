@@ -98,7 +98,7 @@ func getKubeAPIOptions114() map[string]string {
 
 func getKubeAPIOptions115() map[string]string {
 	kubeAPIOptions := getKubeAPIOptions114()
-	kubeAPIOptions["enable-admission-plugins"] = fmt.Sprintf("%s,%s", enableAdmissionPlugins, "TaintNodesByCondition,PersistentVolumeClaimResize")
+	kubeAPIOptions["enable-admission-plugins"] = fmt.Sprintf("%s,%s", kubeAPIOptions["enable-admission-plugins"], "TaintNodesByCondition,PersistentVolumeClaimResize")
 	return kubeAPIOptions
 }
 
