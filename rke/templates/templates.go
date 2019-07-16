@@ -7,14 +7,15 @@ depending on Kubernetes version?
 */
 
 const (
-	Calico        = "calico"
-	Canal         = "canal"
-	Flannel       = "flannel"
-	Weave         = "weave"
-	CoreDNS       = "coreDNS"
-	KubeDNS       = "kubeDNS"
-	MetricsServer = "metricsServer"
-	NginxIngress  = "nginxIngress"
+	Calico           = "calico"
+	Canal            = "canal"
+	Flannel          = "flannel"
+	Weave            = "weave"
+	CoreDNS          = "coreDNS"
+	KubeDNS          = "kubeDNS"
+	MetricsServer    = "metricsServer"
+	NginxIngress     = "nginxIngress"
+	SystemComponents = "systemComponents"
 )
 
 func LoadK8sVersionedTemplates() map[string]map[string]string {
@@ -49,6 +50,9 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 		},
 		NginxIngress: {
 			"default": NginxIngressTemplate,
+		},
+		SystemComponents: {
+			"default": SystemComponentsTemplate,
 		},
 	}
 }
