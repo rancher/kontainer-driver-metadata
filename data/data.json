@@ -1665,12 +1665,12 @@
   }
  },
  "RancherDefaultK8sVersions": {
-  "2.3": "v1.14.3-rancher1-1",
-  "default": "v1.14.3-rancher1-1"
+  "2.3": "v1.15.0-rancher1-1",
+  "default": "v1.15.0-rancher1-1"
  },
  "RKEDefaultK8sVersions": {
-  "0.2.3": "v1.14.3-rancher1-1",
-  "default": "v1.14.3-rancher1-1"
+  "0.3": "v1.15.0-rancher1-1",
+  "default": "v1.15.0-rancher1-1"
  },
  "K8sVersionDockerInfo": {
   "1.10": [
