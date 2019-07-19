@@ -13,6 +13,14 @@ const (
 
 func loadK8sVersionServiceOptions() map[string]v3.KubernetesServicesOptions {
 	return map[string]v3.KubernetesServicesOptions{
+
+		"v1.15.0-rancher1-2": {
+			KubeAPI:        getKubeAPIOptions115WithAuthAPI(),
+			Kubelet:        getKubeletOptions115WithAuthWebhook(),
+			KubeController: getKubeControllerOptions(),
+			Kubeproxy:      getKubeProxyOptions(),
+			Scheduler:      getSchedulerOptions(),
+		},
 		"v1.15": {
 			KubeAPI:        getKubeAPIOptions115(),
 			Kubelet:        getKubeletOptions115(),
@@ -130,6 +138,12 @@ func getKubeAPIOptions115() map[string]string {
 	return kubeAPIOptions
 }
 
+func getKubeAPIOptions115WithAuthAPI() map[string]string {
+	kubeAPIOptions := getKubeAPIOptions115()
+	kubeAPIOptions["runtime-config"] = "authorization.k8s.io/v1beta1=true"
+	return kubeAPIOptions
+}
+
 func getKubeletOptions() map[string]string {
 	return map[string]string{
 		"tls-cipher-suites":                 tlsCipherSuites,
@@ -155,6 +169,11 @@ func getKubeletOptions() map[string]string {
 func getKubeletOptions115() map[string]string {
 	kubeletOptions := getKubeletOptions()
 	delete(kubeletOptions, "allow-privileged")
+	return kubeletOptions
+}
+
+func getKubeletOptions115WithAuthWebhook() map[string]string {
+	kubeletOptions := getKubeletOptions115()
 	kubeletOptions["authorization-mode"] = "Webhook"
 	return kubeletOptions
 }
