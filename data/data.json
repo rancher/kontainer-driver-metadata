@@ -2115,8 +2115,18 @@
    "kubeletPause": "rancher/kubelet-pause:v0.1.2",
    "flannelCniBinaries": "rancher/flannel-cni:v0.3.0-rancher4"
   },
+  "v1.14.5-rancher1-1": {
+   "kubernetesBinaries": "rancher/hyperkube:v1.14.5-rancher1",
+   "kubeletPause": "rancher/kubelet-pause:v0.1.2",
+   "flannelCniBinaries": "rancher/flannel-cni:v0.3.0-rancher4"
+  },
   "v1.15.0-rancher1-1": {
    "kubernetesBinaries": "rancher/hyperkube:v1.15.0-rancher1",
+   "kubeletPause": "rancher/kubelet-pause:v0.1.2",
+   "flannelCniBinaries": "rancher/flannel-cni:v0.3.0-rancher4"
+  },
+  "v1.15.2-rancher1-1": {
+   "kubernetesBinaries": "rancher/hyperkube:v1.15.2-rancher1",
    "kubeletPause": "rancher/kubelet-pause:v0.1.2",
    "flannelCniBinaries": "rancher/flannel-cni:v0.3.0-rancher4"
   },
