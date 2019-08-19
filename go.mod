@@ -7,4 +7,7 @@ replace (
 	github.com/matryer/moq => github.com/rancher/moq v0.0.0-20190404221404-ee5226d43009
 )
 
-require github.com/rancher/types v0.0.0-20190819173748-96e6d6f30265
+require (
+	github.com/blang/semver v0.0.0-20190414102917-ba2c2ddd8906
+	github.com/rancher/types v0.0.0-20190819173748-96e6d6f30265
+)
