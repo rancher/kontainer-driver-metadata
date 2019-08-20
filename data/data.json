@@ -1835,8 +1835,8 @@
   }
  },
  "RancherDefaultK8sVersions": {
-  "2.3": "v1.15.2-rancher1-1",
-  "default": "v1.15.2-rancher1-1"
+  "2.3": "v1.15.x",
+  "default": "v1.15.x"
  },
  "RKEDefaultK8sVersions": {
   "0.3": "v1.15.2-rancher1-1",
