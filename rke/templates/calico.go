@@ -505,6 +505,11 @@ metadata:
 spec:
   hostNetwork: true
   restartPolicy: OnFailure
+  tolerations:
+  - effect: NoExecute
+    operator: Exists
+  - effect: NoSchedule
+    operator: Exists
   containers:
   - name: calicoctl
     image: {{.Calicoctl}}
@@ -1082,6 +1087,11 @@ metadata:
 spec:
   hostNetwork: true
   restartPolicy: OnFailure
+  tolerations:
+  - effect: NoExecute
+    operator: Exists
+  - effect: NoSchedule
+    operator: Exists
   containers:
   - name: calicoctl
     image: {{.Calicoctl}}
