@@ -116,6 +116,11 @@ spec:
                   values:
                     - windows
       serviceAccountName: metrics-server
+      tolerations:
+      - effect: NoExecute
+        operator: Exists
+      - effect: NoSchedule
+        operator: Exists
       containers:
       - name: metrics-server
         image: {{ .MetricsServerImage }}

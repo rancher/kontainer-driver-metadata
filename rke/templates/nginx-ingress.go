@@ -193,6 +193,11 @@ spec:
       {{if eq .RBACConfig "rbac"}}
       serviceAccountName: nginx-ingress-serviceaccount
       {{ end }}
+      tolerations:
+      - effect: NoExecute
+        operator: Exists
+      - effect: NoSchedule
+        operator: Exists
       {{- if ne .AlpineImage ""}}
       initContainers:
       - command:
@@ -288,6 +293,11 @@ spec:
                   values:
                     - windows
       terminationGracePeriodSeconds: 60
+      tolerations:
+      - effect: NoExecute
+        operator: Exists
+      - effect: NoSchedule
+        operator: Exists
       containers:
       - name: default-http-backend
         # Any image is permissable as long as:
