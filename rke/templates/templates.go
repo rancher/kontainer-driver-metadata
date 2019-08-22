@@ -43,20 +43,20 @@ const (
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		Calico: {
-			">=1.16.0":         calicov116,
-			">=1.15.0 <1.16.0": calicov115,
+			">=1.16.0-alpha":         calicov116,
+			">=1.15.0 <1.16.0-alpha": calicov115,
 			">=1.13.0 <1.15.0": calicov113,
 			">=1.8.0 <1.13.0":  calicov18,
 		},
 		Canal: {
-			">=1.16.0":         canalv116,
-			">=1.15.0 <1.16.0": canalv115,
+			">=1.16.0-alpha":         canalv116,
+			">=1.15.0 <1.16.0-alpha": canalv115,
 			">=1.13.0 <1.15.0": canalv113,
 			">=1.8.0 <1.13.0":  canalv18,
 		},
 		Flannel: {
-			">=1.16.0":         flannelv116,
-			">=1.15.0 <1.16.0": flannelv115,
+			">=1.16.0-alpha":         flannelv116,
+			">=1.15.0 <1.16.0-alpha": flannelv115,
 			">=1.8.0 <1.15.0":  flannelv18,
 		},
 		CoreDNS: {
