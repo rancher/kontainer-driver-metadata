@@ -2095,22 +2095,22 @@
  "K8sVersionedTemplates": {
   "calico": {
    "\u003e=1.13.0 \u003c1.15.0": "calico-v1.13",
-   "\u003e=1.15.0 \u003c1.16.0": "calico-v1.15",
-   "\u003e=1.16.0": "calico-v1.16",
+   "\u003e=1.15.0 \u003c1.16.0-alpha": "calico-v1.15",
+   "\u003e=1.16.0-alpha": "calico-v1.16",
    "\u003e=1.8.0 \u003c1.13.0": "calico-v1.8"
   },
   "canal": {
    "\u003e=1.13.0 \u003c1.15.0": "canal-v1.13",
-   "\u003e=1.15.0 \u003c1.16.0": "canal-v1.15",
-   "\u003e=1.16.0": "canal-v1.16",
+   "\u003e=1.15.0 \u003c1.16.0-alpha": "canal-v1.15",
+   "\u003e=1.16.0-alpha": "canal-v1.16",
    "\u003e=1.8.0 \u003c1.13.0": "canal-v1.8"
   },
   "coreDNS": {
    "\u003e=1.8.0 \u003c1.16.0": "coredns-v1.8"
   },
   "flannel": {
-   "\u003e=1.15.0 \u003c1.16.0": "flannel-v1.15",
-   "\u003e=1.16.0": "flannel-v1.16",
+   "\u003e=1.15.0 \u003c1.16.0-alpha": "flannel-v1.15",
+   "\u003e=1.16.0-alpha": "flannel-v1.16",
    "\u003e=1.8.0 \u003c1.15.0": "flannel-v1.8"
   },
   "kubeDNS": {
