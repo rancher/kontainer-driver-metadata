@@ -159,7 +159,7 @@ subjects:
     namespace: ingress-nginx
 {{ end }}
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: nginx-ingress-controller
@@ -261,7 +261,7 @@ spec:
             successThreshold: 1
             timeoutSeconds: 1
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: default-http-backend
@@ -270,6 +270,9 @@ metadata:
   namespace: ingress-nginx
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: default-http-backend
   template:
     metadata:
       labels:
