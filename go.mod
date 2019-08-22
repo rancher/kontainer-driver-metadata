@@ -9,5 +9,5 @@ replace (
 
 require (
 	github.com/blang/semver v0.0.0-20190414102917-ba2c2ddd8906
-	github.com/rancher/types v0.0.0-20190822030441-376c6f64c718
+	github.com/rancher/types v0.0.0-20190822170951-b99efa820bc3
 )
