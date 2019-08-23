@@ -36,8 +36,9 @@ const (
 
 	metricsServerv18 = "metricsserver-v1.8"
 
-	weavev18        = "weave-v1.8"
-	nginxIngressv18 = "nginxingress-v1.8"
+	weavev18         = "weave-v1.8"
+	nginxIngressv18  = "nginxingress-v1.8"
+	nginxIngressV115 = "nginxingress-v1.15"
 )
 
 func LoadK8sVersionedTemplates() map[string]map[string]string {
@@ -72,7 +73,12 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.16.0": weavev18,
 		},
 		NginxIngress: {
-			">=1.8.0-rancher0 <1.16.0": nginxIngressv18,
+			">=1.8.0-rancher0 <1.13.10-rancher1-3":  nginxIngressv18,
+			">=1.13.10-rancher1-3 <1.14.0-rancher0": nginxIngressV115,
+			">=1.14.0-rancher0 <=1.14.6-rancher1-1": nginxIngressv18,
+			">=1.14.6-rancher2 <1.15.0-rancher0":    nginxIngressV115,
+			">=1.15.0-rancher0 <=1.15.3-rancher1-1": nginxIngressv18,
+			">=1.15.3-rancher2":                     nginxIngressV115,
 		},
 		TemplateKeys: getTemplates(),
 	}
@@ -101,6 +107,7 @@ func getTemplates() map[string]string {
 
 		weavev18: WeaveTemplate,
 
-		nginxIngressv18: NginxIngressTemplate,
+		nginxIngressv18:  NginxIngressTemplate,
+		nginxIngressV115: NginxIngressTemplateV0251Rancher1,
 	}
 }
