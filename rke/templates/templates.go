@@ -36,8 +36,9 @@ const (
 
 	metricsServerv18 = "metricsserver-v1.8"
 
-	weavev18        = "weave-v1.8"
-	nginxIngressv18 = "nginxingress-v1.8"
+	weavev18         = "weave-v1.8"
+	nginxIngressv18  = "nginxingress-v1.8"
+	nginxIngressV115 = "nginxingress-v1.15"
 )
 
 func LoadK8sVersionedTemplates() map[string]map[string]string {
@@ -45,19 +46,19 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 		Calico: {
 			">=1.16.0-alpha":         calicov116,
 			">=1.15.0 <1.16.0-alpha": calicov115,
-			">=1.13.0 <1.15.0": calicov113,
-			">=1.8.0 <1.13.0":  calicov18,
+			">=1.13.0 <1.15.0":       calicov113,
+			">=1.8.0 <1.13.0":        calicov18,
 		},
 		Canal: {
 			">=1.16.0-alpha":         canalv116,
 			">=1.15.0 <1.16.0-alpha": canalv115,
-			">=1.13.0 <1.15.0": canalv113,
-			">=1.8.0 <1.13.0":  canalv18,
+			">=1.13.0 <1.15.0":       canalv113,
+			">=1.8.0 <1.13.0":        canalv18,
 		},
 		Flannel: {
 			">=1.16.0-alpha":         flannelv116,
 			">=1.15.0 <1.16.0-alpha": flannelv115,
-			">=1.8.0 <1.15.0":  flannelv18,
+			">=1.8.0 <1.15.0":        flannelv18,
 		},
 		CoreDNS: {
 			">=1.8.0 <1.16.0": coreDnsv18,
@@ -72,7 +73,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0 <1.16.0": weavev18,
 		},
 		NginxIngress: {
-			">=1.8.0 <1.16.0": nginxIngressv18,
+			">=1.8.0 <1.13.10 || >=1.14.0 <=1.14.5 || >=1.15.0 <=1.15.2": nginxIngressv18,
+			">=1.13.10 <1.14.0 || >=1.14.6 <1.15.0 || >=1.15.3":          nginxIngressV115,
 		},
 		TemplateKeys: getTemplates(),
 	}
@@ -101,6 +103,7 @@ func getTemplates() map[string]string {
 
 		weavev18: WeaveTemplate,
 
-		nginxIngressv18: NginxIngressTemplate,
+		nginxIngressv18:  NginxIngressTemplate,
+		nginxIngressV115: NginxIngressTemplateV0251Rancher1,
 	}
 }
