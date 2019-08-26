@@ -24,6 +24,8 @@ spec:
                   operator: NotIn
                   values:
                     - windows
+                - key: node-role.kubernetes.io/worker
+                  operator: Exists
       serviceAccountName: kube-dns-autoscaler
       tolerations:
       - effect: NoExecute
@@ -150,6 +152,8 @@ spec:
                   operator: NotIn
                   values:
                     - windows
+                - key: node-role.kubernetes.io/worker
+                  operator: Exists
       tolerations:
       - key: "CriticalAddonsOnly"
         operator: "Exists"

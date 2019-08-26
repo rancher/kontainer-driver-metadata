@@ -115,6 +115,8 @@ spec:
                   operator: NotIn
                   values:
                     - windows
+                - key: node-role.kubernetes.io/worker
+                  operator: Exists
       serviceAccountName: metrics-server
       tolerations:
       - effect: NoExecute
