@@ -1841,19 +1841,19 @@
    "ingressBackend": "rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1",
    "metricsServer": "rancher/metrics-server:v0.3.1"
   },
-  "v1.14.6-rancher2-1": {
+  "v1.14.6-rancher3-1": {
    "etcd": "rancher/coreos-etcd:v3.3.10-rancher1",
-   "alpine": "rancher/rke-tools:v0.1.44",
-   "nginxProxy": "rancher/rke-tools:v0.1.44",
-   "certDownloader": "rancher/rke-tools:v0.1.44",
-   "kubernetesServicesSidecar": "rancher/rke-tools:v0.1.44",
+   "alpine": "rancher/rke-tools:v0.1.46",
+   "nginxProxy": "rancher/rke-tools:v0.1.46",
+   "certDownloader": "rancher/rke-tools:v0.1.46",
+   "kubernetesServicesSidecar": "rancher/rke-tools:v0.1.46",
    "kubedns": "rancher/k8s-dns-kube-dns:1.15.0",
    "dnsmasq": "rancher/k8s-dns-dnsmasq-nanny:1.15.0",
    "kubednsSidecar": "rancher/k8s-dns-sidecar:1.15.0",
    "kubednsAutoscaler": "rancher/cluster-proportional-autoscaler:1.3.0",
    "coredns": "rancher/coredns-coredns:1.3.1",
    "corednsAutoscaler": "rancher/cluster-proportional-autoscaler:1.3.0",
-   "kubernetes": "rancher/hyperkube:v1.14.6-rancher2",
+   "kubernetes": "rancher/hyperkube:v1.14.6-rancher3",
    "flannel": "rancher/coreos-flannel:v0.10.0-rancher1",
    "flannelCni": "rancher/flannel-cni:v0.3.0-rancher5",
    "calicoNode": "rancher/calico-node:v3.4.0",
@@ -1957,19 +1957,19 @@
    "ingressBackend": "rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1",
    "metricsServer": "rancher/metrics-server:v0.3.3"
   },
-  "v1.15.3-rancher2-1": {
+  "v1.15.3-rancher3-1": {
    "etcd": "rancher/coreos-etcd:v3.3.10-rancher1",
-   "alpine": "rancher/rke-tools:v0.1.44",
-   "nginxProxy": "rancher/rke-tools:v0.1.44",
-   "certDownloader": "rancher/rke-tools:v0.1.44",
-   "kubernetesServicesSidecar": "rancher/rke-tools:v0.1.44",
+   "alpine": "rancher/rke-tools:v0.1.46",
+   "nginxProxy": "rancher/rke-tools:v0.1.46",
+   "certDownloader": "rancher/rke-tools:v0.1.46",
+   "kubernetesServicesSidecar": "rancher/rke-tools:v0.1.46",
    "kubedns": "rancher/k8s-dns-kube-dns:1.15.0",
    "dnsmasq": "rancher/k8s-dns-dnsmasq-nanny:1.15.0",
    "kubednsSidecar": "rancher/k8s-dns-sidecar:1.15.0",
    "kubednsAutoscaler": "rancher/cluster-proportional-autoscaler:1.3.0",
    "coredns": "rancher/coredns-coredns:1.3.1",
    "corednsAutoscaler": "rancher/cluster-proportional-autoscaler:1.3.0",
-   "kubernetes": "rancher/hyperkube:v1.15.3-rancher2",
+   "kubernetes": "rancher/hyperkube:v1.15.3-rancher3",
    "flannel": "rancher/coreos-flannel:v0.11.0-rancher1",
    "flannelCni": "rancher/flannel-cni:v0.3.0-rancher5",
    "calicoNode": "rancher/calico-node:v3.7.4",
@@ -1987,19 +1987,19 @@
    "metricsServer": "rancher/metrics-server:v0.3.3",
    "podInfraWindowsContainer": "rancher/kubelet-pause:v0.1.3"
   },
-  "v1.16.0-beta.1-rancher1-1": {
+  "v1.16.0-beta.1-rancher2-1": {
    "etcd": "rancher/coreos-etcd:v3.3.10-rancher1",
-   "alpine": "rancher/rke-tools:v0.1.44",
-   "nginxProxy": "rancher/rke-tools:v0.1.44",
-   "certDownloader": "rancher/rke-tools:v0.1.44",
-   "kubernetesServicesSidecar": "rancher/rke-tools:v0.1.44",
+   "alpine": "rancher/rke-tools:v0.1.46",
+   "nginxProxy": "rancher/rke-tools:v0.1.46",
+   "certDownloader": "rancher/rke-tools:v0.1.46",
+   "kubernetesServicesSidecar": "rancher/rke-tools:v0.1.46",
    "kubedns": "rancher/k8s-dns-kube-dns:1.15.0",
    "dnsmasq": "rancher/k8s-dns-dnsmasq-nanny:1.15.0",
    "kubednsSidecar": "rancher/k8s-dns-sidecar:1.15.0",
    "kubednsAutoscaler": "rancher/cluster-proportional-autoscaler:1.3.0",
    "coredns": "rancher/coredns-coredns:1.3.1",
    "corednsAutoscaler": "rancher/cluster-proportional-autoscaler:1.3.0",
-   "kubernetes": "rancher/hyperkube:v1.16.0-beta.1-rancher1",
+   "kubernetes": "rancher/hyperkube:v1.16.0-beta.1-rancher2",
    "flannel": "rancher/coreos-flannel:v0.11.0-rancher1",
    "flannelCni": "rancher/flannel-cni:v0.3.0-rancher5",
    "calicoNode": "rancher/calico-node:v3.8.1",
@@ -2221,8 +2221,8 @@
   "default": "v1.15.x"
  },
  "RKEDefaultK8sVersions": {
-  "0.3": "v1.15.3-rancher2-1",
-  "default": "v1.15.3-rancher2-1"
+  "0.3": "v1.15.3-rancher3-1",
+  "default": "v1.15.3-rancher3-1"
  },
  "K8sVersionDockerInfo": {
   "1.10": [
@@ -2323,7 +2323,7 @@
     "cni-conf-dir": "[PREFIX_PATH]/etc/cni/net.d",
     "enforce-node-allocatable": "''",
     "event-qps": "0",
-    "feature-gates": "HyperVContainer=true,WinDSR=true,WinOverlay=true,WindowsGMSA=true",
+    "feature-gates": "HyperVContainer=true,WindowsGMSA=true",
     "image-pull-progress-deadline": "30m",
     "kube-reserved": "cpu=500m,memory=500Mi,ephemeral-storage=1Gi",
     "make-iptables-util-chains": "true",
@@ -2337,7 +2337,8 @@
     "volume-plugin-dir": "[PREFIX_PATH]/var/lib/kubelet/volumeplugins"
    },
    "kubeproxy": {
-    "feature-gates": "HyperVContainer=true,WinDSR=true,WinOverlay=true,WindowsGMSA=true",
+    "enable-dsr": "false",
+    "feature-gates": "WinOverlay=true",
     "healthz-bind-address": "127.0.0.1",
     "proxy-mode": "kernelspace",
     "v": "2"
@@ -2358,7 +2359,7 @@
     "cni-conf-dir": "[PREFIX_PATH]/etc/cni/net.d",
     "enforce-node-allocatable": "''",
     "event-qps": "0",
-    "feature-gates": "HyperVContainer=true,WinDSR=true,WinOverlay=true,WindowsGMSA=true",
+    "feature-gates": "HyperVContainer=true,WindowsGMSA=true",
     "image-pull-progress-deadline": "30m",
     "kube-reserved": "cpu=500m,memory=500Mi,ephemeral-storage=1Gi",
     "make-iptables-util-chains": "true",
@@ -2372,7 +2373,8 @@
     "volume-plugin-dir": "[PREFIX_PATH]/var/lib/kubelet/volumeplugins"
    },
    "kubeproxy": {
-    "feature-gates": "HyperVContainer=true,WinDSR=true,WinOverlay=true,WindowsGMSA=true",
+    "enable-dsr": "false",
+    "feature-gates": "WinOverlay=true",
     "healthz-bind-address": "127.0.0.1",
     "proxy-mode": "kernelspace",
     "v": "2"
