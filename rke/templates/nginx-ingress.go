@@ -189,10 +189,12 @@ spec:
       {{if .DNSPolicy}}
       dnsPolicy: {{.DNSPolicy}}
       {{end}}
+{{if .NodeSelector}}
       nodeSelector:
       {{ range $k, $v := .NodeSelector }}
         {{ $k }}: "{{ $v }}"
       {{ end }}
+{{end}}
       {{if eq .RBACConfig "rbac"}}
       serviceAccountName: nginx-ingress-serviceaccount
       {{ end }}
@@ -532,10 +534,12 @@ spec:
       {{if .DNSPolicy}}
       dnsPolicy: {{.DNSPolicy}}
       {{end}}
+{{if .NodeSelector}}
       nodeSelector:
       {{ range $k, $v := .NodeSelector }}
         {{ $k }}: "{{ $v }}"
       {{ end }}
+{{end}}
       {{if eq .RBACConfig "rbac"}}
       serviceAccountName: nginx-ingress-serviceaccount
       {{ end }}

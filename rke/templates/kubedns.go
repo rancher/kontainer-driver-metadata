@@ -129,10 +129,12 @@ spec:
       annotations:
         scheduler.alpha.kubernetes.io/critical-pod: ''
     spec:
+{{if .NodeSelector}}
       nodeSelector:
       {{ range $k, $v := .NodeSelector }}
         {{ $k }}: "{{ $v }}"
       {{ end }}
+{{end}}
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
