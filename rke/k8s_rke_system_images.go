@@ -1668,6 +1668,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			MetricsServer:             m("gcr.io/google_containers/metrics-server:v0.3.3"),
 			CoreDNS:                   m("coredns/coredns:1.3.1"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.3.0"),
+			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.3"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 		},
 	}

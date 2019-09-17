@@ -15,6 +15,7 @@ const (
 	KubeDNS       = "kubeDNS"
 	MetricsServer = "metricsServer"
 	NginxIngress  = "nginxIngress"
+	Nodelocal     = "nodelocal"
 	TemplateKeys  = "templateKeys"
 
 	calicov18  = "calico-v1.8"
@@ -43,6 +44,8 @@ const (
 
 	nginxIngressv18  = "nginxingress-v1.8"
 	nginxIngressV115 = "nginxingress-v1.15"
+
+	nodelocalv116 = "nodelocal-v1.16"
 )
 
 func LoadK8sVersionedTemplates() map[string]map[string]string {
@@ -86,6 +89,9 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.15.0-rancher0 <=1.15.3-rancher1-1": nginxIngressv18,
 			">=1.15.3-rancher2":                     nginxIngressV115,
 		},
+		Nodelocal: {
+			">=1.8.0-rancher0": nodelocalv116,
+		},
 		TemplateKeys: getTemplates(),
 	}
 }
@@ -118,5 +124,7 @@ func getTemplates() map[string]string {
 
 		nginxIngressv18:  NginxIngressTemplate,
 		nginxIngressV115: NginxIngressTemplateV0251Rancher1,
+
+		nodelocalv116: NodelocalTemplateV116,
 	}
 }
