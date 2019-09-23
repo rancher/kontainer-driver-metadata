@@ -119,6 +119,8 @@ github.com/rancher/types v0.0.0-20190822030441-376c6f64c718 h1:eEdtDFNI0HvoYbCNA
 github.com/rancher/types v0.0.0-20190822030441-376c6f64c718/go.mod h1:9L7VLTwNVt7vJYwP/7xrQ4tWghDQ+zl9//RTqRjGxes=
 github.com/rancher/types v0.0.0-20190822170951-b99efa820bc3 h1:4mz/J0iEtW/VDtjN3zI9B4g49MKeoLHkHZKJGqRN7xg=
 github.com/rancher/types v0.0.0-20190822170951-b99efa820bc3/go.mod h1:9L7VLTwNVt7vJYwP/7xrQ4tWghDQ+zl9//RTqRjGxes=
+github.com/rancher/types v0.0.0-20190923165440-59fbe5e3a97f h1:gexo9dZm1KYTO1cgp5w9VT46UqvtgfkPtx1mayyfblo=
+github.com/rancher/types v0.0.0-20190923165440-59fbe5e3a97f/go.mod h1:9L7VLTwNVt7vJYwP/7xrQ4tWghDQ+zl9//RTqRjGxes=
 github.com/rancher/wrangler v0.1.5 h1:HiXOeP6Kci2DK+e04D1g6INT77xAYpAr54zmTTe0Spk=
 github.com/rancher/wrangler v0.1.5/go.mod h1:EYP7cqpg42YqElaCm+U9ieSrGQKAXxUH5xsr+XGpWyE=
 github.com/sirupsen/logrus v1.2.0/go.mod h1:LxeOpSwHxABJmUn/MG1IvRgCAasNZTLOkJPxbbu5VWo=

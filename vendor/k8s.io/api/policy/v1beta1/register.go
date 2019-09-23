@@ -1,5 +1,5 @@
 /*
-Copyright 2016 The Kubernetes Authors.
+Copyright 2015 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import (
 )
 
 // GroupName is the group name use in this package
-const GroupName = "apps"
+const GroupName = "policy"
 
 // SchemeGroupVersion is group version used to register these objects
 var SchemeGroupVersion = schema.GroupVersion{Group: GroupName, Version: "v1beta1"}
@@ -44,15 +44,13 @@ var (
 // Adds the list of known types to the given scheme.
 func addKnownTypes(scheme *runtime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
-		&Deployment{},
-		&DeploymentList{},
-		&DeploymentRollback{},
-		&Scale{},
-		&StatefulSet{},
-		&StatefulSetList{},
-		&ControllerRevision{},
-		&ControllerRevisionList{},
+		&PodDisruptionBudget{},
+		&PodDisruptionBudgetList{},
+		&PodSecurityPolicy{},
+		&PodSecurityPolicyList{},
+		&Eviction{},
 	)
+	// Add the watch version that applies
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil
 }
