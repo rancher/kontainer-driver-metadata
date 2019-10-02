@@ -2015,7 +2015,7 @@
    "metricsServer": "rancher/metrics-server:v0.3.3",
    "windowsPodInfraContainer": "rancher/kubelet-pause:v0.1.3"
   },
-  "v1.16.1-rancher1-1": {
+  "v1.16.0-rancher1-1": {
    "etcd": "rancher/coreos-etcd:v3.3.15-rancher1",
    "alpine": "rancher/rke-tools:v0.1.50",
    "nginxProxy": "rancher/rke-tools:v0.1.50",
@@ -2027,7 +2027,7 @@
    "kubednsAutoscaler": "rancher/cluster-proportional-autoscaler:1.7.1",
    "coredns": "rancher/coredns-coredns:1.6.2",
    "corednsAutoscaler": "rancher/cluster-proportional-autoscaler:1.7.1",
-   "kubernetes": "rancher/hyperkube:v1.16.1-rancher1",
+   "kubernetes": "rancher/hyperkube:v1.16.0-rancher1",
    "flannel": "rancher/coreos-flannel:v0.11.0-rancher1",
    "flannelCni": "rancher/flannel-cni:v0.3.0-rancher5",
    "calicoNode": "rancher/calico-node:v3.8.1",
@@ -2175,7 +2175,7 @@
    "\u003e=1.8.0-rancher0 \u003c1.16.0-alpha": "kubedns-v1.8"
   },
   "metricsServer": {
-   "\u003e=1.8.0-rancher0": "metricsserver-v1.8"
+   "\u003e=1.8.0-rancher0 \u003c1.16.0": "metricsserver-v1.8"
   },
   "nginxIngress": {
    "\u003e=1.13.10-rancher1-3 \u003c1.14.0-rancher0": "nginxingress-v1.15",
