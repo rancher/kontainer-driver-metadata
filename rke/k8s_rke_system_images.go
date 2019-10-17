@@ -1092,10 +1092,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   m("coredns/coredns:1.2.6"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.0.0"),
 		},
-		// Enabled in Rancher v2.3.1
-		"v1.13.12-rancher1-1": {
+		// Enabled in Rancher v2.3.2
+		"v1.13.12-rancher2-1": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.2.24-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.13.12-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.13.12-rancher2"),
 			Alpine:                    m("rancher/rke-tools:v0.1.50"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.50"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.50"),
