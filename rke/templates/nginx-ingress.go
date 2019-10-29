@@ -248,6 +248,10 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
+          {{ range $k, $v := .ExtraEnv }}
+            - name: {{ $k }}
+              value: {{ $v }}
+          {{ end }}
           ports:
           - name: http
             containerPort: 80
@@ -595,6 +599,10 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
+          {{ range $k, $v := .ExtraEnv }}
+            - name: {{ $k }}
+              value: {{ $v }}
+          {{ end }}
           ports:
           - name: http
             containerPort: 80
