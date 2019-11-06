@@ -11,4 +11,5 @@ replace (
 require (
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/rancher/types v0.0.0-20190930165650-6bbedae77a35
+	github.com/sirupsen/logrus v1.4.2
 )
