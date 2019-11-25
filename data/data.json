@@ -443,7 +443,7 @@
     "v": "2"
    }
   },
-  "v1.15.6-rancher1-1": {
+  "v1.15.6-rancher1-2": {
    "etcd": {
     "client-cert-auth": "true",
     "peer-client-cert-auth": "true"
@@ -2448,7 +2448,7 @@
    "metricsServer": "rancher/metrics-server:v0.3.3",
    "windowsPodInfraContainer": "rancher/kubelet-pause:v0.1.3"
   },
-  "v1.15.6-rancher1-1": {
+  "v1.15.6-rancher1-2": {
    "etcd": "rancher/coreos-etcd:v3.3.10-rancher1",
    "alpine": "rancher/rke-tools:v0.1.51",
    "nginxProxy": "rancher/rke-tools:v0.1.51",
