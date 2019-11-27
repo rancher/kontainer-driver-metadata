@@ -4,6 +4,10 @@ import (
 	"github.com/rancher/norman/types"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	apiserverv1alpha1 "k8s.io/apiserver/pkg/apis/apiserver/v1alpha1"
+	auditv1 "k8s.io/apiserver/pkg/apis/audit/v1"
+	apiserverconfig "k8s.io/apiserver/pkg/apis/config"
+	eventratelimitv1alpha1 "k8s.io/kubernetes/plugin/pkg/admission/eventratelimit/apis/eventratelimit/v1alpha1"
 )
 
 type RancherKubernetesEngineConfig struct {
@@ -271,6 +275,33 @@ type KubeAPIService struct {
 	PodSecurityPolicy bool `yaml:"pod_security_policy" json:"podSecurityPolicy,omitempty"`
 	// Enable/Disable AlwaysPullImages admissions plugin
 	AlwaysPullImages bool `yaml:"always_pull_images" json:"alwaysPullImages,omitempty"`
+	// Secrets encryption provider config
+	SecretsEncryptionConfig *SecretsEncryptionConfig `yaml:"secrets_encryption_config" json:"secretsEncryptionConfig,omitempty"`
+	// Audit Log Configuration
+	AuditLog *AuditLog `yaml:"audit_log" json:"auditLog,omitempty"`
+	// AdmissionConfiguration
+	AdmissionConfiguration *apiserverv1alpha1.AdmissionConfiguration `yaml:"admission_configuration" json:"admissionConfiguration,omitempty" norman:"type=map[json]"`
+	// Event Rate Limit configuration
+	EventRateLimit *EventRateLimit `yaml:"event_rate_limit" json:"eventRateLimit,omitempty"`
+}
+
+type EventRateLimit struct {
+	Enabled       bool                                  `yaml:"enabled" json:"enabled,omitempty"`
+	Configuration *eventratelimitv1alpha1.Configuration `yaml:"configuration" json:"configuration,omitempty" norman:"type=map[json]"`
+}
+
+type AuditLog struct {
+	Enabled       bool            `yaml:"enabled" json:"enabled,omitempty"`
+	Configuration *AuditLogConfig `yaml:"configuration" json:"configuration,omitempty"`
+}
+
+type AuditLogConfig struct {
+	MaxAge    int             `yaml:"max_age" json:"maxAge,omitempty"`
+	MaxBackup int             `yaml:"max_backup" json:"maxBackup,omitempty"`
+	MaxSize   int             `yaml:"max_size" json:"maxSize,omitempty"`
+	Path      string          `yaml:"path" json:"path,omitempty"`
+	Format    string          `yaml:"format" json:"format,omitempty"`
+	Policy    *auditv1.Policy `yaml:"policy" json:"policy,omitempty" norman:"type=map[json]"`
 }
 
 type KubeControllerService struct {
@@ -293,6 +324,8 @@ type KubeletService struct {
 	ClusterDNSServer string `yaml:"cluster_dns_server" json:"clusterDnsServer,omitempty"`
 	// Fail if swap is enabled
 	FailSwapOn bool `yaml:"fail_swap_on" json:"failSwapOn,omitempty"`
+	// Generate per node kubelet serving certificates created using kube-ca
+	GenerateServingCertificate bool `yaml:"generate_serving_certificate" json:"generateServingCertificate,omitempty"`
 }
 
 type KubeproxyService struct {
@@ -367,6 +400,24 @@ type IngressConfig struct {
 	ExtraArgs map[string]string `yaml:"extra_args" json:"extraArgs,omitempty"`
 	// DNS Policy
 	DNSPolicy string `yaml:"dns_policy" json:"dnsPolicy,omitempty"`
+	// Extra Env vars
+	ExtraEnvs []ExtraEnv `yaml:"extra_envs" json:"extraEnvs,omitempty" norman:"type=array[json]"`
+	// Extra volumes
+	ExtraVolumes []ExtraVolume `yaml:"extra_volumes" json:"extraVolumes,omitempty" norman:"type=array[json]"`
+	// Extra volume mounts
+	ExtraVolumeMounts []ExtraVolumeMount `yaml:"extra_volume_mounts" json:"extraVolumeMounts,omitempty" norman:"type=array[json]"`
+}
+
+type ExtraEnv struct {
+	v1.EnvVar
+}
+
+type ExtraVolume struct {
+	v1.Volume
+}
+
+type ExtraVolumeMount struct {
+	v1.VolumeMount
 }
 
 type RKEPlan struct {
@@ -474,6 +525,8 @@ type WeaveNetworkProvider struct {
 }
 
 type KubernetesServicesOptions struct {
+	// Additional options passed to Etcd
+	Etcd map[string]string `json:"etcd"`
 	// Additional options passed to KubeAPI
 	KubeAPI map[string]string `json:"kubeapi"`
 	// Additional options passed to Kubelet
@@ -770,4 +823,11 @@ type RKETaint struct {
 	Value     string         `json:"value,omitempty" yaml:"value"`
 	Effect    v1.TaintEffect `json:"effect,omitempty" yaml:"effect"`
 	TimeAdded *metav1.Time   `json:"timeAdded,omitempty" yaml:"timeAdded,omitempty"`
+}
+
+type SecretsEncryptionConfig struct {
+	// Enable/disable secrets encryption provider config
+	Enabled bool `yaml:"enabled" json:"enabled,omitempty"`
+	// Custom Encryption Provider configuration object
+	CustomConfig *apiserverconfig.EncryptionConfiguration `yaml:"custom_config" json:"customConfig,omitempty" norman:"type=map[json]"`
 }
