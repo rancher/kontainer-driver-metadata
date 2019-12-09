@@ -1783,9 +1783,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 		},
-		"v1.17.0-beta.2-rancher1-1": {
+		"v1.17.0-rancher1-1": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.4.3-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.17.0-beta.2-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.17.0-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.51"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.51"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.51"),
