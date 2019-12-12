@@ -34,7 +34,7 @@ data:
     - name: cluster
       cluster:
         certificate-authority: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-        server: "https://{{.ClusterDomain}}:6443"
+        server: "https://__KUBERNETES_SERVICE_HOST__:__KUBERNETES_SERVICE_PORT__"
     users:
     - name: kube-router
       user:
