@@ -2677,7 +2677,7 @@
    "dnsmasq": "rancher/k8s-dns-dnsmasq-nanny:1.15.0",
    "kubednsSidecar": "rancher/k8s-dns-sidecar:1.15.0",
    "kubednsAutoscaler": "rancher/cluster-proportional-autoscaler:1.7.1",
-   "coredns": "rancher/coredns-coredns:1.6.2",
+   "coredns": "rancher/coredns-coredns:1.6.5",
    "corednsAutoscaler": "rancher/cluster-proportional-autoscaler:1.7.1",
    "kubernetes": "rancher/hyperkube:v1.17.0-rancher1",
    "flannel": "rancher/coreos-flannel:v0.11.0-rancher1",
@@ -2695,7 +2695,7 @@
    "podInfraContainer": "rancher/pause:3.1",
    "ingress": "rancher/nginx-ingress-controller:nginx-0.25.1-rancher1",
    "ingressBackend": "rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1",
-   "metricsServer": "rancher/metrics-server:v0.3.4",
+   "metricsServer": "rancher/metrics-server:v0.3.6",
    "windowsPodInfraContainer": "rancher/kubelet-pause:v0.1.3"
   },
   "v1.8.11-rancher2-1": {
