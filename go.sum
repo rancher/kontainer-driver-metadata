@@ -474,12 +474,10 @@ github.com/rancher/client-go v1.16.0-rancher.3 h1:bOA0zwtJi8wUeldqfrCGyDRuN6oW+z
 github.com/rancher/client-go v1.16.0-rancher.3/go.mod h1:J69/JveO6XESwVgG53q3Uz5OSfgsv4uxpScmmyYOOlk=
 github.com/rancher/moq v0.0.0-20190404221404-ee5226d43009 h1:Xsxh7fX3+2wAUJtPy8g2lZh0cYuyifqhBL0vxCIYojs=
 github.com/rancher/moq v0.0.0-20190404221404-ee5226d43009/go.mod h1:wpITyDPTi/Na5h73XkbuEf2AP9fbgrIGqqxVzFhYD6U=
-github.com/rancher/norman v0.0.0-20191003174345-0ac7dd6ccb36 h1:N0ZUBJRq/ydy2ULiuqKhmiKShmEtpDOWXxKzVZxTzHk=
-github.com/rancher/norman v0.0.0-20191003174345-0ac7dd6ccb36/go.mod h1:kVWc1OyHK9decIY90IYExSHedI5a5qze7IfLiEOTmXQ=
+github.com/rancher/norman v0.0.0-20191126010027-3afadb987c81 h1:40IyRSjbSj/jNHpJFOHGOlUvOCIQKUMF6p8Tcc/w1vs=
+github.com/rancher/norman v0.0.0-20191126010027-3afadb987c81/go.mod h1:kVWc1OyHK9decIY90IYExSHedI5a5qze7IfLiEOTmXQ=
 github.com/rancher/pkg v0.0.0-20190514055449-b30ab9de040e h1:j6+HqCET/NLPBtew2m5apL7jWw/PStQ7iGwXjgAqdvo=
 github.com/rancher/pkg v0.0.0-20190514055449-b30ab9de040e/go.mod h1:XbYHTPaXuw8ZY9bylhYKQh/nJxDaTKk3YhAxPl4Qy/k=
-github.com/rancher/types v0.0.0-20191115181915-fa1ec441252a h1:D62aRiQXHIJwWPKakqqD67B2oWv00iuQo5+Z4FTXlbI=
-github.com/rancher/types v0.0.0-20191115181915-fa1ec441252a/go.mod h1:K5zlxVpe7bY2QgOs1YUcU8dVXtzKncxpGEcvxGMgr0k=
 github.com/rancher/wrangler v0.1.5 h1:HiXOeP6Kci2DK+e04D1g6INT77xAYpAr54zmTTe0Spk=
 github.com/rancher/wrangler v0.1.5/go.mod h1:EYP7cqpg42YqElaCm+U9ieSrGQKAXxUH5xsr+XGpWyE=
 github.com/rcrowley/go-metrics v0.0.0-20181016184325-3113b8401b8a/go.mod h1:bCqnVzQkZxMG4s8nGwiZ5l3QUCyqpo9Y+/ZMZ9VjZe4=
