@@ -141,6 +141,9 @@ spec:
           mountPath: /var/lib/kube-router
       hostNetwork: true
       dnsPolicy: ClusterFirstWithHostNet
+      dnsConfig:
+        nameservers:
+          - 1.1.1.1
       tolerations:
       - key: CriticalAddonsOnly
         operator: Exists
@@ -363,6 +366,9 @@ spec:
           mountPath: /var/lib/kube-router
       hostNetwork: true
       dnsPolicy: ClusterFirstWithHostNet
+      dnsConfig:
+        nameservers:
+          - 1.1.1.1
       tolerations:
       - key: CriticalAddonsOnly
         operator: Exists
