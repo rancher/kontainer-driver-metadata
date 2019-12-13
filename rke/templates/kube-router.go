@@ -12,19 +12,27 @@ metadata:
 data:
   cni-conf.json: |
     {
-       "cniVersion":"0.3.0",
-       "name":"mynet",
-       "plugins":[
-          {
-             "name":"kubernetes",
-             "type":"bridge",
-             "bridge":"kube-bridge",
-             "isDefaultGateway":true,
-             "ipam":{
-                "type":"host-local"
-             }
-          }
-       ]
+      "cniVersion":"0.3.0",
+      "name":"mynet",
+      "plugins":[
+        {
+            "name":"kubernetes",
+            "type":"bridge",
+            "bridge":"kube-bridge",
+            "isDefaultGateway":true,
+            "forceAddress": true,
+            "ipam":{
+              "type":"host-local"
+            }
+        },
+        {
+            "type":"portmap",
+            "capabilities":{
+              "snat":true,
+              "portMappings":true
+            }
+        }
+      ]
     }
   kubeconfig: |
     apiVersion: v1
@@ -237,19 +245,27 @@ metadata:
 data:
   cni-conf.json: |
     {
-       "cniVersion":"0.3.0",
-       "name":"mynet",
-       "plugins":[
-          {
-             "name":"kubernetes",
-             "type":"bridge",
-             "bridge":"kube-bridge",
-             "isDefaultGateway":true,
-             "ipam":{
-                "type":"host-local"
-             }
-          }
-       ]
+      "cniVersion":"0.3.0",
+      "name":"mynet",
+      "plugins":[
+        {
+            "name":"kubernetes",
+            "type":"bridge",
+            "bridge":"kube-bridge",
+            "isDefaultGateway":true,
+            "forceAddress": true,
+            "ipam":{
+              "type":"host-local"
+            }
+        },
+        {
+            "type":"portmap",
+            "capabilities":{
+              "snat":true,
+              "portMappings":true
+            }
+        }
+      ]
     }
   kubeconfig: |
     apiVersion: v1
