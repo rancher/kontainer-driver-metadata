@@ -74,6 +74,8 @@ spec:
         tier: node
       annotations:
         scheduler.alpha.kubernetes.io/critical-pod: ''
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "20243"
     spec:
       priorityClassName: system-node-critical
       serviceAccountName: kube-router
@@ -84,9 +86,11 @@ spec:
         imagePullPolicy: Always
         args:
         - "--run-router=true"
-        - "--run-firewall=true"
+        - "--run-firewall={{.RunFirewall}}"
         - "--run-service-proxy={{.RunServiceProxy}}"
         - "--kubeconfig=/var/lib/kube-router/kubeconfig"
+        - "--bgp-graceful-restart" 
+        - "--metrics-port=20243"
         env:
         - name: NODE_NAME
           valueFrom:
@@ -307,6 +311,8 @@ spec:
         tier: node
       annotations:
         scheduler.alpha.kubernetes.io/critical-pod: ''
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "20243"
     spec:
       priorityClassName: system-node-critical
       serviceAccountName: kube-router
@@ -317,9 +323,11 @@ spec:
         imagePullPolicy: Always
         args:
         - "--run-router=true"
-        - "--run-firewall=true"
+        - "--run-firewall={{.RunFirewall}}"
         - "--run-service-proxy={{.RunServiceProxy}}"
         - "--kubeconfig=/var/lib/kube-router/kubeconfig"
+        - "--bgp-graceful-restart" 
+        - "--metrics-port=20243"
         env:
         - name: NODE_NAME
           valueFrom:
