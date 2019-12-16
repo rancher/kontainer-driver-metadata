@@ -84,7 +84,6 @@ type GlobalRoleBindingInterface interface {
 	Delete(name string, options *metav1.DeleteOptions) error
 	DeleteNamespaced(namespace, name string, options *metav1.DeleteOptions) error
 	List(opts metav1.ListOptions) (*GlobalRoleBindingList, error)
-	ListNamespaced(namespace string, opts metav1.ListOptions) (*GlobalRoleBindingList, error)
 	Watch(opts metav1.ListOptions) (watch.Interface, error)
 	DeleteCollection(deleteOpts *metav1.DeleteOptions, listOpts metav1.ListOptions) error
 	Controller() GlobalRoleBindingController
@@ -269,11 +268,6 @@ func (s *globalRoleBindingClient) DeleteNamespaced(namespace, name string, optio
 
 func (s *globalRoleBindingClient) List(opts metav1.ListOptions) (*GlobalRoleBindingList, error) {
 	obj, err := s.objectClient.List(opts)
-	return obj.(*GlobalRoleBindingList), err
-}
-
-func (s *globalRoleBindingClient) ListNamespaced(namespace string, opts metav1.ListOptions) (*GlobalRoleBindingList, error) {
-	obj, err := s.objectClient.ListNamespaced(namespace, opts)
 	return obj.(*GlobalRoleBindingList), err
 }
 
