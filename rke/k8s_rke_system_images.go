@@ -1655,10 +1655,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.3.0"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 		},
-		// Enabled in Rancher v2.3.3
-		"v1.15.6-rancher1-2": {
+		// Enabled in Rancher v2.3.4
+		"v1.15.7-rancher1-1": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.3.10-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.15.6-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.15.7-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.51"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.51"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.51"),
@@ -1814,10 +1814,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 		},
-		// Enabled in Rancher v2.3.3
-		"v1.16.3-rancher1-1": {
+		// Enabled in Rancher v2.3.4
+		"v1.16.4-rancher1-1": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.3.15-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.16.3-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.16.4-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.51"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.51"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.51"),
@@ -1828,14 +1828,14 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			KubeDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			Flannel:                   m("quay.io/coreos/flannel:v0.11.0-rancher1"),
 			FlannelCNI:                m("rancher/flannel-cni:v0.3.0-rancher5"),
-			CalicoNode:                m("quay.io/calico/node:v3.8.1"),
-			CalicoCNI:                 m("quay.io/calico/cni:v3.8.1"),
-			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.8.1"),
-			CalicoFlexVol:             m("quay.io/calico/pod2daemon-flexvol:v3.8.1"),
-			CanalNode:                 m("quay.io/calico/node:v3.8.1"),
-			CanalCNI:                  m("quay.io/calico/cni:v3.8.1"),
+			CalicoNode:                m("quay.io/calico/node:v3.10.2"),
+			CalicoCNI:                 m("quay.io/calico/cni:v3.10.2"),
+			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.10.2"),
+			CalicoFlexVol:             m("quay.io/calico/pod2daemon-flexvol:v3.10.2"),
+			CanalNode:                 m("quay.io/calico/node:v3.10.2"),
+			CanalCNI:                  m("quay.io/calico/cni:v3.10.2"),
 			CanalFlannel:              m("quay.io/coreos/flannel:v0.11.0"),
-			CanalFlexVol:              m("quay.io/calico/pod2daemon-flexvol:v3.8.1"),
+			CanalFlexVol:              m("quay.io/calico/pod2daemon-flexvol:v3.10.2"),
 			WeaveNode:                 m("weaveworks/weave-kube:2.5.2"),
 			WeaveCNI:                  m("weaveworks/weave-npc:2.5.2"),
 			PodInfraContainer:         m("gcr.io/google_containers/pause:3.1"),
