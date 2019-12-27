@@ -2662,7 +2662,7 @@ spec:
               - -r
 `
 
-const CalicoTemplateV116 = `
+const CalicoTemplateV117 = `
 {{if eq .RBACConfig "rbac"}}
 # Source: calico/templates/rbac.yaml
 
@@ -2797,6 +2797,7 @@ rules:
       - networksets
       - clusterinformations
       - hostendpoints
+      - blockaffinities
     verbs:
       - get
       - list
