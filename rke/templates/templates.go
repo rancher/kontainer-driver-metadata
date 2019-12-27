@@ -21,10 +21,12 @@ const (
 	calicov113 = "calico-v1.13"
 	calicov115 = "calico-v1.15"
 	calicov116 = "calico-v1.16"
+	calicov116 = "calico-v1.16"
 
 	canalv18  = "canal-v1.8"
 	canalv113 = "canal-v1.13"
 	canalv115 = "canal-v1.15"
+	canalv116 = "canal-v1.16"
 	canalv116 = "canal-v1.16"
 
 	flannelv18  = "flannel-v1.8"
@@ -99,6 +101,7 @@ func getTemplates() map[string]string {
 		calicov113: CalicoTemplateV113,
 		calicov115: CalicoTemplateV115,
 		calicov116: CalicoTemplateV116,
+		calicov116: CalicoTemplateV116,
 		calicov18:  CalicoTemplateV112,
 
 		flannelv115: FlannelTemplateV115,
@@ -108,6 +111,7 @@ func getTemplates() map[string]string {
 		canalv113: CanalTemplateV113,
 		canalv18:  CanalTemplateV112,
 		canalv115: CanalTemplateV115,
+		canalv116: CanalTemplateV116,
 		canalv116: CanalTemplateV116,
 
 		coreDnsv18:  CoreDNSTemplate,
