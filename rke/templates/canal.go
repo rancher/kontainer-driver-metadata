@@ -2430,7 +2430,7 @@ metadata:
   namespace: kube-system
 `
 
-const CanalTemplateV116 = `
+const CanalTemplateV117 = `
 ---
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Canal installation.
@@ -2702,6 +2702,7 @@ rules:
       - networksets
       - clusterinformations
       - hostendpoints
+      - blockaffinities
     verbs:
       - get
       - list
