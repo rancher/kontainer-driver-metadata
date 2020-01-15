@@ -52,15 +52,15 @@ const (
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		Calico: {
-			">=1.16.4-rancher1":                  calicov117,
-			">=1.16.0-alpha <1.16.4-rancher1":    calicov116,
+			">=1.17.0-alpha":                  calicov117,
+			">=1.16.0-alpha <=1.16.4-rancher2":    calicov116,
 			">=1.15.0-rancher0 <1.16.0-alpha":    calicov115,
 			">=1.13.0-rancher0 <1.15.0-rancher0": calicov113,
 			">=1.8.0-rancher0 <1.13.0-rancher0":  calicov18,
 		},
 		Canal: {
-			">=1.16.4-rancher1":                  canalv117,
-			">=1.16.0-alpha <1.16.4-rancher1":    canalv116,
+			">=1.17.0-alpha":                  canalv117,
+			">=1.16.0-alpha <=1.16.4-rancher2":    canalv116,
 			">=1.15.0-rancher0 <1.16.0-alpha":    canalv115,
 			">=1.13.0-rancher0 <1.15.0-rancher0": canalv113,
 			">=1.8.0-rancher0 <1.13.0-rancher0":  canalv18,
