@@ -187,7 +187,6 @@ spec:
                     - windows
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
-      hostNetwork: true
       {{if .DNSPolicy}}
       dnsPolicy: {{.DNSPolicy}}
       {{end}}
@@ -229,14 +228,16 @@ spec:
             - --annotations-prefix=nginx.ingress.kubernetes.io
           {{ range $k, $v := .ExtraArgs }}
             - --{{ $k }}{{if ne $v "" }}={{ $v }}{{end}}
-          {{ end }}
+          {{- end }}
           {{- if eq .AlpineImage ""}}
           securityContext:
+			{{- if .HostNetwork }}
             capabilities:
                 drop:
                 - ALL
                 add:
                 - NET_BIND_SERVICE
+			{{- end }}
             runAsUser: 33
           {{- end }}
           env:
@@ -253,9 +254,15 @@ spec:
 {{end}}
           ports:
           - name: http
-            containerPort: 80
+            containerPort: {{with (index .ExtraArgs "http-port")}}{{.}}{{else}}80{{end}}
+            {{- if .HostNetwork }} 
+            hostPort: {{.HTTPPort}}
+            {{- end }}
           - name: https
-            containerPort: 443
+            containerPort: {{with (index .ExtraArgs "https-port")}}{{.}}{{else}}443{{end}}
+            {{- if .HostNetwork }}
+            hostPort: {{.HTTPSPort}}
+            {{- end }}
           livenessProbe:
             failureThreshold: 3
             httpGet:
@@ -546,7 +553,6 @@ spec:
                     - windows
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
-      hostNetwork: true
       {{if .DNSPolicy}}
       dnsPolicy: {{.DNSPolicy}}
       {{end}}
@@ -588,14 +594,16 @@ spec:
             - --annotations-prefix=nginx.ingress.kubernetes.io
           {{ range $k, $v := .ExtraArgs }}
             - --{{ $k }}{{if ne $v "" }}={{ $v }}{{end}}
-          {{ end }}
+          {{- end }}
           {{- if eq .AlpineImage ""}}
           securityContext:
+			{{- if .HostNetwork }}
             capabilities:
                 drop:
                 - ALL
                 add:
                 - NET_BIND_SERVICE
+			{{- end }}
             runAsUser: 33
           {{- end }}
           env:
@@ -612,9 +620,15 @@ spec:
 {{end}}
           ports:
           - name: http
-            containerPort: 80
+            containerPort: {{with (index .ExtraArgs "http-port")}}{{.}}{{else}}80{{end}}
+            {{- if .HostNetwork }}
+            hostPort: {{.HTTPPort}}
+            {{- end }}
           - name: https
-            containerPort: 443
+            containerPort: {{with (index .ExtraArgs "https-port")}}{{.}}{{else}}443{{end}}
+            {{- if .HostNetwork }}
+            hostPort: {{.HTTPSPort}}
+            {{- end }}
           livenessProbe:
             failureThreshold: 3
             httpGet:
@@ -952,7 +966,6 @@ spec:
                     - windows
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
-      hostNetwork: true
       {{if .DNSPolicy}}
       dnsPolicy: {{.DNSPolicy}}
       {{end}}
@@ -987,11 +1000,13 @@ spec:
             - --{{ $k }}{{if ne $v "" }}={{ $v }}{{end}}
           {{ end }}
           securityContext:
+		  {{- if .HostNetwork }}
             capabilities:
                 drop:
                 - ALL
                 add:
                 - NET_BIND_SERVICE
+          {{- end }}
             runAsUser: 101
           env:
             - name: POD_NAME
@@ -1007,9 +1022,15 @@ spec:
 {{end}}
           ports:
           - name: http
-            containerPort: 80
+            containerPort: {{with (index .ExtraArgs "http-port")}}{{.}}{{else}}80{{end}}
+            {{- if .HostNetwork }}
+            hostPort: {{.HTTPPort}}
+            {{- end }}
           - name: https
-            containerPort: 443
+            containerPort: {{with (index .ExtraArgs "https-port")}}{{.}}{{else}}443{{end}}
+            {{- if .HostNetwork }}
+            hostPort: {{.HTTPSPort}}
+            {{- end }}
           livenessProbe:
             failureThreshold: 3
             httpGet:
