@@ -3055,15 +3055,15 @@
   "calico": {
    "\u003e=1.13.0-rancher0 \u003c1.15.0-rancher0": "calico-v1.13",
    "\u003e=1.15.0-rancher0 \u003c1.16.0-alpha": "calico-v1.15",
-   "\u003e=1.16.0-alpha \u003c1.16.4-rancher1": "calico-v1.16",
-   "\u003e=1.16.4-rancher1": "calico-v1.17",
+   "\u003e=1.16.0-alpha \u003c=1.16.4-rancher2": "calico-v1.16",
+   "\u003e=1.17.0-alpha": "calico-v1.17",
    "\u003e=1.8.0-rancher0 \u003c1.13.0-rancher0": "calico-v1.8"
   },
   "canal": {
    "\u003e=1.13.0-rancher0 \u003c1.15.0-rancher0": "canal-v1.13",
    "\u003e=1.15.0-rancher0 \u003c1.16.0-alpha": "canal-v1.15",
-   "\u003e=1.16.0-alpha \u003c1.16.4-rancher1": "canal-v1.16",
-   "\u003e=1.16.4-rancher1": "canal-v1.17",
+   "\u003e=1.16.0-alpha \u003c=1.16.4-rancher2": "canal-v1.16",
+   "\u003e=1.17.0-alpha": "canal-v1.17",
    "\u003e=1.8.0-rancher0 \u003c1.13.0-rancher0": "canal-v1.8"
   },
   "coreDNS": {
