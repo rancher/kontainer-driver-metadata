@@ -3060,3 +3060,4 @@ metadata:
   name: canal
   namespace: kube-system
 `
+
