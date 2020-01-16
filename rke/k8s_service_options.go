@@ -203,6 +203,7 @@ func getKubeControllerOptions() map[string]string {
 		"pod-eviction-timeout":        "5m0s",
 		"profiling":                   "false",
 		"terminated-pod-gc-threshold": "1000",
+		"flex-volume-plugin-dir":      "/var/lib/kubelet/volumeplugins",
 		"v":                           "2",
 	}
 }

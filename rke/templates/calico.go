@@ -2588,7 +2588,7 @@ spec:
         - name: flexvol-driver-host
           hostPath:
             type: DirectoryOrCreate
-            path: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/nodeagent~uds
+            path: /var/lib/kubelet/volumeplugins/nodeagent~uds
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -3380,7 +3380,7 @@ spec:
         - name: flexvol-driver-host
           hostPath:
             type: DirectoryOrCreate
-            path: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/nodeagent~uds
+            path: /var/lib/kubelet/volumeplugins/nodeagent~uds
 ---
 apiVersion: v1
 kind: ServiceAccount
