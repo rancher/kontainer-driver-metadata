@@ -3388,5 +3388,21 @@
    "kubeController": null,
    "scheduler": null
   }
+ },
+ "CisConfigParams": {
+  "default": {
+   "benchmarkVersion": "rke-cis-1.4"
+  },
+  "v1.15": {
+   "benchmarkVersion": "rke-cis-1.4"
+  }
+ },
+ "CisBenchmarkVersionInfo": {
+  "cis-1.4": {
+   "minKubernetesVersion": "1.13"
+  },
+  "rke-cis-1.4": {
+   "minKubernetesVersion": "1.13"
+  }
  }
 }
