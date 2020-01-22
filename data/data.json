@@ -3403,7 +3403,7 @@
  },
  "RKEDefaultK8sVersions": {
   "0.3": "v1.16.3-rancher1-1",
-  "default": "v1.17.0-rancher1-2"
+  "default": "v1.17.2-rancher1-1"
  },
  "K8sVersionDockerInfo": {
   "1.10": [
