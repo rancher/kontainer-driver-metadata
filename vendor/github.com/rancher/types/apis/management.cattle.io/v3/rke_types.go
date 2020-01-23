@@ -7,7 +7,6 @@ import (
 	apiserverv1alpha1 "k8s.io/apiserver/pkg/apis/apiserver/v1alpha1"
 	auditv1 "k8s.io/apiserver/pkg/apis/audit/v1"
 	apiserverconfig "k8s.io/apiserver/pkg/apis/config"
-	eventratelimitv1alpha1 "k8s.io/kubernetes/plugin/pkg/admission/eventratelimit/apis/eventratelimit/v1alpha1"
 )
 
 type RancherKubernetesEngineConfig struct {
@@ -114,6 +113,8 @@ type RKESystemImages struct {
 	CoreDNS string `yaml:"coredns" json:"coredns,omitempty"`
 	// CoreDNS autoscaler image
 	CoreDNSAutoscaler string `yaml:"coredns_autoscaler" json:"corednsAutoscaler,omitempty"`
+	// Nodelocal image
+	Nodelocal string `yaml:"nodelocal" json:"nodelocal,omitempty"`
 	// Kubernetes image
 	Kubernetes string `yaml:"kubernetes" json:"kubernetes,omitempty"`
 	// Flannel image
@@ -286,8 +287,8 @@ type KubeAPIService struct {
 }
 
 type EventRateLimit struct {
-	Enabled       bool                                  `yaml:"enabled" json:"enabled,omitempty"`
-	Configuration *eventratelimitv1alpha1.Configuration `yaml:"configuration" json:"configuration,omitempty" norman:"type=map[json]"`
+	Enabled       bool           `yaml:"enabled" json:"enabled,omitempty"`
+	Configuration *Configuration `yaml:"configuration" json:"configuration,omitempty" norman:"type=map[json]"`
 }
 
 type AuditLog struct {
@@ -354,6 +355,8 @@ type NetworkConfig struct {
 	Plugin string `yaml:"plugin" json:"plugin,omitempty" norman:"default=canal"`
 	// Plugin options to configure network properties
 	Options map[string]string `yaml:"options" json:"options,omitempty"`
+	// Set MTU for CNI provider
+	MTU int `yaml:"mtu" json:"mtu,omitempty"`
 	// CalicoNetworkProvider
 	CalicoNetworkProvider *CalicoNetworkProvider `yaml:"calico_network_provider,omitempty" json:"calicoNetworkProvider,omitempty"`
 	// CanalNetworkProvider
@@ -816,6 +819,12 @@ type DNSConfig struct {
 	StubDomains map[string][]string `yaml:"stubdomains" json:"stubdomains,omitempty"`
 	// NodeSelector key pair
 	NodeSelector map[string]string `yaml:"node_selector" json:"nodeSelector,omitempty"`
+	// Nodelocal DNS
+	Nodelocal *Nodelocal `yaml:"nodelocal" json:"nodelocal,omitempy"`
+}
+
+type Nodelocal struct {
+	IPAddress string `yaml:"ipaddress" json:"ipAddress,omitempy"`
 }
 
 type RKETaint struct {
