@@ -84,7 +84,6 @@ type FeatureInterface interface {
 	Delete(name string, options *metav1.DeleteOptions) error
 	DeleteNamespaced(namespace, name string, options *metav1.DeleteOptions) error
 	List(opts metav1.ListOptions) (*FeatureList, error)
-	ListNamespaced(namespace string, opts metav1.ListOptions) (*FeatureList, error)
 	Watch(opts metav1.ListOptions) (watch.Interface, error)
 	DeleteCollection(deleteOpts *metav1.DeleteOptions, listOpts metav1.ListOptions) error
 	Controller() FeatureController
@@ -269,11 +268,6 @@ func (s *featureClient) DeleteNamespaced(namespace, name string, options *metav1
 
 func (s *featureClient) List(opts metav1.ListOptions) (*FeatureList, error) {
 	obj, err := s.objectClient.List(opts)
-	return obj.(*FeatureList), err
-}
-
-func (s *featureClient) ListNamespaced(namespace string, opts metav1.ListOptions) (*FeatureList, error) {
-	obj, err := s.objectClient.ListNamespaced(namespace, opts)
 	return obj.(*FeatureList), err
 }
 

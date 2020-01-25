@@ -85,7 +85,6 @@ type GlobalDNSProviderInterface interface {
 	Delete(name string, options *metav1.DeleteOptions) error
 	DeleteNamespaced(namespace, name string, options *metav1.DeleteOptions) error
 	List(opts metav1.ListOptions) (*GlobalDNSProviderList, error)
-	ListNamespaced(namespace string, opts metav1.ListOptions) (*GlobalDNSProviderList, error)
 	Watch(opts metav1.ListOptions) (watch.Interface, error)
 	DeleteCollection(deleteOpts *metav1.DeleteOptions, listOpts metav1.ListOptions) error
 	Controller() GlobalDNSProviderController
@@ -270,11 +269,6 @@ func (s *globalDnsProviderClient) DeleteNamespaced(namespace, name string, optio
 
 func (s *globalDnsProviderClient) List(opts metav1.ListOptions) (*GlobalDNSProviderList, error) {
 	obj, err := s.objectClient.List(opts)
-	return obj.(*GlobalDNSProviderList), err
-}
-
-func (s *globalDnsProviderClient) ListNamespaced(namespace string, opts metav1.ListOptions) (*GlobalDNSProviderList, error) {
-	obj, err := s.objectClient.ListNamespaced(namespace, opts)
 	return obj.(*GlobalDNSProviderList), err
 }
 
