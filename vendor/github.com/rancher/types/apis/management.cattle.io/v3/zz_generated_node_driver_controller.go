@@ -84,7 +84,6 @@ type NodeDriverInterface interface {
 	Delete(name string, options *metav1.DeleteOptions) error
 	DeleteNamespaced(namespace, name string, options *metav1.DeleteOptions) error
 	List(opts metav1.ListOptions) (*NodeDriverList, error)
-	ListNamespaced(namespace string, opts metav1.ListOptions) (*NodeDriverList, error)
 	Watch(opts metav1.ListOptions) (watch.Interface, error)
 	DeleteCollection(deleteOpts *metav1.DeleteOptions, listOpts metav1.ListOptions) error
 	Controller() NodeDriverController
@@ -269,11 +268,6 @@ func (s *nodeDriverClient) DeleteNamespaced(namespace, name string, options *met
 
 func (s *nodeDriverClient) List(opts metav1.ListOptions) (*NodeDriverList, error) {
 	obj, err := s.objectClient.List(opts)
-	return obj.(*NodeDriverList), err
-}
-
-func (s *nodeDriverClient) ListNamespaced(namespace string, opts metav1.ListOptions) (*NodeDriverList, error) {
-	obj, err := s.objectClient.ListNamespaced(namespace, opts)
 	return obj.(*NodeDriverList), err
 }
 

@@ -84,7 +84,6 @@ type TemplateContentInterface interface {
 	Delete(name string, options *metav1.DeleteOptions) error
 	DeleteNamespaced(namespace, name string, options *metav1.DeleteOptions) error
 	List(opts metav1.ListOptions) (*TemplateContentList, error)
-	ListNamespaced(namespace string, opts metav1.ListOptions) (*TemplateContentList, error)
 	Watch(opts metav1.ListOptions) (watch.Interface, error)
 	DeleteCollection(deleteOpts *metav1.DeleteOptions, listOpts metav1.ListOptions) error
 	Controller() TemplateContentController
@@ -269,11 +268,6 @@ func (s *templateContentClient) DeleteNamespaced(namespace, name string, options
 
 func (s *templateContentClient) List(opts metav1.ListOptions) (*TemplateContentList, error) {
 	obj, err := s.objectClient.List(opts)
-	return obj.(*TemplateContentList), err
-}
-
-func (s *templateContentClient) ListNamespaced(namespace string, opts metav1.ListOptions) (*TemplateContentList, error) {
-	obj, err := s.objectClient.ListNamespaced(namespace, opts)
 	return obj.(*TemplateContentList), err
 }
 

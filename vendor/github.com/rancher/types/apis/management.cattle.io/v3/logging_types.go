@@ -41,7 +41,6 @@ type LoggingCommonField struct {
 	DisplayName         string            `json:"displayName,omitempty"`
 	OutputFlushInterval int               `json:"outputFlushInterval,omitempty" norman:"default=60"`
 	OutputTags          map[string]string `json:"outputTags,omitempty"`
-	EnableJSONParsing   bool              `json:"enableJSONParsing,omitempty"`
 }
 
 type LoggingTargets struct {

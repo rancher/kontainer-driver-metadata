@@ -157,10 +157,6 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&RKEK8sServiceOptionList{},
 		&RKEAddon{},
 		&RKEAddonList{},
-		&CisConfig{},
-		&CisConfigList{},
-		&CisBenchmarkVersion{},
-		&CisBenchmarkVersionList{},
 	)
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil
