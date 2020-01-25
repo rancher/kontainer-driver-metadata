@@ -1938,8 +1938,8 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 		},
-		// Out of band post v2.3.4
-		"v1.16.6-rancher1-1": {
+		// Out of band post v2.3.4 for calicoCtl
+		"v1.16.6-rancher1-2": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.3.15-rancher1"),
 			Kubernetes:                m("rancher/hyperkube:v1.16.6-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.52"),
@@ -1955,6 +1955,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CalicoNode:                m("quay.io/calico/node:v3.10.2"),
 			CalicoCNI:                 m("quay.io/calico/cni:v3.10.2"),
 			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.10.2"),
+			CalicoCtl:                 m("rancher/calico-ctl:v2.0.0"),
 			CalicoFlexVol:             m("quay.io/calico/pod2daemon-flexvol:v3.10.2"),
 			CanalNode:                 m("quay.io/calico/node:v3.10.2"),
 			CanalCNI:                  m("quay.io/calico/cni:v3.10.2"),
@@ -2066,8 +2067,8 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 		},
-		// Out of band post v2.3.4
-		"v1.17.2-rancher1-1": {
+		// Out of band post v2.3.4 for calicoCtl
+		"v1.17.2-rancher1-2": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.4.3-rancher1"),
 			Kubernetes:                m("rancher/hyperkube:v1.17.2-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.52"),
@@ -2083,6 +2084,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CalicoNode:                m("quay.io/calico/node:v3.10.2"),
 			CalicoCNI:                 m("quay.io/calico/cni:v3.10.2"),
 			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.10.2"),
+			CalicoCtl:                 m("rancher/calico-ctl:v2.0.0"),
 			CalicoFlexVol:             m("quay.io/calico/pod2daemon-flexvol:v3.10.2"),
 			CanalNode:                 m("quay.io/calico/node:v3.10.2"),
 			CanalCNI:                  m("quay.io/calico/cni:v3.10.2"),
