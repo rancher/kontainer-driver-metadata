@@ -77,7 +77,6 @@ type genericController struct {
 	generation          int
 	informer            cache.SharedIndexInformer
 	handlers            []*handlerDef
-	preStart            []string
 	queue               workqueue.RateLimitingInterface
 	name                string
 	running             bool
@@ -92,8 +91,15 @@ func NewGenericController(name string, genericClient Backend) GenericController 
 		},
 		genericClient.ObjectFactory().Object(), resyncPeriod, cache.Indexers{cache.NamespaceIndex: cache.MetaNamespaceIndexFunc})
 
+	rl := workqueue.NewMaxOfRateLimiter(
+		workqueue.NewItemExponentialFailureRateLimiter(500*time.Millisecond, 1000*time.Second),
+		// 10 qps, 100 bucket size.  This is only for retry speed and its only the overall factor (not per item)
+		&workqueue.BucketRateLimiter{Limiter: rate.NewLimiter(rate.Limit(10), 100)},
+	)
+
 	return &genericController{
 		informer: informer,
+		queue:    workqueue.NewNamedRateLimitingQueue(rl, name),
 		name:     name,
 	}
 }
@@ -111,50 +117,35 @@ func (g *genericController) Informer() cache.SharedIndexInformer {
 }
 
 func (g *genericController) Enqueue(namespace, name string) {
-	key := name
-	if namespace != "" {
-		key = namespace + "/" + name
-	}
-	if g.queue == nil {
-		g.preStart = append(g.preStart, key)
+	if namespace == "" {
+		g.queue.Add(name)
 	} else {
-		g.queue.AddRateLimited(key)
+		g.queue.Add(namespace + "/" + name)
 	}
 }
 
 func (g *genericController) AddHandler(ctx context.Context, name string, handler HandlerFunc) {
 	g.Lock()
-	defer g.Unlock()
-
-	g.generation++
 	h := &handlerDef{
 		name:       name,
 		generation: g.generation,
 		handler:    handler,
 	}
+	g.handlers = append(g.handlers, h)
+	g.Unlock()
 
-	go func(gen int) {
+	go func() {
 		<-ctx.Done()
 		g.Lock()
-		defer g.Unlock()
-		var newHandlers []*handlerDef
+		var handlers []*handlerDef
 		for _, handler := range g.handlers {
-			if handler.generation == gen {
-				continue
+			if handler != h {
+				handlers = append(handlers, h)
 			}
-			newHandlers = append(newHandlers, handler)
 		}
-		g.handlers = newHandlers
-	}(h.generation)
-
-	g.handlers = append(g.handlers, h)
-
-	if g.synced {
-		for _, key := range g.informer.GetStore().ListKeys() {
-			g.queue.AddRateLimited(key)
-		}
-	}
-
+		g.handlers = handlers
+		g.Unlock()
+	}()
 }
 
 func (g *genericController) Sync(ctx context.Context) error {
@@ -164,29 +155,9 @@ func (g *genericController) Sync(ctx context.Context) error {
 	return g.sync(ctx)
 }
 
-func (g *genericController) sync(ctx context.Context) (retErr error) {
+func (g *genericController) sync(ctx context.Context) error {
 	if g.synced {
 		return nil
-	}
-
-	if g.queue == nil {
-		rl := workqueue.NewMaxOfRateLimiter(
-			workqueue.NewItemExponentialFailureRateLimiter(500*time.Millisecond, 1000*time.Second),
-			// 10 qps, 100 bucket size.  This is only for retry speed and its only the overall factor (not per item)
-			&workqueue.BucketRateLimiter{Limiter: rate.NewLimiter(rate.Limit(10), 100)},
-		)
-
-		g.queue = workqueue.NewNamedRateLimitingQueue(rl, g.name)
-		for _, key := range g.preStart {
-			g.queue.Add(key)
-		}
-		g.preStart = nil
-
-		defer func() {
-			if retErr != nil {
-				g.queue.ShutDown()
-			}
-		}()
 	}
 
 	defer utilruntime.HandleCrash()
@@ -225,9 +196,25 @@ func (g *genericController) Start(ctx context.Context, threadiness int) error {
 			threadiness = g.threadinessOverride
 		}
 		go g.run(ctx, threadiness)
-		g.running = true
 	}
 
+	if g.running {
+		for _, h := range g.handlers {
+			if h.generation != g.generation {
+				continue
+			}
+			for _, key := range g.informer.GetStore().ListKeys() {
+				g.queueObject(generationKey{
+					generation: g.generation,
+					key:        key,
+				})
+			}
+			break
+		}
+	}
+
+	g.generation++
+	g.running = true
 	return nil
 }
 

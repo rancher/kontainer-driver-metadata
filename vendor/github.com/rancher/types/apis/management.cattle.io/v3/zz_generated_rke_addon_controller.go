@@ -85,7 +85,6 @@ type RKEAddonInterface interface {
 	Delete(name string, options *metav1.DeleteOptions) error
 	DeleteNamespaced(namespace, name string, options *metav1.DeleteOptions) error
 	List(opts metav1.ListOptions) (*RKEAddonList, error)
-	ListNamespaced(namespace string, opts metav1.ListOptions) (*RKEAddonList, error)
 	Watch(opts metav1.ListOptions) (watch.Interface, error)
 	DeleteCollection(deleteOpts *metav1.DeleteOptions, listOpts metav1.ListOptions) error
 	Controller() RKEAddonController
@@ -270,11 +269,6 @@ func (s *rkeAddonClient) DeleteNamespaced(namespace, name string, options *metav
 
 func (s *rkeAddonClient) List(opts metav1.ListOptions) (*RKEAddonList, error) {
 	obj, err := s.objectClient.List(opts)
-	return obj.(*RKEAddonList), err
-}
-
-func (s *rkeAddonClient) ListNamespaced(namespace string, opts metav1.ListOptions) (*RKEAddonList, error) {
-	obj, err := s.objectClient.ListNamespaced(namespace, opts)
 	return obj.(*RKEAddonList), err
 }
 

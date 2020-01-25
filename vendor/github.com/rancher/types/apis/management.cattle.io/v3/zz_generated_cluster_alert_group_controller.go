@@ -85,7 +85,6 @@ type ClusterAlertGroupInterface interface {
 	Delete(name string, options *metav1.DeleteOptions) error
 	DeleteNamespaced(namespace, name string, options *metav1.DeleteOptions) error
 	List(opts metav1.ListOptions) (*ClusterAlertGroupList, error)
-	ListNamespaced(namespace string, opts metav1.ListOptions) (*ClusterAlertGroupList, error)
 	Watch(opts metav1.ListOptions) (watch.Interface, error)
 	DeleteCollection(deleteOpts *metav1.DeleteOptions, listOpts metav1.ListOptions) error
 	Controller() ClusterAlertGroupController
@@ -270,11 +269,6 @@ func (s *clusterAlertGroupClient) DeleteNamespaced(namespace, name string, optio
 
 func (s *clusterAlertGroupClient) List(opts metav1.ListOptions) (*ClusterAlertGroupList, error) {
 	obj, err := s.objectClient.List(opts)
-	return obj.(*ClusterAlertGroupList), err
-}
-
-func (s *clusterAlertGroupClient) ListNamespaced(namespace string, opts metav1.ListOptions) (*ClusterAlertGroupList, error) {
-	obj, err := s.objectClient.ListNamespaced(namespace, opts)
 	return obj.(*ClusterAlertGroupList), err
 }
 
