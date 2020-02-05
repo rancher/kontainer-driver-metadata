@@ -770,8 +770,10 @@ data:
       "plugins": [
         {
           "type": "calico",
-{{- if ne (default 0 .MTU) 0}}
+{{- if .MTU }}
+{{- if ne .MTU 0 }}
           "mtu": {{.MTU}},
+{{- end}}
 {{- end}}
           "log_level": "WARNING",
           "datastore_type": "kubernetes",
@@ -1380,8 +1382,10 @@ data:
       "plugins": [
         {
           "type": "calico",
-{{- if ne (default 0 .MTU) 0}}
+{{- if .MTU }}
+{{- if ne .MTU 0 }}
           "mtu": {{.MTU}},
+{{- end}}
 {{- end}}
           "log_level": "WARNING",
           "datastore_type": "kubernetes",
@@ -1829,8 +1833,10 @@ data:
       "plugins": [
         {
           "type": "calico",
-{{- if ne (default 0 .MTU) 0}}
+{{- if .MTU }}
+{{- if ne .MTU 0 }}
           "mtu": {{.MTU}},
+{{- end}}
 {{- end}}
           "log_level": "WARNING",
           "datastore_type": "kubernetes",
@@ -2459,8 +2465,10 @@ data:
       "plugins": [
         {
           "type": "calico",
-{{- if ne (default 0 .MTU) 0}}
+{{- if .MTU }}
+{{- if ne .MTU 0 }}
           "mtu": {{.MTU}},
+{{- end}}
 {{- end}}
           "log_level": "WARNING",
           "datastore_type": "kubernetes",
