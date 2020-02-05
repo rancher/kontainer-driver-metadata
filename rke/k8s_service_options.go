@@ -99,7 +99,7 @@ func loadK8sVersionServiceOptions() map[string]v3.KubernetesServicesOptions {
 			Kubeproxy:      getKubeProxyOptions(),
 			Scheduler:      getSchedulerOptions(),
 		},
-		"v1.14.9-rancher1-1": {
+		"v1.14.9-rancher1-3": {
 			Etcd:           getETCDOptions(),
 			KubeAPI:        getKubeAPIOptions114(),
 			Kubelet:        getKubeletOptions(),

@@ -1411,8 +1411,8 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   m("coredns/coredns:1.3.1"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.3.0"),
 		},
-		// Enabled in Rancher v2.3.4
-		"v1.14.9-rancher1-2": {
+		// Out of band post v2.3.5
+		"v1.14.9-rancher1-3": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.3.10-rancher1"),
 			Kubernetes:                m("rancher/hyperkube:v1.14.9-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.52"),
@@ -1428,6 +1428,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CalicoNode:                m("quay.io/calico/node:v3.4.0"),
 			CalicoCNI:                 m("quay.io/calico/cni:v3.4.0"),
 			CalicoCtl:                 m("quay.io/calico/ctl:v2.0.0"),
+			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.4.0"),
 			CanalNode:                 m("quay.io/calico/node:v3.4.0"),
 			CanalCNI:                  m("quay.io/calico/cni:v3.4.0"),
 			CanalFlannel:              m("quay.io/coreos/flannel:v0.10.0"),
