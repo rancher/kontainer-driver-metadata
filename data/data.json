@@ -3752,8 +3752,14 @@
   "cis-1.4": {
    "minKubernetesVersion": "1.13"
   },
+  "cis-1.5": {
+   "minKubernetesVersion": "1.15"
+  },
   "rke-cis-1.4": {
    "minKubernetesVersion": "1.13"
+  },
+  "rke-cis-1.5": {
+   "minKubernetesVersion": "1.15"
   }
  }
 }
