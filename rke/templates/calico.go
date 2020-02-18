@@ -159,9 +159,13 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
+{{if .UpdateStrategy}}
+{{ toYaml .UpdateStrategy | indent 4}}
+{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
+{{end}}
   template:
     metadata:
       labels:
@@ -731,9 +735,13 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
+{{if .UpdateStrategy}}
+{{ toYaml .UpdateStrategy | indent 4}}
+{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
+{{end}}
   template:
     metadata:
       labels:
@@ -1599,9 +1607,13 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
+{{if .UpdateStrategy}}
+{{ toYaml .UpdateStrategy | indent 4}}
+{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
+{{end}}
   template:
     metadata:
       labels:
@@ -2367,9 +2379,13 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
+{{if .UpdateStrategy}}
+{{ toYaml .UpdateStrategy | indent 4}}
+{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
+{{end}}
   template:
     metadata:
       labels:
@@ -3161,9 +3177,13 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
+{{if .UpdateStrategy}}
+{{ toYaml .UpdateStrategy | indent 4}}
+{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
+{{end}}
   template:
     metadata:
       labels:
