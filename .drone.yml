@@ -22,7 +22,7 @@ steps:
       acl:
       - allUsers:READER
       cache_control: "public,no-cache,proxy-revalidate"
-      source: data/data.json
+      source: data
       target: releases.rancher.com/kontainer-driver-metadata/${DRONE_BRANCH}
       token:
         from_secret: google_auth_key
