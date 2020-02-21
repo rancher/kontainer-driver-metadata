@@ -2426,7 +2426,11 @@ spec:
         - name: flexvol-driver-host
           hostPath:
             type: DirectoryOrCreate
+{{- if .FlexVolPluginDir }}
+            path: {{.FlexVolPluginDir}}
+{{- else }}
             path: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/nodeagent~uds
+{{- end }}
 ---
 
 apiVersion: v1
@@ -3059,7 +3063,11 @@ spec:
         - name: flexvol-driver-host
           hostPath:
             type: DirectoryOrCreate
+{{- if .FlexVolPluginDir }}
+            path: {{.FlexVolPluginDir}}
+{{- else }}
             path: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/nodeagent~uds
+{{- end }}
 ---
 
 apiVersion: v1
