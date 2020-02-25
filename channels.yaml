@@ -1,0 +1,3 @@
+channels:
+- name: stable
+  latest: v1.17.2+k3s1

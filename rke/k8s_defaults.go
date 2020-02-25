@@ -4,7 +4,9 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"os"
+	"sigs.k8s.io/yaml"
 	"strings"
 
 	"github.com/blang/semver"
@@ -28,6 +30,7 @@ var (
 func initData() {
 	DriverData = kdm.Data{
 		K8sVersionRKESystemImages: loadK8sRKESystemImages(),
+		K3S:                       map[string]interface{}{},
 	}
 
 	for version, images := range DriverData.K8sVersionRKESystemImages {
@@ -57,6 +60,10 @@ func initData() {
 	// CIS
 	DriverData.CisConfigParams = loadCisConfigParams()
 	DriverData.CisBenchmarkVersionInfo = loadCisBenchmarkVersionInfo()
+
+	if err := readFile("./channels.yaml", DriverData.K3S); err != nil {
+		panic(err)
+	}
 }
 
 func validateDefaultPresent(versions map[string]string) {
@@ -109,6 +116,15 @@ func validateTemplateMatch() {
 			TemplateData[k8sVersion][plugin] = fmt.Sprintf("range=%s key=%s", matchedRange, matchedKey)
 		}
 	}
+}
+
+func readFile(input string, data map[string]interface{}) error {
+	bytes, err := ioutil.ReadFile(input)
+	if err != nil {
+		return err
+	}
+
+	return yaml.Unmarshal(bytes, &data)
 }
 
 func GenerateData() {
