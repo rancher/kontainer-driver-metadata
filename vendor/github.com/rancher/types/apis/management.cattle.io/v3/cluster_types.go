@@ -103,6 +103,7 @@ type ClusterSpecBase struct {
 	EnableClusterMonitoring              bool                           `json:"enableClusterMonitoring" norman:"default=false"`
 	WindowsPreferedCluster               bool                           `json:"windowsPreferedCluster" norman:"noupdate"`
 	LocalClusterAuthEndpoint             LocalClusterAuthEndpoint       `json:"localClusterAuthEndpoint,omitempty"`
+	ScheduledClusterScan                 *ScheduledClusterScan          `json:"scheduledClusterScan,omitempty"`
 }
 
 type ClusterSpec struct {
@@ -131,27 +132,28 @@ type ClusterStatus struct {
 	Conditions []ClusterCondition `json:"conditions,omitempty"`
 	// Component statuses will represent cluster's components (etcd/controller/scheduler) health
 	// https://kubernetes.io/docs/api-reference/v1.8/#componentstatus-v1-core
-	Driver                               string                    `json:"driver"`
-	AgentImage                           string                    `json:"agentImage"`
-	AgentFeatures                        map[string]bool           `json:"agentFeatures,omitempty"`
-	AuthImage                            string                    `json:"authImage"`
-	ComponentStatuses                    []ClusterComponentStatus  `json:"componentStatuses,omitempty"`
-	APIEndpoint                          string                    `json:"apiEndpoint,omitempty"`
-	ServiceAccountToken                  string                    `json:"serviceAccountToken,omitempty"`
-	CACert                               string                    `json:"caCert,omitempty"`
-	Capacity                             v1.ResourceList           `json:"capacity,omitempty"`
-	Allocatable                          v1.ResourceList           `json:"allocatable,omitempty"`
-	AppliedSpec                          ClusterSpec               `json:"appliedSpec,omitempty"`
-	FailedSpec                           *ClusterSpec              `json:"failedSpec,omitempty"`
-	Requested                            v1.ResourceList           `json:"requested,omitempty"`
-	Limits                               v1.ResourceList           `json:"limits,omitempty"`
-	Version                              *version.Info             `json:"version,omitempty"`
-	AppliedPodSecurityPolicyTemplateName string                    `json:"appliedPodSecurityPolicyTemplateId"`
-	AppliedEnableNetworkPolicy           bool                      `json:"appliedEnableNetworkPolicy" norman:"nocreate,noupdate,default=false"`
-	Capabilities                         Capabilities              `json:"capabilities,omitempty"`
-	MonitoringStatus                     *MonitoringStatus         `json:"monitoringStatus,omitempty" norman:"nocreate,noupdate"`
-	IstioEnabled                         bool                      `json:"istioEnabled,omitempty" norman:"nocreate,noupdate,default=false"`
-	CertificatesExpiration               map[string]CertExpiration `json:"certificatesExpiration,omitempty"`
+	Driver                               string                      `json:"driver"`
+	AgentImage                           string                      `json:"agentImage"`
+	AgentFeatures                        map[string]bool             `json:"agentFeatures,omitempty"`
+	AuthImage                            string                      `json:"authImage"`
+	ComponentStatuses                    []ClusterComponentStatus    `json:"componentStatuses,omitempty"`
+	APIEndpoint                          string                      `json:"apiEndpoint,omitempty"`
+	ServiceAccountToken                  string                      `json:"serviceAccountToken,omitempty"`
+	CACert                               string                      `json:"caCert,omitempty"`
+	Capacity                             v1.ResourceList             `json:"capacity,omitempty"`
+	Allocatable                          v1.ResourceList             `json:"allocatable,omitempty"`
+	AppliedSpec                          ClusterSpec                 `json:"appliedSpec,omitempty"`
+	FailedSpec                           *ClusterSpec                `json:"failedSpec,omitempty"`
+	Requested                            v1.ResourceList             `json:"requested,omitempty"`
+	Limits                               v1.ResourceList             `json:"limits,omitempty"`
+	Version                              *version.Info               `json:"version,omitempty"`
+	AppliedPodSecurityPolicyTemplateName string                      `json:"appliedPodSecurityPolicyTemplateId"`
+	AppliedEnableNetworkPolicy           bool                        `json:"appliedEnableNetworkPolicy" norman:"nocreate,noupdate,default=false"`
+	Capabilities                         Capabilities                `json:"capabilities,omitempty"`
+	MonitoringStatus                     *MonitoringStatus           `json:"monitoringStatus,omitempty" norman:"nocreate,noupdate"`
+	IstioEnabled                         bool                        `json:"istioEnabled,omitempty" norman:"nocreate,noupdate,default=false"`
+	CertificatesExpiration               map[string]CertExpiration   `json:"certificatesExpiration,omitempty"`
+	ScheduledClusterScanStatus           *ScheduledClusterScanStatus `json:"scheduledClusterScanStatus,omitempty"`
 }
 
 type ClusterComponentStatus struct {

@@ -10,6 +10,6 @@ replace (
 
 require (
 	github.com/blang/semver v3.5.1+incompatible
-	github.com/rancher/types v0.0.0-20200213193746-f3c2d9d0e471
+	github.com/rancher/types v0.0.0-20200222171134-3455ef4f918b
 	github.com/sirupsen/logrus v1.4.2
 )
