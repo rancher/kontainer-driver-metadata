@@ -68,9 +68,7 @@ const (
 	ClusterDriverImported = "imported"
 	ClusterDriverLocal    = "local"
 	ClusterDriverRKE      = "rancherKubernetesEngine"
-	ClusterDriverGKE      = "googleKubernetesEngine"
-	ClusterDriverEKS      = "amazonElasticContainerService"
-	ClusterDriverAKS      = "azureKubernetesService"
+	ClusterDriverK3s      = "k3s"
 )
 
 // +genclient
@@ -111,6 +109,7 @@ type ClusterSpec struct {
 	DisplayName                         string              `json:"displayName" norman:"required"`
 	Description                         string              `json:"description"`
 	Internal                            bool                `json:"internal" norman:"nocreate,noupdate"`
+	K3sConfig                           *K3sConfig          `json:"k3sConfig,omitempty"`
 	ImportedConfig                      *ImportedConfig     `json:"importedConfig,omitempty" norman:"nocreate,noupdate"`
 	GoogleKubernetesEngineConfig        *MapStringInterface `json:"googleKubernetesEngineConfig,omitempty"`
 	AzureKubernetesServiceConfig        *MapStringInterface `json:"azureKubernetesServiceConfig,omitempty"`
@@ -277,7 +276,8 @@ type MonitoringOutput struct {
 }
 
 type RestoreFromEtcdBackupInput struct {
-	EtcdBackupName string `json:"etcdBackupName,omitempty" norman:"type=reference[etcdBackup]"`
+	EtcdBackupName   string `json:"etcdBackupName,omitempty" norman:"type=reference[etcdBackup]"`
+	RestoreRkeConfig string `json:"restoreRkeConfig,omitempty"`
 }
 
 type RotateCertificateInput struct {

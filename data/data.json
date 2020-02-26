@@ -4117,5 +4117,13 @@
     "1.1.8": "Cluster provisioned by RKE doesn't require or maintain a configuration file for kube-apiserver.\nAll configuration is passed in as arguments at container run time."
    }
   }
+ },
+ "k3s": {
+  "channels": [
+   {
+    "latest": "v1.17.2+k3s1",
+    "name": "stable"
+   }
+  ]
  }
 }
