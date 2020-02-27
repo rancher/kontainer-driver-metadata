@@ -4121,8 +4121,12 @@
  "k3s": {
   "channels": [
    {
-    "latest": "v1.17.2+k3s1",
-    "name": "stable"
+    "latest": "v1.17.3+k3s1",
+    "name": "v1.17"
+   },
+   {
+    "latest": "v1.16.7+k3s1",
+    "name": "v1.16"
    }
   ]
  }
