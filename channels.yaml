@@ -1,6 +1,8 @@
-channels:
-- name: v1.17
-  latest: v1.17.3+k3s1
-- name: v1.16
-  latest: v1.16.7+k3s1
+releases:
+- version: v1.17.3+k3s1
+  minChannelServerVersion: v2.4.0
+  maxChannelServerVersion: v2.4.0
+- version: v1.16.7+k3s1
+  minChannelServerVersion: v2.4.0
+  maxChannelServerVersion: v2.4.0
 
