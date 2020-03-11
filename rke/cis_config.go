@@ -21,21 +21,21 @@ All configuration is passed in as arguments at container run time.`
 All configuration is passed in as arguments at container run time.`
 
 	// reasons for skipped checks
-	reasonForEtcdDataDir           = `TODO`
-	reasonForKubeletCA             = `TODO`
+	reasonForEtcdDataDir           = `A system service account is required for etcd data directory ownership. Refer to the hardening guide for more details`
+	reasonForKubeletCA             = `TODO: tests using this reason should pass and not be skipped, this needs review`
 	reasonForPSP                   = `Enabling Pod Security Policy can cause issues with many helm chart installations`
-	reasonForAuditLog              = `TODO`
-	reasonForEncryption            = `TODO`
-	reasonForKubeletCertRotation   = `TODO`
-	reasonForProtectKernelDefaults = `TODO`
-	reasonForKubeletTLS            = `TODO`
-	reasonForDefaultSA             = `TODO`
+	reasonForAuditLog              = `Even though currently, Kubernetes provides only basic audit capabilities, audit logging should be enabled.`
+	reasonForEncryption            = `ETCD objects are sensitive in nature and should be encrypted at rest to avoid any disclosures.`
+	reasonForKubeletCertRotation   = `This should be enabled to ensure that the there are no downtimes due to expired certificates`
+	reasonForProtectKernelDefaults = `Ignoring this could potentially lead to running pods with undesired kernel behavior.`
+	reasonForKubeletTLS            = `By default a self signed cert is used for communication of sensitive information and should not be used on public networks.`
+	reasonForDefaultSA             = `All workloads which require access to the Kubernetes API will require an explicit service account to be created.`
 	reasonForNetPol                = `Enabling Network Policies can cause lot of unintended network traffic disruptions`
 	reasonForDefaultNS             = `A default namespace provides a flexible workspace to try out various deployments`
-	reasonForRotateCerts           = `TODO`
-	reasonForHostnameOverride      = `TODO`
-	reasonForAlwaysPullImages      = `TODO`
-	reasonForEventRateLimit        = `TODO`
+	reasonForRotateCerts           = `RKE handles certificate rotation through an external process.`
+	reasonForHostnameOverride      = `This is used by most cloud providers. Not setting this is not practical in most cases.`
+	reasonForAlwaysPullImages      = `The --cadvisor-port parameter was deprecated in Kubernetes 1.12 so this recommendation is retired.`
+	reasonForEventRateLimit        = `Desired limits need to carefully tuned per environment.`
 )
 
 var rkeCIS14NotApplicableChecks = map[string]string{
@@ -49,6 +49,7 @@ var rkeCIS14NotApplicableChecks = map[string]string{
 	"1.4.8":  reasonNoConfigFileEtcd,
 	"1.4.13": reasonNoKubeConfigDefault,
 	"1.4.14": reasonNoKubeConfigDefault,
+	"2.1.12": reasonForRotateCerts,
 	"2.2.3":  reasonNoConfigFileKubeletSvc,
 	"2.2.4":  reasonNoConfigFileKubeletSvc,
 	"2.2.9":  reasonNoConfigFileKubelet,
@@ -76,7 +77,6 @@ var rkeCIS14SkippedChecks = map[string]string{
 	"2.1.6":   reasonForProtectKernelDefaults,
 	"2.1.8":   reasonForHostnameOverride,
 	"2.1.10":  reasonForKubeletTLS,
-	"2.1.12":  reasonForRotateCerts,
 }
 
 var rkeCIS15NotApplicableChecks = map[string]string{
