@@ -9,39 +9,37 @@ const (
 	reasonForMalformed          = `The argument --repair-malformed-updates has been removed as of Kubernetes version 1.14`
 	reasonNoConfigFileApiServer = `Cluster provisioned by RKE doesn't require or maintain a configuration file for kube-apiserver.
 All configuration is passed in as arguments at container run time.`
-	reasonNoConfigFileEtcd = `Cluster provisioned by RKE doesn't require or maintain a configuration file for etcd.
-All configuration is passed in as arguments at container run time.`
-	reasonNoConfigFileScheduler = `Cluster provisioned by RKE doesn't require or maintain a configuration file for scheduler.
-All configuration is passed in as arguments at container run time.`
 	reasonNoConfigFileControllerManager = `Cluster provisioned by RKE doesn't require or maintain a configuration file for controller-manager.
 All configuration is passed in as arguments at container run time.`
-	reasonNoKubeConfigDefault    = `RKE does not store the kubernetes default kubeconfig credentials file on the nodes.`
-	reasonNoConfigFileKubeletSvc = `RKE doesn’t require or maintain a configuration file for the kubelet service.
+	reasonNoConfigFileEtcd = `Cluster provisioned by RKE doesn't require or maintain a configuration file for etcd.
 All configuration is passed in as arguments at container run time.`
 	reasonNoConfigFileKubelet = `RKE doesn’t require or maintain a configuration file for the kubelet.
 All configuration is passed in as arguments at container run time.`
+	reasonNoConfigFileKubeletSvc = `Cluster provisioned by RKE doesn’t require or maintain a configuration file for the kubelet service.
+All configuration is passed in as arguments at container run time.`
+	reasonNoConfigFileScheduler = `Cluster provisioned by RKE doesn't require or maintain a configuration file for scheduler.
+All configuration is passed in as arguments at container run time.`
+	reasonForNoHostnameOverride = `Clusters provisioned by RKE clusters and most cloud providers require hostnames.`
+	reasonNoKubeConfigDefault   = `Cluster provisioned by RKE does not store the kubernetes default kubeconfig credentials file on the nodes.`
+	reasonForNotRotatingCerts   = `Cluster provisioned by RKE handles certificate rotation directly through RKE.`
 
 	// reasons for skipped checks
-	reasonForEtcdDataDir           = `TODO`
-	reasonForKubeletCA             = `TODO`
-	reasonForPSP                   = `Enabling Pod Security Policy can cause issues with many helm chart installations`
-	reasonForAuditLog              = `TODO`
-	reasonForEncryption            = `TODO`
-	reasonForKubeletCertRotation   = `TODO`
-	reasonForProtectKernelDefaults = `TODO`
-	reasonForKubeletTLS            = `TODO`
-	reasonForDefaultSA             = `TODO`
-	reasonForNetPol                = `Enabling Network Policies can cause lot of unintended network traffic disruptions`
-	reasonForDefaultNS             = `A default namespace provides a flexible workspace to try out various deployments`
-	reasonForRotateCerts           = `TODO`
-	reasonForHostnameOverride      = `TODO`
-	reasonForAlwaysPullImages      = `TODO`
-	reasonForEventRateLimit        = `TODO`
-	reasonForLocalhostListening    = `TODO`
+	reasonForAlwaysPullImages                    = `Enabling AlwaysPullImages can use significant bandwidth.`
+	reasonForEtcdDataDir                         = `A system service account is required for etcd data directory ownership. Refer to Rancher's hardening guide for more details on how to configure this ownership.`
+	reasonForEventRateLimit                      = `EventRateLimit needs to be tuned depending on the cluster.`
+	reasonForKubeletServerCerts                  = `When generating serving certificates, functionality could break in conjunction with hostname overrides which are required for certain cloud providers.`
+	reasonForLocalhostListeningControllerManager = `Adding this argument prevents Rancher's monitoring tool to collect metrics on the controller manager.`
+	reasonForLocalhostListeningScheduler         = `Adding this argument prevents Rancher's monitoring tool to collect metrics on the scheduler.`
+	reasonForProtectKernelDefaults               = `System level configurations are required prior to provisioning the cluster in order for this argument to be set to true. `
+	reasonForPSP                                 = `Enabling Pod Security Policy can cause applications to unexpectedly fail. `
+	reasonForDefaultSA                           = `TODO`
+	reasonForDefaultNS                           = `A default namespace provides a flexible workspace to try out various deployments`
+	reasonForNetPol                              = `Enabling Network Policies can cause lot of unintended network traffic disruptions`
 )
 
 var rkeCIS14NotApplicableChecks = map[string]string{
 	"1.1.9":  reasonForMalformed,
+	"1.3.6":  reasonForNotRotatingCerts,
 	"1.4.1":  reasonNoConfigFileApiServer,
 	"1.4.2":  reasonNoConfigFileApiServer,
 	"1.4.3":  reasonNoConfigFileControllerManager,
@@ -52,6 +50,9 @@ var rkeCIS14NotApplicableChecks = map[string]string{
 	"1.4.8":  reasonNoConfigFileEtcd,
 	"1.4.13": reasonNoKubeConfigDefault,
 	"1.4.14": reasonNoKubeConfigDefault,
+	"2.1.8":  reasonForNoHostnameOverride,
+	"2.1.12": reasonForNotRotatingCerts,
+	"2.1.13": reasonForNotRotatingCerts,
 	"2.2.3":  reasonNoConfigFileKubeletSvc,
 	"2.2.4":  reasonNoConfigFileKubeletSvc,
 	"2.2.9":  reasonNoConfigFileKubelet,
@@ -59,31 +60,19 @@ var rkeCIS14NotApplicableChecks = map[string]string{
 }
 
 var rkeCIS14SkippedChecks = map[string]string{
-	"1.1.11":  reasonForAlwaysPullImages,
-	"1.1.15":  reasonForAuditLog,
-	"1.1.16":  reasonForAuditLog,
-	"1.1.17":  reasonForAuditLog,
-	"1.1.18":  reasonForAuditLog,
-	"1.1.21":  reasonForKubeletCA,
-	"1.1.24":  reasonForPSP,
-	"1.1.34":  reasonForEncryption,
-	"1.1.35":  reasonForEncryption,
-	"1.1.36":  reasonForEventRateLimit,
-	"1.1.37a": reasonForAuditLog,
-	"1.1.37b": reasonForAuditLog,
-	"1.2.2":   reasonForLocalhostListening,
-	"1.3.6":   reasonForKubeletCertRotation,
-	"1.3.7":   reasonForLocalhostListening,
-	"1.4.12":  reasonForEtcdDataDir,
-	"1.7.2":   reasonForPSP,
-	"1.7.3":   reasonForPSP,
-	"1.7.4":   reasonForPSP,
-	"1.7.5":   reasonForPSP,
-	"2.1.6":   reasonForProtectKernelDefaults,
-	"2.1.8":   reasonForHostnameOverride,
-	"2.1.10":  reasonForKubeletTLS,
-	"2.1.12":  reasonForRotateCerts,
-	"2.1.13":  reasonForKubeletCertRotation,
+	"1.1.11": reasonForAlwaysPullImages,
+	"1.1.21": reasonForKubeletServerCerts,
+	"1.1.24": reasonForPSP,
+	"1.1.36": reasonForEventRateLimit,
+	"1.2.2":  reasonForLocalhostListeningScheduler,
+	"1.3.7":  reasonForLocalhostListeningControllerManager,
+	"1.4.12": reasonForEtcdDataDir,
+	"1.7.2":  reasonForPSP,
+	"1.7.3":  reasonForPSP,
+	"1.7.4":  reasonForPSP,
+	"1.7.5":  reasonForPSP,
+	"2.1.6":  reasonForProtectKernelDefaults,
+	"2.1.10": reasonForKubeletServerCerts,
 }
 
 var rkeCIS15NotApplicableChecks = map[string]string{
@@ -101,27 +90,20 @@ var rkeCIS15NotApplicableChecks = map[string]string{
 	"1.1.16": reasonNoConfigFileScheduler,
 	"1.1.17": reasonNoConfigFileControllerManager,
 	"1.1.18": reasonNoConfigFileControllerManager,
+	"1.3.6":  reasonForNotRotatingCerts,
 	"4.1.1":  reasonNoConfigFileKubeletSvc,
 	"4.1.2":  reasonNoConfigFileKubeletSvc,
 	"4.1.9":  reasonNoConfigFileKubelet,
 	"4.1.10": reasonNoConfigFileKubelet,
+	"4.2.12": reasonForNotRotatingCerts,
 }
 
 var rkeCIS15SkippedChecks = map[string]string{
 	"1.1.12": reasonForEtcdDataDir,
-	"1.2.6":  reasonForKubeletCA,
+	"1.2.6":  reasonForKubeletServerCerts,
 	"1.2.16": reasonForPSP,
-	"1.2.22": reasonForAuditLog,
-	"1.2.23": reasonForAuditLog,
-	"1.2.24": reasonForAuditLog,
-	"1.2.25": reasonForAuditLog,
-	"1.2.33": reasonForEncryption,
-	"1.2.34": reasonForEncryption,
-	"1.3.6":  reasonForKubeletCertRotation,
-	"3.2.1":  reasonForAuditLog,
 	"4.2.6":  reasonForProtectKernelDefaults,
-	"4.2.10": reasonForKubeletTLS,
-	"4.2.12": reasonForKubeletCertRotation,
+	"4.2.10": reasonForKubeletServerCerts,
 	"5.1.5":  reasonForDefaultSA,
 	"5.2.2":  reasonForPSP,
 	"5.2.3":  reasonForPSP,
