@@ -4178,19 +4178,19 @@
  },
  "CisConfigParams": {
   "default": {
-   "benchmarkVersion": "rke-cis-1.5"
+   "benchmarkVersion": "rke-cis-1.4"
   },
   "v1.15": {
-   "benchmarkVersion": "rke-cis-1.5"
+   "benchmarkVersion": "rke-cis-1.4"
   },
   "v1.16": {
-   "benchmarkVersion": "rke-cis-1.5"
+   "benchmarkVersion": "rke-cis-1.4"
   },
   "v1.17": {
-   "benchmarkVersion": "rke-cis-1.5"
+   "benchmarkVersion": "rke-cis-1.4"
   },
   "v1.18": {
-   "benchmarkVersion": "rke-cis-1.5"
+   "benchmarkVersion": "rke-cis-1.4"
   }
  },
  "CisBenchmarkVersionInfo": {
@@ -4208,20 +4208,23 @@
   },
   "rke-cis-1.4": {
    "managed": true,
-   "minKubernetesVersion": "1.13",
+   "minKubernetesVersion": "1.15",
    "skippedChecks": {
     "1.1.11": "TODO",
     "1.1.15": "TODO",
     "1.1.16": "TODO",
     "1.1.17": "TODO",
     "1.1.18": "TODO",
+    "1.1.21": "TODO",
     "1.1.24": "Enabling Pod Security Policy can cause issues with many helm chart installations",
     "1.1.34": "TODO",
     "1.1.35": "TODO",
     "1.1.36": "TODO",
     "1.1.37a": "TODO",
     "1.1.37b": "TODO",
+    "1.2.2": "TODO",
     "1.3.6": "TODO",
+    "1.3.7": "TODO",
     "1.4.12": "TODO",
     "1.7.2": "Enabling Pod Security Policy can cause issues with many helm chart installations",
     "1.7.3": "Enabling Pod Security Policy can cause issues with many helm chart installations",
@@ -4229,10 +4232,12 @@
     "1.7.5": "Enabling Pod Security Policy can cause issues with many helm chart installations",
     "2.1.10": "TODO",
     "2.1.12": "TODO",
+    "2.1.13": "TODO",
     "2.1.6": "TODO",
     "2.1.8": "TODO"
    },
    "notApplicableChecks": {
+    "1.1.9": "The argument --repair-malformed-updates has been removed as of Kubernetes version 1.14",
     "1.4.1": "Cluster provisioned by RKE doesn't require or maintain a configuration file for kube-apiserver.\nAll configuration is passed in as arguments at container run time.",
     "1.4.13": "RKE does not store the kubernetes default kubeconfig credentials file on the nodes.",
     "1.4.14": "RKE does not store the kubernetes default kubeconfig credentials file on the nodes.",
