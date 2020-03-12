@@ -6,6 +6,7 @@ import (
 
 const (
 	// reasons for not applicable checks
+	reasonForMalformed          = `The argument --repair-malformed-updates has been removed as of Kubernetes version 1.14`
 	reasonNoConfigFileApiServer = `Cluster provisioned by RKE doesn't require or maintain a configuration file for kube-apiserver.
 All configuration is passed in as arguments at container run time.`
 	reasonNoConfigFileEtcd = `Cluster provisioned by RKE doesn't require or maintain a configuration file for etcd.
@@ -36,9 +37,11 @@ All configuration is passed in as arguments at container run time.`
 	reasonForHostnameOverride      = `TODO`
 	reasonForAlwaysPullImages      = `TODO`
 	reasonForEventRateLimit        = `TODO`
+	reasonForLocalhostListening    = `TODO`
 )
 
 var rkeCIS14NotApplicableChecks = map[string]string{
+	"1.1.9":  reasonForMalformed,
 	"1.4.1":  reasonNoConfigFileApiServer,
 	"1.4.2":  reasonNoConfigFileApiServer,
 	"1.4.3":  reasonNoConfigFileControllerManager,
@@ -61,13 +64,16 @@ var rkeCIS14SkippedChecks = map[string]string{
 	"1.1.16":  reasonForAuditLog,
 	"1.1.17":  reasonForAuditLog,
 	"1.1.18":  reasonForAuditLog,
+	"1.1.21":  reasonForKubeletCA,
 	"1.1.24":  reasonForPSP,
 	"1.1.34":  reasonForEncryption,
 	"1.1.35":  reasonForEncryption,
 	"1.1.36":  reasonForEventRateLimit,
 	"1.1.37a": reasonForAuditLog,
 	"1.1.37b": reasonForAuditLog,
+	"1.2.2":   reasonForLocalhostListening,
 	"1.3.6":   reasonForKubeletCertRotation,
+	"1.3.7":   reasonForLocalhostListening,
 	"1.4.12":  reasonForEtcdDataDir,
 	"1.7.2":   reasonForPSP,
 	"1.7.3":   reasonForPSP,
@@ -77,6 +83,7 @@ var rkeCIS14SkippedChecks = map[string]string{
 	"2.1.8":   reasonForHostnameOverride,
 	"2.1.10":  reasonForKubeletTLS,
 	"2.1.12":  reasonForRotateCerts,
+	"2.1.13":  reasonForKubeletCertRotation,
 }
 
 var rkeCIS15NotApplicableChecks = map[string]string{
@@ -127,19 +134,19 @@ var rkeCIS15SkippedChecks = map[string]string{
 func loadCisConfigParams() map[string]v3.CisConfigParams {
 	return map[string]v3.CisConfigParams{
 		"default": {
-			BenchmarkVersion: "rke-cis-1.5",
+			BenchmarkVersion: "rke-cis-1.4",
 		},
 		"v1.15": {
-			BenchmarkVersion: "rke-cis-1.5",
+			BenchmarkVersion: "rke-cis-1.4",
 		},
 		"v1.16": {
-			BenchmarkVersion: "rke-cis-1.5",
+			BenchmarkVersion: "rke-cis-1.4",
 		},
 		"v1.17": {
-			BenchmarkVersion: "rke-cis-1.5",
+			BenchmarkVersion: "rke-cis-1.4",
 		},
 		"v1.18": {
-			BenchmarkVersion: "rke-cis-1.5",
+			BenchmarkVersion: "rke-cis-1.4",
 		},
 	}
 }
@@ -148,7 +155,7 @@ func loadCisBenchmarkVersionInfo() map[string]v3.CisBenchmarkVersionInfo {
 	return map[string]v3.CisBenchmarkVersionInfo{
 		"rke-cis-1.4": {
 			Managed:              true,
-			MinKubernetesVersion: "1.13",
+			MinKubernetesVersion: "1.15",
 			SkippedChecks:        rkeCIS14SkippedChecks,
 			NotApplicableChecks:  rkeCIS14NotApplicableChecks,
 		},
