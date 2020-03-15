@@ -6,32 +6,33 @@ import (
 
 const (
 	// reasons for not applicable checks
-	reasonForMalformed          = `The argument --repair-malformed-updates has been removed as of Kubernetes version 1.14`
-	reasonNoConfigFileApiServer = `Cluster provisioned by RKE doesn't require or maintain a configuration file for kube-apiserver.
+	reasonForMalformed          = `The argument --repair-malformed-updates has been removed as of Kubernetes version 1.14.`
+	reasonNoConfigFileApiServer = `Clusters provisioned by RKE doesn't require or maintain a configuration file for kube-apiserver.
 All configuration is passed in as arguments at container run time.`
-	reasonNoConfigFileControllerManager = `Cluster provisioned by RKE doesn't require or maintain a configuration file for controller-manager.
+	reasonNoConfigFileControllerManager = `Clusters provisioned by RKE doesn't require or maintain a configuration file for controller-manager.
 All configuration is passed in as arguments at container run time.`
-	reasonNoConfigFileEtcd = `Cluster provisioned by RKE doesn't require or maintain a configuration file for etcd.
+	reasonNoConfigFileEtcd = `Clusters provisioned by RKE doesn't require or maintain a configuration file for etcd.
 All configuration is passed in as arguments at container run time.`
-	reasonNoConfigFileKubelet = `RKE doesn’t require or maintain a configuration file for the kubelet.
+	reasonNoConfigFileKubelet = `Clusters provisioned by RKE doesn’t require or maintain a configuration file for the kubelet.
 All configuration is passed in as arguments at container run time.`
-	reasonNoConfigFileKubeletSvc = `Cluster provisioned by RKE doesn’t require or maintain a configuration file for the kubelet service.
+	reasonNoConfigFileKubeletSvc = `Clusters provisioned by RKE doesn’t require or maintain a configuration file for the kubelet service.
 All configuration is passed in as arguments at container run time.`
-	reasonNoConfigFileScheduler = `Cluster provisioned by RKE doesn't require or maintain a configuration file for scheduler.
+	reasonNoConfigFileScheduler = `Clusters provisioned by RKE doesn't require or maintain a configuration file for scheduler.
 All configuration is passed in as arguments at container run time.`
 	reasonForNoHostnameOverride = `Clusters provisioned by RKE clusters and most cloud providers require hostnames.`
-	reasonNoKubeConfigDefault   = `Cluster provisioned by RKE does not store the kubernetes default kubeconfig credentials file on the nodes.`
-	reasonForNotRotatingCerts   = `Cluster provisioned by RKE handles certificate rotation directly through RKE.`
+	reasonNoKubeConfigDefault   = `Clusters provisioned by RKE does not store the kubernetes default kubeconfig credentials file on the nodes.`
+	reasonForNotRotatingCerts   = `Clusters provisioned by RKE handles certificate rotation directly through RKE.`
 
 	// reasons for skipped checks
 	reasonForAlwaysPullImages                    = `Enabling AlwaysPullImages can use significant bandwidth.`
 	reasonForEtcdDataDir                         = `A system service account is required for etcd data directory ownership. Refer to Rancher's hardening guide for more details on how to configure this ownership.`
+	reasonForEncryption                          = `Enabling encryption changes how data can be recovered as data is encrypted.`
 	reasonForEventRateLimit                      = `EventRateLimit needs to be tuned depending on the cluster.`
 	reasonForKubeletServerCerts                  = `When generating serving certificates, functionality could break in conjunction with hostname overrides which are required for certain cloud providers.`
 	reasonForLocalhostListeningControllerManager = `Adding this argument prevents Rancher's monitoring tool to collect metrics on the controller manager.`
 	reasonForLocalhostListeningScheduler         = `Adding this argument prevents Rancher's monitoring tool to collect metrics on the scheduler.`
-	reasonForProtectKernelDefaults               = `System level configurations are required prior to provisioning the cluster in order for this argument to be set to true. `
-	reasonForPSP                                 = `Enabling Pod Security Policy can cause applications to unexpectedly fail. `
+	reasonForProtectKernelDefaults               = `System level configurations are required prior to provisioning the cluster in order for this argument to be set to true.`
+	reasonForPSP                                 = `Enabling Pod Security Policy can cause applications to unexpectedly fail.`
 	reasonForDefaultSA                           = `TODO`
 	reasonForDefaultNS                           = `A default namespace provides a flexible workspace to try out various deployments`
 	reasonForNetPol                              = `Enabling Network Policies can cause lot of unintended network traffic disruptions`
@@ -63,6 +64,8 @@ var rkeCIS14SkippedChecks = map[string]string{
 	"1.1.11": reasonForAlwaysPullImages,
 	"1.1.21": reasonForKubeletServerCerts,
 	"1.1.24": reasonForPSP,
+	"1.1.34": reasonForEncryption,
+	"1.1.35": reasonForEncryption,
 	"1.1.36": reasonForEventRateLimit,
 	"1.2.2":  reasonForLocalhostListeningScheduler,
 	"1.3.7":  reasonForLocalhostListeningControllerManager,
