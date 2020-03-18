@@ -25,17 +25,17 @@ All configuration is passed in as arguments at container run time.`
 
 	// reasons for skipped checks
 	reasonForAlwaysPullImages                    = `Enabling AlwaysPullImages can use significant bandwidth.`
+	reasonForDefaultSA                           = `Kubernetes provides default service accounts to be used.`
+	reasonForDefaultNS                           = `Kubernetes provides a default namespace.`
 	reasonForEtcdDataDir                         = `A system service account is required for etcd data directory ownership. Refer to Rancher's hardening guide for more details on how to configure this ownership.`
 	reasonForEncryption                          = `Enabling encryption changes how data can be recovered as data is encrypted.`
 	reasonForEventRateLimit                      = `EventRateLimit needs to be tuned depending on the cluster.`
 	reasonForKubeletServerCerts                  = `When generating serving certificates, functionality could break in conjunction with hostname overrides which are required for certain cloud providers.`
 	reasonForLocalhostListeningControllerManager = `Adding this argument prevents Rancher's monitoring tool to collect metrics on the controller manager.`
 	reasonForLocalhostListeningScheduler         = `Adding this argument prevents Rancher's monitoring tool to collect metrics on the scheduler.`
+	reasonForNetPol                              = `Enabling Network Policies can prevent certain applications from communicating with each other.`
 	reasonForProtectKernelDefaults               = `System level configurations are required prior to provisioning the cluster in order for this argument to be set to true.`
 	reasonForPSP                                 = `Enabling Pod Security Policy can cause applications to unexpectedly fail.`
-	reasonForDefaultSA                           = `TODO`
-	reasonForDefaultNS                           = `A default namespace provides a flexible workspace to try out various deployments`
-	reasonForNetPol                              = `Enabling Network Policies can cause lot of unintended network traffic disruptions`
 )
 
 var rkeCIS14NotApplicableChecks = map[string]string{
@@ -81,12 +81,12 @@ var rkeCIS14SkippedChecks = map[string]string{
 var rkeCIS15NotApplicableChecks = map[string]string{
 	"1.1.1":  reasonNoConfigFileApiServer,
 	"1.1.2":  reasonNoConfigFileApiServer,
-	"1.1.3":  reasonNoConfigFileApiServer,
-	"1.1.4":  reasonNoConfigFileApiServer,
-	"1.1.5":  reasonNoConfigFileApiServer,
-	"1.1.6":  reasonNoConfigFileApiServer,
-	"1.1.7":  reasonNoConfigFileApiServer,
-	"1.1.8":  reasonNoConfigFileApiServer,
+	"1.1.3":  reasonNoConfigFileControllerManager,
+	"1.1.4":  reasonNoConfigFileControllerManager,
+	"1.1.5":  reasonNoConfigFileScheduler,
+	"1.1.6":  reasonNoConfigFileScheduler,
+	"1.1.7":  reasonNoConfigFileEtcd,
+	"1.1.8":  reasonNoConfigFileEtcd,
 	"1.1.13": reasonNoKubeConfigDefault,
 	"1.1.14": reasonNoKubeConfigDefault,
 	"1.1.15": reasonNoConfigFileScheduler,
@@ -105,6 +105,8 @@ var rkeCIS15SkippedChecks = map[string]string{
 	"1.1.12": reasonForEtcdDataDir,
 	"1.2.6":  reasonForKubeletServerCerts,
 	"1.2.16": reasonForPSP,
+	"1.2.33": reasonForEncryption,
+	"1.2.34": reasonForEncryption,
 	"4.2.6":  reasonForProtectKernelDefaults,
 	"4.2.10": reasonForKubeletServerCerts,
 	"5.1.5":  reasonForDefaultSA,
