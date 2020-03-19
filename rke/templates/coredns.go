@@ -431,10 +431,6 @@ spec:
       tolerations:
         - key: "CriticalAddonsOnly"
           operator: "Exists"
-        - effect: NoExecute
-          operator: Exists
-        - effect: NoSchedule
-          operator: Exists
       nodeSelector:
         beta.kubernetes.io/os: linux
       {{ range $k, $v := .NodeSelector }}
@@ -558,11 +554,6 @@ spec:
               - matchExpressions:
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
-      tolerations:
-      - effect: NoExecute
-        operator: Exists
-      - effect: NoSchedule
-        operator: Exists
       containers:
       - name: autoscaler
         image: {{.CoreDNSAutoScalerImage}}
@@ -739,10 +730,6 @@ spec:
       tolerations:
         - key: "CriticalAddonsOnly"
           operator: "Exists"
-        - effect: NoExecute
-          operator: Exists
-        - effect: NoSchedule
-          operator: Exists
       nodeSelector:
         beta.kubernetes.io/os: linux
       {{ range $k, $v := .NodeSelector }}
@@ -874,11 +861,6 @@ spec:
               - matchExpressions:
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
-      tolerations:
-      - effect: NoExecute
-        operator: Exists
-      - effect: NoSchedule
-        operator: Exists
       containers:
       - name: autoscaler
         image: {{.CoreDNSAutoScalerImage}}
