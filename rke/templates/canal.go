@@ -199,6 +199,7 @@ data:
       "Network": "{{.ClusterCIDR}}",
       "Backend": {
         "Type": "{{.FlannelBackend.Type}}",
+	"SubnetLen": {{ .FlannelBackend.SubnetLen }},
         "VNI": {{.FlannelBackend.VNI}},
         "Port": {{.FlannelBackend.Port}}
       }
