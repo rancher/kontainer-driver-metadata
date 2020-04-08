@@ -2751,6 +2751,7 @@
    "flannelCni": "rancher/flannel-cni:v0.3.0-rancher5",
    "calicoNode": "rancher/calico-node:v3.4.0",
    "calicoCni": "rancher/calico-cni:v3.4.0",
+   "calicoControllers": "rancher/calico-kube-controllers:v3.4.0",
    "calicoCtl": "rancher/calico-ctl:v2.0.0",
    "canalNode": "rancher/calico-node:v3.4.0",
    "canalCni": "rancher/calico-cni:v3.4.0",
