@@ -1428,6 +1428,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CalicoNode:                m("quay.io/calico/node:v3.4.0"),
 			CalicoCNI:                 m("quay.io/calico/cni:v3.4.0"),
 			CalicoCtl:                 m("quay.io/calico/ctl:v2.0.0"),
+			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.4.0"),
 			CanalNode:                 m("quay.io/calico/node:v3.4.0"),
 			CanalCNI:                  m("quay.io/calico/cni:v3.4.0"),
 			CanalFlannel:              m("quay.io/coreos/flannel:v0.10.0"),
