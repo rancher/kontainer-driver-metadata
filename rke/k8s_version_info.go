@@ -67,17 +67,35 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 			MaxRancherVersion: "2.2.9",
 			MaxRKEVersion:     "0.2.8",
 		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		"v1.15.11-rancher1-1": {
+			MinRancherVersion: "2.3.3",
+			MinRKEVersion:     "1.0.0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
 		"v1.15.11-rancher1-2": {
-			MinRancherVersion: "2.3.5",
-			MinRKEVersion:     "1.0.4",
+			MinRancherVersion: "2.3.3",
+			MinRKEVersion:     "1.0.0",
 		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		"v1.16.8-rancher1-1": {
+			MinRancherVersion: "2.3.3",
+			MinRKEVersion:     "1.0.0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
 		"v1.16.8-rancher1-2": {
-			MinRancherVersion: "2.3.5",
-			MinRKEVersion:     "1.0.4",
+			MinRancherVersion: "2.3.3",
+			MinRKEVersion:     "1.0.0",
 		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		"v1.17.4-rancher1-1": {
+			MinRancherVersion: "2.3.3",
+			MinRKEVersion:     "1.0.0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
 		"v1.17.4-rancher1-2": {
-			MinRancherVersion: "2.3.5",
-			MinRKEVersion:     "1.0.4",
+			MinRancherVersion: "2.3.3",
+			MinRKEVersion:     "1.0.0",
 		},
 		"v1.8.10-rancher1-1": {
 			DeprecateRKEVersion:     "0.2.2",
