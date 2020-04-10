@@ -53,6 +53,8 @@ func initData() {
 
 	DriverData.K8sVersionInfo = loadK8sVersionInfo()
 
+	validateVersionInfo()
+
 	// init Windows versions
 	DriverData.K8sVersionWindowsServiceOptions = loadK8sVersionWindowsServiceOptions()
 	DriverData.K8sVersionDockerInfo = loadK8sVersionDockerInfo()
@@ -63,6 +65,34 @@ func initData() {
 
 	if err := readFile("./channels.yaml", DriverData.K3S); err != nil {
 		panic(err)
+	}
+}
+
+func validateVersionInfo() {
+	var errorsFound bool
+	var incompleteVersions []string
+	versionRangesNeedSpecificVersionInfo := []string{">=1.15.11-rancher1-1 <1.16.0-alpha", ">=1.16.8-rancher1-1 <1.17.0-alpha", ">=1.17.4-rancher1-1 <1.18.0-alpha"}
+	for k8sVersion := range DriverData.K8sVersionRKESystemImages {
+		toMatch, err := semver.Make(k8sVersion[1:])
+		if err != nil {
+			panic(fmt.Sprintf("k8sVersion not sem-ver %s %v", k8sVersion, err))
+		}
+		for _, versionRange := range versionRangesNeedSpecificVersionInfo {
+			parsedVersionRange, err := semver.ParseRange(versionRange)
+			if err != nil {
+				panic(fmt.Sprintf("range not sem-ver %v %v", versionRange, err))
+			}
+			if parsedVersionRange(toMatch) {
+				// check specific version info
+				if _, ok := DriverData.K8sVersionInfo[k8sVersion]; !ok {
+					incompleteVersions = append(incompleteVersions, k8sVersion)
+					errorsFound = true
+				}
+			}
+		}
+	}
+	if errorsFound {
+		panic(fmt.Sprintf("following versions do not have specific version info specified: %v", strings.Join(incompleteVersions, ",")))
 	}
 }
 
