@@ -2559,9 +2559,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 		},
 		// Enabled in Rancher v2.3.7
-		"v1.17.4-rancher1-2": {
+		"v1.17.5-rancher1-1": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.4.3-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.17.4-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.17.5-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.56"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.56"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.56"),
@@ -2628,9 +2628,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		},
 		// Enabled in Rancher v2.4.3
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.17.4-rancher1-3": {
+		"v1.17.5-rancher1-2": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.4.3-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.17.4-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.17.5-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.56"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.56"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.56"),
