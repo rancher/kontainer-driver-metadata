@@ -4457,6 +4457,10 @@
    "minRKEVersion": "1.0.0",
    "minRancherVersion": "2.3.3"
   },
+  "v1.15.11-rancher1-3": {
+   "minRKEVersion": "1.0.7",
+   "minRancherVersion": "2.3.7"
+  },
   "v1.15.5-rancher1-1": {
    "maxRKEVersion": "0.2.8",
    "maxRancherVersion": "2.2.9"
@@ -4469,6 +4473,10 @@
    "minRKEVersion": "1.0.0",
    "minRancherVersion": "2.3.3"
   },
+  "v1.16.8-rancher1-3": {
+   "minRKEVersion": "1.0.7",
+   "minRancherVersion": "2.3.7"
+  },
   "v1.17.4-rancher1-1": {
    "minRKEVersion": "1.0.0",
    "minRancherVersion": "2.3.3"
@@ -4476,6 +4484,10 @@
   "v1.17.4-rancher1-2": {
    "minRKEVersion": "1.0.0",
    "minRancherVersion": "2.3.3"
+  },
+  "v1.17.4-rancher1-3": {
+   "minRKEVersion": "1.0.7",
+   "minRancherVersion": "2.3.7"
   },
   "v1.8": {
    "maxRKEVersion": "0.2.2",

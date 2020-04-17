@@ -1941,7 +1941,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.3.0"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 		},
-		// Enabled in Rancher v2.4.0
+		// Enabled in Rancher v2.3.7
 		// Reminder: Save template rancher1-1 for k8s 1.15 for Rancher v2.2.x due to WindowsPodInfraContainer image
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		"v1.15.11-rancher1-3": {
@@ -2301,7 +2301,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 		},
-		// Enabled in Rancher v2.4.0
+		// Enabled in Rancher v2.3.7
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		"v1.16.8-rancher1-3": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.3.15-rancher1"),
@@ -2564,7 +2564,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 		},
-		// Enabled in Rancher v2.4.0
+		// Enabled in Rancher v2.3.7
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		"v1.17.4-rancher1-3": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.4.3-rancher1"),
