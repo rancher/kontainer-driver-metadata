@@ -110,9 +110,7 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.15.3-rancher2":                     nginxIngressV115,
 		},
 		Nodelocal: {
-			">=1.15.11-rancher0 <1.16.0-alpha": nodelocalv115,
-			">=1.16.8-rancher0 <1.17.0-alpha":  nodelocalv115,
-			">=1.17.4-rancher0":                nodelocalv115,
+			">=1.8.0-rancher0": nodelocalv115,
 		},
 		TemplateKeys: getTemplates(),
 	}
