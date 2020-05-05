@@ -31,6 +31,6 @@ replace (
 
 require (
 	github.com/blang/semver v3.5.1+incompatible
-	github.com/rancher/types v0.0.0-20191115181915-fa1ec441252a
+	github.com/rancher/types v0.0.0-20200417105211-b2b49a4bd8db
 	github.com/sirupsen/logrus v1.4.2
 )
