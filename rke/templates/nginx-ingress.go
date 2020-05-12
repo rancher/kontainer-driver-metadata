@@ -29,6 +29,12 @@ apiVersion: v1
 metadata:
   name: udp-services
   namespace: ingress-nginx
+---
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: nginx-defaultBackend-serviceaccount
+  namespace: ingress-nginx
 {{if eq .RBACConfig "rbac"}}
 ---
 apiVersion: v1
@@ -318,6 +324,7 @@ spec:
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
       terminationGracePeriodSeconds: 60
+      serviceAccountName: nginx-defaultBackend-serviceaccount
       tolerations:
       - effect: NoExecute
         operator: Exists
@@ -390,6 +397,12 @@ apiVersion: v1
 metadata:
   name: udp-services
   namespace: ingress-nginx
+---
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: nginx-defaultBackend-serviceaccount
+  namespace: ingress-nginx
 {{if eq .RBACConfig "rbac"}}
 ---
 apiVersion: v1
@@ -681,6 +694,7 @@ spec:
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
       terminationGracePeriodSeconds: 60
+      serviceAccountName: nginx-defaultBackend-serviceaccount
       tolerations:
       - effect: NoExecute
         operator: Exists
