@@ -43,8 +43,9 @@ const (
 	weavev18  = "weave-v1.8"
 	weavev116 = "weave-v1.16"
 
-	nginxIngressv18  = "nginxingress-v1.8"
-	nginxIngressV115 = "nginxingress-v1.15"
+	nginxIngressv18    = "nginxingress-v1.8"
+	nginxIngressV115   = "nginxingress-v1.15"
+	nginxIngressV11512 = "nginxingress-v1.15.12"
 
 	nodelocalv115 = "nodelocal-v1.15"
 )
@@ -100,7 +101,9 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.14.0-rancher0 <=1.14.6-rancher1-1": nginxIngressv18,
 			">=1.14.6-rancher2 <1.15.0-rancher0":    nginxIngressV115,
 			">=1.15.0-rancher0 <=1.15.3-rancher1-1": nginxIngressv18,
-			">=1.15.3-rancher2":                     nginxIngressV115,
+			">=1.15.3-rancher2 <1.15.12-rancher1-1": nginxIngressV115,
+			"=1.15.12-rancher1-1":                   nginxIngressV11512,
+			">1.15.12-rancher1-1":                   nginxIngressV115,
 		},
 		kdm.Nodelocal: {
 			">=1.15.11-rancher0 <1.16.0-alpha": nodelocalv115,
@@ -145,8 +148,9 @@ func getTemplates() map[string]string {
 		weavev18:  WeaveTemplate,
 		weavev116: WeaveTemplateV116,
 
-		nginxIngressv18:  NginxIngressTemplate,
-		nginxIngressV115: NginxIngressTemplateV0251Rancher1,
+		nginxIngressv18:    NginxIngressTemplate,
+		nginxIngressV115:   NginxIngressTemplateV0251Rancher1,
+		nginxIngressV11512: NginxIngressTemplateV0320Rancher1,
 
 		nodelocalv115: NodelocalTemplateV115,
 	}
