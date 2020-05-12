@@ -1080,6 +1080,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CalicoNode:                m("quay.io/calico/node:v3.4.0"),
 			CalicoCNI:                 m("quay.io/calico/cni:v3.4.0"),
 			CalicoCtl:                 m("quay.io/calico/ctl:v2.0.0"),
+			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.4.0"),
 			CanalNode:                 m("quay.io/calico/node:v3.4.0"),
 			CanalCNI:                  m("quay.io/calico/cni:v3.4.0"),
 			CanalFlannel:              m("quay.io/coreos/flannel:v0.10.0"),
@@ -1109,6 +1110,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CalicoNode:                m("quay.io/calico/node:v3.4.0"),
 			CalicoCNI:                 m("quay.io/calico/cni:v3.4.0"),
 			CalicoCtl:                 m("quay.io/calico/ctl:v2.0.0"),
+			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.4.0"),
 			CanalNode:                 m("quay.io/calico/node:v3.4.0"),
 			CanalCNI:                  m("quay.io/calico/cni:v3.4.0"),
 			CanalFlannel:              m("quay.io/coreos/flannel:v0.10.0"),
@@ -1312,6 +1314,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CalicoNode:                m("quay.io/calico/node:v3.4.0"),
 			CalicoCNI:                 m("quay.io/calico/cni:v3.4.0"),
 			CalicoCtl:                 m("quay.io/calico/ctl:v2.0.0"),
+			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.4.0"),
 			CanalNode:                 m("quay.io/calico/node:v3.4.0"),
 			CanalCNI:                  m("quay.io/calico/cni:v3.4.0"),
 			CanalFlannel:              m("quay.io/coreos/flannel:v0.10.0"),
@@ -1341,6 +1344,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CalicoNode:                m("quay.io/calico/node:v3.4.0"),
 			CalicoCNI:                 m("quay.io/calico/cni:v3.4.0"),
 			CalicoCtl:                 m("quay.io/calico/ctl:v2.0.0"),
+			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.4.0"),
 			CanalNode:                 m("quay.io/calico/node:v3.4.0"),
 			CanalCNI:                  m("quay.io/calico/cni:v3.4.0"),
 			CanalFlannel:              m("quay.io/coreos/flannel:v0.10.0"),
@@ -1370,6 +1374,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CalicoNode:                m("quay.io/calico/node:v3.4.0"),
 			CalicoCNI:                 m("quay.io/calico/cni:v3.4.0"),
 			CalicoCtl:                 m("quay.io/calico/ctl:v2.0.0"),
+			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.4.0"),
 			CanalNode:                 m("quay.io/calico/node:v3.4.0"),
 			CanalCNI:                  m("quay.io/calico/cni:v3.4.0"),
 			CanalFlannel:              m("quay.io/coreos/flannel:v0.10.0"),
@@ -1399,6 +1404,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CalicoNode:                m("quay.io/calico/node:v3.4.0"),
 			CalicoCNI:                 m("quay.io/calico/cni:v3.4.0"),
 			CalicoCtl:                 m("quay.io/calico/ctl:v2.0.0"),
+			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.4.0"),
 			CanalNode:                 m("quay.io/calico/node:v3.4.0"),
 			CanalCNI:                  m("quay.io/calico/cni:v3.4.0"),
 			CanalFlannel:              m("quay.io/coreos/flannel:v0.10.0"),
@@ -1935,7 +1941,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.3.0"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 		},
-		// Enabled in Rancher v2.4.0
+		// Enabled in Rancher v2.3.7/v2.4.0
 		// Reminder: Save template rancher1-1 for k8s 1.15 for Rancher v2.2.x due to WindowsPodInfraContainer image
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		"v1.15.11-rancher1-3": {
@@ -2330,11 +2336,11 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 		},
-		// Enabled in Rancher v2.4.0
+		// Enabled in Rancher v2.3.7/v2.4.3
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.16.8-rancher1-3": {
+		"v1.16.9-rancher1-1": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.3.15-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.16.8-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.16.9-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.56"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.56"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.56"),
@@ -2593,11 +2599,11 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 		},
-		// Enabled in Rancher v2.4.0
+		// Enabled in Rancher v2.3.7/v2.4.3
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.17.4-rancher1-3": {
+		"v1.17.5-rancher1-1": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.4.3-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.17.4-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.17.5-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.56"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.56"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.56"),
