@@ -725,6 +725,7 @@ spec:
 `
 
 const NginxIngressTemplateV0320Rancher1 = `
+# this template is intended for use by >= nginx-0.32.0
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -978,18 +979,6 @@ spec:
         operator: Exists
       - effect: NoSchedule
         operator: Exists
-      {{- if ne .AlpineImage ""}}
-      initContainers:
-      - command:
-        - sh
-        - -c
-        - sysctl -w net.core.somaxconn=32768; sysctl -w net.ipv4.ip_local_port_range="1024 65535"
-        image: {{.AlpineImage}}
-        imagePullPolicy: IfNotPresent
-        name: sysctl
-        securityContext:
-          privileged: true
-      {{- end }}
       containers:
         - name: nginx-ingress-controller
           image: {{.IngressImage}}
@@ -997,13 +986,14 @@ spec:
             - /nginx-ingress-controller
             - --default-backend-service=$(POD_NAMESPACE)/default-http-backend
             - --configmap=$(POD_NAMESPACE)/nginx-configuration
+            - --election-id=ingress-controller-leader
+            - --ingress-class=nginx
             - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
             - --udp-services-configmap=$(POD_NAMESPACE)/udp-services
             - --annotations-prefix=nginx.ingress.kubernetes.io
           {{ range $k, $v := .ExtraArgs }}
             - --{{ $k }}{{if ne $v "" }}={{ $v }}{{end}}
           {{ end }}
-          {{- if eq .AlpineImage ""}}
           securityContext:
             capabilities:
                 drop:
@@ -1011,7 +1001,6 @@ spec:
                 add:
                 - NET_BIND_SERVICE
             runAsUser: 101
-          {{- end }}
           env:
             - name: POD_NAME
               valueFrom:
