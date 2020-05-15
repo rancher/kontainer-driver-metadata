@@ -84,7 +84,7 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 		},
 		// This version includes nodelocal dns only available in RKE v1.0.7 and up
 		// It also includes ingress-nginx 0.32.0
-		"v1.15.12-rancher1-1": {
+		"v1.15.12-rancher1-2": {
 			MinRancherVersion: "2.4.0",
 			MinRKEVersion:     "1.0.7",
 		},
