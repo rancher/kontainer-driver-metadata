@@ -4499,7 +4499,7 @@
   },
   "v1.15.12-rancher1-2": {
    "minRKEVersion": "1.0.7",
-   "minRancherVersion": "2.4.0"
+   "minRancherVersion": "2.3.7"
   },
   "v1.15.5-rancher1-1": {
    "maxRKEVersion": "0.2.8",
