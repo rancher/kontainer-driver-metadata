@@ -4590,7 +4590,7 @@
   },
   "v1.18.2-rancher1-1": {
    "minRKEVersion": "1.1.1-rc99",
-   "minRancherVersion": "2.4.3-rc99"
+   "minRancherVersion": "2.4.4-rc0"
   },
   "v1.8": {
    "maxRKEVersion": "0.2.2",
@@ -4619,11 +4619,12 @@
   "2.3.1": "v1.15.x",
   "2.3.2": "v1.15.x",
   "2.3.3": "v1.16.x",
+  "2.4.4": "v1.18.x",
   "default": "v1.17.x"
  },
  "RKEDefaultK8sVersions": {
   "0.3": "v1.16.3-rancher1-1",
-  "default": "v1.17.5-rancher1-1"
+  "default": "v1.18.2-rancher1-1"
  },
  "K8sVersionDockerInfo": {
   "1.10": [
