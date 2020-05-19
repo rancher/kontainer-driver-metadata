@@ -4846,9 +4846,14 @@
  "k3s": {
   "releases": [
    {
-    "maxChannelServerVersion": "v2.4.99",
+    "maxChannelServerVersion": "v2.4.2",
     "minChannelServerVersion": "v2.4.0-rc1",
     "version": "v1.17.4+k3s1"
+   },
+   {
+    "maxChannelServerVersion": "v2.4.99",
+    "minChannelServerVersion": "v2.4.3-rc1",
+    "version": "v1.17.5+k3s1"
    }
   ]
  }
