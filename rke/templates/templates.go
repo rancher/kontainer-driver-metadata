@@ -43,8 +43,9 @@ const (
 	weavev18  = "weave-v1.8"
 	weavev116 = "weave-v1.16"
 
-	nginxIngressv18  = "nginxingress-v1.8"
-	nginxIngressV115 = "nginxingress-v1.15"
+	nginxIngressv18    = "nginxingress-v1.8"
+	nginxIngressV115   = "nginxingress-v1.15"
+	nginxIngressV11512 = "nginxingress-v1.15.12"
 
 	nodelocalv115 = "nodelocal-v1.15"
 )
@@ -100,11 +101,18 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 		},
 		kdm.NginxIngress: {
 			">=1.8.0-rancher0 <1.13.10-rancher1-3":  nginxIngressv18,
-			">=1.13.10-rancher1-3 <1.14.0-rancher0": nginxIngressV115,
 			">=1.14.0-rancher0 <=1.14.6-rancher1-1": nginxIngressv18,
-			">=1.14.6-rancher2 <1.15.0-rancher0":    nginxIngressV115,
 			">=1.15.0-rancher0 <=1.15.3-rancher1-1": nginxIngressv18,
-			">=1.15.3-rancher2":                     nginxIngressV115,
+			// New ingress template introduced for 1.13.10-rancher1-3, 1.14.6-rancher2, 1.15.3-rancher2
+			">=1.13.10-rancher1-3 <1.14.0-rancher0":   nginxIngressV115,
+			">=1.14.6-rancher2 <1.15.0-rancher0":      nginxIngressV115,
+			">=1.15.3-rancher2 <1.15.12-rancher1-2":   nginxIngressV115,
+			">=1.16.1-rancher1-1 <1.16.10-rancher1-1": nginxIngressV115,
+			">=1.17.0-rancher1-1 <1.17.6-rancher1-1":  nginxIngressV115,
+			// New ingress template introduced for 1.15.12-rancher1-2, 1.16.10-rancher1-1, 1.17.6-rancher1-1
+			">=1.15.12-rancher1-2 <1.16.1-rancher1-1": nginxIngressV11512,
+			">=1.16.10-rancher1-1 <1.17.0-rancher1-1": nginxIngressV11512,
+			">=1.17.6-rancher1-1":                     nginxIngressV11512,
 		},
 		kdm.Nodelocal: {
 			">=1.15.11-rancher0 <1.16.0-alpha": nodelocalv115,
