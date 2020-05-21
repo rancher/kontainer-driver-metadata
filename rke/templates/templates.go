@@ -162,8 +162,9 @@ func getTemplates() map[string]string {
 		weavev18:  WeaveTemplate,
 		weavev116: WeaveTemplateV116,
 
-		nginxIngressv18:  NginxIngressTemplate,
-		nginxIngressV115: NginxIngressTemplateV0251Rancher1,
+		nginxIngressv18:    NginxIngressTemplate,
+		nginxIngressV115:   NginxIngressTemplateV0251Rancher1,
+		nginxIngressV11512: NginxIngressTemplateV0320Rancher1,
 
 		nodelocalv115: NodelocalTemplateV115,
 	}
