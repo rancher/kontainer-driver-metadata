@@ -1977,7 +1977,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled in v2.4.4
+		// Enabled out of band after v2.4.3
 		// Reminder: Save template rancher1-1 for k8s 1.15 for Rancher v2.2.x due to WindowsPodInfraContainer image
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.7
 		"v1.15.12-rancher1-2": {
@@ -1992,7 +1992,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			KubeDNSSidecar:            m("gcr.io/google_containers/k8s-dns-sidecar:1.15.0"),
 			KubeDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.3.0"),
 			Flannel:                   m("quay.io/coreos/flannel:v0.11.0-rancher1"),
-			FlannelCNI:                m("rancher/flannel-cni:v0.3.0-rancher5"),
+			FlannelCNI:                m("rancher/flannel-cni:v0.3.0-rancher6"),
 			CalicoNode:                m("quay.io/calico/node:v3.13.0"),
 			CalicoCNI:                 m("quay.io/calico/cni:v3.13.0"),
 			CalicoCtl:                 m("quay.io/calico/ctl:v2.0.0"),
@@ -2372,7 +2372,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled in v2.4.4
+		// Enabled out of band after v2.4.3
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Includes ingress-nginx 0.32.0
 		"v1.16.10-rancher1-1": {
@@ -2387,7 +2387,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			KubeDNSSidecar:            m("gcr.io/google_containers/k8s-dns-sidecar:1.15.0"),
 			KubeDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			Flannel:                   m("quay.io/coreos/flannel:v0.11.0-rancher1"),
-			FlannelCNI:                m("rancher/flannel-cni:v0.3.0-rancher5"),
+			FlannelCNI:                m("rancher/flannel-cni:v0.3.0-rancher6"),
 			CalicoNode:                m("quay.io/calico/node:v3.13.0"),
 			CalicoCNI:                 m("quay.io/calico/cni:v3.13.0"),
 			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.13.0"),
@@ -2671,7 +2671,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled in v2.4.4
+		// Enabled out of band after v2.4.3
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Includes ingress-nginx 0.32.0
 		"v1.17.6-rancher1-1": {
@@ -2686,7 +2686,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			KubeDNSSidecar:            m("gcr.io/google_containers/k8s-dns-sidecar:1.15.0"),
 			KubeDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			Flannel:                   m("quay.io/coreos/flannel:v0.11.0-rancher1"),
-			FlannelCNI:                m("rancher/flannel-cni:v0.3.0-rancher5"),
+			FlannelCNI:                m("rancher/flannel-cni:v0.3.0-rancher6"),
 			CalicoNode:                m("quay.io/calico/node:v3.13.0"),
 			CalicoCNI:                 m("quay.io/calico/cni:v3.13.0"),
 			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.13.0"),
