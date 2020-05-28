@@ -1,8 +1,13 @@
 # kontainer-driver-metadata
 
 #### Run ####
+For dev-2.3, run
+  * `go run main.go --write-data=true`
+
+For dev-2.4 and above, run
   * `go generate`
-  * rancher >=2.3 will listen on changes in data.json and load automatically
+
+rancher >=2.3 will listen on changes in data.json and load automatically
 
 #### How to add to data ####
 - ***K8sVersionRKESystemImages*** map[string]v3.RKESystemImages
