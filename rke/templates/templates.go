@@ -78,7 +78,9 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.16.4-rancher1 <1.16.8-rancher0":       canalv117,
 			">=1.16.0-alpha <1.16.4-rancher1":          canalv116,
 			">=1.15.12-rancher2-2 <1.16.0-alpha":       canalv115PrivilegedCalico3134,
-			">=1.15.11-rancher1-1 <1.15.12-rancher2-2": canalv115Privileged,
+			">=1.15.11-rancher1-1 <1.15.12-rancher1-1": canalv115Privileged,
+			// 1.15.12-rancher1-1 comes from 2.2.13, uses old canalv115 template
+			">=1.15.12-rancher1-1 <1.15.12-rancher2-2": canalv115,
 			">=1.15.0-rancher0 <1.15.11-rancher1-1":    canalv115,
 			">=1.13.0-rancher0 <1.15.0-rancher0":       canalv113,
 			">=1.8.0-rancher0 <1.13.0-rancher0":        canalv18,
@@ -111,11 +113,11 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			// New ingress template introduced for 1.13.10-rancher1-3, 1.14.6-rancher2, 1.15.3-rancher2
 			">=1.13.10-rancher1-3 <1.14.0-rancher0":   nginxIngressV115,
 			">=1.14.6-rancher2 <1.15.0-rancher0":      nginxIngressV115,
-			">=1.15.3-rancher2 <1.15.12-rancher1-2":   nginxIngressV115,
+			">=1.15.3-rancher2 <1.15.12-rancher1-1":   nginxIngressV115,
 			">=1.16.1-rancher1-1 <1.16.10-rancher1-1": nginxIngressV115,
 			">=1.17.0-rancher1-1 <1.17.6-rancher1-1":  nginxIngressV115,
-			// New ingress template introduced for 1.15.12-rancher1-2, 1.16.10-rancher1-1, 1.17.6-rancher1-1
-			">=1.15.12-rancher1-2 <1.16.1-rancher1-1": nginxIngressV11512,
+			// New ingress template introduced for 1.15.12-rancher1-1, 1.16.10-rancher1-1, 1.17.6-rancher1-1
+			">=1.15.12-rancher1-1 <1.16.1-rancher1-1": nginxIngressV11512,
 			">=1.16.10-rancher1-1 <1.17.0-rancher1-1": nginxIngressV11512,
 			">=1.17.6-rancher1-1":                     nginxIngressV11512,
 		},
