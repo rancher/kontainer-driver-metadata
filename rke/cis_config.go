@@ -25,8 +25,6 @@ All configuration is passed in as arguments at container run time.`
 
 	// reasons for skipped checks
 	reasonForAlwaysPullImages                    = `Enabling AlwaysPullImages can use significant bandwidth.`
-	reasonForDefaultSA                           = `Kubernetes provides default service accounts to be used.`
-	reasonForDefaultNS                           = `Kubernetes provides a default namespace.`
 	reasonForEtcdDataDir                         = `A system service account is required for etcd data directory ownership. Refer to Rancher's hardening guide for more details on how to configure this ownership.`
 	reasonForEncryption                          = `Enabling encryption changes how data can be recovered as data is encrypted.`
 	reasonForEventRateLimit                      = `EventRateLimit needs to be tuned depending on the cluster.`
@@ -109,13 +107,11 @@ var rkeCIS15SkippedChecks = map[string]string{
 	"1.2.34": reasonForEncryption,
 	"4.2.6":  reasonForProtectKernelDefaults,
 	"4.2.10": reasonForKubeletServerCerts,
-	"5.1.5":  reasonForDefaultSA,
 	"5.2.2":  reasonForPSP,
 	"5.2.3":  reasonForPSP,
 	"5.2.4":  reasonForPSP,
 	"5.2.5":  reasonForPSP,
 	"5.3.2":  reasonForNetPol,
-	"5.6.4":  reasonForDefaultNS,
 }
 
 func loadCisConfigParams() map[string]v3.CisConfigParams {

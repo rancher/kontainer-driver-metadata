@@ -69,7 +69,12 @@ func initData() {
 func validateVersionInfo() {
 	var errorsFound bool
 	var incompleteVersions []string
-	versionRangesNeedSpecificVersionInfo := []string{">=1.15.11-rancher1-1 <1.16.0-alpha", ">=1.16.8-rancher1-1 <1.17.0-alpha", ">=1.17.4-rancher1-1 <1.18.0-alpha"}
+	versionRangesNeedSpecificVersionInfo := []string{
+		// 1.15.12-rancher1-1 comes from 2.2.13, doesn't need version info
+		">=1.15.11-rancher1-1 <1.15.12-rancher1-1",
+		">=1.15.12-rancher2-2 <1.16.0-alpha",
+		">=1.16.8-rancher1-1 <1.17.0-alpha",
+		">=1.17.4-rancher1-1 <1.18.0-alpha"}
 	for k8sVersion := range DriverData.K8sVersionRKESystemImages {
 		toMatch, err := semver.Make(k8sVersion[1:])
 		if err != nil {
