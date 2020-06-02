@@ -61,17 +61,17 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.17.4-rancher0":                     calicov117Privileged,
-			">=1.17.0-rancher0 <1.17.4-rancher0":    calicov117,
-			">=1.16.8-rancher0 <1.17.0-rancher0":    calicov117Privileged,
-			">=1.16.4-rancher1 <1.16.8-rancher0":    calicov117,
-			">=1.16.0-alpha <1.16.4-rancher1":       calicov116,
+			">=1.17.4-rancher0":                  calicov117Privileged,
+			">=1.17.0-rancher0 <1.17.4-rancher0": calicov117,
+			">=1.16.8-rancher0 <1.17.0-rancher0": calicov117Privileged,
+			">=1.16.4-rancher1 <1.16.8-rancher0": calicov117,
+			">=1.16.0-alpha <1.16.4-rancher1":    calicov116,
 
 			">=1.15.11-rancher1-1 <1.15.12-rancher1-1": calicov115Privileged,
 			// 1.15.12-rancher1-1 comes from 2.2.13, uses calicov115 template with new key calicov11512
 			// new key is to enable rancher passing template to rke for an already vendored template
 			">=1.15.12-rancher1-1 <1.15.12-rancher2-2": calicov11512,
-			">=1.15.12-rancher2-2 <1.16.0-alpha": calicov115Privileged,
+			">=1.15.12-rancher2-2 <1.16.0-alpha":       calicov115Privileged,
 
 			">=1.15.0-rancher0 <1.15.11-rancher1-1": calicov115,
 			">=1.13.0-rancher0 <1.15.0-rancher0":    calicov113,

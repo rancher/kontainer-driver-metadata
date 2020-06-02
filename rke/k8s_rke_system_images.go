@@ -2036,7 +2036,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			MetricsServer:             m("gcr.io/google_containers/metrics-server:v0.3.3"),
 			CoreDNS:                   m("coredns/coredns:1.3.1"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.3.0"),
-			Nodelocal:                m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
+			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
 		// Enabled out of band after v2.4.3
 		// Reminder: Save template rancher1-1 for k8s 1.15 for Rancher v2.2.x due to WindowsPodInfraContainer image
