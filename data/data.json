@@ -5257,11 +5257,13 @@
     "1.2.6": "When generating serving certificates, functionality could break in conjunction with hostname overrides which are required for certain cloud providers.",
     "4.2.10": "When generating serving certificates, functionality could break in conjunction with hostname overrides which are required for certain cloud providers.",
     "4.2.6": "System level configurations are required prior to provisioning the cluster in order for this argument to be set to true.",
+    "5.1.5": "Kubernetes provides default service accounts to be used.",
     "5.2.2": "Enabling Pod Security Policy can cause applications to unexpectedly fail.",
     "5.2.3": "Enabling Pod Security Policy can cause applications to unexpectedly fail.",
     "5.2.4": "Enabling Pod Security Policy can cause applications to unexpectedly fail.",
     "5.2.5": "Enabling Pod Security Policy can cause applications to unexpectedly fail.",
-    "5.3.2": "Enabling Network Policies can prevent certain applications from communicating with each other."
+    "5.3.2": "Enabling Network Policies can prevent certain applications from communicating with each other.",
+    "5.6.4": "Kubernetes provides a default namespace."
    },
    "notApplicableChecks": {
     "1.1.1": "Clusters provisioned by RKE doesn't require or maintain a configuration file for kube-apiserver.\nAll configuration is passed in as arguments at container run time.",
