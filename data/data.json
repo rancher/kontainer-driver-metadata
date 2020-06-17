@@ -5570,12 +5570,12 @@
    {
     "maxChannelServerVersion": "v2.4.99",
     "minChannelServerVersion": "v2.4.0-rc1",
-    "version": "v1.17.6+k3s1"
+    "version": "v1.17.7+k3s1"
    },
    {
     "maxChannelServerVersion": "v2.4.99",
     "minChannelServerVersion": "v2.4.5-rc1",
-    "version": "v1.18.3+k3s1"
+    "version": "v1.18.4+k3s1"
    }
   ]
  }
