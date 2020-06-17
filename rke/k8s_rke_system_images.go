@@ -2043,7 +2043,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band after v2.4.3
+		// Enabled out of band for Rancher v2.3.8 with Rancher v2.4.5
 		// Reminder: Save template rancher1-1 for k8s 1.15 for Rancher v2.2.x due to WindowsPodInfraContainer image
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.7
 		"v1.15.12-rancher2-3": {
@@ -2438,7 +2438,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band for Rancher v2.3.8
+		// Enabled in Rancher v2.3.8
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Includes ingress-nginx 0.32.0
 		"v1.16.10-rancher2-1": {
@@ -2474,11 +2474,11 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band for Rancher v2.3.8
+		// Enabled out of band for Rancher v2.3.8 with Rancher v2.4.5
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.16.10-rancher2-2": {
+		"v1.16.11-rancher1-1": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.3.15-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.16.10-rancher2"),
+			Kubernetes:                m("rancher/hyperkube:v1.16.11-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.58"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.58"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.58"),
@@ -2808,11 +2808,11 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band for Rancher v2.3.8
+		// Enabled in Rancher v2.3.8
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.17.6-rancher2-2": {
+		"v1.17.7-rancher1-1": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.4.3-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.17.6-rancher2"),
+			Kubernetes:                m("rancher/hyperkube:v1.17.7-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.58"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.58"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.58"),
