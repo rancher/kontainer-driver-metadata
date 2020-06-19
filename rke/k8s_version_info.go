@@ -22,7 +22,7 @@ func loadRKEDefaultK8sVersions() map[string]string {
 	return map[string]string{
 		"0.3": "v1.16.3-rancher1-1",
 		// rke will use default if its version is absent
-		"default": "v1.17.7-rancher1-1",
+		"default": "v1.17.6-rancher2-2",
 	}
 }
 
@@ -126,7 +126,7 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 		},
 		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
 		// This version includes nodelocal dns only available in RKE v1.0.7 and up
-		"v1.16.11-rancher1-1": {
+		"v1.16.10-rancher2-2": {
 			MinRancherVersion: "2.3.8-rc0",
 			MinRKEVersion:     "1.0.9-rc0",
 		},
@@ -155,7 +155,7 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 		},
 		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
 		// This version includes nodelocal dns only available in RKE v1.0.7 and up
-		"v1.17.7-rancher1-1": {
+		"v1.17.6-rancher2-2": {
 			MinRancherVersion: "2.3.8-rc0",
 			MinRKEVersion:     "1.0.9-rc0",
 		},
