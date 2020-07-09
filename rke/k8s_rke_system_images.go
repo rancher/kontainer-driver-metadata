@@ -2547,9 +2547,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		},
 		// Enabled in Rancher v2.4.6
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.16.10-rancher2-3": {
+		"v1.16.12-rancher1-1": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.3.15-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.16.10-rancher2"),
+			Kubernetes:                m("rancher/hyperkube:v1.16.12-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.59"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.59"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.59"),
@@ -2916,9 +2916,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		},
 		// Enabled in Rancher v2.4.5
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.17.6-rancher2-3": {
+		"v1.17.8-rancher1-1": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.4.3-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.17.6-rancher2"),
+			Kubernetes:                m("rancher/hyperkube:v1.17.8-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.59"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.59"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.59"),
@@ -3021,9 +3021,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		},
 		// Enabled in Rancher v2.4.6
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.18.3-rancher2-3": {
+		"v1.18.5-rancher1-1": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.4.3-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.18.3-rancher2"),
+			Kubernetes:                m("rancher/hyperkube:v1.18.5-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.59"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.59"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.59"),
