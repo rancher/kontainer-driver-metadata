@@ -5,13 +5,14 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"sigs.k8s.io/yaml"
 	"strings"
+
+	"sigs.k8s.io/yaml"
 
 	"github.com/blang/semver"
 	"github.com/rancher/kontainer-driver-metadata/rke/templates"
-	"github.com/rancher/types/image"
-	"github.com/rancher/types/kdm"
+	"github.com/rancher/rke/types/image"
+	"github.com/rancher/rke/types/kdm"
 	"github.com/sirupsen/logrus"
 )
 
