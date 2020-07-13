@@ -121,19 +121,19 @@ var rkeCIS15SkippedChecks = map[string]string{
 func loadCisConfigParams() map[string]kdm.CisConfigParams {
 	return map[string]kdm.CisConfigParams{
 		"default": {
-			BenchmarkVersion: "rke-cis-1.4",
+			BenchmarkVersion: "rke-cis-1.5",
 		},
 		"v1.15": {
-			BenchmarkVersion: "rke-cis-1.4",
+			BenchmarkVersion: "rke-cis-1.5",
 		},
 		"v1.16": {
-			BenchmarkVersion: "rke-cis-1.4",
+			BenchmarkVersion: "rke-cis-1.5",
 		},
 		"v1.17": {
-			BenchmarkVersion: "rke-cis-1.4",
+			BenchmarkVersion: "rke-cis-1.5",
 		},
 		"v1.18": {
-			BenchmarkVersion: "rke-cis-1.4",
+			BenchmarkVersion: "rke-cis-1.5",
 		},
 	}
 }
