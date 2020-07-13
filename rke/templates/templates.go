@@ -7,7 +7,7 @@ depending on Kubernetes version?
 */
 
 import (
-	"github.com/rancher/types/kdm"
+	"github.com/rancher/rke/types/kdm"
 )
 
 const (
