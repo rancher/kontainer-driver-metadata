@@ -7,13 +7,14 @@ depending on Kubernetes version?
 */
 
 import (
-	"github.com/rancher/types/kdm"
+	"github.com/rancher/rke/types/kdm"
 )
 
 const (
 	calicov18            = "calico-v1.8"
 	calicov113           = "calico-v1.13"
 	calicov115           = "calico-v1.15"
+	calicov11512         = "calico-v1.15.12"
 	calicov115Privileged = "calico-v1.15-privileged"
 	calicov116           = "calico-v1.16"
 	calicov117           = "calico-v1.17"
@@ -22,6 +23,7 @@ const (
 	canalv18                      = "canal-v1.8"
 	canalv113                     = "canal-v1.13"
 	canalv115                     = "canal-v1.15"
+	canalv11512                   = "canal-v1.15.12"
 	canalv115Privileged           = "canal-v1.15-privileged"
 	canalv115PrivilegedCalico3134 = "canal-v1.15-privileged-calico3134"
 	canalv116                     = "canal-v1.16"
@@ -59,12 +61,18 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.17.4-rancher0":                     calicov117Privileged,
-			">=1.17.0-rancher0 <1.17.4-rancher0":    calicov117,
-			">=1.16.8-rancher0 <1.17.0-rancher0":    calicov117Privileged,
-			">=1.16.4-rancher1 <1.16.8-rancher0":    calicov117,
-			">=1.16.0-alpha <1.16.4-rancher1":       calicov116,
-			">=1.15.11-rancher1-1 <1.16.0-alpha":    calicov115Privileged,
+			">=1.17.4-rancher0":                  calicov117Privileged,
+			">=1.17.0-rancher0 <1.17.4-rancher0": calicov117,
+			">=1.16.8-rancher0 <1.17.0-rancher0": calicov117Privileged,
+			">=1.16.4-rancher1 <1.16.8-rancher0": calicov117,
+			">=1.16.0-alpha <1.16.4-rancher1":    calicov116,
+
+			">=1.15.11-rancher1-1 <1.15.12-rancher1-1": calicov115Privileged,
+			// 1.15.12-rancher1-1 comes from 2.2.13, uses calicov115 template with new key calicov11512
+			// new key is to enable rancher passing template to rke for an already vendored template
+			">=1.15.12-rancher1-1 <1.15.12-rancher2-2": calicov11512,
+			">=1.15.12-rancher2-2 <1.16.0-alpha":       calicov115Privileged,
+
 			">=1.15.0-rancher0 <1.15.11-rancher1-1": calicov115,
 			">=1.13.0-rancher0 <1.15.0-rancher0":    calicov113,
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
@@ -79,8 +87,9 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.16.0-alpha <1.16.4-rancher1":          canalv116,
 			">=1.15.12-rancher2-2 <1.16.0-alpha":       canalv115PrivilegedCalico3134,
 			">=1.15.11-rancher1-1 <1.15.12-rancher1-1": canalv115Privileged,
-			// 1.15.12-rancher1-1 comes from 2.2.13, uses old canalv115 template
-			">=1.15.12-rancher1-1 <1.15.12-rancher2-2": canalv115,
+			// 1.15.12-rancher1-1 comes from 2.2.13, uses old canalv115 template with new key canalv11512
+			// new key is to enable rancher passing template to rke for an already vendored template
+			">=1.15.12-rancher1-1 <1.15.12-rancher2-2": canalv11512,
 			">=1.15.0-rancher0 <1.15.11-rancher1-1":    canalv115,
 			">=1.13.0-rancher0 <1.15.0-rancher0":       canalv113,
 			">=1.8.0-rancher0 <1.13.0-rancher0":        canalv18,
@@ -134,6 +143,7 @@ func getTemplates() map[string]string {
 	return map[string]string{
 		calicov113:           CalicoTemplateV113,
 		calicov115:           CalicoTemplateV115,
+		calicov11512:         CalicoTemplateV115,
 		calicov115Privileged: CalicoTemplateV115Privileged,
 		calicov116:           CalicoTemplateV116,
 		calicov117:           CalicoTemplateV117,
@@ -147,6 +157,7 @@ func getTemplates() map[string]string {
 		canalv113:                     CanalTemplateV113,
 		canalv18:                      CanalTemplateV112,
 		canalv115:                     CanalTemplateV115,
+		canalv11512:                   CanalTemplateV115,
 		canalv115Privileged:           CanalTemplateV115Privileged,
 		canalv115PrivilegedCalico3134: CanalTemplateV115PrivilegedCalico3134,
 		canalv116:                     CanalTemplateV116,

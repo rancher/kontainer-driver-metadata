@@ -5,3 +5,4 @@ releases:
 - version: v1.18.4+k3s1
   minChannelServerVersion: v2.4.5-rc1
   maxChannelServerVersion: v2.4.99
+

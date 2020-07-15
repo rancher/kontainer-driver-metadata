@@ -1,7 +1,7 @@
 package rke
 
 import (
-	v3 "github.com/rancher/types/apis/management.cattle.io/v3"
+	"github.com/rancher/rke/types/kdm"
 )
 
 const (
@@ -114,28 +114,28 @@ var rkeCIS15SkippedChecks = map[string]string{
 	"5.3.2":  reasonForNetPol,
 }
 
-func loadCisConfigParams() map[string]v3.CisConfigParams {
-	return map[string]v3.CisConfigParams{
+func loadCisConfigParams() map[string]kdm.CisConfigParams {
+	return map[string]kdm.CisConfigParams{
 		"default": {
-			BenchmarkVersion: "rke-cis-1.4",
+			BenchmarkVersion: "rke-cis-1.5",
 		},
 		"v1.15": {
-			BenchmarkVersion: "rke-cis-1.4",
+			BenchmarkVersion: "rke-cis-1.5",
 		},
 		"v1.16": {
-			BenchmarkVersion: "rke-cis-1.4",
+			BenchmarkVersion: "rke-cis-1.5",
 		},
 		"v1.17": {
-			BenchmarkVersion: "rke-cis-1.4",
+			BenchmarkVersion: "rke-cis-1.5",
 		},
 		"v1.18": {
-			BenchmarkVersion: "rke-cis-1.4",
+			BenchmarkVersion: "rke-cis-1.5",
 		},
 	}
 }
 
-func loadCisBenchmarkVersionInfo() map[string]v3.CisBenchmarkVersionInfo {
-	return map[string]v3.CisBenchmarkVersionInfo{
+func loadCisBenchmarkVersionInfo() map[string]kdm.CisBenchmarkVersionInfo {
+	return map[string]kdm.CisBenchmarkVersionInfo{
 		"rke-cis-1.4": {
 			Managed:              true,
 			MinKubernetesVersion: "1.15",
