@@ -167,6 +167,16 @@ type RKESystemImages struct {
 	MetricsServer string `yaml:"metrics_server" json:"metricsServer,omitempty"`
 	// Pod infra container image for Windows
 	WindowsPodInfraContainer string `yaml:"windows_pod_infra_container" json:"windowsPodInfraContainer,omitempty"`
+	// host container image for Cisco ACI
+	AciHostContainer string `yaml:"aci_host_container" json:"aci_host_container,omitempty"`
+	// opflex agent container image for Cisco ACI
+	AciOpflexContainer string `yaml:"aci_opflex_container" json:"aci_opflex_container,omitempty"`
+	// mcast daemon container image for Cisco ACI
+	AciMcastContainer string `yaml:"aci_mcast_container" json:"aci_mcast_container,omitempty"`
+	// OpenvSwitch container image for Cisco ACI
+	AciOpenvSwitchContainer string `yaml:"aci_ovs_container" json:"aci_ovs_container,omitempty"`
+	// Controller container image for Cisco ACI
+	AciControllerContainer string `yaml:"aci_controller_container" json:"aci_controller_container,omitempty"`
 }
 
 type RKEConfigNode struct {
@@ -355,6 +365,8 @@ type NetworkConfig struct {
 	FlannelNetworkProvider *FlannelNetworkProvider `yaml:"flannel_network_provider,omitempty" json:"flannelNetworkProvider,omitempty"`
 	// WeaveNetworkProvider
 	WeaveNetworkProvider *WeaveNetworkProvider `yaml:"weave_network_provider,omitempty" json:"weaveNetworkProvider,omitempty"`
+	// AciNetworkProvider
+	AciNetworkProvider *AciNetworkProvider `yaml:"aci_network_provider,omitempty" json:"aci_network_provider,omitempty"`
 	// NodeSelector key pair
 	NodeSelector map[string]string `yaml:"node_selector" json:"nodeSelector,omitempty"`
 	// Network plugin daemonset upgrade strategy
@@ -519,6 +531,45 @@ type CanalNetworkProvider struct {
 
 type WeaveNetworkProvider struct {
 	Password string `yaml:"password,omitempty" json:"password,omitempty" norman:"type=password"`
+}
+
+type AciNetworkProvider struct {
+	SystemIdentifier       string   `yaml:"system_id,omitempty" json:"systemId,omitempty"`
+	ApicHosts              []string `yaml:"apic_hosts" json:"apicHosts,omitempty"`
+	Token                  string   `yaml:"token,omitempty" json:"token,omitempty"`
+	ApicUserName           string   `yaml:"apic_user_name,omitempty" json:"apicUserName,omitempty"`
+	ApicUserKey            string   `yaml:"apic_user_key,omitempty" json:"apicUserKey,omitempty"`
+	ApicUserCrt            string   `yaml:"apic_user_crt,omitempty" json:"apicUserCrt,omitempty"`
+	ApicRefreshTime        string   `yaml:"apic_refresh_time,omitempty" json:"apicRefreshTime,omitempty" norman:"default=1200"`
+	VmmDomain              string   `yaml:"vmm_domain,omitempty" json:"vmmDomain,omitempty"`
+	VmmController          string   `yaml:"vmm_controller,omitempty" json:"vmmController,omitempty"`
+	EncapType              string   `yaml:"encap_type,omitempty" json:"encapType,omitempty"`
+	NodeSubnet             string   `yaml:"node_subnet,omitempty" json:"nodeSubnet,omitempty"`
+	McastRangeStart        string   `yaml:"mcast_range_start,omitempty" json:"mcastRangeStart,omitempty"`
+	McastRangeEnd          string   `yaml:"mcast_range_end,omitempty" json:"mcastRangeEnd,omitempty"`
+	AEP                    string   `yaml:"aep,omitempty" json:"aep,omitempty"`
+	VRFName                string   `yaml:"vrf_name,omitempty" json:"vrfName,omitempty"`
+	VRFTenant              string   `yaml:"vrf_tenant,omitempty" json:"vrfTenant,omitempty"`
+	L3Out                  string   `yaml:"l3out,omitempty" json:"l3Out,omitempty"`
+	L3OutExternalNetworks  []string `yaml:"l3out_external_networks" json:"l3OutExternalNetworks,omitempty"`
+	DynamicExternalSubnet  string   `yaml:"dynamic_external_subnet,omitempty" json:"dynamicExternalSubnet,omitempty"`
+	StaticExternalSubnet   string   `yaml:"static_external_subnet,omitempty" json:"staticExternalSubnet,omitempty"`
+	ServiceGraphSubnet     string   `yaml:"service_graph_subnet,omitempty" json:"serviceGraphSubnet,omitempty"`
+	KubeAPIVlan            string   `yaml:"kube_api_vlan,omitempty" json:"kubeAPIVlan,omitempty"`
+	ServiceVlan            string   `yaml:"service_vlan,omitempty" json:"serviceVlan,omitempty"`
+	InfraVlan              string   `yaml:"infra_vlan,omitempty" json:"infraVlan,omitempty"`
+	Tenant                 string   `yaml:"tenant,omitempty" json:"tenant,omitempty"`
+	OVSMemoryLimit         string   `yaml:"ovs_memory_limit,omitempty" json:"ovsMemoryLimit,omitempty" norman:"default=1Gi"`
+	ImagePullPolicy        string   `yaml:"image_pull_policy,omitempty" json:"imagePullPolicy,omitempty" norman:"default=Always"`
+	ImagePullSecret        string   `yaml:"image_pull_secret,omitempty" json:"imagePullSecret,omitempty"`
+	ServiceMonitorInterval string   `yaml:"service_monitor_interval,omitempty" json:"serviceMonitorInterval,omitempty" norman:"default=0"`
+	PBRTrackingNonSnat     string   `yaml:"pbr_tracking_non_snat,omitempty" json:"pbrTrackingNonSnat,omitempty" norman:"default=false"`
+	InstallIstio           string   `yaml:"install_istio,omitempty" json:"installIstio,omitempty" norman:"default=true"`
+	IstioProfile           string   `yaml:"istio_profile,omitempty" json:"istioProfile,omitempty" norman:"default=demo"`
+	DropLogEnable          string   `yaml:"drop_log_enable,omitempty" json:"dropLogEnable,omitempty" norman:"default=true"`
+	ControllerLogLevel     string   `yaml:"controller_log_level,omitempty" json:"controllerLogLevel,omitempty" norman:"default=debug"`
+	HostAgentLogLevel      string   `yaml:"host_agent_log_level,omitempty" json:"hostAgentLogLevel,omitempty" norman:"default=debug"`
+	OpflexAgentLogLevel    string   `yaml:"opflex_log_level,omitempty" json:"opflexLogLevel,omitempty" norman:"default=debug"`
 }
 
 type KubernetesServicesOptions struct {
