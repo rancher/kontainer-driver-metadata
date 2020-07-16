@@ -2510,7 +2510,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled in Rancher v2.4.5
+		// Enabled out band for Rancher v2.4.4 with Rancher v2.4.5
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		"v1.16.10-rancher2-2": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.3.15-rancher1"),
@@ -2545,7 +2545,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band for Rancher v2.3.8+
+		// Enabled out of band for Rancher v2.4.4+
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		"v1.16.13-rancher1-1": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.3.15-rancher1"),
@@ -2879,7 +2879,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled in Rancher v2.4.5
+		// Enabled out of band for v2.4.4 with Rancher v2.4.5
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		"v1.17.6-rancher2-2": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.4.3-rancher1"),
@@ -2914,7 +2914,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band for Rancher v2.3.8+
+		// Enabled out of band for Rancher v2.4.4+
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		"v1.17.9-rancher1-1": {
 			Etcd:                      m("quay.io/coreos/etcd:v3.4.3-rancher1"),
