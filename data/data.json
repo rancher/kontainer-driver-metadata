@@ -5667,19 +5667,19 @@
  },
  "CisConfigParams": {
   "default": {
-   "benchmarkVersion": "rke-cis-1.4"
+   "benchmarkVersion": "rke-cis-1.5"
   },
   "v1.15": {
-   "benchmarkVersion": "rke-cis-1.4"
+   "benchmarkVersion": "rke-cis-1.5"
   },
   "v1.16": {
-   "benchmarkVersion": "rke-cis-1.4"
+   "benchmarkVersion": "rke-cis-1.5"
   },
   "v1.17": {
-   "benchmarkVersion": "rke-cis-1.4"
+   "benchmarkVersion": "rke-cis-1.5"
   },
   "v1.18": {
-   "benchmarkVersion": "rke-cis-1.4"
+   "benchmarkVersion": "rke-cis-1.5"
   }
  },
  "CisBenchmarkVersionInfo": {
