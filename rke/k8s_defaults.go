@@ -30,6 +30,7 @@ func initData() {
 	DriverData = kdm.Data{
 		K8sVersionRKESystemImages: loadK8sRKESystemImages(),
 		K3S:                       map[string]interface{}{},
+		RKE2:                      map[string]interface{}{},
 	}
 
 	for version, images := range DriverData.K8sVersionRKESystemImages {
@@ -63,6 +64,9 @@ func initData() {
 	DriverData.CisBenchmarkVersionInfo = loadCisBenchmarkVersionInfo()
 
 	if err := readFile("./channels.yaml", DriverData.K3S); err != nil {
+		panic(err)
+	}
+	if err := readFile("./channels-rke2.yaml", DriverData.RKE2); err != nil {
 		panic(err)
 	}
 }
