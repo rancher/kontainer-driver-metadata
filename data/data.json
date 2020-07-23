@@ -6071,5 +6071,14 @@
     "version": "v1.18.6+k3s1"
    }
   ]
+ },
+ "rke2": {
+  "releases": [
+   {
+    "maxChannelServerVersion": "v2.5.99",
+    "minChannelServerVersion": "v2.5.0-rc1",
+    "version": "v1.18.4-alpha14+rke2"
+   }
+  ]
  }
 }

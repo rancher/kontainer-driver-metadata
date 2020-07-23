@@ -67,7 +67,7 @@ github.com/rancher/norman/condition
 github.com/rancher/norman/controller
 github.com/rancher/norman/metrics
 github.com/rancher/norman/objectclient
-# github.com/rancher/rke v1.2.0-rc2.0.20200712062933-4c1d3db2b0c1
+# github.com/rancher/rke v1.2.0-rc2.0.20200721222223-d1fd91f27af2
 github.com/rancher/rke/types
 github.com/rancher/rke/types/image
 github.com/rancher/rke/types/kdm
