@@ -2651,11 +2651,11 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled in Rancher v2.4.6
+		// Enabled out of band post v2.4.7
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.16.13-rancher1-2": {
-			Etcd:                      m("quay.io/coreos/etcd:v3.3.15-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.16.13-rancher1"),
+		"v1.16.14-rancher1-1": {
+			Etcd:                      m("rancher/coreos-etcd:v3.3.15-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.16.14-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.64"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.64"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.64"),
@@ -2663,7 +2663,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			KubeDNS:                   m("gcr.io/google_containers/k8s-dns-kube-dns:1.15.0"),
 			DNSmasq:                   m("gcr.io/google_containers/k8s-dns-dnsmasq-nanny:1.15.0"),
 			KubeDNSSidecar:            m("gcr.io/google_containers/k8s-dns-sidecar:1.15.0"),
-			KubeDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
+			KubeDNSAutoscaler:         m("rancher/cluster-proportional-autoscaler:1.7.1"),
 			Flannel:                   m("quay.io/coreos/flannel:v0.12.0"),
 			FlannelCNI:                m("rancher/flannel-cni:v0.3.0-rancher6"),
 			CalicoNode:                m("quay.io/calico/node:v3.13.4"),
@@ -2679,18 +2679,18 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WeaveCNI:                  m("weaveworks/weave-npc:2.6.4"),
 			PodInfraContainer:         m("gcr.io/google_containers/pause:3.1"),
 			Ingress:                   m("rancher/nginx-ingress-controller:nginx-0.32.0-rancher1"),
-			IngressBackend:            m("k8s.gcr.io/defaultbackend:1.5-rancher1"),
+			IngressBackend:            m("rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1"),
 			MetricsServer:             m("gcr.io/google_containers/metrics-server:v0.3.4"),
 			CoreDNS:                   m("coredns/coredns:1.6.2"),
-			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
+			CoreDNSAutoscaler:         m("rancher/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled in Rancher v2.4.6
+		// Enabled out of band post v2.4.7
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.16.13-rancher1-2": {
-			Etcd:                      m("quay.io/coreos/etcd:v3.3.15-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.16.13-rancher1"),
+		"v1.16.15-rancher1-1": {
+			Etcd:                      m("rancher/coreos-etcd:v3.3.15-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.16.15-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.64"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.64"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.64"),
@@ -2698,7 +2698,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			KubeDNS:                   m("gcr.io/google_containers/k8s-dns-kube-dns:1.15.0"),
 			DNSmasq:                   m("gcr.io/google_containers/k8s-dns-dnsmasq-nanny:1.15.0"),
 			KubeDNSSidecar:            m("gcr.io/google_containers/k8s-dns-sidecar:1.15.0"),
-			KubeDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
+			KubeDNSAutoscaler:         m("rancher/cluster-proportional-autoscaler:1.7.1"),
 			Flannel:                   m("quay.io/coreos/flannel:v0.12.0"),
 			FlannelCNI:                m("rancher/flannel-cni:v0.3.0-rancher6"),
 			CalicoNode:                m("quay.io/calico/node:v3.13.4"),
@@ -2714,10 +2714,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WeaveCNI:                  m("weaveworks/weave-npc:2.6.4"),
 			PodInfraContainer:         m("gcr.io/google_containers/pause:3.1"),
 			Ingress:                   m("rancher/nginx-ingress-controller:nginx-0.32.0-rancher1"),
-			IngressBackend:            m("k8s.gcr.io/defaultbackend:1.5-rancher1"),
+			IngressBackend:            m("rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1"),
 			MetricsServer:             m("gcr.io/google_containers/metrics-server:v0.3.4"),
 			CoreDNS:                   m("coredns/coredns:1.6.2"),
-			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
+			CoreDNSAutoscaler:         m("rancher/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
@@ -3125,11 +3125,11 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled in Rancher v2.4.6
+		// Enabled out of band post v2.4.7
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.17.9-rancher1-2": {
-			Etcd:                      m("quay.io/coreos/etcd:v3.4.3-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.17.9-rancher1"),
+		"v1.17.11-rancher1-1": {
+			Etcd:                      m("rancher/coreos-etcd:v3.4.3-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.17.11-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.64"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.64"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.64"),
@@ -3137,7 +3137,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			KubeDNS:                   m("gcr.io/google_containers/k8s-dns-kube-dns:1.15.0"),
 			DNSmasq:                   m("gcr.io/google_containers/k8s-dns-dnsmasq-nanny:1.15.0"),
 			KubeDNSSidecar:            m("gcr.io/google_containers/k8s-dns-sidecar:1.15.0"),
-			KubeDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
+			KubeDNSAutoscaler:         m("rancher/cluster-proportional-autoscaler:1.7.1"),
 			Flannel:                   m("quay.io/coreos/flannel:v0.12.0"),
 			FlannelCNI:                m("rancher/flannel-cni:v0.3.0-rancher6"),
 			CalicoNode:                m("quay.io/calico/node:v3.13.4"),
@@ -3153,10 +3153,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WeaveCNI:                  m("weaveworks/weave-npc:2.6.4"),
 			PodInfraContainer:         m("gcr.io/google_containers/pause:3.1"),
 			Ingress:                   m("rancher/nginx-ingress-controller:nginx-0.32.0-rancher1"),
-			IngressBackend:            m("k8s.gcr.io/defaultbackend:1.5-rancher1"),
+			IngressBackend:            m("rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1"),
 			MetricsServer:             m("gcr.io/google_containers/metrics-server:v0.3.6"),
 			CoreDNS:                   m("coredns/coredns:1.6.5"),
-			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
+			CoreDNSAutoscaler:         m("rancher/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
@@ -3300,11 +3300,11 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled in Rancher v2.4.6
+		// Enabled out of band post v2.4.7
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.18.6-rancher1-2": {
-			Etcd:                      m("quay.io/coreos/etcd:v3.4.3-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.18.6-rancher1"),
+		"v1.18.8-rancher1-1": {
+			Etcd:                      m("rancher/coreos-etcd:v3.4.3-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.18.8-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.64"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.64"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.64"),
@@ -3312,7 +3312,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			KubeDNS:                   m("gcr.io/google_containers/k8s-dns-kube-dns:1.15.2"),
 			DNSmasq:                   m("gcr.io/google_containers/k8s-dns-dnsmasq-nanny:1.15.2"),
 			KubeDNSSidecar:            m("gcr.io/google_containers/k8s-dns-sidecar:1.15.2"),
-			KubeDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
+			KubeDNSAutoscaler:         m("rancher/cluster-proportional-autoscaler:1.7.1"),
 			Flannel:                   m("quay.io/coreos/flannel:v0.12.0"),
 			FlannelCNI:                m("rancher/flannel-cni:v0.3.0-rancher6"),
 			CalicoNode:                m("quay.io/calico/node:v3.13.4"),
@@ -3328,10 +3328,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WeaveCNI:                  m("weaveworks/weave-npc:2.6.4"),
 			PodInfraContainer:         m("gcr.io/google_containers/pause:3.1"),
 			Ingress:                   m("rancher/nginx-ingress-controller:nginx-0.32.0-rancher1"),
-			IngressBackend:            m("k8s.gcr.io/defaultbackend:1.5-rancher1"),
+			IngressBackend:            m("rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1"),
 			MetricsServer:             m("gcr.io/google_containers/metrics-server:v0.3.6"),
 			CoreDNS:                   m("coredns/coredns:1.6.9"),
-			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
+			CoreDNSAutoscaler:         m("rancher/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
