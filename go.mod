@@ -10,7 +10,7 @@ replace (
 
 require (
 	github.com/blang/semver v3.5.1+incompatible
-	github.com/rancher/rke v1.2.0-rc2.0.20200721222223-d1fd91f27af2
+	github.com/rancher/rke v1.2.0-rc8.0.20200908181537-bdc58491d41f
 	github.com/sirupsen/logrus v1.4.2
 	sigs.k8s.io/yaml v1.2.0
 )
