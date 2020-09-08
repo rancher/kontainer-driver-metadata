@@ -45,6 +45,8 @@ type RancherKubernetesEngineConfig struct {
 	CloudProvider CloudProvider `yaml:"cloud_provider" json:"cloudProvider,omitempty"`
 	// kubernetes directory path
 	PrefixPath string `yaml:"prefix_path" json:"prefixPath,omitempty"`
+	// kubernetes directory path for windows
+	WindowsPrefixPath string `yaml:"win_prefix_path" json:"winPrefixPath,omitempty"`
 	// Timeout in seconds for status check on addon deployment jobs
 	AddonJobTimeout int `yaml:"addon_job_timeout" json:"addonJobTimeout,omitempty" norman:"default=30"`
 	// Bastion/Jump Host configuration
@@ -149,6 +151,8 @@ type RKESystemImages struct {
 	CanalNode string `yaml:"canal_node" json:"canalNode,omitempty"`
 	// Canal CNI image
 	CanalCNI string `yaml:"canal_cni" json:"canalCni,omitempty"`
+	// Canal Controllers Image needed for Calico/Canal v3.14.0+
+	CanalControllers string `yaml:"canal_controllers" json:"canalControllers,omitempty"`
 	//CanalFlannel image
 	CanalFlannel string `yaml:"canal_flannel" json:"canalFlannel,omitempty"`
 	//CanalFlexVol image
@@ -338,6 +342,14 @@ type BaseService struct {
 	ExtraBinds []string `yaml:"extra_binds" json:"extraBinds,omitempty"`
 	// this is to provide extra env variable to the docker container running kubernetes service
 	ExtraEnv []string `yaml:"extra_env" json:"extraEnv,omitempty"`
+
+	// Windows nodes only of the same as the above
+	// Extra arguments that are added to the services
+	WindowsExtraArgs map[string]string `yaml:"win_extra_args" json:"winExtraArgs,omitempty"`
+	// Extra binds added to the nodes
+	WindowsExtraBinds []string `yaml:"win_extra_binds" json:"winExtraBinds,omitempty"`
+	// this is to provide extra env variable to the docker container running kubernetes service
+	WindowsExtraEnv []string `yaml:"win_extra_env" json:"winExtraEnv,omitempty"`
 }
 
 type NetworkConfig struct {
