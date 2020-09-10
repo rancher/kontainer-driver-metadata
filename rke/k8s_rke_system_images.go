@@ -2651,7 +2651,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band post v2.4.7
+		// Enabled out of band post v2.4.8
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		"v1.16.14-rancher1-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.3.15-rancher1"),
@@ -2686,7 +2686,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band post v2.4.7
+		// Enabled out of band post v2.4.8
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		"v1.16.15-rancher1-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.3.15-rancher1"),
@@ -3125,7 +3125,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band post v2.4.7
+		// Enabled out of band post v2.4.8
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		"v1.17.11-rancher1-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.3-rancher1"),
@@ -3300,7 +3300,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band post v2.4.7
+		// Enabled out of band post v2.4.8
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		"v1.18.8-rancher1-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.3-rancher1"),
