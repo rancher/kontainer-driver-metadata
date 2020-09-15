@@ -122,6 +122,10 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 			MinRancherVersion: "2.4.6-rc0",
 			MinRKEVersion:     "1.1.5-rc0",
 		},
+		"v1.15": {
+			MaxRancherVersion: "2.4.99",
+			MaxRKEVersion:     "1.1.99",
+		},
 		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
 		"v1.16.8-rancher1-1": {
 			MinRancherVersion: "2.3.3",
