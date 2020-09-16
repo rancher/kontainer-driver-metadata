@@ -21,7 +21,7 @@ func loadRancherDefaultK8sVersions() map[string]string {
 		"2.4.5": "v1.18.x",
 		"2.4":   "v1.17.x",
 		// rancher will use default if its version is absent
-		"default": "v1.18.x",
+		"default": "v1.19.x",
 	}
 }
 
@@ -29,7 +29,7 @@ func loadRKEDefaultK8sVersions() map[string]string {
 	return map[string]string{
 		"0.3": "v1.16.3-rancher1-1",
 		// rke will use default if its version is absent
-		"default": "v1.18.8-rancher1-1",
+		"default": "v1.19.1-rancher1-1",
 	}
 }
 
@@ -121,6 +121,10 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 		"v1.15.12-rancher2-5": {
 			MinRancherVersion: "2.4.6-rc0",
 			MinRKEVersion:     "1.1.5-rc0",
+		},
+		"v1.15": {
+			MaxRancherVersion: "2.4.99",
+			MaxRKEVersion:     "1.1.99",
 		},
 		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
 		"v1.16.8-rancher1-1": {

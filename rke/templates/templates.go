@@ -19,6 +19,7 @@ const (
 	calicov116           = "calico-v1.16"
 	calicov117           = "calico-v1.17"
 	calicov117Privileged = "calico-v1.17-privileged"
+	calicov3160          = "calico-v3.16.0"
 
 	canalv18                      = "canal-v1.8"
 	canalv113                     = "canal-v1.13"
@@ -30,6 +31,7 @@ const (
 	canalv117                     = "canal-v1.17"
 	canalv117Privileged           = "canal-v1.17-privileged"
 	canalv117PrivilegedCalico3134 = "canal-v1.17-privileged-calico3134"
+	canalv3160                    = "canal-v3.16.0"
 
 	flannelv18  = "flannel-v1.8"
 	flannelv115 = "flannel-v1.15"
@@ -61,7 +63,8 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.17.4-rancher0":                  calicov117Privileged,
+			">=1.19.0-rancher0":                  calicov3160,
+			">=1.17.4-rancher0 <1.19.0-rancher0": calicov117Privileged,
 			">=1.17.0-rancher0 <1.17.4-rancher0": calicov117,
 			">=1.16.8-rancher0 <1.17.0-rancher0": calicov117Privileged,
 			">=1.16.4-rancher1 <1.16.8-rancher0": calicov117,
@@ -78,7 +81,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
 		kdm.Canal: {
-			">=1.17.6-rancher2-1":                      canalv117PrivilegedCalico3134,
+			">=1.19.0-rancher0":                        canalv3160,
+			">=1.17.6-rancher2-1 <1.19.0-rancher0":     canalv117PrivilegedCalico3134,
 			">=1.17.4-rancher0 <1.17.6-rancher2-1":     canalv117Privileged,
 			">=1.17.0-rancher0 <1.17.4-rancher0":       canalv117,
 			">=1.16.10-rancher2-1 <1.17.0-rancher0":    canalv117PrivilegedCalico3134,
@@ -149,6 +153,7 @@ func getTemplates() map[string]string {
 		calicov117:           CalicoTemplateV117,
 		calicov117Privileged: CalicoTemplateV117Privileged,
 		calicov18:            CalicoTemplateV112,
+		calicov3160:          CalicoTemplateV3_16_0,
 
 		flannelv115: FlannelTemplateV115,
 		flannelv116: FlannelTemplateV116,
@@ -164,6 +169,7 @@ func getTemplates() map[string]string {
 		canalv117:                     CanalTemplateV117,
 		canalv117Privileged:           CanalTemplateV117Privileged,
 		canalv117PrivilegedCalico3134: CanalTemplateV117PrivilegedCalico3134,
+		canalv3160:                    CanalTemplateV3_16_0,
 
 		coreDnsv18:  CoreDNSTemplate,
 		coreDnsv116: CoreDNSTemplateV116,
