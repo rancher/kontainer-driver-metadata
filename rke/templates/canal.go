@@ -9206,13 +9206,14 @@ subjects:
   namespace: kube-system
 ---
 ---
+# Rancher-specific: Change the calico-node ClusterRole name to calico for backwards compatibility
 # Source: calico/templates/calico-node-rbac.yaml
 # Include a clusterrole for the calico-node DaemonSet,
 # and bind it to the calico-node serviceaccount.
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: calico-node
+  name: calico
 rules:
   # The CNI plugin needs to get pods, nodes, and namespaces.
   - apiGroups: [""]
@@ -9354,6 +9355,7 @@ subjects:
   name: canal
   namespace: kube-system
 ---
+# Rancher-specific: Change the ClusterRole from calico-node to calico for backwards compatiblity
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -9361,7 +9363,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: calico-node
+  name: calico
 subjects:
 - kind: ServiceAccount
   name: canal
