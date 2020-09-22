@@ -5079,6 +5079,7 @@ spec:
 `
 
 // CalicoTemplateV3_16_0 based on Calico v3.16.0 Other than image, identical with v3.16.1
+// Rancher-specific: Logging was changed from INFO to WARNING, i.e. https://github.com/rancher/rke/pull/746
 const CalicoTemplateV3_16_0 = `
 # Calico Template based on Calico v3.16.0
 ---
@@ -5115,7 +5116,7 @@ data:
       "plugins": [
         {
           "type": "calico",
-          "log_level": "info",
+          "log_level": "WARNING",
           "log_file_path": "/var/log/calico/cni/cni.log",
           "datastore_type": "kubernetes",
           "nodename": "__KUBERNETES_NODE_NAME__",
@@ -8752,9 +8753,16 @@ spec:
             # Disable IPv6 on Kubernetes.
             - name: FELIX_IPV6SUPPORT
               value: "false"
-            # Set Felix logging to "info"
+            # Rancher-specific: Define and set FELIX_LOGFILEPATH to none to disable felix logging to file
+            - name: FELIX_LOGFILEPATH
+              value: "none"
+            # Rancher-specific: Define and set FELIX_LOGSEVERITYSYS to no value from default info to disable felix logging to syslog
+            - name: FELIX_LOGSEVERITYSYS
+              value: ""
+            # Set Felix logging to "warning"
+            # Rancher-specific: Set FELIX_LOGSEVERITYSCREEN to Warning from default info
             - name: FELIX_LOGSEVERITYSCREEN
-              value: "info"
+              value: "Warning"
             - name: FELIX_HEALTHENABLED
               value: "true"
             # Rancher-specific: Set FELIX_IPTABLESBACKEND to auto for autodetection of nftables
