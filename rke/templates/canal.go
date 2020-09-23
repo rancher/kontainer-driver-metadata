@@ -5887,6 +5887,7 @@ spec:
 `
 
 // CanalTemplateV3_16_0 based on Canal v3.16.0. Other than image, identical with v3.16.1
+// Rancher-specific: Logging was changed from INFO to WARNING, i.e. https://github.com/rancher/rke/pull/746
 const CanalTemplateV3_16_0 = `
 # Canal Template based on Canal v3.16.0 
 ---
@@ -5924,7 +5925,7 @@ data:
       "plugins": [
         {
           "type": "calico",
-          "log_level": "info",
+          "log_level": "WARNING",
           "log_file_path": "/var/log/calico/cni/cni.log",
           "datastore_type": "kubernetes",
           "nodename": "__KUBERNETES_NODE_NAME__",
@@ -9206,13 +9207,14 @@ subjects:
   namespace: kube-system
 ---
 ---
+# Rancher-specific: Change the calico-node ClusterRole name to calico for backwards compatibility
 # Source: calico/templates/calico-node-rbac.yaml
 # Include a clusterrole for the calico-node DaemonSet,
 # and bind it to the calico-node serviceaccount.
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: calico-node
+  name: calico
 rules:
   # The CNI plugin needs to get pods, nodes, and namespaces.
   - apiGroups: [""]
@@ -9354,6 +9356,7 @@ subjects:
   name: canal
   namespace: kube-system
 ---
+# Rancher-specific: Change the ClusterRole from calico-node to calico for backwards compatiblity
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -9361,7 +9364,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: calico-node
+  name: calico
 subjects:
 - kind: ServiceAccount
   name: canal
@@ -9524,15 +9527,16 @@ spec:
             # Disable IPv6 on Kubernetes.
             - name: FELIX_IPV6SUPPORT
               value: "false"
-            # Disable felix logging to file
+            # Rancher-specific: Define and set FELIX_LOGFILEPATH to none to disable felix logging to file
             - name: FELIX_LOGFILEPATH
               value: "none"
-            # Disable felix logging for syslog
+            # Rancher-specific: Define and set FELIX_LOGSEVERITYSYS to no value from default info to disable felix logging to syslog
             - name: FELIX_LOGSEVERITYSYS
               value: ""
-            # Set Felix logging to "info"
+            # Set Felix logging to "warning"
+            # Rancher-specific: Set FELIX_LOGSEVERITYSCREEN to Warning from default info
             - name: FELIX_LOGSEVERITYSCREEN
-              value: "info"
+              value: "Warning"
             - name: FELIX_HEALTHENABLED
               value: "true"
             # Rancher-specific: Set FELIX_IPTABLESBACKEND to auto for autodetection of nftables
