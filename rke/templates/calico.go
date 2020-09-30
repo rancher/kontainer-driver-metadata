@@ -159,13 +159,9 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
-{{if .UpdateStrategy}}
-{{ toYaml .UpdateStrategy | indent 4}}
-{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
-{{end}}
   template:
     metadata:
       labels:
@@ -735,13 +731,9 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
-{{if .UpdateStrategy}}
-{{ toYaml .UpdateStrategy | indent 4}}
-{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
-{{end}}
   template:
     metadata:
       labels:
@@ -1607,13 +1599,9 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
-{{if .UpdateStrategy}}
-{{ toYaml .UpdateStrategy | indent 4}}
-{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
-{{end}}
   template:
     metadata:
       labels:
@@ -2122,7 +2110,6 @@ data:
   typha_service_name: "none"
   # Configure the backend to use.
   calico_backend: "bird"
-
   # Configure the MTU to use
 {{- if .MTU }}
 {{- if ne .MTU 0 }}
@@ -2131,7 +2118,6 @@ data:
 {{- else }}
   veth_mtu: "1440"
 {{- end}}
-
   # The CNI network configuration to install on each node.  The special
   # values in this config will be automatically populated.
   cni_network_config: |-
@@ -2684,6 +2670,7 @@ spec:
 const CalicoTemplateV116 = `
 {{if eq .RBACConfig "rbac"}}
 # Source: calico/templates/rbac.yaml
+
 # Include a clusterrole for the kube-controllers component,
 # and bind it to the calico-kube-controllers serviceaccount.
 kind: ClusterRole
@@ -2743,9 +2730,6 @@ subjects:
 - kind: ServiceAccount
   name: calico-kube-controllers
   namespace: kube-system
-- apiGroup: rbac.authorization.k8s.io
-  kind: Group
-  name: system:nodes
 ---
 # Include a clusterrole for the calico-node DaemonSet,
 # and bind it to the calico-node serviceaccount.
@@ -2771,12 +2755,6 @@ rules:
       - watch
       - list
       # Used to discover Typhas.
-      - get
-  # Pod CIDR auto-detection on kubeadm needs access to config maps.
-  - apiGroups: [""]
-    resources:
-      - configmaps
-    verbs:
       - get
   - apiGroups: [""]
     resources:
@@ -2914,6 +2892,7 @@ data:
   typha_service_name: "none"
   # Configure the backend to use.
   calico_backend: "bird"
+
   # Configure the MTU to use
 {{- if .MTU }}
 {{- if ne .MTU 0 }}
@@ -2922,6 +2901,7 @@ data:
 {{- else }}
   veth_mtu: "1440"
 {{- end}}
+
   # The CNI network configuration to install on each node.  The special
   # values in this config will be automatically populated.
   cni_network_config: |-
@@ -2949,19 +2929,16 @@ data:
           "type": "portmap",
           "snat": true,
           "capabilities": {"portMappings": true}
-        },
-        {
-          "type": "bandwidth",
-          "capabilities": {"bandwidth": true}
         }
       ]
     }
+---
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
-  name: felixconfigurations.crd.projectcalico.org
+   name: felixconfigurations.crd.projectcalico.org
 spec:
   scope: Cluster
   group: crd.projectcalico.org
@@ -2971,6 +2948,7 @@ spec:
     plural: felixconfigurations
     singular: felixconfiguration
 ---
+
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
@@ -2983,7 +2961,9 @@ spec:
     kind: IPAMBlock
     plural: ipamblocks
     singular: ipamblock
+
 ---
+
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
@@ -2996,7 +2976,9 @@ spec:
     kind: BlockAffinity
     plural: blockaffinities
     singular: blockaffinity
+
 ---
+
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
@@ -3009,7 +2991,9 @@ spec:
     kind: IPAMHandle
     plural: ipamhandles
     singular: ipamhandle
+
 ---
+
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
@@ -3022,7 +3006,9 @@ spec:
     kind: IPAMConfig
     plural: ipamconfigs
     singular: ipamconfig
+
 ---
+
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
@@ -3035,7 +3021,9 @@ spec:
     kind: BGPPeer
     plural: bgppeers
     singular: bgppeer
+
 ---
+
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
@@ -3048,7 +3036,9 @@ spec:
     kind: BGPConfiguration
     plural: bgpconfigurations
     singular: bgpconfiguration
+
 ---
+
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
@@ -3061,7 +3051,9 @@ spec:
     kind: IPPool
     plural: ippools
     singular: ippool
+
 ---
+
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
@@ -3074,7 +3066,9 @@ spec:
     kind: HostEndpoint
     plural: hostendpoints
     singular: hostendpoint
+
 ---
+
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
@@ -3087,7 +3081,9 @@ spec:
     kind: ClusterInformation
     plural: clusterinformations
     singular: clusterinformation
+
 ---
+
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
@@ -3100,7 +3096,9 @@ spec:
     kind: GlobalNetworkPolicy
     plural: globalnetworkpolicies
     singular: globalnetworkpolicy
+
 ---
+
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
@@ -3113,7 +3111,9 @@ spec:
     kind: GlobalNetworkSet
     plural: globalnetworksets
     singular: globalnetworkset
+
 ---
+
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
@@ -3126,7 +3126,9 @@ spec:
     kind: NetworkPolicy
     plural: networkpolicies
     singular: networkpolicy
+
 ---
+
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
@@ -3139,6 +3141,7 @@ spec:
     kind: NetworkSet
     plural: networksets
     singular: networkset
+---
 ---
 # Source: calico/templates/calico-node.yaml
 # This manifest installs the calico-node container, as well
@@ -3156,13 +3159,9 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
-{{if .UpdateStrategy}}
-{{ toYaml .UpdateStrategy | indent 4}}
-{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
-{{end}}
   template:
     metadata:
       labels:
@@ -3175,7 +3174,7 @@ spec:
         scheduler.alpha.kubernetes.io/critical-pod: ''
     spec:
       nodeSelector:
-        kubernetes.io/os: linux
+        beta.kubernetes.io/os: linux
       {{ range $k, $v := .NodeSelector }}
         {{ $k }}: "{{ $v }}"
       {{ end }}
@@ -3189,9 +3188,9 @@ spec:
           operator: Exists
         - effect: NoExecute
           operator: Exists
-{{if eq .RBACConfig "rbac"}}
+          {{if eq .RBACConfig "rbac"}}
       serviceAccountName: calico-node
-{{end}}
+          {{end}}
       # Minimize downtime during a rolling upgrade or deletion; tell Kubernetes to do a "force
       # deletion": https://kubernetes.io/docs/concepts/workloads/pods/pod/#termination-of-pods.
       terminationGracePeriodSeconds: 0
@@ -3218,8 +3217,6 @@ spec:
               name: host-local-net-dir
             - mountPath: /host/opt/cni/bin
               name: cni-bin-dir
-          securityContext:
-            privileged: true
         # This container installs the CNI binaries
         # and CNI network config file on each node.
         - name: install-cni
@@ -3254,8 +3251,6 @@ spec:
               name: cni-bin-dir
             - mountPath: /host/etc/cni/net.d
               name: cni-net-dir
-          securityContext:
-            privileged: true
         # Adds a Flex Volume Driver that creates a per-pod Unix Domain Socket to allow Dikastes
         # to communicate with Felix over the Policy Sync API.
         - name: flexvol-driver
@@ -3263,8 +3258,6 @@ spec:
           volumeMounts:
           - name: flexvol-driver-host
             mountPath: /host/driver
-          securityContext:
-            privileged: true
       containers:
         # Runs calico-node container on each Kubernetes node.  This
         # container programs network policy and routes on each
@@ -3329,11 +3322,10 @@ spec:
             requests:
               cpu: 250m
           livenessProbe:
-            exec:
-              command:
-              - /bin/calico-node
-              - -felix-live
-              - -bird-live
+            httpGet:
+              path: /liveness
+              port: 9099
+              host: localhost
             periodSeconds: 10
             initialDelaySeconds: 10
             failureThreshold: 6
@@ -3341,8 +3333,8 @@ spec:
             exec:
               command:
               - /bin/calico-node
-              - -felix-ready
               - -bird-ready
+              - -felix-ready
             periodSeconds: 10
           volumeMounts:
             - mountPath: /lib/modules
@@ -3415,6 +3407,7 @@ metadata:
   namespace: kube-system
 ---
 # Source: calico/templates/calico-kube-controllers.yaml
+
 # See https://github.com/projectcalico/kube-controllers
 apiVersion: apps/v1
 kind: Deployment
@@ -3441,7 +3434,7 @@ spec:
         scheduler.alpha.kubernetes.io/critical-pod: ''
     spec:
       nodeSelector:
-        kubernetes.io/os: linux
+        beta.kubernetes.io/os: linux
       tolerations:
         # Make sure calico-node gets scheduled on all nodes.
         - effect: NoSchedule
@@ -3964,13 +3957,9 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
-{{if .UpdateStrategy}}
-{{ toYaml .UpdateStrategy | indent 4}}
-{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
-{{end}}
   template:
     metadata:
       labels:
@@ -4508,7 +4497,6 @@ data:
   typha_service_name: "none"
   # Configure the backend to use.
   calico_backend: "bird"
-
   # Configure the MTU to use
 {{- if .MTU }}
 {{- if ne .MTU 0 }}
@@ -4517,7 +4505,6 @@ data:
 {{- else }}
   veth_mtu: "1440"
 {{- end}}
-
   # The CNI network configuration to install on each node.  The special
   # values in this config will be automatically populated.
   cni_network_config: |-
