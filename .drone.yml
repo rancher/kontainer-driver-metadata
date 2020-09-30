@@ -1,0 +1,36 @@
+---
+kind: pipeline
+name: amd64
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: validate
+    image: rancher/dapper:v0.4.1
+    commands:
+    - dapper ci
+    volumes:
+    - name: docker
+      path: /var/run/docker.sock
+
+  - name: upload
+    pull: default
+    image: plugins/gcs
+    settings:
+      acl:
+      - allUsers:READER
+      cache_control: "public,no-cache,proxy-revalidate"
+      source: data
+      target: releases.rancher.com/kontainer-driver-metadata/${DRONE_BRANCH}
+      token:
+        from_secret: google_auth_key
+    when:
+      event:
+      - push
+
+volumes:
+- name: docker
+  host:
+    path: /var/run/docker.sock

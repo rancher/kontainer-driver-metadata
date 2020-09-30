@@ -1,6 +1,8 @@
 package v3
 
 import (
+	"strings"
+
 	"github.com/rancher/norman/condition"
 	"github.com/rancher/norman/types"
 	v1 "k8s.io/api/core/v1"
@@ -22,6 +24,10 @@ type ClusterLogging struct {
 	Status ClusterLoggingStatus `json:"status"`
 }
 
+func (c *ClusterLogging) ObjClusterName() string {
+	return c.Spec.ObjClusterName()
+}
+
 type ProjectLogging struct {
 	types.Namespaced
 
@@ -37,10 +43,15 @@ type ProjectLogging struct {
 	Status ProjectLoggingStatus `json:"status"`
 }
 
+func (p *ProjectLogging) ObjClusterName() string {
+	return p.Spec.ObjClusterName()
+}
+
 type LoggingCommonField struct {
 	DisplayName         string            `json:"displayName,omitempty"`
 	OutputFlushInterval int               `json:"outputFlushInterval,omitempty" norman:"default=60"`
 	OutputTags          map[string]string `json:"outputTags,omitempty"`
+	EnableJSONParsing   bool              `json:"enableJSONParsing,omitempty"`
 }
 
 type LoggingTargets struct {
@@ -59,10 +70,21 @@ type ClusterLoggingSpec struct {
 	IncludeSystemComponent *bool  `json:"includeSystemComponent,omitempty" norman:"default=true"`
 }
 
+func (c *ClusterLoggingSpec) ObjClusterName() string {
+	return c.ClusterName
+}
+
 type ProjectLoggingSpec struct {
 	LoggingTargets
 	LoggingCommonField
 	ProjectName string `json:"projectName" norman:"type=reference[project]"`
+}
+
+func (p *ProjectLoggingSpec) ObjClusterName() string {
+	if parts := strings.SplitN(p.ProjectName, ":", 2); len(parts) == 2 {
+		return parts[0]
+	}
+	return ""
 }
 
 type ClusterLoggingStatus struct {
@@ -182,8 +204,19 @@ type ClusterTestInput struct {
 	OutputTags map[string]string `json:"outputTags,omitempty"`
 }
 
+func (c *ClusterTestInput) ObjClusterName() string {
+	return c.ClusterName
+}
+
 type ProjectTestInput struct {
 	ProjectName string `json:"projectId" norman:"required,type=reference[project]"`
 	LoggingTargets
 	OutputTags map[string]string `json:"outputTags,omitempty"`
+}
+
+func (p *ProjectTestInput) ObjClusterName() string {
+	if parts := strings.SplitN(p.ProjectName, ":", 2); len(parts) == 2 {
+		return parts[0]
+	}
+	return ""
 }

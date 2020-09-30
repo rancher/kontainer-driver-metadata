@@ -1,8 +1,7 @@
 # kontainer-driver-metadata
 
 #### Run ####
-  * `./kontainer-driver-metadata --write-data=true` loads data under /rke into data/data.json
-  * vendor changes into RKE
+  * `go generate`
   * rancher >=2.3 will listen on changes in data.json and load automatically
 
 #### How to add to data ####
