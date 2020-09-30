@@ -59,7 +59,8 @@ const (
 )
 
 var TemplateIntroducedRanges = map[string][]string{
-	kdm.Nodelocal: {">=1.17.4-rancher1-1", ">=1.16.8-rancher1-1 <1.17.0-alpha", ">=1.15.11-rancher1-1 <1.16.0-alpha"},
+	kdm.KubeRouter: {">=1.16.0-alpha"},
+	kdm.Nodelocal:  {">=1.17.4-rancher1-1", ">=1.16.8-rancher1-1 <1.17.0-alpha", ">=1.15.11-rancher1-1 <1.16.0-alpha"},
 }
 
 func LoadK8sVersionedTemplates() map[string]map[string]string {
