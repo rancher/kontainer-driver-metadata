@@ -50,6 +50,7 @@ type GenericController interface {
 	AddHandler(ctx context.Context, name string, handler HandlerFunc)
 	HandlerCount() int
 	Enqueue(namespace, name string)
+	EnqueueAfter(namespace, name string, after time.Duration)
 	Sync(ctx context.Context) error
 	Start(ctx context.Context, threadiness int) error
 }
@@ -122,28 +123,63 @@ func (g *genericController) Enqueue(namespace, name string) {
 	}
 }
 
+func (g *genericController) EnqueueAfter(namespace, name string, after time.Duration) {
+	key := name
+	if namespace != "" {
+		key = namespace + "/" + name
+	}
+	if g.queue != nil {
+		g.queue.AddAfter(key, after)
+	}
+}
+
 func (g *genericController) AddHandler(ctx context.Context, name string, handler HandlerFunc) {
+	t := getHandlerTransaction(ctx)
+	if t == nil {
+		g.addHandler(ctx, name, handler)
+		return
+	}
+
+	go func() {
+		if t.shouldContinue() {
+			g.addHandler(ctx, name, handler)
+		}
+	}()
+}
+
+func (g *genericController) addHandler(ctx context.Context, name string, handler HandlerFunc) {
 	g.Lock()
+	defer g.Unlock()
+
+	g.generation++
 	h := &handlerDef{
 		name:       name,
 		generation: g.generation,
 		handler:    handler,
 	}
-	g.handlers = append(g.handlers, h)
-	g.Unlock()
 
-	go func() {
+	go func(gen int) {
 		<-ctx.Done()
 		g.Lock()
-		var handlers []*handlerDef
+		defer g.Unlock()
+		var newHandlers []*handlerDef
 		for _, handler := range g.handlers {
-			if handler != h {
-				handlers = append(handlers, h)
+			if handler.generation == gen {
+				continue
 			}
+			newHandlers = append(newHandlers, handler)
 		}
-		g.handlers = handlers
-		g.Unlock()
-	}()
+		g.handlers = newHandlers
+	}(h.generation)
+
+	g.handlers = append(g.handlers, h)
+
+	if g.synced {
+		for _, key := range g.informer.GetStore().ListKeys() {
+			g.queue.Add(key)
+		}
+	}
+
 }
 
 func (g *genericController) Sync(ctx context.Context) error {
@@ -214,25 +250,9 @@ func (g *genericController) Start(ctx context.Context, threadiness int) error {
 			threadiness = g.threadinessOverride
 		}
 		go g.run(ctx, threadiness)
+		g.running = true
 	}
 
-	if g.running {
-		for _, h := range g.handlers {
-			if h.generation != g.generation {
-				continue
-			}
-			for _, key := range g.informer.GetStore().ListKeys() {
-				g.queueObject(generationKey{
-					generation: g.generation,
-					key:        key,
-				})
-			}
-			break
-		}
-	}
-
-	g.generation++
-	g.running = true
 	return nil
 }
 

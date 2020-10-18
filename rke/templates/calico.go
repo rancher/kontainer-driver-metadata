@@ -159,9 +159,13 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
+{{if .UpdateStrategy}}
+{{ toYaml .UpdateStrategy | indent 4}}
+{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
+{{end}}
   template:
     metadata:
       labels:
@@ -731,9 +735,13 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
+{{if .UpdateStrategy}}
+{{ toYaml .UpdateStrategy | indent 4}}
+{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
+{{end}}
   template:
     metadata:
       labels:
@@ -1599,9 +1607,13 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
+{{if .UpdateStrategy}}
+{{ toYaml .UpdateStrategy | indent 4}}
+{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
+{{end}}
   template:
     metadata:
       labels:
@@ -2110,6 +2122,7 @@ data:
   typha_service_name: "none"
   # Configure the backend to use.
   calico_backend: "bird"
+
   # Configure the MTU to use
 {{- if .MTU }}
 {{- if ne .MTU 0 }}
@@ -2118,6 +2131,7 @@ data:
 {{- else }}
   veth_mtu: "1440"
 {{- end}}
+
   # The CNI network configuration to install on each node.  The special
   # values in this config will be automatically populated.
   cni_network_config: |-
@@ -3159,9 +3173,13 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
+{{if .UpdateStrategy}}
+{{ toYaml .UpdateStrategy | indent 4}}
+{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
+{{end}}
   template:
     metadata:
       labels:
@@ -3957,9 +3975,13 @@ spec:
     matchLabels:
       k8s-app: calico-node
   updateStrategy:
+{{if .UpdateStrategy}}
+{{ toYaml .UpdateStrategy | indent 4}}
+{{else}}
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
+{{end}}
   template:
     metadata:
       labels:
@@ -4497,6 +4519,7 @@ data:
   typha_service_name: "none"
   # Configure the backend to use.
   calico_backend: "bird"
+
   # Configure the MTU to use
 {{- if .MTU }}
 {{- if ne .MTU 0 }}
@@ -4505,6 +4528,7 @@ data:
 {{- else }}
   veth_mtu: "1440"
 {{- end}}
+
   # The CNI network configuration to install on each node.  The special
   # values in this config will be automatically populated.
   cni_network_config: |-

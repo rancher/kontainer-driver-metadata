@@ -3,55 +3,32 @@ package rke
 import (
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"os"
+	"sigs.k8s.io/yaml"
 	"strings"
 
 	"github.com/blang/semver"
 	"github.com/rancher/kontainer-driver-metadata/rke/templates"
-	"github.com/sirupsen/logrus"
-
-	v3 "github.com/rancher/types/apis/management.cattle.io/v3"
 	"github.com/rancher/types/image"
+	"github.com/rancher/types/kdm"
+	"github.com/sirupsen/logrus"
 )
 
 const (
 	rkeDataFilePath = "./data/data.json"
 )
 
-// Data to be written in dataFilePath, dynamically populated on init() with the latest versions
-type Data struct {
-
-	// K8sVersionServiceOptions - service options per k8s version
-	K8sVersionServiceOptions  map[string]v3.KubernetesServicesOptions
-	K8sVersionRKESystemImages map[string]v3.RKESystemImages
-
-	// Addon Templates per K8s version ("default" where nothing changes for k8s version)
-	K8sVersionedTemplates map[string]map[string]string
-
-	// K8sVersionInfo - min/max RKE+Rancher versions per k8s version
-	K8sVersionInfo map[string]v3.K8sVersionInfo
-
-	//Default K8s version for every rancher version
-	RancherDefaultK8sVersions map[string]string
-
-	//Default K8s version for every rke version
-	RKEDefaultK8sVersions map[string]string
-
-	K8sVersionDockerInfo map[string][]string
-
-	// K8sVersionWindowsServiceOptions - service options per windows k8s version
-	K8sVersionWindowsServiceOptions map[string]v3.KubernetesServicesOptions
-}
-
 var (
-	DriverData     Data
+	DriverData     kdm.Data
 	MissedTemplate map[string][]string
 	m              = image.Mirror
 )
 
-func init() {
-	DriverData = Data{
+func initData() {
+	DriverData = kdm.Data{
 		K8sVersionRKESystemImages: loadK8sRKESystemImages(),
+		K3S:                       map[string]interface{}{},
 	}
 
 	for version, images := range DriverData.K8sVersionRKESystemImages {
@@ -74,10 +51,52 @@ func init() {
 
 	DriverData.K8sVersionInfo = loadK8sVersionInfo()
 
+	validateVersionInfo()
+
 	// init Windows versions
 	DriverData.K8sVersionWindowsServiceOptions = loadK8sVersionWindowsServiceOptions()
 	DriverData.K8sVersionDockerInfo = loadK8sVersionDockerInfo()
 
+	// CIS
+	DriverData.CisConfigParams = loadCisConfigParams()
+	DriverData.CisBenchmarkVersionInfo = loadCisBenchmarkVersionInfo()
+
+	if err := readFile("./channels.yaml", DriverData.K3S); err != nil {
+		panic(err)
+	}
+}
+
+func validateVersionInfo() {
+	var errorsFound bool
+	var incompleteVersions []string
+	versionRangesNeedSpecificVersionInfo := []string{
+		// 1.15.12-rancher1-1 comes from 2.2.13, doesn't need version info
+		">=1.15.11-rancher1-1 <1.15.12-rancher1-1",
+		">=1.15.12-rancher2-2 <1.16.0-alpha",
+		">=1.16.8-rancher1-1 <1.17.0-alpha",
+		">=1.17.4-rancher1-1 <1.18.0-alpha"}
+	for k8sVersion := range DriverData.K8sVersionRKESystemImages {
+		toMatch, err := semver.Make(k8sVersion[1:])
+		if err != nil {
+			panic(fmt.Sprintf("k8sVersion not sem-ver %s %v", k8sVersion, err))
+		}
+		for _, versionRange := range versionRangesNeedSpecificVersionInfo {
+			parsedVersionRange, err := semver.ParseRange(versionRange)
+			if err != nil {
+				panic(fmt.Sprintf("range not sem-ver %v %v", versionRange, err))
+			}
+			if parsedVersionRange(toMatch) {
+				// check specific version info
+				if _, ok := DriverData.K8sVersionInfo[k8sVersion]; !ok {
+					incompleteVersions = append(incompleteVersions, k8sVersion)
+					errorsFound = true
+				}
+			}
+		}
+	}
+	if errorsFound {
+		panic(fmt.Sprintf("following versions do not have specific version info specified: %v", strings.Join(incompleteVersions, ",")))
+	}
 }
 
 func validateDefaultPresent(versions map[string]string) {
@@ -96,7 +115,7 @@ func validateTemplateMatch() {
 			panic(fmt.Sprintf("k8sVersion not sem-ver %s %v", k8sVersion, err))
 		}
 		for plugin, pluginData := range DriverData.K8sVersionedTemplates {
-			if plugin == templates.TemplateKeys {
+			if plugin == kdm.TemplateKeys {
 				continue
 			}
 			matchedKey := ""
@@ -154,31 +173,35 @@ func validateTemplateMatch() {
 	}
 }
 
-func GenerateData() {
-	if len(os.Args) == 2 {
-		splitStr := strings.SplitN(os.Args[1], "=", 2)
-		if len(splitStr) == 2 {
-			if splitStr[0] == "--write-data" && splitStr[1] == "true" {
-				if len(MissedTemplate) != 0 {
-					logrus.Warnf("found k8s versions without a template")
-					for plugin, data := range MissedTemplate {
-						logrus.Warnf("no %s template for k8sVersions %v \n", plugin, data)
-					}
-				}
+func readFile(input string, data map[string]interface{}) error {
+	bytes, err := ioutil.ReadFile(input)
+	if err != nil {
+		return err
+	}
 
-				//todo: zip file
-				strData, _ := json.MarshalIndent(DriverData, "", " ")
-				jsonFile, err := os.Create(rkeDataFilePath)
-				if err != nil {
-					panic(fmt.Errorf("err creating data file %v", err))
-				}
-				defer jsonFile.Close()
-				_, err = jsonFile.Write(strData)
-				if err != nil {
-					panic(fmt.Errorf("err writing jsonFile %v", err))
-				}
-				fmt.Println("finished generating data.json")
-			}
+	return yaml.Unmarshal(bytes, &data)
+}
+
+func GenerateData() {
+	initData()
+
+	if len(MissedTemplate) != 0 {
+		logrus.Warnf("found k8s versions without a template")
+		for plugin, data := range MissedTemplate {
+			logrus.Warnf("no %s template for k8sVersions %v \n", plugin, data)
 		}
 	}
+
+	//todo: zip file
+	strData, _ := json.MarshalIndent(DriverData, "", " ")
+	jsonFile, err := os.Create(rkeDataFilePath)
+	if err != nil {
+		panic(fmt.Errorf("err creating data file %v", err))
+	}
+	defer jsonFile.Close()
+	_, err = jsonFile.Write(strData)
+	if err != nil {
+		panic(fmt.Errorf("err writing jsonFile %v", err))
+	}
+	fmt.Println("finished generating data.json")
 }

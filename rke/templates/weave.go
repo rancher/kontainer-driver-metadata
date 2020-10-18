@@ -151,6 +151,9 @@ items:
               hostPath:
                 path: /run/xtables.lock
       updateStrategy:
+{{if .UpdateStrategy}}
+{{ toYaml .UpdateStrategy | indent 8}}
+{{end}}
         type: RollingUpdate
 {{- if eq .RBACConfig "rbac"}}
 ---
@@ -406,6 +409,9 @@ items:
               hostPath:
                 path: /run/xtables.lock
       updateStrategy:
+{{if .UpdateStrategy}}
+{{ toYaml .UpdateStrategy | indent 8}}
+{{end}}
         type: RollingUpdate
 {{- if eq .RBACConfig "rbac"}}
 ---

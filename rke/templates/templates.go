@@ -6,18 +6,11 @@ Will they change and require Rancher to pass them to RKE
 depending on Kubernetes version?
 */
 
-const (
-	Calico        = "calico"
-	Canal         = "canal"
-	Flannel       = "flannel"
-	Weave         = "weave"
-	CoreDNS       = "coreDNS"
-	KubeDNS       = "kubeDNS"
-	MetricsServer = "metricsServer"
-	NginxIngress  = "nginxIngress"
-	Nodelocal     = "nodelocal"
-	TemplateKeys  = "templateKeys"
+import (
+	"github.com/rancher/types/kdm"
+)
 
+const (
 	calicov18            = "calico-v1.8"
 	calicov113           = "calico-v1.13"
 	calicov115           = "calico-v1.15"
@@ -62,29 +55,29 @@ const (
 )
 
 var TemplateIntroducedRanges = map[string][]string{
-	Nodelocal: {">=1.17.4-rancher1-1", ">=1.16.8-rancher1-1 <1.17.0-alpha", ">=1.15.11-rancher1-1 <1.16.0-alpha"},
+	kdm.Nodelocal: {">=1.17.4-rancher1-1", ">=1.16.8-rancher1-1 <1.17.0-alpha", ">=1.15.11-rancher1-1 <1.16.0-alpha"},
 }
 
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
-		Calico: {
-			">=1.17.4-rancher0":                     calicov117Privileged,
-			">=1.17.0-rancher0 <1.17.4-rancher0":    calicov117,
-			">=1.16.8-rancher0 <1.17.0-rancher0":    calicov117Privileged,
-			">=1.16.4-rancher1 <1.16.8-rancher0":    calicov117,
-			">=1.16.0-alpha <1.16.4-rancher1":       calicov116,
+		kdm.Calico: {
+			">=1.17.4-rancher0":                  calicov117Privileged,
+			">=1.17.0-rancher0 <1.17.4-rancher0": calicov117,
+			">=1.16.8-rancher0 <1.17.0-rancher0": calicov117Privileged,
+			">=1.16.4-rancher1 <1.16.8-rancher0": calicov117,
+			">=1.16.0-alpha <1.16.4-rancher1":    calicov116,
 
 			">=1.15.11-rancher1-1 <1.15.12-rancher1-1": calicov115Privileged,
 			// 1.15.12-rancher1-1 comes from 2.2.13, uses calicov115 template with new key calicov11512
 			// new key is to enable rancher passing template to rke for an already vendored template
 			">=1.15.12-rancher1-1 <1.15.12-rancher2-2": calicov11512,
-			">=1.15.12-rancher2-2 <1.16.0-alpha": calicov115Privileged,
+			">=1.15.12-rancher2-2 <1.16.0-alpha":       calicov115Privileged,
 
 			">=1.15.0-rancher0 <1.15.11-rancher1-1": calicov115,
 			">=1.13.0-rancher0 <1.15.0-rancher0":    calicov113,
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
-		Canal: {
+		kdm.Canal: {
 			">=1.17.6-rancher2-1":                      canalv117PrivilegedCalico3134,
 			">=1.17.4-rancher0 <1.17.6-rancher2-1":     canalv117Privileged,
 			">=1.17.0-rancher0 <1.17.4-rancher0":       canalv117,
@@ -101,28 +94,28 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.13.0-rancher0 <1.15.0-rancher0":       canalv113,
 			">=1.8.0-rancher0 <1.13.0-rancher0":        canalv18,
 		},
-		Flannel: {
+		kdm.Flannel: {
 			">=1.16.0-alpha":                    flannelv116,
 			">=1.15.0-rancher0 <1.16.0-alpha":   flannelv115,
 			">=1.8.0-rancher0 <1.15.0-rancher0": flannelv18,
 		},
-		CoreDNS: {
+		kdm.CoreDNS: {
 			">=1.17.0-alpha":                 coreDnsv117,
 			">=1.16.0-alpha <1.17.0-alpha":   coreDnsv116,
 			">=1.8.0-rancher0 <1.16.0-alpha": coreDnsv18,
 		},
-		KubeDNS: {
+		kdm.KubeDNS: {
 			">=1.16.0-alpha":                 kubeDnsv116,
 			">=1.8.0-rancher0 <1.16.0-alpha": kubeDnsv18,
 		},
-		MetricsServer: {
+		kdm.MetricsServer: {
 			">=1.8.0-rancher0": metricsServerv18,
 		},
-		Weave: {
+		kdm.Weave: {
 			">=1.16.0-alpha":                 weavev116,
 			">=1.8.0-rancher0 <1.16.0-alpha": weavev18,
 		},
-		NginxIngress: {
+		kdm.NginxIngress: {
 			">=1.8.0-rancher0 <1.13.10-rancher1-3":  nginxIngressv18,
 			">=1.14.0-rancher0 <=1.14.6-rancher1-1": nginxIngressv18,
 			">=1.15.0-rancher0 <=1.15.3-rancher1-1": nginxIngressv18,
@@ -137,10 +130,12 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.16.10-rancher1-1 <1.17.0-rancher1-1": nginxIngressV11512,
 			">=1.17.6-rancher1-1":                     nginxIngressV11512,
 		},
-		Nodelocal: {
-			">=1.8.0-rancher0": nodelocalv115,
+		kdm.Nodelocal: {
+			">=1.15.11-rancher0 <1.16.0-alpha": nodelocalv115,
+			">=1.16.8-rancher0 <1.17.0-alpha":  nodelocalv115,
+			">=1.17.4-rancher0":                nodelocalv115,
 		},
-		TemplateKeys: getTemplates(),
+		kdm.TemplateKeys: getTemplates(),
 	}
 }
 

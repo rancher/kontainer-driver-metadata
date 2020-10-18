@@ -168,6 +168,10 @@ spec:
   selector:
     matchLabels:
       app: ingress-nginx
+{{if .UpdateStrategy}}
+  updateStrategy:
+{{ toYaml .UpdateStrategy | indent 4}}
+{{end}}
   template:
     metadata:
       labels:
@@ -187,6 +191,9 @@ spec:
                     - windows
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
+      {{if eq .NetworkMode "hostNetwork"}}
+      hostNetwork: true
+      {{end}}
       {{if .DNSPolicy}}
       dnsPolicy: {{.DNSPolicy}}
       {{end}}
@@ -231,13 +238,13 @@ spec:
           {{- end }}
           {{- if eq .AlpineImage ""}}
           securityContext:
-			{{- if .HostNetwork }}
+            {{- if ne .NetworkMode "none" }}
             capabilities:
                 drop:
                 - ALL
                 add:
                 - NET_BIND_SERVICE
-			{{- end }}
+            {{- end }}
             runAsUser: 33
           {{- end }}
           env:
@@ -254,14 +261,22 @@ spec:
 {{end}}
           ports:
           - name: http
+            {{- if eq .NetworkMode "hostNetwork"}}
+            containerPort: 80
+            {{- else if or (eq .NetworkMode "hostPort") (eq .NetworkMode "none")}}
             containerPort: {{with (index .ExtraArgs "http-port")}}{{.}}{{else}}80{{end}}
-            {{- if .HostNetwork }} 
+			{{- if eq .NetworkMode "hostPort"}}
             hostPort: {{.HTTPPort}}
+			{{- end }}
             {{- end }}
           - name: https
+            {{- if eq .NetworkMode "hostNetwork"}}
+            containerPort: 443
+            {{- else if or (eq .NetworkMode "hostPort") (eq .NetworkMode "none")}}
             containerPort: {{with (index .ExtraArgs "https-port")}}{{.}}{{else}}443{{end}}
-            {{- if .HostNetwork }}
+            {{- if eq .NetworkMode "hostPort"}}
             hostPort: {{.HTTPSPort}}
+            {{- end }}
             {{- end }}
           livenessProbe:
             failureThreshold: 3
@@ -534,6 +549,10 @@ spec:
   selector:
     matchLabels:
       app: ingress-nginx
+{{if .UpdateStrategy}}
+  updateStrategy:
+{{ toYaml .UpdateStrategy | indent 4}}
+{{end}}
   template:
     metadata:
       labels:
@@ -553,6 +572,9 @@ spec:
                     - windows
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
+      {{if eq .NetworkMode "hostNetwork"}}
+      hostNetwork: true
+      {{end}}
       {{if .DNSPolicy}}
       dnsPolicy: {{.DNSPolicy}}
       {{end}}
@@ -597,7 +619,7 @@ spec:
           {{- end }}
           {{- if eq .AlpineImage ""}}
           securityContext:
-			{{- if .HostNetwork }}
+            {{ if ne .NetworkMode "none" }}
             capabilities:
                 drop:
                 - ALL
@@ -620,14 +642,22 @@ spec:
 {{end}}
           ports:
           - name: http
+            {{- if eq .NetworkMode "hostNetwork"}}
+            containerPort: 80
+            {{- else if or (eq .NetworkMode "hostPort") (eq .NetworkMode "none")}}
             containerPort: {{with (index .ExtraArgs "http-port")}}{{.}}{{else}}80{{end}}
-            {{- if .HostNetwork }}
+			{{- if eq .NetworkMode "hostPort"}}
             hostPort: {{.HTTPPort}}
+			{{- end }}
             {{- end }}
           - name: https
+            {{- if eq .NetworkMode "hostNetwork"}}
+            containerPort: 443
+            {{- else if or (eq .NetworkMode "hostPort") (eq .NetworkMode "none")}}
             containerPort: {{with (index .ExtraArgs "https-port")}}{{.}}{{else}}443{{end}}
-            {{- if .HostNetwork }}
+            {{- if eq .NetworkMode "hostPort"}}
             hostPort: {{.HTTPSPort}}
+            {{- end }}
             {{- end }}
           livenessProbe:
             failureThreshold: 3
@@ -943,10 +973,10 @@ spec:
   selector:
     matchLabels:
       app: ingress-nginx
+{{if .UpdateStrategy}}
   updateStrategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
+{{ toYaml .UpdateStrategy | indent 4}}
+{{end}}
   template:
     metadata:
       labels:
@@ -966,6 +996,9 @@ spec:
                     - windows
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
+      {{if eq .NetworkMode "hostNetwork"}}
+      hostNetwork: true
+      {{end}}
       {{if .DNSPolicy}}
       dnsPolicy: {{.DNSPolicy}}
       {{end}}
@@ -1000,13 +1033,13 @@ spec:
             - --{{ $k }}{{if ne $v "" }}={{ $v }}{{end}}
           {{ end }}
           securityContext:
-		  {{- if .HostNetwork }}
+          {{ if ne .NetworkMode "none" }}
             capabilities:
                 drop:
                 - ALL
                 add:
                 - NET_BIND_SERVICE
-          {{- end }}
+          {{ end }}
             runAsUser: 101
           env:
             - name: POD_NAME
@@ -1022,14 +1055,22 @@ spec:
 {{end}}
           ports:
           - name: http
+            {{- if eq .NetworkMode "hostNetwork"}}
+            containerPort: 80
+            {{- else if or (eq .NetworkMode "hostPort") (eq .NetworkMode "none")}}
             containerPort: {{with (index .ExtraArgs "http-port")}}{{.}}{{else}}80{{end}}
-            {{- if .HostNetwork }}
+			{{- if eq .NetworkMode "hostPort"}}
             hostPort: {{.HTTPPort}}
+			{{- end }}
             {{- end }}
           - name: https
+            {{- if eq .NetworkMode "hostNetwork"}}
+            containerPort: 443
+            {{- else if or (eq .NetworkMode "hostPort") (eq .NetworkMode "none")}}
             containerPort: {{with (index .ExtraArgs "https-port")}}{{.}}{{else}}443{{end}}
-            {{- if .HostNetwork }}
+            {{- if eq .NetworkMode "hostPort"}}
             hostPort: {{.HTTPSPort}}
+            {{- end }}
             {{- end }}
           livenessProbe:
             failureThreshold: 3
