@@ -960,9 +960,9 @@ spec:
                     - windows
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
-      {{if eq .NetworkMode "hostNetwork"}}
+      {{- if eq .NetworkMode "hostNetwork"}}
       hostNetwork: true
-      {{end}}
+      {{- end}}
       {{if .DNSPolicy}}
       dnsPolicy: {{.DNSPolicy}}
       {{end}}
@@ -997,13 +997,13 @@ spec:
             - --{{ $k }}{{if ne $v "" }}={{ $v }}{{end}}
           {{ end }}
           securityContext:
-          {{ if ne .NetworkMode "none" }}
+          {{- if ne .NetworkMode "none" }}
             capabilities:
                 drop:
                 - ALL
                 add:
                 - NET_BIND_SERVICE
-          {{ end }}
+          {{- end }}
             runAsUser: 101
           env:
             - name: POD_NAME
