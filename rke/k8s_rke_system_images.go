@@ -3721,7 +3721,6 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.13"),
 		},
-		// Enabled out of band post v2.5.1
 		"v1.19.3-rancher1-2": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.13-rancher1"),
 			Kubernetes:                m("rancher/hyperkube:v1.19.3-rancher1"),
@@ -3735,6 +3734,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			KubeDNSAutoscaler:         m("rancher/cluster-proportional-autoscaler:1.8.1"),
 			Flannel:                   m("quay.io/coreos/flannel:v0.13.0-rancher1"),
 			FlannelCNI:                m("rancher/flannel-cni:v0.3.0-rancher6"),
+			TigeraOperator:            m("quay.io/tigera/operator:v1.10.7"),
 			CalicoNode:                m("quay.io/calico/node:v3.16.1"),
 			CalicoCNI:                 m("quay.io/calico/cni:v3.16.1"),
 			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.16.1"),

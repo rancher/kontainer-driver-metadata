@@ -14,3 +14,5 @@ require (
 	github.com/sirupsen/logrus v1.4.2
 	sigs.k8s.io/yaml v1.2.0
 )
+
+replace github.com/rancher/rke => github.com/tmjd/rke v1.2.0-rc9.0.20201023162633-6f78d375d314
