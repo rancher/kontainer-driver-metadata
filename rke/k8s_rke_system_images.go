@@ -2792,9 +2792,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band post v2.4.8
+		// Enabled with v2.4.9
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.16.15-rancher1-2": {
+		"v1.16.15-rancher1-3": {
 			Etcd:                      m("rancher/coreos-etcd:v3.3.15-rancher1"),
 			Kubernetes:                m("rancher/hyperkube:v1.16.15-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.65"),
@@ -2819,7 +2819,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WeaveNode:                 m("weaveworks/weave-kube:2.6.4"),
 			WeaveCNI:                  m("weaveworks/weave-npc:2.6.4"),
 			PodInfraContainer:         m("gcr.io/google_containers/pause:3.1"),
-			Ingress:                   m("rancher/nginx-ingress-controller:nginx-0.35.0-rancher1"),
+			Ingress:                   m("rancher/nginx-ingress-controller:nginx-0.35.0-rancher2"),
 			IngressBackend:            m("rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1"),
 			MetricsServer:             m("gcr.io/google_containers/metrics-server:v0.3.4"),
 			CoreDNS:                   m("coredns/coredns:1.6.2"),
@@ -3336,9 +3336,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band post v2.4.8
+		// Enabled with v2.4.9
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.17.13-rancher1-1": {
+		"v1.17.13-rancher1-2": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.3-rancher1"),
 			Kubernetes:                m("rancher/hyperkube:v1.17.13-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.65"),
@@ -3363,7 +3363,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WeaveNode:                 m("weaveworks/weave-kube:2.6.4"),
 			WeaveCNI:                  m("weaveworks/weave-npc:2.6.4"),
 			PodInfraContainer:         m("gcr.io/google_containers/pause:3.1"),
-			Ingress:                   m("rancher/nginx-ingress-controller:nginx-0.35.0-rancher1"),
+			Ingress:                   m("rancher/nginx-ingress-controller:nginx-0.35.0-rancher2"),
 			IngressBackend:            m("rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1"),
 			MetricsServer:             m("gcr.io/google_containers/metrics-server:v0.3.6"),
 			CoreDNS:                   m("coredns/coredns:1.6.5"),
@@ -3616,9 +3616,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band post v2.4.8
+		// Enabled with v2.4.9
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.18.10-rancher1-1": {
+		"v1.18.10-rancher1-2": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.3-rancher1"),
 			Kubernetes:                m("rancher/hyperkube:v1.18.10-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.65"),
@@ -3643,7 +3643,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WeaveNode:                 m("weaveworks/weave-kube:2.6.4"),
 			WeaveCNI:                  m("weaveworks/weave-npc:2.6.4"),
 			PodInfraContainer:         m("gcr.io/google_containers/pause:3.1"),
-			Ingress:                   m("rancher/nginx-ingress-controller:nginx-0.35.0-rancher1"),
+			Ingress:                   m("rancher/nginx-ingress-controller:nginx-0.35.0-rancher2"),
 			IngressBackend:            m("rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1"),
 			MetricsServer:             m("gcr.io/google_containers/metrics-server:v0.3.6"),
 			CoreDNS:                   m("coredns/coredns:1.6.9"),
