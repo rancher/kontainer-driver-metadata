@@ -48,7 +48,7 @@ type RancherKubernetesEngineConfig struct {
 	// kubernetes directory path for windows
 	WindowsPrefixPath string `yaml:"win_prefix_path" json:"winPrefixPath,omitempty"`
 	// Timeout in seconds for status check on addon deployment jobs
-	AddonJobTimeout int `yaml:"addon_job_timeout" json:"addonJobTimeout,omitempty" norman:"default=30"`
+	AddonJobTimeout int `yaml:"addon_job_timeout" json:"addonJobTimeout,omitempty" norman:"default=45"`
 	// Bastion/Jump Host configuration
 	BastionHost BastionHost `yaml:"bastion_host" json:"bastionHost,omitempty"`
 	// Monitoring Config
@@ -72,7 +72,7 @@ type NodeUpgradeStrategy struct {
 	MaxUnavailableWorker string `yaml:"max_unavailable_worker" json:"maxUnavailableWorker,omitempty" norman:"min=1,default=10%"`
 	// MaxUnavailableControlplane input can be a number of nodes or a percentage of nodes
 	MaxUnavailableControlplane string          `yaml:"max_unavailable_controlplane" json:"maxUnavailableControlplane,omitempty" norman:"min=1,default=1"`
-	Drain                      bool            `yaml:"drain" json:"drain,omitempty"`
+	Drain                      *bool           `yaml:"drain" json:"drain,omitempty"`
 	DrainInput                 *NodeDrainInput `yaml:"node_drain_input" json:"nodeDrainInput,omitempty"`
 }
 
@@ -147,7 +147,7 @@ type RKESystemImages struct {
 	CalicoCtl string `yaml:"calico_ctl" json:"calicoCtl,omitempty"`
 	//CalicoFlexVol image
 	CalicoFlexVol string `yaml:"calico_flexvol" json:"calicoFlexVol,omitempty"`
-	//TigeraOperator image
+	//TigeraOperator image: Operator to deploy Calico
 	TigeraOperator string `yaml:"tigera_operator" json:"tigeraOperator,omitempty"`
 	// Canal Node Image
 	CanalNode string `yaml:"canal_node" json:"canalNode,omitempty"`
@@ -417,6 +417,12 @@ type IngressConfig struct {
 	ExtraVolumeMounts []ExtraVolumeMount `yaml:"extra_volume_mounts" json:"extraVolumeMounts,omitempty" norman:"type=array[json]"`
 	// nginx daemonset upgrade strategy
 	UpdateStrategy *DaemonSetUpdateStrategy `yaml:"update_strategy" json:"updateStrategy,omitempty"`
+	// Http port for ingress controller daemonset
+	HTTPPort int `yaml:"http_port" json:"httpPort,omitempty"`
+	// Https port for ingress controller daemonset
+	HTTPSPort int `yaml:"https_port" json:"httpsPort,omitempty"`
+	// NetworkMode selector for ingress controller pods. Default is HostNetwork
+	NetworkMode string `yaml:"network_mode" json:"networkMode,omitempty"`
 }
 
 type ExtraEnv struct {
@@ -520,6 +526,8 @@ type CloudProvider struct {
 type CalicoNetworkProvider struct {
 	// Cloud provider type used with calico
 	CloudProvider string `json:"cloudProvider"`
+	// Install method used to install Calico
+	InstallMethod string `json:"installMethod"`
 }
 
 type FlannelNetworkProvider struct {

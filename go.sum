@@ -448,6 +448,10 @@ github.com/tmc/grpc-websocket-proxy v0.0.0-20170815181823-89b8d40f7ca8/go.mod h1
 github.com/tmc/grpc-websocket-proxy v0.0.0-20190109142713-0ad062ec5ee5/go.mod h1:ncp9v5uamzpCO7NfCPTXjqaC+bZgJeR0sMTm6dMHP7U=
 github.com/tmjd/rke v1.2.0-rc9.0.20201023162633-6f78d375d314 h1:v51h+c8DqMVzQ/fZ70RHrcd3G6vgK4rEY+Wjrkcxn6w=
 github.com/tmjd/rke v1.2.0-rc9.0.20201023162633-6f78d375d314/go.mod h1:aPSc14Hp8UGLscL/wB9ZZQHPX/kjDiPXLcoMTCY2NS4=
+github.com/tmjd/rke v1.2.0-rc9.0.20201028144909-8e92ede36a04 h1:Rm978t0EPEb3gFcxxKLljykBXqIn1d3JCu+IxG0wpxI=
+github.com/tmjd/rke v1.2.0-rc9.0.20201028144909-8e92ede36a04/go.mod h1:aPSc14Hp8UGLscL/wB9ZZQHPX/kjDiPXLcoMTCY2NS4=
+github.com/tmjd/rke v1.2.0-rc9.0.20201028152543-04530487a655 h1:mRYMwhJwPw3SewjGtjDBJ8wspwBHUtPDVKtFE6zZLtM=
+github.com/tmjd/rke v1.2.0-rc9.0.20201028152543-04530487a655/go.mod h1:aPSc14Hp8UGLscL/wB9ZZQHPX/kjDiPXLcoMTCY2NS4=
 github.com/ugorji/go/codec v0.0.0-20181204163529-d75b2dcb6bc8/go.mod h1:VFNgLljTbGfSG7qAOspJ7OScBnGdDN/yBr0sguwnwf0=
 github.com/urfave/cli v0.0.0-20171014202726-7bc6a0acffa5/go.mod h1:70zkFmudgCuE/ngEzBv17Jvp/497gISqfk5gWijbERA=
 github.com/urfave/cli v1.20.0 h1:fDqGv3UG/4jbVl/QkFwEdddtEDjh/5Ov6X+0B/3bPaw=

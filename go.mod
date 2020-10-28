@@ -15,4 +15,4 @@ require (
 	sigs.k8s.io/yaml v1.2.0
 )
 
-replace github.com/rancher/rke => github.com/tmjd/rke v1.2.0-rc9.0.20201023162633-6f78d375d314
+replace github.com/rancher/rke => github.com/tmjd/rke v1.2.0-rc9.0.20201028152543-04530487a655
