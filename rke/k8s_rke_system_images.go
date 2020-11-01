@@ -2855,7 +2855,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WeaveNode:                 m("weaveworks/weave-kube:2.6.4"),
 			WeaveCNI:                  m("weaveworks/weave-npc:2.6.4"),
 			PodInfraContainer:         m("gcr.io/google_containers/pause:3.1"),
-			Ingress:                   m("rancher/nginx-ingress-controller:nginx-0.35.0-rancher1"),
+			Ingress:                   m("rancher/nginx-ingress-controller:nginx-0.35.0-rancher2"),
 			IngressBackend:            m("rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1"),
 			MetricsServer:             m("gcr.io/google_containers/metrics-server:v0.3.4"),
 			CoreDNS:                   m("coredns/coredns:1.6.2"),
