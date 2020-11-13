@@ -7132,7 +7132,7 @@
    {
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.5.0-rc1",
-    "version": "v1.18.11+rke2r1"
+    "version": "v1.18.10+rke2r1"
    }
   ]
  }
