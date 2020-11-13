@@ -2983,11 +2983,11 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band for Rancher v2.3.8
+		// Out of band post v2.3.9
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
-		"v1.17.13-rancher1-1": {
+		"v1.17.14-rancher1-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.3-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.17.13-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.17.14-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.65"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.65"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.65"),
