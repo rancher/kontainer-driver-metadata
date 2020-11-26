@@ -1261,9 +1261,14 @@ spec:
       imagePullSecrets:
         - name: {{.ImagePullSecret}}
 {{end}}
+{{- if .Tolerations }}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
         - operator: Exists
           effect: NoSchedule
+{{- end }}
 {{- if ne .NoPriorityClass "true"}}
       priorityClassName: system-node-critical
 {{- end}}
