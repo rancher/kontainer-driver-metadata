@@ -131,11 +131,16 @@ spec:
       {{ end }}
 {{end}}
       serviceAccountName: metrics-server
+{{- if .Tolerations}}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
       - effect: NoExecute
         operator: Exists
       - effect: NoSchedule
         operator: Exists
+{{- end }}
       containers:
       - name: metrics-server
         image: {{ .MetricsServerImage }}
