@@ -366,11 +366,16 @@ spec:
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
       serviceAccountName: kube-dns-autoscaler
+{{- if .Tolerations}}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
       - effect: NoExecute
         operator: Exists
       - effect: NoSchedule
         operator: Exists
+{{- end }}
       containers:
       - name: autoscaler
         image: {{.KubeDNSAutoScalerImage}}
@@ -503,6 +508,10 @@ spec:
                     - windows
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
+{{- if .Tolerations}}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
       - key: "CriticalAddonsOnly"
         operator: "Exists"
@@ -510,6 +519,7 @@ spec:
         operator: Exists
       - effect: NoSchedule
         operator: Exists
+{{- end }}
       volumes:
       - name: kube-dns-config
         configMap:
