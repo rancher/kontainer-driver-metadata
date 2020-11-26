@@ -9694,6 +9694,10 @@ spec:
     spec:
       nodeSelector:
         kubernetes.io/os: linux
+{{- if .Tolerations }}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
         # Rancher-specific: Set tolerations on the calico-kube-controllers so as to let it run on all nodes.
         # Make sure calico-node gets scheduled on all nodes.
@@ -9704,6 +9708,7 @@ spec:
           operator: Exists
         - effect: NoExecute
           operator: Exists
+{{- end }}
       {{if eq .RBACConfig "rbac"}}
       serviceAccountName: calico-kube-controllers
       {{end}}
