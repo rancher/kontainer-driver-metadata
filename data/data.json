@@ -6850,17 +6850,17 @@
    {
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.4.0-rc1",
-    "version": "v1.17.14+k3s2"
+    "version": "v1.17.14+k3s3"
    },
    {
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.4.5-rc1",
-    "version": "v1.18.12+k3s1"
+    "version": "v1.18.12+k3s2"
    },
    {
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.5.0-rc1",
-    "version": "v1.19.3+k3s3"
+    "version": "v1.19.4+k3s2"
    }
   ]
  }
