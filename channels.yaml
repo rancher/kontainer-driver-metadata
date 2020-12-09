@@ -1,5 +1,4 @@
 releases:
-<<<<<<< HEAD
   - version: v1.17.14+k3s3
     minChannelServerVersion: v2.4.0-rc1
     maxChannelServerVersion: v2.5.99
