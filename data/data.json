@@ -7253,17 +7253,29 @@
    {
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.4.0-rc1",
+<<<<<<< HEAD
     "version": "v1.17.14+k3s3"
+=======
+    "version": "v1.17.15+k3s1"
+>>>>>>> go generate
    },
    {
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.4.5-rc1",
+<<<<<<< HEAD
     "version": "v1.18.12+k3s2"
+=======
+    "version": "v1.18.13+k3s1"
+>>>>>>> go generate
    },
    {
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.5.0-rc1",
+<<<<<<< HEAD
     "version": "v1.19.4+k3s2"
+=======
+    "version": "v1.19.5+k3s1"
+>>>>>>> go generate
    }
   ]
  },
