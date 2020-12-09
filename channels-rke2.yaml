@@ -1,9 +1,4 @@
 releases:
-<<<<<<< HEAD
   - version: v1.18.12+rke2r2
-=======
-  - version: v1.18.12+rke2r1
->>>>>>> bump rke2 version to v1.18.12+rke2r1
     minChannelServerVersion: v2.5.0-rc1
     maxChannelServerVersion: v2.5.99
-
