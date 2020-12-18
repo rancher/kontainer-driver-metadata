@@ -7276,10 +7276,14 @@
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.5.0-rc1",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "version": "v1.19.4+k3s2"
 =======
     "version": "v1.19.5+k3s1"
 >>>>>>> go generate
+=======
+    "version": "v1.19.5+k3s2"
+>>>>>>> go generate data.json
    }
   ]
  },
