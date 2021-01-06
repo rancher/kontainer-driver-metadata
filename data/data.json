@@ -7347,6 +7347,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "version": "v1.18.12+rke2r2"
 =======
     "version": "v1.18.12+rke2r1"
@@ -7368,6 +7369,9 @@
 >>>>>>> Revert "go generate"
 =======
     "version": "v1.19.5+rke2r1"
+>>>>>>> Revert "go generate"
+=======
+    "version": "v1.18.13+rke2r1"
 >>>>>>> Revert "go generate"
    }
   ]
