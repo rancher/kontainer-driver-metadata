@@ -1,5 +1,5 @@
 releases:
-  - version: v1.19.5+rke2r1
+  - version: v1.18.12+rke2r2
     minChannelServerVersion: v2.5.0-rc1
     maxChannelServerVersion: v2.5.99
 
