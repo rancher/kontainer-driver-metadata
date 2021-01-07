@@ -7257,109 +7257,17 @@
    {
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.4.0-rc1",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "version": "v1.17.14+k3s3"
-=======
     "version": "v1.17.15+k3s1"
->>>>>>> go generate
-=======
-    "version": "v1.17.14+k3s3"
->>>>>>> go generate
-=======
-    "version": "v1.17.15+k3s1"
->>>>>>> go generate
-=======
-    "version": "v1.17.14+k3s3"
->>>>>>> Revert "go generate"
-=======
-    "version": "v1.17.15+k3s1"
->>>>>>> Revert "go generate"
-=======
-    "version": "v1.17.14+k3s3"
->>>>>>> go generate
-=======
-    "version": "v1.17.15+k3s1"
->>>>>>> go generate
    },
    {
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.4.5-rc1",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "version": "v1.18.12+k3s2"
-=======
     "version": "v1.18.13+k3s1"
->>>>>>> go generate
-=======
-    "version": "v1.18.12+k3s2"
->>>>>>> go generate
-=======
-    "version": "v1.18.13+k3s1"
->>>>>>> go generate
-=======
-    "version": "v1.18.12+k3s2"
->>>>>>> Revert "go generate"
-=======
-    "version": "v1.18.13+k3s1"
->>>>>>> Revert "go generate"
-=======
-    "version": "v1.18.12+k3s2"
->>>>>>> go generate
-=======
-    "version": "v1.18.13+k3s1"
->>>>>>> go generate
    },
    {
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.5.0-rc1",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "version": "v1.19.4+k3s2"
-=======
-    "version": "v1.19.5+k3s1"
->>>>>>> go generate
-=======
     "version": "v1.19.5+k3s2"
->>>>>>> go generate data.json
-=======
-    "version": "v1.19.4+k3s2"
->>>>>>> go generate
-=======
-    "version": "v1.19.5+k3s2"
->>>>>>> go generate
-=======
-    "version": "v1.19.4+k3s2"
->>>>>>> Revert "go generate"
-=======
-    "version": "v1.19.5+k3s2"
->>>>>>> Revert "go generate"
-=======
-    "version": "v1.19.5+k3s1"
->>>>>>> Revert "go generate data.json"
-=======
-    "version": "v1.19.4+k3s2"
->>>>>>> go generate
-=======
-    "version": "v1.19.5+k3s2"
->>>>>>> go generate
    }
   ]
  },
@@ -7368,47 +7276,7 @@
    {
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.5.0-rc1",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "version": "v1.18.12+rke2r2"
-=======
-    "version": "v1.18.12+rke2r1"
->>>>>>> go generate
-=======
-    "version": "v1.18.13+rke2r1"
->>>>>>> go generate
-=======
     "version": "v1.19.5+rke2r1"
->>>>>>> go generate
-=======
-    "version": "v1.18.12+rke2r2"
->>>>>>> go generate
-=======
-    "version": "v1.19.5+rke2r1"
->>>>>>> go generate
-=======
-    "version": "v1.18.12+rke2r2"
->>>>>>> Revert "go generate"
-=======
-    "version": "v1.19.5+rke2r1"
->>>>>>> Revert "go generate"
-=======
-    "version": "v1.18.13+rke2r1"
->>>>>>> Revert "go generate"
-=======
-    "version": "v1.18.12+rke2r2"
->>>>>>> go generate
-=======
-    "version": "v1.19.5+rke2r1"
->>>>>>> go generate
    }
   ]
  }
