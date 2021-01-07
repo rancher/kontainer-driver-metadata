@@ -986,7 +986,9 @@ spec:
           image: {{.IngressImage}}
           args:
             - /nginx-ingress-controller
+            {{- if .DefaultBackend}}
             - --default-backend-service=$(POD_NAMESPACE)/default-http-backend
+            {{- end}}
             - --configmap=$(POD_NAMESPACE)/nginx-configuration
             - --election-id=ingress-controller-leader
             - --ingress-class=nginx
@@ -1065,6 +1067,7 @@ spec:
 {{ toYaml .ExtraVolumes | indent 8}}
 {{end}}
 ---
+{{- if .DefaultBackend}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -1094,11 +1097,16 @@ spec:
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
       terminationGracePeriodSeconds: 60
+{{- if .Tolerations}}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
       - effect: NoExecute
         operator: Exists
       - effect: NoSchedule
         operator: Exists
+{{- end }}
       containers:
       - name: default-http-backend
         # Any image is permissable as long as:
@@ -1135,4 +1143,5 @@ spec:
     targetPort: 8080
   selector:
     app: default-http-backend
+{{- end }}
 `
