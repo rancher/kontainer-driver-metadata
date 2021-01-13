@@ -736,6 +736,10 @@ spec:
 {{- if eq .RBACConfig "rbac"}}
       serviceAccountName: coredns
 {{- end }}
+{{- if .Tolerations}}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
         - key: "CriticalAddonsOnly"
           operator: "Exists"
@@ -743,6 +747,7 @@ spec:
           operator: Exists
         - effect: NoSchedule
           operator: Exists
+{{- end }}
       nodeSelector:
         beta.kubernetes.io/os: linux
       {{ range $k, $v := .NodeSelector }}
@@ -874,11 +879,16 @@ spec:
               - matchExpressions:
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
+{{- if .Tolerations}}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
       - effect: NoExecute
         operator: Exists
       - effect: NoSchedule
         operator: Exists
+{{- end }}
       containers:
       - name: autoscaler
         image: {{.CoreDNSAutoScalerImage}}

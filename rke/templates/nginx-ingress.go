@@ -1094,11 +1094,16 @@ spec:
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
       terminationGracePeriodSeconds: 60
+{{- if .Tolerations}}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
       - effect: NoExecute
         operator: Exists
       - effect: NoSchedule
         operator: Exists
+{{- end }}
       containers:
       - name: default-http-backend
         # Any image is permissable as long as:
