@@ -5049,6 +5049,10 @@ spec:
     spec:
       nodeSelector:
         kubernetes.io/os: linux
+{{- if .Tolerations}}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
         # Make sure calico-node gets scheduled on all nodes.
         - effect: NoSchedule
@@ -5058,6 +5062,7 @@ spec:
           operator: Exists
         - effect: NoExecute
           operator: Exists
+{{- end }}
 {{if eq .RBACConfig "rbac"}}
       serviceAccountName: calico-kube-controllers
 {{end}}
