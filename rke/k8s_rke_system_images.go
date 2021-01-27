@@ -3601,7 +3601,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band post v2.5.6
+		// Enabled in v2.5.6
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
 		"v1.17.17-rancher2-1": {
@@ -4004,8 +4004,8 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled in v2.4.13 and v2.5.5
-		//Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
+		// Enabled in v2.4.13 and out of band post v2.5.5
+		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
 		"v1.18.15-rancher1-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.3-rancher1"),
@@ -4049,7 +4049,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
 		// Enabled in v2.5.6
-		//Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
+		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
 		"v1.18.15-rancher2-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.3-rancher1"),
@@ -4320,7 +4320,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.13"),
 		},
-		// Enabled out of band post v2.5.6
+		// Enabled in v2.5.6
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
 		"v1.19.7-rancher2-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.13-rancher1"),
