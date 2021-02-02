@@ -124,6 +124,9 @@ spec:
                     - windows
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
+{{ if .MetricsServerPriorityClassName }}
+      priorityClassName: {{ .MetricsServerPriorityClassName }}
+{{ end }}
 {{if .NodeSelector}}
       nodeSelector:
       {{ range $k, $v := .NodeSelector }}

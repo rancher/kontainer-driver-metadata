@@ -118,7 +118,7 @@ spec:
        labels:
           k8s-app: node-local-dns
     spec:
-      priorityClassName: system-node-critical
+      priorityClassName: {{ .NodeLocalDNSPriorityClassName | default "system-node-critical" }}
 {{- if eq .RBACConfig "rbac"}}
       serviceAccountName: node-local-dns
 {{- end }}
