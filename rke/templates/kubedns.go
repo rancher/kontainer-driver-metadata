@@ -366,6 +366,9 @@ spec:
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
       serviceAccountName: kube-dns-autoscaler
+{{- if .KubeDNSAutoscalerPriorityClassName }}
+      priorityClassName: {{ .KubeDNSAutoscalerPriorityClassName }}
+{{- end }}
 {{- if .Tolerations}}
       tolerations:
 {{ toYaml .Tolerations | indent 6}}
@@ -481,6 +484,9 @@ spec:
       annotations:
         scheduler.alpha.kubernetes.io/critical-pod: ''
     spec:
+{{- if .KubeDNSPriorityClassName }}
+      priorityClassName: {{ .KubeDNSPriorityClassName }}
+{{- end }}
 {{if .NodeSelector}}
       nodeSelector:
       {{ range $k, $v := .NodeSelector }}

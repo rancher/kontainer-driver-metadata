@@ -12508,7 +12508,7 @@ spec:
       # Minimize downtime during a rolling upgrade or deletion; tell Kubernetes to do a "force
       # deletion": https://kubernetes.io/docs/concepts/workloads/pods/pod/#termination-of-pods.
       terminationGracePeriodSeconds: 0
-      priorityClassName: system-node-critical
+      priorityClassName: {{ .CalicoNodePriorityClassName | default "system-node-critical" }}
       initContainers:
         # This container performs upgrade from host-local IPAM to calico-ipam.
         # It can be deleted if this is a fresh installation, or if you have already
@@ -12822,7 +12822,7 @@ spec:
       {{if eq .RBACConfig "rbac"}}
       serviceAccountName: calico-kube-controllers
       {{end}}
-      priorityClassName: system-cluster-critical
+      priorityClassName: {{ .CalicoKubeControllersPriorityClassName | default "system-cluster-critical" }}
       containers:
         - name: calico-kube-controllers
           image: {{.ControllersImage}}

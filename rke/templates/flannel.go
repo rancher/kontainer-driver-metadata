@@ -628,6 +628,9 @@ spec:
                   values:
                     - windows
       hostNetwork: true
+{{- if .KubeFlannelPriorityClassName }}
+      priorityClassName: {{ .KubeFlannelPriorityClassName }}
+{{- end }}
 {{if .NodeSelector}}
       nodeSelector:
       {{ range $k, $v := .NodeSelector }}

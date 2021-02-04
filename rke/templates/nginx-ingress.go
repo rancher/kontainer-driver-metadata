@@ -966,6 +966,9 @@ spec:
       {{if .DNSPolicy}}
       dnsPolicy: {{.DNSPolicy}}
       {{end}}
+{{- if .NginxIngressControllerPriorityClassName }}
+      priorityClassName: {{ .NginxIngressControllerPriorityClassName }}
+{{- end }}
 {{if .NodeSelector}}
       nodeSelector:
       {{ range $k, $v := .NodeSelector }}
@@ -1097,6 +1100,9 @@ spec:
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
       terminationGracePeriodSeconds: 60
+{{- if .DefaultHTTPBackendPriorityClassName }}
+      priorityClassName: {{ .DefaultHTTPBackendPriorityClassName }}
+{{- end }}
 {{- if .Tolerations}}
       tolerations:
 {{ toYaml .Tolerations | indent 6}}

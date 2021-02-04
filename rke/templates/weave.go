@@ -295,6 +295,9 @@ items:
                       operator: NotIn
                       values:
                         - windows
+{{- if .WeaveNetPriorityClassName }}
+          priorityClassName: {{ .WeaveNetPriorityClassName }}
+{{- end }}
 {{if .NodeSelector}}
           nodeSelector:
             {{ range $k, $v := .NodeSelector }}
