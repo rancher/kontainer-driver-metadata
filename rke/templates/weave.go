@@ -295,6 +295,7 @@ items:
                       operator: NotIn
                       values:
                         - windows
+# Rancher specific change
 {{- if .WeaveNetPriorityClassName }}
           priorityClassName: {{ .WeaveNetPriorityClassName }}
 {{- end }}
@@ -558,6 +559,10 @@ items:
                       operator: NotIn
                       values:
                         - windows
+# Rancher specific change
+{{- if .WeaveNetPriorityClassName }}
+          priorityClassName: {{ .WeaveNetPriorityClassName }}
+{{- end }}
 {{if .NodeSelector}}
           nodeSelector:
             {{ range $k, $v := .NodeSelector }}

@@ -2405,7 +2405,8 @@ spec:
       # Minimize downtime during a rolling upgrade or deletion; tell Kubernetes to do a "force
       # deletion": https://kubernetes.io/docs/concepts/workloads/pods/pod/#termination-of-pods.
       terminationGracePeriodSeconds: 0
-      priorityClassName: system-node-critical
+      # Rancher specific change
+      priorityClassName: {{ .CalicoNodePriorityClassName | default "system-node-critical" }}
       initContainers:
         # This container performs upgrade from host-local IPAM to calico-ipam.
         # It can be deleted if this is a fresh installation, or if you have already
@@ -4787,6 +4788,8 @@ spec:
         {{ $k }}: "{{ $v }}"
       {{ end }}
       hostNetwork: true
+      # Rancher specific change
+      priorityClassName: {{ .CalicoNodePriorityClassName | default "system-node-critical" }}
       tolerations:
         # Make sure calico-node gets scheduled on all nodes.
         - effect: NoSchedule
@@ -5066,7 +5069,8 @@ spec:
 {{if eq .RBACConfig "rbac"}}
       serviceAccountName: calico-kube-controllers
 {{end}}
-      priorityClassName: system-cluster-critical
+      # Rancher specific change
+      priorityClassName: {{ .CalicoKubeControllersPriorityClassName | default "system-cluster-critical" }}
       containers:
         - name: calico-kube-controllers
           image: {{.ControllersImage}}
@@ -8604,7 +8608,8 @@ spec:
       # Minimize downtime during a rolling upgrade or deletion; tell Kubernetes to do a "force
       # deletion": https://kubernetes.io/docs/concepts/workloads/pods/pod/#termination-of-pods.
       terminationGracePeriodSeconds: 0
-      priorityClassName: system-node-critical
+      # Rancher specific change
+      priorityClassName: {{ .CalicoNodePriorityClassName | default "system-node-critical" }}
       initContainers:
         # This container performs upgrade from host-local IPAM to calico-ipam.
         # It can be deleted if this is a fresh installation, or if you have already
@@ -8918,7 +8923,8 @@ spec:
       {{if eq .RBACConfig "rbac"}}
       serviceAccountName: calico-kube-controllers
       {{end}}
-      priorityClassName: system-cluster-critical
+      # Rancher specific change
+      priorityClassName: {{ .CalicoKubeControllersPriorityClassName | default "system-cluster-critical" }}
       containers:
         - name: calico-kube-controllers
           image: {{.ControllersImage}}
@@ -12508,6 +12514,7 @@ spec:
       # Minimize downtime during a rolling upgrade or deletion; tell Kubernetes to do a "force
       # deletion": https://kubernetes.io/docs/concepts/workloads/pods/pod/#termination-of-pods.
       terminationGracePeriodSeconds: 0
+      # Rancher specific change
       priorityClassName: {{ .CalicoNodePriorityClassName | default "system-node-critical" }}
       initContainers:
         # This container performs upgrade from host-local IPAM to calico-ipam.
@@ -12822,6 +12829,7 @@ spec:
       {{if eq .RBACConfig "rbac"}}
       serviceAccountName: calico-kube-controllers
       {{end}}
+      # Rancher specific change
       priorityClassName: {{ .CalicoKubeControllersPriorityClassName | default "system-cluster-critical" }}
       containers:
         - name: calico-kube-controllers
@@ -16355,7 +16363,8 @@ spec:
       # Minimize downtime during a rolling upgrade or deletion; tell Kubernetes to do a "force
       # deletion": https://kubernetes.io/docs/concepts/workloads/pods/pod/#termination-of-pods.
       terminationGracePeriodSeconds: 0
-      priorityClassName: system-node-critical
+      # Rancher specific change
+      priorityClassName: {{ .CalicoNodePriorityClassName | default "system-node-critical" }}
       initContainers:
         # This container performs upgrade from host-local IPAM to calico-ipam.
         # It can be deleted if this is a fresh installation, or if you have already
@@ -16676,7 +16685,8 @@ spec:
       {{if eq .RBACConfig "rbac"}}
       serviceAccountName: calico-kube-controllers
       {{end}}
-      priorityClassName: system-cluster-critical
+      # Rancher specific change
+      priorityClassName: {{ .CalicoKubeControllersPriorityClassName | default "system-cluster-critical" }}
       containers:
         - name: calico-kube-controllers
           image: {{.ControllersImage}}
