@@ -124,6 +124,7 @@ spec:
                     - windows
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
+# Rancher specific change
 {{ if .MetricsServerPriorityClassName }}
       priorityClassName: {{ .MetricsServerPriorityClassName }}
 {{ end }}
@@ -346,7 +347,8 @@ spec:
       volumes:
       - emptyDir: {}
         name: tmp-dir
-      priorityClassName: system-cluster-critical
+      # Rancher specific change
+      priorityClassName: {{ .MetricsServerPriorityClassName | default "system-cluster-critical" }}
       containers:
       - name: metrics-server
         image: {{ .MetricsServerImage }}

@@ -5490,7 +5490,8 @@ spec:
       # Minimize downtime during a rolling upgrade or deletion; tell Kubernetes to do a "force
       # deletion": https://kubernetes.io/docs/concepts/workloads/pods/pod/#termination-of-pods.
       terminationGracePeriodSeconds: 0
-      priorityClassName: system-node-critical
+      # Rancher specific change
+      priorityClassName: {{ .CanalPriorityClassName | default "system-node-critical" }}
       initContainers:
         # This container installs the CNI binaries
         # and CNI network config file on each node.
@@ -9423,7 +9424,8 @@ spec:
       # Minimize downtime during a rolling upgrade or deletion; tell Kubernetes to do a "force
       # deletion": https://kubernetes.io/docs/concepts/workloads/pods/pod/#termination-of-pods.
       terminationGracePeriodSeconds: 0
-      priorityClassName: system-node-critical
+      # Rancher specific change
+      priorityClassName: {{ .CanalPriorityClassName | default "system-node-critical" }}
       initContainers:
         # This container installs the CNI binaries
         # and CNI network config file on each node.
@@ -9712,7 +9714,8 @@ spec:
       {{if eq .RBACConfig "rbac"}}
       serviceAccountName: calico-kube-controllers
       {{end}}
-      priorityClassName: system-cluster-critical
+      # Rancher specific change
+      priorityClassName: {{ .CalicoKubeControllersPriorityClassName | default "system-cluster-critical" }}
       containers:
         - name: calico-kube-controllers
           image: {{.ControllersImage}}
@@ -13318,6 +13321,7 @@ spec:
       # Minimize downtime during a rolling upgrade or deletion; tell Kubernetes to do a "force
       # deletion": https://kubernetes.io/docs/concepts/workloads/pods/pod/#termination-of-pods.
       terminationGracePeriodSeconds: 0
+      # Rancher specific change
       priorityClassName: {{ .CanalPriorityClassName | default "system-node-critical" }}
       initContainers:
         # This container installs the CNI binaries
@@ -13607,6 +13611,7 @@ spec:
       {{if eq .RBACConfig "rbac"}}
       serviceAccountName: calico-kube-controllers
       {{end}}
+      # Rancher specific change
       priorityClassName: {{ .CalicoKubeControllersPriorityClassName | default "system-cluster-critical" }}
       containers:
         - name: calico-kube-controllers
@@ -17207,7 +17212,8 @@ spec:
       # Minimize downtime during a rolling upgrade or deletion; tell Kubernetes to do a "force
       # deletion": https://kubernetes.io/docs/concepts/workloads/pods/pod/#termination-of-pods.
       terminationGracePeriodSeconds: 0
-      priorityClassName: system-node-critical
+      # Rancher specific change
+      priorityClassName: {{ .CanalPriorityClassName | default "system-node-critical" }}
       initContainers:
         # This container installs the CNI binaries
         # and CNI network config file on each node.
@@ -17503,7 +17509,8 @@ spec:
       {{if eq .RBACConfig "rbac"}}
       serviceAccountName: calico-kube-controllers
       {{end}}
-      priorityClassName: system-cluster-critical
+      # Rancher specific change
+      priorityClassName: {{ .CalicoKubeControllersPriorityClassName | default "system-cluster-critical" }}
       containers:
         - name: calico-kube-controllers
           image: {{.ControllersImage}}

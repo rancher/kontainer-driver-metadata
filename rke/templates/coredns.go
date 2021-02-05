@@ -732,6 +732,7 @@ spec:
       annotations:
         seccomp.security.alpha.kubernetes.io/pod: 'docker/default'
     spec:
+      # Rancher specific change
       priorityClassName: {{ .CoreDNSPriorityClassName | default "system-cluster-critical" }}
 {{- if eq .RBACConfig "rbac"}}
       serviceAccountName: coredns
@@ -870,6 +871,7 @@ spec:
 {{- if eq .RBACConfig "rbac"}}
       serviceAccountName: coredns-autoscaler
 {{- end }}
+# Rancher specific change
 {{- if .CoreDNSAutoscalerPriorityClassName }}
       priorityClassName: {{ .CoreDNSAutoscalerPriorityClassName }}
 {{- end }}

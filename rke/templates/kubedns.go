@@ -366,6 +366,7 @@ spec:
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
       serviceAccountName: kube-dns-autoscaler
+# Rancher specific change
 {{- if .KubeDNSAutoscalerPriorityClassName }}
       priorityClassName: {{ .KubeDNSAutoscalerPriorityClassName }}
 {{- end }}
@@ -484,6 +485,7 @@ spec:
       annotations:
         scheduler.alpha.kubernetes.io/critical-pod: ''
     spec:
+# Rancher specific change
 {{- if .KubeDNSPriorityClassName }}
       priorityClassName: {{ .KubeDNSPriorityClassName }}
 {{- end }}
