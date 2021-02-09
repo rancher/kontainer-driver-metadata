@@ -4788,8 +4788,10 @@ spec:
         {{ $k }}: "{{ $v }}"
       {{ end }}
       hostNetwork: true
-      # Rancher specific change
-      priorityClassName: {{ .CalicoNodePriorityClassName | default "system-node-critical" }}
+# Rancher specific change
+{{- if .CalicoNodePriorityClassName }}
+      priorityClassName: {{ .CalicoNodePriorityClassName }}
+{{- end }}
       tolerations:
         # Make sure calico-node gets scheduled on all nodes.
         - effect: NoSchedule
