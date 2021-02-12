@@ -4322,9 +4322,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		},
 		// Enabled in v2.5.6
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
-		"v1.19.7-rancher2-1": {
+		"v1.19.8-rancher1-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.13-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.19.7-rancher2"),
+			Kubernetes:                m("rancher/hyperkube:v1.19.8-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.71"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.71"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.71"),
@@ -4366,9 +4366,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		},
 		// Enabled in v2.5.6
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
-		"v1.20.2-rancher2-1": {
+		"v1.20.3-rancher1-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.14-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.20.2-rancher2"),
+			Kubernetes:                m("rancher/hyperkube:v1.20.3-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.71"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.71"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.71"),
@@ -4405,7 +4405,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			MetricsServer:             m("gcr.io/google_containers/metrics-server:v0.4.1"),
 			CoreDNS:                   m("coredns/coredns:1.8.0"),
 			CoreDNSAutoscaler:         m("rancher/cluster-proportional-autoscaler:1.8.1"),
-			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.4"),
+			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.6"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.13"),
 		},
 		// k8s version from 2.1.x release with old rke-tools to allow upgrade from 2.1.x clusters

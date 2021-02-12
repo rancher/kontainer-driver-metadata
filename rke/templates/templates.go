@@ -74,8 +74,8 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.20.2-rancher1-1":                    calicov3171,
-			">=1.19.4-rancher1-2 <1.20.2-rancher1-1": calicov3165,
+			">=1.20.3-rancher1-1":                    calicov3171,
+			">=1.19.4-rancher1-2 <1.20.3-rancher1-1": calicov3165,
 			">=1.19.0-rancher0 <1.19.4-rancher1-2":   calicov3160,
 			">=1.17.4-rancher0 <1.19.0-rancher0":     calicov117Privileged,
 			">=1.17.0-rancher0 <1.17.4-rancher0":     calicov117,
@@ -94,8 +94,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
 		kdm.Canal: {
-			">=1.20.2-rancher1-1":                      canalv3171,
-			">=1.19.4-rancher1-2 <1.20.2-rancher1-1":   canalv3165,
+			">=1.20.3-rancher1-1":                      canalv3171,
+			">=1.19.4-rancher1-2 <1.20.3-rancher1-1":   canalv3165,
 			">=1.19.0-rancher0 <1.19.4-rancher1-2":     canalv3160,
 			">=1.17.6-rancher2-1 <1.19.0-rancher0":     canalv117PrivilegedCalico3134,
 			">=1.17.4-rancher0 <1.17.6-rancher2-1":     canalv117Privileged,
@@ -128,12 +128,12 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.16.0-alpha": kubeDnsv18,
 		},
 		kdm.MetricsServer: {
-			">=1.20.2-rancher1-1":                 metricsServerv120,
-			">=1.8.0-rancher0 <1.20.2-rancher1-1": metricsServerv18,
+			">=1.20.3-rancher1-1":                 metricsServerv120,
+			">=1.8.0-rancher0 <1.20.3-rancher1-1": metricsServerv18,
 		},
 		kdm.Weave: {
-			">=1.20.2-rancher1-1":               weavev120,
-			">=1.16.0-alpha <1.20.2-rancher1-1": weavev116,
+			">=1.20.3-rancher1-1":               weavev120,
+			">=1.16.0-alpha <1.20.3-rancher1-1": weavev116,
 			">=1.8.0-rancher0 <1.16.0-alpha":    weavev18,
 		},
 		kdm.Aci: {
