@@ -6907,7 +6907,7 @@
    "ingress": "rancher/nginx-ingress-controller:nginx-0.43.0-rancher1",
    "ingressBackend": "rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1",
    "metricsServer": "rancher/metrics-server:v0.4.1",
-   "windowsPodInfraContainer": "rancher/kubelet-pause:v0.1.4",
+   "windowsPodInfraContainer": "rancher/kubelet-pause:v0.1.6",
    "aciCniDeployContainer": "noiro/cnideploy:5.1.1.0.1ae238a",
    "aciHostContainer": "noiro/aci-containers-host:5.1.1.0.1ae238a",
    "aciOpflexContainer": "noiro/opflex:5.1.1.0.1ae238a",
