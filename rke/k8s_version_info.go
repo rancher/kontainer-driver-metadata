@@ -457,6 +457,12 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 			MinRancherVersion: "2.4.5-rc0",
 			MinRKEVersion:     "1.1.3-rc0",
 		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.18.18-rancher1-3": {
+			MinRancherVersion: "2.4.5-rc0",
+			MinRKEVersion:     "1.1.3-rc0",
+		},
 		"v1.19": {
 			MinRancherVersion: "2.5.0-rc0",
 			MinRKEVersion:     "1.2.0-rc0",
