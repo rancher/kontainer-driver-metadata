@@ -7812,7 +7812,7 @@
    "benchmarkVersion": "rke-cis-1.5"
   },
   "v1.20": {
-   "benchmarkVersion": "rke-cis-1.6"
+   "benchmarkVersion": "rke-cis-1.5"
   }
  },
  "CisBenchmarkVersionInfo": {
