@@ -139,7 +139,7 @@ func loadCisConfigParams() map[string]kdm.CisConfigParams {
 			BenchmarkVersion: "rke-cis-1.5",
 		},
 		"v1.20": {
-			BenchmarkVersion: "rke-cis-1.6",
+			BenchmarkVersion: "rke-cis-1.5",
 		},
 	}
 }
