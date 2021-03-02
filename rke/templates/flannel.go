@@ -628,6 +628,10 @@ spec:
                   values:
                     - windows
       hostNetwork: true
+# Rancher specific change
+{{- if .KubeFlannelPriorityClassName }}
+      priorityClassName: {{ .KubeFlannelPriorityClassName }}
+{{- end }}
 {{if .NodeSelector}}
       nodeSelector:
       {{ range $k, $v := .NodeSelector }}

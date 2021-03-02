@@ -21,6 +21,7 @@ const (
 	calicov117Privileged = "calico-v1.17-privileged"
 	calicov3160          = "calico-v3.16.0"
 	calicov3165          = "calico-v3.16.5"
+	calicov3171          = "calico-v3.17.1"
 
 	canalv18                      = "canal-v1.8"
 	canalv113                     = "canal-v1.13"
@@ -34,6 +35,7 @@ const (
 	canalv117PrivilegedCalico3134 = "canal-v1.17-privileged-calico3134"
 	canalv3160                    = "canal-v3.16.0"
 	canalv3165                    = "canal-v3.16.5"
+	canalv3171                    = "canal-v3.17.1"
 
 	flannelv18  = "flannel-v1.8"
 	flannelv115 = "flannel-v1.15"
@@ -46,10 +48,12 @@ const (
 	kubeDnsv18  = "kubedns-v1.8"
 	kubeDnsv116 = "kubedns-v1.16"
 
-	metricsServerv18 = "metricsserver-v1.8"
+	metricsServerv18  = "metricsserver-v1.8"
+	metricsServerv120 = "metricsserver-v1.20"
 
 	weavev18  = "weave-v1.8"
 	weavev116 = "weave-v1.16"
+	weavev120 = "weave-v1.20"
 	/* aciv500 Supports k8s versions 1.17 and 1.18 */
 	/* Versioning: va.b.c-<special-attr/base-if-none>-x.y.z where a.b.c is ACI version and x.y.z is the k8s version,
 	if required
@@ -70,13 +74,14 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.19.4-rancher1-2":                  calicov3165,
-			">=1.19.0-rancher0 <1.19.4-rancher1-2": calicov3160,
-			">=1.17.4-rancher0 <1.19.0-rancher0":   calicov117Privileged,
-			">=1.17.0-rancher0 <1.17.4-rancher0":   calicov117,
-			">=1.16.8-rancher0 <1.17.0-rancher0":   calicov117Privileged,
-			">=1.16.4-rancher1 <1.16.8-rancher0":   calicov117,
-			">=1.16.0-alpha <1.16.4-rancher1":      calicov116,
+			">=1.20.4-rancher1-1":                    calicov3171,
+			">=1.19.4-rancher1-2 <1.20.4-rancher1-1": calicov3165,
+			">=1.19.0-rancher0 <1.19.4-rancher1-2":   calicov3160,
+			">=1.17.4-rancher0 <1.19.0-rancher0":     calicov117Privileged,
+			">=1.17.0-rancher0 <1.17.4-rancher0":     calicov117,
+			">=1.16.8-rancher0 <1.17.0-rancher0":     calicov117Privileged,
+			">=1.16.4-rancher1 <1.16.8-rancher0":     calicov117,
+			">=1.16.0-alpha <1.16.4-rancher1":        calicov116,
 
 			">=1.15.11-rancher1-1 <1.15.12-rancher1-1": calicov115Privileged,
 			// 1.15.12-rancher1-1 comes from 2.2.13, uses calicov115 template with new key calicov11512
@@ -89,7 +94,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
 		kdm.Canal: {
-			">=1.19.4-rancher1-2":                      canalv3165,
+			">=1.20.4-rancher1-1":                      canalv3171,
+			">=1.19.4-rancher1-2 <1.20.4-rancher1-1":   canalv3165,
 			">=1.19.0-rancher0 <1.19.4-rancher1-2":     canalv3160,
 			">=1.17.6-rancher2-1 <1.19.0-rancher0":     canalv117PrivilegedCalico3134,
 			">=1.17.4-rancher0 <1.17.6-rancher2-1":     canalv117Privileged,
@@ -122,11 +128,13 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.16.0-alpha": kubeDnsv18,
 		},
 		kdm.MetricsServer: {
-			">=1.8.0-rancher0": metricsServerv18,
+			">=1.20.4-rancher1-1":                 metricsServerv120,
+			">=1.8.0-rancher0 <1.20.4-rancher1-1": metricsServerv18,
 		},
 		kdm.Weave: {
-			">=1.16.0-alpha":                 weavev116,
-			">=1.8.0-rancher0 <1.16.0-alpha": weavev18,
+			">=1.20.4-rancher1-1":               weavev120,
+			">=1.16.0-alpha <1.20.4-rancher1-1": weavev116,
+			">=1.8.0-rancher0 <1.16.0-alpha":    weavev18,
 		},
 		kdm.Aci: {
 			">=1.17.0-alpha": aciv500,
@@ -167,6 +175,7 @@ func getTemplates() map[string]string {
 		calicov18:            CalicoTemplateV112,
 		calicov3160:          CalicoTemplateV3_16_0,
 		calicov3165:          CalicoTemplateV3_16_5,
+		calicov3171:          CalicoTemplateV3_17_1,
 
 		flannelv115: FlannelTemplateV115,
 		flannelv116: FlannelTemplateV116,
@@ -184,6 +193,7 @@ func getTemplates() map[string]string {
 		canalv117PrivilegedCalico3134: CanalTemplateV117PrivilegedCalico3134,
 		canalv3160:                    CanalTemplateV3_16_0,
 		canalv3165:                    CanalTemplateV3_16_5,
+		canalv3171:                    CanalTemplateV3_17_1,
 
 		coreDnsv18:  CoreDNSTemplate,
 		coreDnsv116: CoreDNSTemplateV116,
@@ -192,10 +202,12 @@ func getTemplates() map[string]string {
 		kubeDnsv18:  KubeDNSTemplate,
 		kubeDnsv116: KubeDNSTemplateV116,
 
-		metricsServerv18: MetricsServerTemplate,
+		metricsServerv18:  MetricsServerTemplate,
+		metricsServerv120: MetricsServerTemplate_v0_4_1,
 
 		weavev18:  WeaveTemplate,
 		weavev116: WeaveTemplateV116,
+		weavev120: WeaveTemplateV120,
 
 		aciv500: AciTemplateV500,
 
