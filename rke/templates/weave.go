@@ -319,6 +319,8 @@ items:
                       fieldPath: spec.nodeName
                 - name: IPALLOC_RANGE
                   value: "{{.ClusterCIDR}}"
+                - name: EXTRA_ARGS
+                  value: --log-level=info
                 {{- if .WeavePassword}}
                 - name: WEAVE_PASSWORD
                   value: "{{.WeavePassword}}"
@@ -605,6 +607,8 @@ items:
                       fieldPath: spec.nodeName
                 - name: IPALLOC_RANGE
                   value: "{{.ClusterCIDR}}"
+                - name: EXTRA_ARGS
+                  value: --log-level=info
                 {{- if .WeavePassword}}
                 - name: WEAVE_PASSWORD
                   value: "{{.WeavePassword}}"
