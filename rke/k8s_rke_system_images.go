@@ -4092,12 +4092,12 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.6"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band post v2.5.6
+		// Enabled out of band post v2.5.7
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
-		"v1.18.16-rancher1-2": {
+		"v1.18.17-rancher1-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.3-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.18.16-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.18.17-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.72"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.72"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.72"),
@@ -4408,11 +4408,11 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.6"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.13"),
 		},
-		// Enabled out of band post v2.5.6
+		// Enabled out of band post v2.5.7
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
-		"v1.19.8-rancher1-2": {
+		"v1.19.9-rancher1-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.13-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.19.8-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.19.9-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.72"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.72"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.72"),
@@ -4496,11 +4496,11 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.6"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.13"),
 		},
-		// Enabled out of band post v2.5.6
+		// Enabled out of band post v2.5.7
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
-		"v1.20.4-rancher1-2": {
+		"v1.20.5-rancher1-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.14-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.20.4-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.20.5-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.72"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.72"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.72"),
