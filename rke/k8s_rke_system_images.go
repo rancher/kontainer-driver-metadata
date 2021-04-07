@@ -4564,7 +4564,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CanalCNI:                  "rancher/mirrored-calico-cni:v3.16.5",
 			CanalControllers:          "rancher/mirrored-calico-kube-controllers:v3.16.5",
 			CanalFlannel:              "rancher/coreos-flannel:v0.13.0-rancher1",
-			CanalFlexVol:              "rancher/mirrored-calico-pod2daemon-flexvol :v3.16.5",
+			CanalFlexVol:              "rancher/mirrored-calico-pod2daemon-flexvol:v3.16.5",
 			WeaveNode:                 "weaveworks/weave-kube:2.7.0",
 			WeaveCNI:                  "weaveworks/weave-npc:2.7.0",
 			AciCniDeployContainer:     "noiro/cnideploy:5.1.1.0.1ae238a",

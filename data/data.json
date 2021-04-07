@@ -7065,7 +7065,7 @@
    "canalCni": "rancher/mirrored-calico-cni:v3.16.5",
    "canalControllers": "rancher/mirrored-calico-kube-controllers:v3.16.5",
    "canalFlannel": "rancher/coreos-flannel:v0.13.0-rancher1",
-   "canalFlexVol": "rancher/mirrored-calico-pod2daemon-flexvol :v3.16.5",
+   "canalFlexVol": "rancher/mirrored-calico-pod2daemon-flexvol:v3.16.5",
    "weaveNode": "weaveworks/weave-kube:2.7.0",
    "weaveCni": "weaveworks/weave-npc:2.7.0",
    "podInfraContainer": "rancher/mirrored-pause:3.2",
