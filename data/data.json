@@ -5870,7 +5870,7 @@
    "aciOpflexServerContainer": "noiro/opflex-server:5.1.1.0.1ae238a"
   },
   "v1.17.17-rancher2-2": {
-   "etcd": "rancher/mirrored-coreos-etcd:v3.4.3-rancher1",
+   "etcd": "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
    "alpine": "rancher/rke-tools:v0.1.74",
    "nginxProxy": "rancher/rke-tools:v0.1.74",
    "certDownloader": "rancher/rke-tools:v0.1.74",
@@ -6498,7 +6498,7 @@
    "aciOpflexServerContainer": "noiro/opflex-server:5.1.1.0.1ae238a"
   },
   "v1.18.17-rancher1-2": {
-   "etcd": "rancher/mirrored-coreos-etcd:v3.4.3-rancher1",
+   "etcd": "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
    "alpine": "rancher/rke-tools:v0.1.74",
    "nginxProxy": "rancher/rke-tools:v0.1.74",
    "certDownloader": "rancher/rke-tools:v0.1.74",
@@ -7041,7 +7041,7 @@
    "aciOpflexServerContainer": "noiro/opflex-server:5.1.1.0.1ae238a"
   },
   "v1.19.9-rancher1-2": {
-   "etcd": "rancher/mirrored-coreos-etcd:v3.4.13-rancher1",
+   "etcd": "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
    "alpine": "rancher/rke-tools:v0.1.74",
    "nginxProxy": "rancher/rke-tools:v0.1.74",
    "certDownloader": "rancher/rke-tools:v0.1.74",
@@ -7167,7 +7167,7 @@
    "aciOpflexServerContainer": "noiro/opflex-server:5.1.1.0.1ae238a"
   },
   "v1.20.5-rancher1-2": {
-   "etcd": "rancher/mirrored-coreos-etcd:v3.4.14-rancher1",
+   "etcd": "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
    "alpine": "rancher/rke-tools:v0.1.74",
    "nginxProxy": "rancher/rke-tools:v0.1.74",
    "certDownloader": "rancher/rke-tools:v0.1.74",
