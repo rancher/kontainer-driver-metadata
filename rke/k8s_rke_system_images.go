@@ -3649,7 +3649,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
 		"v1.17.17-rancher2-2": {
-			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.3-rancher1",
+			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
 			Kubernetes:                "rancher/hyperkube:v1.17.17-rancher2",
 			Alpine:                    "rancher/rke-tools:v0.1.74",
 			NginxProxy:                "rancher/rke-tools:v0.1.74",
@@ -4184,7 +4184,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
 		"v1.18.17-rancher1-2": {
-			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.3-rancher1",
+			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
 			Kubernetes:                "rancher/hyperkube:v1.18.17-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.74",
 			NginxProxy:                "rancher/rke-tools:v0.1.74",
@@ -4543,7 +4543,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		// Enabled out of band post v2.5.7
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
 		"v1.19.9-rancher1-2": {
-			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.13-rancher1",
+			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
 			Kubernetes:                "rancher/hyperkube:v1.19.9-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.74",
 			NginxProxy:                "rancher/rke-tools:v0.1.74",
@@ -4675,7 +4675,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		// Enabled out of band post v2.5.7
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
 		"v1.20.5-rancher1-2": {
-			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.14-rancher1",
+			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
 			Kubernetes:                "rancher/hyperkube:v1.20.5-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.74",
 			NginxProxy:                "rancher/rke-tools:v0.1.74",
