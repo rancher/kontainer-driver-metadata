@@ -4332,6 +4332,42 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.6"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
+		// Enabled out of band post v2.4.15
+		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
+		// Reminder: This template should remain an exact copy of the template for v2.5.x (No ACI images)
+		"v1.18.18-rancher1-1": {
+			Etcd:                      m("rancher/coreos-etcd:v3.4.15-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.18.18-rancher1"),
+			Alpine:                    m("rancher/rke-tools:v0.1.74"),
+			NginxProxy:                m("rancher/rke-tools:v0.1.74"),
+			CertDownloader:            m("rancher/rke-tools:v0.1.74"),
+			KubernetesServicesSidecar: m("rancher/rke-tools:v0.1.74"),
+			KubeDNS:                   m("gcr.io/google_containers/k8s-dns-kube-dns:1.15.2"),
+			DNSmasq:                   m("gcr.io/google_containers/k8s-dns-dnsmasq-nanny:1.15.2"),
+			KubeDNSSidecar:            m("gcr.io/google_containers/k8s-dns-sidecar:1.15.2"),
+			KubeDNSAutoscaler:         m("rancher/cluster-proportional-autoscaler:1.7.1"),
+			Flannel:                   m("quay.io/coreos/flannel:v0.12.0"),
+			FlannelCNI:                m("rancher/flannel-cni:v0.3.0-rancher6"),
+			CalicoNode:                m("quay.io/calico/node:v3.13.4"),
+			CalicoCNI:                 m("quay.io/calico/cni:v3.13.4"),
+			CalicoControllers:         m("quay.io/calico/kube-controllers:v3.13.4"),
+			CalicoCtl:                 m("quay.io/calico/ctl:v3.13.4"),
+			CalicoFlexVol:             m("quay.io/calico/pod2daemon-flexvol:v3.13.4"),
+			CanalNode:                 m("quay.io/calico/node:v3.13.4"),
+			CanalCNI:                  m("quay.io/calico/cni:v3.13.4"),
+			CanalFlannel:              m("quay.io/coreos/flannel:v0.12.0"),
+			CanalFlexVol:              m("quay.io/calico/pod2daemon-flexvol:v3.13.4"),
+			WeaveNode:                 m("weaveworks/weave-kube:2.6.4"),
+			WeaveCNI:                  m("weaveworks/weave-npc:2.6.4"),
+			PodInfraContainer:         m("gcr.io/google_containers/pause:3.1"),
+			Ingress:                   m("rancher/nginx-ingress-controller:nginx-0.35.0-rancher2"),
+			IngressBackend:            m("rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1"),
+			MetricsServer:             m("gcr.io/google_containers/metrics-server:v0.3.6"),
+			CoreDNS:                   m("coredns/coredns:1.6.9"),
+			CoreDNSAutoscaler:         m("rancher/cluster-proportional-autoscaler:1.7.1"),
+			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.6"),
+			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
+		},
 		// k8s version from 2.1.x release with old rke-tools to allow upgrade from 2.1.x clusters
 		// without all clusters being restarted
 		"v1.11.9-rancher1-3": {
