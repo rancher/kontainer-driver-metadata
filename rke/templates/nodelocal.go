@@ -87,9 +87,7 @@ data:
         reload
         loop
         bind {{.IPAddress}} {{.ClusterDNSServer}}
-        forward . __PILLAR__UPSTREAM__SERVERS__ {
-                force_tcp
-        }
+        forward . __PILLAR__UPSTREAM__SERVERS__
         prometheus :9253
         }
 ---
