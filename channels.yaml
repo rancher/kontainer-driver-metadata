@@ -11,3 +11,99 @@ releases:
   - version: v1.20.5+k3s1
     minChannelServerVersion: v2.5.6-rc1
     maxChannelServerVersion: v2.5.99
+    serverArgs:
+      tls-san:
+        type: array
+      cluster-cidr:
+        type: string
+      service-cidr:
+        type: string
+      service-node-port-range:
+        type: string
+      cluster-dns:
+        type: string
+      cluster-domain:
+        type: string
+      flannel-backend:
+        type: enum
+        options:
+        - none
+        - vxlan
+        - ipsec
+        - host-gw
+        - wireguard
+      kube-apiserver-arg:
+        type: array
+      kube-scheduler-arg:
+        type: array
+      kube-controller-manager-arg:
+        type: array
+      kube-cloud-controller-manager-arg:
+        type: array
+      datastore-endpoint:
+        type: string
+      datastore-cafile:
+        type: string
+      datastore-certfile:
+        type: string
+      datastore-keyfile:
+        type: string
+      etcd-expose-metrics:
+        type: boolean
+      etcd-disable-snapshots:
+        type: boolean
+      etcd-snapshot-name:
+        type: string
+      etcd-snapshot-schedule-cron:
+        type: string
+      etcd-snapshot-retention:
+        type: string
+      etcd-snapshot-dir:
+        type: string
+      default-local-storage-path:
+        type: string
+      disable:
+        type: array
+        options:
+        - coredns
+        - servicelb
+        - traefik
+        - local-storage
+        - metrics-server
+      disable-scheduler:
+        type: boolean
+      disable-cloud-controller:
+        type: boolean
+      disable-kube-proxy:
+        type: boolean
+      disable-network-policy:
+        type: boolean
+      disable-api-server:
+        type: boolean
+      disable-controller-manager:
+        type: boolean
+      disable-etcd:
+        type: boolean
+      secrets-encryption:
+        type: boolean
+    agentArgs:
+      docker:
+        type: boolean
+      pause-image:
+        type: string
+      snapshotter:
+        type: string
+      private-registry:
+        type: string
+      flannel-iface:
+        type: string
+      flannel-conf:
+        type: string
+      kubelet-arg:
+        type: array
+      kube-proxy-arg:
+        type: array
+      protect-kernel-defaults:
+        type: boolean
+      selinux:
+        type: boolean
