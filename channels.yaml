@@ -93,8 +93,6 @@ releases:
         type: string
       snapshotter:
         type: string
-      private-registry:
-        type: string
       flannel-iface:
         type: string
       flannel-conf:
