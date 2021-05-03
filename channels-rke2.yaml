@@ -8,24 +8,42 @@ releases:
   - version: v1.20.5+rke2r1
     minChannelServerVersion: v2.5.6-rc1
     maxChannelServerVersion: v2.5.99
-    charts:
+    charts: &charts-v1-20-5-rke2r1
+      rke2-cilium:
+        version: 1.9.403
+        repo: rancher-rke2-charts
       rke2-canal:
-        version: v3.13.300-build2021022302
-        repo: rke2-charts
+        version: 3.13.300-build2021022302
+        repo: rancher-rke2-charts
+      rke2-calico:
+        verion: v3.18.1-102
+        repo: rancher-rke2-charts
       rke2-coredns:
         version: 1.10.101-build2021022301
-        repo: rke2-charts
+        repo: rancher-rke2-charts
       rke2-ingress-nginx:
         version: v1.20.5-build2021031801
-        repo: rke2-charts
+        repo: rancher-rke2-charts
       rke2-metrics-server:
         version: 2.11.100-build2021022300
-        repo: rke2-charts
-    serverArgs:
+        repo: rancher-rke2-charts
+      rancher-vsphere-csi:
+        version: 2.1.000
+        repo: rancher-charts
+      rancher-vsphere-csi:
+        version: 2.1.000
+        repo: rancher-charts
+      rancher-vsphere-cpi:
+        version: 1.0.000
+        repo: rancher-charts
+    serverArgs: &serverArgs-v1-20-5-rke2r1
       cni:
         type: array
+        default: calico
         options:
         - canal
+        - cilium
+        - calico
       tls-san:
         type: array
       cluster-cidr:
@@ -72,7 +90,7 @@ releases:
         - cis-1.6
       audit-policy-file:
         type: string
-    agentArgs:
+    agentArgs: &agentArgs-v1-20-5-rke2r1
       kubelet-arg:
         type: array
       protect-kernel-defaults:
@@ -82,15 +100,35 @@ releases:
       system-default-registry:
         type: string
       cloud-provider-name:
-        type: string
+        type: enum
+        default: none
+        nullable: true
+        options:
+        - aws
+        - azure
+        - gcp
+        - vsphere
+        - external
+        - none
       cloud-provider-config:
         type: string
       profile:
         type: enum
+        nullable: true
         options:
         - cis-1.5
         - cis-1.6
       audit-policy-file:
         type: string
-      private-registry:
-        type: string
+  - version: v1.20.6+rke2r1
+    minChannelServerVersion: v2.5.6-rc1
+    maxChannelServerVersion: v2.5.99
+    charts: *charts-v1-20-5-rke2r1
+    serverArgs: *serverArgs-v1-20-5-rke2r1
+    agentArgs: *agentArgs-v1-20-5-rke2r1
+  - version: v1.21.0-alpha2+rke2r1
+    minChannelServerVersion: v2.5.6-rc1
+    maxChannelServerVersion: v2.5.99
+    charts: *charts-v1-20-5-rke2r1
+    serverArgs: *serverArgs-v1-20-5-rke2r1
+    agentArgs: *agentArgs-v1-20-5-rke2r1
