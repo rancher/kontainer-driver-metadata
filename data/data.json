@@ -9023,15 +9023,6 @@
      "cluster-domain": {
       "type": "string"
      },
-     "cni": {
-      "default": "calico",
-      "options": [
-       "canal",
-       "cilium",
-       "calico"
-      ],
-      "type": "array"
-     },
      "disable": {
       "options": [
        "rke2-coredns",
@@ -9067,13 +9058,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "profile": {
-      "options": [
-       "cis-1.5",
-       "cis-1.6"
-      ],
-      "type": "string"
      },
      "secrets-encryption": {
       "type": "boolean"
@@ -9181,15 +9165,6 @@
      "cluster-domain": {
       "type": "string"
      },
-     "cni": {
-      "default": "calico",
-      "options": [
-       "canal",
-       "cilium",
-       "calico"
-      ],
-      "type": "array"
-     },
      "disable": {
       "options": [
        "rke2-coredns",
@@ -9225,13 +9200,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "profile": {
-      "options": [
-       "cis-1.5",
-       "cis-1.6"
-      ],
-      "type": "string"
      },
      "secrets-encryption": {
       "type": "boolean"
@@ -9383,13 +9351,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "profile": {
-      "options": [
-       "cis-1.5",
-       "cis-1.6"
-      ],
-      "type": "string"
      },
      "secrets-encryption": {
       "type": "boolean"
