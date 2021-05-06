@@ -118,8 +118,9 @@ releases:
     minChannelServerVersion: v2.5.6-rc1
     maxChannelServerVersion: v2.5.99
     charts: *charts-v1-20-5-rke2r1
-    serverArgs: &serverArgs-v1-21-0-alpha2-rke2r1
-      << : *serverArgs-v1-20-5-rke2r1
+    serverArgs: *serverArgs-v1-20-5-rke2r1
+    agentArgs: &agentArgs-v1-21-0-alpha2-rke2r1
+      << : *agentArgs-v1-20-5-rke2r1
       cni:
         type: array
         default: calico
@@ -127,4 +128,3 @@ releases:
         - canal
         - cilium
         - calico
-    agentArgs: *agentArgs-v1-20-5-rke2r1
