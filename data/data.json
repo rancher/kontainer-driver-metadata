@@ -9237,6 +9237,15 @@
       ],
       "type": "enum"
      },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico"
+      ],
+      "type": "array"
+     },
      "kubelet-arg": {
       "type": "array"
      },
@@ -9306,15 +9315,6 @@
      },
      "cluster-domain": {
       "type": "string"
-     },
-     "cni": {
-      "default": "calico",
-      "options": [
-       "canal",
-       "cilium",
-       "calico"
-      ],
-      "type": "array"
      },
      "disable": {
       "options": [
