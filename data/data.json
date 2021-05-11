@@ -9202,9 +9202,6 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
-     "secrets-encryption": {
-      "type": "boolean"
-     },
      "service-cidr": {
       "type": "string"
      },
@@ -9343,9 +9340,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "secrets-encryption": {
-      "type": "boolean"
      },
      "service-cidr": {
       "type": "string"
@@ -9505,9 +9499,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "secrets-encryption": {
-      "type": "boolean"
      },
      "service-cidr": {
       "type": "string"
