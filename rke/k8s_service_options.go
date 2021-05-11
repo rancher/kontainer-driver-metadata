@@ -15,6 +15,14 @@ const (
 
 func loadK8sVersionServiceOptions() map[string]v3.KubernetesServicesOptions {
 	return map[string]v3.KubernetesServicesOptions{
+		"v1.21": {
+			Etcd:           getETCDOptions117(),
+			KubeAPI:        getKubeAPIOptions121(),
+			Kubelet:        getKubeletOptions116(),
+			KubeController: getKubeControllerOptions(),
+			Kubeproxy:      getKubeProxyOptions(),
+			Scheduler:      getSchedulerOptions(),
+		},
 		"v1.20": {
 			Etcd:           getETCDOptions117(),
 			KubeAPI:        getKubeAPIOptions120(),
@@ -374,6 +382,15 @@ func getKubeAPIOptions120() map[string]string {
 	kubeAPIOptions := getKubeAPIOptions116()
 	// need to turn off this feature in k8s 1.20 since we are not using it https://github.com/kubernetes/kubernetes/pull/91921
 	kubeAPIOptions["feature-gates"] = "ServiceAccountIssuerDiscovery=false"
+	kubeAPIOptions["service-account-issuer"] = rkeIssuer
+	kubeAPIOptions["service-account-signing-key-file"] = serviceAccountKeyPath
+	kubeAPIOptions["api-audiences"] = "unknown"
+	return kubeAPIOptions
+}
+
+func getKubeAPIOptions121() map[string]string {
+	kubeAPIOptions := getKubeAPIOptions116()
+	// need to turn off this feature in k8s 1.20 since we are not using it https://github.com/kubernetes/kubernetes/pull/91921
 	kubeAPIOptions["service-account-issuer"] = rkeIssuer
 	kubeAPIOptions["service-account-signing-key-file"] = serviceAccountKeyPath
 	kubeAPIOptions["api-audiences"] = "unknown"

@@ -22,6 +22,7 @@ const (
 	calicov3160          = "calico-v3.16.0"
 	calicov3165          = "calico-v3.16.5"
 	calicov3171          = "calico-v3.17.1"
+	calicov319           = "calico-v3.19.0"
 
 	canalv18                      = "canal-v1.8"
 	canalv113                     = "canal-v1.13"
@@ -36,6 +37,7 @@ const (
 	canalv3160                    = "canal-v3.16.0"
 	canalv3165                    = "canal-v3.16.5"
 	canalv3171                    = "canal-v3.17.1"
+	canalv319                     = "canal-v3.19.0"
 
 	flannelv18  = "flannel-v1.8"
 	flannelv115 = "flannel-v1.15"
@@ -74,7 +76,8 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.20.4-rancher1-1":                    calicov3171,
+			">=1.21.0-rancher1-1":                    calicov319,
+			">=1.20.4-rancher1-1 <1.21.0-rancher1-1": calicov319,
 			">=1.19.4-rancher1-2 <1.20.4-rancher1-1": calicov3165,
 			">=1.19.0-rancher0 <1.19.4-rancher1-2":   calicov3160,
 			">=1.17.4-rancher0 <1.19.0-rancher0":     calicov117Privileged,
@@ -94,7 +97,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
 		kdm.Canal: {
-			">=1.20.4-rancher1-1":                      canalv3171,
+			">=1.21.0-rancher1-1":                      canalv319,
+			">=1.20.4-rancher1-1 <1.21.0-rancher1-1":   canalv3171,
 			">=1.19.4-rancher1-2 <1.20.4-rancher1-1":   canalv3165,
 			">=1.19.0-rancher0 <1.19.4-rancher1-2":     canalv3160,
 			">=1.17.6-rancher2-1 <1.19.0-rancher0":     canalv117PrivilegedCalico3134,
@@ -176,6 +180,7 @@ func getTemplates() map[string]string {
 		calicov3160:          CalicoTemplateV3_16_0,
 		calicov3165:          CalicoTemplateV3_16_5,
 		calicov3171:          CalicoTemplateV3_17_1,
+		calicov319:           CalicoTemplateV3_19_0,
 
 		flannelv115: FlannelTemplateV115,
 		flannelv116: FlannelTemplateV116,
@@ -194,6 +199,7 @@ func getTemplates() map[string]string {
 		canalv3160:                    CanalTemplateV3_16_0,
 		canalv3165:                    CanalTemplateV3_16_5,
 		canalv3171:                    CanalTemplateV3_17_1,
+		canalv319:                     CanalTemplateV3_19_0,
 
 		coreDnsv18:  CoreDNSTemplate,
 		coreDnsv116: CoreDNSTemplateV116,
