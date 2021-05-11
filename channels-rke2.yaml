@@ -74,8 +74,6 @@ releases:
         - rke2-ingress-nginx
         - rke2-kube-proxy
         - rke2-metrics-server
-      secrets-encryption:
-        type: boolean
       audit-policy-file:
         type: string
     agentArgs: &agentArgs-v1
