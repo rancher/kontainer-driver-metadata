@@ -162,3 +162,19 @@ releases:
         - multus+canal
         - multus+cilium
         - multus+calico
+  - version: v1.21.1-alpha4+rke2r1
+    minChannelServerVersion: v2.6.0-alpha1
+    maxChannelServerVersion: v2.6.99
+    charts: &charts-v3
+      << : *charts-v2
+      rke2-canal:
+        version: v3.13.300-build2021022306
+        repo: rancher-rke2-charts
+      rke2-ingress-nginx:
+        version: 3.30.002
+        repo: rancher-rke2-charts
+      rke2-kube-proxy:
+        version: v1.21.1-build2021051203
+        repo: rancher-rke2-charts
+    serverArgs: *serverArgs-v1
+    agentArgs: *agentArgs-v2
