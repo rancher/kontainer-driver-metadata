@@ -390,7 +390,6 @@ func getKubeAPIOptions120() map[string]string {
 
 func getKubeAPIOptions121() map[string]string {
 	kubeAPIOptions := getKubeAPIOptions116()
-	// need to turn off this feature in k8s 1.20 since we are not using it https://github.com/kubernetes/kubernetes/pull/91921
 	kubeAPIOptions["service-account-issuer"] = rkeIssuer
 	kubeAPIOptions["service-account-signing-key-file"] = serviceAccountKeyPath
 	kubeAPIOptions["api-audiences"] = "unknown"

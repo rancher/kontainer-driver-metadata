@@ -5267,16 +5267,16 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.15.13",
 		},
 		// Enabled in v2.6
-		"v1.21.0-rancher1-1": {
-			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
-			Kubernetes:                "rancher/hyperkube:v1.21.0-rancher1",
+		"v1.21.1-rancher1-1": {
+			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.16-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.21.1-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.74",
 			NginxProxy:                "rancher/rke-tools:v0.1.74",
 			CertDownloader:            "rancher/rke-tools:v0.1.74",
 			KubernetesServicesSidecar: "rancher/rke-tools:v0.1.74",
-			KubeDNS:                   "rancher/mirrored-k8s-dns-kube-dns:1.17.3",
-			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.17.3",
-			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.17.3",
+			KubeDNS:                   "rancher/mirrored-k8s-dns-kube-dns:1.17.4",
+			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.17.4",
+			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.17.4",
 			KubeDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.8.3",
 			Flannel:                   "rancher/coreos-flannel:v0.13.0-rancher1",
 			FlannelCNI:                "rancher/flannel-cni:v0.3.0-rancher6",
@@ -5307,7 +5307,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   "rancher/mirrored-coredns-coredns:1.8.3",
 			CoreDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.8.3",
 			WindowsPodInfraContainer:  "rancher/kubelet-pause:v0.1.6",
-			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.17.3",
+			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.17.4",
 		},
 		// k8s version from 2.1.x release with old rke-tools to allow upgrade from 2.1.x clusters
 		// without all clusters being restarted
