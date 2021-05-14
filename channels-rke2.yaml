@@ -149,9 +149,8 @@ releases:
       rancher-vsphere-csi:
         version: 2.1.000
         repo: rancher-charts
-    serverArgs: *serverArgs-v1
-    agentArgs: &agentArgs-v2
-      << : *agentArgs-v1
+    serverArgs: &serverArgs-v2
+      << : *serverArgs-v1
       cni:
         type: array
         default: calico
@@ -162,6 +161,7 @@ releases:
         - multus+canal
         - multus+cilium
         - multus+calico
+    agentArgs: *agentArgs-v1
   - version: v1.21.1-alpha4+rke2r1
     minChannelServerVersion: v2.6.0-alpha1
     maxChannelServerVersion: v2.6.99
@@ -176,5 +176,5 @@ releases:
       rke2-kube-proxy:
         version: v1.21.1-build2021051203
         repo: rancher-rke2-charts
-    serverArgs: *serverArgs-v1
-    agentArgs: *agentArgs-v2
+    serverArgs: *serverArgs-v2
+    agentArgs: *agentArgs-v1

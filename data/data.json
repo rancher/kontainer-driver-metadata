@@ -9374,18 +9374,6 @@
       ],
       "type": "enum"
      },
-     "cni": {
-      "default": "calico",
-      "options": [
-       "canal",
-       "cilium",
-       "calico",
-       "multus+canal",
-       "multus+cilium",
-       "multus+calico"
-      ],
-      "type": "array"
-     },
      "kubelet-arg": {
       "type": "array"
      },
@@ -9464,6 +9452,18 @@
      "cluster-domain": {
       "type": "string"
      },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "multus+canal",
+       "multus+cilium",
+       "multus+calico"
+      ],
+      "type": "array"
+     },
      "disable": {
       "options": [
        "rke2-coredns",
@@ -9532,18 +9532,6 @@
        "none"
       ],
       "type": "enum"
-     },
-     "cni": {
-      "default": "calico",
-      "options": [
-       "canal",
-       "cilium",
-       "calico",
-       "multus+canal",
-       "multus+cilium",
-       "multus+calico"
-      ],
-      "type": "array"
      },
      "kubelet-arg": {
       "type": "array"
@@ -9622,6 +9610,18 @@
      },
      "cluster-domain": {
       "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "multus+canal",
+       "multus+cilium",
+       "multus+calico"
+      ],
+      "type": "array"
      },
      "disable": {
       "options": [
