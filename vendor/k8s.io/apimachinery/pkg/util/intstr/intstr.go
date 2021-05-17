@@ -45,7 +45,7 @@ type IntOrString struct {
 }
 
 // Type represents the stored type of IntOrString.
-type Type int64
+type Type int
 
 const (
 	Int    Type = iota // The IntOrString holds an int.
@@ -97,8 +97,7 @@ func (intstr *IntOrString) String() string {
 }
 
 // IntValue returns the IntVal if type Int, or if
-// it is a String, will attempt a conversion to int,
-// returning 0 if a parsing error occurs.
+// it is a String, will attempt a conversion to int.
 func (intstr *IntOrString) IntValue() int {
 	if intstr.Type == String {
 		i, _ := strconv.Atoi(intstr.StrVal)

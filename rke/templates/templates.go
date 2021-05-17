@@ -1,16 +1,25 @@
 package templates
 
+import "github.com/rancher/rke/types/kdm"
+
 /*
 Not including Vsphere(cloudProvider) and Authz templates
 Will they change and require Rancher to pass them to RKE
 depending on Kubernetes version?
 */
 
-import (
-	"github.com/rancher/rke/types/kdm"
-)
-
 const (
+	Calico        = "calico"
+	Canal         = "canal"
+	Flannel       = "flannel"
+	Weave         = "weave"
+	CoreDNS       = "coreDNS"
+	KubeDNS       = "kubeDNS"
+	MetricsServer = "metricsServer"
+	NginxIngress  = "nginxIngress"
+	Nodelocal     = "nodelocal"
+	TemplateKeys  = "templateKeys"
+
 	calicov18            = "calico-v1.8"
 	calicov113           = "calico-v1.13"
 	calicov115           = "calico-v1.15"
@@ -19,7 +28,6 @@ const (
 	calicov116           = "calico-v1.16"
 	calicov117           = "calico-v1.17"
 	calicov117Privileged = "calico-v1.17-privileged"
-	calicov3160          = "calico-v3.16.0"
 
 	canalv18                      = "canal-v1.8"
 	canalv113                     = "canal-v1.13"
@@ -31,13 +39,10 @@ const (
 	canalv117                     = "canal-v1.17"
 	canalv117Privileged           = "canal-v1.17-privileged"
 	canalv117PrivilegedCalico3134 = "canal-v1.17-privileged-calico3134"
-	canalv3160                    = "canal-v3.16.0"
 
 	flannelv18  = "flannel-v1.8"
 	flannelv115 = "flannel-v1.15"
 	flannelv116 = "flannel-v1.16"
-
-	kubeRouterv116 = "kube-router-v1.16"
 
 	coreDnsv18  = "coredns-v1.8"
 	coreDnsv116 = "coredns-v1.16"
@@ -51,6 +56,8 @@ const (
 	weavev18  = "weave-v1.8"
 	weavev116 = "weave-v1.16"
 
+	kubeRouterv116 = "kube-router-v1.16"
+
 	nginxIngressv18    = "nginxingress-v1.8"
 	nginxIngressV115   = "nginxingress-v1.15"
 	nginxIngressV11512 = "nginxingress-v1.15.12"
@@ -60,14 +67,13 @@ const (
 
 var TemplateIntroducedRanges = map[string][]string{
 	kdm.KubeRouter: {">=1.16.0-alpha"},
-	kdm.Nodelocal:  {">=1.17.4-rancher1-1", ">=1.16.8-rancher1-1 <1.17.0-alpha", ">=1.15.11-rancher1-1 <1.16.0-alpha"},
+	Nodelocal:      {">=1.17.4-rancher1-1", ">=1.16.8-rancher1-1 <1.17.0-alpha", ">=1.15.11-rancher1-1 <1.16.0-alpha"},
 }
 
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
-		kdm.Calico: {
-			">=1.19.0-rancher0":                  calicov3160,
-			">=1.17.4-rancher0 <1.19.0-rancher0": calicov117Privileged,
+		Calico: {
+			">=1.17.4-rancher0":                  calicov117Privileged,
 			">=1.17.0-rancher0 <1.17.4-rancher0": calicov117,
 			">=1.16.8-rancher0 <1.17.0-rancher0": calicov117Privileged,
 			">=1.16.4-rancher1 <1.16.8-rancher0": calicov117,
@@ -83,9 +89,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.13.0-rancher0 <1.15.0-rancher0":    calicov113,
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
-		kdm.Canal: {
-			">=1.19.0-rancher0":                        canalv3160,
-			">=1.17.6-rancher2-1 <1.19.0-rancher0":     canalv117PrivilegedCalico3134,
+		Canal: {
+			">=1.17.6-rancher2-1":                      canalv117PrivilegedCalico3134,
 			">=1.17.4-rancher0 <1.17.6-rancher2-1":     canalv117Privileged,
 			">=1.17.0-rancher0 <1.17.4-rancher0":       canalv117,
 			">=1.16.10-rancher2-1 <1.17.0-rancher0":    canalv117PrivilegedCalico3134,
@@ -101,28 +106,28 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.13.0-rancher0 <1.15.0-rancher0":       canalv113,
 			">=1.8.0-rancher0 <1.13.0-rancher0":        canalv18,
 		},
-		kdm.Flannel: {
+		Flannel: {
 			">=1.16.0-alpha":                    flannelv116,
 			">=1.15.0-rancher0 <1.16.0-alpha":   flannelv115,
 			">=1.8.0-rancher0 <1.15.0-rancher0": flannelv18,
 		},
-		kdm.CoreDNS: {
+		CoreDNS: {
 			">=1.17.0-alpha":                 coreDnsv117,
 			">=1.16.0-alpha <1.17.0-alpha":   coreDnsv116,
 			">=1.8.0-rancher0 <1.16.0-alpha": coreDnsv18,
 		},
-		kdm.KubeDNS: {
+		KubeDNS: {
 			">=1.16.0-alpha":                 kubeDnsv116,
 			">=1.8.0-rancher0 <1.16.0-alpha": kubeDnsv18,
 		},
-		kdm.MetricsServer: {
+		MetricsServer: {
 			">=1.8.0-rancher0": metricsServerv18,
 		},
-		kdm.Weave: {
+		Weave: {
 			">=1.16.0-alpha":                 weavev116,
 			">=1.8.0-rancher0 <1.16.0-alpha": weavev18,
 		},
-		kdm.NginxIngress: {
+		NginxIngress: {
 			">=1.8.0-rancher0 <1.13.10-rancher1-3":  nginxIngressv18,
 			">=1.14.0-rancher0 <=1.14.6-rancher1-1": nginxIngressv18,
 			">=1.15.0-rancher0 <=1.15.3-rancher1-1": nginxIngressv18,
@@ -137,15 +142,13 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.16.10-rancher1-1 <1.17.0-rancher1-1": nginxIngressV11512,
 			">=1.17.6-rancher1-1":                     nginxIngressV11512,
 		},
-		kdm.Nodelocal: {
-			">=1.15.11-rancher0 <1.16.0-alpha": nodelocalv115,
-			">=1.16.8-rancher0 <1.17.0-alpha":  nodelocalv115,
-			">=1.17.4-rancher0":                nodelocalv115,
+		Nodelocal: {
+			">=1.8.0-rancher0": nodelocalv115,
 		},
 		kdm.KubeRouter: {
 			">=1.16.0-alpha": kubeRouterv116,
 		},
-		kdm.TemplateKeys: getTemplates(),
+		TemplateKeys: getTemplates(),
 	}
 }
 
@@ -159,7 +162,6 @@ func getTemplates() map[string]string {
 		calicov117:           CalicoTemplateV117,
 		calicov117Privileged: CalicoTemplateV117Privileged,
 		calicov18:            CalicoTemplateV112,
-		calicov3160:          CalicoTemplateV3_16_0,
 
 		flannelv115: FlannelTemplateV115,
 		flannelv116: FlannelTemplateV116,
@@ -175,7 +177,6 @@ func getTemplates() map[string]string {
 		canalv117:                     CanalTemplateV117,
 		canalv117Privileged:           CanalTemplateV117Privileged,
 		canalv117PrivilegedCalico3134: CanalTemplateV117PrivilegedCalico3134,
-		canalv3160:                    CanalTemplateV3_16_0,
 
 		coreDnsv18:  CoreDNSTemplate,
 		coreDnsv116: CoreDNSTemplateV116,
