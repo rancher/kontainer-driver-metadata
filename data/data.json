@@ -9191,6 +9191,292 @@
      }
     },
     "version": "v1.20.6+k3s1"
+   },
+   {
+    "agentArgs": {
+     "docker": {
+      "type": "boolean"
+     },
+     "flannel-conf": {
+      "type": "string"
+     },
+     "flannel-iface": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "protect-kernel-defaults": {
+      "type": "boolean"
+     },
+     "selinux": {
+      "type": "boolean"
+     },
+     "snapshotter": {
+      "type": "string"
+     }
+    },
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.0-alpha1",
+    "serverArgs": {
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "datastore-cafile": {
+      "type": "string"
+     },
+     "datastore-certfile": {
+      "type": "string"
+     },
+     "datastore-endpoint": {
+      "type": "string"
+     },
+     "datastore-keyfile": {
+      "type": "string"
+     },
+     "default-local-storage-path": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "coredns",
+       "servicelb",
+       "traefik",
+       "local-storage",
+       "metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-api-server": {
+      "type": "boolean"
+     },
+     "disable-cloud-controller": {
+      "type": "boolean"
+     },
+     "disable-controller-manager": {
+      "type": "boolean"
+     },
+     "disable-etcd": {
+      "type": "boolean"
+     },
+     "disable-kube-proxy": {
+      "type": "boolean"
+     },
+     "disable-network-policy": {
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "boolean"
+     },
+     "etcd-disable-snapshots": {
+      "type": "boolean"
+     },
+     "etcd-expose-metrics": {
+      "type": "boolean"
+     },
+     "etcd-snapshot-dir": {
+      "type": "string"
+     },
+     "etcd-snapshot-name": {
+      "type": "string"
+     },
+     "etcd-snapshot-retention": {
+      "type": "string"
+     },
+     "etcd-snapshot-schedule-cron": {
+      "type": "string"
+     },
+     "flannel-backend": {
+      "options": [
+       "none",
+       "vxlan",
+       "ipsec",
+       "host-gw",
+       "wireguard"
+      ],
+      "type": "enum"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-cloud-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "secrets-encryption": {
+      "type": "boolean"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+    "version": "v1.21.0+k3s1"
+   },
+   {
+    "agentArgs": {
+     "docker": {
+      "type": "boolean"
+     },
+     "flannel-conf": {
+      "type": "string"
+     },
+     "flannel-iface": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "protect-kernel-defaults": {
+      "type": "boolean"
+     },
+     "selinux": {
+      "type": "boolean"
+     },
+     "snapshotter": {
+      "type": "string"
+     }
+    },
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.0-alpha1",
+    "serverArgs": {
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "datastore-cafile": {
+      "type": "string"
+     },
+     "datastore-certfile": {
+      "type": "string"
+     },
+     "datastore-endpoint": {
+      "type": "string"
+     },
+     "datastore-keyfile": {
+      "type": "string"
+     },
+     "default-local-storage-path": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "coredns",
+       "servicelb",
+       "traefik",
+       "local-storage",
+       "metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-api-server": {
+      "type": "boolean"
+     },
+     "disable-cloud-controller": {
+      "type": "boolean"
+     },
+     "disable-controller-manager": {
+      "type": "boolean"
+     },
+     "disable-etcd": {
+      "type": "boolean"
+     },
+     "disable-kube-proxy": {
+      "type": "boolean"
+     },
+     "disable-network-policy": {
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "boolean"
+     },
+     "etcd-disable-snapshots": {
+      "type": "boolean"
+     },
+     "etcd-expose-metrics": {
+      "type": "boolean"
+     },
+     "etcd-snapshot-dir": {
+      "type": "string"
+     },
+     "etcd-snapshot-name": {
+      "type": "string"
+     },
+     "etcd-snapshot-retention": {
+      "type": "string"
+     },
+     "etcd-snapshot-schedule-cron": {
+      "type": "string"
+     },
+     "flannel-backend": {
+      "options": [
+       "none",
+       "vxlan",
+       "ipsec",
+       "host-gw",
+       "wireguard"
+      ],
+      "type": "enum"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-cloud-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "secrets-encryption": {
+      "type": "boolean"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+    "version": "v1.21.1-rc1+k3s1"
    }
   ]
  },
@@ -9801,6 +10087,165 @@
      }
     },
     "version": "v1.21.1-alpha4+rke2r1"
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": "none",
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "vsphere",
+       "external",
+       "none"
+      ],
+      "type": "enum"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis-1.5",
+       "cis-1.6"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "type": "boolean"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-charts",
+      "version": "1.0.000"
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-charts",
+      "version": "2.1.000"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+      "verion": "v3.18.1-103"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.13.300-build2021022306"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.9.604"
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.10.101-build2021022303"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+      "version": "3.30.002"
+     },
+     "rke2-kube-proxy": {
+      "repo": "rancher-rke2-charts",
+      "version": "v1.21.1-build2021051203"
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.11.100-build2021022300"
+     },
+     "rke2-multus": {
+      "repo": "rancher-charts",
+      "version": "v3.7.1-build2021041601"
+     }
+    },
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.0-alpha1",
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "multus+canal",
+       "multus+cilium",
+       "multus+calico"
+      ],
+      "type": "array"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-kube-proxy",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+     },
+     "etcd-disable-snapshots": {
+      "type": "boolean"
+     },
+     "etcd-expose-metrics": {
+      "type": "boolean"
+     },
+     "etcd-snapshot-dir": {
+      "type": "string"
+     },
+     "etcd-snapshot-name": {
+      "type": "string"
+     },
+     "etcd-snapshot-retention": {
+      "type": "string"
+     },
+     "etcd-snapshot-schedule-cron": {
+      "type": "string"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+    "version": "v1.21.1-alpha5+rke2r1"
    }
   ]
  }
