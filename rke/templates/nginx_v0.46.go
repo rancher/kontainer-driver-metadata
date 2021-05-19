@@ -263,14 +263,12 @@ metadata:
     app.kubernetes.io/instance: ingress-nginx
     app.kubernetes.io/version: 0.46.0
     app.kubernetes.io/component: controller
-  name: ingress-nginx-controller
+  name: nginx-ingress-controller # Rancher specific change
   namespace: ingress-nginx
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/name: ingress-nginx
-      app.kubernetes.io/instance: ingress-nginx
-      app.kubernetes.io/component: controller
+      app: ingress-nginx
 {{if .UpdateStrategy}}
   updateStrategy:
 {{ toYaml .UpdateStrategy | indent 4}}
@@ -280,9 +278,7 @@ spec:
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: ingress-nginx
-        app.kubernetes.io/instance: ingress-nginx
-        app.kubernetes.io/component: controller
+        app: ingress-nginx
     spec:
       affinity:
         nodeAffinity:
@@ -320,7 +316,7 @@ spec:
       - effect: NoSchedule
         operator: Exists
       containers:
-        - name: controller
+        - name: nginx-ingress-controller
           image: {{.IngressImage}}
           imagePullPolicy: IfNotPresent
           lifecycle:

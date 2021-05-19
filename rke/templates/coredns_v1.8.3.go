@@ -80,7 +80,7 @@ data:
         loop
         reload
         loadbalance
-    }STUBDOMAINS
+    } # STUBDOMAINS - Rancher specific change
 ---
 apiVersion: apps/v1
 kind: Deployment
