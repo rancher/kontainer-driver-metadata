@@ -7624,12 +7624,12 @@
    {
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.4.5-rc1",
-    "version": "v1.18.18+k3s1"
+    "version": "v1.18.19+k3s1"
    },
    {
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.5.0-rc1",
-    "version": "v1.19.10+k3s1"
+    "version": "v1.19.11+k3s1"
    }
   ]
  }
