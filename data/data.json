@@ -8899,155 +8899,12 @@
    {
     "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.0-alpha1",
-    "version": "v1.18.17+k3s1"
+    "version": "v1.18.19+k3s1"
    },
    {
     "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.0-alpha1",
-    "version": "v1.19.9+k3s1"
-   },
-   {
-    "agentArgs": {
-     "docker": {
-      "type": "boolean"
-     },
-     "flannel-conf": {
-      "type": "string"
-     },
-     "flannel-iface": {
-      "type": "string"
-     },
-     "kube-proxy-arg": {
-      "type": "array"
-     },
-     "kubelet-arg": {
-      "type": "array"
-     },
-     "pause-image": {
-      "type": "string"
-     },
-     "protect-kernel-defaults": {
-      "type": "boolean"
-     },
-     "selinux": {
-      "type": "boolean"
-     },
-     "snapshotter": {
-      "type": "string"
-     }
-    },
-    "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.0-alpha1",
-    "serverArgs": {
-     "cluster-cidr": {
-      "type": "string"
-     },
-     "cluster-dns": {
-      "type": "string"
-     },
-     "cluster-domain": {
-      "type": "string"
-     },
-     "datastore-cafile": {
-      "type": "string"
-     },
-     "datastore-certfile": {
-      "type": "string"
-     },
-     "datastore-endpoint": {
-      "type": "string"
-     },
-     "datastore-keyfile": {
-      "type": "string"
-     },
-     "default-local-storage-path": {
-      "type": "string"
-     },
-     "disable": {
-      "options": [
-       "coredns",
-       "servicelb",
-       "traefik",
-       "local-storage",
-       "metrics-server"
-      ],
-      "type": "array"
-     },
-     "disable-api-server": {
-      "type": "boolean"
-     },
-     "disable-cloud-controller": {
-      "type": "boolean"
-     },
-     "disable-controller-manager": {
-      "type": "boolean"
-     },
-     "disable-etcd": {
-      "type": "boolean"
-     },
-     "disable-kube-proxy": {
-      "type": "boolean"
-     },
-     "disable-network-policy": {
-      "type": "boolean"
-     },
-     "disable-scheduler": {
-      "type": "boolean"
-     },
-     "etcd-disable-snapshots": {
-      "type": "boolean"
-     },
-     "etcd-expose-metrics": {
-      "type": "boolean"
-     },
-     "etcd-snapshot-dir": {
-      "type": "string"
-     },
-     "etcd-snapshot-name": {
-      "type": "string"
-     },
-     "etcd-snapshot-retention": {
-      "type": "string"
-     },
-     "etcd-snapshot-schedule-cron": {
-      "type": "string"
-     },
-     "flannel-backend": {
-      "options": [
-       "none",
-       "vxlan",
-       "ipsec",
-       "host-gw",
-       "wireguard"
-      ],
-      "type": "enum"
-     },
-     "kube-apiserver-arg": {
-      "type": "array"
-     },
-     "kube-cloud-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-arg": {
-      "type": "array"
-     },
-     "secrets-encryption": {
-      "type": "boolean"
-     },
-     "service-cidr": {
-      "type": "string"
-     },
-     "service-node-port-range": {
-      "type": "string"
-     },
-     "tls-san": {
-      "type": "array"
-     }
-    },
-    "version": "v1.20.5+k3s1"
+    "version": "v1.19.11+k3s1"
    },
    {
     "agentArgs": {
@@ -9190,7 +9047,7 @@
       "type": "array"
      }
     },
-    "version": "v1.20.6+k3s1"
+    "version": "v1.20.7+k3s1"
    },
    {
     "agentArgs": {
@@ -9333,7 +9190,7 @@
       "type": "array"
      }
     },
-    "version": "v1.21.0+k3s1"
+    "version": "v1.20.7+k3s1"
    },
    {
     "agentArgs": {
@@ -9476,7 +9333,7 @@
       "type": "array"
      }
     },
-    "version": "v1.21.1-rc1+k3s1"
+    "version": "v1.21.1+k3s1"
    }
   ]
  },
