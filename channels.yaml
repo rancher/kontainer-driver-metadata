@@ -50,16 +50,6 @@ releases:
         type: string
       etcd-expose-metrics:
         type: boolean
-      etcd-disable-snapshots:
-        type: boolean
-      etcd-snapshot-name:
-        type: string
-      etcd-snapshot-schedule-cron:
-        type: string
-      etcd-snapshot-retention:
-        type: string
-      etcd-snapshot-dir:
-        type: string
       default-local-storage-path:
         type: string
       disable:

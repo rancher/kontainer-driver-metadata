@@ -8994,23 +8994,8 @@
      "disable-scheduler": {
       "type": "boolean"
      },
-     "etcd-disable-snapshots": {
-      "type": "boolean"
-     },
      "etcd-expose-metrics": {
       "type": "boolean"
-     },
-     "etcd-snapshot-dir": {
-      "type": "string"
-     },
-     "etcd-snapshot-name": {
-      "type": "string"
-     },
-     "etcd-snapshot-retention": {
-      "type": "string"
-     },
-     "etcd-snapshot-schedule-cron": {
-      "type": "string"
      },
      "flannel-backend": {
       "options": [
@@ -9137,23 +9122,8 @@
      "disable-scheduler": {
       "type": "boolean"
      },
-     "etcd-disable-snapshots": {
-      "type": "boolean"
-     },
      "etcd-expose-metrics": {
       "type": "boolean"
-     },
-     "etcd-snapshot-dir": {
-      "type": "string"
-     },
-     "etcd-snapshot-name": {
-      "type": "string"
-     },
-     "etcd-snapshot-retention": {
-      "type": "string"
-     },
-     "etcd-snapshot-schedule-cron": {
-      "type": "string"
      },
      "flannel-backend": {
       "options": [
@@ -9280,23 +9250,8 @@
      "disable-scheduler": {
       "type": "boolean"
      },
-     "etcd-disable-snapshots": {
-      "type": "boolean"
-     },
      "etcd-expose-metrics": {
       "type": "boolean"
-     },
-     "etcd-snapshot-dir": {
-      "type": "string"
-     },
-     "etcd-snapshot-name": {
-      "type": "string"
-     },
-     "etcd-snapshot-retention": {
-      "type": "string"
-     },
-     "etcd-snapshot-schedule-cron": {
-      "type": "string"
      },
      "flannel-backend": {
       "options": [
@@ -9423,23 +9378,8 @@
      "disable-scheduler": {
       "type": "boolean"
      },
-     "etcd-disable-snapshots": {
-      "type": "boolean"
-     },
      "etcd-expose-metrics": {
       "type": "boolean"
-     },
-     "etcd-snapshot-dir": {
-      "type": "string"
-     },
-     "etcd-snapshot-name": {
-      "type": "string"
-     },
-     "etcd-snapshot-retention": {
-      "type": "string"
-     },
-     "etcd-snapshot-schedule-cron": {
-      "type": "string"
      },
      "flannel-backend": {
       "options": [
@@ -9592,23 +9532,8 @@
       ],
       "type": "array"
      },
-     "etcd-disable-snapshots": {
-      "type": "boolean"
-     },
      "etcd-expose-metrics": {
       "type": "boolean"
-     },
-     "etcd-snapshot-dir": {
-      "type": "string"
-     },
-     "etcd-snapshot-name": {
-      "type": "string"
-     },
-     "etcd-snapshot-retention": {
-      "type": "string"
-     },
-     "etcd-snapshot-schedule-cron": {
-      "type": "string"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -9731,23 +9656,8 @@
       ],
       "type": "array"
      },
-     "etcd-disable-snapshots": {
-      "type": "boolean"
-     },
      "etcd-expose-metrics": {
       "type": "boolean"
-     },
-     "etcd-snapshot-dir": {
-      "type": "string"
-     },
-     "etcd-snapshot-name": {
-      "type": "string"
-     },
-     "etcd-snapshot-retention": {
-      "type": "string"
-     },
-     "etcd-snapshot-schedule-cron": {
-      "type": "string"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -9890,23 +9800,8 @@
       ],
       "type": "array"
      },
-     "etcd-disable-snapshots": {
-      "type": "boolean"
-     },
      "etcd-expose-metrics": {
       "type": "boolean"
-     },
-     "etcd-snapshot-dir": {
-      "type": "string"
-     },
-     "etcd-snapshot-name": {
-      "type": "string"
-     },
-     "etcd-snapshot-retention": {
-      "type": "string"
-     },
-     "etcd-snapshot-schedule-cron": {
-      "type": "string"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -10049,23 +9944,8 @@
       ],
       "type": "array"
      },
-     "etcd-disable-snapshots": {
-      "type": "boolean"
-     },
      "etcd-expose-metrics": {
       "type": "boolean"
-     },
-     "etcd-snapshot-dir": {
-      "type": "string"
-     },
-     "etcd-snapshot-name": {
-      "type": "string"
-     },
-     "etcd-snapshot-retention": {
-      "type": "string"
-     },
-     "etcd-snapshot-schedule-cron": {
-      "type": "string"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -10208,23 +10088,8 @@
       ],
       "type": "array"
      },
-     "etcd-disable-snapshots": {
-      "type": "boolean"
-     },
      "etcd-expose-metrics": {
       "type": "boolean"
-     },
-     "etcd-snapshot-dir": {
-      "type": "string"
-     },
-     "etcd-snapshot-name": {
-      "type": "string"
-     },
-     "etcd-snapshot-retention": {
-      "type": "string"
-     },
-     "etcd-snapshot-schedule-cron": {
-      "type": "string"
      },
      "kube-apiserver-arg": {
       "type": "array"
