@@ -57,16 +57,6 @@ releases:
         type: array
       etcd-expose-metrics:
         type: boolean
-      etcd-disable-snapshots:
-        type: boolean
-      etcd-snapshot-name:
-        type: string
-      etcd-snapshot-schedule-cron:
-        type: string
-      etcd-snapshot-retention:
-        type: string
-      etcd-snapshot-dir:
-        type: string
       disable:
         type: array
         options:
