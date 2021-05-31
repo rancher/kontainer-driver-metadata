@@ -960,10 +960,16 @@ spec:
                     - windows
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
+      {{- if eq .NetworkMode "hostNetwork"}}
       hostNetwork: true
+      {{- end}}
       {{if .DNSPolicy}}
       dnsPolicy: {{.DNSPolicy}}
       {{end}}
+# Rancher specific change
+{{- if .NginxIngressControllerPriorityClassName }}
+      priorityClassName: {{ .NginxIngressControllerPriorityClassName }}
+{{- end }}
 {{if .NodeSelector}}
       nodeSelector:
       {{ range $k, $v := .NodeSelector }}
@@ -984,7 +990,9 @@ spec:
           image: {{.IngressImage}}
           args:
             - /nginx-ingress-controller
+            {{- if .DefaultBackend}}
             - --default-backend-service=$(POD_NAMESPACE)/default-http-backend
+            {{- end}}
             - --configmap=$(POD_NAMESPACE)/nginx-configuration
             - --election-id=ingress-controller-leader
             - --ingress-class=nginx
@@ -995,11 +1003,13 @@ spec:
             - --{{ $k }}{{if ne $v "" }}={{ $v }}{{end}}
           {{ end }}
           securityContext:
+          {{- if ne .NetworkMode "none" }}
             capabilities:
                 drop:
                 - ALL
                 add:
                 - NET_BIND_SERVICE
+          {{- end }}
             runAsUser: 101
           env:
             - name: POD_NAME
@@ -1015,9 +1025,23 @@ spec:
 {{end}}
           ports:
           - name: http
+            {{- if eq .NetworkMode "hostNetwork"}}
             containerPort: 80
+            {{- else if or (eq .NetworkMode "hostPort") (eq .NetworkMode "none")}}
+            containerPort: {{with (index .ExtraArgs "http-port")}}{{.}}{{else}}80{{end}}
+            {{- if eq .NetworkMode "hostPort"}}
+            hostPort: {{.HTTPPort}}
+            {{- end }}
+            {{- end }}
           - name: https
+            {{- if eq .NetworkMode "hostNetwork"}}
             containerPort: 443
+            {{- else if or (eq .NetworkMode "hostPort") (eq .NetworkMode "none")}}
+            containerPort: {{with (index .ExtraArgs "https-port")}}{{.}}{{else}}443{{end}}
+            {{- if eq .NetworkMode "hostPort"}}
+            hostPort: {{.HTTPSPort}}
+            {{- end }}
+            {{- end }}
           livenessProbe:
             failureThreshold: 3
             httpGet:
@@ -1047,6 +1071,7 @@ spec:
 {{ toYaml .ExtraVolumes | indent 8}}
 {{end}}
 ---
+{{- if .DefaultBackend}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -1076,11 +1101,20 @@ spec:
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
       terminationGracePeriodSeconds: 60
+# Rancher specific change
+{{- if .DefaultHTTPBackendPriorityClassName }}
+      priorityClassName: {{ .DefaultHTTPBackendPriorityClassName }}
+{{- end }}
+{{- if .Tolerations}}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
       - effect: NoExecute
         operator: Exists
       - effect: NoSchedule
         operator: Exists
+{{- end }}
       containers:
       - name: default-http-backend
         # Any image is permissable as long as:
@@ -1117,4 +1151,5 @@ spec:
     targetPort: 8080
   selector:
     app: default-http-backend
+{{- end }}
 `

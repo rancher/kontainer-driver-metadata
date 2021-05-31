@@ -732,10 +732,15 @@ spec:
       annotations:
         seccomp.security.alpha.kubernetes.io/pod: 'docker/default'
     spec:
-      priorityClassName: system-cluster-critical
+      # Rancher specific change
+      priorityClassName: {{ .CoreDNSPriorityClassName | default "system-cluster-critical" }}
 {{- if eq .RBACConfig "rbac"}}
       serviceAccountName: coredns
 {{- end }}
+{{- if .Tolerations}}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
         - key: "CriticalAddonsOnly"
           operator: "Exists"
@@ -743,6 +748,7 @@ spec:
           operator: Exists
         - effect: NoSchedule
           operator: Exists
+{{- end }}
       nodeSelector:
         beta.kubernetes.io/os: linux
       {{ range $k, $v := .NodeSelector }}
@@ -865,6 +871,10 @@ spec:
 {{- if eq .RBACConfig "rbac"}}
       serviceAccountName: coredns-autoscaler
 {{- end }}
+# Rancher specific change
+{{- if .CoreDNSAutoscalerPriorityClassName }}
+      priorityClassName: {{ .CoreDNSAutoscalerPriorityClassName }}
+{{- end }}
       nodeSelector:
         beta.kubernetes.io/os: linux
       affinity:
@@ -874,11 +884,16 @@ spec:
               - matchExpressions:
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
+{{- if .Tolerations}}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
       - effect: NoExecute
         operator: Exists
       - effect: NoSchedule
         operator: Exists
+{{- end }}
       containers:
       - name: autoscaler
         image: {{.CoreDNSAutoScalerImage}}

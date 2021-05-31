@@ -1,5 +1,176 @@
 releases:
-  - version: v1.18.9+rke2
-    minChannelServerVersion: v2.5.0-rc1
-    maxChannelServerVersion: v2.5.99
-
+  - version: v1.18.17+rke2r1
+    minChannelServerVersion: v2.6.0-alpha1
+    maxChannelServerVersion: v2.6.99
+  - version: v1.19.9+rke2r1
+    minChannelServerVersion: v2.6.0-alpha1
+    maxChannelServerVersion: v2.6.99
+  - version: v1.20.5+rke2r1
+    minChannelServerVersion: v2.6.0-alpha1
+    maxChannelServerVersion: v2.6.99
+    charts: &charts-v1
+      rke2-cilium:
+        version: 1.9.403
+        repo: rancher-rke2-charts
+      rke2-canal:
+        version: 3.13.300-build2021022302
+        repo: rancher-rke2-charts
+      rke2-calico:
+        verion: v3.18.1-102
+        repo: rancher-rke2-charts
+      rke2-coredns:
+        version: 1.10.101-build2021022301
+        repo: rancher-rke2-charts
+      rke2-ingress-nginx:
+        version: v1.20.5-build2021031801
+        repo: rancher-rke2-charts
+      rke2-metrics-server:
+        version: 2.11.100-build2021022300
+        repo: rancher-rke2-charts
+      rancher-vsphere-csi:
+        version: 2.1.000
+        repo: rancher-charts
+      rancher-vsphere-csi:
+        version: 2.1.000
+        repo: rancher-charts
+      rancher-vsphere-cpi:
+        version: 1.0.000
+        repo: rancher-charts
+    serverArgs: &serverArgs-v1
+      tls-san:
+        type: array
+      cluster-cidr:
+        type: string
+      service-cidr:
+        type: string
+      service-node-port-range:
+        type: string
+      cluster-dns:
+        type: string
+      cluster-domain:
+        type: string
+      kube-apiserver-arg:
+        type: array
+      kube-scheduler-arg:
+        type: array
+      kube-controller-manager-arg:
+        type: array
+      etcd-expose-metrics:
+        type: boolean
+      disable:
+        type: array
+        options:
+        - rke2-coredns
+        - rke2-ingress-nginx
+        - rke2-kube-proxy
+        - rke2-metrics-server
+      audit-policy-file:
+        type: string
+    agentArgs: &agentArgs-v1
+      kubelet-arg:
+        type: array
+      protect-kernel-defaults:
+        type: boolean
+      selinux:
+        type: bool
+      system-default-registry:
+        type: string
+      cloud-provider-name:
+        type: enum
+        default: none
+        nullable: true
+        options:
+        - aws
+        - azure
+        - gcp
+        - vsphere
+        - external
+        - none
+      cloud-provider-config:
+        type: string
+      profile:
+        type: enum
+        nullable: true
+        options:
+        - cis-1.5
+        - cis-1.6
+      audit-policy-file:
+        type: string
+  - version: v1.20.6+rke2r1
+    minChannelServerVersion: v2.6.0-alpha1
+    maxChannelServerVersion: v2.6.99
+    charts: *charts-v1
+    serverArgs: *serverArgs-v1
+    agentArgs: *agentArgs-v1
+  - version: v1.21.0-alpha3+rke2r1
+    minChannelServerVersion: v2.6.0-alpha1
+    maxChannelServerVersion: v2.6.99
+    charts: &charts-v2
+      rke2-cilium:
+        version: 1.9.604
+        repo: rancher-rke2-charts
+      rke2-canal:
+        version: v3.13.300-build2021022303
+        repo: rancher-rke2-charts
+      rke2-calico:
+        verion: v3.18.1-103
+        repo: rancher-rke2-charts
+      rke2-coredns:
+        version: 1.10.101-build2021022303
+        repo: rancher-rke2-charts
+      rke2-ingress-nginx:
+        version: 3.30.002
+        repo: rancher-rke2-charts
+      rke2-kube-proxy:
+        version: v1.21.0-build2021041302
+        repo: rancher-rke2-charts
+      rke2-metrics-server:
+        version: 2.11.100-build2021022300
+        repo: rancher-rke2-charts
+      rancher-vsphere-csi:
+        version: 2.1.000
+        repo: rancher-charts
+      rke2-multus:
+        version: v3.7.1-build2021041601
+        repo: rancher-charts
+      rancher-vsphere-cpi:
+        version: 1.0.000
+        repo: rancher-charts
+      rancher-vsphere-csi:
+        version: 2.1.000
+        repo: rancher-charts
+    serverArgs: &serverArgs-v2
+      << : *serverArgs-v1
+      cni:
+        type: array
+        default: calico
+        options:
+        - canal
+        - cilium
+        - calico
+        - multus+canal
+        - multus+cilium
+        - multus+calico
+    agentArgs: *agentArgs-v1
+  - version: v1.21.1-alpha4+rke2r1
+    minChannelServerVersion: v2.6.0-alpha1
+    maxChannelServerVersion: v2.6.99
+    charts: &charts-v3
+      << : *charts-v2
+      rke2-canal:
+        version: v3.13.300-build2021022306
+        repo: rancher-rke2-charts
+      rke2-ingress-nginx:
+        version: 3.30.002
+        repo: rancher-rke2-charts
+      rke2-kube-proxy:
+        version: v1.21.1-build2021051203
+        repo: rancher-rke2-charts
+    serverArgs: *serverArgs-v2
+    agentArgs: *agentArgs-v1
+  - version: v1.21.1-alpha5+rke2r1
+    minChannelServerVersion: v2.6.0-alpha1
+    maxChannelServerVersion: v2.6.99
+    charts: *charts-v3
+    serverArgs: *serverArgs-v2
+    agentArgs: *agentArgs-v1

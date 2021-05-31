@@ -366,11 +366,20 @@ spec:
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
       serviceAccountName: kube-dns-autoscaler
+# Rancher specific change
+{{- if .KubeDNSAutoscalerPriorityClassName }}
+      priorityClassName: {{ .KubeDNSAutoscalerPriorityClassName }}
+{{- end }}
+{{- if .Tolerations}}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
       - effect: NoExecute
         operator: Exists
       - effect: NoSchedule
         operator: Exists
+{{- end }}
       containers:
       - name: autoscaler
         image: {{.KubeDNSAutoScalerImage}}
@@ -476,6 +485,10 @@ spec:
       annotations:
         scheduler.alpha.kubernetes.io/critical-pod: ''
     spec:
+# Rancher specific change
+{{- if .KubeDNSPriorityClassName }}
+      priorityClassName: {{ .KubeDNSPriorityClassName }}
+{{- end }}
 {{if .NodeSelector}}
       nodeSelector:
       {{ range $k, $v := .NodeSelector }}
@@ -503,6 +516,10 @@ spec:
                     - windows
                 - key: node-role.kubernetes.io/worker
                   operator: Exists
+{{- if .Tolerations}}
+      tolerations:
+{{ toYaml .Tolerations | indent 6}}
+{{- else }}
       tolerations:
       - key: "CriticalAddonsOnly"
         operator: "Exists"
@@ -510,6 +527,7 @@ spec:
         operator: Exists
       - effect: NoSchedule
         operator: Exists
+{{- end }}
       volumes:
       - name: kube-dns-config
         configMap:

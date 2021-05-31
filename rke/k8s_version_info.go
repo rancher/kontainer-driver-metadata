@@ -20,8 +20,16 @@ func loadRancherDefaultK8sVersions() map[string]string {
 		"2.4.4": "v1.17.x",
 		"2.4.5": "v1.18.x",
 		"2.4":   "v1.17.x",
+		"2.5.0": "v1.19.x",
+		"2.5.1": "v1.19.x",
+		"2.5.2": "v1.19.x",
+		"2.5.3": "v1.19.x",
+		"2.5.4": "v1.19.x",
+		"2.5.5": "v1.19.x",
+		"2.5.6": "v1.20.x",
+		"2.5":   "v1.20.x",
 		// rancher will use default if its version is absent
-		"default": "v1.19.x",
+		"default": "v1.20.x",
 	}
 }
 
@@ -29,7 +37,7 @@ func loadRKEDefaultK8sVersions() map[string]string {
 	return map[string]string{
 		"0.3": "v1.16.3-rancher1-1",
 		// rke will use default if its version is absent
-		"default": "v1.19.2-rancher1-1",
+		"default": "v1.20.6-rancher1-1",
 	}
 }
 
@@ -134,6 +142,20 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 			MaxRKEVersion:     "1.1.99",
 		},
 		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		// It also includes ingress-nginx 0.32.0
+		"v1.15.12-rancher2-7": {
+			MinRancherVersion: "2.4.6-rc0",
+			MinRKEVersion:     "1.1.5-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		// It also includes ingress-nginx 0.32.0
+		"v1.15.12-rancher2-8": {
+			MinRancherVersion: "2.4.6-rc0",
+			MinRKEVersion:     "1.1.5-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
 		"v1.16.8-rancher1-1": {
 			MinRancherVersion: "2.3.3",
 			MinRKEVersion:     "1.0.0",
@@ -193,6 +215,22 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 			MinRKEVersion:     "1.1.2-rc0",
 		},
 		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.16.15-rancher1-3": {
+			MinRancherVersion: "2.4.4-rc0",
+			MinRKEVersion:     "1.1.2-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.16.15-rancher1-4": {
+			MinRancherVersion: "2.4.4-rc0",
+			MinRKEVersion:     "1.1.2-rc0",
+		},
+		"v1.16": {
+			MaxRancherVersion: "2.5.7",
+			MaxRKEVersion:     "1.2.7",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
 		"v1.17.4-rancher1-1": {
 			MinRancherVersion: "2.3.3",
 			MinRKEVersion:     "1.0.0",
@@ -247,6 +285,78 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 		},
 		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
 		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.17.13-rancher1-1": {
+			MinRancherVersion: "2.4.4-rc0",
+			MinRKEVersion:     "1.1.2-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.17.13-rancher1-2": {
+			MinRancherVersion: "2.4.4-rc0",
+			MinRKEVersion:     "1.1.2-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.17.14-rancher1-1": {
+			MinRancherVersion: "2.4.4-rc0",
+			MinRKEVersion:     "1.1.2-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.17.16-rancher1-1": {
+			MinRancherVersion: "2.4.4-rc0",
+			MinRKEVersion:     "1.1.2-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.17.16-rancher1-2": {
+			MinRancherVersion: "2.4.4-rc0",
+			MinRKEVersion:     "1.1.2-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.17.16-rancher1-3": {
+			MinRancherVersion: "2.4.4-rc0",
+			MinRKEVersion:     "1.1.2-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.17.17-rancher1-1": {
+			MinRancherVersion: "2.4.4-rc0",
+			MinRKEVersion:     "1.1.2-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.17.17-rancher1-2": {
+			MinRancherVersion: "2.4.4-rc0",
+			MinRKEVersion:     "1.1.2-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.17.17-rancher1-3": {
+			MinRancherVersion: "2.4.4-rc0",
+			MinRKEVersion:     "1.1.2-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.17.17-rancher2-1": {
+			MinRancherVersion: "2.4.4-rc0",
+			MinRKEVersion:     "1.1.2-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.17.17-rancher2-2": {
+			MinRancherVersion: "2.4.4-rc0",
+			MinRKEVersion:     "1.1.2-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.17.17-rancher2-3": {
+			MinRancherVersion: "2.4.4-rc0",
+			MinRKEVersion:     "1.1.2-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
 		"v1.18.3-rancher2-1": {
 			MinRancherVersion: "2.4.5-rc0",
 			MinRKEVersion:     "1.1.3-rc0",
@@ -281,8 +391,78 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 			MinRancherVersion: "2.4.5-rc0",
 			MinRKEVersion:     "1.1.3-rc0",
 		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.18.10-rancher1-1": {
+			MinRancherVersion: "2.4.5-rc0",
+			MinRKEVersion:     "1.1.3-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.18.10-rancher1-2": {
+			MinRancherVersion: "2.4.5-rc0",
+			MinRKEVersion:     "1.1.3-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.18.12-rancher1-1": {
+			MinRancherVersion: "2.4.5-rc0",
+			MinRKEVersion:     "1.1.3-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.18.12-rancher1-2": {
+			MinRancherVersion: "2.4.5-rc0",
+			MinRKEVersion:     "1.1.3-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.18.14-rancher1-1": {
+			MinRancherVersion: "2.4.5-rc0",
+			MinRKEVersion:     "1.1.3-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.18.15-rancher1-1": {
+			MinRancherVersion: "2.4.5-rc0",
+			MinRKEVersion:     "1.1.3-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.18.16-rancher1-1": {
+			MinRancherVersion: "2.4.5-rc0",
+			MinRKEVersion:     "1.1.3-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.18.17-rancher1-1": {
+			MinRancherVersion: "2.4.5-rc0",
+			MinRKEVersion:     "1.1.3-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.18.17-rancher1-2": {
+			MinRancherVersion: "2.4.5-rc0",
+			MinRKEVersion:     "1.1.3-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.18.18-rancher1-1": {
+			MinRancherVersion: "2.4.5-rc0",
+			MinRKEVersion:     "1.1.3-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.18.18-rancher1-2": {
+			MinRancherVersion: "2.4.5-rc0",
+			MinRKEVersion:     "1.1.3-rc0",
+		},
 		"v1.19": {
 			MinRancherVersion: "2.5.0-rc0",
+			MinRKEVersion:     "1.2.0-rc0",
+		},
+		"v1.20": {
+			MinRancherVersion: "2.5.6-rc0",
 			MinRKEVersion:     "1.2.0-rc0",
 		},
 		"v1.8.10-rancher1-1": {
