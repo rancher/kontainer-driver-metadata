@@ -2199,7 +2199,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CanalFlexVol:              m("quay.io/calico/pod2daemon-flexvol:v3.8.1"),
 			WeaveNode:                 m("weaveworks/weave-kube:2.5.2"),
 			WeaveCNI:                  m("weaveworks/weave-npc:2.5.2"),
-			KubeRouterCNI:             m("cloudnativelabs/kube-router:v1.0.0"),
+			KubeRouterCNI:             m("cloudnativelabs/kube-router:v1.2.2"),
 			PodInfraContainer:         m("gcr.io/google_containers/pause:3.1"),
 			Ingress:                   m("rancher/nginx-ingress-controller:nginx-0.25.1-rancher1"),
 			IngressBackend:            m("k8s.gcr.io/defaultbackend:1.5-rancher1"),

@@ -53,6 +53,7 @@ data:
         user: kube-router
       name: kube-router-context
     current-context: kube-router-context
+
 ---
 apiVersion: apps/v1
 kind: DaemonSet
@@ -73,17 +74,15 @@ spec:
         k8s-app: kube-router
         tier: node
       annotations:
-        scheduler.alpha.kubernetes.io/critical-pod: ''
         prometheus.io/scrape: "true"
         prometheus.io/port: "20243"
     spec:
       priorityClassName: system-node-critical
       serviceAccountName: kube-router
-      serviceAccount: kube-router
       containers:
       - name: kube-router
         image: {{.CNIImage}}
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         args:
         - "--run-router=true"
         - "--run-firewall={{.RunFirewall}}"
@@ -119,9 +118,12 @@ spec:
         - name: kubeconfig
           mountPath: /var/lib/kube-router
           readOnly: true
+        - name: xtables-lock
+          mountPath: /run/xtables.lock
+          readOnly: false
       initContainers:
       - name: install-cni
-        image: alpine
+        image: {{.CNIImage}}
         imagePullPolicy: Always
         command:
         - /bin/sh
@@ -138,34 +140,22 @@ spec:
           if [ ! -f /var/lib/kube-router/kubeconfig ]; then
             TMP=/var/lib/kube-router/.tmp-kubeconfig;
             cp /etc/kube-router/kubeconfig ${TMP};
-            mv -f ${TMP} /var/lib/kube-router/kubeconfig;
-          fi;
-          mkdir -p /opt/cni/bin;
-          if [ ! "$(ls -A /opt/cni/bin)" ]; then
-            wget https://github.com/containernetworking/plugins/releases/download/v0.8.3/cni-plugins-linux-amd64-v0.8.3.tgz -O /tmp/cni-plugins-linux-amd64-v0.8.3.tgz && tar -xf /tmp/cni-plugins-linux-amd64-v0.8.3.tgz -C /opt/cni/bin/;
-          fi;
+            mv ${TMP} /var/lib/kube-router/kubeconfig;
+          fi
         volumeMounts:
         - mountPath: /etc/cni/net.d
           name: cni-conf-dir
-        - mountPath: /opt/cni/bin
-          name: cni-bin-dir
         - mountPath: /etc/kube-router
           name: kube-router-cfg
         - name: kubeconfig
           mountPath: /var/lib/kube-router
       hostNetwork: true
-      dnsPolicy: ClusterFirstWithHostNet
-      dnsConfig:
-        nameservers:
-          - 1.1.1.1
       tolerations:
+      - effect: NoSchedule
+        operator: Exists
       - key: CriticalAddonsOnly
         operator: Exists
-      - effect: NoSchedule
-        key: node-role.kubernetes.io/master
-        operator: Exists
-      - effect: NoSchedule
-        key: node.kubernetes.io/not-ready
+      - effect: NoExecute
         operator: Exists
       volumes:
       - name: lib-modules
@@ -174,24 +164,27 @@ spec:
       - name: cni-conf-dir
         hostPath:
           path: /etc/cni/net.d
-      - name: cni-bin-dir
-        hostPath:
-          path: /opt/cni/bin
       - name: kube-router-cfg
         configMap:
           name: kube-router-cfg
       - name: kubeconfig
         hostPath:
           path: /var/lib/kube-router
+      - name: xtables-lock
+        hostPath:
+          path: /run/xtables.lock
+          type: FileOrCreate
+
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: kube-router
   namespace: kube-system
+
 ---
 kind: ClusterRole
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: kube-router
   namespace: kube-system
@@ -226,7 +219,7 @@ rules:
       - watch
 ---
 kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: kube-router
 roleRef:
@@ -292,6 +285,7 @@ data:
         user: kube-router
       name: kube-router-context
     current-context: kube-router-context
+
 ---
 apiVersion: apps/v1
 kind: DaemonSet
@@ -312,17 +306,15 @@ spec:
         k8s-app: kube-router
         tier: node
       annotations:
-        scheduler.alpha.kubernetes.io/critical-pod: ''
         prometheus.io/scrape: "true"
         prometheus.io/port: "20243"
     spec:
       priorityClassName: system-node-critical
       serviceAccountName: kube-router
-      serviceAccount: kube-router
       containers:
       - name: kube-router
         image: {{.CNIImage}}
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         args:
         - "--run-router=true"
         - "--run-firewall={{.RunFirewall}}"
@@ -358,9 +350,12 @@ spec:
         - name: kubeconfig
           mountPath: /var/lib/kube-router
           readOnly: true
+        - name: xtables-lock
+          mountPath: /run/xtables.lock
+          readOnly: false
       initContainers:
       - name: install-cni
-        image: alpine
+        image: {{.CNIImage}}
         imagePullPolicy: Always
         command:
         - /bin/sh
@@ -377,34 +372,22 @@ spec:
           if [ ! -f /var/lib/kube-router/kubeconfig ]; then
             TMP=/var/lib/kube-router/.tmp-kubeconfig;
             cp /etc/kube-router/kubeconfig ${TMP};
-            mv -f ${TMP} /var/lib/kube-router/kubeconfig;
-          fi;
-          mkdir -p /opt/cni/bin;
-          if [ ! "$(ls -A /opt/cni/bin)" ]; then
-            wget https://github.com/containernetworking/plugins/releases/download/v0.8.3/cni-plugins-linux-amd64-v0.8.3.tgz -O /tmp/cni-plugins-linux-amd64-v0.8.3.tgz && tar -xf /tmp/cni-plugins-linux-amd64-v0.8.3.tgz -C /opt/cni/bin/;
-          fi;
+            mv ${TMP} /var/lib/kube-router/kubeconfig;
+          fi
         volumeMounts:
         - mountPath: /etc/cni/net.d
           name: cni-conf-dir
-        - mountPath: /opt/cni/bin
-          name: cni-bin-dir
         - mountPath: /etc/kube-router
           name: kube-router-cfg
         - name: kubeconfig
           mountPath: /var/lib/kube-router
       hostNetwork: true
-      dnsPolicy: ClusterFirstWithHostNet
-      dnsConfig:
-        nameservers:
-          - 1.1.1.1
       tolerations:
+      - effect: NoSchedule
+        operator: Exists
       - key: CriticalAddonsOnly
         operator: Exists
-      - effect: NoSchedule
-        key: node-role.kubernetes.io/master
-        operator: Exists
-      - effect: NoSchedule
-        key: node.kubernetes.io/not-ready
+      - effect: NoExecute
         operator: Exists
       volumes:
       - name: lib-modules
@@ -413,24 +396,27 @@ spec:
       - name: cni-conf-dir
         hostPath:
           path: /etc/cni/net.d
-      - name: cni-bin-dir
-        hostPath:
-          path: /opt/cni/bin
       - name: kube-router-cfg
         configMap:
           name: kube-router-cfg
       - name: kubeconfig
         hostPath:
           path: /var/lib/kube-router
+      - name: xtables-lock
+        hostPath:
+          path: /run/xtables.lock
+          type: FileOrCreate
+
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: kube-router
   namespace: kube-system
+
 ---
 kind: ClusterRole
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: kube-router
   namespace: kube-system
@@ -465,7 +451,7 @@ rules:
       - watch
 ---
 kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: kube-router
 roleRef:
