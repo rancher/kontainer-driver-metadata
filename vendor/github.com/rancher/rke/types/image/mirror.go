@@ -6,7 +6,7 @@ var Mirrors = map[string]string{}
 
 func Mirror(image string) string {
 	orig := image
-	if strings.HasPrefix(image, "weaveworks") || strings.HasPrefix(image, "noiro") {
+	if strings.HasPrefix(image, "weaveworks") {
 		return image
 	}
 

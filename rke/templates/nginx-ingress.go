@@ -168,6 +168,10 @@ spec:
   selector:
     matchLabels:
       app: ingress-nginx
+{{if .UpdateStrategy}}
+  updateStrategy:
+{{ toYaml .UpdateStrategy | indent 4}}
+{{end}}
   template:
     metadata:
       labels:
@@ -527,6 +531,10 @@ spec:
   selector:
     matchLabels:
       app: ingress-nginx
+{{if .UpdateStrategy}}
+  updateStrategy:
+{{ toYaml .UpdateStrategy | indent 4}}
+{{end}}
   template:
     metadata:
       labels:
@@ -929,10 +937,10 @@ spec:
   selector:
     matchLabels:
       app: ingress-nginx
+{{if .UpdateStrategy}}
   updateStrategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
+{{ toYaml .UpdateStrategy | indent 4}}
+{{end}}
   template:
     metadata:
       labels:
