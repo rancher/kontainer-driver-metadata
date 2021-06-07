@@ -279,6 +279,10 @@ spec:
     metadata:
       labels:
         app: ingress-nginx
+        app.kubernetes.io/name: ingress-nginx
+        app.kubernetes.io/instance: ingress-nginx
+        app.kubernetes.io/version: 0.46.0
+        app.kubernetes.io/component: controller
     spec:
       affinity:
         nodeAffinity:
@@ -315,6 +319,7 @@ spec:
         operator: Exists
       - effect: NoSchedule
         operator: Exists
+      terminationGracePeriodSeconds: 300
       containers:
         - name: nginx-ingress-controller
           image: {{.IngressImage}}
@@ -363,6 +368,9 @@ spec:
 {{ toYaml .ExtraEnvs | indent 12}}
 {{end}}
           ports:
+          - name: webhook
+            containerPort: 8443
+            protocol: TCP 
           - name: http
             {{- if eq .NetworkMode "hostNetwork"}}
             containerPort: 80
@@ -401,19 +409,20 @@ spec:
             timeoutSeconds: 1
             successThreshold: 1
             failureThreshold: 3
-{{if .ExtraVolumeMounts}}
           volumeMounts:
+            - name: webhook-cert
+              mountPath: /usr/local/certificates/
+              readOnly: true
+{{if .ExtraVolumeMounts}}
 {{ toYaml .ExtraVolumeMounts | indent 12}}
 {{end}}
-{{if .ExtraVolumes}}
-      volumes:
-{{ toYaml .ExtraVolumes | indent 8}}
-{{end}}
-      terminationGracePeriodSeconds: 300
       volumes:
         - name: webhook-cert
           secret:
             secretName: ingress-nginx-admission
+{{if .ExtraVolumes}}
+{{ toYaml .ExtraVolumes | indent 8}}
+{{end}}
 ---
 # Source: ingress-nginx/templates/admission-webhooks/validating-webhook.yaml
 # before changing this value, check the required kubernetes version
@@ -451,6 +460,7 @@ webhooks:
         name: ingress-nginx-controller-admission
         path: /networking/v1beta1/ingresses
 ---
+{{if eq .RBACConfig "rbac"}}
 # Source: ingress-nginx/templates/admission-webhooks/job-patch/serviceaccount.yaml
 apiVersion: v1
 kind: ServiceAccount
@@ -555,6 +565,7 @@ subjects:
   - kind: ServiceAccount
     name: ingress-nginx-admission
     namespace: ingress-nginx
+{{ end }}
 ---
 # Source: ingress-nginx/templates/admission-webhooks/job-patch/job-createSecret.yaml
 apiVersion: batch/v1
