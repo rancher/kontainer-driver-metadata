@@ -2476,6 +2476,7 @@
     "api-audiences": "unknown",
     "bind-address": "0.0.0.0",
     "enable-admission-plugins": "NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,NodeRestriction,Priority,TaintNodesByCondition,PersistentVolumeClaimResize",
+    "feature-gates": "IPv6DualStack=false",
     "insecure-port": "0",
     "kubelet-preferred-address-types": "InternalIP,ExternalIP,Hostname",
     "profiling": "false",
