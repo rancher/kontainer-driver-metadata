@@ -9137,7 +9137,7 @@
       "version": "2.11.100-build2021022300"
      },
      "rke2-multus": {
-      "repo": "rancher-charts",
+      "repo": "rancher-rke2-charts",
       "version": "v3.7.1-build2021041602"
      }
     },
