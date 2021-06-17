@@ -55,8 +55,6 @@ items:
                       fieldPath: spec.nodeName
                 - name: IPALLOC_RANGE
                   value: "{{.ClusterCIDR}}"
-                - name: EXTRA_ARGS
-                  value: --log-level=info
                 {{- if .WeavePassword}}
                 - name: WEAVE_PASSWORD
                   value: "{{.WeavePassword}}"
@@ -101,6 +99,8 @@ items:
                     fieldRef:
                       apiVersion: v1
                       fieldPath: spec.nodeName
+                - name: EXTRA_ARGS
+                  value: --log-level=info
               image: {{.CNIImage}}
               resources:
                 requests:
@@ -315,8 +315,6 @@ items:
                       fieldPath: spec.nodeName
                 - name: IPALLOC_RANGE
                   value: "{{.ClusterCIDR}}"
-                - name: EXTRA_ARGS
-                  value: --log-level=info
                 {{- if .WeavePassword}}
                 - name: WEAVE_PASSWORD
                   value: "{{.WeavePassword}}"
@@ -361,6 +359,8 @@ items:
                     fieldRef:
                       apiVersion: v1
                       fieldPath: spec.nodeName
+                - name: EXTRA_ARGS
+                  value: --log-level=info
               image: {{.CNIImage}}
               resources:
                 requests:
