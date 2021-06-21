@@ -4371,9 +4371,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		// Enabled out of band post v2.4.15
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Reminder: This template should remain an exact copy of the template for v2.5.x (No ACI images)
-		"v1.18.19-rancher1-1": {
+		"v1.18.20-rancher1-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.15-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.18.19-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.18.20-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.75"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.75"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.75"),
