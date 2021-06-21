@@ -4699,9 +4699,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		// Enabled out of band post v2.5.8-patch1
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Reminder: This template should remain an exact copy of the template for v2.4.x (No ACI images)
-		"v1.18.19-rancher1-1": {
+		"v1.18.20-rancher1-1": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.15-rancher1"),
-			Kubernetes:                m("rancher/hyperkube:v1.18.19-rancher1"),
+			Kubernetes:                m("rancher/hyperkube:v1.18.20-rancher1"),
 			Alpine:                    m("rancher/rke-tools:v0.1.75"),
 			NginxProxy:                m("rancher/rke-tools:v0.1.75"),
 			CertDownloader:            m("rancher/rke-tools:v0.1.75"),
@@ -4735,9 +4735,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		// Enabled out of band post v2.5.8-patch1
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Reminder: This template should remain an exact copy of the template for v2.4.x plus ACI images added
-		"v1.18.19-rancher1-2": {
+		"v1.18.20-rancher1-2": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
-			Kubernetes:                "rancher/hyperkube:v1.18.19-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.18.20-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.75",
 			NginxProxy:                "rancher/rke-tools:v0.1.75",
 			CertDownloader:            "rancher/rke-tools:v0.1.75",
@@ -5216,9 +5216,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.15.13",
 		},
 		// Enabled out of band post v2.5.8-patch1
-		"v1.19.11-rancher1-1": {
+		"v1.19.12-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
-			Kubernetes:                "rancher/hyperkube:v1.19.11-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.19.12-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.75",
 			NginxProxy:                "rancher/rke-tools:v0.1.75",
 			CertDownloader:            "rancher/rke-tools:v0.1.75",
@@ -5390,9 +5390,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.15.13",
 		},
 		// Enabled out of band post v2.5.8-patch1
-		"v1.20.7-rancher1-1": {
+		"v1.20.8-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
-			Kubernetes:                "rancher/hyperkube:v1.20.7-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.20.8-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.75",
 			NginxProxy:                "rancher/rke-tools:v0.1.75",
 			CertDownloader:            "rancher/rke-tools:v0.1.75",
