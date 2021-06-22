@@ -2,9 +2,9 @@ releases:
   - version: v1.17.17+k3s1
     minChannelServerVersion: v2.4.0-rc1
     maxChannelServerVersion: v2.5.99
-  - version: v1.18.19+k3s1
+  - version: v1.18.20+k3s1
     minChannelServerVersion: v2.4.5-rc1
     maxChannelServerVersion: v2.5.99
-  - version: v1.19.11+k3s1
+  - version: v1.19.12+k3s1
     minChannelServerVersion: v2.5.0-rc1
     maxChannelServerVersion: v2.5.99
