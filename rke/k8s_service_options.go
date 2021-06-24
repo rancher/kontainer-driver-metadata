@@ -390,7 +390,6 @@ func getKubeAPIOptions120() map[string]string {
 
 func getKubeAPIOptions121() map[string]string {
 	kubeAPIOptions := getKubeAPIOptions116()
-	kubeAPIOptions["feature-gates"] = "IPv6DualStack=false"
 	kubeAPIOptions["service-account-issuer"] = rkeIssuer
 	kubeAPIOptions["service-account-signing-key-file"] = serviceAccountKeyPath
 	kubeAPIOptions["api-audiences"] = "unknown"
