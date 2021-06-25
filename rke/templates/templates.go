@@ -39,9 +39,10 @@ const (
 	canalv3171                    = "canal-v3.17.1"
 	canalv319                     = "canal-v3.19.0"
 
-	flannelv18  = "flannel-v1.8"
-	flannelv115 = "flannel-v1.15"
-	flannelv116 = "flannel-v1.16"
+	flannelv18   = "flannel-v1.8"
+	flannelv115  = "flannel-v1.15"
+	flannelv116  = "flannel-v1.16"
+	flannelv0140 = "flannel-v0.14.0"
 
 	coreDnsv18  = "coredns-v1.8"
 	coreDnsv116 = "coredns-v1.16"
@@ -53,6 +54,7 @@ const (
 
 	metricsServerv18  = "metricsserver-v1.8"
 	metricsServerv120 = "metricsserver-v1.20"
+	metricsServerv050 = "metricsserver-v0.5.0"
 
 	weavev18  = "weave-v1.8"
 	weavev116 = "weave-v1.16"
@@ -121,7 +123,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":        canalv18,
 		},
 		kdm.Flannel: {
-			">=1.16.0-alpha":                    flannelv116,
+			">=1.21.0-alpha":                    flannelv0140,
+			">=1.16.0-alpha <1.21.0-alpha":      flannelv116,
 			">=1.15.0-rancher0 <1.16.0-alpha":   flannelv115,
 			">=1.8.0-rancher0 <1.15.0-rancher0": flannelv18,
 		},
@@ -136,7 +139,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.16.0-alpha": kubeDnsv18,
 		},
 		kdm.MetricsServer: {
-			">=1.20.4-rancher1-1":                 metricsServerv120,
+			">=1.21.0-alpha":                      metricsServerv050,
+			">=1.20.4-rancher1-1 <1.21.0-alpha":   metricsServerv120,
 			">=1.8.0-rancher0 <1.20.4-rancher1-1": metricsServerv18,
 		},
 		kdm.Weave: {
@@ -188,9 +192,10 @@ func getTemplates() map[string]string {
 		calicov3171:          CalicoTemplateV3_17_1,
 		calicov319:           CalicoTemplateV3_19_0,
 
-		flannelv115: FlannelTemplateV115,
-		flannelv116: FlannelTemplateV116,
-		flannelv18:  FlannelTemplate,
+		flannelv115:  FlannelTemplateV115,
+		flannelv116:  FlannelTemplateV116,
+		flannelv0140: FlannelTemplate_v0_14_0,
+		flannelv18:   FlannelTemplate,
 
 		canalv113:                     CanalTemplateV113,
 		canalv18:                      CanalTemplateV112,
@@ -217,6 +222,7 @@ func getTemplates() map[string]string {
 
 		metricsServerv18:  MetricsServerTemplate,
 		metricsServerv120: MetricsServerTemplate_v0_4_1,
+		metricsServerv050: MetricsServerTemplate_v0_5_0,
 
 		weavev18:  WeaveTemplate,
 		weavev116: WeaveTemplateV116,
