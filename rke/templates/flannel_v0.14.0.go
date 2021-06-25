@@ -146,16 +146,16 @@ metadata:
   namespace: kube-system
   labels:
     tier: node
-    app: flannel
+    k8s-app: flannel
 spec:
   selector:
     matchLabels:
-      app: flannel
+      k8s-app: flannel
   template:
     metadata:
       labels:
         tier: node
-        app: flannel
+        k8s-app: flannel
     spec:
       affinity:
         nodeAffinity:
