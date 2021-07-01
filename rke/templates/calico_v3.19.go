@@ -10,6 +10,7 @@ Rancher Changelog:
 */
 
 const CalicoTemplateV3_19_0 = `
+{{- $cidrs := splitList "," .ClusterCIDR }}
 # Calico Template based on Calico v3.19.0
 ---
 # Source: calico/templates/calico-config.yaml
@@ -38,6 +39,7 @@ data:
 {{- end}}
   # The CNI network configuration to install on each node. The special
   # values in this config will be automatically populated.
+  # Rancher specific change: "assign_ipv6": "true" if dualstack configuration is found
   cni_network_config: |-
     {
       "name": "k8s-pod-network",
@@ -51,7 +53,13 @@ data:
           "nodename": "__KUBERNETES_NODE_NAME__",
           "mtu": __CNI_MTU__,
           "ipam": {
+{{- if eq (len $cidrs) 2 }}
+              "type": "calico-ipam",
+              "assign_ipv4": "true",
+              "assign_ipv6": "true"
+{{- else }}
               "type": "calico-ipam"
+{{- end}}
           },
           "policy": {
               "type": "k8s"
@@ -3744,18 +3752,35 @@ spec:
             # The default IPv4 pool to create on startup if none exists. Pod IPs will be
             # chosen from this range. Changing this value after installation will have
             # no effect. This should fall within --cluster-cidr.
-            # Rancher-specific: Explicitly set CALICO_IPV4POOL_CIDR
+            # Rancher-specific: Explicitly set CALICO_IPV4POOL_CIDR/CALICO_IPV6POOL_CIDR
+{{- if eq (len $cidrs) 2 }}
+            - name: CALICO_IPV4POOL_CIDR
+              value: "{{ first $cidrs }}"
+            - name: CALICO_IPV6POOL_CIDR
+              value: "{{ last $cidrs }}"
+{{- else }}
             - name: CALICO_IPV4POOL_CIDR
               value: "{{.ClusterCIDR}}"
+{{- end}}
             # Disable file logging so kubectl logs works.
             - name: CALICO_DISABLE_FILE_LOGGING
               value: "true"
             # Set Felix endpoint to host default action to ACCEPT.
             - name: FELIX_DEFAULTENDPOINTTOHOSTACTION
               value: "ACCEPT"
+            # Rancher-specific: Support dualstack
+{{- if eq (len $cidrs) 2 }}
+            - name: FELIX_IPV6SUPPORT
+              value: "true"
+            - name: IP6
+              value: autodetect
+            - name: CALICO_IPV6POOL_NAT_OUTGOING
+              value: "true"
+{{- else }}
             # Disable IPv6 on Kubernetes.
             - name: FELIX_IPV6SUPPORT
               value: "false"
+{{- end}}
             # Rancher-specific: Define and set FELIX_LOGFILEPATH to none to disable felix logging to file
             - name: FELIX_LOGFILEPATH
               value: "none"
