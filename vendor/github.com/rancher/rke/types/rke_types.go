@@ -110,6 +110,8 @@ type PrivateRegistry struct {
 	Password string `yaml:"password" json:"password,omitempty" norman:"type=password"`
 	// Default registry
 	IsDefault bool `yaml:"is_default" json:"isDefault,omitempty"`
+	// CredentialPlugin
+	CredentialPlugin map[string]string `yaml:"credentialPlugin" json:"credentialPlugin,omitempty"`
 }
 
 type RKESystemImages struct {
@@ -173,6 +175,8 @@ type RKESystemImages struct {
 	Ingress string `yaml:"ingress" json:"ingress,omitempty"`
 	// Ingress Controller Backend image
 	IngressBackend string `yaml:"ingress_backend" json:"ingressBackend,omitempty"`
+	// Ingress Webhook image
+	IngressWebhook string `yaml:"ingress_webhook" json:"ingressWebhook,omitempty"`
 	// Metrics Server image
 	MetricsServer string `yaml:"metrics_server" json:"metricsServer,omitempty"`
 	// Pod infra container image for Windows
