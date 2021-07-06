@@ -9,6 +9,7 @@ import (
 	"sync"
 	"sync/atomic"
 
+	"k8s.io/apimachinery/pkg/api/meta"
 	"k8s.io/apimachinery/pkg/runtime"
 )
 
@@ -22,7 +23,7 @@ type handlerEntry struct {
 	handler SharedControllerHandler
 }
 
-type sharedHandler struct {
+type SharedHandler struct {
 	// keep first because arm32 needs atomic.AddInt64 target to be mem aligned
 	idCounter int64
 
@@ -30,7 +31,7 @@ type sharedHandler struct {
 	handlers []handlerEntry
 }
 
-func (h *sharedHandler) Register(ctx context.Context, name string, handler SharedControllerHandler) {
+func (h *SharedHandler) Register(ctx context.Context, name string, handler SharedControllerHandler) {
 	h.lock.Lock()
 	defer h.lock.Unlock()
 
@@ -56,7 +57,7 @@ func (h *sharedHandler) Register(ctx context.Context, name string, handler Share
 	}()
 }
 
-func (h *sharedHandler) OnChange(key string, obj runtime.Object) error {
+func (h *SharedHandler) OnChange(key string, obj runtime.Object) error {
 	var (
 		errs errorList
 	)
@@ -70,7 +71,14 @@ func (h *sharedHandler) OnChange(key string, obj runtime.Object) error {
 			})
 		}
 		if newObj != nil && !reflect.ValueOf(newObj).IsNil() {
-			obj = newObj
+			meta, err := meta.Accessor(newObj)
+			if err == nil && meta.GetUID() != "" {
+				// avoid using an empty object
+				obj = newObj
+			} else if err != nil {
+				// assign if we can't determine metadata
+				obj = newObj
+			}
 		}
 	}
 

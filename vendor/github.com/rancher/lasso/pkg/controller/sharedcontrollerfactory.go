@@ -6,6 +6,7 @@ import (
 
 	"github.com/rancher/lasso/pkg/cache"
 	"github.com/rancher/lasso/pkg/client"
+	"k8s.io/apimachinery/pkg/api/meta"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/client-go/rest"
@@ -82,6 +83,8 @@ func (s *sharedControllerFactory) Start(ctx context.Context, defaultWorkers int)
 		return err
 	}
 
+	s.sharedCacheFactory.WaitForCacheSync(ctx)
+
 	for gvr, controller := range s.controllers {
 		w, err := s.getWorkers(gvr, defaultWorkers)
 		if err != nil {
@@ -132,7 +135,7 @@ func (s *sharedControllerFactory) ForResourceKind(gvr schema.GroupVersionResourc
 
 	client := s.sharedCacheFactory.SharedClientFactory().ForResourceKind(gvr, kind, namespaced)
 
-	handler := &sharedHandler{}
+	handler := &SharedHandler{}
 
 	controllerResult = &sharedController{
 		deferredController: func() (Controller, error) {
@@ -180,7 +183,9 @@ func (s *sharedControllerFactory) ForResourceKind(gvr schema.GroupVersionResourc
 
 func (s *sharedControllerFactory) getWorkers(gvr schema.GroupVersionResource, workers int) (int, error) {
 	gvk, err := s.sharedCacheFactory.SharedClientFactory().GVKForResource(gvr)
-	if err != nil {
+	if meta.IsNoMatchError(err) {
+		return workers, nil
+	} else if err != nil {
 		return 0, err
 	}
 
