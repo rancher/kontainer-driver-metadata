@@ -1,11 +1,11 @@
 module github.com/rancher/kontainer-driver-metadata
 
-go 1.13
+go 1.16
 
 replace (
 	github.com/knative/pkg => github.com/rancher/pkg v0.0.0-20190514055449-b30ab9de040e
 	github.com/matryer/moq => github.com/rancher/moq v0.0.0-20190404221404-ee5226d43009
-	k8s.io/client-go => k8s.io/client-go v0.18.4
+	k8s.io/client-go => k8s.io/client-go v0.21.0
 )
 
 require (
