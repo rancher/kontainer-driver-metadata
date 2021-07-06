@@ -593,7 +593,7 @@ spec:
     spec:
       containers:
         - name: create
-          image: docker.io/jettech/kube-webhook-certgen:v1.5.1
+          image: {{.IngressWebhook}}
           imagePullPolicy: IfNotPresent
           args:
             - create
@@ -637,7 +637,7 @@ spec:
     spec:
       containers:
         - name: patch
-          image: docker.io/jettech/kube-webhook-certgen:v1.5.1
+          image: {{.IngressWebhook}}
           imagePullPolicy: IfNotPresent
           args:
             - patch

@@ -18,10 +18,6 @@ github.com/golang/protobuf/ptypes
 github.com/golang/protobuf/ptypes/any
 github.com/golang/protobuf/ptypes/duration
 github.com/golang/protobuf/ptypes/timestamp
-# github.com/golangplus/bytes v0.0.0-20160111154220-45c989fe5450
-## explicit
-# github.com/golangplus/fmt v0.0.0-20150411045040-2a5d6d7d2995
-## explicit
 # github.com/google/go-cmp v0.5.2
 github.com/google/go-cmp/cmp
 github.com/google/go-cmp/cmp/internal/diff
@@ -39,8 +35,6 @@ github.com/hashicorp/golang-lru
 github.com/hashicorp/golang-lru/simplelru
 # github.com/json-iterator/go v1.1.10
 github.com/json-iterator/go
-# github.com/konsorten/go-windows-terminal-sequences v1.0.2
-## explicit
 # github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369
 github.com/matttproud/golang_protobuf_extensions/pbutil
 # github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
@@ -74,7 +68,7 @@ github.com/rancher/norman/condition
 github.com/rancher/norman/controller
 github.com/rancher/norman/metrics
 github.com/rancher/norman/objectclient
-# github.com/rancher/rke v1.3.0-rc8.0.20210702150239-b8e94c98f8cd
+# github.com/rancher/rke v1.3.0-rc8.0.20210706205346-22b82828ffa0
 ## explicit
 github.com/rancher/rke/types
 github.com/rancher/rke/types/image
@@ -82,8 +76,6 @@ github.com/rancher/rke/types/kdm
 # github.com/sirupsen/logrus v1.7.0
 ## explicit
 github.com/sirupsen/logrus
-# github.com/xlab/handysort v0.0.0-20150421192137-fb3537ed64a1
-## explicit
 # golang.org/x/net v0.0.0-20210224082022-3d97a244fca7
 golang.org/x/net/context
 golang.org/x/net/context/ctxhttp
@@ -270,14 +262,10 @@ k8s.io/klog/v2
 k8s.io/utils/buffer
 k8s.io/utils/integer
 k8s.io/utils/trace
-# sigs.k8s.io/kustomize v2.0.3+incompatible
-## explicit
 # sigs.k8s.io/structured-merge-diff/v4 v4.1.0
 sigs.k8s.io/structured-merge-diff/v4/value
 # sigs.k8s.io/yaml v1.2.0
 ## explicit
 sigs.k8s.io/yaml
-# vbom.ml/util v0.0.0-20160121211510-db5cfe13f5cc
-## explicit
 # github.com/knative/pkg => github.com/rancher/pkg v0.0.0-20190514055449-b30ab9de040e
 # k8s.io/client-go => k8s.io/client-go v0.21.0

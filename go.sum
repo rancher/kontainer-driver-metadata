@@ -61,6 +61,7 @@ github.com/armon/go-metrics v0.0.0-20180917152333-f0300d1749da/go.mod h1:Q73ZrmV
 github.com/armon/go-radix v0.0.0-20180808171621-7fddfc383310/go.mod h1:ufUuZ+zHj4x4TnLV4JWEpy2hxWSpsRywHrMgIH9cCH8=
 github.com/asaskevich/govalidator v0.0.0-20180720115003-f9ffefc3facf/go.mod h1:lB+ZfQJz7igIIfQNfa7Ml4HSf2uFQQRzpGGRXenZAgY=
 github.com/asaskevich/govalidator v0.0.0-20190424111038-f61b66f89f4a/go.mod h1:lB+ZfQJz7igIIfQNfa7Ml4HSf2uFQQRzpGGRXenZAgY=
+github.com/aws/aws-sdk-go v1.38.65/go.mod h1:hcU610XS61/+aQV88ixoOzUoG7v3b31pl2zKMmprdro=
 github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24TaqPxmxbtue+5NUziq4I4S80YR8gNf3Q=
 github.com/beorn7/perks v1.0.0/go.mod h1:KWe93zE9D1o94FZ5RNwFwVgaQK1VOXiVxmqh+CedLV8=
 github.com/beorn7/perks v1.0.1 h1:VlbKKnNfV8bJzeqoa4cOKqO6bYr3WgKZxO8Z16+hsOM=
@@ -316,6 +317,8 @@ github.com/imdario/mergo v0.3.6/go.mod h1:2EnlNZ0deacrJVfApfmtdGgDfMuh/nq6Ok1EcJ
 github.com/imdario/mergo v0.3.7/go.mod h1:2EnlNZ0deacrJVfApfmtdGgDfMuh/nq6Ok1EcJh5FfA=
 github.com/imdario/mergo v0.3.11/go.mod h1:jmQim1M+e3UYxmgPu/WyfjB3N3VflVyUjjjwH0dnCYA=
 github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANytuPF1OarO4DADm73n8=
+github.com/jmespath/go-jmespath v0.4.0/go.mod h1:T8mJZnbsbmF+m6zOOFylbeCJqk5+pHWvzYPziyZiYoo=
+github.com/jmespath/go-jmespath/internal/testify v1.5.1/go.mod h1:L3OGu8Wl2/fWfCI6z80xFu9LTZmf1ZRjMHUOPmWr69U=
 github.com/jonboulle/clockwork v0.1.0/go.mod h1:Ii8DK3G1RaLaWxj9trq07+26W01tbo22gdxWY5EU2bo=
 github.com/json-iterator/go v1.1.6/go.mod h1:+SdeFBvtyEkXs7REEP0seUULqWtbJapLOCVDaaPEHmU=
 github.com/json-iterator/go v1.1.7/go.mod h1:KdQUCv79m/52Kvf8AW2vK1V8akMuk1QjK/uOdHXbAo4=
@@ -456,8 +459,8 @@ github.com/rancher/lasso v0.0.0-20200515155337-a34e1e26ad91 h1:p4VVl0tr6YAeUILFM
 github.com/rancher/lasso v0.0.0-20200515155337-a34e1e26ad91/go.mod h1:G6Vv2aj6xB2YjTVagmu4NkhBvbE8nBcGykHRENH6arI=
 github.com/rancher/norman v0.0.0-20200517050325-f53cae161640 h1:wZT4IWBeMfKewJ+ZSCuOFjHh+voTJWYQo7jTd/ZtE90=
 github.com/rancher/norman v0.0.0-20200517050325-f53cae161640/go.mod h1:92rz/7QN7DOeLQZlJY/8aFBOmF085igIVguR0wpxLas=
-github.com/rancher/rke v1.3.0-rc8.0.20210702150239-b8e94c98f8cd h1:/ECU1nBF4FGJnmmVdWyw74J6i6U/gf6xumhkd3Od+Qg=
-github.com/rancher/rke v1.3.0-rc8.0.20210702150239-b8e94c98f8cd/go.mod h1:8teMbZiv6i0IwNzsIjmaqbLIDEBZmvFv1j+1P7uUgyY=
+github.com/rancher/rke v1.3.0-rc8.0.20210706205346-22b82828ffa0 h1:KicSoZEmzGU8rR5ExzpxamlqaQJLjnIKaTkxams/px4=
+github.com/rancher/rke v1.3.0-rc8.0.20210706205346-22b82828ffa0/go.mod h1:HAdRKAo7OI5YvFSSP40ezrad1pXA7IuJgAW7S5PYg6Y=
 github.com/rancher/wrangler v0.6.2-0.20200515155908-1923f3f8ec3f/go.mod h1:NmtmlLkchboIksYJuBemwcP4RBfv8FpeyhVoWXB9Wdc=
 github.com/rogpeppe/fastuuid v0.0.0-20150106093220-6724a57986af/go.mod h1:XWv6SoW27p1b0cqNHllgS5HIMJraePCO15w5zCzIWYg=
 github.com/rogpeppe/fastuuid v1.2.0/go.mod h1:jVj6XXZzXRy/MSR5jhDC/2q6DgLz+nrA6LYCDYWNEvQ=
