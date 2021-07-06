@@ -5469,6 +5469,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			PodInfraContainer:         "rancher/mirrored-pause:3.4.1",
 			Ingress:                   "rancher/nginx-ingress-controller:nginx-0.47.0-rancher1",
 			IngressBackend:            "rancher/mirrored-nginx-ingress-controller-defaultbackend:1.5-rancher1",
+			IngressWebhook:            "rancher/mirrored-jettech-kube-webhook-certgen:v1.5.1",
 			MetricsServer:             "rancher/mirrored-metrics-server:v0.5.0",
 			CoreDNS:                   "rancher/mirrored-coredns-coredns:1.8.4",
 			CoreDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.8.3",
