@@ -36,6 +36,7 @@ replace (
 require (
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/rancher/lasso v0.0.0-20210408231703-9ddd9378d08d // indirect
+	github.com/rancher/norman v0.0.0-20210608202517-59b3523c3133 // indirect
 	github.com/rancher/rke v1.3.0-rc8.0.20210702150239-b8e94c98f8cd
 	github.com/sirupsen/logrus v1.7.0
 	golang.org/x/net v0.0.0-20210226172049-e18ecbb05110 // indirect

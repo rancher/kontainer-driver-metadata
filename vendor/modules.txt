@@ -64,7 +64,8 @@ github.com/rancher/lasso/pkg/controller
 github.com/rancher/lasso/pkg/log
 github.com/rancher/lasso/pkg/mapper
 github.com/rancher/lasso/pkg/scheme
-# github.com/rancher/norman v0.0.0-20200517050325-f53cae161640
+# github.com/rancher/norman v0.0.0-20210608202517-59b3523c3133
+## explicit
 github.com/rancher/norman/condition
 github.com/rancher/norman/controller
 github.com/rancher/norman/metrics
