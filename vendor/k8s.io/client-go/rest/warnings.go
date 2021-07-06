@@ -64,6 +64,16 @@ func (NoWarnings) HandleWarningHeader(code int, agent string, message string) {}
 type WarningLogger struct{}
 
 func (WarningLogger) HandleWarningHeader(code int, agent string, message string) {
+	BannedWarnings := []string{
+		"v1 ComponentStatus is deprecated in v1.19+",
+	}
+
+	for i := range BannedWarnings {
+		if BannedWarnings[i] == message {
+			return
+		}
+	}
+
 	if code != 299 || len(message) == 0 {
 		return
 	}
