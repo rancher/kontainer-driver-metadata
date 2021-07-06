@@ -1,6 +1,6 @@
 package templates
 
-const FlannelTemplate_v0_14_0 = `
+const FlannelTemplateV0_14_0 = `
 ---
 apiVersion: policy/v1beta1
 kind: PodSecurityPolicy

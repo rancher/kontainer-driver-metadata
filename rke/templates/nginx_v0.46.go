@@ -703,7 +703,7 @@ spec:
 {{- end }}
       containers:
       - name: default-http-backend
-        # Any image is permissable as long as:
+        # Any image is permissible as long as:
         # 1. It serves a 404 page at /
         # 2. It serves 200 on a /healthz endpoint
         image: {{.IngressBackend}}

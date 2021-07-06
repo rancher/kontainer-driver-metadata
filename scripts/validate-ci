@@ -3,6 +3,8 @@ set -e
 
 cd $(dirname $0)/..
 
+echo Running go generate
+
 go generate
 
 source ./scripts/version
