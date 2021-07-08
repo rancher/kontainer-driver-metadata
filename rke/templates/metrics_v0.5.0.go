@@ -1,6 +1,6 @@
 package templates
 
-const MetricsServerTemplate_v0_5_0 = `
+const MetricsServerTemplateV0_5_0 = `
 {{- if eq .RBACConfig "rbac"}}
 ---
 apiVersion: rbac.authorization.k8s.io/v1

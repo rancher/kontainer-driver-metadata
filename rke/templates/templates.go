@@ -194,7 +194,7 @@ func getTemplates() map[string]string {
 
 		flannelv115:  FlannelTemplateV115,
 		flannelv116:  FlannelTemplateV116,
-		flannelv0140: FlannelTemplate_v0_14_0,
+		flannelv0140: FlannelTemplateV0_14_0,
 		flannelv18:   FlannelTemplate,
 
 		canalv113:                     CanalTemplateV113,
@@ -221,8 +221,8 @@ func getTemplates() map[string]string {
 		kubeDnsv116: KubeDNSTemplateV116,
 
 		metricsServerv18:  MetricsServerTemplate,
-		metricsServerv120: MetricsServerTemplate_v0_4_1,
-		metricsServerv050: MetricsServerTemplate_v0_5_0,
+		metricsServerv120: MetricsServerTemplateV0_4_1,
+		metricsServerv050: MetricsServerTemplateV0_5_0,
 
 		weavev18:  WeaveTemplate,
 		weavev116: WeaveTemplateV116,
