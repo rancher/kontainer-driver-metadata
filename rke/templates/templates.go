@@ -68,7 +68,6 @@ const (
 	nginxIngressv18    = "nginxingress-v1.8"
 	nginxIngressV115   = "nginxingress-v1.15"
 	nginxIngressV11512 = "nginxingress-v1.15.12"
-	nginxIngressv046   = "nginxingress-v0.46.0"
 	nginxIngressv0481  = "nginxingress-v0.48.1"
 
 	nodelocalv115 = "nodelocal-v1.15"
@@ -234,7 +233,6 @@ func getTemplates() map[string]string {
 		nginxIngressv18:    NginxIngressTemplate,
 		nginxIngressV115:   NginxIngressTemplateV0251Rancher1,
 		nginxIngressV11512: NginxIngressTemplateV0320Rancher1,
-		nginxIngressv046:   NginxIngressTemplateV0460Rancher1,
 		nginxIngressv0481:  NginxIngressTemplateV0481Rancher1,
 
 		nodelocalv115: NodelocalTemplateV115,
