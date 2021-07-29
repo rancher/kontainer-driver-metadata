@@ -8029,7 +8029,7 @@
    "aciGbpServerContainer": "noiro/gbp-server:5.1.1.0.1ae238a",
    "aciOpflexServerContainer": "noiro/opflex-server:5.1.1.0.1ae238a"
   },
-  "v1.21.1-rancher2-1": {
+  "v1.21.1-rancher3-1": {
    "etcd": "rancher/mirrored-coreos-etcd:v3.4.16-rancher1",
    "alpine": "rancher/rke-tools:v0.1.76",
    "nginxProxy": "rancher/rke-tools:v0.1.76",
@@ -8042,7 +8042,7 @@
    "coredns": "rancher/mirrored-coredns-coredns:1.8.4",
    "corednsAutoscaler": "rancher/mirrored-cluster-proportional-autoscaler:1.8.3",
    "nodelocal": "rancher/mirrored-k8s-dns-node-cache:1.18.0",
-   "kubernetes": "rancher/hyperkube:v1.21.1-rancher2",
+   "kubernetes": "rancher/hyperkube:v1.21.1-rancher3",
    "flannel": "rancher/mirrored-coreos-flannel:v0.14.0",
    "flannelCni": "rancher/flannel-cni:v0.3.0-rancher6",
    "calicoNode": "rancher/mirrored-calico-node:v3.19.1",
@@ -8672,7 +8672,7 @@
  },
  "RKEDefaultK8sVersions": {
   "0.3": "v1.16.3-rancher1-1",
-  "default": "v1.21.1-rancher2-1"
+  "default": "v1.21.1-rancher3-1"
  },
  "K8sVersionDockerInfo": {
   "1.10": [
