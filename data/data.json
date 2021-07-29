@@ -9053,7 +9053,6 @@
     "cni-conf-dir": "[PREFIX_PATH]/etc/cni/net.d",
     "enforce-node-allocatable": "''",
     "event-qps": "0",
-    "feature-gates": "HyperVContainer=true,WindowsGMSA=true",
     "image-pull-progress-deadline": "30m",
     "kube-reserved": "cpu=500m,memory=500Mi,ephemeral-storage=1Gi",
     "make-iptables-util-chains": "true",
