@@ -235,6 +235,8 @@ spec:
             cpu: "100m"
             memory: "50Mi"
         securityContext:
+          seLinuxOptions:
+            type: rke_network_t
           privileged: false
           capabilities:
             add: ["NET_ADMIN", "NET_RAW"]
