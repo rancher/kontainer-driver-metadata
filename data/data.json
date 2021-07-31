@@ -9478,10 +9478,12 @@
       "options": [
        "rke2-coredns",
        "rke2-ingress-nginx",
-       "rke2-kube-proxy",
        "rke2-metrics-server"
       ],
       "type": "array"
+     },
+     "disable-kube-proxy": {
+      "type": "boolean"
      },
      "etcd-expose-metrics": {
       "type": "boolean"
@@ -9508,7 +9510,7 @@
       "type": "array"
      }
     },
-    "version": "v1.21.3+rke2r1"
+    "version": "v1.21.3-rc1+rke2r2"
    }
   ]
  }
