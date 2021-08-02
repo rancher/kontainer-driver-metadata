@@ -9468,9 +9468,9 @@
        "canal",
        "cilium",
        "calico",
-       "multus+canal",
-       "multus+cilium",
-       "multus+calico"
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
       ],
       "type": "array"
      },
