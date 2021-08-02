@@ -51,9 +51,9 @@ releases:
         - canal
         - cilium
         - calico
-        - multus+canal
-        - multus+cilium
-        - multus+calico
+        - multus,canal
+        - multus,cilium
+        - multus,calico
     agentArgs: &agentArgs-v1
       profile:
         type: enum
