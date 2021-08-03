@@ -28,6 +28,7 @@ releases:
         type: array
       etcd-expose-metrics:
         type: boolean
+        default: false
       disable:
         type: array
         options:
@@ -36,6 +37,7 @@ releases:
         - rke2-metrics-server
       disable-kube-proxy:
         type: boolean
+        default: false
       cluster-cidr:
         type: string
       audit-policy-file:
@@ -82,6 +84,7 @@ releases:
         type: string
       protect-kernel-defaults:
         type: boolean
+        default: false
       kubelet-arg:
         type: array
       kube-proxy-arg:
