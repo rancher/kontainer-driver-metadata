@@ -47,6 +47,7 @@ releases:
         type: string
       etcd-expose-metrics:
         type: boolean
+        default: false
       default-local-storage-path:
         type: string
       disable:
@@ -59,23 +60,32 @@ releases:
         - metrics-server
       disable-scheduler:
         type: boolean
+        default: false
       disable-cloud-controller:
         type: boolean
+        default: false
       disable-kube-proxy:
         type: boolean
+        default: false
       disable-network-policy:
         type: boolean
+        default: false
       disable-api-server:
         type: boolean
+        default: false
       disable-controller-manager:
         type: boolean
+        default: false
       disable-etcd:
         type: boolean
+        default: false
       secrets-encryption:
         type: boolean
+        default: false
     agentArgs: &agentArgs-v1
       docker:
         type: boolean
+        default: false
       pause-image:
         type: string
       snapshotter:
@@ -90,5 +100,7 @@ releases:
         type: array
       protect-kernel-defaults:
         type: boolean
+        default: false
       selinux:
         type: boolean
+        default: false
