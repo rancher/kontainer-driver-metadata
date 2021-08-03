@@ -1,5 +1,9 @@
 # kontainer-driver-metadata
 
+#### Commit and PR Etiquette ####
+Please make your change(s) and commit(s) as you normally would in any other Rancher project.
+However, the output of `go generate` should be it's own separate commit.
+
 #### Run ####
   * `go generate`
   * rancher >=2.3 will listen on changes in data.json and load automatically
