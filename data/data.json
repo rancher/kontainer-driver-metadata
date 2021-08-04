@@ -9471,15 +9471,14 @@
       "type": "string"
      },
      "cloud-provider-name": {
-      "default": "none",
+      "default": null,
       "nullable": true,
       "options": [
        "aws",
        "azure",
        "gcp",
        "vsphere",
-       "external",
-       "none"
+       "external"
       ],
       "type": "enum"
      },
