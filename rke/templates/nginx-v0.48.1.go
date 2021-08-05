@@ -597,6 +597,13 @@ spec:
         app.kubernetes.io/version: 0.48.1
         app.kubernetes.io/component: admission-webhook
     spec:
+      nodeSelector: 
+        kubernetes.io/os: linux
+      tolerations:
+      - effect: NoExecute
+        operator: Exists
+      - effect: NoSchedule
+        operator: Exists    
       containers:
         - name: create
           image: {{ .IngressWebhook }}
@@ -641,6 +648,13 @@ spec:
         app.kubernetes.io/version: 0.48.1
         app.kubernetes.io/component: admission-webhook
     spec:
+      nodeSelector: 
+        kubernetes.io/os: linux
+      tolerations:
+      - effect: NoExecute
+        operator: Exists
+      - effect: NoSchedule
+        operator: Exists    
       containers:
         - name: patch
           image: {{ .IngressWebhook }}
