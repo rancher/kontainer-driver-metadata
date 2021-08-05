@@ -7,12 +7,22 @@ import (
 )
 
 const (
+	rkeIssuer              = "rke"
+	serviceAccountKeyPath  = "/etc/kubernetes/ssl/kube-service-account-token-key.pem"
 	tlsCipherSuites        = "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305"
 	enableAdmissionPlugins = "NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,NodeRestriction"
 )
 
 func loadK8sVersionServiceOptions() map[string]v3.KubernetesServicesOptions {
 	return map[string]v3.KubernetesServicesOptions{
+		"v1.20": {
+			Etcd:           getETCDOptions117(),
+			KubeAPI:        getKubeAPIOptions120(),
+			Kubelet:        getKubeletOptions116(),
+			KubeController: getKubeControllerOptions(),
+			Kubeproxy:      getKubeProxyOptions(),
+			Scheduler:      getSchedulerOptions(),
+		},
 		"v1.19": {
 			Etcd:           getETCDOptions117(),
 			KubeAPI:        getKubeAPIOptions116(),
@@ -141,6 +151,14 @@ func loadK8sVersionServiceOptions() map[string]v3.KubernetesServicesOptions {
 			Kubeproxy:      getKubeProxyOptions(),
 			Scheduler:      getSchedulerOptions(),
 		},
+		"v1.16.15-rancher1-4": {
+			Etcd:           getETCDOptions(),
+			KubeAPI:        getKubeAPIOptions116(),
+			Kubelet:        getKubeletOptions116(),
+			KubeController: getKubeControllerOptions(),
+			Kubeproxy:      getKubeProxyOptions(),
+			Scheduler:      getSchedulerOptions(),
+		},
 		"v1.16": {
 			KubeAPI:        getKubeAPIOptions116(),
 			Kubelet:        getKubeletOptions116(),
@@ -221,6 +239,14 @@ func loadK8sVersionServiceOptions() map[string]v3.KubernetesServicesOptions {
 			Scheduler:      getSchedulerOptions(),
 		},
 		"v1.15.12-rancher2-5": {
+			Etcd:           getETCDOptions(),
+			KubeAPI:        getKubeAPIOptions115(),
+			Kubelet:        getKubeletOptions115(),
+			KubeController: getKubeControllerOptions(),
+			Kubeproxy:      getKubeProxyOptions(),
+			Scheduler:      getSchedulerOptions(),
+		},
+		"v1.15.12-rancher2-8": {
 			Etcd:           getETCDOptions(),
 			KubeAPI:        getKubeAPIOptions115(),
 			Kubelet:        getKubeletOptions115(),
@@ -341,6 +367,16 @@ func getKubeAPIOptions116() map[string]string {
 	kubeAPIOptions := getKubeAPIOptions114()
 	kubeAPIOptions["enable-admission-plugins"] = fmt.Sprintf("%s,%s", kubeAPIOptions["enable-admission-plugins"], "TaintNodesByCondition,PersistentVolumeClaimResize")
 	kubeAPIOptions["runtime-config"] = "authorization.k8s.io/v1beta1=true"
+	return kubeAPIOptions
+}
+
+func getKubeAPIOptions120() map[string]string {
+	kubeAPIOptions := getKubeAPIOptions116()
+	// need to turn off this feature in k8s 1.20 since we are not using it https://github.com/kubernetes/kubernetes/pull/91921
+	kubeAPIOptions["feature-gates"] = "ServiceAccountIssuerDiscovery=false"
+	kubeAPIOptions["service-account-issuer"] = rkeIssuer
+	kubeAPIOptions["service-account-signing-key-file"] = serviceAccountKeyPath
+	kubeAPIOptions["api-audiences"] = "unknown"
 	return kubeAPIOptions
 }
 
