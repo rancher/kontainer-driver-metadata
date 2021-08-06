@@ -4404,16 +4404,16 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.6"),
 			Nodelocal:                 m("k8s.gcr.io/k8s-dns-node-cache:1.15.7"),
 		},
-		// Enabled out of band post v2.4.15
+		// Enabled out of band post v2.4.16
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Reminder: This template should remain an exact copy of the template for v2.5.x (No ACI images)
-		"v1.18.20-rancher1-1": {
+		"v1.18.20-rancher1-3": {
 			Etcd:                      m("rancher/coreos-etcd:v3.4.15-rancher1"),
 			Kubernetes:                m("rancher/hyperkube:v1.18.20-rancher1"),
-			Alpine:                    m("rancher/rke-tools:v0.1.75"),
-			NginxProxy:                m("rancher/rke-tools:v0.1.75"),
-			CertDownloader:            m("rancher/rke-tools:v0.1.75"),
-			KubernetesServicesSidecar: m("rancher/rke-tools:v0.1.75"),
+			Alpine:                    m("rancher/rke-tools:v0.1.72"),
+			NginxProxy:                m("rancher/rke-tools:v0.1.72"),
+			CertDownloader:            m("rancher/rke-tools:v0.1.72"),
+			KubernetesServicesSidecar: m("rancher/rke-tools:v0.1.72"),
 			KubeDNS:                   m("gcr.io/google_containers/k8s-dns-kube-dns:1.15.2"),
 			DNSmasq:                   m("gcr.io/google_containers/k8s-dns-dnsmasq-nanny:1.15.2"),
 			KubeDNSSidecar:            m("gcr.io/google_containers/k8s-dns-sidecar:1.15.2"),
