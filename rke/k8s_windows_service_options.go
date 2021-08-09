@@ -7,7 +7,7 @@ func loadK8sVersionWindowsServiceOptions() map[string]v3.KubernetesServicesOptio
 	return map[string]v3.KubernetesServicesOptions{
 		"v1.21": {
 			Kubelet:   getWindowsKubeletOptions121(),
-			Kubeproxy: getWindowsKubeProxyOptions(),
+			Kubeproxy: getWindowsKubeProxyOptions121(),
 		},
 		"v1.20": {
 			Kubelet:   getWindowsKubeletOptions116(),
@@ -87,6 +87,19 @@ func getWindowsKubeletOptions121() map[string]string {
 	delete(kubeletOptions, "feature-gates")
 
 	return kubeletOptions
+}
+
+func getWindowsKubeProxyOptions121() map[string]string {
+	kubeProxyOptions := getKubeProxyOptions()
+
+	// use kernelspace proxy mode
+	kubeProxyOptions["proxy-mode"] = "kernelspace"
+	// disable Windows IPv6DualStack support, WinOverlay already defaults to true
+	kubeProxyOptions["feature-gates"] = "IPv6DualStack=false"
+	// disable Windows DSR support explicitly
+	kubeProxyOptions["enable-dsr"] = "false"
+
+	return kubeProxyOptions
 }
 
 func getWindowsKubeProxyOptions() map[string]string {
