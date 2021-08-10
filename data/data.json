@@ -9518,11 +9518,11 @@
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
-      "verion": "v3.19.1-105"
+      "version": "v3.19.2-201"
      },
      "rke2-calico-crd": {
       "repo": "rancher-rke2-charts",
-      "version": "v1.0.005"
+      "version": "v1.0.101"
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
