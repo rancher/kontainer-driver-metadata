@@ -12,8 +12,6 @@ if ! command -v golangci-lint; then
     exit
 fi
 
-echo Running validation
-
 echo Running: golangci-lint
 golangci-lint run
 

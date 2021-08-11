@@ -178,7 +178,7 @@ spec:
     targetPort: 443
 `
 
-const MetricsServerTemplate_v0_4_1 = `
+const MetricsServerTemplateV0_4_1 = `
 {{- if eq .RBACConfig "rbac"}}
 ---
 apiVersion: rbac.authorization.k8s.io/v1

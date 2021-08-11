@@ -28,8 +28,9 @@ func loadRancherDefaultK8sVersions() map[string]string {
 		"2.5.5": "v1.19.x",
 		"2.5.6": "v1.20.x",
 		"2.5":   "v1.20.x",
+		"2.6":   "v1.21.x",
 		// rancher will use default if its version is absent
-		"default": "v1.20.x",
+		"default": "v1.21.x",
 	}
 }
 
@@ -37,7 +38,7 @@ func loadRKEDefaultK8sVersions() map[string]string {
 	return map[string]string{
 		"0.3": "v1.16.3-rancher1-1",
 		// rke will use default if its version is absent
-		"default": "v1.20.6-rancher1-1",
+		"default": "v1.21.3-rancher1-1",
 	}
 }
 
@@ -457,11 +458,47 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 			MinRancherVersion: "2.4.5-rc0",
 			MinRKEVersion:     "1.1.3-rc0",
 		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.18.19-rancher1-1": {
+			MinRancherVersion: "2.4.5-rc0",
+			MinRKEVersion:     "1.1.3-rc0",
+		},
+		// The Calico/Canal template in this version use functions that are only available in RKE v1.0.0 and up
+		// This version includes nodelocal dns only available in RKE v1.0.7 and up
+		"v1.18.19-rancher1-2": {
+			MinRancherVersion: "2.4.5-rc0",
+			MinRKEVersion:     "1.1.3-rc0",
+		},
+		"v1.17": {
+			MaxRancherVersion: "2.5.99",
+			MaxRKEVersion:     "1.2.99",
+		},
+		"v1.18": {
+			MaxRancherVersion: "2.5.99",
+			MaxRKEVersion:     "1.2.99",
+		},
 		"v1.19": {
 			MinRancherVersion: "2.5.0-rc0",
 			MinRKEVersion:     "1.2.0-rc0",
 		},
+		"v1.19.13-rancher1-1": {
+			MinRancherVersion: "2.5.0-rc0",
+			MinRKEVersion:     "1.2.0-rc0",
+		},
+		"v1.19.13-rancher1-2": {
+			MinRancherVersion: "2.5.0-rc0",
+			MinRKEVersion:     "1.2.0-rc0",
+		},
 		"v1.20": {
+			MinRancherVersion: "2.5.6-rc0",
+			MinRKEVersion:     "1.2.0-rc0",
+		},
+		"v1.20.9-rancher1-1": {
+			MinRancherVersion: "2.5.6-rc0",
+			MinRKEVersion:     "1.2.0-rc0",
+		},
+		"v1.20.9-rancher1-2": {
 			MinRancherVersion: "2.5.6-rc0",
 			MinRKEVersion:     "1.2.0-rc0",
 		},
