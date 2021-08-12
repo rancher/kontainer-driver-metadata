@@ -97,7 +97,7 @@ releases:
         version: v3.13.300-build2021022306
       rke2-calico:
         repo: rancher-rke2-charts
-        version: v3.19.2-201
+        version: v3.19.2-202
       rke2-calico-crd:
         repo: rancher-rke2-charts
         version: v1.0.101
