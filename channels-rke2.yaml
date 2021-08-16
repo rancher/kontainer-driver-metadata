@@ -72,7 +72,7 @@ releases:
         - aws
         - azure
         - gcp
-        - vsphere
+        - rancher-vsphere
         - external
         nullable: true
       selinux:
