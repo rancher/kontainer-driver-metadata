@@ -9614,7 +9614,7 @@
        "aws",
        "azure",
        "gcp",
-       "vsphere",
+       "rancher-vsphere",
        "external"
       ],
       "type": "enum"
