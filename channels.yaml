@@ -70,7 +70,7 @@ releases:
       disable-network-policy:
         type: boolean
         default: false
-      disable-api-server:
+      disable-apiserver:
         type: boolean
         default: false
       disable-controller-manager:
