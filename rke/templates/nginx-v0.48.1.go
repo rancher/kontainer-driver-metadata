@@ -38,10 +38,10 @@ metadata:
   name: nginx-configuration
   namespace: ingress-nginx
 {{- if .Options }}
-  data:
-  {{- range $k,$v := .Options }}
-    {{ $k }}: "{{ $v }}"
-  {{- end }}
+data:
+{{- range $k,$v := .Options }}
+  {{ $k }}: "{{ $v }}"
+{{- end }}
 {{- end }}
 {{- if eq .RBACConfig "rbac" }}
 ---
