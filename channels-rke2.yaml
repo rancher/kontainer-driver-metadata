@@ -88,7 +88,7 @@ releases:
         type: array
       kube-proxy-arg:
         type: array
-    charts:
+    charts: &charts
       rke2-cilium:
         repo: rancher-rke2-charts
         version: 1.9.808
@@ -119,3 +119,9 @@ releases:
       rancher-vsphere-csi:
         repo: rancher-charts
         version: 2.1.000
+  - version: v1.21.4-rc1+rke2r1
+    minChannelServerVersion: v2.6.0-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v1
+    agentArgs: *agentArgs-v1
+    charts: *charts
