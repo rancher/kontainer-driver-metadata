@@ -3,6 +3,14 @@ set -e
 
 cd $(dirname $0)/..
 
+
+echo Running go mod tidy
+go mod tidy
+
+echo Running go mod verify
+go mod verify
+
+echo Running go generate
 go generate
 
 source ./scripts/version
