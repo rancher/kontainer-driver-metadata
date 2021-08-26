@@ -9595,12 +9595,12 @@
    {
     "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.0-alpha1",
-    "version": "v1.19.13+rke2r2"
+    "version": "v1.19.14+rke2r1"
    },
    {
     "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.0-alpha1",
-    "version": "v1.20.9+rke2r2"
+    "version": "v1.20.10+rke2r1"
    },
    {
     "agentArgs": {
@@ -9908,7 +9908,7 @@
       "type": "array"
      }
     },
-    "version": "v1.21.4-rc1+rke2r1"
+    "version": "v1.21.4+rke2r1"
    }
   ]
  }
