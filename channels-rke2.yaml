@@ -88,7 +88,7 @@ releases:
         type: array
       kube-proxy-arg:
         type: array
-    charts: &charts
+    charts: &charts-v1
       rke2-cilium:
         repo: rancher-rke2-charts
         version: 1.9.808
