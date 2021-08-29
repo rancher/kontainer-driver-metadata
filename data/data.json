@@ -9742,11 +9742,11 @@
     "charts": {
      "rancher-vsphere-cpi": {
       "repo": "rancher-charts",
-      "version": "1.0.000"
+      "version": "100.0.0"
      },
      "rancher-vsphere-csi": {
       "repo": "rancher-charts",
-      "version": "2.1.000"
+      "version": "100.0.0"
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
@@ -9846,7 +9846,7 @@
       "type": "array"
      }
     },
-    "version": "v1.21.4+rke2r1"
+    "version": "v1.21.4-rc1+rke2r2"
    }
   ]
  }
