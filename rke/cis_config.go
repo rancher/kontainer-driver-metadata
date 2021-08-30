@@ -7,7 +7,7 @@ import (
 const (
 	// reasons for not applicable checks
 	reasonForMalformed          = `The argument --repair-malformed-updates has been removed as of Kubernetes version 1.14.`
-	reasonNoConfigFileApiServer = `Clusters provisioned by RKE doesn't require or maintain a configuration file for kube-apiserver.
+	reasonNoConfigFileAPIServer = `Clusters provisioned by RKE doesn't require or maintain a configuration file for kube-apiserver.
 All configuration is passed in as arguments at container run time.`
 	reasonNoConfigFileControllerManager = `Clusters provisioned by RKE doesn't require or maintain a configuration file for controller-manager.
 All configuration is passed in as arguments at container run time.`
@@ -41,8 +41,8 @@ All configuration is passed in as arguments at container run time.`
 var rkeCIS14NotApplicableChecks = map[string]string{
 	"1.1.9":  reasonForMalformed,
 	"1.3.6":  reasonForNotRotatingCerts,
-	"1.4.1":  reasonNoConfigFileApiServer,
-	"1.4.2":  reasonNoConfigFileApiServer,
+	"1.4.1":  reasonNoConfigFileAPIServer,
+	"1.4.2":  reasonNoConfigFileAPIServer,
 	"1.4.3":  reasonNoConfigFileControllerManager,
 	"1.4.4":  reasonNoConfigFileControllerManager,
 	"1.4.5":  reasonNoConfigFileScheduler,
@@ -79,8 +79,8 @@ var rkeCIS14SkippedChecks = map[string]string{
 }
 
 var rkeCIS15NotApplicableChecks = map[string]string{
-	"1.1.1":  reasonNoConfigFileApiServer,
-	"1.1.2":  reasonNoConfigFileApiServer,
+	"1.1.1":  reasonNoConfigFileAPIServer,
+	"1.1.2":  reasonNoConfigFileAPIServer,
 	"1.1.3":  reasonNoConfigFileControllerManager,
 	"1.1.4":  reasonNoConfigFileControllerManager,
 	"1.1.5":  reasonNoConfigFileScheduler,

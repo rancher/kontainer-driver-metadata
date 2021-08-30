@@ -5,7 +5,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	apiserverv1alpha1 "k8s.io/apiserver/pkg/apis/apiserver/v1alpha1"
 	auditv1 "k8s.io/apiserver/pkg/apis/audit/v1"
-	apiserverconfig "k8s.io/apiserver/pkg/apis/config"
+	configv1 "k8s.io/apiserver/pkg/apis/config/v1"
 )
 
 type RancherKubernetesEngineConfig struct {
@@ -21,7 +21,7 @@ type RancherKubernetesEngineConfig struct {
 	Addons string `yaml:"addons" json:"addons,omitempty"`
 	// List of urls or paths for addons
 	AddonsInclude []string `yaml:"addons_include" json:"addonsInclude,omitempty"`
-	// List of images used internally for proxy, cert downlaod and kubedns
+	// List of images used internally for proxy, cert download and kubedns
 	SystemImages RKESystemImages `yaml:"system_images" json:"systemImages,omitempty"`
 	// SSH Private Key Path
 	SSHKeyPath string `yaml:"ssh_key_path" json:"sshKeyPath,omitempty" norman:"nocreate,noupdate"`
@@ -33,7 +33,9 @@ type RancherKubernetesEngineConfig struct {
 	Authorization AuthzConfig `yaml:"authorization" json:"authorization,omitempty"`
 	// Enable/disable strict docker version checking
 	IgnoreDockerVersion *bool `yaml:"ignore_docker_version" json:"ignoreDockerVersion" norman:"default=true"`
-	// Kubernetes version to use (if kubernetes image is specifed, image version takes precedence)
+	// Enable/disable using cri-dockerd
+	EnableCRIDockerd *bool `yaml:"enable_cri_dockerd" json:"enableCriDockerd" norman:"default=false"`
+	// Kubernetes version to use (if kubernetes image is specified, image version takes precedence)
 	Version string `yaml:"kubernetes_version" json:"kubernetesVersion,omitempty"`
 	// List of private registries and their credentials
 	PrivateRegistries []PrivateRegistry `yaml:"private_registries" json:"privateRegistries,omitempty"`
@@ -57,6 +59,8 @@ type RancherKubernetesEngineConfig struct {
 	Restore RestoreConfig `yaml:"restore" json:"restore,omitempty"`
 	// Rotating Certificates Option
 	RotateCertificates *RotateCertificates `yaml:"rotate_certificates,omitempty" json:"rotateCertificates,omitempty"`
+	// Rotate Encryption Key Option
+	RotateEncryptionKey bool `yaml:"rotate_encryption_key" json:"rotateEncryptionKey"`
 	// DNS Config
 	DNS *DNSConfig `yaml:"dns" json:"dns,omitempty"`
 	// Upgrade Strategy for the cluster
@@ -93,6 +97,8 @@ type BastionHost struct {
 	SSHCert string `yaml:"ssh_cert" json:"sshCert,omitempty"`
 	// SSH Certificate Path
 	SSHCertPath string `yaml:"ssh_cert_path" json:"sshCertPath,omitempty"`
+	// Ignore proxy environment variables
+	IgnoreProxyEnvVars bool `yaml:"ignore_proxy_env_vars" json:"ignoreProxyEnvVars,omitempty"`
 }
 
 type PrivateRegistry struct {
@@ -104,6 +110,8 @@ type PrivateRegistry struct {
 	Password string `yaml:"password" json:"password,omitempty" norman:"type=password"`
 	// Default registry
 	IsDefault bool `yaml:"is_default" json:"isDefault,omitempty"`
+	// CredentialPlugin
+	CredentialPlugin map[string]string `yaml:"credentialPlugin" json:"credentialPlugin,omitempty"`
 }
 
 type RKESystemImages struct {
@@ -167,6 +175,8 @@ type RKESystemImages struct {
 	Ingress string `yaml:"ingress" json:"ingress,omitempty"`
 	// Ingress Controller Backend image
 	IngressBackend string `yaml:"ingress_backend" json:"ingressBackend,omitempty"`
+	// Ingress Webhook image
+	IngressWebhook string `yaml:"ingress_webhook" json:"ingressWebhook,omitempty"`
 	// Metrics Server image
 	MetricsServer string `yaml:"metrics_server" json:"metricsServer,omitempty"`
 	// Pod infra container image for Windows
@@ -389,6 +399,8 @@ type NetworkConfig struct {
 	NodeSelector map[string]string `yaml:"node_selector" json:"nodeSelector,omitempty"`
 	// Network plugin daemonset upgrade strategy
 	UpdateStrategy *DaemonSetUpdateStrategy `yaml:"update_strategy" json:"updateStrategy,omitempty"`
+	// Tolerations for Deployments
+	Tolerations []v1.Toleration `yaml:"tolerations" json:"tolerations,omitempty"`
 }
 
 type AuthWebhookConfig struct {
@@ -417,7 +429,8 @@ type AuthzConfig struct {
 type IngressConfig struct {
 	// Ingress controller type used by kubernetes
 	Provider string `yaml:"provider" json:"provider,omitempty" norman:"default=nginx"`
-	// Ingress controller options
+	// These options are NOT for configuring Ingress's addon template.
+	// They are used for its ConfigMap options specifically.
 	Options map[string]string `yaml:"options" json:"options,omitempty"`
 	// NodeSelector key pair
 	NodeSelector map[string]string `yaml:"node_selector" json:"nodeSelector,omitempty"`
@@ -439,6 +452,14 @@ type IngressConfig struct {
 	HTTPSPort int `yaml:"https_port" json:"httpsPort,omitempty"`
 	// NetworkMode selector for ingress controller pods. Default is HostNetwork
 	NetworkMode string `yaml:"network_mode" json:"networkMode,omitempty"`
+	// Tolerations for Deployments
+	Tolerations []v1.Toleration `yaml:"tolerations" json:"tolerations,omitempty"`
+	// Enable or disable nginx default-http-backend
+	DefaultBackend *bool `yaml:"default_backend" json:"defaultBackend,omitempty" norman:"default=true"`
+	// Priority class name for Nginx-Ingress's "default-http-backend" deployment
+	DefaultHTTPBackendPriorityClassName string `yaml:"default_http_backend_priority_class_name" json:"defaultHttpBackendPriorityClassName,omitempty"`
+	// Priority class name for Nginx-Ingress's "nginx-ingress-controller" daemonset
+	NginxIngressControllerPriorityClassName string `yaml:"nginx_ingress_controller_priority_class_name" json:"nginxIngressControllerPriorityClassName,omitempty"`
 }
 
 type ExtraEnv struct {
@@ -574,12 +595,12 @@ type AciNetworkProvider struct {
 	AEP                      string   `yaml:"aep,omitempty" json:"aep,omitempty"`
 	VRFName                  string   `yaml:"vrf_name,omitempty" json:"vrfName,omitempty"`
 	VRFTenant                string   `yaml:"vrf_tenant,omitempty" json:"vrfTenant,omitempty"`
-	L3Out                    string   `yaml:"l3out,omitempty" json:"l3Out,omitempty"`
-	L3OutExternalNetworks    []string `yaml:"l3out_external_networks" json:"l3OutExternalNetworks,omitempty"`
+	L3Out                    string   `yaml:"l3out,omitempty" json:"l3out,omitempty"`
+	L3OutExternalNetworks    []string `yaml:"l3out_external_networks" json:"l3outExternalNetworks,omitempty"`
 	DynamicExternalSubnet    string   `yaml:"extern_dynamic,omitempty" json:"externDynamic,omitempty"`
 	StaticExternalSubnet     string   `yaml:"extern_static,omitempty" json:"externStatic,omitempty"`
 	ServiceGraphSubnet       string   `yaml:"node_svc_subnet,omitempty" json:"nodeSvcSubnet,omitempty"`
-	KubeAPIVlan              string   `yaml:"kube_api_vlan,omitempty" json:"kubeAPIVlan,omitempty"`
+	KubeAPIVlan              string   `yaml:"kube_api_vlan,omitempty" json:"kubeApiVlan,omitempty"`
 	ServiceVlan              string   `yaml:"service_vlan,omitempty" json:"serviceVlan,omitempty"`
 	InfraVlan                string   `yaml:"infra_vlan,omitempty" json:"infraVlan,omitempty"`
 	Tenant                   string   `yaml:"tenant,omitempty" json:"tenant,omitempty"`
@@ -606,7 +627,7 @@ type AciNetworkProvider struct {
 	SnatPortRangeStart       string   `yaml:"snat_port_range_start,omitempty" json:"snatPortRangeStart,omitempty"`
 	SnatPortRangeEnd         string   `yaml:"snat_port_range_end,omitempty" json:"snatPortRangeEnd,omitempty"`
 	SnatPortsPerNode         string   `yaml:"snat_ports_per_node,omitempty" json:"snatPortsPerNode,omitempty"`
-	OpflexClientSSL          string   `yaml:"opflex_client_ssl,omitempty" json:"opflexClientSSL,omitempty"`
+	OpflexClientSSL          string   `yaml:"opflex_client_ssl,omitempty" json:"opflexClientSsl,omitempty"`
 	UsePrivilegedContainer   string   `yaml:"use_privileged_container,omitempty" json:"usePrivilegedContainer,omitempty"`
 	UseHostNetnsVolume       string   `yaml:"use_host_netns_volume,omitempty" json:"useHostNetnsVolume,omitempty"`
 	UseOpflexServerVolume    string   `yaml:"use_opflex_server_volume,omitempty" json:"useOpflexServerVolume,omitempty"`
@@ -614,9 +635,9 @@ type AciNetworkProvider struct {
 	KafkaBrokers             []string `yaml:"kafka_brokers,omitempty" json:"kafkaBrokers,omitempty"`
 	KafkaClientCrt           string   `yaml:"kafka_client_crt,omitempty" json:"kafkaClientCrt,omitempty"`
 	KafkaClientKey           string   `yaml:"kafka_client_key,omitempty" json:"kafkaClientKey,omitempty"`
-	CApic                    string   `yaml:"capic,omitempty" json:"cApic,omitempty"`
-	UseAciAnywhereCRD        string   `yaml:"use_aci_anywhere_crd,omitempty" json:"useAciAnywhereCRD,omitempty"`
-	OverlayVRFName           string   `yaml:"overlay_vrf_name,omitempty" json:"overlayVRFName,omitempty"`
+	CApic                    string   `yaml:"capic,omitempty" json:"capic,omitempty"`
+	UseAciAnywhereCRD        string   `yaml:"use_aci_anywhere_crd,omitempty" json:"useAciAnywhereCrd,omitempty"`
+	OverlayVRFName           string   `yaml:"overlay_vrf_name,omitempty" json:"overlayVrfName,omitempty"`
 	GbpPodSubnet             string   `yaml:"gbp_pod_subnet,omitempty" json:"gbpPodSubnet,omitempty"`
 	RunGbpContainer          string   `yaml:"run_gbp_container,omitempty" json:"runGbpContainer,omitempty"`
 	RunOpflexServerContainer string   `yaml:"run_opflex_server_container,omitempty" json:"runOpflexServerContainer,omitempty"`
@@ -887,7 +908,8 @@ type GlobalAwsOpts struct {
 type MonitoringConfig struct {
 	// Monitoring server provider
 	Provider string `yaml:"provider" json:"provider,omitempty" norman:"default=metrics-server"`
-	// Metrics server options
+	// These options are NOT for configuring the Metrics-Server's addon template.
+	// They are used to pass command args to the metric-server's deployment containers specifically.
 	Options map[string]string `yaml:"options" json:"options,omitempty"`
 	// NodeSelector key pair
 	NodeSelector map[string]string `yaml:"node_selector" json:"nodeSelector,omitempty"`
@@ -895,6 +917,10 @@ type MonitoringConfig struct {
 	UpdateStrategy *DeploymentStrategy `yaml:"update_strategy" json:"updateStrategy,omitempty"`
 	// Number of monitoring addon pods
 	Replicas *int32 `yaml:"replicas" json:"replicas,omitempty" norman:"default=1"`
+	// Tolerations for Deployments
+	Tolerations []v1.Toleration `yaml:"tolerations" json:"tolerations,omitempty"`
+	// Priority class name for Metrics-Server's "metrics-server" deployment
+	MetricsServerPriorityClassName string `yaml:"metrics_server_priority_class_name" json:"metricsServerPriorityClassName,omitempty"`
 }
 
 type RestoreConfig struct {
@@ -911,6 +937,8 @@ type RotateCertificates struct {
 type DNSConfig struct {
 	// DNS provider
 	Provider string `yaml:"provider" json:"provider,omitempty"`
+	// DNS config options
+	Options map[string]string `yaml:"options" json:"options,omitempty"`
 	// Upstream nameservers
 	UpstreamNameservers []string `yaml:"upstreamnameservers" json:"upstreamnameservers,omitempty"`
 	// ReverseCIDRs
@@ -920,20 +948,24 @@ type DNSConfig struct {
 	// NodeSelector key pair
 	NodeSelector map[string]string `yaml:"node_selector" json:"nodeSelector,omitempty"`
 	// Nodelocal DNS
-	Nodelocal *Nodelocal `yaml:"nodelocal" json:"nodelocal,omitempy"`
+	Nodelocal *Nodelocal `yaml:"nodelocal" json:"nodelocal,omitempty"`
 	// Update strategy
 	UpdateStrategy *DeploymentStrategy `yaml:"update_strategy" json:"updateStrategy,omitempty"`
 	// Autoscaler fields to determine number of dns replicas
 	LinearAutoscalerParams *LinearAutoscalerParams `yaml:"linear_autoscaler_params" json:"linearAutoscalerParams,omitempty"`
+	// Tolerations for Deployments
+	Tolerations []v1.Toleration `yaml:"tolerations" json:"tolerations,omitempty"`
 }
 
 type Nodelocal struct {
 	// link-local IP for nodelocal DNS
-	IPAddress string `yaml:"ip_address" json:"ipAddress,omitempy"`
+	IPAddress string `yaml:"ip_address" json:"ipAddress,omitempty"`
 	// Nodelocal DNS daemonset upgrade strategy
 	UpdateStrategy *DaemonSetUpdateStrategy `yaml:"update_strategy" json:"updateStrategy,omitempty"`
 	// NodeSelector key pair
 	NodeSelector map[string]string `yaml:"node_selector" json:"nodeSelector,omitempty"`
+	// Priority class name for NodeLocal's "node-local-dns" daemonset
+	NodeLocalDNSPriorityClassName string `yaml:"node_local_dns_priority_class_name" json:"nodeLocalDnsPriorityClassName,omitempty"`
 }
 
 // LinearAutoscalerParams contains fields expected by the cluster-proportional-autoscaler https://github.com/kubernetes-incubator/cluster-proportional-autoscaler/blob/0c61e63fc81449abdd52315aa27179a17e5d1580/pkg/autoscaler/controller/linearcontroller/linear_controller.go#L50
@@ -956,7 +988,7 @@ type SecretsEncryptionConfig struct {
 	// Enable/disable secrets encryption provider config
 	Enabled bool `yaml:"enabled" json:"enabled,omitempty"`
 	// Custom Encryption Provider configuration object
-	CustomConfig *apiserverconfig.EncryptionConfiguration `yaml:"custom_config" json:"customConfig,omitempty" norman:"type=map[json]"`
+	CustomConfig *configv1.EncryptionConfiguration `yaml:"custom_config" json:"customConfig,omitempty"`
 }
 
 type File struct {

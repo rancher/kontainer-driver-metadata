@@ -5,6 +5,10 @@ import v3 "github.com/rancher/rke/types"
 func loadK8sVersionWindowsServiceOptions() map[string]v3.KubernetesServicesOptions {
 	// since 1.14, windows has been supported
 	return map[string]v3.KubernetesServicesOptions{
+		"v1.21": {
+			Kubelet:   getWindowsKubeletOptions121(),
+			Kubeproxy: getWindowsKubeProxyOptions121(),
+		},
 		"v1.20": {
 			Kubelet:   getWindowsKubeletOptions116(),
 			Kubeproxy: getWindowsKubeProxyOptions(),
@@ -73,6 +77,29 @@ func getWindowsKubeletOptions116() map[string]string {
 	delete(kubeletOptions, "allow-privileged")
 
 	return kubeletOptions
+}
+
+func getWindowsKubeletOptions121() map[string]string {
+	kubeletOptions := getWindowsKubeletOptions()
+
+	// doesn't support `allow-privileged`
+	delete(kubeletOptions, "allow-privileged")
+	delete(kubeletOptions, "feature-gates")
+
+	return kubeletOptions
+}
+
+func getWindowsKubeProxyOptions121() map[string]string {
+	kubeProxyOptions := getKubeProxyOptions()
+
+	// use kernelspace proxy mode
+	kubeProxyOptions["proxy-mode"] = "kernelspace"
+	// disable Windows IPv6DualStack support, WinOverlay already defaults to true
+	kubeProxyOptions["feature-gates"] = "IPv6DualStack=false"
+	// disable Windows DSR support explicitly
+	kubeProxyOptions["enable-dsr"] = "false"
+
+	return kubeProxyOptions
 }
 
 func getWindowsKubeProxyOptions() map[string]string {
