@@ -9388,6 +9388,11 @@
    {
     "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.0-alpha1",
+    "version": "v1.18.20+k3s1"
+   },
+   {
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.0-alpha1",
     "version": "v1.19.14+k3s1"
    },
    {
@@ -9539,11 +9544,6 @@
  },
  "rke2": {
   "releases": [
-   {
-    "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.0-alpha1",
-    "version": "v1.18.20+rke2r1"
-   },
    {
     "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.0-alpha1",
