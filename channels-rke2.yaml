@@ -142,3 +142,6 @@ releases:
       harvester-csi-driver:
         repo: rancher-rke2-charts
         version: 0.1.300
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.10.402
