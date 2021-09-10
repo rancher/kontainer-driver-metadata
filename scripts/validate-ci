@@ -12,3 +12,6 @@ if [ -n "$DIRTY" ]; then
     git status
     exit 1
 fi
+
+echo Checking if released versions are not changed
+bash check-kdm-data.sh
