@@ -9760,12 +9760,12 @@
    {
     "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.0-alpha1",
-    "version": "v1.19.14+rke2r1"
+    "version": "v1.19.15+rke2r1"
    },
    {
     "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.0-alpha1",
-    "version": "v1.20.10+rke2r1"
+    "version": "v1.20.11+rke2r1"
    },
    {
     "agentArgs": {
@@ -9986,7 +9986,7 @@
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.19.2-203"
+      "version": "v3.19.2-204"
      },
      "rke2-calico-crd": {
       "repo": "rancher-rke2-charts",
@@ -9998,27 +9998,27 @@
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
-      "version": "1.9.808"
+      "version": "1.10.402"
      },
      "rke2-coredns": {
       "repo": "rancher-rke2-charts",
-      "version": "1.10.101-build2021022304"
+      "version": "1.16.201-build2021072308"
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
-      "version": "3.34.002"
+      "version": "3.34.003"
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
-      "version": "2.11.100-build2021022300"
+      "version": "2.11.100-build2021022302"
      },
      "rke2-multus": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.7.1-build2021041603"
+      "version": "v3.7.1-build2021041604"
      }
     },
     "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.0-alpha1",
+    "minChannelServerVersion": "v2.6.1-alpha1",
     "serverArgs": {
      "audit-policy-file": {
       "type": "string"
@@ -10082,7 +10082,7 @@
       "type": "array"
      }
     },
-    "version": "v1.21.4-rc1+rke2r4"
+    "version": "v1.21.5+rke2r1"
    }
   ]
  }
