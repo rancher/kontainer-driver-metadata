@@ -10429,7 +10429,7 @@
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.19.2-204"
+      "version": "v3.19.2-205"
      },
      "rke2-calico-crd": {
       "repo": "rancher-rke2-charts",
@@ -10441,7 +10441,7 @@
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
-      "version": "1.10.402"
+      "version": "1.10.404"
      },
      "rke2-coredns": {
       "repo": "rancher-rke2-charts",
