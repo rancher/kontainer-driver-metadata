@@ -165,4 +165,11 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v2
     agentArgs: *agentArgs-v2
-    charts: *charts-v2
+    charts: &charts-v3
+      <<: *charts-v2
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.10.404
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.19.2-205
