@@ -1,14 +1,14 @@
 releases:
-  - version: v1.19.15+rke2r2
+  - version: v1.19.16+rke2r1
     minChannelServerVersion: v2.6.0-alpha1
     maxChannelServerVersion: v2.6.99
-  - version: v1.20.11+rke2r2
+  - version: v1.20.12+rke2r1
     minChannelServerVersion: v2.6.0-alpha1
     maxChannelServerVersion: v2.6.99
   - version: v1.21.4+rke2r2
     minChannelServerVersion: v2.6.0-alpha1
     maxChannelServerVersion: v2.6.99
-    serverArgs: &serverArgs-v1
+    serverArgs: &serverArgs-v1-21-4-rke2r2
       kube-apiserver-arg:
         type: array
       kube-scheduler-arg:
@@ -53,7 +53,7 @@ releases:
         - multus,canal
         - multus,cilium
         - multus,calico
-    agentArgs: &agentArgs-v1
+    agentArgs: &agentArgs-v1-21-4-rke2r2
       profile:
         type: enum
         options:
@@ -85,7 +85,7 @@ releases:
         type: array
       kube-proxy-arg:
         type: array
-    charts: &charts-v1
+    charts: &charts-v1-21-4-rke2r2
       rke2-cilium:
         repo: rancher-rke2-charts
         version: 1.9.808
@@ -119,10 +119,10 @@ releases:
   - version: v1.21.5+rke2r1
     minChannelServerVersion: v2.6.1-alpha1
     maxChannelServerVersion: v2.6.99
-    serverArgs: &serverArgs-v2
-      <<: *serverArgs-v1
-    agentArgs: &agentArgs-v2
-      <<: *agentArgs-v1
+    serverArgs: &serverArgs-v1-21-5-rke2r1
+      <<: *serverArgs-v1-21-4-rke2r2
+    agentArgs: &agentArgs-v1-21-5-rke2r1
+      <<: *agentArgs-v1-21-4-rke2r2
       cloud-provider-name:
         default: null
         type: enum
@@ -134,8 +134,8 @@ releases:
         - harvester
         - external
         nullable: true
-    charts: &charts-v2
-      <<: *charts-v1
+    charts: &charts-v1-21-5-rke2r1
+      <<: *charts-v1-21-4-rke2r2
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.1.200
@@ -163,13 +163,33 @@ releases:
   - version: v1.21.5+rke2r2
     minChannelServerVersion: v2.6.1-alpha1
     maxChannelServerVersion: v2.6.99
-    serverArgs: *serverArgs-v2
-    agentArgs: *agentArgs-v2
-    charts: &charts-v3
-      <<: *charts-v2
+    serverArgs: &serverArgs-v1-21-5-rke2r2
+      <<: *serverArgs-v1-21-5-rke2r1
+    agentArgs: &agentArgs-v1-21-5-rke2r2
+      <<: *agentArgs-v1-21-5-rke2r1
+    charts: &charts-v1-21-5-rke2r2
+      <<: *charts-v1-21-5-rke2r1
       rke2-cilium:
         repo: rancher-rke2-charts
         version: 1.10.404
       rke2-calico:
         repo: rancher-rke2-charts
         version: v3.19.2-205
+  - version: v1.21.6+rke2r1
+    minChannelServerVersion: v2.6.1-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: &serverArgs-v1-21-6-rke2r1
+      <<: *serverArgs-v1-21-5-rke2r2
+    agentArgs: &agentArgs-v1-21-6-rke2r1
+      <<: *agentArgs-v1-21-5-rke2r2
+    charts: &charts-v1-21-6-rke2r1
+      <<: *charts-v1-21-5-rke2r2
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.20.1-build2021100603
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.16.301-build2021100602
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.0.305
