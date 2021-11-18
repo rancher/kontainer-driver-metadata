@@ -347,7 +347,11 @@ spec:
             {{- if .DefaultBackend}}
             - --default-backend-service=$(POD_NAMESPACE)/default-http-backend
             {{- end}}
+            {{- if .DefaultIngressClass}}
+            - --election-id=ingress-controller-leader-nginx
+            {{- else }}
             - --election-id=ingress-controller-leader
+            {{- end}}
             - --controller-class=k8s.io/ingress-nginx
             - --configmap=$(POD_NAMESPACE)/ingress-nginx-controller
             - --validating-webhook=:8443
