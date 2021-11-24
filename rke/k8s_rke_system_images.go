@@ -3885,10 +3885,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/kubelet-pause:v0.1.6",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.15.7",
 		},
-		// Enabled out of band post v2.5.7
+		// Enabled out of band post v2.5.11
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
-		"v1.17.17-rancher2-3": {
+		"v1.17.17-rancher2-4": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.3-rancher1",
 			Kubernetes:                "rancher/hyperkube:v1.17.17-rancher2",
 			Alpine:                    "rancher/rke-tools:v0.1.74",
@@ -3899,7 +3899,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.15.0",
 			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.15.0",
 			KubeDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.7.1",
-			Flannel:                   "rancher/mirrored-coreos-flannel:v0.12.0",
+			Flannel:                   "rancher/mirrored-coreos-flannel:v0.15.1",
 			FlannelCNI:                "rancher/flannel-cni:v0.3.0-rancher6",
 			CalicoNode:                "rancher/mirrored-calico-node:v3.13.4",
 			CalicoCNI:                 "rancher/mirrored-calico-cni:v3.13.4",
@@ -3908,7 +3908,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CalicoFlexVol:             "rancher/mirrored-calico-pod2daemon-flexvol:v3.13.4",
 			CanalNode:                 "rancher/mirrored-calico-node:v3.13.4",
 			CanalCNI:                  "rancher/mirrored-calico-cni:v3.13.4",
-			CanalFlannel:              "rancher/mirrored-coreos-flannel:v0.12.0",
+			CanalFlannel:              "rancher/mirrored-coreos-flannel:v0.15.1",
 			CanalFlexVol:              "rancher/mirrored-calico-pod2daemon-flexvol:v3.13.4",
 			WeaveNode:                 "weaveworks/weave-kube:2.6.4",
 			WeaveCNI:                  "weaveworks/weave-npc:2.6.4",
@@ -4820,10 +4820,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/kubelet-pause:v0.1.6",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.15.7",
 		},
-		// Enabled out of band post v2.5.8-patch1
+		// Enabled out of band post v2.5.11
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Reminder: This template should remain an exact copy of the template for v2.4.x plus ACI images added
-		"v1.18.20-rancher1-2": {
+		"v1.18.20-rancher1-3": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
 			Kubernetes:                "rancher/hyperkube:v1.18.20-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.75",
@@ -4834,7 +4834,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.15.2",
 			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.15.2",
 			KubeDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.7.1",
-			Flannel:                   "rancher/mirrored-coreos-flannel:v0.12.0",
+			Flannel:                   "rancher/mirrored-coreos-flannel:v0.15.1",
 			FlannelCNI:                "rancher/flannel-cni:v0.3.0-rancher6",
 			CalicoNode:                "rancher/mirrored-calico-node:v3.13.4",
 			CalicoCNI:                 "rancher/mirrored-calico-cni:v3.13.4",
@@ -4843,7 +4843,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CalicoFlexVol:             "rancher/mirrored-calico-pod2daemon-flexvol:v3.13.4",
 			CanalNode:                 "rancher/mirrored-calico-node:v3.13.4",
 			CanalCNI:                  "rancher/mirrored-calico-cni:v3.13.4",
-			CanalFlannel:              "rancher/mirrored-coreos-flannel:v0.12.0",
+			CanalFlannel:              "rancher/mirrored-coreos-flannel:v0.15.1",
 			CanalFlexVol:              "rancher/mirrored-calico-pod2daemon-flexvol:v3.13.4",
 			WeaveNode:                 "weaveworks/weave-kube:2.6.4",
 			WeaveCNI:                  "weaveworks/weave-npc:2.6.4",
@@ -5519,8 +5519,8 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/kubelet-pause:v0.1.6",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.15.13",
 		},
-		// Enabled in v2.5.11
-		"v1.19.16-rancher1-1": {
+		// Enabled out of band post v2.5.11
+		"v1.19.16-rancher1-2": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
 			Kubernetes:                "rancher/hyperkube:v1.19.16-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.78",
@@ -5531,7 +5531,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.15.10",
 			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.15.10",
 			KubeDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.8.1",
-			Flannel:                   "rancher/mirrored-coreos-flannel:v0.13.0",
+			Flannel:                   "rancher/mirrored-coreos-flannel:v0.15.1",
 			FlannelCNI:                "rancher/flannel-cni:v0.3.0-rancher6",
 			CalicoNode:                "rancher/mirrored-calico-node:v3.16.5",
 			CalicoCNI:                 "rancher/mirrored-calico-cni:v3.16.5",
@@ -5541,7 +5541,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CanalNode:                 "rancher/mirrored-calico-node:v3.16.5",
 			CanalCNI:                  "rancher/mirrored-calico-cni:v3.16.5",
 			CanalControllers:          "rancher/mirrored-calico-kube-controllers:v3.16.5",
-			CanalFlannel:              "rancher/coreos-flannel:v0.13.0-rancher1",
+			CanalFlannel:              "rancher/mirrored-coreos-flannel:v0.15.1",
 			CanalFlexVol:              "rancher/mirrored-calico-pod2daemon-flexvol:v3.16.5",
 			WeaveNode:                 "weaveworks/weave-kube:2.7.0",
 			WeaveCNI:                  "weaveworks/weave-npc:2.7.0",
@@ -5910,8 +5910,8 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/kubelet-pause:v0.1.6",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.15.13",
 		},
-		// Enabled in v2.5.11
-		"v1.20.12-rancher1-1": {
+		// Enabled out of band post v2.5.11
+		"v1.20.12-rancher1-2": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
 			Kubernetes:                "rancher/hyperkube:v1.20.12-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.78",
@@ -5922,7 +5922,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.15.10",
 			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.15.10",
 			KubeDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.8.1",
-			Flannel:                   "rancher/mirrored-coreos-flannel:v0.13.0",
+			Flannel:                   "rancher/mirrored-coreos-flannel:v0.15.1",
 			FlannelCNI:                "rancher/flannel-cni:v0.3.0-rancher6",
 			CalicoNode:                "rancher/mirrored-calico-node:v3.17.2",
 			CalicoCNI:                 "rancher/mirrored-calico-cni:v3.17.2",
@@ -5932,7 +5932,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CanalNode:                 "rancher/mirrored-calico-node:v3.17.2",
 			CanalCNI:                  "rancher/mirrored-calico-cni:v3.17.2",
 			CanalControllers:          "rancher/mirrored-calico-kube-controllers:v3.17.2",
-			CanalFlannel:              "rancher/coreos-flannel:v0.13.0-rancher1",
+			CanalFlannel:              "rancher/mirrored-coreos-flannel:v0.15.1",
 			CanalFlexVol:              "rancher/mirrored-calico-pod2daemon-flexvol:v3.17.2",
 			WeaveNode:                 "weaveworks/weave-kube:2.8.1",
 			WeaveCNI:                  "weaveworks/weave-npc:2.8.1",
