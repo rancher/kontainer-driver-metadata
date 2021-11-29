@@ -5,7 +5,7 @@ releases:
   - version: v1.19.16+k3s1
     minChannelServerVersion: v2.6.0-alpha1
     maxChannelServerVersion: v2.6.99
-  - version: v1.20.13-rc1+k3s1
+  - version: v1.20.13+k3s1
     minChannelServerVersion: v2.6.0-alpha1
     maxChannelServerVersion: v2.6.99
   - version: v1.21.4+k3s1
@@ -122,7 +122,7 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v1
     agentArgs: *agentArgs-v1
-  - version: v1.21.7-rc1+k3s1
+  - version: v1.21.7+k3s1
     minChannelServerVersion: v2.6.0-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v2
@@ -130,7 +130,7 @@ releases:
       etcd-arg:
         type: array
     agentArgs: *agentArgs-v1
-  - version: v1.22.4-rc1+k3s1
+  - version: v1.22.4+k3s1
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v2
