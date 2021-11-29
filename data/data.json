@@ -9318,7 +9318,7 @@
    {
     "maxChannelServerVersion": "v2.5.99",
     "minChannelServerVersion": "v2.5.6-rc1",
-    "version": "v1.20.12+k3s1"
+    "version": "v1.20.13+k3s1"
    }
   ]
  },
