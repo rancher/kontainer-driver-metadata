@@ -6098,7 +6098,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.17.4",
 			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.17.4",
 			KubeDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.8.3",
-			Flannel:                   "rancher/mirrored-coreos-flannel:v0.14.0",
+			Flannel:                   "rancher/mirrored-coreos-flannel:v0.15.1",
 			FlannelCNI:                "rancher/flannel-cni:v0.3.0-rancher6",
 			CalicoNode:                "rancher/mirrored-calico-node:v3.20.2",
 			CalicoCNI:                 "rancher/mirrored-calico-cni:v3.20.2",
