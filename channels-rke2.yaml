@@ -199,7 +199,7 @@ releases:
     serverArgs: &serverArgs-v1-21-7-rc2-rke2r1
       <<: *serverArgs-v1-21-5-rke2r2
       etcd-arg:
-        type: string
+        type: array
     agentArgs: &agentArgs-v1-21-7-rc2-rke2r1
       <<: *agentArgs-v1-21-5-rke2r2
     charts: &charts-v1-21-7-rc2-rke2r1
