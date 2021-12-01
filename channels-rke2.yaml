@@ -198,6 +198,8 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v1-21-7-rc2-rke2r1
       <<: *serverArgs-v1-21-5-rke2r2
+      etcd-arg:
+        type: string
     agentArgs: &agentArgs-v1-21-7-rc2-rke2r1
       <<: *agentArgs-v1-21-5-rke2r2
     charts: &charts-v1-21-7-rc2-rke2r1
@@ -223,4 +225,15 @@ releases:
       rke2-multus:
         repo: rancher-rke2-charts
         version: v3.7.1-build2021111906
-  
+  - version: v1.22.4-rc1+rke2r1
+    minChannelServerVersion: v2.6.1-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: &serverArgs-v1-22-4-rc1-rke2r1
+      <<: *serverArgs-v1-21-7-rc2-rke2r2
+    agentArgs: &agentArgs-v1-22-4-rc1-rke2r1
+      <<: *agentArgs-v1-21-5-rke2r2
+    charts: &charts-v1-22-4-rc1-rke2r1
+      <<: *charts-v1-21-7-rc2-rke2r1
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.20.1-build2021111904
