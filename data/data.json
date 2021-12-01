@@ -11575,7 +11575,7 @@
       "type": "boolean"
      },
      "etcd-arg": {
-      "type": "string"
+      "type": "array"
      },
      "etcd-expose-metrics": {
       "default": false,
@@ -11741,7 +11741,7 @@
       "type": "boolean"
      },
      "etcd-arg": {
-      "type": "string"
+      "type": "array"
      },
      "etcd-expose-metrics": {
       "default": false,
