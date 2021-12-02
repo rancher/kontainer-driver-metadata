@@ -193,3 +193,47 @@ releases:
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.0.305
+  - version: v1.21.7-rc3+rke2r1
+    minChannelServerVersion: v2.6.1-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: &serverArgs-v1-21-7-rc3-rke2r1
+      <<: *serverArgs-v1-21-5-rke2r2
+      etcd-arg:
+        type: array
+    agentArgs: &agentArgs-v1-21-7-rc3-rke2r1
+      <<: *agentArgs-v1-21-5-rke2r2
+    charts: &charts-v1-21-7-rc3-rke2r1
+      <<: *charts-v1-21-5-rke2r2
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.20.1-build2021111904
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.0.306
+      rancher-vsphere-cpi:
+        repo: rancher-charts
+        version: 100.1.0+up1.0.100
+      rancher-vsphere-csi:
+        repo: rancher-charts
+        version: 100.1.0+up2.3.0
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.16.401-build2021111901
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 2.11.100-build2021111904
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v3.7.1-build2021111906
+  - version: v1.22.4-rc2+rke2r1
+    minChannelServerVersion: v2.6.3-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: &serverArgs-v1-22-4-rc2-rke2r1
+      <<: *serverArgs-v1-21-7-rc3-rke2r1
+    agentArgs: &agentArgs-v1-22-4-rc2-rke2r1
+      <<: *agentArgs-v1-21-5-rke2r2
+    charts: &charts-v1-22-4-rc2-rke2r1
+      <<: *charts-v1-21-7-rc3-rke2r1
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.20.1-build2021111904
