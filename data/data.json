@@ -10964,7 +10964,7 @@
    {
     "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.0-alpha1",
-    "version": "v1.20.12+rke2r1"
+    "version": "v1.20.13+rke2r1"
    },
    {
     "agentArgs": {
