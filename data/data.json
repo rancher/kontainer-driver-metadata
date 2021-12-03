@@ -8881,6 +8881,10 @@
    "minRKEVersion": "1.1.3-rc0",
    "minRancherVersion": "2.4.5-rc0"
   },
+  "v1.18.20-rancher1-3": {
+   "minRKEVersion": "1.1.3-rc0",
+   "minRancherVersion": "2.4.5-rc0"
+  },
   "v1.18.3-rancher2-1": {
    "minRKEVersion": "1.1.3-rc0",
    "minRancherVersion": "2.4.5-rc0"
