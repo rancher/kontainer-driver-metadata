@@ -3885,10 +3885,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/kubelet-pause:v0.1.6",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.15.7",
 		},
-		// Enabled out of band post v2.5.7
+		// Enabled out of band post v2.5.11
 		// Reminder: This template contains Nodelocal image which isn't in templates before v2.3.6
 		// Reminder: This template contains ACI images which aren't in templates for v2.4.x
-		"v1.17.17-rancher2-3": {
+		"v1.17.17-rancher2-4": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.3-rancher1",
 			Kubernetes:                "rancher/hyperkube:v1.17.17-rancher2",
 			Alpine:                    "rancher/rke-tools:v0.1.74",
@@ -3899,7 +3899,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.15.0",
 			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.15.0",
 			KubeDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.7.1",
-			Flannel:                   "rancher/mirrored-coreos-flannel:v0.12.0",
+			Flannel:                   "rancher/mirrored-coreos-flannel:v0.15.1",
 			FlannelCNI:                "rancher/flannel-cni:v0.3.0-rancher6",
 			CalicoNode:                "rancher/mirrored-calico-node:v3.13.4",
 			CalicoCNI:                 "rancher/mirrored-calico-cni:v3.13.4",
@@ -3908,7 +3908,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CalicoFlexVol:             "rancher/mirrored-calico-pod2daemon-flexvol:v3.13.4",
 			CanalNode:                 "rancher/mirrored-calico-node:v3.13.4",
 			CanalCNI:                  "rancher/mirrored-calico-cni:v3.13.4",
-			CanalFlannel:              "rancher/mirrored-coreos-flannel:v0.12.0",
+			CanalFlannel:              "rancher/mirrored-coreos-flannel:v0.15.1",
 			CanalFlexVol:              "rancher/mirrored-calico-pod2daemon-flexvol:v3.13.4",
 			WeaveNode:                 "weaveworks/weave-kube:2.6.4",
 			WeaveCNI:                  "weaveworks/weave-npc:2.6.4",
