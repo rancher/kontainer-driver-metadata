@@ -11715,11 +11715,11 @@
     "charts": {
      "harvester-cloud-provider": {
       "repo": "rancher-rke2-charts",
-      "version": "0.1.200"
+      "version": "0.1.300"
      },
      "harvester-csi-driver": {
       "repo": "rancher-rke2-charts",
-      "version": "0.1.300"
+      "version": "0.1.400"
      },
      "rancher-vsphere-cpi": {
       "repo": "rancher-charts",
@@ -11881,11 +11881,11 @@
     "charts": {
      "harvester-cloud-provider": {
       "repo": "rancher-rke2-charts",
-      "version": "0.1.200"
+      "version": "0.1.300"
      },
      "harvester-csi-driver": {
       "repo": "rancher-rke2-charts",
-      "version": "0.1.300"
+      "version": "0.1.400"
      },
      "rancher-vsphere-cpi": {
       "repo": "rancher-charts",
@@ -11897,11 +11897,11 @@
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.19.2-205"
+      "version": "v3.20.201"
      },
      "rke2-calico-crd": {
       "repo": "rancher-rke2-charts",
-      "version": "v1.0.101"
+      "version": "v1.0.202"
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
