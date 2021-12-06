@@ -11830,7 +11830,7 @@
       "type": "array"
      }
     },
-    "version": "v1.21.7+rke2r1"
+    "version": "v1.21.7+rke2r2"
    },
    {
     "agentArgs": {
@@ -11996,7 +11996,7 @@
       "type": "array"
      }
     },
-    "version": "v1.22.4+rke2r1"
+    "version": "v1.22.4+rke2r2"
    }
   ]
  }
