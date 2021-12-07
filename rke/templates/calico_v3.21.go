@@ -1,19 +1,20 @@
 package templates
 
 /*
-CalicoTemplateV3_20_2 is based on upstream canal v3.20.2
+CalicoTemplateV3_21_1 is based on upstream canal v3.21.1
 Upstream Changelog:
 - Add fixed timeoutSeconds (10)
 - Add lifecycle preStop command
 - Add cni-net-dir volumeMount
 - Add discovery.k8s.io apigroup to ClusterRole
+- Add new required CRDs
 Rancher Changelog:
 - No new Rancher specific changes, same as CalicoTemplateV3_19_0
 */
 
-const CalicoTemplateV3_20_2 = `
+const CalicoTemplateV3_21_1 = `
 {{- $cidrs := splitList "," .ClusterCIDR }}
-# Calico Template based on Calico v3.20.2
+# Calico Template based on Calico v3.21.1
 ---
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Calico installation.
@@ -272,8 +273,8 @@ spec:
                   in the specific branch of the Node on "bird.cfg".
                 type: boolean
               maxRestartTime:
-                description: Time to allow for software restart.  When specified, this
-                  is configured as the graceful restart timeout.  When not specified,
+                description: Time to allow for software restart.  When specified,
+                  this is configured as the graceful restart timeout.  When not specified,
                   the BIRD default of 120s is used.
                 type: string
               node:
@@ -410,6 +411,269 @@ status:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: (devel)
+  creationTimestamp: null
+  name: caliconodestatuses.crd.projectcalico.org
+spec:
+  group: crd.projectcalico.org
+  names:
+    kind: CalicoNodeStatus
+    listKind: CalicoNodeStatusList
+    plural: caliconodestatuses
+    singular: caliconodestatus
+  scope: Cluster
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: CalicoNodeStatusSpec contains the specification for a CalicoNodeStatus
+              resource.
+            properties:
+              classes:
+                description: Classes declares the types of information to monitor
+                  for this calico/node, and allows for selective status reporting
+                  about certain subsets of information.
+                items:
+                  type: string
+                type: array
+              node:
+                description: The node name identifies the Calico node instance for
+                  node status.
+                type: string
+              updatePeriodSeconds:
+                description: UpdatePeriodSeconds is the period at which CalicoNodeStatus
+                  should be updated. Set to 0 to disable CalicoNodeStatus refresh.
+                  Maximum update period is one day.
+                format: int32
+                type: integer
+            type: object
+          status:
+            description: CalicoNodeStatusStatus defines the observed state of CalicoNodeStatus.
+              No validation needed for status since it is updated by Calico.
+            properties:
+              agent:
+                description: Agent holds agent status on the node.
+                properties:
+                  birdV4:
+                    description: BIRDV4 represents the latest observed status of bird4.
+                    properties:
+                      lastBootTime:
+                        description: LastBootTime holds the value of lastBootTime
+                          from bird.ctl output.
+                        type: string
+                      lastReconfigurationTime:
+                        description: LastReconfigurationTime holds the value of lastReconfigTime
+                          from bird.ctl output.
+                        type: string
+                      routerID:
+                        description: Router ID used by bird.
+                        type: string
+                      state:
+                        description: The state of the BGP Daemon.
+                        type: string
+                      version:
+                        description: Version of the BGP daemon
+                        type: string
+                    type: object
+                  birdV6:
+                    description: BIRDV6 represents the latest observed status of bird6.
+                    properties:
+                      lastBootTime:
+                        description: LastBootTime holds the value of lastBootTime
+                          from bird.ctl output.
+                        type: string
+                      lastReconfigurationTime:
+                        description: LastReconfigurationTime holds the value of lastReconfigTime
+                          from bird.ctl output.
+                        type: string
+                      routerID:
+                        description: Router ID used by bird.
+                        type: string
+                      state:
+                        description: The state of the BGP Daemon.
+                        type: string
+                      version:
+                        description: Version of the BGP daemon
+                        type: string
+                    type: object
+                type: object
+              bgp:
+                description: BGP holds node BGP status.
+                properties:
+                  numberEstablishedV4:
+                    description: The total number of IPv4 established bgp sessions.
+                    type: integer
+                  numberEstablishedV6:
+                    description: The total number of IPv6 established bgp sessions.
+                    type: integer
+                  numberNotEstablishedV4:
+                    description: The total number of IPv4 non-established bgp sessions.
+                    type: integer
+                  numberNotEstablishedV6:
+                    description: The total number of IPv6 non-established bgp sessions.
+                    type: integer
+                  peersV4:
+                    description: PeersV4 represents IPv4 BGP peers status on the node.
+                    items:
+                      description: CalicoNodePeer contains the status of BGP peers
+                        on the node.
+                      properties:
+                        peerIP:
+                          description: IP address of the peer whose condition we are
+                            reporting.
+                          type: string
+                        since:
+                          description: Since the state or reason last changed.
+                          type: string
+                        state:
+                          description: State is the BGP session state.
+                          type: string
+                        type:
+                          description: Type indicates whether this peer is configured
+                            via the node-to-node mesh, or via en explicit global or
+                            per-node BGPPeer object.
+                          type: string
+                      type: object
+                    type: array
+                  peersV6:
+                    description: PeersV6 represents IPv6 BGP peers status on the node.
+                    items:
+                      description: CalicoNodePeer contains the status of BGP peers
+                        on the node.
+                      properties:
+                        peerIP:
+                          description: IP address of the peer whose condition we are
+                            reporting.
+                          type: string
+                        since:
+                          description: Since the state or reason last changed.
+                          type: string
+                        state:
+                          description: State is the BGP session state.
+                          type: string
+                        type:
+                          description: Type indicates whether this peer is configured
+                            via the node-to-node mesh, or via en explicit global or
+                            per-node BGPPeer object.
+                          type: string
+                      type: object
+                    type: array
+                required:
+                - numberEstablishedV4
+                - numberEstablishedV6
+                - numberNotEstablishedV4
+                - numberNotEstablishedV6
+                type: object
+              lastUpdated:
+                description: LastUpdated is a timestamp representing the server time
+                  when CalicoNodeStatus object last updated. It is represented in
+                  RFC3339 form and is in UTC.
+                format: date-time
+                nullable: true
+                type: string
+              routes:
+                description: Routes reports routes known to the Calico BGP daemon
+                  on the node.
+                properties:
+                  routesV4:
+                    description: RoutesV4 represents IPv4 routes on the node.
+                    items:
+                      description: CalicoNodeRoute contains the status of BGP routes
+                        on the node.
+                      properties:
+                        destination:
+                          description: Destination of the route.
+                          type: string
+                        gateway:
+                          description: Gateway for the destination.
+                          type: string
+                        interface:
+                          description: Interface for the destination
+                          type: string
+                        learnedFrom:
+                          description: LearnedFrom contains information regarding
+                            where this route originated.
+                          properties:
+                            peerIP:
+                              description: If sourceType is NodeMesh or BGPPeer, IP
+                                address of the router that sent us this route.
+                              type: string
+                            sourceType:
+                              description: Type of the source where a route is learned
+                                from.
+                              type: string
+                          type: object
+                        type:
+                          description: Type indicates if the route is being used for
+                            forwarding or not.
+                          type: string
+                      type: object
+                    type: array
+                  routesV6:
+                    description: RoutesV6 represents IPv6 routes on the node.
+                    items:
+                      description: CalicoNodeRoute contains the status of BGP routes
+                        on the node.
+                      properties:
+                        destination:
+                          description: Destination of the route.
+                          type: string
+                        gateway:
+                          description: Gateway for the destination.
+                          type: string
+                        interface:
+                          description: Interface for the destination
+                          type: string
+                        learnedFrom:
+                          description: LearnedFrom contains information regarding
+                            where this route originated.
+                          properties:
+                            peerIP:
+                              description: If sourceType is NodeMesh or BGPPeer, IP
+                                address of the router that sent us this route.
+                              type: string
+                            sourceType:
+                              description: Type of the source where a route is learned
+                                from.
+                              type: string
+                          type: object
+                        type:
+                          description: Type indicates if the route is being used for
+                            forwarding or not.
+                          type: string
+                      type: object
+                    type: array
+                type: object
+            type: object
+        type: object
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
   name: clusterinformations.crd.projectcalico.org
 spec:
   group: crd.projectcalico.org
@@ -518,7 +782,7 @@ spec:
                 type: boolean
               awsSrcDstCheck:
                 description: 'Set source-destination-check on AWS EC2 instances. Accepted
-                  value must be one of "DoNothing", "Enabled" or "Disabled". [Default:
+                  value must be one of "DoNothing", "Enable" or "Disable". [Default:
                   DoNothing]'
                 enum:
                 - DoNothing
@@ -552,6 +816,13 @@ spec:
                 description: 'BPFEnabled, if enabled Felix will use the BPF dataplane.
                   [Default: false]'
                 type: boolean
+              bpfExtToServiceConnmark:
+                description: 'BPFExtToServiceConnmark in BPF mode, controls a
+                  32bit mark that is set on connections from an external client to
+                  a local service. This mark allows us to control how packets of
+                  that connection are routed within the host and how is routing
+                  intepreted by RPF check. [Default: 0]'
+                type: integer
               bpfExternalServiceMode:
                 description: 'BPFExternalServiceMode in BPF mode, controls how connections
                   from outside the cluster to services (node ports and cluster IPs)
@@ -562,13 +833,6 @@ spec:
                   node appears to use the IP of the ingress node; this requires a
                   permissive L2 network.  [Default: Tunnel]'
                 type: string
-              bpfExtToServiceConnmark:
-                description: 'BPFExtToServiceConnmark in BPF mode, controls a
-                  32bit mark that is set on connections from an external client to
-                  a local service. This mark allows us to control how packets of
-                  that connection are routed within the host and how is routing
-                  intepreted by RPF check. [Default: 0]'
-                type: integer
               bpfKubeProxyEndpointSlicesEnabled:
                 description: BPFKubeProxyEndpointSlicesEnabled in BPF mode, controls
                   whether Felix's embedded kube-proxy accepts EndpointSlices or not.
@@ -1207,8 +1471,8 @@ spec:
                             within the selected service(s) will be matched, and only
                             to/from each endpoint's port. \n Services cannot be specified
                             on the same rule as Selector, NotSelector, NamespaceSelector,
-                            Ports, NotPorts, Nets, NotNets or ServiceAccounts. \n
-                            Only valid on egress rules."
+                            Nets, NotNets or ServiceAccounts. \n Ports and NotPorts
+                            can only be specified with Services on ingress rules."
                           properties:
                             name:
                               description: Name specifies the name of a Kubernetes
@@ -1433,8 +1697,8 @@ spec:
                             within the selected service(s) will be matched, and only
                             to/from each endpoint's port. \n Services cannot be specified
                             on the same rule as Selector, NotSelector, NamespaceSelector,
-                            Ports, NotPorts, Nets, NotNets or ServiceAccounts. \n
-                            Only valid on egress rules."
+                            Nets, NotNets or ServiceAccounts. \n Ports and NotPorts
+                            can only be specified with Services on ingress rules."
                           properties:
                             name:
                               description: Name specifies the name of a Kubernetes
@@ -1580,8 +1844,8 @@ spec:
                             within the selected service(s) will be matched, and only
                             to/from each endpoint's port. \n Services cannot be specified
                             on the same rule as Selector, NotSelector, NamespaceSelector,
-                            Ports, NotPorts, Nets, NotNets or ServiceAccounts. \n
-                            Only valid on egress rules."
+                            Nets, NotNets or ServiceAccounts. \n Ports and NotPorts
+                            can only be specified with Services on ingress rules."
                           properties:
                             name:
                               description: Name specifies the name of a Kubernetes
@@ -1806,8 +2070,8 @@ spec:
                             within the selected service(s) will be matched, and only
                             to/from each endpoint's port. \n Services cannot be specified
                             on the same rule as Selector, NotSelector, NamespaceSelector,
-                            Ports, NotPorts, Nets, NotNets or ServiceAccounts. \n
-                            Only valid on egress rules."
+                            Nets, NotNets or ServiceAccounts. \n Ports and NotPorts
+                            can only be specified with Services on ingress rules."
                           properties:
                             name:
                               description: Name specifies the name of a Kubernetes
@@ -2279,6 +2543,12 @@ spec:
           spec:
             description: IPPoolSpec contains the specification for an IPPool resource.
             properties:
+              allowedUses:
+                description: AllowedUse controls what the IP pool will be used for.  If
+                  not specified or empty, defaults to ["Tunnel", "Workload"] for back-compatibility
+                items:
+                  type: string
+                type: array
               blockSize:
                 description: The block size to use for IP address assignments from
                   this pool. Defaults to 26 for IPv4 and 112 for IPv6.
@@ -2289,6 +2559,10 @@ spec:
               disabled:
                 description: When disabled is true, Calico IPAM will not assign addresses
                   from this pool.
+                type: boolean
+              disableBGPExport:
+                description: 'Disable exporting routes from this IP Pool’s CIDR over
+                  BGP. [Default: false]'
                 type: boolean
               ipip:
                 description: 'Deprecated: this field is only used for APIv1 backwards
@@ -2334,6 +2608,57 @@ spec:
                 type: string
             required:
             - cidr
+            type: object
+        type: object
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: ipreservations.crd.projectcalico.org
+spec:
+  group: crd.projectcalico.org
+  names:
+    kind: IPReservation
+    listKind: IPReservationList
+    plural: ipreservations
+    singular: ipreservation
+  scope: Cluster
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: IPReservationSpec contains the specification for an IPReservation
+              resource.
+            properties:
+              reservedCIDRs:
+                description: ReservedCIDRs is a list of CIDRs and/or IP addresses
+                  that Calico IPAM will exclude from new allocations.
+                items:
+                  type: string
+                type: array
             type: object
         type: object
     served: true
@@ -2749,8 +3074,8 @@ spec:
                             within the selected service(s) will be matched, and only
                             to/from each endpoint's port. \n Services cannot be specified
                             on the same rule as Selector, NotSelector, NamespaceSelector,
-                            Ports, NotPorts, Nets, NotNets or ServiceAccounts. \n
-                            Only valid on egress rules."
+                            Nets, NotNets or ServiceAccounts. \n Ports and NotPorts
+                            can only be specified with Services on ingress rules."
                           properties:
                             name:
                               description: Name specifies the name of a Kubernetes
@@ -2975,8 +3300,8 @@ spec:
                             within the selected service(s) will be matched, and only
                             to/from each endpoint's port. \n Services cannot be specified
                             on the same rule as Selector, NotSelector, NamespaceSelector,
-                            Ports, NotPorts, Nets, NotNets or ServiceAccounts. \n
-                            Only valid on egress rules."
+                            Nets, NotNets or ServiceAccounts. \n Ports and NotPorts
+                            can only be specified with Services on ingress rules."
                           properties:
                             name:
                               description: Name specifies the name of a Kubernetes
@@ -3122,8 +3447,8 @@ spec:
                             within the selected service(s) will be matched, and only
                             to/from each endpoint's port. \n Services cannot be specified
                             on the same rule as Selector, NotSelector, NamespaceSelector,
-                            Ports, NotPorts, Nets, NotNets or ServiceAccounts. \n
-                            Only valid on egress rules."
+                            Nets, NotNets or ServiceAccounts. \n Ports and NotPorts
+                            can only be specified with Services on ingress rules."
                           properties:
                             name:
                               description: Name specifies the name of a Kubernetes
@@ -3348,8 +3673,8 @@ spec:
                             within the selected service(s) will be matched, and only
                             to/from each endpoint's port. \n Services cannot be specified
                             on the same rule as Selector, NotSelector, NamespaceSelector,
-                            Ports, NotPorts, Nets, NotNets or ServiceAccounts. \n
-                            Only valid on egress rules."
+                            Nets, NotNets or ServiceAccounts. \n Ports and NotPorts
+                            can only be specified with Services on ingress rules."
                           properties:
                             name:
                               description: Name specifies the name of a Kubernetes
@@ -3506,6 +3831,7 @@ rules:
   - apiGroups: ["crd.projectcalico.org"]
     resources:
       - ippools
+      - ipreservations
     verbs:
       - list
   - apiGroups: ["crd.projectcalico.org"]
@@ -3646,6 +3972,7 @@ rules:
       - globalbgpconfigs
       - bgpconfigurations
       - ippools
+      - ipreservations
       - ipamblocks
       - globalnetworkpolicies
       - globalnetworksets
@@ -3654,6 +3981,7 @@ rules:
       - clusterinformations
       - hostendpoints
       - blockaffinities
+      - caliconodestatuses
     verbs:
       - get
       - list
@@ -3666,6 +3994,12 @@ rules:
       - clusterinformations
     verbs:
       - create
+      - update
+  # Calico must update some CRDs.
+  - apiGroups: [ "crd.projectcalico.org" ]
+    resources:
+      - caliconodestatuses
+    verbs:
       - update
   # Calico stores some configuration information on the node.
   - apiGroups: [""]
