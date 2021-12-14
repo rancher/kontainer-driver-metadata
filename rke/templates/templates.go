@@ -130,10 +130,12 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":        canalv18,
 		},
 		kdm.Flannel: {
-			">=1.21.0-alpha":                    flannelv0140,
-			">=1.16.0-alpha <1.21.0-alpha":      flannelv116,
-			">=1.15.0-rancher0 <1.16.0-alpha":   flannelv115,
-			">=1.8.0-rancher0 <1.15.0-rancher0": flannelv18,
+			">=1.20.13-rancher1-1":               flannelv0140,
+			">=1.20.0-alpha <1.20.13-rancher1-1": flannelv116,
+			">=1.19.16-rancher1-3 <1.20.0-alpha": flannelv0140,
+			">=1.16.0-alpha <1.19.16-rancher1-3": flannelv116,
+			">=1.15.0-rancher0 <1.16.0-alpha":    flannelv115,
+			">=1.8.0-rancher0 <1.15.0-rancher0":  flannelv18,
 		},
 		kdm.CoreDNS: {
 			">=1.21.0-rancher1-1":               coreDnsv183,
