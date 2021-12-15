@@ -5999,9 +5999,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.15.13",
 		},
 		// Enabled out of band post v2.5.11
-		"v1.20.13-rancher1-1": {
+		"v1.20.14-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
-			Kubernetes:                "rancher/hyperkube:v1.20.13-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.20.14-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.78",
 			NginxProxy:                "rancher/rke-tools:v0.1.78",
 			CertDownloader:            "rancher/rke-tools:v0.1.78",
