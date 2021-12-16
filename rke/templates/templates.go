@@ -23,6 +23,7 @@ const (
 	calicov3165          = "calico-v3.16.5"
 	calicov3171          = "calico-v3.17.1"
 	calicov319           = "calico-v3.19.0"
+	calicov3211          = "calico-v3.21.1"
 
 	canalv18                      = "canal-v1.8"
 	canalv113                     = "canal-v1.13"
@@ -38,6 +39,7 @@ const (
 	canalv3165                    = "canal-v3.16.5"
 	canalv3171                    = "canal-v3.17.1"
 	canalv319                     = "canal-v3.19.0"
+	canalv3211                    = "canal-v3.21.1"
 
 	flannelv18   = "flannel-v1.8"
 	flannelv115  = "flannel-v1.15"
@@ -59,6 +61,7 @@ const (
 	weavev18  = "weave-v1.8"
 	weavev116 = "weave-v1.16"
 	weavev120 = "weave-v1.20"
+	weavev122 = "weave-v1.22"
 	/* aciv500 Supports k8s versions 1.17 and 1.18 */
 	/* Versioning: va.b.c-<special-attr/base-if-none>-x.y.z where a.b.c is ACI version and x.y.z is the k8s version,
 	if required
@@ -70,6 +73,7 @@ const (
 	nginxIngressV11512 = "nginxingress-v1.15.12"
 	nginxIngressv0481  = "nginxingress-v0.48.1"
 	nginxIngressv0493  = "nginxingress-v0.49.3"
+	nginxIngressv110   = "nginxingress-v1.1.0"
 
 	nodelocalv115 = "nodelocal-v1.15"
 	nodelocalv121 = "nodelocal-v1.21"
@@ -82,7 +86,8 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.21.0-rancher1-1":                    calicov319,
+			">=1.22.0-rancher1-1":                    calicov3211,
+			">=1.21.0-rancher1-1 <1.22.0-rancher1-1": calicov319,
 			">=1.20.4-rancher1-1 <1.21.0-rancher1-1": calicov3171,
 			">=1.19.4-rancher1-2 <1.20.4-rancher1-1": calicov3165,
 			">=1.19.0-rancher0 <1.19.4-rancher1-2":   calicov3160,
@@ -103,7 +108,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
 		kdm.Canal: {
-			">=1.21.0-rancher1-1":                      canalv319,
+			">=1.22.0-rancher1-1":                      canalv3211,
+			">=1.21.0-rancher1-1 <1.22.0-rancher1-1":   canalv319,
 			">=1.20.4-rancher1-1 <1.21.0-rancher1-1":   canalv3171,
 			">=1.19.4-rancher1-2 <1.20.4-rancher1-1":   canalv3165,
 			">=1.19.0-rancher0 <1.19.4-rancher1-2":     canalv3160,
@@ -145,9 +151,10 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.20.4-rancher1-1": metricsServerv18,
 		},
 		kdm.Weave: {
-			">=1.20.4-rancher1-1":               weavev120,
-			">=1.16.0-alpha <1.20.4-rancher1-1": weavev116,
-			">=1.8.0-rancher0 <1.16.0-alpha":    weavev18,
+			">=1.22.0-rancher1-1":                    weavev122,
+			">=1.20.4-rancher1-1 <1.22.0-rancher1-1": weavev120,
+			">=1.16.0-alpha <1.20.4-rancher1-1":      weavev116,
+			">=1.8.0-rancher0 <1.16.0-alpha":         weavev18,
 		},
 		kdm.Aci: {
 			">=1.17.0-alpha": aciv500,
@@ -170,7 +177,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.20.0-rancher0 <1.20.12-rancher1-1":   nginxIngressV11512,
 			">=1.20.12-rancher1-1 <1.21.0-rancher0":   nginxIngressv0493,
 			">=1.21.0-rancher0 <1.21.6-rancher1-1":    nginxIngressv0481,
-			">=1.21.6-rancher1-1":                     nginxIngressv0493,
+			">=1.21.6-rancher1-1 <1.22.0-rancher1-1":  nginxIngressv0493,
+			">=1.22.0-rancher1-1":                     nginxIngressv110,
 		},
 		kdm.Nodelocal: {
 			">=1.15.11-rancher0 <1.16.0-alpha":     nodelocalv115,
@@ -196,6 +204,7 @@ func getTemplates() map[string]string {
 		calicov3165:          CalicoTemplateV3_16_5,
 		calicov3171:          CalicoTemplateV3_17_1,
 		calicov319:           CalicoTemplateV3_19_0,
+		calicov3211:          CalicoTemplateV3_21_1,
 
 		flannelv115:  FlannelTemplateV115,
 		flannelv116:  FlannelTemplateV116,
@@ -216,6 +225,7 @@ func getTemplates() map[string]string {
 		canalv3165:                    CanalTemplateV3_16_5,
 		canalv3171:                    CanalTemplateV3_17_1,
 		canalv319:                     CanalTemplateV3_19_0,
+		canalv3211:                    CanalTemplateV3_21_1,
 
 		coreDnsv18:  CoreDNSTemplate,
 		coreDnsv116: CoreDNSTemplateV116,
@@ -232,6 +242,7 @@ func getTemplates() map[string]string {
 		weavev18:  WeaveTemplate,
 		weavev116: WeaveTemplateV116,
 		weavev120: WeaveTemplateV120,
+		weavev122: WeaveTemplateV122,
 
 		aciv500: AciTemplateV500,
 
@@ -240,6 +251,7 @@ func getTemplates() map[string]string {
 		nginxIngressV11512: NginxIngressTemplateV0320Rancher1,
 		nginxIngressv0481:  NginxIngressTemplateV0481Rancher1,
 		nginxIngressv0493:  NginxIngressTemplateV0493Rancher1,
+		nginxIngressv110:   NginxIngressTemplateV110Rancher1,
 
 		nodelocalv115: NodelocalTemplateV115,
 		nodelocalv121: NodelocalTemplateV121,

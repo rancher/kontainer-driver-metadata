@@ -15,6 +15,14 @@ const (
 
 func loadK8sVersionServiceOptions() map[string]v3.KubernetesServicesOptions {
 	return map[string]v3.KubernetesServicesOptions{
+		"v1.22": {
+			Etcd:           getETCDOptions122(),
+			KubeAPI:        getKubeAPIOptions121(),
+			Kubelet:        getKubeletOptions116(),
+			KubeController: getKubeControllerOptions(),
+			Kubeproxy:      getKubeProxyOptions(),
+			Scheduler:      getSchedulerOptions(),
+		},
 		"v1.21": {
 			Etcd:           getETCDOptions117(),
 			KubeAPI:        getKubeAPIOptions121(),
@@ -481,5 +489,12 @@ func getETCDOptions117() map[string]string {
 		"client-cert-auth":      "true",
 		"peer-client-cert-auth": "true",
 		"enable-v2":             "true",
+	}
+}
+
+func getETCDOptions122() map[string]string {
+	return map[string]string{
+		"client-cert-auth":      "true",
+		"peer-client-cert-auth": "true",
 	}
 }
