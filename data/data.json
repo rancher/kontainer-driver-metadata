@@ -10239,7 +10239,7 @@
  "k3s": {
   "channels": [
    {
-    "latest": "v1.21.7+k3s1",
+    "latest": "v1.21.8+k3s1",
     "name": "default"
    }
   ],
@@ -10257,7 +10257,7 @@
    {
     "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.0-alpha1",
-    "version": "v1.20.13+k3s1"
+    "version": "v1.20.14-rc1+k3s1"
    },
    {
     "agentArgs": {
@@ -10996,114 +10996,85 @@
      }
     },
     "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.3-alpha1",
-    "serverArgs": {
-     "cluster-cidr": {
+    "minChannelServerVersion": "v2.6.0-alpha1",
+    "serverArgs": null,
+    "version": "v1.21.8+k3s1"
+   },
+   {
+    "agentArgs": {
+     "docker": {
+      "default": false,
+      "type": "boolean"
+     },
+     "flannel-conf": {
       "type": "string"
      },
-     "cluster-dns": {
+     "flannel-iface": {
       "type": "string"
      },
-     "cluster-domain": {
-      "type": "string"
-     },
-     "datastore-cafile": {
-      "type": "string"
-     },
-     "datastore-certfile": {
-      "type": "string"
-     },
-     "datastore-endpoint": {
-      "type": "string"
-     },
-     "datastore-keyfile": {
-      "type": "string"
-     },
-     "default-local-storage-path": {
-      "type": "string"
-     },
-     "disable": {
-      "options": [
-       "coredns",
-       "servicelb",
-       "traefik",
-       "local-storage",
-       "metrics-server"
-      ],
+     "kube-proxy-arg": {
       "type": "array"
      },
-     "disable-apiserver": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-cloud-controller": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-controller-manager": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-etcd": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-kube-proxy": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-network-policy": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-scheduler": {
-      "default": false,
-      "type": "boolean"
-     },
-     "etcd-arg": {
+     "kubelet-arg": {
       "type": "array"
      },
-     "etcd-expose-metrics": {
-      "default": false,
-      "type": "boolean"
-     },
-     "flannel-backend": {
-      "options": [
-       "none",
-       "vxlan",
-       "ipsec",
-       "host-gw",
-       "wireguard"
-      ],
-      "type": "enum"
-     },
-     "kube-apiserver-arg": {
-      "type": "array"
-     },
-     "kube-cloud-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-arg": {
-      "type": "array"
-     },
-     "secrets-encryption": {
-      "default": false,
-      "type": "boolean"
-     },
-     "service-cidr": {
+     "pause-image": {
       "type": "string"
      },
-     "service-node-port-range": {
-      "type": "string"
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
      },
-     "tls-san": {
-      "type": "array"
+     "selinux": {
+      "default": false,
+      "type": "boolean"
+     },
+     "snapshotter": {
+      "type": "string"
      }
     },
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.3-alpha1",
+    "serverArgs": null,
     "version": "v1.22.4+k3s1"
+   },
+   {
+    "agentArgs": {
+     "docker": {
+      "default": false,
+      "type": "boolean"
+     },
+     "flannel-conf": {
+      "type": "string"
+     },
+     "flannel-iface": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "selinux": {
+      "default": false,
+      "type": "boolean"
+     },
+     "snapshotter": {
+      "type": "string"
+     }
+    },
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.3-alpha1",
+    "serverArgs": null,
+    "version": "v1.22.5+k3s1"
    }
   ]
  },
