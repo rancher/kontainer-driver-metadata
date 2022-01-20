@@ -3,8 +3,10 @@ package templates
 /*
 Rancher Changelog:
 - Added annotation 'ingressclass.kubernetes.io/is-default-class: "true"' to IngressClass for setting the default
+- Removed "allow-snippet-annotations", CVE CVE-2021-25742 https://github.com/kubernetes/ingress-nginx/issues/7837 is fixed so fallback to upstream default
+- Added tcp-services-configmap and udp-services-configmap, present in upstream chart by default but not in static/orovider/cloud/deploy.yaml
 */
-const NginxIngressTemplateV110Rancher1 = `
+const NginxIngressTemplateV110Rancher2 = `
 # Based on https://github.com/kubernetes/ingress-nginx/blob/controller-v1.1.0/deploy/static/provider/cloud/deploy.yaml
 apiVersion: v1
 kind: Namespace
@@ -42,17 +44,21 @@ metadata:
   name: ingress-nginx-controller
   namespace: ingress-nginx
 data:
-# Rancher specific: allow-snippet-annotations default value is set to false to address CVE-2021-25742 https://github.com/kubernetes/ingress-nginx/issues/7837
-{{- if $v := (index .Options "allow-snippet-annotations") }}
-  allow-snippet-annotations: "{{ $v }}"
-{{- else }}
-  allow-snippet-annotations: "false"
-{{- end }}
 {{- range $k,$v := .Options }}
-{{- if ne $k "allow-snippet-annotations" }}
   {{ $k }}: "{{ $v }}"
 {{- end }}
-{{- end }}
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: tcp-services
+  namespace: ingress-nginx
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: udp-services
+  namespace: ingress-nginx
 {{- if eq .RBACConfig "rbac" }}
 ---
 # Source: ingress-nginx/templates/clusterrole.yaml
@@ -354,6 +360,8 @@ spec:
             {{- end}}
             - --controller-class=k8s.io/ingress-nginx
             - --configmap=$(POD_NAMESPACE)/ingress-nginx-controller
+            - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
+            - --udp-services-configmap=$(POD_NAMESPACE)/udp-services
             - --validating-webhook=:8443
             - --validating-webhook-certificate=/usr/local/certificates/cert
             - --validating-webhook-key=/usr/local/certificates/key
