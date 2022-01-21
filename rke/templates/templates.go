@@ -146,9 +146,9 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.16.0-alpha": kubeDnsv18,
 		},
 		kdm.MetricsServer: {
-			">=1.21.0-alpha":                      metricsServerv050,
-			">=1.20.4-rancher1-1 <1.21.0-alpha":   metricsServerv120,
-			">=1.8.0-rancher0 <1.20.4-rancher1-1": metricsServerv18,
+			">=1.20.14-rancher2-1":                    metricsServerv050,
+			">=1.20.4-rancher1-1 <1.20.14-rancher2-1": metricsServerv120,
+			">=1.8.0-rancher0 <1.20.4-rancher1-1":     metricsServerv18,
 		},
 		kdm.Weave: {
 			">=1.22.0-rancher1-1":                    weavev122,
