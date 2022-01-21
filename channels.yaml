@@ -1,6 +1,6 @@
 channels:
   - name: default
-    latest: v1.21.7+k3s1
+    latest: v1.21.8+k3s2
 releases:
   - version: v1.18.20+k3s1
     minChannelServerVersion: v2.6.0-alpha1
@@ -8,7 +8,7 @@ releases:
   - version: v1.19.16+k3s1
     minChannelServerVersion: v2.6.0-alpha1
     maxChannelServerVersion: v2.6.99
-  - version: v1.20.14+k3s1
+  - version: v1.20.14+k3s2
     minChannelServerVersion: v2.6.0-alpha1
     maxChannelServerVersion: v2.6.99
   - version: v1.21.4+k3s1
@@ -133,7 +133,17 @@ releases:
       etcd-arg:
         type: array
     agentArgs: *agentArgs-v1
+  - version: v1.21.8+k3s2
+    minChannelServerVersion: v2.6.0-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v2
+    agentArgs: *agentArgs-v1
   - version: v1.22.4+k3s1
+    minChannelServerVersion: v2.6.3-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v2
+    agentArgs: *agentArgs-v1
+  - version: v1.22.5+k3s2
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v2
