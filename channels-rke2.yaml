@@ -91,7 +91,7 @@ releases:
     charts: &charts-v1-21-4-rke2r2
       rke2-cilium:
         repo: rancher-rke2-charts
-        version: 1.9.808
+        version: 1.9.809
       rke2-canal:
         repo: rancher-rke2-charts
         version: v3.13.300-build2021022306
@@ -103,16 +103,16 @@ releases:
         version: v1.0.101
       rke2-coredns:
         repo: rancher-rke2-charts
-        version: 1.10.101-build2021022304
+        version: 1.16.201-build2021072308
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
-        version: 3.34.002
+        version: 3.34.003
       rke2-metrics-server:
         repo: rancher-rke2-charts
-        version: 2.11.100-build2021022300
+        version: 2.11.100-build2021022302
       rke2-multus:
         repo: rancher-rke2-charts
-        version: v3.7.1-build2021041603
+        version: v3.7.1-build2021041604
       rancher-vsphere-cpi:
         repo: rancher-charts
         version: 100.0.0
