@@ -22,4 +22,4 @@ if [ -n "$DIRTY" ]; then
 fi
 
 echo Checking if released versions are not changed
-bash check-kdm-data.sh
+python3 check-kdm-data.py release-v2.5 release-v2.6
