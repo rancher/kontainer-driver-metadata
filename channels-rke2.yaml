@@ -252,18 +252,15 @@ releases:
   - version: v1.21.9-rc1+rke2r1
     minChannelServerVersion: v2.6.1-alpha1
     maxChannelServerVersion: v2.6.99
-    serverArgs: &serverArgs-v1.21.9-rc1+rke2r1
-      <<: *serverArgs-v1-21-7-rke2r2
-    agentArgs: &agentArgs-v1.21.9-rc1+rke2r1
-      <<: *agentArgs-v1-21-7-rke2r2
-    charts: &charts-v1.21.9-rc1+rke2r1
-      <<: *charts-v1-21-7-rke2r2
-      harvester-cloud-provider:
+    serverArgs: &serverArgs-v1-21-9-rc1-rke2r1
+      <<: *serverArgs-v1-21-8-rke2r2
+    agentArgs: &agentArgs-v1-21-9-rc1-rke2r1
+      <<: *agentArgs-v1-21-8-rke2r2
+    charts: &charts-v1-21-9-rc1-rke2r1
+      <<: *charts-v1-21-8-rke2r2
+      rke2-canal:
         repo: rancher-rke2-charts
-        version: 0.1.800
-      harvester-csi-driver:
-        repo: rancher-rke2-charts
-        version: 0.1.900        
+        version: v3.20.3-build2022011406
   - version: v1.22.4+rke2r2
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
@@ -297,15 +294,12 @@ releases:
   - version: v1.22.6-rc1+rke2r1
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
-    serverArgs: &serverArgs-v1.22.6-rc1+rke2r1
-      <<: *serverArgs-v1-22-4-rke2r2
-    agentArgs: &agentArgs-v1.22.6-rc1+rke2r1
-      <<: *agentArgs-v1-22-4-rke2r2
-    charts: &charts-v1.22.6-rc1+rke2r1
-      <<: *charts-v1-22-4-rke2r2
-      harvester-cloud-provider:
+    serverArgs: &serverArgs-v1-22-6-rc1-rke2r1
+      <<: *serverArgs-v1-22-5-rke2r2
+    agentArgs: &agentArgs-v1-22-6-rc1-rke2r1
+      <<: *agentArgs-v1-22-5-rke2r2
+    charts: &charts-v1-22-6-rc1-rke2r1
+      <<: *charts-v1-22-5-rke2r2
+      rke2-canal:
         repo: rancher-rke2-charts
-        version: 0.1.800
-      harvester-csi-driver:
-        repo: rancher-rke2-charts
-        version: 0.1.900
+        version: v3.20.3-build2022011406
