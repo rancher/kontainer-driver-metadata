@@ -5,9 +5,8 @@ Rancher Changelog:
 - Added annotation 'ingressclass.kubernetes.io/is-default-class: "true"' to IngressClass for setting the default
 - Removed "allow-snippet-annotations", CVE CVE-2021-25742 https://github.com/kubernetes/ingress-nginx/issues/7837 is fixed so fallback to upstream default
 - Added tcp-services-configmap and udp-services-configmap, present in upstream chart by default but not in static/orovider/cloud/deploy.yaml
-- Added "default-ingress-class" in ExtraArgs, this is to support DefaultIngressClass field in types which was added in RKE v1.3.3.
 */
-const NginxIngressTemplateV110Rancher2 = `
+const NginxIngressTemplateV110Rancher3 = `
 # Based on https://github.com/kubernetes/ingress-nginx/blob/controller-v1.1.0/deploy/static/provider/cloud/deploy.yaml
 apiVersion: v1
 kind: Namespace
@@ -46,6 +45,7 @@ metadata:
   namespace: ingress-nginx
 data:
 {{- range $k,$v := .Options }}
+  {{ $k }}: "{{ $v }}"
 {{- end }}
 ---
 kind: ConfigMap
@@ -212,11 +212,11 @@ rules:
     # Here: "<ingress-controller-leader>-<nginx>"
     # This has to be adapted if you change either parameter
     # when launching the nginx-ingress-controller.
-{{- if and ($v := (index .ExtraArgs "default-ingress-class")) (eq $v "false") }}
-      - ingress-controller-leader
-{{- else }}
+    {{- if .DefaultIngressClass}}
       - ingress-controller-leader-nginx
-{{- end }}
+    {{- else }}
+      - ingress-controller-leader
+    {{- end}}
     verbs:
       - get
       - update
@@ -353,11 +353,11 @@ spec:
             {{- if .DefaultBackend}}
             - --default-backend-service=$(POD_NAMESPACE)/default-http-backend
             {{- end}}
-            {{- if and ($v := (index .ExtraArgs "default-ingress-class")) (eq $v "false") }}
-            - --election-id=ingress-controller-leader
-            {{- else }}
+            {{- if .DefaultIngressClass}}
             - --election-id=ingress-controller-leader-nginx
-            {{- end }}
+            {{- else }}
+            - --election-id=ingress-controller-leader
+            {{- end}}
             - --controller-class=k8s.io/ingress-nginx
             - --configmap=$(POD_NAMESPACE)/ingress-nginx-controller
             - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
@@ -366,15 +366,8 @@ spec:
             - --validating-webhook-certificate=/usr/local/certificates/cert
             - --validating-webhook-key=/usr/local/certificates/key
           {{- range $k, $v := .ExtraArgs }}
-          {{- if ne $k "default-ingress-class"}}
             - --{{ $k }}{{if ne $v "" }}={{ $v }}{{end}}
           {{- end }}
-          {{- end }}
-          {{with (index .ExtraArgs "watch-ingress-without-class")}}
-            - --watch-ingress-without-class={{.}}
-          {{else}}
-            - --watch-ingress-without-class=true
-          {{end}}
           securityContext:
           {{- if ne .NetworkMode "none" }}
             capabilities:
@@ -489,11 +482,10 @@ metadata:
     app.kubernetes.io/component: controller
   name: nginx
   namespace: ingress-nginx
-{{- if and ($v := (index .ExtraArgs "default-ingress-class")) (eq $v "false") }}
-{{- else }}
+  {{- if .DefaultIngressClass}}
   annotations:
     ingressclass.kubernetes.io/is-default-class: "true"
-{{- end }}
+  {{- end}}
 spec:
   controller: k8s.io/ingress-nginx
 ---
