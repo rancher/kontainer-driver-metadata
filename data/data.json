@@ -10763,6 +10763,9 @@
       "default": false,
       "type": "boolean"
      },
+     "resolv-conf": {
+      "type": "string"
+     },
      "selinux": {
       "default": false,
       "type": "boolean"
@@ -10902,6 +10905,9 @@
      "protect-kernel-defaults": {
       "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
      },
      "selinux": {
       "default": false,
@@ -11043,6 +11049,9 @@
       "default": false,
       "type": "boolean"
      },
+     "resolv-conf": {
+      "type": "string"
+     },
      "selinux": {
       "default": false,
       "type": "boolean"
@@ -11183,6 +11192,9 @@
       "default": false,
       "type": "boolean"
      },
+     "resolv-conf": {
+      "type": "string"
+     },
      "selinux": {
       "default": false,
       "type": "boolean"
@@ -11322,6 +11334,9 @@
      "protect-kernel-defaults": {
       "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
      },
      "selinux": {
       "default": false,
@@ -11466,6 +11481,9 @@
       "default": false,
       "type": "boolean"
      },
+     "resolv-conf": {
+      "type": "string"
+     },
      "selinux": {
       "default": false,
       "type": "boolean"
@@ -11608,6 +11626,9 @@
      "protect-kernel-defaults": {
       "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
      },
      "selinux": {
       "default": false,
@@ -11755,6 +11776,9 @@
       "default": false,
       "type": "boolean"
      },
+     "resolv-conf": {
+      "type": "string"
+     },
      "selinux": {
       "default": false,
       "type": "boolean"
@@ -11898,6 +11922,9 @@
       "default": false,
       "type": "boolean"
      },
+     "resolv-conf": {
+      "type": "string"
+     },
      "selinux": {
       "default": false,
       "type": "boolean"
@@ -12040,6 +12067,9 @@
      "protect-kernel-defaults": {
       "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
      },
      "selinux": {
       "default": false,
@@ -12187,6 +12217,12 @@
      "audit-policy-file": {
       "type": "string"
      },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "cloud-provider-config": {
       "type": "string"
      },
@@ -12202,7 +12238,43 @@
       ],
       "type": "enum"
      },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
       "type": "array"
      },
      "kubelet-arg": {
@@ -12219,6 +12291,9 @@
      "protect-kernel-defaults": {
       "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
      },
      "selinux": {
       "type": "bool"
@@ -12341,6 +12416,12 @@
      "audit-policy-file": {
       "type": "string"
      },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "cloud-provider-config": {
       "type": "string"
      },
@@ -12357,7 +12438,43 @@
       ],
       "type": "enum"
      },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
       "type": "array"
      },
      "kubelet-arg": {
@@ -12374,6 +12491,9 @@
      "protect-kernel-defaults": {
       "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
      },
      "selinux": {
       "type": "bool"
@@ -12504,6 +12624,12 @@
      "audit-policy-file": {
       "type": "string"
      },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "cloud-provider-config": {
       "type": "string"
      },
@@ -12520,7 +12646,43 @@
       ],
       "type": "enum"
      },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
       "type": "array"
      },
      "kubelet-arg": {
@@ -12537,6 +12699,9 @@
      "protect-kernel-defaults": {
       "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
      },
      "selinux": {
       "type": "bool"
@@ -12667,6 +12832,12 @@
      "audit-policy-file": {
       "type": "string"
      },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "cloud-provider-config": {
       "type": "string"
      },
@@ -12683,7 +12854,43 @@
       ],
       "type": "enum"
      },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
       "type": "array"
      },
      "kubelet-arg": {
@@ -12700,6 +12907,9 @@
      "protect-kernel-defaults": {
       "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
      },
      "selinux": {
       "type": "bool"
@@ -12830,6 +13040,12 @@
      "audit-policy-file": {
       "type": "string"
      },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "cloud-provider-config": {
       "type": "string"
      },
@@ -12846,7 +13062,43 @@
       ],
       "type": "enum"
      },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
       "type": "array"
      },
      "kubelet-arg": {
@@ -12863,6 +13115,9 @@
      "protect-kernel-defaults": {
       "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
      },
      "selinux": {
       "type": "bool"
@@ -12996,6 +13251,12 @@
      "audit-policy-file": {
       "type": "string"
      },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "cloud-provider-config": {
       "type": "string"
      },
@@ -13012,7 +13273,43 @@
       ],
       "type": "enum"
      },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
       "type": "array"
      },
      "kubelet-arg": {
@@ -13029,6 +13326,9 @@
      "protect-kernel-defaults": {
       "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
      },
      "selinux": {
       "type": "bool"
@@ -13162,6 +13462,12 @@
      "audit-policy-file": {
       "type": "string"
      },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "cloud-provider-config": {
       "type": "string"
      },
@@ -13178,7 +13484,43 @@
       ],
       "type": "enum"
      },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
       "type": "array"
      },
      "kubelet-arg": {
@@ -13195,6 +13537,9 @@
      "protect-kernel-defaults": {
       "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
      },
      "selinux": {
       "type": "bool"
@@ -13328,6 +13673,12 @@
      "audit-policy-file": {
       "type": "string"
      },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "cloud-provider-config": {
       "type": "string"
      },
@@ -13344,7 +13695,43 @@
       ],
       "type": "enum"
      },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
       "type": "array"
      },
      "kubelet-arg": {
@@ -13361,6 +13748,9 @@
      "protect-kernel-defaults": {
       "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
      },
      "selinux": {
       "type": "bool"
@@ -13494,6 +13884,12 @@
      "audit-policy-file": {
       "type": "string"
      },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "cloud-provider-config": {
       "type": "string"
      },
@@ -13510,7 +13906,43 @@
       ],
       "type": "enum"
      },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
       "type": "array"
      },
      "kubelet-arg": {
@@ -13527,6 +13959,9 @@
      "protect-kernel-defaults": {
       "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
      },
      "selinux": {
       "type": "bool"
@@ -13660,6 +14095,12 @@
      "audit-policy-file": {
       "type": "string"
      },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "cloud-provider-config": {
       "type": "string"
      },
@@ -13676,7 +14117,43 @@
       ],
       "type": "enum"
      },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
      "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
       "type": "array"
      },
      "kubelet-arg": {
@@ -13693,6 +14170,9 @@
      "protect-kernel-defaults": {
       "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
      },
      "selinux": {
       "type": "bool"
