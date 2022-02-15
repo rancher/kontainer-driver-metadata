@@ -12296,6 +12296,9 @@
       ],
       "type": "array"
      },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
      "disable": {
       "options": [
        "rke2-coredns",
@@ -12304,19 +12307,34 @@
       ],
       "type": "array"
      },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
      "disable-kube-proxy": {
       "default": false,
       "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
      },
      "etcd-expose-metrics": {
       "default": false,
       "type": "boolean"
      },
+     "etcd-image": {
+      "type": "string"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
      "kube-controller-manager-arg": {
       "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
      },
      "kube-proxy-arg": {
       "type": "array"
@@ -12324,10 +12342,25 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
      "service-cidr": {
       "type": "string"
      },
      "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
       "type": "string"
      },
      "tls-san": {
@@ -12459,6 +12492,9 @@
       ],
       "type": "array"
      },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
      "disable": {
       "options": [
        "rke2-coredns",
@@ -12467,19 +12503,34 @@
       ],
       "type": "array"
      },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
      "disable-kube-proxy": {
       "default": false,
       "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
      },
      "etcd-expose-metrics": {
       "default": false,
       "type": "boolean"
      },
+     "etcd-image": {
+      "type": "string"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
      "kube-controller-manager-arg": {
       "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
      },
      "kube-proxy-arg": {
       "type": "array"
@@ -12487,10 +12538,25 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
      "service-cidr": {
       "type": "string"
      },
      "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
       "type": "string"
      },
      "tls-san": {
@@ -12622,6 +12688,9 @@
       ],
       "type": "array"
      },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
      "disable": {
       "options": [
        "rke2-coredns",
@@ -12630,19 +12699,34 @@
       ],
       "type": "array"
      },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
      "disable-kube-proxy": {
       "default": false,
       "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
      },
      "etcd-expose-metrics": {
       "default": false,
       "type": "boolean"
      },
+     "etcd-image": {
+      "type": "string"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
      "kube-controller-manager-arg": {
       "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
      },
      "kube-proxy-arg": {
       "type": "array"
@@ -12650,10 +12734,25 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
      "service-cidr": {
       "type": "string"
      },
      "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
       "type": "string"
      },
      "tls-san": {
@@ -12785,6 +12884,9 @@
       ],
       "type": "array"
      },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
      "disable": {
       "options": [
        "rke2-coredns",
@@ -12793,19 +12895,34 @@
       ],
       "type": "array"
      },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
      "disable-kube-proxy": {
       "default": false,
       "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
      },
      "etcd-expose-metrics": {
       "default": false,
       "type": "boolean"
      },
+     "etcd-image": {
+      "type": "string"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
      "kube-controller-manager-arg": {
       "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
      },
      "kube-proxy-arg": {
       "type": "array"
@@ -12813,10 +12930,25 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
      "service-cidr": {
       "type": "string"
      },
      "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
       "type": "string"
      },
      "tls-san": {
@@ -12948,6 +13080,9 @@
       ],
       "type": "array"
      },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
      "disable": {
       "options": [
        "rke2-coredns",
@@ -12956,9 +13091,15 @@
       ],
       "type": "array"
      },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
      "disable-kube-proxy": {
       "default": false,
       "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
      },
      "etcd-arg": {
       "type": "array"
@@ -12967,11 +13108,20 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-image": {
+      "type": "string"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
      "kube-controller-manager-arg": {
       "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
      },
      "kube-proxy-arg": {
       "type": "array"
@@ -12979,10 +13129,25 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
      "service-cidr": {
       "type": "string"
      },
      "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
       "type": "string"
      },
      "tls-san": {
@@ -13114,6 +13279,9 @@
       ],
       "type": "array"
      },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
      "disable": {
       "options": [
        "rke2-coredns",
@@ -13122,9 +13290,15 @@
       ],
       "type": "array"
      },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
      "disable-kube-proxy": {
       "default": false,
       "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
      },
      "etcd-arg": {
       "type": "array"
@@ -13133,11 +13307,20 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-image": {
+      "type": "string"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
      "kube-controller-manager-arg": {
       "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
      },
      "kube-proxy-arg": {
       "type": "array"
@@ -13145,10 +13328,25 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
      "service-cidr": {
       "type": "string"
      },
      "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
       "type": "string"
      },
      "tls-san": {
@@ -13280,6 +13478,9 @@
       ],
       "type": "array"
      },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
      "disable": {
       "options": [
        "rke2-coredns",
@@ -13288,9 +13489,15 @@
       ],
       "type": "array"
      },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
      "disable-kube-proxy": {
       "default": false,
       "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
      },
      "etcd-arg": {
       "type": "array"
@@ -13299,11 +13506,20 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-image": {
+      "type": "string"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
      "kube-controller-manager-arg": {
       "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
      },
      "kube-proxy-arg": {
       "type": "array"
@@ -13311,10 +13527,25 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
      "service-cidr": {
       "type": "string"
      },
      "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
       "type": "string"
      },
      "tls-san": {
@@ -13446,6 +13677,9 @@
       ],
       "type": "array"
      },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
      "disable": {
       "options": [
        "rke2-coredns",
@@ -13454,9 +13688,15 @@
       ],
       "type": "array"
      },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
      "disable-kube-proxy": {
       "default": false,
       "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
      },
      "etcd-arg": {
       "type": "array"
@@ -13465,11 +13705,20 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-image": {
+      "type": "string"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
      "kube-controller-manager-arg": {
       "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
      },
      "kube-proxy-arg": {
       "type": "array"
@@ -13477,10 +13726,25 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
      "service-cidr": {
       "type": "string"
      },
      "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
       "type": "string"
      },
      "tls-san": {
@@ -13612,6 +13876,9 @@
       ],
       "type": "array"
      },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
      "disable": {
       "options": [
        "rke2-coredns",
@@ -13620,9 +13887,15 @@
       ],
       "type": "array"
      },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
      "disable-kube-proxy": {
       "default": false,
       "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
      },
      "etcd-arg": {
       "type": "array"
@@ -13631,11 +13904,20 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-image": {
+      "type": "string"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
      "kube-controller-manager-arg": {
       "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
      },
      "kube-proxy-arg": {
       "type": "array"
@@ -13643,10 +13925,25 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
      "service-cidr": {
       "type": "string"
      },
      "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
       "type": "string"
      },
      "tls-san": {
@@ -13778,6 +14075,9 @@
       ],
       "type": "array"
      },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
      "disable": {
       "options": [
        "rke2-coredns",
@@ -13786,9 +14086,15 @@
       ],
       "type": "array"
      },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
      "disable-kube-proxy": {
       "default": false,
       "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
      },
      "etcd-arg": {
       "type": "array"
@@ -13797,11 +14103,20 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-image": {
+      "type": "string"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
      "kube-controller-manager-arg": {
       "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
      },
      "kube-proxy-arg": {
       "type": "array"
@@ -13809,10 +14124,25 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
      "service-cidr": {
       "type": "string"
      },
      "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
       "type": "string"
      },
      "tls-san": {
