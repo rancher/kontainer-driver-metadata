@@ -56,6 +56,28 @@ releases:
         - multus,canal
         - multus,cilium
         - multus,calico
+      container-runtime-endpoint:
+        type: string
+      snapshotter:
+        type: string
+      kube-apiserver-image:
+        type: string
+      kube-controller-manager-image:
+        type: string
+      kube-scheduler-image:
+        type: string
+      pause-image:
+        type: string
+      runtime-image:
+        type: string
+      etcd-image:
+        type: string
+      disable-scheduler:
+        type: bool
+      disable-cloud-controller:
+        type: bool
+      kubelet-path:
+        type: string
     agentArgs: &agentArgs-v1-21-4-rke2r2
       profile:
         type: enum
