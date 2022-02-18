@@ -288,19 +288,24 @@ spec:
                 cpu: "20m"
                 memory: "10Mi"
         livenessProbe:
-            httpGet:
-                path: /health
-                port: 8080
-                scheme: HTTP
-            initialDelaySeconds: 60
-            timeoutSeconds: 5
-            successThreshold: 1
-            failureThreshold: 5
+          failureThreshold: 5
+          httpGet:
+            path: /healthz
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 60
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 5
         readinessProbe:
-            httpGet:
-                path: /ready
-                port: 8181
-                scheme: HTTP
+          failureThreshold: 3
+          httpGet:
+            path: /healthz
+            port: 8080
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
         command:
           - /cluster-proportional-autoscaler
           - --namespace=kube-system
