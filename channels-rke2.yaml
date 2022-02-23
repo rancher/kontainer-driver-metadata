@@ -379,3 +379,6 @@ releases:
       rke2-canal:
         repo: rancher-rke2-charts
         version: v3.21.4-build2022020801
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.21.401
