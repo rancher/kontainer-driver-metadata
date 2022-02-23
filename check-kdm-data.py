@@ -1,29 +1,35 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
-import requests
+import io
 import json
-import yaml
-from tempfile import TemporaryDirectory
+import sys
 from subprocess import Popen
+from tempfile import TemporaryDirectory
+
+import requests
+import yaml
 
 
-class ReleaseDataMissing(Exception):
+class KDMException(Exception):
+    pass
+
+
+class ReleaseDataMissing(KDMException):
     def __init__(self, dist, version):
         self.dist = dist
         self.version = version
         super().__init__(f"Configuration for released {dist} version {version} is missing")
 
 
-class ReleaseDataChanged(Exception):
+class ReleaseDataChanged(KDMException):
     def __init__(self, dist, version):
         self.dist = dist
         self.version = version
         super().__init__(f"Images for released {dist} version {version} have changed")
 
 
-class UnexpectedHelmChart(Exception):
+class UnexpectedHelmChart(KDMException):
     def __init__(self, chart, version, repo, url):
         self.chart = chart
         self.version = version
@@ -77,16 +83,18 @@ def check_rke2_charts(versions):
         if not charts:
             continue
 
+        print(f"Checking rke2 {version} chart metadata against rke2-runtime chart manifests")
+
         image = f"docker.io/rancher/rke2-runtime:{version.replace('+', '-')}"
         with TemporaryDirectory(version) as tmp:
-            with Popen(['wharfie', image, tmp]) as wharfie:
+            with Popen(['wharfie', image, f"/charts:{tmp}/charts"]) as wharfie:
                 retcode = wharfie.wait()
                 if retcode != 0:
                     print(f"Unable to extract rke2 runtime image {image}; skipping chart validation")
                     continue
 
             for chart, info in charts.items():
-                print(f"Checking RKE2 {version} {info['repo']}/{chart}@{info['version']}")
+                print(f"Checking rke2 {version} {info['repo']}/{chart}@{info['version']}")
                 with open(f"{tmp}/charts/{chart}.yaml") as manifest:
                     manifest_yaml = yaml.safe_load(manifest)
                     chart_url = manifest_yaml.get('metadata', {}).get('annotations', {}).get('helm.cattle.io/chart-url')
@@ -108,7 +116,9 @@ def check_versions(dev, release, dist):
                 raise ReleaseDataMissing(dist, version)
         else:
             # Rancher kubernetes release images cannot be changed after the fact
-            if dev[version] != config:
+            if version not in dev:
+                raise ReleaseDataMissing(dist, version)
+            elif dev.get(version, {}) != config:
                 raise ReleaseDataChanged(dist, version)
 
 
@@ -117,4 +127,15 @@ if __name__ == '__main__':
         print(f"Usage: {sys.argv[0]} <release> [<release> ...]")
         exit(1)
 
-    main(*sys.argv[1:])
+    # disable buffering on stdout/stderr because Drone does terrible things to buffered text output
+    sys.stdout = io.TextIOWrapper(open(sys.stdout.fileno(), 'wb', 0), write_through=True)
+    sys.stderr = io.TextIOWrapper(open(sys.stderr.fileno(), 'wb', 0), write_through=True)
+
+    try:
+        main(*sys.argv[1:])
+    except KDMException as e:
+        print(e, file=sys.stderr)
+        exit(1)
+    except requests.HTTPError as e:
+        print(f"Failed to download KDM release data: {e}", file=sys.stderr)
+        exit(1)
