@@ -15114,7 +15114,7 @@
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.20.201"
+      "version": "v3.21.401"
      },
      "rke2-calico-crd": {
       "repo": "rancher-rke2-charts",
