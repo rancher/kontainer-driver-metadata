@@ -1,11 +1,11 @@
 channels:
   - name: default
-    latest: v1.21.9+rke2r1
+    latest: v1.21.10+rke2r1
 releases:
   - version: v1.19.16+rke2r1
     minChannelServerVersion: v2.6.0-alpha1
     maxChannelServerVersion: v2.6.99
-  - version: v1.20.15+rke2r1
+  - version: v1.20.15+rke2r2
     minChannelServerVersion: v2.6.0-alpha1
     maxChannelServerVersion: v2.6.99
   - version: v1.21.4+rke2r2
@@ -313,6 +313,18 @@ releases:
       rke2-canal:
         repo: rancher-rke2-charts
         version: v3.20.3-build2022011406
+  - version: v1.21.10+rke2r1
+    minChannelServerVersion: v2.6.1-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: &serverArgs-v1-21-10-rke2r1
+      <<: *serverArgs-v1-21-9-rke2r1
+    agentArgs: &agentArgs-v1-21-10-rke2r1
+      <<: *agentArgs-v1-21-9-rke2r1
+    charts: &charts-v1-21-10-rke2r1
+      <<: *charts-v1-21-9-rke2r1
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.21.4-build2022020801
   - version: v1.22.4+rke2r2
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
@@ -355,3 +367,18 @@ releases:
       rke2-canal:
         repo: rancher-rke2-charts
         version: v3.20.3-build2022011406
+  - version: v1.22.7+rke2r1
+    minChannelServerVersion: v2.6.3-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: &serverArgs-v1-22-7-rke2r1
+      <<: *serverArgs-v1-22-6-rke2r1
+    agentArgs: &agentArgs-v1-22-7-rke2r1
+      <<: *agentArgs-v1-22-6-rke2r1
+    charts: &charts-v1-22-7-rke2r1
+      <<: *charts-v1-22-6-rke2r1
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.21.4-build2022020801
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.21.401
