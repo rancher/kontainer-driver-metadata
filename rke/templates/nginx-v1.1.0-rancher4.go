@@ -6,8 +6,11 @@ Rancher Changelog:
 - Removed "allow-snippet-annotations", CVE CVE-2021-25742 https://github.com/kubernetes/ingress-nginx/issues/7837 is fixed so fallback to upstream default
 - Added tcp-services-configmap and udp-services-configmap, present in upstream chart by default but not in static/orovider/cloud/deploy.yaml
 - Added "default-ingress-class" in ExtraArgs, this is to support DefaultIngressClass field in types which was added in RKE v1.3.3.
+- Added options assignment in ingress-nginx-controller configmap.
 */
-const NginxIngressTemplateV110Rancher2 = `
+// dev-v2.5 doesn't have Rancher3 template because it is in use by dev-v2.6.
+
+const NginxIngressTemplateV110Rancher4 = `
 # Based on https://github.com/kubernetes/ingress-nginx/blob/controller-v1.1.0/deploy/static/provider/cloud/deploy.yaml
 apiVersion: v1
 kind: Namespace
@@ -46,6 +49,7 @@ metadata:
   namespace: ingress-nginx
 data:
 {{- range $k,$v := .Options }}
+  {{ $k }}: "{{ $v }}"
 {{- end }}
 ---
 kind: ConfigMap
