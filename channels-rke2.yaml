@@ -424,6 +424,9 @@ releases:
       rke2-calico:
         repo: rancher-rke2-charts
         version: v3.21.402
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.21.402
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.1.1000
