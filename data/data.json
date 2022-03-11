@@ -14844,7 +14844,7 @@
      }
     },
     "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.1-alpha1",
+    "minChannelServerVersion": "v2.6.4-alpha1",
     "serverArgs": {
      "audit-policy-file": {
       "type": "string"
