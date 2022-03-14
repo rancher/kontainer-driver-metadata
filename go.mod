@@ -11,6 +11,7 @@ require (
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/rancher/rke v1.3.0-rc8.0.20210706205346-22b82828ffa0
 	github.com/sirupsen/logrus v1.7.0
+	github.com/stretchr/testify v1.7.0
 	k8s.io/client-go v12.0.0+incompatible // indirect
 	sigs.k8s.io/yaml v1.2.0
 )
