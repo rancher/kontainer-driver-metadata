@@ -10,6 +10,9 @@ go mod tidy
 echo Running go mod verify
 go mod verify
 
+echo Running go test
+go test ./rke/...
+
 echo Running go generate
 go generate
 
