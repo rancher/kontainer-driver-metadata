@@ -1,6 +1,6 @@
 channels:
   - name: default
-    latest: v1.21.10+k3s1
+    latest: v1.23.4+k3s1
 releases:
   - version: v1.18.20+k3s1
     minChannelServerVersion: v2.6.0-alpha1
