@@ -11015,7 +11015,7 @@
  "k3s": {
   "channels": [
    {
-    "latest": "v1.21.10+k3s1",
+    "latest": "v1.23.4+k3s1",
     "name": "default"
    }
   ],
@@ -12941,7 +12941,7 @@
  "rke2": {
   "channels": [
    {
-    "latest": "v1.21.10+rke2r2",
+    "latest": "v1.23.4+rke2r2",
     "name": "default"
    }
   ],
