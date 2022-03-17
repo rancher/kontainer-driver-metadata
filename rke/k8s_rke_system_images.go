@@ -7049,7 +7049,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			IngressBackend:            "rancher/mirrored-nginx-ingress-controller-defaultbackend:1.5-rancher1",
 			IngressWebhook:            "rancher/mirrored-ingress-nginx-kube-webhook-certgen:v1.1.1",
 			MetricsServer:             "rancher/mirrored-metrics-server:v0.6.1",
-			CoreDNS:                   "coredns/coredns:1.9.0",
+			CoreDNS:                   "rancher/mirrored-coredns-coredns:1.9.0",
 			CoreDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.8.5",
 			WindowsPodInfraContainer:  "rancher/kubelet-pause:v0.1.6",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.21.1",
