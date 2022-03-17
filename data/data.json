@@ -9629,7 +9629,7 @@
    "dnsmasq": "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.21.1",
    "kubednsSidecar": "rancher/mirrored-k8s-dns-sidecar:1.21.1",
    "kubednsAutoscaler": "rancher/mirrored-cluster-proportional-autoscaler:1.8.5",
-   "coredns": "coredns/coredns:1.9.0",
+   "coredns": "rancher/mirrored-coredns-coredns:1.9.0",
    "corednsAutoscaler": "rancher/mirrored-cluster-proportional-autoscaler:1.8.5",
    "nodelocal": "rancher/mirrored-k8s-dns-node-cache:1.21.1",
    "kubernetes": "rancher/hyperkube:v1.23.4-rancher1",
