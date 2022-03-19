@@ -7,7 +7,7 @@ func loadK8sVersionWindowsServiceOptions() map[string]v3.KubernetesServicesOptio
 	return map[string]v3.KubernetesServicesOptions{
 		"v1.23": {
 			Kubelet:   getWindowsKubeletOptions121(),
-			Kubeproxy: getWindowsKubeProxyOptions121(),
+			Kubeproxy: getWindowsKubeProxyOptions123(),
 		},
 		"v1.22": {
 			Kubelet:   getWindowsKubeletOptions121(),
@@ -95,6 +95,17 @@ func getWindowsKubeletOptions121() map[string]string {
 	delete(kubeletOptions, "feature-gates")
 
 	return kubeletOptions
+}
+
+func getWindowsKubeProxyOptions123() map[string]string {
+	kubeProxyOptions := getKubeProxyOptions()
+
+	// use kernelspace proxy mode
+	kubeProxyOptions["proxy-mode"] = "kernelspace"
+	// disable Windows DSR support explicitly
+	kubeProxyOptions["enable-dsr"] = "false"
+
+	return kubeProxyOptions
 }
 
 func getWindowsKubeProxyOptions121() map[string]string {
