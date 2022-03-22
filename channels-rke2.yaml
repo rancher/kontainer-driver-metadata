@@ -441,10 +441,4 @@ releases:
         version: v3.22.101
       rke2-calico-crd:
         repo: rancher-rke2-charts
-        version: v1.0.202
-      rancher-vsphere-cpi:
-        repo: rancher-rke2-charts
-        version: 1.1.002
-      rancher-vsphere-csi:
-        repo: rancher-rke2-charts
-        version: 2.5.0-rancher100        
+        version: v1.0.202      
