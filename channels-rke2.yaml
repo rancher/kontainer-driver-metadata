@@ -1,6 +1,6 @@
 channels:
   - name: default
-    latest: v1.23.4+rke2r2
+    latest: v1.22.7+rke2r2
 releases:
   - version: v1.19.16+rke2r1
     minChannelServerVersion: v2.6.0-alpha1
@@ -394,30 +394,15 @@ releases:
       rke2-canal:
         repo: rancher-rke2-charts
         version: v3.20.3-build2022011406
-  - version: v1.22.7+rke2r1
-    minChannelServerVersion: v2.6.3-alpha1
-    maxChannelServerVersion: v2.6.99
-    serverArgs: &serverArgs-v1-22-7-rke2r1
-      <<: *serverArgs-v1-22-6-rke2r1
-    agentArgs: &agentArgs-v1-22-7-rke2r1
-      <<: *agentArgs-v1-22-6-rke2r1
-    charts: &charts-v1-22-7-rke2r1
-      <<: *charts-v1-22-6-rke2r1
-      rke2-canal:
-        repo: rancher-rke2-charts
-        version: v3.21.4-build2022020801
-      rke2-calico:
-        repo: rancher-rke2-charts
-        version: v3.21.401
   - version: v1.22.7+rke2r2
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v1-22-7-rke2r2
-      <<: *serverArgs-v1-22-7-rke2r1
+      <<: *serverArgs-v1-22-6-rke2r1
     agentArgs: &agentArgs-v1-22-7-rke2r2
-      <<: *agentArgs-v1-22-7-rke2r1
+      <<: *agentArgs-v1-22-6-rke2r1
     charts: &charts-v1-22-7-rke2r2
-      <<: *charts-v1-22-7-rke2r1
+      <<: *charts-v1-22-6-rke2r1
       rke2-canal:
         repo: rancher-rke2-charts
         version: v3.21.4-build2022022801
@@ -434,10 +419,10 @@ releases:
         repo: rancher-rke2-charts
         version: 0.1.1000
       rancher-vsphere-cpi:
-        repo: rancher-charts
+        repo: rancher-rke2-charts
         version: 1.1.000
       rancher-vsphere-csi:
-        repo: rancher-charts
+        repo: rancher-rke2-charts
         version: 2.4.1-rancher100
   - version: v1.23.4+rke2r2
     minChannelServerVersion: v2.6.4-alpha1
@@ -456,4 +441,4 @@ releases:
         version: v3.22.101
       rke2-calico-crd:
         repo: rancher-rke2-charts
-        version: v1.0.202
+        version: v1.0.202      
