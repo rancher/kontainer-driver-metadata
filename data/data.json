@@ -12179,7 +12179,7 @@
      }
     },
     "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.0-alpha1",
+    "minChannelServerVersion": "v2.6.3-alpha1",
     "serverArgs": {
      "cluster-cidr": {
       "type": "string"
@@ -14876,7 +14876,7 @@
      }
     },
     "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.4-alpha1",
+    "minChannelServerVersion": "v2.6.3-alpha1",
     "serverArgs": {
      "audit-policy-file": {
       "type": "string"
