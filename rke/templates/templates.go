@@ -46,10 +46,11 @@ const (
 	flannelv116  = "flannel-v1.16"
 	flannelv0140 = "flannel-v0.14.0"
 
-	coreDnsv18  = "coredns-v1.8"
-	coreDnsv116 = "coredns-v1.16"
-	coreDnsv117 = "coredns-v1.17"
-	coreDnsv183 = "coredns-v1.8.3"
+	coreDnsv18          = "coredns-v1.8"
+	coreDnsv116         = "coredns-v1.16"
+	coreDnsv117         = "coredns-v1.17"
+	coreDnsv183         = "coredns-v1.8.3"
+	coreDnsv183Rancher2 = "coredns-v1.8.3-rancher2"
 
 	kubeDnsv18  = "kubedns-v1.8"
 	kubeDnsv116 = "kubedns-v1.16"
@@ -57,6 +58,7 @@ const (
 	metricsServerv18  = "metricsserver-v1.8"
 	metricsServerv120 = "metricsserver-v1.20"
 	metricsServerv050 = "metricsserver-v0.5.0"
+	metricsServerv061 = "metricsserver-v0.6.1"
 
 	weavev18  = "weave-v1.8"
 	weavev116 = "weave-v1.16"
@@ -76,6 +78,7 @@ const (
 	nginxIngressv110         = "nginxingress-v1.1.0"
 	nginxIngressv110Rancher2 = "nginxingress-v1.1.0-rancher2"
 	nginxIngressv110Rancher3 = "nginxingress-v1.1.0-rancher3"
+	nginxIngressv110Rancher4 = "nginxingress-v1.1.0-rancher4"
 
 	nodelocalv115 = "nodelocal-v1.15"
 	nodelocalv121 = "nodelocal-v1.21"
@@ -138,17 +141,20 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.15.0-rancher0": flannelv18,
 		},
 		kdm.CoreDNS: {
-			">=1.21.0-rancher1-1":               coreDnsv183,
-			">=1.17.0-alpha <1.21.0-rancher1-1": coreDnsv117,
-			">=1.16.0-alpha <1.17.0-alpha":      coreDnsv116,
-			">=1.8.0-rancher0 <1.16.0-alpha":    coreDnsv18,
+			">=1.21.9-rancher1-2":                     coreDnsv183Rancher2,
+			">=1.21.0-rancher1-1 <1.21.9-rancher1-2":  coreDnsv183,
+			">=1.20.15-rancher1-2 <1.21.0-rancher1-1": coreDnsv183Rancher2,
+			">=1.17.0-alpha <1.20.15-rancher1-2":      coreDnsv117,
+			">=1.16.0-alpha <1.17.0-alpha":            coreDnsv116,
+			">=1.8.0-rancher0 <1.16.0-alpha":          coreDnsv18,
 		},
 		kdm.KubeDNS: {
 			">=1.16.0-alpha":                 kubeDnsv116,
 			">=1.8.0-rancher0 <1.16.0-alpha": kubeDnsv18,
 		},
 		kdm.MetricsServer: {
-			">=1.20.14-rancher2-1":                    metricsServerv050,
+			">=1.23.3-rancher1-1":                     metricsServerv061,
+			">=1.20.14-rancher2-1 <1.23.3-rancher1-1": metricsServerv050,
 			">=1.20.4-rancher1-1 <1.20.14-rancher2-1": metricsServerv120,
 			">=1.8.0-rancher0 <1.20.4-rancher1-1":     metricsServerv18,
 		},
@@ -176,13 +182,16 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.16.10-rancher1-1 <1.17.0-rancher1-1":  nginxIngressV11512,
 			">=1.17.6-rancher1-1 <1.19.16-rancher1-1":  nginxIngressV11512,
 			">=1.19.16-rancher1-1 <1.19.16-rancher1-3": nginxIngressv0493,
-			">=1.19.16-rancher1-3 <1.20.0-rancher0":    nginxIngressv110Rancher2,
+			">=1.19.16-rancher1-3 <1.19.16-rancher1-4": nginxIngressv110Rancher2,
+			">=1.19.16-rancher1-4 <1.20.0-rancher0":    nginxIngressv110Rancher4,
 			">=1.20.0-rancher0 <1.20.12-rancher1-1":    nginxIngressV11512,
 			">=1.20.12-rancher1-1 <1.20.14-rancher2-2": nginxIngressv0493,
-			">=1.20.14-rancher2-2 <1.21.0-rancher0":    nginxIngressv110Rancher2,
+			">=1.20.14-rancher2-2 <1.20.15-rancher1-2": nginxIngressv110Rancher2,
+			">=1.20.15-rancher1-2 <1.21.0-rancher0":    nginxIngressv110Rancher4,
 			">=1.21.0-rancher0 <1.21.6-rancher1-1":     nginxIngressv0481,
 			">=1.21.6-rancher1-1 <1.21.8-rancher2-2":   nginxIngressv0493,
-			">=1.21.8-rancher2-2 <1.22.0-rancher1-1":   nginxIngressv110Rancher2,
+			">=1.21.8-rancher2-2 <1.21.9-rancher1-2":   nginxIngressv110Rancher2,
+			">=1.21.9-rancher1-2 <1.22.0-rancher1-1":   nginxIngressv110Rancher4,
 			">=1.22.0-rancher1-1 <1.22.5-rancher2-2":   nginxIngressv110,
 			">=1.22.5-rancher2-2":                      nginxIngressv110Rancher3,
 		},
@@ -233,10 +242,11 @@ func getTemplates() map[string]string {
 		canalv319:                     CanalTemplateV3_19_0,
 		canalv3211:                    CanalTemplateV3_21_1,
 
-		coreDnsv18:  CoreDNSTemplate,
-		coreDnsv116: CoreDNSTemplateV116,
-		coreDnsv117: CoreDNSTemplateV117,
-		coreDnsv183: CoreDNSTemplateV183,
+		coreDnsv18:          CoreDNSTemplate,
+		coreDnsv116:         CoreDNSTemplateV116,
+		coreDnsv117:         CoreDNSTemplateV117,
+		coreDnsv183:         CoreDNSTemplateV183,
+		coreDnsv183Rancher2: CoreDNSTemplateV183Rancher2,
 
 		kubeDnsv18:  KubeDNSTemplate,
 		kubeDnsv116: KubeDNSTemplateV116,
@@ -244,6 +254,7 @@ func getTemplates() map[string]string {
 		metricsServerv18:  MetricsServerTemplate,
 		metricsServerv120: MetricsServerTemplateV0_4_1,
 		metricsServerv050: MetricsServerTemplateV0_5_0,
+		metricsServerv061: MetricsServerTemplateV0_6_1,
 
 		weavev18:  WeaveTemplate,
 		weavev116: WeaveTemplateV116,
@@ -260,6 +271,7 @@ func getTemplates() map[string]string {
 		nginxIngressv110:         NginxIngressTemplateV110Rancher1,
 		nginxIngressv110Rancher2: NginxIngressTemplateV110Rancher2,
 		nginxIngressv110Rancher3: NginxIngressTemplateV110Rancher3,
+		nginxIngressv110Rancher4: NginxIngressTemplateV110Rancher4,
 
 		nodelocalv115: NodelocalTemplateV115,
 		nodelocalv121: NodelocalTemplateV121,
