@@ -313,27 +313,15 @@ releases:
       rke2-canal:
         repo: rancher-rke2-charts
         version: v3.20.3-build2022011406
-  - version: v1.21.10+rke2r1
-    minChannelServerVersion: v2.6.1-alpha1
-    maxChannelServerVersion: v2.6.99
-    serverArgs: &serverArgs-v1-21-10-rke2r1
-      <<: *serverArgs-v1-21-9-rke2r1
-    agentArgs: &agentArgs-v1-21-10-rke2r1
-      <<: *agentArgs-v1-21-9-rke2r1
-    charts: &charts-v1-21-10-rke2r1
-      <<: *charts-v1-21-9-rke2r1
-      rke2-canal:
-        repo: rancher-rke2-charts
-        version: v3.21.4-build2022020801
   - version: v1.21.10+rke2r2
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v1-21-10-rke2r2
-      <<: *serverArgs-v1-21-10-rke2r1
+      <<: *serverArgs-v1-21-9-rke2r1
     agentArgs: &agentArgs-v1-21-10-rke2r2
-      <<: *agentArgs-v1-21-10-rke2r1
+      <<: *agentArgs-v1-21-9-rke2r1
     charts: &charts-v1-21-10-rke2r2
-      <<: *charts-v1-21-10-rke2r1
+      <<: *charts-v1-21-9-rke2r1
       rke2-canal:
         repo: rancher-rke2-charts
         version: v3.21.4-build2022022801
