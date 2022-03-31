@@ -15350,7 +15350,7 @@
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
-      "version": "4.0.306"
+      "version": "4.0.307"
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
@@ -15362,7 +15362,7 @@
      }
     },
     "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.4-alpha1",
+    "minChannelServerVersion": "v2.6.3-alpha1",
     "serverArgs": {
      "audit-policy-file": {
       "type": "string"
@@ -16570,7 +16570,7 @@
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
-      "version": "4.0.306"
+      "version": "4.0.307"
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
@@ -17058,7 +17058,7 @@
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
-      "version": "4.0.306"
+      "version": "4.0.307"
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
