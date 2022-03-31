@@ -1,6 +1,6 @@
 channels:
   - name: default
-    latest: v1.22.7+k3s1
+    latest: v1.22.8+k3s1
 releases:
   - version: v1.18.20+k3s1
     minChannelServerVersion: v2.6.0-alpha1
@@ -153,6 +153,11 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v2
     agentArgs: *agentArgs-v2
+  - version: v1.21.11+k3s1
+    minChannelServerVersion: v2.6.3-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v2
+    agentArgs: *agentArgs-v2
   - version: v1.22.4+k3s1
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
@@ -173,7 +178,17 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v2
     agentArgs: *agentArgs-v2
+  - version: v1.22.8+k3s1
+    minChannelServerVersion: v2.6.3-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v2
+    agentArgs: *agentArgs-v2
   - version: v1.23.4+k3s1
+    minChannelServerVersion: v2.6.4-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v2
+    agentArgs: *agentArgs-v2
+  - version: v1.23.5+k3s1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v2
