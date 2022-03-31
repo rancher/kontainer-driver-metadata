@@ -353,7 +353,7 @@ releases:
         repo: rancher-charts
         version: 100.1.0+up2.3.0
   - version: v1.21.11+rke2r1
-    minChannelServerVersion: v2.6.4-alpha1
+    minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v1-21-11-rke2r1
       <<: *serverArgs-v1-21-10-rke2r2
@@ -370,6 +370,9 @@ releases:
       rke2-coredns:
         repo: rancher-rke2-charts
         version: 1.17.000
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.0.307
   - version: v1.22.4+rke2r2
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
@@ -460,6 +463,9 @@ releases:
       rke2-coredns:
         repo: rancher-rke2-charts
         version: 1.17.000
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.0.307
   - version: v1.23.4+rke2r2
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
@@ -496,6 +502,9 @@ releases:
       rancher-vsphere-cpi:
         repo: rancher-rke2-charts
         version: 1.1.002
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.0.307
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
         version: 2.5.0-rancher101
