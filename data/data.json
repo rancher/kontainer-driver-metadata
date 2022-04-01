@@ -10482,12 +10482,13 @@
   "2.6.3": "v1.21.x",
   "2.6.3-patch1": "v1.21.x",
   "2.6.3-patch2": "v1.21.x",
-  "2.6.4": "v1.22.x",
+  "2.6.3-patch3": "v1.21.x",
+  "2.6.4": "v1.21.x",
   "default": "v1.22.x"
  },
  "RKEDefaultK8sVersions": {
   "0.3": "v1.16.3-rancher1-1",
-  "default": "v1.22.7-rancher1-1"
+  "default": "v1.21.10-rancher1-1"
  },
  "K8sVersionDockerInfo": {
   "1.10": [
@@ -11106,7 +11107,7 @@
  "k3s": {
   "channels": [
    {
-    "latest": "v1.22.7+k3s1",
+    "latest": "v1.21.10+k3s1",
     "name": "default"
    }
   ],
@@ -13032,7 +13033,7 @@
  "rke2": {
   "channels": [
    {
-    "latest": "v1.22.7+rke2r2",
+    "latest": "v1.21.10+rke2r2",
     "name": "default"
    }
   ],
