@@ -1,0 +1,23 @@
+#!/bin/bash
+set -e
+set -x
+
+REPO="https://api.github.com/repos/rancher/rke/actions/workflows/git-actions-go-generate.yml/dispatches"
+
+case $DRONE_BRANCH in
+  dev-v2.6|release-v2.6)
+    ACTION_TARGET_BRANCH="release/v1.3"
+    ;;
+  dev-v2.5|release-v2.5)
+    ACTION_TARGET_BRANCH="release/v1.2"
+    ;;
+  *)
+    echo "Not a valid branch, not dispatching event"
+    exit 0
+esac
+
+# send dispatch event to workflow
+curl -XPOST -u "${PAT_USERNAME}:${PAT_TOKEN}" \
+        -H "Accept: application/vnd.github.v3+json"  \
+        -H "Content-Type: application/json" $REPO \
+        --data '{"ref": "'"$ACTION_TARGET_BRANCH"'"}'
