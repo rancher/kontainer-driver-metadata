@@ -370,9 +370,9 @@ releases:
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v1-21-12-rc2-rke2r1
-      <<: *serverArgs-v1-21-10-rke2r2
+      <<: *serverArgs-v1-21-11-rke2r1
     agentArgs: &agentArgs-v1-21-12-rc2-rke2r1
-      <<: *agentArgs-v1-21-10-rke2r2
+      <<: *agentArgs-v1-21-11-rke2r1
     charts: &charts-v1-21-12-rc2-rke2r1
       <<: *charts-v1-21-11-rke2r1
       rke2-cilium:
@@ -487,9 +487,9 @@ releases:
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v1-22-9-rc2-rke2r1
-      <<: *serverArgs-v1-22-7-rke2r2
+      <<: *serverArgs-v1-22-8-rke2r1
     agentArgs: &agentArgs-v1-22-9-rc2-rke2r1
-      <<: *agentArgs-v1-22-7-rke2r2
+      <<: *agentArgs-v1-22-8-rke2r1
     charts: &charts-v1-22-9-rc2-rke2r1
       <<: *charts-v1-22-8-rke2r1
       rke2-cilium:
@@ -556,9 +556,9 @@ releases:
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v1-23-6-rc2-rke2r1
-      <<: *serverArgs-v1-23-4-rke2r2
+      <<: *serverArgs-v1-23-5-rke2r1
     agentArgs: &agentArgs-v1-23-6-rc2-rke2r1
-      <<: *agentArgs-v1-23-4-rke2r2
+      <<: *agentArgs-v1-23-5-rke2r1
     charts: &charts-v1-23-6-rc2-rke2r1
       <<: *charts-v1-23-5-rke2r1
       rke2-cilium:
