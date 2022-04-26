@@ -13933,7 +13933,7 @@
   ],
   "channels": [
    {
-    "latest": "v1.22.9-rc3+rke2r1",
+    "latest": "v1.22.9-rc4+rke2r1",
     "name": "default"
    }
   ],
@@ -16253,7 +16253,7 @@
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
-      "version": "4.0.307"
+      "version": "4.1.001"
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
@@ -16365,7 +16365,7 @@
       "type": "array"
      }
     },
-    "version": "v1.21.12-rc3+rke2r1"
+    "version": "v1.21.12-rc4+rke2r1"
    },
    {
     "agentArgs": {
@@ -17717,7 +17717,7 @@
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
-      "version": "4.0.307"
+      "version": "4.1.001"
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
@@ -17829,7 +17829,7 @@
       "type": "array"
      }
     },
-    "version": "v1.22.9-rc3+rke2r1"
+    "version": "v1.22.9-rc4+rke2r1"
    },
    {
     "agentArgs": {
@@ -18449,7 +18449,7 @@
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
-      "version": "4.0.307"
+      "version": "4.1.001"
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
@@ -18561,7 +18561,7 @@
       "type": "array"
      }
     },
-    "version": "v1.23.6-rc3+rke2r1"
+    "version": "v1.23.6-rc4+rke2r1"
    }
   ]
  }
