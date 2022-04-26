@@ -1,6 +1,6 @@
 channels:
   - name: default
-    latest: v1.22.9-rc3+rke2r1
+    latest: v1.22.9-rc4+rke2r1
 appDefaults:
   - appName: rancher
     defaults:
@@ -366,14 +366,14 @@ releases:
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.0.307
-  - version: v1.21.12-rc3+rke2r1
+  - version: v1.21.12-rc4+rke2r1
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
-    serverArgs: &serverArgs-v1-21-12-rc3-rke2r1
+    serverArgs: &serverArgs-v1-21-12-rc4-rke2r1
       <<: *serverArgs-v1-21-11-rke2r1
-    agentArgs: &agentArgs-v1-21-12-rc3-rke2r1
+    agentArgs: &agentArgs-v1-21-12-rc4-rke2r1
       <<: *agentArgs-v1-21-11-rke2r1
-    charts: &charts-v1-21-12-rc3-rke2r1
+    charts: &charts-v1-21-12-rc4-rke2r1
       <<: *charts-v1-21-11-rke2r1
       rke2-cilium:
         repo: rancher-rke2-charts
@@ -384,6 +384,9 @@ releases:
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
         version: 2.5.1-rancher101
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.1.001
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.1.1100
@@ -483,14 +486,14 @@ releases:
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.0.307
-  - version: v1.22.9-rc3+rke2r1
+  - version: v1.22.9-rc4+rke2r1
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
-    serverArgs: &serverArgs-v1-22-9-rc3-rke2r1
+    serverArgs: &serverArgs-v1-22-9-rc4-rke2r1
       <<: *serverArgs-v1-22-8-rke2r1
-    agentArgs: &agentArgs-v1-22-9-rc3-rke2r1
+    agentArgs: &agentArgs-v1-22-9-rc4-rke2r1
       <<: *agentArgs-v1-22-8-rke2r1
-    charts: &charts-v1-22-9-rc3-rke2r1
+    charts: &charts-v1-22-9-rc4-rke2r1
       <<: *charts-v1-22-8-rke2r1
       rke2-cilium:
         repo: rancher-rke2-charts
@@ -501,6 +504,9 @@ releases:
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
         version: 2.5.1-rancher101
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.1.001
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.1.1100
@@ -552,14 +558,14 @@ releases:
       rke2-coredns:
         repo: rancher-rke2-charts
         version: 1.17.000
-  - version: v1.23.6-rc3+rke2r1
+  - version: v1.23.6-rc4+rke2r1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
-    serverArgs: &serverArgs-v1-23-6-rc3-rke2r1
+    serverArgs: &serverArgs-v1-23-6-rc4-rke2r1
       <<: *serverArgs-v1-23-5-rke2r1
-    agentArgs: &agentArgs-v1-23-6-rc3-rke2r1
+    agentArgs: &agentArgs-v1-23-6-rc4-rke2r1
       <<: *agentArgs-v1-23-5-rke2r1
-    charts: &charts-v1-23-6-rc3-rke2r1
+    charts: &charts-v1-23-6-rc4-rke2r1
       <<: *charts-v1-23-5-rke2r1
       rke2-cilium:
         repo: rancher-rke2-charts
@@ -570,6 +576,9 @@ releases:
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
         version: 2.5.1-rancher101
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.1.001
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.1.1100
