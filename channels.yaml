@@ -1,6 +1,6 @@
 channels:
   - name: default
-    latest: v1.22.8+k3s1
+    latest: v1.22.9-rc4+k3s1
 appDefaults:
   - appName: rancher
     defaults:
@@ -158,7 +158,8 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v2
     agentArgs: *agentArgs-v2
-  - version: v1.21.11+k3s1
+  # v1.21.11+k3s1 was never released through KDM
+  - version: v1.21.12-rc3+k3s1
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v2
@@ -183,7 +184,8 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v2
     agentArgs: *agentArgs-v2
-  - version: v1.22.8+k3s1
+  # v1.22.8+k3s1 was never released through KDM
+  - version: v1.22.9-rc4+k3s1
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v2
@@ -193,7 +195,8 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v2
     agentArgs: *agentArgs-v2
-  - version: v1.23.5+k3s1
+  # v1.23.5+k3s1 was never released through KDM
+  - version: v1.23.6-rc3+k3s1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v2
