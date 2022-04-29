@@ -30,6 +30,23 @@ steps:
       event:
       - push
 
+  - name: dispatch
+    image: curlimages/curl:7.81.0
+    user: root
+    environment:
+      PAT_USERNAME:
+        from_secret: pat_username
+      PAT_TOKEN:
+        from_secret: github_token
+    commands:
+    - apk -U --no-cache add bash
+    - scripts/dispatch
+    when:
+      event:
+      - push
+    depends_on:
+    - upload
+
 volumes:
 - name: docker
   host:
