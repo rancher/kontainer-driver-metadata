@@ -387,6 +387,9 @@ releases:
       <<: *agentArgs-v1-21-12-rke2r1
     charts: &charts-v1-21-12-rc1-rke2r2
       <<: *charts-v1-21-12-rke2r1
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.1.002
   - version: v1.22.4+rke2r2
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
@@ -501,6 +504,9 @@ releases:
       <<: *agentArgs-v1-22-9-rke2r1
     charts: &charts-v1-22-9-rc1-rke2r2
       <<: *charts-v1-22-9-rke2r1
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.1.002
   - version: v1.23.4+rke2r2
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
@@ -561,3 +567,6 @@ releases:
       <<: *agentArgs-v1-23-6-rke2r1
     charts: &charts-v1-23-6-rc1-rke2r2
       <<: *charts-v1-23-6-rke2r1
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.1.002
