@@ -14190,7 +14190,7 @@
       "version": "v3.7.1-build2021041604"
      }
     },
-    "maxChannelServerVersion": "v2.6.99",
+    "maxChannelServerVersion": "v2.6.4",
     "minChannelServerVersion": "v2.6.0-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -14431,7 +14431,7 @@
       "version": "v3.7.1-build2021041604"
      }
     },
-    "maxChannelServerVersion": "v2.6.99",
+    "maxChannelServerVersion": "v2.6.4",
     "minChannelServerVersion": "v2.6.1-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -14672,7 +14672,7 @@
       "version": "v3.7.1-build2021041604"
      }
     },
-    "maxChannelServerVersion": "v2.6.99",
+    "maxChannelServerVersion": "v2.6.4",
     "minChannelServerVersion": "v2.6.1-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -14913,7 +14913,7 @@
       "version": "v3.7.1-build2021041604"
      }
     },
-    "maxChannelServerVersion": "v2.6.99",
+    "maxChannelServerVersion": "v2.6.4",
     "minChannelServerVersion": "v2.6.1-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -15154,7 +15154,7 @@
       "version": "v3.7.1-build2021111906"
      }
     },
-    "maxChannelServerVersion": "v2.6.99",
+    "maxChannelServerVersion": "v2.6.4",
     "minChannelServerVersion": "v2.6.1-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -15398,7 +15398,7 @@
       "version": "v3.7.1-build2021111906"
      }
     },
-    "maxChannelServerVersion": "v2.6.99",
+    "maxChannelServerVersion": "v2.6.4",
     "minChannelServerVersion": "v2.6.1-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -15642,7 +15642,7 @@
       "version": "v3.7.1-build2021111906"
      }
     },
-    "maxChannelServerVersion": "v2.6.99",
+    "maxChannelServerVersion": "v2.6.4",
     "minChannelServerVersion": "v2.6.1-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -15886,7 +15886,7 @@
       "version": "v3.7.1-build2021111906"
      }
     },
-    "maxChannelServerVersion": "v2.6.99",
+    "maxChannelServerVersion": "v2.6.4",
     "minChannelServerVersion": "v2.6.3-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -16130,7 +16130,7 @@
       "version": "v3.7.1-build2021111906"
      }
     },
-    "maxChannelServerVersion": "v2.6.99",
+    "maxChannelServerVersion": "v2.6.4",
     "minChannelServerVersion": "v2.6.3-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -16374,7 +16374,7 @@
       "version": "v3.7.1-build2021111906"
      }
     },
-    "maxChannelServerVersion": "v2.6.99",
+    "maxChannelServerVersion": "v2.6.4",
     "minChannelServerVersion": "v2.6.3-alpha1",
     "serverArgs": {
      "audit-policy-file": {
