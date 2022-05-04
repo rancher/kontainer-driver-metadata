@@ -4,8 +4,10 @@ channels:
 appDefaults:
   - appName: rancher
     defaults:
-      - appVersion: '> 2.6.0-0 < 2.6.99-0'
+      - appVersion: '>= 2.6.0-0 < 2.6.5-0'
         defaultVersion: '1.22.x'
+      - appVersion: '>= 2.6.5-0 < 2.6.99-0'
+        defaultVersion: '1.23.x'
 releases:
   - version: v1.18.20+k3s1
     minChannelServerVersion: v2.6.0-alpha1
