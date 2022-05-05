@@ -29,6 +29,9 @@ steps:
     when:
       event:
       - push
+    depends_on:
+    - validate
+
 
   - name: dispatch
     image: curlimages/curl:7.81.0
