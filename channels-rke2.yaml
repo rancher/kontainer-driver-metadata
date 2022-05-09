@@ -6,7 +6,7 @@ appDefaults:
     defaults:
       - appVersion: '>= 2.6.0-0 < 2.6.5-0'
         defaultVersion: '1.22.x'
-      - appVersion: '>= 2.6.5-0 < 2.6.99-0'
+      - appVersion: '>= 2.6.5-0 < 2.6.100-0'
         defaultVersion: '1.23.x'
 releases:
   - version: v1.19.16+rke2r1
