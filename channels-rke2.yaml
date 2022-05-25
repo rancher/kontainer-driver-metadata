@@ -524,6 +524,33 @@ releases:
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.1.002
+  - version: v1.22.10+rke2r1
+    minChannelServerVersion: v2.6.3-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: &serverArgs-v1-22-10-rc1-rke2r1
+      <<: *serverArgs-v1-22-9-rke2r2
+    agentArgs: &agentArgs-v1-22-10-rc1-rke2r1
+      <<: *agentArgs-v1-22-9-rke2r2
+    charts: &charts-v1-22-10-rc1-rke2r1
+      <<: *charts-v1-22-9-rke2r2
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.11.501
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.22.2-build2022050902
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.21.504
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.21.504
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v3.8-build2021110402
+      rancher-vsphere-cpi:
+        repo: rancher-rke2-charts
+        version: 1.2.201
   - version: v1.23.4+rke2r2
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
