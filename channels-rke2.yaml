@@ -524,7 +524,7 @@ releases:
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.1.002
-  - version: v1.22.10+rke2r1
+  - version: v1.22.10-rc1+rke2r1
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v1-22-10-rc1-rke2r1
