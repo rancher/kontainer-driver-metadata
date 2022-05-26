@@ -14222,112 +14222,6 @@
     },
     "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.4-alpha1",
-    "serverArgs": {
-     "cluster-cidr": {
-      "type": "string"
-     },
-     "cluster-dns": {
-      "type": "string"
-     },
-     "cluster-domain": {
-      "type": "string"
-     },
-     "datastore-cafile": {
-      "type": "string"
-     },
-     "datastore-certfile": {
-      "type": "string"
-     },
-     "datastore-endpoint": {
-      "type": "string"
-     },
-     "datastore-keyfile": {
-      "type": "string"
-     },
-     "default-local-storage-path": {
-      "type": "string"
-     },
-     "disable": {
-      "options": [
-       "coredns",
-       "servicelb",
-       "traefik",
-       "local-storage",
-       "metrics-server"
-      ],
-      "type": "array"
-     },
-     "disable-apiserver": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-cloud-controller": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-controller-manager": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-etcd": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-kube-proxy": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-network-policy": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-scheduler": {
-      "default": false,
-      "type": "boolean"
-     },
-     "etcd-arg": {
-      "type": "array"
-     },
-     "etcd-expose-metrics": {
-      "default": false,
-      "type": "boolean"
-     },
-     "flannel-backend": {
-      "options": [
-       "none",
-       "vxlan",
-       "ipsec",
-       "host-gw",
-       "wireguard"
-      ],
-      "type": "enum"
-     },
-     "kube-apiserver-arg": {
-      "type": "array"
-     },
-     "kube-cloud-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-arg": {
-      "type": "array"
-     },
-     "secrets-encryption": {
-      "default": false,
-      "type": "boolean"
-     },
-     "service-cidr": {
-      "type": "string"
-     },
-     "service-node-port-range": {
-      "type": "string"
-     },
-     "tls-san": {
-      "type": "array"
-     }
-    },
     "version": "v1.23.6+k3s1"
    },
    {
@@ -14433,6 +14327,9 @@
      "disable-scheduler": {
       "default": false,
       "type": "boolean"
+     },
+     "egress-selector-mode": {
+      "type": "string"
      },
      "etcd-arg": {
       "type": "array"
