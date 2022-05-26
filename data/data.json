@@ -18436,7 +18436,7 @@
       "type": "array"
      }
     },
-    "version": "v1.22.10+rke2r1"
+    "version": "v1.22.10-rc1+rke2r1"
    },
    {
     "agentArgs": {
