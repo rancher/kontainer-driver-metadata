@@ -1,6 +1,6 @@
 channels:
   - name: default
-    latest: v1.22.9+rke2r2
+    latest: v1.22.10-rc1+rke2r1
 appDefaults:
   - appName: rancher
     defaults:
