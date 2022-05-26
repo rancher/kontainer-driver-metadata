@@ -166,6 +166,11 @@ releases:
     maxChannelServerVersion: v2.6.4
     serverArgs: *serverArgs-v2
     agentArgs: *agentArgs-v2
+  - version: v1.21.13-rc1+k3s1
+    minChannelServerVersion: v2.6.3-alpha1
+    maxChannelServerVersion: v2.6.4
+    serverArgs: *serverArgs-v2
+    agentArgs: *agentArgs-v2
   - version: v1.22.4+k3s1
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
@@ -192,6 +197,11 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v2
     agentArgs: *agentArgs-v2
+  - version: v1.22.10-rc1+k3s1
+    minChannelServerVersion: v2.6.3-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v2
+    agentArgs: *agentArgs-v2
   - version: v1.23.4+k3s1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
@@ -199,6 +209,16 @@ releases:
     agentArgs: *agentArgs-v2
   # v1.23.5+k3s1 was never released through KDM
   - version: v1.23.6+k3s1
+    minChannelServerVersion: v2.6.4-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v2
+    agentArgs: *agentArgs-v2
+  - version: v1.23.7-rc1+k3s1
+    minChannelServerVersion: v2.6.4-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v2
+    agentArgs: *agentArgs-v2
+  - version: v1.24.1-rc1+k3s1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v2
