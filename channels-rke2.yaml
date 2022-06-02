@@ -529,6 +529,8 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v1-22-10-rc1-rke2r1
       <<: *serverArgs-v1-22-9-rke2r2
+      egress-selector-mode:
+        type: string
     agentArgs: &agentArgs-v1-22-10-rc1-rke2r1
       <<: *agentArgs-v1-22-9-rke2r2
     charts: &charts-v1-22-10-rc1-rke2r1
