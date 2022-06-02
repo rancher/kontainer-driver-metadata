@@ -200,7 +200,10 @@ releases:
   - version: v1.22.10-rc1+k3s1
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
-    serverArgs: *serverArgs-v2
+    serverArgs: *serverArgs-v3
+      <<: *serverArgs-v2
+      egress-selector-mode:
+        type: string
     agentArgs: *agentArgs-v2
   - version: v1.23.4+k3s1
     minChannelServerVersion: v2.6.4-alpha1
@@ -217,7 +220,7 @@ releases:
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v3
-      <<: *serverArgs-v2
+      <<: *serverArgs-v3
       egress-selector-mode:
         type: string
     agentArgs: *agentArgs-v2
