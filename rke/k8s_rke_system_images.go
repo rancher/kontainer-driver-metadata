@@ -7546,7 +7546,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			NginxProxy:                "rancher/rke-tools:v0.1.80",
 			CertDownloader:            "rancher/rke-tools:v0.1.80",
 			KubernetesServicesSidecar: "rancher/rke-tools:v0.1.80",
-			KubeDNS:                   "rancher/mirrored-k8s-dns-node-cache:1.21.1",
+			KubeDNS:                   "rancher/mirrored-k8s-dns-kube-dns:1.21.1",
 			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.21.1",
 			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.21.1",
 			KubeDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.8.5",
