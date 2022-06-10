@@ -5695,8 +5695,8 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/kubelet-pause:v0.1.6",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.15.13",
 		},
-		// Enabled out of band post v2.5.13
-		"v1.19.16-rancher1-5": {
+		// Enabled out of band post v2.5.14
+		"v1.19.16-rancher1-6": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
 			Kubernetes:                "rancher/hyperkube:v1.19.16-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.78",
@@ -5730,7 +5730,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			AciGbpServerContainer:     "noiro/gbp-server:5.1.1.0.1ae238a",
 			AciOpflexServerContainer:  "noiro/opflex-server:5.1.1.0.1ae238a",
 			PodInfraContainer:         "rancher/mirrored-pause:3.2",
-			Ingress:                   "rancher/nginx-ingress-controller:nginx-1.2.0-rancher1",
+			Ingress:                   "rancher/nginx-ingress-controller:nginx-1.2.1-rancher1",
 			IngressBackend:            "rancher/mirrored-nginx-ingress-controller-defaultbackend:1.5-rancher1",
 			IngressWebhook:            "rancher/mirrored-ingress-nginx-kube-webhook-certgen:v1.1.1",
 			MetricsServer:             "rancher/mirrored-metrics-server:v0.3.6",
@@ -6394,8 +6394,8 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.6",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.15.13",
 		},
-		// Enabled out of band post v2.5.13
-		"v1.20.15-rancher1-3": {
+		// Enabled out of band post v2.5.14
+		"v1.20.15-rancher1-4": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.4.15-rancher1",
 			Kubernetes:                "rancher/hyperkube:v1.20.15-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.80",
@@ -6429,7 +6429,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			AciGbpServerContainer:     "noiro/gbp-server:5.1.1.0.1ae238a",
 			AciOpflexServerContainer:  "noiro/opflex-server:5.1.1.0.1ae238a",
 			PodInfraContainer:         "rancher/mirrored-pause:3.6",
-			Ingress:                   "rancher/nginx-ingress-controller:nginx-1.2.0-rancher1",
+			Ingress:                   "rancher/nginx-ingress-controller:nginx-1.2.1-rancher1",
 			IngressBackend:            "rancher/mirrored-nginx-ingress-controller-defaultbackend:1.5-rancher1",
 			IngressWebhook:            "rancher/mirrored-ingress-nginx-kube-webhook-certgen:v1.1.1",
 			MetricsServer:             "rancher/mirrored-metrics-server:v0.5.0",
