@@ -1,6 +1,6 @@
 channels:
   - name: default
-    latest: v1.22.10+rke2r1
+    latest: v1.22.10-rc1+rke2r2
 appDefaults:
   - appName: rancher
     defaults:
@@ -392,14 +392,14 @@ releases:
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.1.002
-  - version: v1.21.13+rke2r1
+  - version: v1.21.13-rc1+rke2r2
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.4
-    serverArgs: &serverArgs-v1-21-13-rke2r1
+    serverArgs: &serverArgs-v1-21-13-rc1-rke2r2
       <<: *serverArgs-v1-21-12-rke2r2
-    agentArgs: &agentArgs-v1-21-13-rke2r1
+    agentArgs: &agentArgs-v1-21-13-rc1-rke2r2
       <<: *agentArgs-v1-21-12-rke2r2
-    charts: &charts-v1-21-13-rke2r1
+    charts: &charts-v1-21-13-rc1-rke2r2
       <<: *charts-v1-21-12-rke2r2
       rke2-cilium:
         repo: rancher-rke2-charts
@@ -407,6 +407,9 @@ releases:
       rancher-vsphere-cpi:
         repo: rancher-rke2-charts
         version: 1.2.201
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.1.003
   - version: v1.22.4+rke2r2
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
@@ -524,16 +527,16 @@ releases:
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.1.002
-  - version: v1.22.10+rke2r1
+  - version: v1.22.10-rc1+rke2r2
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
-    serverArgs: &serverArgs-v1-22-10-rke2r1
+    serverArgs: &serverArgs-v1-22-10-rc1-rke2r2
       <<: *serverArgs-v1-22-9-rke2r2
       egress-selector-mode:
         type: string
-    agentArgs: &agentArgs-v1-22-10-rke2r1
+    agentArgs: &agentArgs-v1-22-10-rc1-rke2r2
       <<: *agentArgs-v1-22-9-rke2r2
-    charts: &charts-v1-22-10-rke2r1
+    charts: &charts-v1-22-10-rc1-rke2r2
       <<: *charts-v1-22-9-rke2r2
       rke2-cilium:
         repo: rancher-rke2-charts
@@ -553,6 +556,9 @@ releases:
       rancher-vsphere-cpi:
         repo: rancher-rke2-charts
         version: 1.2.201
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.1.003
   - version: v1.23.4+rke2r2
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
@@ -616,16 +622,16 @@ releases:
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.1.002
-  - version: v1.23.7+rke2r1
+  - version: v1.23.7-rc1+rke2r2
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
-    serverArgs: &serverArgs-v1-23-7-rke2r1
+    serverArgs: &serverArgs-v1-23-7-rc1-rke2r2
       <<: *serverArgs-v1-23-6-rke2r2
       egress-selector-mode:
         type: string
-    agentArgs: &agentArgs-v1-23-7-rke2r1
+    agentArgs: &agentArgs-v1-23-7-rc1-rke2r2
       <<: *agentArgs-v1-23-6-rke2r2
-    charts: &charts-v1-23-7-rke2r1
+    charts: &charts-v1-23-7-rc1-rke2r2
       <<: *charts-v1-23-6-rke2r2
       rke2-cilium:
         repo: rancher-rke2-charts
@@ -645,3 +651,6 @@ releases:
       rancher-vsphere-cpi:
         repo: rancher-rke2-charts
         version: 1.2.201
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.1.003
