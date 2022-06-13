@@ -11664,7 +11664,7 @@
   ],
   "channels": [
    {
-    "latest": "v1.22.10-rc1+k3s1",
+    "latest": "v1.22.10+k3s1",
     "name": "default"
    }
   ],
@@ -13142,7 +13142,7 @@
       "type": "array"
      }
     },
-    "version": "v1.21.13-rc1+k3s1"
+    "version": "v1.21.13+k3s1"
    },
    {
     "agentArgs": {
@@ -14033,7 +14033,7 @@
       "type": "array"
      }
     },
-    "version": "v1.22.10-rc1+k3s1"
+    "version": "v1.22.10+k3s1"
    },
    {
     "agentArgs": {
@@ -14483,7 +14483,7 @@
       "type": "array"
      }
     },
-    "version": "v1.23.7-rc1+k3s1"
+    "version": "v1.23.7+k3s1"
    }
   ]
  },
