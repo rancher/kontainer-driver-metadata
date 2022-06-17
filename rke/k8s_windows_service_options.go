@@ -5,6 +5,10 @@ import v3 "github.com/rancher/rke/types"
 func loadK8sVersionWindowsServiceOptions() map[string]v3.KubernetesServicesOptions {
 	// since 1.14, windows has been supported
 	return map[string]v3.KubernetesServicesOptions{
+		"v1.24": {
+			Kubelet:   getWindowsKubeletOptions124(),
+			Kubeproxy: getWindowsKubeProxyOptions123(),
+		},
 		"v1.23.4-rancher1-2": {
 			Kubelet:   getWindowsKubeletOptions121(),
 			Kubeproxy: getWindowsKubeProxyOptions123(),
@@ -102,6 +106,18 @@ func getWindowsKubeletOptions121() map[string]string {
 	delete(kubeletOptions, "allow-privileged")
 	delete(kubeletOptions, "feature-gates")
 
+	return kubeletOptions
+}
+
+func getWindowsKubeletOptions124() map[string]string {
+	kubeletOptions := getWindowsKubeletOptions()
+
+	// doesn't support `allow-privileged`
+	delete(kubeletOptions, "allow-privileged")
+	delete(kubeletOptions, "feature-gates")
+	delete(kubeletOptions, "cni-conf-dir")
+	delete(kubeletOptions, "cni-bin-dir")
+	delete(kubeletOptions, "image-pull-progress-deadline")
 	return kubeletOptions
 }
 

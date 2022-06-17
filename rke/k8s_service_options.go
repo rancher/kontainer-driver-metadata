@@ -15,6 +15,14 @@ const (
 
 func loadK8sVersionServiceOptions() map[string]v3.KubernetesServicesOptions {
 	return map[string]v3.KubernetesServicesOptions{
+		"v1.24": {
+			Etcd:           getETCDOptions122(),
+			KubeAPI:        getKubeAPIOptions124(),
+			Kubelet:        getKubeletOptions124(),
+			KubeController: getKubeControllerOptions124(),
+			Kubeproxy:      getKubeProxyOptions(),
+			Scheduler:      getSchedulerOptions124(),
+		},
 		"v1.23.4-rancher1-2": {
 			Etcd:           getETCDOptions122v352(),
 			KubeAPI:        getKubeAPIOptions121(),
@@ -428,6 +436,15 @@ func getKubeAPIOptions121() map[string]string {
 	return kubeAPIOptions
 }
 
+func getKubeAPIOptions124() map[string]string {
+	kubeAPIOptions := getKubeAPIOptions116()
+	kubeAPIOptions["service-account-issuer"] = rkeIssuer
+	kubeAPIOptions["service-account-signing-key-file"] = serviceAccountKeyPath
+	kubeAPIOptions["api-audiences"] = "unknown"
+	delete(kubeAPIOptions, "insecure-port")
+	return kubeAPIOptions
+}
+
 // getKubeletOptions provides the root options for windows
 // note: please double-check on windows side if changing the following options
 func getKubeletOptions() map[string]string {
@@ -467,6 +484,16 @@ func getKubeletOptions116() map[string]string {
 	return kubeletOptions
 }
 
+func getKubeletOptions124() map[string]string {
+	kubeletOptions := getKubeletOptions()
+	kubeletOptions["authorization-mode"] = "Webhook"
+	delete(kubeletOptions, "allow-privileged")
+	delete(kubeletOptions, "cni-conf-dir")
+	delete(kubeletOptions, "cni-bin-dir")
+	delete(kubeletOptions, "network-plugin")
+	return kubeletOptions
+}
+
 func getKubeControllerOptions() map[string]string {
 	return map[string]string{
 		"address":                     "0.0.0.0",
@@ -481,6 +508,12 @@ func getKubeControllerOptions() map[string]string {
 		"terminated-pod-gc-threshold": "1000",
 		"v":                           "2",
 	}
+}
+
+func getKubeControllerOptions124() map[string]string {
+	kubeControllerOptions := getKubeControllerOptions()
+	delete(kubeControllerOptions, "address")
+	return kubeControllerOptions
 }
 
 // getKubeProxyOptions provides the root options for windows
@@ -499,6 +532,12 @@ func getSchedulerOptions() map[string]string {
 		"address":      "0.0.0.0",
 		"profiling":    "false",
 	}
+}
+
+func getSchedulerOptions124() map[string]string {
+	kubeSchedulerOptions := getSchedulerOptions()
+	delete(kubeSchedulerOptions, "address")
+	return kubeSchedulerOptions
 }
 
 func getETCDOptions() map[string]string {
