@@ -10464,7 +10464,7 @@
    "aciGbpServerContainer": "noiro/gbp-server:5.1.1.0.1ae238a",
    "aciOpflexServerContainer": "noiro/opflex-server:5.1.1.0.1ae238a"
   },
-  "v1.24.1-rancher1-1": {
+  "v1.24.2-rancher1-1": {
    "etcd": "rancher/mirrored-coreos-etcd:v3.5.4",
    "alpine": "rancher/rke-tools:v0.1.83",
    "nginxProxy": "rancher/rke-tools:v0.1.83",
@@ -10477,7 +10477,7 @@
    "coredns": "rancher/mirrored-coredns-coredns:1.9.3",
    "corednsAutoscaler": "rancher/mirrored-cluster-proportional-autoscaler:1.8.5",
    "nodelocal": "rancher/mirrored-k8s-dns-node-cache:1.21.1",
-   "kubernetes": "rancher/hyperkube:v1.24.1-rancher1",
+   "kubernetes": "rancher/hyperkube:v1.24.2-rancher1",
    "flannel": "rancher/mirrored-coreos-flannel:v0.15.1",
    "flannelCni": "rancher/flannel-cni:v0.3.0-rancher6",
    "calicoNode": "rancher/mirrored-calico-node:v3.22.0",
