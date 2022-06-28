@@ -702,21 +702,3 @@ releases:
       rke2-multus:
         repo: rancher-rke2-charts
         version: v3.8-build2021110403
-  - version: v1.24.2-rc1+rke2r1
-    minChannelServerVersion: v2.6.4-alpha1
-    maxChannelServerVersion: v2.6.99
-    serverArgs: &serverArgs-v1-24-2-rc1-rke2r1
-      <<: *serverArgs-v1-23-7-rke2r2
-    agentArgs: &agentArgs-v1-24-2-rc1-rke2r1
-      <<: *agentArgs-v1-23-7-rke2r2
-    charts: &charts-v1-24-2-rc1-rke2r1
-      <<: *charts-v1-23-7-rke2r2
-      rke2-cilium:
-        repo: rancher-rke2-charts
-        version: 1.11.502
-      rke2-coredns:
-        repo: rancher-rke2-charts
-        version: 1.19.400
-      rke2-multus:
-        repo: rancher-rke2-charts
-        version: v3.8-build2021110403
