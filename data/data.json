@@ -15053,7 +15053,7 @@
       "type": "array"
      }
     },
-    "version": "v1.22.12-rc1+k3s2"
+    "version": "v1.22.12-rc1+k3s1"
    },
    {
     "agentArgs": {
@@ -15813,7 +15813,7 @@
       "type": "array"
      }
     },
-    "version": "v1.23.9-rc1+k3s2"
+    "version": "v1.23.9-rc1+k3s1"
    },
    {
     "agentArgs": {
