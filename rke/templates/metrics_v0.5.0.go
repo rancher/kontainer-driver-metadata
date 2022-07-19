@@ -213,6 +213,7 @@ spec:
           readOnlyRootFilesystem: true
           runAsNonRoot: true
           runAsUser: 1000
+          allowPrivilegeEscalation: false
         volumeMounts:
         - mountPath: /tmp
           name: tmp-dir
