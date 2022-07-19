@@ -12222,7 +12222,7 @@
   ],
   "channels": [
    {
-    "latest": "v1.22.12-rc1+k3s1",
+    "latest": "v1.22.12+k3s1",
     "name": "default"
    }
   ],
@@ -15053,7 +15053,7 @@
       "type": "array"
      }
     },
-    "version": "v1.22.12-rc1+k3s1"
+    "version": "v1.22.12+k3s1"
    },
    {
     "agentArgs": {
@@ -15813,7 +15813,7 @@
       "type": "array"
      }
     },
-    "version": "v1.23.9-rc1+k3s1"
+    "version": "v1.23.9+k3s1"
    },
    {
     "agentArgs": {
@@ -15858,7 +15858,7 @@
      "encryption-key-rotation": "2.0.0"
     },
     "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.7-alpha1",
+    "minChannelServerVersion": "v2.6.4-alpha1",
     "serverArgs": {
      "cluster-cidr": {
       "type": "string"
@@ -16013,7 +16013,7 @@
      "encryption-key-rotation": "2.0.0"
     },
     "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.7-alpha1",
+    "minChannelServerVersion": "v2.6.4-alpha1",
     "serverArgs": {
      "cluster-cidr": {
       "type": "string"
@@ -16123,7 +16123,7 @@
       "type": "array"
      }
     },
-    "version": "v1.24.3-rc1+k3s1"
+    "version": "v1.24.3+k3s1"
    }
   ]
  },
