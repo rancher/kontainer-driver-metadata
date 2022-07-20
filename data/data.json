@@ -20659,7 +20659,7 @@
       "type": "array"
      }
     },
-    "version": "v1.22.12-rc2+rke2r1"
+    "version": "v1.22.12-rc3+rke2r1"
    },
    {
     "agentArgs": {
@@ -22138,7 +22138,7 @@
       "type": "array"
      }
     },
-    "version": "v1.23.9-rc2+rke2r1"
+    "version": "v1.23.9-rc3+rke2r1"
    },
    {
     "agentArgs": {
@@ -22638,7 +22638,7 @@
       "type": "array"
      }
     },
-    "version": "v1.24.3-rc2+rke2r1"
+    "version": "v1.24.3-rc3+rke2r1"
    }
   ]
  }
