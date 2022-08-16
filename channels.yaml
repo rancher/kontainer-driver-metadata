@@ -1,13 +1,15 @@
 channels:
   - name: default
-    latest: v1.22.10+k3s1
+    latest: v1.22.11+k3s2
 appDefaults:
   - appName: rancher
     defaults:
       - appVersion: '>= 2.6.0-0 < 2.6.5-0'
         defaultVersion: '1.22.x'
-      - appVersion: '>= 2.6.5-0 < 2.6.100-0'
+      - appVersion: '>= 2.6.5-0 < 2.6.7-0'
         defaultVersion: '1.23.x'
+      - appVersion: '>= 2.6.7-0 < 2.6.100-0'
+        defaultVersion: '1.24.x'
 releases:
   - version: v1.18.20+k3s1
     minChannelServerVersion: v2.6.0-alpha1
@@ -171,6 +173,13 @@ releases:
     maxChannelServerVersion: v2.6.4
     serverArgs: *serverArgs-v2
     agentArgs: *agentArgs-v2
+  - version: v1.21.14+k3s1
+    minChannelServerVersion: v2.6.3-alpha1
+    maxChannelServerVersion: v2.6.4
+    serverArgs: *serverArgs-v2
+    agentArgs: *agentArgs-v2
+    featureVersions: &featureVersions-v1
+      encryption-key-rotation: "2.0.0"
   - version: v1.22.4+k3s1
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
@@ -205,6 +214,13 @@ releases:
       egress-selector-mode:
         type: string
     agentArgs: *agentArgs-v2
+  # v1.22.11+k3s1 was never released through KDM
+  - version: v1.22.11+k3s2
+    minChannelServerVersion: v2.6.3-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v3
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
   - version: v1.23.4+k3s1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
@@ -221,3 +237,16 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
+  #  v1.23.8+k3s1 was never released through KDM
+  - version: v1.23.8+k3s2
+    minChannelServerVersion: v2.6.4-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v3
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
+  - version: v1.24.2+k3s2
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v3
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
