@@ -613,7 +613,7 @@ releases:
       rke2-multus:
         repo: rancher-rke2-charts
         version: v3.8-build2021110403
-    featureVersions: &featureVersions-v1-22-11-rke2r1
+    featureVersions: &featureVersions-v1-22-13-rke2r1
       <<: *featureVersions-v1-21-14-rke2r1
   - version: v1.23.4+rke2r2
     minChannelServerVersion: v2.6.4-alpha1
@@ -748,7 +748,7 @@ releases:
       rke2-multus:
         repo: rancher-rke2-charts
         version: v3.8-build2021110403
-    featureVersions: &featureVersions-v1-23-8-rke2r1
+    featureVersions: &featureVersions-v1-23-10-rke2r1
       <<: *featureVersions-v1-21-14-rke2r1
   - version: v1.24.2+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
@@ -770,5 +770,5 @@ releases:
       <<: *agentArgs-v1-23-8-rke2r1
     charts: &charts-v1-24-4-rke2r1
       <<: *charts-v1-23-8-rke2r1
-    featureVersions: &featureVersions-v1-24-2-rke2r1
+    featureVersions: &featureVersions-v1-24-4-rke2r1
       <<: *featureVersions-v1-23-8-rke2r1
