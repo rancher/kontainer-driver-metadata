@@ -7670,10 +7670,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.6",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.21.1",
 		},
-		// Enabled with v2.6.7
-		"v1.22.11-rancher1-1": {
+		// Enabled out-of-band post v2.6.7
+		"v1.22.13-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.3",
-			Kubernetes:                "rancher/hyperkube:v1.22.11-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.22.13-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.87",
 			NginxProxy:                "rancher/rke-tools:v0.1.87",
 			CertDownloader:            "rancher/rke-tools:v0.1.87",
@@ -7934,10 +7934,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.6",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.21.1",
 		},
-		// Enabled with v2.6.7
-		"v1.23.8-rancher1-1": {
+		// Enabled out-of-band post v2.6.7
+		"v1.23.10-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.3",
-			Kubernetes:                "rancher/hyperkube:v1.23.8-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.23.10-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.87",
 			NginxProxy:                "rancher/rke-tools:v0.1.87",
 			CertDownloader:            "rancher/rke-tools:v0.1.87",
@@ -8022,10 +8022,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.6",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.21.1",
 		},
-		// Enabled with 2.6.7
-		"v1.24.2-rancher1-1": {
+		// Enabled out-of-band post 2.6.7
+		"v1.24.4-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.4",
-			Kubernetes:                "rancher/hyperkube:v1.24.2-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.24.4-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.87",
 			NginxProxy:                "rancher/rke-tools:v0.1.87",
 			CertDownloader:            "rancher/rke-tools:v0.1.87",
