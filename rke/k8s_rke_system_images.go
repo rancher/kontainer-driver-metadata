@@ -7685,7 +7685,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			Flannel:                   "rancher/mirrored-coreos-flannel:v0.15.1",
 			FlannelCNI:                "rancher/flannel-cni:v0.3.0-rancher6",
 			CalicoNode:                "rancher/mirrored-calico-node:v3.21.1",
-			CalicoCNI:                 "rancher/calico-cni:v3.21.1-rancher1",
+			CalicoCNI:                 "rancher/calico-cni:v3.21.3-rancher1",
 			CalicoControllers:         "rancher/mirrored-calico-kube-controllers:v3.21.1",
 			CalicoCtl:                 "rancher/mirrored-calico-ctl:v3.21.1",
 			CalicoFlexVol:             "rancher/mirrored-calico-pod2daemon-flexvol:v3.21.1",
