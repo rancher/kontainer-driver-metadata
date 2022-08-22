@@ -10185,7 +10185,7 @@
    "calicoCtl": "rancher/mirrored-calico-ctl:v3.21.1",
    "calicoFlexVol": "rancher/mirrored-calico-pod2daemon-flexvol:v3.21.1",
    "canalNode": "rancher/mirrored-calico-node:v3.21.1",
-   "canalCni": "rancher/calico-cni:v3.21.1-rancher1",
+   "canalCni": "rancher/calico-cni:v3.21.3-rancher1",
    "canalControllers": "rancher/mirrored-calico-kube-controllers:v3.21.1",
    "canalFlannel": "rancher/mirrored-flannelcni-flannel:v0.17.0",
    "canalFlexVol": "rancher/mirrored-calico-pod2daemon-flexvol:v3.21.1",
