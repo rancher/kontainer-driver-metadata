@@ -15114,7 +15114,7 @@
       "type": "array"
      }
     },
-    "version": "v1.22.13+k3s1"
+    "version": "v1.22.13-rc1+k3s1"
    },
    {
     "agentArgs": {
