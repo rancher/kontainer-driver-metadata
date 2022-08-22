@@ -7690,7 +7690,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CalicoCtl:                 "rancher/mirrored-calico-ctl:v3.21.1",
 			CalicoFlexVol:             "rancher/mirrored-calico-pod2daemon-flexvol:v3.21.1",
 			CanalNode:                 "rancher/mirrored-calico-node:v3.21.1",
-			CanalCNI:                  "rancher/calico-cni:v3.21.1-rancher1",
+			CanalCNI:                  "rancher/calico-cni:v3.21.3-rancher1",
 			CanalControllers:          "rancher/mirrored-calico-kube-controllers:v3.21.1",
 			CanalFlannel:              "rancher/mirrored-flannelcni-flannel:v0.17.0",
 			CanalFlexVol:              "rancher/mirrored-calico-pod2daemon-flexvol:v3.21.1",
