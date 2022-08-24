@@ -761,7 +761,7 @@ releases:
       <<: *charts-v1-23-8-rke2r1
     featureVersions: &featureVersions-v1-24-2-rke2r1
       <<: *featureVersions-v1-23-8-rke2r1
-  - version: v1.24.4-rc1+rke2r1
+  - version: v1.24.4-rc2+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v1-24-4-rke2r1
