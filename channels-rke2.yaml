@@ -1,6 +1,6 @@
 channels:
   - name: default
-    latest: v1.22.13-rc1+rke2r1
+    latest: v1.22.13+rke2r1
 appDefaults:
   - appName: rancher
     defaults:
@@ -595,7 +595,7 @@ releases:
         version: v3.8-build2021110403
     featureVersions: &featureVersions-v1-22-11-rke2r1
       <<: *featureVersions-v1-21-14-rke2r1
-  - version: v1.22.13-rc1+rke2r1
+  - version: v1.22.13+rke2r1
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v1-22-13-rke2r1
@@ -730,7 +730,7 @@ releases:
         version: v3.8-build2021110403
     featureVersions: &featureVersions-v1-23-8-rke2r1
       <<: *featureVersions-v1-21-14-rke2r1
-  - version: v1.23.10-rc1+rke2r1
+  - version: v1.23.10+rke2r1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v1-23-10-rke2r1
@@ -761,7 +761,7 @@ releases:
       <<: *charts-v1-23-8-rke2r1
     featureVersions: &featureVersions-v1-24-2-rke2r1
       <<: *featureVersions-v1-23-8-rke2r1
-  - version: v1.24.4-rc2+rke2r1
+  - version: v1.24.4+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v1-24-4-rke2r1
