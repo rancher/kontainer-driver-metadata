@@ -22818,11 +22818,11 @@
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.21.504"
+      "version": "v3.23.103"
      },
      "rke2-calico-crd": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.21.504"
+      "version": "v3.23.103"
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
@@ -23318,11 +23318,11 @@
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.21.504"
+      "version": "v3.23.103"
      },
      "rke2-calico-crd": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.21.504"
+      "version": "v3.23.103"
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
