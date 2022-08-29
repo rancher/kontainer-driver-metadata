@@ -609,7 +609,7 @@ releases:
         version: 1.12.001
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
-        version: 4.1.003
+        version: 4.1.004
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.1.1300
@@ -735,11 +735,7 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v1
     agentArgs: *agentArgs-v1
-    charts: &charts-v2
-      <<: *charts-v1
-      rke2-ingress-nginx:
-        repo: rancher-rke2-charts
-        version: 4.1.004
+    charts: *charts-v1
     featureVersions: *featureVersions-v1
   - version: v1.24.2+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
@@ -757,5 +753,5 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v1
     agentArgs: *agentArgs-v1
-    charts: *charts-v2
+    charts: *charts-v1
     featureVersions: *featureVersions-v1
