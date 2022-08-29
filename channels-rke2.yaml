@@ -735,7 +735,14 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v1
     agentArgs: *agentArgs-v1
-    charts: *charts-v1
+    charts: &charts-v2
+      <<: *charts-v1
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.23.103
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.23.103
     featureVersions: *featureVersions-v1
   - version: v1.24.2+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
@@ -753,5 +760,5 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v1
     agentArgs: *agentArgs-v1
-    charts: *charts-v1
+    charts: *charts-v2
     featureVersions: *featureVersions-v1
