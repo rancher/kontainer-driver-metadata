@@ -24,5 +24,5 @@ if [ -n "$DIRTY" ]; then
     exit 1
 fi
 
-echo Checking if released versions are not changed
-python3 check-kdm-data.py release-v2.5 release-v2.6
+echo Skipping release versions check, out of band versions were released after RKE v1.3.13
+# python3 check-kdm-data.py release-v2.5 release-v2.6
