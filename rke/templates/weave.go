@@ -99,6 +99,8 @@ items:
                     fieldRef:
                       apiVersion: v1
                       fieldPath: spec.nodeName
+                - name: EXTRA_ARGS
+                  value: --log-level=info
               image: {{.CNIImage}}
               resources:
                 requests:
@@ -361,6 +363,8 @@ items:
                     fieldRef:
                       apiVersion: v1
                       fieldPath: spec.nodeName
+                - name: EXTRA_ARGS
+                  value: --log-level=info
               image: {{.CNIImage}}
               resources:
                 requests:
@@ -644,6 +648,8 @@ items:
                     fieldRef:
                       apiVersion: v1
                       fieldPath: spec.nodeName
+                - name: EXTRA_ARGS
+                  value: --log-level=info
               image: {{.CNIImage}}
               resources:
                 requests:
