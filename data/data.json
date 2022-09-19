@@ -21597,7 +21597,7 @@
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.22.2-build2022050902"
+      "version": "v3.23.3-build2022081001"
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
