@@ -12456,7 +12456,7 @@
       "defaultVersion": "1.23.x"
      },
      {
-      "appVersion": "\u003e= 2.6.7-0 \u003c 2.6.100-0",
+      "appVersion": "\u003e= 2.6.7-0 \u003c 2.7.100-0",
       "defaultVersion": "1.24.x"
      }
     ]
@@ -16383,7 +16383,7 @@
       "defaultVersion": "1.23.x"
      },
      {
-      "appVersion": "\u003e= 2.6.7-0 \u003c 2.6.100-0",
+      "appVersion": "\u003e= 2.6.7-0 \u003c 2.7.100-0",
       "defaultVersion": "1.24.x"
      }
     ]
