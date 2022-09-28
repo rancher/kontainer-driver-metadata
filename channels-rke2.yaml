@@ -1,6 +1,6 @@
 channels:
   - name: default
-    latest: v1.22.13+rke2r1
+    latest: v1.22.15+rke2r1
 appDefaults:
   - appName: rancher
     defaults:
@@ -615,6 +615,23 @@ releases:
         version: 0.1.1300
     featureVersions: &featureVersions-v1
       <<: *featureVersions-v1-22-11-rke2r1
+  - version: v1.22.15+rke2r1
+    minChannelServerVersion: v2.6.3-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: &serverArgs-v1
+      <<: *serverArgs-v1-22-11-rke2r1
+    agentArgs: &agentArgs-v1
+      <<: *agentArgs-v1-22-11-rke2r1
+    charts: &charts-v2-122
+      <<: *charts-v1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.12.102
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.23.3-build2022081001
+    featureVersions: &featureVersions-v1
+      <<: *featureVersions-v1-22-11-rke2r1
   - version: v1.23.4+rke2r2
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
@@ -744,6 +761,20 @@ releases:
         repo: rancher-rke2-charts
         version: v3.23.103
     featureVersions: *featureVersions-v1
+  - version: v1.23.12+rke2r1
+    minChannelServerVersion: v2.6.4-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v1
+    agentArgs: *agentArgs-v1
+    charts: &charts-v3
+      <<: *charts-v2
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.24.102
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.24.102
+    featureVersions: *featureVersions-v1
   - version: v1.24.2+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.6.99
@@ -761,4 +792,11 @@ releases:
     serverArgs: *serverArgs-v1
     agentArgs: *agentArgs-v1
     charts: *charts-v2
+    featureVersions: *featureVersions-v1
+  - version: v1.24.5+rke2r1
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v1
+    agentArgs: *agentArgs-v1
+    charts: *charts-v3
     featureVersions: *featureVersions-v1
