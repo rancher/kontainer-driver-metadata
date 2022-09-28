@@ -1,6 +1,6 @@
 channels:
   - name: default
-    latest: v1.22.15+k3s2
+    latest: v1.22.15+k3s1
 appDefaults:
   - appName: rancher
     defaults:
