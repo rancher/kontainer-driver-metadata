@@ -766,6 +766,7 @@ releases:
     agentArgs: *agentArgs-v1-23-8-rke2r1
     charts: &charts-v1-23-12-rke2r1
       <<: *charts-v2
+      <<: *charts-v1-22-15-rke2r1
       rke2-calico:
         repo: rancher-rke2-charts
         version: v3.24.102
