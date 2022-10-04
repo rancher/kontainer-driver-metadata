@@ -792,11 +792,11 @@ releases:
     agentArgs: *agentArgs-v1
     charts: *charts-v2
     featureVersions: *featureVersions-v1
-  - version: v1.24.5+rke2r1
+  - version: v1.24.6+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v1-24-2-rke2r1
     agentArgs: *agentArgs-v1-24-2-rke2r1
-    charts: &charts-v1-24-5-rke2r1
+    charts: &charts-v1-24-6-rke2r1
       <<: *charts-v1-23-12-rke2r1
     featureVersions: *featureVersions-v1
