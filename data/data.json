@@ -23350,11 +23350,11 @@
     "charts": {
      "harvester-cloud-provider": {
       "repo": "rancher-rke2-charts",
-      "version": "0.1.1100"
+      "version": "0.1.1300"
      },
      "harvester-csi-driver": {
       "repo": "rancher-rke2-charts",
-      "version": "0.1.1100"
+      "version": "0.1.1300"
      },
      "rancher-vsphere-cpi": {
       "repo": "rancher-rke2-charts",
@@ -24100,11 +24100,11 @@
     "charts": {
      "harvester-cloud-provider": {
       "repo": "rancher-rke2-charts",
-      "version": "0.1.1100"
+      "version": "0.1.1300"
      },
      "harvester-csi-driver": {
       "repo": "rancher-rke2-charts",
-      "version": "0.1.1100"
+      "version": "0.1.1300"
      },
      "rancher-vsphere-cpi": {
       "repo": "rancher-rke2-charts",
