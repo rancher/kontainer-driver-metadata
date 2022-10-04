@@ -23128,7 +23128,7 @@
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
-      "version": "1.11.502"
+      "version": "1.12.001"
      },
      "rke2-coredns": {
       "repo": "rancher-rke2-charts",
@@ -23136,7 +23136,7 @@
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
-      "version": "4.1.003"
+      "version": "4.1.004"
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
@@ -23386,7 +23386,7 @@
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
-      "version": "4.1.003"
+      "version": "4.1.004"
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
@@ -23866,19 +23866,19 @@
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.24.102"
+      "version": "v3.23.103"
      },
      "rke2-calico-crd": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.24.102"
+      "version": "v3.23.103"
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.23.3-build2022081001"
+      "version": "v3.22.2-build2022050902"
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
-      "version": "1.12.102"
+      "version": "1.12.001"
      },
      "rke2-coredns": {
       "repo": "rancher-rke2-charts",
@@ -23886,7 +23886,7 @@
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
-      "version": "4.1.003"
+      "version": "4.1.004"
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
@@ -24136,7 +24136,7 @@
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
-      "version": "4.1.003"
+      "version": "4.1.004"
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
