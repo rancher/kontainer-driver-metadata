@@ -826,11 +826,11 @@ releases:
   - version: v1.24.6+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.6.99
-    serverArgs: &serverArgs-v1-24-5-rke2r1
+    serverArgs: &serverArgs-v1-24-6-rke2r1
       <<: *serverArgs-v124-v1
-    agentArgs: &agentArgs-v1-24-5-rke2r1
+    agentArgs: &agentArgs-v1-24-6-rke2r1
       <<: *agentArgs-v124-v1
-    charts: &charts-v1-24-5-rke2r1
+    charts: &charts-v1-24-6-rke2r1
       <<: *charts-v124-v1
       rke2-cilium:
         repo: rancher-rke2-charts
