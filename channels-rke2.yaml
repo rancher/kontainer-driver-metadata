@@ -758,9 +758,15 @@ releases:
       rke2-calico:
         repo: rancher-rke2-charts
         version: v3.23.103
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.12.001
       rke2-calico-crd:
         repo: rancher-rke2-charts
         version: v3.23.103
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.1.004
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.1.1300
@@ -809,16 +815,13 @@ releases:
       <<: *charts-v1-24-2-rke2r1
       rke2-cilium:
         repo: rancher-rke2-charts
-        version: 1.12.102
-      rke2-canal:
+        version: 1.12.001
+      rke2-coredns:
         repo: rancher-rke2-charts
-        version: v3.23.3-build2022081001
-      rke2-calico:
+        version: 1.19.400
+      rke2-ingress-nginx:
         repo: rancher-rke2-charts
-        version: v3.24.102
-      rke2-calico-crd:
-        repo: rancher-rke2-charts
-        version: v3.24.102
+        version: 4.1.004
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.1.1300
