@@ -761,6 +761,9 @@ releases:
       rke2-calico-crd:
         repo: rancher-rke2-charts
         version: v3.23.103
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.1.1300
     featureVersions: *featureVersions-v1
   - version: v1.23.12+rke2r1
     minChannelServerVersion: v2.6.4-alpha1
@@ -783,12 +786,6 @@ releases:
       rke2-calico-crd:
         repo: rancher-rke2-charts
         version: v3.24.102
-      harvester-cloud-provider:
-        repo: rancher-rke2-charts
-        version: 0.1.1300
-      harvester-csi-driver:
-        repo: rancher-rke2-charts
-        version: 0.1.1300
     featureVersions: *featureVersions-v1
   - version: v1.24.2+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
@@ -822,6 +819,9 @@ releases:
       rke2-calico-crd:
         repo: rancher-rke2-charts
         version: v3.24.102
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.1.1300
     featureVersions: *featureVersions-v1
   - version: v1.24.6+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
@@ -844,10 +844,4 @@ releases:
       rke2-calico-crd:
         repo: rancher-rke2-charts
         version: v3.24.102
-      harvester-cloud-provider:
-        repo: rancher-rke2-charts
-        version: 0.1.1300
-      harvester-csi-driver:
-        repo: rancher-rke2-charts
-        version: 0.1.1300
     featureVersions: *featureVersions-v1
