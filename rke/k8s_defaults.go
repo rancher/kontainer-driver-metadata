@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"sort"
 	"strings"
 
 	"sigs.k8s.io/yaml"
@@ -63,12 +64,80 @@ func initData() {
 	DriverData.CisConfigParams = loadCisConfigParams()
 	DriverData.CisBenchmarkVersionInfo = loadCisBenchmarkVersionInfo()
 
-	if err := readFile("./channels.yaml", DriverData.K3S); err != nil {
+	loadChannelInfo()
+}
+
+func loadChannelInfo() {
+	// closures process the data, allowing us to reuse readFiles in different contexts
+
+	readFiles("./driver_data/k3s", func(d map[string]interface{}) error {
+		for k, v := range d {
+			DriverData.K3S[k] = v
+		}
+		return nil
+	})
+
+	var r []map[string]interface{}
+	readFiles("./driver_data/k3s/releases", func(d map[string]interface{}) error {
+		r = append(r, d)
+		return nil
+	})
+	// sort the elements by semver (it otherwise sorts only alphabetically)
+	// alphabetical sorting causes v1.22.3 to come after v1.22.10 (because it compares 3 to 1)
+	sort.SliceStable(r, func(i, j int) bool {
+		isv, err := semver.Make(strings.Trim(fmt.Sprintf("%v", r[i]["version"]), "v"))
+		if err != nil {
+			return false
+		}
+		jsv, err := semver.Make(strings.Trim(fmt.Sprintf("%v", r[j]["version"]), "v"))
+		if err != nil {
+			return false
+		}
+		return isv.LT(jsv)
+	})
+	DriverData.K3S["releases"] = r
+
+	rke2Data, err := readFile("./channels-rke2.yaml")
+	if err != nil {
 		panic(err)
 	}
-	if err := readFile("./channels-rke2.yaml", DriverData.RKE2); err != nil {
+	DriverData.RKE2 = rke2Data
+}
+
+type dataProcessor func(map[string]interface{}) error
+
+func readFiles(path string, fn dataProcessor) error {
+	files, err := os.ReadDir(path)
+	if err != nil {
 		panic(err)
 	}
+	for _, f := range files {
+		if f.IsDir() {
+			continue //skip directories
+		}
+		fd, err := readFile(path + "/" + f.Name())
+		if err != nil {
+			return err
+		}
+		err = fn(fd)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func readFile(path string) (map[string]interface{}, error) {
+	var d map[string]interface{}
+	bytes, err := ioutil.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+	err = yaml.Unmarshal(bytes, &d)
+	if err != nil {
+		return nil, err
+	}
+	return d, nil
 }
 
 func validateVersionInfo() {
@@ -176,15 +245,6 @@ func validateTemplateMatch() {
 			}
 		}
 	}
-}
-
-func readFile(input string, data map[string]interface{}) error {
-	bytes, err := ioutil.ReadFile(input)
-	if err != nil {
-		return err
-	}
-
-	return yaml.Unmarshal(bytes, &data)
 }
 
 func GenerateData() {

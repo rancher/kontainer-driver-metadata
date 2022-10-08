@@ -1,0 +1,3 @@
+channels:
+  - name: default
+    latest: v1.22.15+k3s1
