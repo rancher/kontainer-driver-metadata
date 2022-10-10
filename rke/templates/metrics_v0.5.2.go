@@ -1,6 +1,6 @@
 package templates
 
-const MetricsServerTemplateV0_5_1_fix = `
+const MetricsServerTemplateV0_5_2 = `
 {{- if eq .RBACConfig "rbac"}}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -184,17 +184,17 @@ spec:
           periodSeconds: 10
         args:
         - --cert-dir=/tmp
-        - --secure-port=443
+        - --secure-port=4443
         # Rancher specific: connecting to kubelet using insecure tls
         - --kubelet-insecure-tls
-        - --kubelet-preferred-address-types=InternalIP
+        - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
         - --metric-resolution=15s
         - --logtostderr
         {{ range $k,$v := .Options }}
         -  --{{ $k }}={{ $v }}
         {{ end }}
         ports:
-        - containerPort: 443
+        - containerPort: 4443
           name: https
           protocol: TCP
         readinessProbe:
