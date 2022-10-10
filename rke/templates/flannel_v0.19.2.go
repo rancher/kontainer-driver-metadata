@@ -1,53 +1,17 @@
 package templates
 
-const FlannelTemplateV0_14_0 = `
----
-apiVersion: policy/v1beta1
-kind: PodSecurityPolicy
-metadata:
-  name: psp.flannel.unprivileged
-  annotations:
-    seccomp.security.alpha.kubernetes.io/allowedProfileNames: docker/default
-    seccomp.security.alpha.kubernetes.io/defaultProfileName: docker/default
-    apparmor.security.beta.kubernetes.io/allowedProfileNames: runtime/default
-    apparmor.security.beta.kubernetes.io/defaultProfileName: runtime/default
-spec:
-  privileged: false
-  volumes:
-  - configMap
-  - secret
-  - emptyDir
-  - hostPath
-  allowedHostPaths:
-  - pathPrefix: "/etc/cni/net.d"
-  - pathPrefix: "/etc/kube-flannel"
-  - pathPrefix: "/run/flannel"
-  readOnlyRootFilesystem: false
-  # Users and groups
-  runAsUser:
-    rule: RunAsAny
-  supplementalGroups:
-    rule: RunAsAny
-  fsGroup:
-    rule: RunAsAny
-  # Privilege Escalation
-  allowPrivilegeEscalation: false
-  defaultAllowPrivilegeEscalation: false
-  # Capabilities
-  allowedCapabilities: ['NET_ADMIN', 'NET_RAW']
-  defaultAddCapabilities: []
-  requiredDropCapabilities: []
-  # Host namespaces
-  hostPID: false
-  hostIPC: false
-  hostNetwork: true
-  hostPorts:
-  - min: 0
-    max: 65535
-  # SELinux
-  seLinux:
-    # SELinux is unused in CaaSP
-    rule: 'RunAsAny'
+/*
+FlannelTemplateV0_19_2 is based on upstream flannel v0.19.2
+Source: https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+Upstream Changelog:
+- Remove PodSecurityPolicy, and use the PodSecurity Admission Controller instead
+- Use init containers to install CNI
+- Add /run/xtables.lock mount to prevent iptables contention with kube-proxy and the host OS
+Rancher Changelog:
+- Remove duplicated sections for NodeSelector and priorityClassName
+*/
+
+const FlannelTemplateV0_19_2 = `
 {{- if eq .RBACConfig "rbac"}}
 ---
 kind: ClusterRole
@@ -55,10 +19,6 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: flannel
 rules:
-- apiGroups: ['extensions']
-  resources: ['podsecuritypolicies']
-  verbs: ['use']
-  resourceNames: ['psp.flannel.unprivileged']
 - apiGroups:
   - ""
   resources:
@@ -174,16 +134,7 @@ spec:
 {{end}}
       hostNetwork: true
 # Rancher specific change
-{{- if .KubeFlannelPriorityClassName }}
-      priorityClassName: {{ .KubeFlannelPriorityClassName }}
-{{- end }}
-{{if .NodeSelector}}
-      nodeSelector:
-      {{ range $k, $v := .NodeSelector }}
-        {{ $k }}: "{{ $v }}"
-      {{ end }}
-{{end}}
-      priorityClassName: system-node-critical
+      priorityClassName: {{ .KubeFlannelPriorityClassName | default "system-node-critical" }}
       tolerations:
       {{- if ge .ClusterVersion "v1.12" }}
       - operator: Exists
@@ -199,24 +150,32 @@ spec:
         effect: NoExecute
       {{- end }}
       serviceAccountName: flannel
-      containers:
-      - name: install-cni
+      initContainers:
+      - name: install-cni-plugin
         image: {{.CNIImage}}
-        command: ["/install-cni.sh"]
-        env:
-        # The CNI network config to install on each node.
-        - name: CNI_NETWORK_CONFIG
-          valueFrom:
-            configMapKeyRef:
-              name: kube-flannel-cfg
-              key: cni-conf.json
-        - name: CNI_CONF_NAME
-          value: "10-flannel.conflist"
+        command:
+        - cp
+        args:
+        - -f
+        - /flannel
+        - /opt/cni/bin/flannel
+        volumeMounts:
+        - name: cni-plugin
+          mountPath: /opt/cni/bin
+      - name: install-cni
+        image: {{.Image}}
+        command:
+        - cp
+        args:
+        - -f
+        - /etc/kube-flannel/cni-conf.json
+        - /etc/cni/net.d/10-flannel.conflist
         volumeMounts:
         - name: cni
-          mountPath: /host/etc/cni/net.d
-        - name: host-cni-bin
-          mountPath: /host/opt/cni/bin/
+          mountPath: /etc/cni/net.d
+        - name: flannel-cfg
+          mountPath: /etc/kube-flannel/
+      containers:
       - name: kube-flannel
         image: {{.Image}}
         command:
@@ -249,26 +208,32 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
+        - name: EVENT_QUEUE_DEPTH
+          value: "5000"
         volumeMounts:
         - name: run
-          mountPath: /run
-        - name: cni
-          mountPath: /etc/cni/net.d
+          mountPath: /run/flannel
         - name: flannel-cfg
           mountPath: /etc/kube-flannel/
+        - name: xtables-lock
+          mountPath: /run/xtables.lock
       volumes:
-        - name: run
-          hostPath:
-            path: /run
-        - name: cni
-          hostPath:
-            path: /etc/cni/net.d
-        - name: flannel-cfg
-          configMap:
-            name: kube-flannel-cfg
-        - name: host-cni-bin
-          hostPath:
-            path: /opt/cni/bin
+      - name: run
+        hostPath:
+          path: /run/flannel
+      - name: cni-plugin
+        hostPath:
+          path: /opt/cni/bin
+      - name: cni
+        hostPath:
+          path: /etc/cni/net.d
+      - name: flannel-cfg
+        configMap:
+          name: kube-flannel-cfg
+      - name: xtables-lock
+        hostPath:
+          path: /run/xtables.lock
+          type: FileOrCreate
   updateStrategy:
 {{if .UpdateStrategy}}
 {{ toYaml .UpdateStrategy | indent 4}}
