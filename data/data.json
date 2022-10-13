@@ -22021,7 +22021,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "v2.7.99",
+    "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.3-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -22271,7 +22271,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "v2.7.99",
+    "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.3-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -22521,7 +22521,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "v2.7.99",
+    "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.3-alpha1",
     "serverArgs": {
      "audit-policy-file": {
