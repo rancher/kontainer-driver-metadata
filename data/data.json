@@ -11616,7 +11616,9 @@
   },
   "v1.19": {
    "minRKEVersion": "1.2.0-rc0",
-   "minRancherVersion": "2.5.0-rc0"
+   "maxRKEVersion": "1.3.99",
+   "minRancherVersion": "2.5.0-rc0",
+   "maxRancherVersion": "2.6.99"
   },
   "v1.19.13-rancher1-1": {
    "minRKEVersion": "1.2.0-rc0",
@@ -11668,7 +11670,9 @@
   },
   "v1.20": {
    "minRKEVersion": "1.2.0-rc0",
-   "minRancherVersion": "2.5.6-rc0"
+   "maxRKEVersion": "1.3.99",
+   "minRancherVersion": "2.5.6-rc0",
+   "maxRancherVersion": "2.6.99"
   },
   "v1.20.10-rancher1-1": {
    "minRKEVersion": "1.2.0-rc0",
@@ -11736,7 +11740,13 @@
   },
   "v1.21": {
    "minRKEVersion": "1.3.0-rc0",
-   "minRancherVersion": "2.6.0-rc0"
+   "maxRKEVersion": "1.3.99",
+   "minRancherVersion": "2.6.0-rc0",
+   "maxRancherVersion": "2.6.99"
+  },
+  "v1.22": {
+   "maxRKEVersion": "1.3.99",
+   "maxRancherVersion": "2.6.99"
   },
   "v1.22.10-rancher1-1": {
    "minRKEVersion": "1.3.3-rc0",
@@ -15319,7 +15329,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "v2.7.99",
+    "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.3-alpha1",
     "serverArgs": {
      "cluster-cidr": {
@@ -15474,7 +15484,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "v2.7.99",
+    "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.3-alpha1",
     "serverArgs": {
      "cluster-cidr": {
