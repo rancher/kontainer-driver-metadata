@@ -24472,7 +24472,7 @@
      },
      "rancher-vsphere-csi": {
       "repo": "rancher-rke2-charts",
-      "version": "2.5.1-rancher101"
+      "version": "2.6.1-rancher101"
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
@@ -25472,7 +25472,7 @@
      },
      "rancher-vsphere-csi": {
       "repo": "rancher-rke2-charts",
-      "version": "2.5.1-rancher101"
+      "version": "2.6.1-rancher101"
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
