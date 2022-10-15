@@ -809,6 +809,9 @@ releases:
       rke2-multus:
         repo: rancher-rke2-charts
         version: v3.8-build2022101103
+      rancher-vsphere-cpi:
+        repo: rancher-charts
+        version: 1.4.001
     featureVersions: *featureVersions-v1
   - version: v1.24.2+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
@@ -858,4 +861,7 @@ releases:
       rke2-multus:
         repo: rancher-rke2-charts
         version: v3.8-build2022101103
+      rancher-vsphere-cpi:
+        repo: rancher-charts
+        version: 1.4.001
     featureVersions: *featureVersions-v1
