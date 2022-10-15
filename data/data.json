@@ -24467,8 +24467,8 @@
       "version": "0.1.1100"
      },
      "rancher-vsphere-cpi": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.2.201"
+      "repo": "rancher-charts",
+      "version": "1.4.001"
      },
      "rancher-vsphere-csi": {
       "repo": "rancher-rke2-charts",
@@ -25467,8 +25467,8 @@
       "version": "0.1.1100"
      },
      "rancher-vsphere-cpi": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.2.201"
+      "repo": "rancher-charts",
+      "version": "1.4.001"
      },
      "rancher-vsphere-csi": {
       "repo": "rancher-rke2-charts",
