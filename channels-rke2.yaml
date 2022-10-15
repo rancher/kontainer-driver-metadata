@@ -812,6 +812,9 @@ releases:
       rancher-vsphere-cpi:
         repo: rancher-charts
         version: 1.4.001
+      rancher-vsphere-csi:
+        repo: rancher-rke2-charts
+        version: 2.6.1-rancher101
     featureVersions: *featureVersions-v1
   - version: v1.24.2+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
@@ -864,4 +867,7 @@ releases:
       rancher-vsphere-cpi:
         repo: rancher-charts
         version: 1.4.001
+      rancher-vsphere-csi:
+        repo: rancher-rke2-charts
+        version: 2.6.1-rancher101
     featureVersions: *featureVersions-v1
