@@ -270,6 +270,12 @@ releases:
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
+  - version: v1.23.13+k3s1
+    minChannelServerVersion: v2.6.4-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v3
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
   - version: v1.24.2+k3s2
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.6.99
@@ -284,6 +290,12 @@ releases:
     featureVersions: *featureVersions-v1
   #  v1.24.5+k3s1 was never released
   - version: v1.24.6+k3s1
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v3
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
+  - version: v1.24.7+k3s1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v3
