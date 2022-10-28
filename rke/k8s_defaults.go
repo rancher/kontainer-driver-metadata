@@ -3,7 +3,6 @@ package rke
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"sort"
 	"strings"
@@ -70,17 +69,15 @@ func initData() {
 func loadChannelInfo() {
 	// closures process the data, allowing us to reuse readFiles in different contexts
 
-	readFiles("./driver_data/k3s", func(d map[string]interface{}) error {
+	readFiles("./driver_data/k3s", func(d map[string]interface{}) {
 		for k, v := range d {
 			DriverData.K3S[k] = v
 		}
-		return nil
 	})
 
 	var r []map[string]interface{}
-	readFiles("./driver_data/k3s/releases", func(d map[string]interface{}) error {
+	readFiles("./driver_data/k3s/releases", func(d map[string]interface{}) {
 		r = append(r, d)
-		return nil
 	})
 	// sort the elements by semver (it otherwise sorts only alphabetically)
 	// alphabetical sorting causes v1.22.3 to come after v1.22.10 (because it compares 3 to 1)
@@ -104,12 +101,12 @@ func loadChannelInfo() {
 	DriverData.RKE2 = rke2Data
 }
 
-type dataProcessor func(map[string]interface{}) error
+type dataProcessor func(map[string]interface{})
 
 func readFiles(path string, fn dataProcessor) error {
 	files, err := os.ReadDir(path)
 	if err != nil {
-		panic(err)
+		return err
 	}
 	for _, f := range files {
 		if f.IsDir() {
@@ -119,22 +116,19 @@ func readFiles(path string, fn dataProcessor) error {
 		if err != nil {
 			return err
 		}
-		err = fn(fd)
-		if err != nil {
-			return err
-		}
+		fn(fd)
 	}
 	return nil
 }
 
 func readFile(path string) (map[string]interface{}, error) {
 	var d map[string]interface{}
-	bytes, err := ioutil.ReadFile(path)
+	b, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
 	}
-	err = yaml.Unmarshal(bytes, &d)
-	if err != nil {
+
+	if err := yaml.Unmarshal(b, &d); err != nil {
 		return nil, err
 	}
 	return d, nil
