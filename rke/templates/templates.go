@@ -58,6 +58,7 @@ const (
 	metricsServerv18  = "metricsserver-v1.8"
 	metricsServerv120 = "metricsserver-v1.20"
 	metricsServerv050 = "metricsserver-v0.5.0"
+	metricsServerv052 = "metricsserver-v0.5.2"
 	metricsServerv061 = "metricsserver-v0.6.1"
 
 	weavev18  = "weave-v1.8"
@@ -156,10 +157,11 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.16.0-alpha": kubeDnsv18,
 		},
 		kdm.MetricsServer: {
-			">=1.23.3-rancher1-1":                     metricsServerv061,
-			">=1.20.14-rancher2-1 <1.23.3-rancher1-1": metricsServerv050,
-			">=1.20.4-rancher1-1 <1.20.14-rancher2-1": metricsServerv120,
-			">=1.8.0-rancher0 <1.20.4-rancher1-1":     metricsServerv18,
+			">=1.23.3-rancher1-1":                      metricsServerv061,
+			">=1.22.15-rancher1-1 <1.23.3-rancher1-1":  metricsServerv052,
+			">=1.20.14-rancher2-1 <1.22.15-rancher1-1": metricsServerv050,
+			">=1.20.4-rancher1-1 <1.20.14-rancher2-1":  metricsServerv120,
+			">=1.8.0-rancher0 <1.20.4-rancher1-1":      metricsServerv18,
 		},
 		kdm.Weave: {
 			">=1.22.0-rancher1-1":                    weavev122,
@@ -270,6 +272,7 @@ func getTemplates() map[string]string {
 		metricsServerv18:  MetricsServerTemplate,
 		metricsServerv120: MetricsServerTemplateV0_4_1,
 		metricsServerv050: MetricsServerTemplateV0_5_0,
+		metricsServerv052: MetricsServerTemplateV0_5_2,
 		metricsServerv061: MetricsServerTemplateV0_6_1,
 
 		weavev18:  WeaveTemplate,
