@@ -67,8 +67,6 @@ func initData() {
 }
 
 func loadChannelInfo() {
-	// closures process the data, allowing us to reuse readFiles in different contexts
-
 	readFiles("./driver_data/k3s", func(d map[string]interface{}) {
 		for k, v := range d {
 			DriverData.K3S[k] = v
