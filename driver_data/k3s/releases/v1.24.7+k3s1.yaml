@@ -1,13 +1,11 @@
-version: v1.22.13+k3s1
-minChannelServerVersion: v2.6.3-alpha1
-maxChannelServerVersion: v2.6.99
+version: v1.24.7+k3s1
+minChannelServerVersion: v2.6.7-alpha1
+maxChannelServerVersion: v2.7.99
 agentArgs:
   docker:
     type: boolean
     default: false
   pause-image:
-    type: string
-  snapshotter:
     type: string
   flannel-iface:
     type: string
@@ -25,6 +23,8 @@ agentArgs:
   selinux:
     type: boolean
     default: false
+  snapshotter:
+    type: string
   system-default-registry:
     type: string
 featureVersions:

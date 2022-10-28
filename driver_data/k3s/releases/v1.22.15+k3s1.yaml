@@ -1,6 +1,6 @@
 version: v1.22.15+k3s1
 minChannelServerVersion: v2.6.3-alpha1
-maxChannelServerVersion: v2.7.99
+maxChannelServerVersion: v2.6.99
 agentArgs:
   docker:
     type: boolean
