@@ -771,20 +771,6 @@ releases:
         repo: rancher-rke2-charts
         version: v3.23.103
     featureVersions: *featureVersions-v1
-  - version: v1.23.12+rke2r1
-    minChannelServerVersion: v2.6.4-alpha1
-    maxChannelServerVersion: v2.7.99
-    serverArgs: *serverArgs-v1-23-8-rke2r1
-    agentArgs: *agentArgs-v1-23-8-rke2r1
-    charts: &charts-v1-23-12-rke2r1
-      <<: *charts-v1-22-15-rke2r1
-      rke2-calico:
-        repo: rancher-rke2-charts
-        version: v3.24.102
-      rke2-calico-crd:
-        repo: rancher-rke2-charts
-        version: v3.24.102
-    featureVersions: *featureVersions-v1
   - version: v1.23.13+rke2r1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.7.99
@@ -844,7 +830,7 @@ releases:
     serverArgs: *serverArgs-v1-24-2-rke2r1
     agentArgs: *agentArgs-v1-24-2-rke2r1
     charts: &charts-v1-24-7-rke2r1
-      <<: *charts-v1-23-12-rke2r1
+      <<: *charts-v1-22-15-rke2r1
       rke2-coredns:
         repo: rancher-rke2-charts
         version: 1.19.401
