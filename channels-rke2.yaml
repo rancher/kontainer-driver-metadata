@@ -637,6 +637,9 @@ releases:
     agentArgs: *agentArgs-v1-22-11-rke2r1
     charts: &charts-v1-22-16-rke2r1
       <<: *charts-v1-22-15-rke2r2
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.12.102
     featureVersions: *featureVersions-v1
   - version: v1.23.4+rke2r2
     minChannelServerVersion: v2.6.4-alpha1
