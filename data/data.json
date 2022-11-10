@@ -22815,11 +22815,11 @@
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.22.2-build2022050902"
+      "version": "v3.24.1-build2022101102"
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
-      "version": "1.12.001"
+      "version": "1.12.102"
      },
      "rke2-coredns": {
       "repo": "rancher-rke2-charts",
