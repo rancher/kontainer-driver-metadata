@@ -885,7 +885,7 @@ releases:
       <<: *charts-v1-24-7-rke2r1
       rke2-cilium:
         repo: rancher-rke2-charts
-        version: 1.12.301
+        version: 1.12.302
       rancher-vsphere-cpi:
         repo: rancher-charts
         version: 1.4.100
