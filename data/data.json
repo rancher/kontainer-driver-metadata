@@ -24608,7 +24608,7 @@
       "type": "array"
      }
     },
-    "version": "v1.23.14-rc2+rke2r1"
+    "version": "v1.23.14-rc3+rke2r1"
    },
    {
     "agentArgs": {
