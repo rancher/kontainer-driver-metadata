@@ -17301,7 +17301,7 @@
   ],
   "channels": [
    {
-    "latest": "v1.22.16-rc1+rke2r1",
+    "latest": "v1.22.16+rke2r1",
     "name": "default"
    }
   ],
@@ -23182,7 +23182,7 @@
       "type": "array"
      }
     },
-    "version": "v1.22.16-rc1+rke2r1"
+    "version": "v1.22.16+rke2r1"
    },
    {
     "agentArgs": {
@@ -25304,7 +25304,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "v2.7.99",
+    "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.4-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -25408,7 +25408,7 @@
       "type": "array"
      }
     },
-    "version": "v1.23.14-rc3+rke2r1"
+    "version": "v1.23.14+rke2r1"
    },
    {
     "agentArgs": {
@@ -26554,7 +26554,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "v2.7.99",
+    "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.7-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -26658,7 +26658,7 @@
       "type": "array"
      }
     },
-    "version": "v1.24.8-rc2+rke2r1"
+    "version": "v1.24.8+rke2r1"
    }
   ]
  }
