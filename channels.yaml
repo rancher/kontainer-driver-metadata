@@ -1,6 +1,6 @@
 channels:
   - name: default
-    latest: v1.22.15+k3s1
+    latest: v1.22.16+k3s1
 appDefaults:
   - appName: rancher
     defaults:
@@ -234,6 +234,12 @@ releases:
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
+  - version: v1.22.16+k3s1
+    minChannelServerVersion: v2.6.3-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v3
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
   - version: v1.23.4+k3s1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
@@ -271,6 +277,12 @@ releases:
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
+  - version: v1.23.14+k3s1
+    minChannelServerVersion: v2.6.4-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v3
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
   - version: v1.24.2+k3s2
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.6.99
@@ -286,6 +298,12 @@ releases:
   #  v1.24.5+k3s1 was never released
   #  v1.24.6+k3s1 was never released through KDM
   - version: v1.24.7+k3s1
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v3
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
+  - version: v1.24.8+k3s1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v3
