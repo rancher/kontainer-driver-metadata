@@ -17040,6 +17040,919 @@
      "disable-controller-manager": {
       "default": false,
       "type": "boolean"
+<<<<<<< HEAD
+=======
+     },
+     "disable-etcd": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-network-policy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "default": false,
+      "type": "boolean"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "flannel-backend": {
+      "options": [
+       "none",
+       "vxlan",
+       "ipsec",
+       "host-gw",
+       "wireguard"
+      ],
+      "type": "enum"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-cloud-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "secrets-encryption": {
+      "default": false,
+      "type": "boolean"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+    "version": "v1.24.6+k3s1"
+   },
+   {
+    "agentArgs": {
+     "docker": {
+      "default": false,
+      "type": "boolean"
+     },
+     "flannel-conf": {
+      "type": "string"
+     },
+     "flannel-iface": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "default": false,
+      "type": "boolean"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.7-alpha1",
+    "serverArgs": {
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "datastore-cafile": {
+      "type": "string"
+     },
+     "datastore-certfile": {
+      "type": "string"
+     },
+     "datastore-endpoint": {
+      "type": "string"
+     },
+     "datastore-keyfile": {
+      "type": "string"
+     },
+     "default-local-storage-path": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "coredns",
+       "servicelb",
+       "traefik",
+       "local-storage",
+       "metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-apiserver": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-cloud-controller": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-controller-manager": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-etcd": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-network-policy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "default": false,
+      "type": "boolean"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "flannel-backend": {
+      "options": [
+       "none",
+       "vxlan",
+       "ipsec",
+       "host-gw",
+       "wireguard"
+      ],
+      "type": "enum"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-cloud-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "secrets-encryption": {
+      "default": false,
+      "type": "boolean"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+    "version": "v1.24.7+k3s1"
+   }
+  ]
+ },
+ "rke2": {
+  "appDefaults": [
+   {
+    "appName": "rancher",
+    "defaults": [
+     {
+      "appVersion": "\u003e= 2.6.0-0 \u003c 2.6.5-0",
+      "defaultVersion": "1.22.x"
+     },
+     {
+      "appVersion": "\u003e= 2.6.5-0 \u003c 2.6.7-0",
+      "defaultVersion": "1.23.x"
+     },
+     {
+      "appVersion": "\u003e= 2.6.7-0 \u003c 2.6.100-0",
+      "defaultVersion": "1.24.x"
+     }
+    ]
+   }
+  ],
+  "channels": [
+   {
+    "latest": "v1.22.16+rke2r1",
+    "name": "default"
+   }
+  ],
+  "releases": [
+   {
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.0-alpha1",
+    "version": "v1.19.16+rke2r1"
+   },
+   {
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.0-alpha1",
+    "version": "v1.20.15+rke2r2"
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": null,
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "rancher-vsphere",
+       "external"
+      ],
+      "type": "enum"
+     },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis-1.5",
+       "cis-1.6"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-charts",
+      "version": "100.0.0"
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-charts",
+      "version": "100.0.0"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.19.2-203"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v1.0.101"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.13.300-build2021022306"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.9.809"
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.16.201-build2021072308"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+      "version": "3.34.003"
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.11.100-build2021022302"
+     },
+     "rke2-multus": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.7.1-build2021041604"
+     }
+    },
+    "maxChannelServerVersion": "v2.6.4",
+    "minChannelServerVersion": "v2.6.0-alpha1",
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
+      ],
+      "type": "array"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-image": {
+      "type": "string"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+    "version": "v1.21.4+rke2r2"
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": null,
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "rancher-vsphere",
+       "harvester",
+       "external"
+      ],
+      "type": "enum"
+     },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis-1.5",
+       "cis-1.6"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "harvester-cloud-provider": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.200"
+     },
+     "harvester-csi-driver": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.300"
+     },
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-charts",
+      "version": "100.0.0"
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-charts",
+      "version": "100.0.0"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.19.2-204"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v1.0.101"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.13.300-build2021022306"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.10.402"
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.16.201-build2021072308"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+      "version": "3.34.003"
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.11.100-build2021022302"
+     },
+     "rke2-multus": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.7.1-build2021041604"
+     }
+    },
+    "maxChannelServerVersion": "v2.6.4",
+    "minChannelServerVersion": "v2.6.1-alpha1",
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
+      ],
+      "type": "array"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-image": {
+      "type": "string"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+    "version": "v1.21.5+rke2r1"
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": null,
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "rancher-vsphere",
+       "harvester",
+       "external"
+      ],
+      "type": "enum"
+     },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis-1.5",
+       "cis-1.6"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "harvester-cloud-provider": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.200"
+     },
+     "harvester-csi-driver": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.300"
+     },
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-charts",
+      "version": "100.0.0"
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-charts",
+      "version": "100.0.0"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.19.2-205"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v1.0.101"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.13.300-build2021022306"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.10.404"
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.16.201-build2021072308"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+      "version": "3.34.003"
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.11.100-build2021022302"
+     },
+     "rke2-multus": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.7.1-build2021041604"
+     }
+    },
+    "maxChannelServerVersion": "v2.6.4",
+    "minChannelServerVersion": "v2.6.1-alpha1",
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
+      ],
+      "type": "array"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
      },
      "disable-etcd": {
       "default": false,
@@ -21906,9 +22819,6 @@
       "version": "v3.8-build2021110403"
      }
     },
-    "featureVersions": {
-     "encryption-key-rotation": "2.0.0"
-    },
     "maxChannelServerVersion": "v2.6.99",
     "minChannelServerVersion": "v2.6.3-alpha1",
     "serverArgs": {
@@ -22013,257 +22923,7 @@
       "type": "array"
      }
     },
-    "version": "v1.22.11+rke2r1"
-   },
-   {
-    "agentArgs": {
-     "audit-policy-file": {
-      "type": "string"
-     },
-     "cloud-controller-manager-extra-env": {
-      "type": "array"
-     },
-     "cloud-controller-manager-extra-mount": {
-      "type": "array"
-     },
-     "cloud-provider-config": {
-      "type": "string"
-     },
-     "cloud-provider-name": {
-      "default": null,
-      "nullable": true,
-      "options": [
-       "aws",
-       "azure",
-       "gcp",
-       "rancher-vsphere",
-       "harvester",
-       "external"
-      ],
-      "type": "enum"
-     },
-     "control-plane-resource-limits": {
-      "type": "string"
-     },
-     "control-plane-resource-requests": {
-      "type": "string"
-     },
-     "etcd-extra-env": {
-      "type": "array"
-     },
-     "etcd-extra-mount": {
-      "type": "array"
-     },
-     "kube-apiserver-extra-env": {
-      "type": "array"
-     },
-     "kube-apiserver-extra-mount": {
-      "type": "array"
-     },
-     "kube-controller-manager-extra-env": {
-      "type": "array"
-     },
-     "kube-controller-manager-extra-mount": {
-      "type": "array"
-     },
-     "kube-proxy-arg": {
-      "type": "array"
-     },
-     "kube-proxy-extra-env": {
-      "type": "array"
-     },
-     "kube-proxy-extra-mount": {
-      "type": "array"
-     },
-     "kube-scheduler-extra-env": {
-      "type": "array"
-     },
-     "kube-scheduler-extra-mount": {
-      "type": "array"
-     },
-     "kubelet-arg": {
-      "type": "array"
-     },
-     "profile": {
-      "nullable": true,
-      "options": [
-       "cis-1.5",
-       "cis-1.6"
-      ],
-      "type": "enum"
-     },
-     "protect-kernel-defaults": {
-      "default": false,
-      "type": "boolean"
-     },
-     "resolv-conf": {
-      "type": "string"
-     },
-     "selinux": {
-      "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
-     }
-    },
-    "charts": {
-     "harvester-cloud-provider": {
-      "repo": "rancher-rke2-charts",
-      "version": "0.1.1300"
-     },
-     "harvester-csi-driver": {
-      "repo": "rancher-rke2-charts",
-      "version": "0.1.1100"
-     },
-     "rancher-vsphere-cpi": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.2.201"
-     },
-     "rancher-vsphere-csi": {
-      "repo": "rancher-rke2-charts",
-      "version": "2.5.1-rancher101"
-     },
-     "rke2-calico": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.21.504"
-     },
-     "rke2-calico-crd": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.21.504"
-     },
-     "rke2-canal": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.22.2-build2022050902"
-     },
-     "rke2-cilium": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.12.001"
-     },
-     "rke2-coredns": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.19.400"
-     },
-     "rke2-ingress-nginx": {
-      "repo": "rancher-rke2-charts",
-      "version": "4.1.004"
-     },
-     "rke2-metrics-server": {
-      "repo": "rancher-rke2-charts",
-      "version": "2.11.100-build2021111904"
-     },
-     "rke2-multus": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.8-build2021110403"
-     }
-    },
-    "featureVersions": {
-     "encryption-key-rotation": "2.0.0"
-    },
-    "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.3-alpha1",
-    "serverArgs": {
-     "audit-policy-file": {
-      "type": "string"
-     },
-     "cluster-cidr": {
-      "type": "string"
-     },
-     "cluster-dns": {
-      "type": "string"
-     },
-     "cluster-domain": {
-      "type": "string"
-     },
-     "cni": {
-      "default": "calico",
-      "options": [
-       "canal",
-       "cilium",
-       "calico",
-       "multus,canal",
-       "multus,cilium",
-       "multus,calico"
-      ],
-      "type": "array"
-     },
-     "container-runtime-endpoint": {
-      "type": "string"
-     },
-     "disable": {
-      "options": [
-       "rke2-coredns",
-       "rke2-ingress-nginx",
-       "rke2-metrics-server"
-      ],
-      "type": "array"
-     },
-     "disable-cloud-controller": {
-      "type": "bool"
-     },
-     "disable-kube-proxy": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-scheduler": {
-      "type": "bool"
-     },
-     "egress-selector-mode": {
-      "type": "string"
-     },
-     "etcd-arg": {
-      "type": "array"
-     },
-     "etcd-expose-metrics": {
-      "default": false,
-      "type": "boolean"
-     },
-     "etcd-image": {
-      "type": "string"
-     },
-     "kube-apiserver-arg": {
-      "type": "array"
-     },
-     "kube-apiserver-image": {
-      "type": "string"
-     },
-     "kube-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-controller-manager-image": {
-      "type": "string"
-     },
-     "kube-proxy-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-image": {
-      "type": "string"
-     },
-     "kubelet-path": {
-      "type": "string"
-     },
-     "pause-image": {
-      "type": "string"
-     },
-     "runtime-image": {
-      "type": "string"
-     },
-     "service-cidr": {
-      "type": "string"
-     },
-     "service-node-port-range": {
-      "type": "string"
-     },
-     "snapshotter": {
-      "type": "string"
-     },
-     "tls-san": {
-      "type": "array"
-     }
-    },
-    "version": "v1.22.13+rke2r1"
+    "version": "v1.22.15+rke2r2"
    },
    {
     "agentArgs": {
@@ -22513,7 +23173,7 @@
       "type": "array"
      }
     },
-    "version": "v1.22.15+rke2r2"
+    "version": "v1.22.16+rke2r1"
    },
    {
     "agentArgs": {
@@ -23001,7 +23661,11 @@
       "type": "array"
      }
     },
+<<<<<<< HEAD
+    "version": "v1.22.11+rke2r1"
+=======
     "version": "v1.23.6+rke2r1"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
    },
    {
     "agentArgs": {
@@ -23097,7 +23761,837 @@
     "charts": {
      "harvester-cloud-provider": {
       "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "0.1.1300"
+=======
       "version": "0.1.1100"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "harvester-csi-driver": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1100"
+     },
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "1.2.201"
+=======
+      "version": "1.2.101"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.5.1-rancher101"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.21.504"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.21.504"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "v3.22.2-build2022050902"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.12.001"
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.19.400"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.1.004"
+=======
+      "version": "v3.21.4-build2022031701"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.11.203"
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.17.000"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.1.002"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.11.100-build2021111904"
+     },
+     "rke2-multus": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.8-build2021110403"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.3-alpha1",
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
+      ],
+      "type": "array"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-image": {
+      "type": "string"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+<<<<<<< HEAD
+    "version": "v1.22.13+rke2r1"
+=======
+    "version": "v1.23.6+rke2r2"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": null,
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "rancher-vsphere",
+       "harvester",
+       "external"
+      ],
+      "type": "enum"
+     },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis-1.5",
+       "cis-1.6"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "harvester-cloud-provider": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1300"
+     },
+     "harvester-csi-driver": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1100"
+     },
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.2.201"
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.5.1-rancher101"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "v3.21.504"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.21.504"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.24.1-build2022101102"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.12.102"
+=======
+      "version": "v3.23.103"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.23.103"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.22.2-build2022050902"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.11.501"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.19.400"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "4.1.004"
+=======
+      "version": "4.1.003"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.11.100-build2021111904"
+     },
+     "rke2-multus": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "v3.8-build2021110403"
+=======
+      "version": "v3.8-build2021110402"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.3-alpha1",
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
+      ],
+      "type": "array"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-image": {
+      "type": "string"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+<<<<<<< HEAD
+    "version": "v1.22.15+rke2r2"
+=======
+    "version": "v1.23.7+rke2r2"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": null,
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "rancher-vsphere",
+       "harvester",
+       "external"
+      ],
+      "type": "enum"
+     },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis-1.5",
+       "cis-1.6"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "harvester-cloud-provider": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1000"
+     },
+     "harvester-csi-driver": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1000"
+     },
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "1.1.000"
+=======
+      "version": "1.2.201"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.4.1-rancher100"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.23.103"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.23.103"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "v3.21.4-build2022022801"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.11.101"
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.16.401-build2021111901"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.0.306"
+=======
+      "version": "v3.22.2-build2022050902"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.11.502"
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.19.400"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.1.003"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.11.100-build2021111904"
+     },
+     "rke2-multus": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.8-build2021110403"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.4-alpha1",
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
+      ],
+      "type": "array"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-image": {
+      "type": "string"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+<<<<<<< HEAD
+    "version": "v1.23.4+rke2r2"
+=======
+    "version": "v1.23.8+rke2r1"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": null,
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "rancher-vsphere",
+       "harvester",
+       "external"
+      ],
+      "type": "enum"
+     },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis-1.5",
+       "cis-1.6"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "harvester-cloud-provider": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1300"
      },
      "harvester-csi-driver": {
       "repo": "rancher-rke2-charts",
@@ -23125,7 +24619,286 @@
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
       "version": "1.11.203"
+=======
+      "version": "1.12.001"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.19.400"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "4.1.001"
+=======
+      "version": "4.1.004"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.11.100-build2021111904"
+     },
+     "rke2-multus": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "v3.7.1-build2021111906"
+=======
+      "version": "v3.8-build2021110403"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.4-alpha1",
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
+      ],
+      "type": "array"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-image": {
+      "type": "string"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+<<<<<<< HEAD
+    "version": "v1.23.6+rke2r1"
+=======
+    "version": "v1.23.10+rke2r1"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": null,
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "rancher-vsphere",
+       "harvester",
+       "external"
+      ],
+      "type": "enum"
+     },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis-1.5",
+       "cis-1.6"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "harvester-cloud-provider": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1300"
+     },
+     "harvester-csi-driver": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1100"
+     },
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.2.101"
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.5.1-rancher101"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "v3.22.101"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v1.0.202"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.21.4-build2022031701"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.11.203"
+=======
+      "version": "v3.24.102"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.24.102"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.23.3-build2022081001"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.12.102"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
      },
      "rke2-coredns": {
       "repo": "rancher-rke2-charts",
@@ -23133,7 +24906,11 @@
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
       "version": "4.1.002"
+=======
+      "version": "4.1.004"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
@@ -23245,7 +25022,11 @@
       "type": "array"
      }
     },
+<<<<<<< HEAD
     "version": "v1.23.6+rke2r2"
+=======
+    "version": "v1.23.12+rke2r1"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
    },
    {
     "agentArgs": {
@@ -23348,27 +25129,28 @@
       "version": "0.1.1100"
      },
      "rancher-vsphere-cpi": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.2.201"
+      "repo": "rancher-charts",
+      "version": "1.4.001"
      },
      "rancher-vsphere-csi": {
       "repo": "rancher-rke2-charts",
-      "version": "2.5.1-rancher101"
+      "version": "2.6.1-rancher101"
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.23.103"
+      "version": "v3.24.102"
      },
      "rke2-calico-crd": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.23.103"
+      "version": "v3.24.102"
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.22.2-build2022050902"
+      "version": "v3.24.1-build2022101103"
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
       "version": "1.11.501"
      },
      "rke2-coredns": {
@@ -23378,17 +25160,35 @@
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
       "version": "4.1.003"
+=======
+      "version": "1.12.102"
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.19.401"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.1.005"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
-      "version": "2.11.100-build2021111904"
+      "version": "2.11.100-build2022101106"
      },
      "rke2-multus": {
       "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
       "version": "v3.8-build2021110402"
      }
     },
     "maxChannelServerVersion": "v2.6.99",
+=======
+      "version": "v3.8-build2022101103"
+     }
+    },
+    "maxChannelServerVersion": "v2.7.99",
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
     "minChannelServerVersion": "v2.6.4-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -23492,757 +25292,285 @@
       "type": "array"
      }
     },
+<<<<<<< HEAD
     "version": "v1.23.7+rke2r2"
-   },
-   {
-    "agentArgs": {
-     "audit-policy-file": {
-      "type": "string"
-     },
-     "cloud-controller-manager-extra-env": {
-      "type": "array"
-     },
-     "cloud-controller-manager-extra-mount": {
-      "type": "array"
-     },
-     "cloud-provider-config": {
-      "type": "string"
-     },
-     "cloud-provider-name": {
-      "default": null,
-      "nullable": true,
-      "options": [
-       "aws",
-       "azure",
-       "gcp",
-       "rancher-vsphere",
-       "harvester",
-       "external"
-      ],
-      "type": "enum"
-     },
-     "control-plane-resource-limits": {
-      "type": "string"
-     },
-     "control-plane-resource-requests": {
-      "type": "string"
-     },
-     "etcd-extra-env": {
-      "type": "array"
-     },
-     "etcd-extra-mount": {
-      "type": "array"
-     },
-     "kube-apiserver-extra-env": {
-      "type": "array"
-     },
-     "kube-apiserver-extra-mount": {
-      "type": "array"
-     },
-     "kube-controller-manager-extra-env": {
-      "type": "array"
-     },
-     "kube-controller-manager-extra-mount": {
-      "type": "array"
-     },
-     "kube-proxy-arg": {
-      "type": "array"
-     },
-     "kube-proxy-extra-env": {
-      "type": "array"
-     },
-     "kube-proxy-extra-mount": {
-      "type": "array"
-     },
-     "kube-scheduler-extra-env": {
-      "type": "array"
-     },
-     "kube-scheduler-extra-mount": {
-      "type": "array"
-     },
-     "kubelet-arg": {
-      "type": "array"
-     },
-     "profile": {
-      "nullable": true,
-      "options": [
-       "cis-1.5",
-       "cis-1.6"
-      ],
-      "type": "enum"
-     },
-     "protect-kernel-defaults": {
-      "default": false,
-      "type": "boolean"
-     },
-     "resolv-conf": {
-      "type": "string"
-     },
-     "selinux": {
-      "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
-     }
-    },
-    "charts": {
-     "harvester-cloud-provider": {
-      "repo": "rancher-rke2-charts",
-      "version": "0.1.1100"
-     },
-     "harvester-csi-driver": {
-      "repo": "rancher-rke2-charts",
-      "version": "0.1.1100"
-     },
-     "rancher-vsphere-cpi": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.2.201"
-     },
-     "rancher-vsphere-csi": {
-      "repo": "rancher-rke2-charts",
-      "version": "2.5.1-rancher101"
-     },
-     "rke2-calico": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.23.103"
-     },
-     "rke2-calico-crd": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.23.103"
-     },
-     "rke2-canal": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.22.2-build2022050902"
-     },
-     "rke2-cilium": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.11.502"
-     },
-     "rke2-coredns": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.19.400"
-     },
-     "rke2-ingress-nginx": {
-      "repo": "rancher-rke2-charts",
-      "version": "4.1.003"
-     },
-     "rke2-metrics-server": {
-      "repo": "rancher-rke2-charts",
-      "version": "2.11.100-build2021111904"
-     },
-     "rke2-multus": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.8-build2021110403"
-     }
-    },
-    "featureVersions": {
-     "encryption-key-rotation": "2.0.0"
-    },
-    "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.4-alpha1",
-    "serverArgs": {
-     "audit-policy-file": {
-      "type": "string"
-     },
-     "cluster-cidr": {
-      "type": "string"
-     },
-     "cluster-dns": {
-      "type": "string"
-     },
-     "cluster-domain": {
-      "type": "string"
-     },
-     "cni": {
-      "default": "calico",
-      "options": [
-       "canal",
-       "cilium",
-       "calico",
-       "multus,canal",
-       "multus,cilium",
-       "multus,calico"
-      ],
-      "type": "array"
-     },
-     "container-runtime-endpoint": {
-      "type": "string"
-     },
-     "disable": {
-      "options": [
-       "rke2-coredns",
-       "rke2-ingress-nginx",
-       "rke2-metrics-server"
-      ],
-      "type": "array"
-     },
-     "disable-cloud-controller": {
-      "type": "bool"
-     },
-     "disable-kube-proxy": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-scheduler": {
-      "type": "bool"
-     },
-     "egress-selector-mode": {
-      "type": "string"
-     },
-     "etcd-arg": {
-      "type": "array"
-     },
-     "etcd-expose-metrics": {
-      "default": false,
-      "type": "boolean"
-     },
-     "etcd-image": {
-      "type": "string"
-     },
-     "kube-apiserver-arg": {
-      "type": "array"
-     },
-     "kube-apiserver-image": {
-      "type": "string"
-     },
-     "kube-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-controller-manager-image": {
-      "type": "string"
-     },
-     "kube-proxy-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-image": {
-      "type": "string"
-     },
-     "kubelet-path": {
-      "type": "string"
-     },
-     "pause-image": {
-      "type": "string"
-     },
-     "runtime-image": {
-      "type": "string"
-     },
-     "service-cidr": {
-      "type": "string"
-     },
-     "service-node-port-range": {
-      "type": "string"
-     },
-     "snapshotter": {
-      "type": "string"
-     },
-     "tls-san": {
-      "type": "array"
-     }
-    },
-    "version": "v1.23.8+rke2r1"
-   },
-   {
-    "agentArgs": {
-     "audit-policy-file": {
-      "type": "string"
-     },
-     "cloud-controller-manager-extra-env": {
-      "type": "array"
-     },
-     "cloud-controller-manager-extra-mount": {
-      "type": "array"
-     },
-     "cloud-provider-config": {
-      "type": "string"
-     },
-     "cloud-provider-name": {
-      "default": null,
-      "nullable": true,
-      "options": [
-       "aws",
-       "azure",
-       "gcp",
-       "rancher-vsphere",
-       "harvester",
-       "external"
-      ],
-      "type": "enum"
-     },
-     "control-plane-resource-limits": {
-      "type": "string"
-     },
-     "control-plane-resource-requests": {
-      "type": "string"
-     },
-     "etcd-extra-env": {
-      "type": "array"
-     },
-     "etcd-extra-mount": {
-      "type": "array"
-     },
-     "kube-apiserver-extra-env": {
-      "type": "array"
-     },
-     "kube-apiserver-extra-mount": {
-      "type": "array"
-     },
-     "kube-controller-manager-extra-env": {
-      "type": "array"
-     },
-     "kube-controller-manager-extra-mount": {
-      "type": "array"
-     },
-     "kube-proxy-arg": {
-      "type": "array"
-     },
-     "kube-proxy-extra-env": {
-      "type": "array"
-     },
-     "kube-proxy-extra-mount": {
-      "type": "array"
-     },
-     "kube-scheduler-extra-env": {
-      "type": "array"
-     },
-     "kube-scheduler-extra-mount": {
-      "type": "array"
-     },
-     "kubelet-arg": {
-      "type": "array"
-     },
-     "profile": {
-      "nullable": true,
-      "options": [
-       "cis-1.5",
-       "cis-1.6"
-      ],
-      "type": "enum"
-     },
-     "protect-kernel-defaults": {
-      "default": false,
-      "type": "boolean"
-     },
-     "resolv-conf": {
-      "type": "string"
-     },
-     "selinux": {
-      "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
-     }
-    },
-    "charts": {
-     "harvester-cloud-provider": {
-      "repo": "rancher-rke2-charts",
-      "version": "0.1.1300"
-     },
-     "harvester-csi-driver": {
-      "repo": "rancher-rke2-charts",
-      "version": "0.1.1100"
-     },
-     "rancher-vsphere-cpi": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.2.201"
-     },
-     "rancher-vsphere-csi": {
-      "repo": "rancher-rke2-charts",
-      "version": "2.5.1-rancher101"
-     },
-     "rke2-calico": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.23.103"
-     },
-     "rke2-calico-crd": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.23.103"
-     },
-     "rke2-canal": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.22.2-build2022050902"
-     },
-     "rke2-cilium": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.12.001"
-     },
-     "rke2-coredns": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.19.400"
-     },
-     "rke2-ingress-nginx": {
-      "repo": "rancher-rke2-charts",
-      "version": "4.1.004"
-     },
-     "rke2-metrics-server": {
-      "repo": "rancher-rke2-charts",
-      "version": "2.11.100-build2021111904"
-     },
-     "rke2-multus": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.8-build2021110403"
-     }
-    },
-    "featureVersions": {
-     "encryption-key-rotation": "2.0.0"
-    },
-    "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.4-alpha1",
-    "serverArgs": {
-     "audit-policy-file": {
-      "type": "string"
-     },
-     "cluster-cidr": {
-      "type": "string"
-     },
-     "cluster-dns": {
-      "type": "string"
-     },
-     "cluster-domain": {
-      "type": "string"
-     },
-     "cni": {
-      "default": "calico",
-      "options": [
-       "canal",
-       "cilium",
-       "calico",
-       "multus,canal",
-       "multus,cilium",
-       "multus,calico"
-      ],
-      "type": "array"
-     },
-     "container-runtime-endpoint": {
-      "type": "string"
-     },
-     "disable": {
-      "options": [
-       "rke2-coredns",
-       "rke2-ingress-nginx",
-       "rke2-metrics-server"
-      ],
-      "type": "array"
-     },
-     "disable-cloud-controller": {
-      "type": "bool"
-     },
-     "disable-kube-proxy": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-scheduler": {
-      "type": "bool"
-     },
-     "egress-selector-mode": {
-      "type": "string"
-     },
-     "etcd-arg": {
-      "type": "array"
-     },
-     "etcd-expose-metrics": {
-      "default": false,
-      "type": "boolean"
-     },
-     "etcd-image": {
-      "type": "string"
-     },
-     "kube-apiserver-arg": {
-      "type": "array"
-     },
-     "kube-apiserver-image": {
-      "type": "string"
-     },
-     "kube-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-controller-manager-image": {
-      "type": "string"
-     },
-     "kube-proxy-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-image": {
-      "type": "string"
-     },
-     "kubelet-path": {
-      "type": "string"
-     },
-     "pause-image": {
-      "type": "string"
-     },
-     "runtime-image": {
-      "type": "string"
-     },
-     "service-cidr": {
-      "type": "string"
-     },
-     "service-node-port-range": {
-      "type": "string"
-     },
-     "snapshotter": {
-      "type": "string"
-     },
-     "tls-san": {
-      "type": "array"
-     }
-    },
-    "version": "v1.23.10+rke2r1"
-   },
-   {
-    "agentArgs": {
-     "audit-policy-file": {
-      "type": "string"
-     },
-     "cloud-controller-manager-extra-env": {
-      "type": "array"
-     },
-     "cloud-controller-manager-extra-mount": {
-      "type": "array"
-     },
-     "cloud-provider-config": {
-      "type": "string"
-     },
-     "cloud-provider-name": {
-      "default": null,
-      "nullable": true,
-      "options": [
-       "aws",
-       "azure",
-       "gcp",
-       "rancher-vsphere",
-       "harvester",
-       "external"
-      ],
-      "type": "enum"
-     },
-     "control-plane-resource-limits": {
-      "type": "string"
-     },
-     "control-plane-resource-requests": {
-      "type": "string"
-     },
-     "etcd-extra-env": {
-      "type": "array"
-     },
-     "etcd-extra-mount": {
-      "type": "array"
-     },
-     "kube-apiserver-extra-env": {
-      "type": "array"
-     },
-     "kube-apiserver-extra-mount": {
-      "type": "array"
-     },
-     "kube-controller-manager-extra-env": {
-      "type": "array"
-     },
-     "kube-controller-manager-extra-mount": {
-      "type": "array"
-     },
-     "kube-proxy-arg": {
-      "type": "array"
-     },
-     "kube-proxy-extra-env": {
-      "type": "array"
-     },
-     "kube-proxy-extra-mount": {
-      "type": "array"
-     },
-     "kube-scheduler-extra-env": {
-      "type": "array"
-     },
-     "kube-scheduler-extra-mount": {
-      "type": "array"
-     },
-     "kubelet-arg": {
-      "type": "array"
-     },
-     "profile": {
-      "nullable": true,
-      "options": [
-       "cis-1.5",
-       "cis-1.6"
-      ],
-      "type": "enum"
-     },
-     "protect-kernel-defaults": {
-      "default": false,
-      "type": "boolean"
-     },
-     "resolv-conf": {
-      "type": "string"
-     },
-     "selinux": {
-      "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
-     }
-    },
-    "charts": {
-     "harvester-cloud-provider": {
-      "repo": "rancher-rke2-charts",
-      "version": "0.1.1300"
-     },
-     "harvester-csi-driver": {
-      "repo": "rancher-rke2-charts",
-      "version": "0.1.1100"
-     },
-     "rancher-vsphere-cpi": {
-      "repo": "rancher-charts",
-      "version": "1.4.001"
-     },
-     "rancher-vsphere-csi": {
-      "repo": "rancher-rke2-charts",
-      "version": "2.6.1-rancher101"
-     },
-     "rke2-calico": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.24.102"
-     },
-     "rke2-calico-crd": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.24.102"
-     },
-     "rke2-canal": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.24.1-build2022101103"
-     },
-     "rke2-cilium": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.12.102"
-     },
-     "rke2-coredns": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.19.401"
-     },
-     "rke2-ingress-nginx": {
-      "repo": "rancher-rke2-charts",
-      "version": "4.1.005"
-     },
-     "rke2-metrics-server": {
-      "repo": "rancher-rke2-charts",
-      "version": "2.11.100-build2022101106"
-     },
-     "rke2-multus": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.8-build2022101103"
-     }
-    },
-    "featureVersions": {
-     "encryption-key-rotation": "2.0.0"
-    },
-    "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.4-alpha1",
-    "serverArgs": {
-     "audit-policy-file": {
-      "type": "string"
-     },
-     "cluster-cidr": {
-      "type": "string"
-     },
-     "cluster-dns": {
-      "type": "string"
-     },
-     "cluster-domain": {
-      "type": "string"
-     },
-     "cni": {
-      "default": "calico",
-      "options": [
-       "canal",
-       "cilium",
-       "calico",
-       "multus,canal",
-       "multus,cilium",
-       "multus,calico"
-      ],
-      "type": "array"
-     },
-     "container-runtime-endpoint": {
-      "type": "string"
-     },
-     "disable": {
-      "options": [
-       "rke2-coredns",
-       "rke2-ingress-nginx",
-       "rke2-metrics-server"
-      ],
-      "type": "array"
-     },
-     "disable-cloud-controller": {
-      "type": "bool"
-     },
-     "disable-kube-proxy": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-scheduler": {
-      "type": "bool"
-     },
-     "egress-selector-mode": {
-      "type": "string"
-     },
-     "etcd-arg": {
-      "type": "array"
-     },
-     "etcd-expose-metrics": {
-      "default": false,
-      "type": "boolean"
-     },
-     "etcd-image": {
-      "type": "string"
-     },
-     "kube-apiserver-arg": {
-      "type": "array"
-     },
-     "kube-apiserver-image": {
-      "type": "string"
-     },
-     "kube-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-controller-manager-image": {
-      "type": "string"
-     },
-     "kube-proxy-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-image": {
-      "type": "string"
-     },
-     "kubelet-path": {
-      "type": "string"
-     },
-     "pause-image": {
-      "type": "string"
-     },
-     "runtime-image": {
-      "type": "string"
-     },
-     "service-cidr": {
-      "type": "string"
-     },
-     "service-node-port-range": {
-      "type": "string"
-     },
-     "snapshotter": {
-      "type": "string"
-     },
-     "tls-san": {
-      "type": "array"
-     }
-    },
+=======
     "version": "v1.23.13+rke2r1"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": null,
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "rancher-vsphere",
+       "harvester",
+       "external"
+      ],
+      "type": "enum"
+     },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis-1.5",
+       "cis-1.6"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "harvester-cloud-provider": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1100"
+     },
+     "harvester-csi-driver": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1100"
+     },
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-charts",
+      "version": "1.4.001"
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.6.1-rancher101"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "v3.23.103"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.23.103"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.22.2-build2022050902"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.11.502"
+=======
+      "version": "v3.24.103"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.24.103"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.24.1-build2022101103"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.12.302"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.19.401"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "4.1.003"
+=======
+      "version": "4.1.005"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.11.100-build2022101106"
+     },
+     "rke2-multus": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.8-build2022101103"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.4-alpha1",
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
+      ],
+      "type": "array"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-image": {
+      "type": "string"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+<<<<<<< HEAD
+    "version": "v1.23.8+rke2r1"
+=======
+    "version": "v1.23.14+rke2r1"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
    },
    {
     "agentArgs": {
@@ -24366,7 +25694,539 @@
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "1.12.001"
+=======
       "version": "1.11.502"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.19.400"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "4.1.004"
+=======
+      "version": "4.1.003"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.11.100-build2021111904"
+     },
+     "rke2-multus": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.8-build2021110403"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.6.99",
+<<<<<<< HEAD
+    "minChannelServerVersion": "v2.6.4-alpha1",
+=======
+    "minChannelServerVersion": "v2.6.7-alpha1",
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
+      ],
+      "type": "array"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-image": {
+      "type": "string"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+<<<<<<< HEAD
+    "version": "v1.23.10+rke2r1"
+=======
+    "version": "v1.24.2+rke2r1"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": null,
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "rancher-vsphere",
+       "harvester",
+       "external"
+      ],
+      "type": "enum"
+     },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis-1.5",
+       "cis-1.6"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "harvester-cloud-provider": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1300"
+     },
+     "harvester-csi-driver": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1100"
+     },
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-charts",
+      "version": "1.4.001"
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.6.1-rancher101"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.24.102"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.24.102"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.24.1-build2022101103"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "1.12.102"
+=======
+      "version": "1.12.001"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.19.401"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "4.1.005"
+=======
+      "version": "4.1.004"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.11.100-build2022101106"
+     },
+     "rke2-multus": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.8-build2022101103"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.6.99",
+    "minChannelServerVersion": "v2.6.4-alpha1",
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
+      ],
+      "type": "array"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-image": {
+      "type": "string"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+<<<<<<< HEAD
+    "version": "v1.23.13+rke2r1"
+=======
+    "version": "v1.24.4+rke2r1"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": null,
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "rancher-vsphere",
+       "harvester",
+       "external"
+      ],
+      "type": "enum"
+     },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis-1.5",
+       "cis-1.6"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "harvester-cloud-provider": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1100"
+     },
+     "harvester-csi-driver": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1100"
+     },
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.2.201"
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.5.1-rancher101"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.24.102"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.24.102"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.23.3-build2022081001"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "1.11.502"
+=======
+      "version": "1.12.102"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
      },
      "rke2-coredns": {
       "repo": "rancher-rke2-charts",
@@ -24492,257 +26352,11 @@
       "type": "array"
      }
     },
+<<<<<<< HEAD
     "version": "v1.24.2+rke2r1"
-   },
-   {
-    "agentArgs": {
-     "audit-policy-file": {
-      "type": "string"
-     },
-     "cloud-controller-manager-extra-env": {
-      "type": "array"
-     },
-     "cloud-controller-manager-extra-mount": {
-      "type": "array"
-     },
-     "cloud-provider-config": {
-      "type": "string"
-     },
-     "cloud-provider-name": {
-      "default": null,
-      "nullable": true,
-      "options": [
-       "aws",
-       "azure",
-       "gcp",
-       "rancher-vsphere",
-       "harvester",
-       "external"
-      ],
-      "type": "enum"
-     },
-     "control-plane-resource-limits": {
-      "type": "string"
-     },
-     "control-plane-resource-requests": {
-      "type": "string"
-     },
-     "etcd-extra-env": {
-      "type": "array"
-     },
-     "etcd-extra-mount": {
-      "type": "array"
-     },
-     "kube-apiserver-extra-env": {
-      "type": "array"
-     },
-     "kube-apiserver-extra-mount": {
-      "type": "array"
-     },
-     "kube-controller-manager-extra-env": {
-      "type": "array"
-     },
-     "kube-controller-manager-extra-mount": {
-      "type": "array"
-     },
-     "kube-proxy-arg": {
-      "type": "array"
-     },
-     "kube-proxy-extra-env": {
-      "type": "array"
-     },
-     "kube-proxy-extra-mount": {
-      "type": "array"
-     },
-     "kube-scheduler-extra-env": {
-      "type": "array"
-     },
-     "kube-scheduler-extra-mount": {
-      "type": "array"
-     },
-     "kubelet-arg": {
-      "type": "array"
-     },
-     "profile": {
-      "nullable": true,
-      "options": [
-       "cis-1.5",
-       "cis-1.6"
-      ],
-      "type": "enum"
-     },
-     "protect-kernel-defaults": {
-      "default": false,
-      "type": "boolean"
-     },
-     "resolv-conf": {
-      "type": "string"
-     },
-     "selinux": {
-      "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
-     }
-    },
-    "charts": {
-     "harvester-cloud-provider": {
-      "repo": "rancher-rke2-charts",
-      "version": "0.1.1300"
-     },
-     "harvester-csi-driver": {
-      "repo": "rancher-rke2-charts",
-      "version": "0.1.1100"
-     },
-     "rancher-vsphere-cpi": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.2.201"
-     },
-     "rancher-vsphere-csi": {
-      "repo": "rancher-rke2-charts",
-      "version": "2.5.1-rancher101"
-     },
-     "rke2-calico": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.23.103"
-     },
-     "rke2-calico-crd": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.23.103"
-     },
-     "rke2-canal": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.22.2-build2022050902"
-     },
-     "rke2-cilium": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.12.001"
-     },
-     "rke2-coredns": {
-      "repo": "rancher-rke2-charts",
-      "version": "1.19.400"
-     },
-     "rke2-ingress-nginx": {
-      "repo": "rancher-rke2-charts",
-      "version": "4.1.004"
-     },
-     "rke2-metrics-server": {
-      "repo": "rancher-rke2-charts",
-      "version": "2.11.100-build2021111904"
-     },
-     "rke2-multus": {
-      "repo": "rancher-rke2-charts",
-      "version": "v3.8-build2021110403"
-     }
-    },
-    "featureVersions": {
-     "encryption-key-rotation": "2.0.0"
-    },
-    "maxChannelServerVersion": "v2.6.99",
-    "minChannelServerVersion": "v2.6.7-alpha1",
-    "serverArgs": {
-     "audit-policy-file": {
-      "type": "string"
-     },
-     "cluster-cidr": {
-      "type": "string"
-     },
-     "cluster-dns": {
-      "type": "string"
-     },
-     "cluster-domain": {
-      "type": "string"
-     },
-     "cni": {
-      "default": "calico",
-      "options": [
-       "canal",
-       "cilium",
-       "calico",
-       "multus,canal",
-       "multus,cilium",
-       "multus,calico"
-      ],
-      "type": "array"
-     },
-     "container-runtime-endpoint": {
-      "type": "string"
-     },
-     "disable": {
-      "options": [
-       "rke2-coredns",
-       "rke2-ingress-nginx",
-       "rke2-metrics-server"
-      ],
-      "type": "array"
-     },
-     "disable-cloud-controller": {
-      "type": "bool"
-     },
-     "disable-kube-proxy": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-scheduler": {
-      "type": "bool"
-     },
-     "egress-selector-mode": {
-      "type": "string"
-     },
-     "etcd-arg": {
-      "type": "array"
-     },
-     "etcd-expose-metrics": {
-      "default": false,
-      "type": "boolean"
-     },
-     "etcd-image": {
-      "type": "string"
-     },
-     "kube-apiserver-arg": {
-      "type": "array"
-     },
-     "kube-apiserver-image": {
-      "type": "string"
-     },
-     "kube-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-controller-manager-image": {
-      "type": "string"
-     },
-     "kube-proxy-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-image": {
-      "type": "string"
-     },
-     "kubelet-path": {
-      "type": "string"
-     },
-     "pause-image": {
-      "type": "string"
-     },
-     "runtime-image": {
-      "type": "string"
-     },
-     "service-cidr": {
-      "type": "string"
-     },
-     "service-node-port-range": {
-      "type": "string"
-     },
-     "snapshotter": {
-      "type": "string"
-     },
-     "tls-san": {
-      "type": "array"
-     }
-    },
-    "version": "v1.24.4+rke2r1"
+=======
+    "version": "v1.24.6+rke2r1"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
    },
    {
     "agentArgs": {
@@ -24854,11 +26468,269 @@
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.24.102"
+      "version": "v3.23.103"
      },
      "rke2-calico-crd": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.24.102"
+      "version": "v3.23.103"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+<<<<<<< HEAD
+      "version": "v3.22.2-build2022050902"
+=======
+      "version": "v3.24.1-build2022101103"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.12.001"
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.19.401"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.1.005"
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.11.100-build2022101106"
+     },
+     "rke2-multus": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.8-build2022101103"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.7.99",
+    "minChannelServerVersion": "v2.6.7-alpha1",
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
+      ],
+      "type": "array"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-image": {
+      "type": "string"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "tls-san": {
+      "type": "array"
+     }
+    },
+<<<<<<< HEAD
+    "version": "v1.24.4+rke2r1"
+=======
+    "version": "v1.24.7+rke2r1"
+>>>>>>> 58473c2 (November 2022 rke2 release dev v2.6 (#1013))
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": null,
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "rancher-vsphere",
+       "harvester",
+       "external"
+      ],
+      "type": "enum"
+     },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis-1.5",
+       "cis-1.6"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "harvester-cloud-provider": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1300"
+     },
+     "harvester-csi-driver": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.1100"
+     },
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-charts",
+      "version": "1.4.100"
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-rke2-charts",
+      "version": "2.6.2-rancher100"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.24.103"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.24.103"
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
@@ -24866,7 +26738,7 @@
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
-      "version": "1.12.102"
+      "version": "1.12.302"
      },
      "rke2-coredns": {
       "repo": "rancher-rke2-charts",
@@ -24992,7 +26864,7 @@
       "type": "array"
      }
     },
-    "version": "v1.24.7+rke2r1"
+    "version": "v1.24.8+rke2r1"
    }
   ]
  }
