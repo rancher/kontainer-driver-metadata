@@ -5,7 +5,6 @@ FlannelTemplateV0_19_2 is based on upstream flannel v0.19.2
 Source: https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 Upstream Changelog:
 - Remove PodSecurityPolicy, and use the PodSecurity Admission Controller instead
-- Use init containers to install CNI
 - Add /run/xtables.lock mount to prevent iptables contention with kube-proxy and the host OS
 Rancher Changelog:
 - Remove duplicated sections for NodeSelector and priorityClassName
@@ -150,32 +149,24 @@ spec:
         effect: NoExecute
       {{- end }}
       serviceAccountName: flannel
-      initContainers:
-      - name: install-cni-plugin
-        image: {{.CNIImage}}
-        command:
-        - cp
-        args:
-        - -f
-        - /flannel
-        - /opt/cni/bin/flannel
-        volumeMounts:
-        - name: cni-plugin
-          mountPath: /opt/cni/bin
+      containers:
       - name: install-cni
-        image: {{.Image}}
-        command:
-        - cp
-        args:
-        - -f
-        - /etc/kube-flannel/cni-conf.json
-        - /etc/cni/net.d/10-flannel.conflist
+        image: {{.CNIImage}}
+        command: ["/install-cni.sh"]
+        env:
+        # The CNI network config to install on each node.
+        - name: CNI_NETWORK_CONFIG
+          valueFrom:
+            configMapKeyRef:
+              name: kube-flannel-cfg
+              key: cni-conf.json
+        - name: CNI_CONF_NAME
+          value: "10-flannel.conflist"
         volumeMounts:
         - name: cni
-          mountPath: /etc/cni/net.d
-        - name: flannel-cfg
-          mountPath: /etc/kube-flannel/
-      containers:
+          mountPath: /host/etc/cni/net.d
+        - name: host-cni-bin
+          mountPath: /host/opt/cni/bin/
       - name: kube-flannel
         image: {{.Image}}
         command:
@@ -221,7 +212,7 @@ spec:
       - name: run
         hostPath:
           path: /run/flannel
-      - name: cni-plugin
+      - name: host-cni-bin
         hostPath:
           path: /opt/cni/bin
       - name: cni

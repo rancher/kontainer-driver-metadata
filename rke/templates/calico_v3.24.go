@@ -150,14 +150,14 @@ spec:
                 description: 'LogSeverityScreen is the log severity above which logs
                   are sent to the stdout. [Default: INFO]'
                 type: string
-                nodeMeshMaxRestartTime:
+              nodeMeshMaxRestartTime:
                   description: Time to allow for software restart for node-to-mesh peerings.  When
                     specified, this is configured as the graceful restart timeout.  When
                     not specified, the BIRD default of 120s is used. This field can
                     only be set on the default BGPConfiguration instance and requires
                     that NodeMesh is enabled
                   type: string
-                nodeMeshPassword:
+              nodeMeshPassword:
                   description: Optional BGP password for full node-to-mesh peerings.
                     This field can only be set on the default BGPConfiguration instance
                     and requires that NodeMesh is enabled
@@ -4475,7 +4475,7 @@ spec:
               name: cni-net-dir
           securityContext:
             privileged: true
-		# This init container mounts the necessary filesystems needed by the BPF data plane
+        # This init container mounts the necessary filesystems needed by the BPF data plane
         # i.e. bpf at /sys/fs/bpf and cgroup2 at /run/calico/cgroup. Calico-node initialisation is executed
         # in best effort fashion, i.e. no failure for errors, to not disrupt pod creation in iptable mode.
         - name: "mount-bpffs"

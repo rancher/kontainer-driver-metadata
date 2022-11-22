@@ -4420,7 +4420,7 @@ spec:
               name: kubernetes-services-endpoint
               optional: true
           env:
-			# Set the serviceaccount name to use for the Calico CNI plugin.
+            # Set the serviceaccount name to use for the Calico CNI plugin.
             # We use canal-node instead of calico-node when using flannel networking.
             - name: CALICO_CNI_SERVICE_ACCOUNT
               valueFrom:
@@ -4456,7 +4456,7 @@ spec:
               name: cni-net-dir
           securityContext:
             privileged: true
-		# This init container mounts the necessary filesystems needed by the BPF data plane
+        # This init container mounts the necessary filesystems needed by the BPF data plane
         # i.e. bpf at /sys/fs/bpf and cgroup2 at /run/calico/cgroup. Calico-node initialisation is executed
         # in best effort fashion, i.e. no failure for errors, to not disrupt pod creation in iptable mode.
         - name: "mount-bpffs"
@@ -4508,7 +4508,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: spec.nodeName
-			# Set the serviceaccount name to use for the Calico CNI plugin.
+            # Set the serviceaccount name to use for the Calico CNI plugin.
             # We use canal-node instead of calico-node when using flannel networking.
             - name: CALICO_CNI_SERVICE_ACCOUNT
               valueFrom:
