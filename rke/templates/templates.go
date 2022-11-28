@@ -69,8 +69,9 @@ const (
 	/* Versioning: va.b.c-<special-attr/base-if-none>-x.y.z where a.b.c is ACI version and x.y.z is the k8s version,
 	if required
 	*/
-	aciv500 = "aci-v5.0.0"
-	aciv523 = "aci-v5.2.3"
+	aciv500  = "aci-v5.0.0"
+	aciv523  = "aci-v5.2.3"
+	aciv5234 = "aci-v5.2.3.4"
 
 	nginxIngressv18          = "nginxingress-v1.8"
 	nginxIngressV115         = "nginxingress-v1.15"
@@ -170,14 +171,18 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.16.0-alpha":         weavev18,
 		},
 		kdm.Aci: {
-			">=1.17.0-alpha <1.20.15-rancher2-2":    aciv500,
-			">=1.20.15-rancher2-2 <1.21.0-rancher0": aciv523,
-			">=1.21.0-rancher0 <1.21.14-rancher1-1": aciv500,
-			">=1.21.14-rancher1-1 <1.22.0-rancher0": aciv523,
-			">=1.22.0-rancher0 <1.22.11-rancher1-1": aciv500,
-			">=1.22.11-rancher1-1 <1.23.0-rancher0": aciv523,
-			">=1.23.0-rancher0 <1.23.8-rancher1-1":  aciv500,
-			">=1.23.8-rancher1-1":                   aciv523,
+			">=1.17.0-alpha <1.20.15-rancher2-2":       aciv500,
+			">=1.20.15-rancher2-2 <1.21.0-rancher0":    aciv523,
+			">=1.21.0-rancher0 <1.21.14-rancher1-1":    aciv500,
+			">=1.21.14-rancher1-1 <1.22.0-rancher0":    aciv523,
+			">=1.22.0-rancher0 <1.22.11-rancher1-1":    aciv500,
+			">=1.22.11-rancher1-1 <1.22.16-rancher1-1": aciv523,
+			">=1.22.16-rancher1-1 <1.23.0-rancher0":    aciv5234,
+			">=1.23.0-rancher0 <1.23.8-rancher1-1":     aciv500,
+			">=1.23.8-rancher1-1 <1.23.14-rancher1-1":  aciv523,
+			">=1.23.14-rancher1-1 <1.24.0-rancher0":    aciv5234,
+			">=1.24.0-rancher0 <1.24.8-rancher1-1":     aciv523,
+			">=1.24.8-rancher1-1":                      aciv5234,
 		},
 		kdm.NginxIngress: {
 			">=1.8.0-rancher0 <1.13.10-rancher1-3":  nginxIngressv18,
@@ -280,8 +285,9 @@ func getTemplates() map[string]string {
 		weavev120: WeaveTemplateV120,
 		weavev122: WeaveTemplateV122,
 
-		aciv500: AciTemplateV500,
-		aciv523: AciTemplateV523,
+		aciv500:  AciTemplateV500,
+		aciv523:  AciTemplateV523,
+		aciv5234: AciTemplateV5234,
 
 		nginxIngressv18:          NginxIngressTemplate,
 		nginxIngressV115:         NginxIngressTemplateV0251Rancher1,

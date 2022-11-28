@@ -1,6 +1,6 @@
 channels:
   - name: default
-    latest: v1.22.15+rke2r2
+    latest: v1.22.16+rke2r1
 appDefaults:
   - appName: rancher
     defaults:
@@ -647,7 +647,14 @@ releases:
         version: v3.22.101
       rke2-calico-crd:
         repo: rancher-rke2-charts
-        version: v1.0.202      
+        version: v1.0.202
+  - version: v1.22.16+rke2r1
+    minChannelServerVersion: v2.6.3-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v1-22-11-rke2r1
+    agentArgs: *agentArgs-v1-22-11-rke2r1
+    charts: &charts-v1-22-16-rke2r1
+      <<: *charts-v1-22-15-rke2r2
   - version: v1.23.6+rke2r1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.6.99
@@ -796,6 +803,22 @@ releases:
       rke2-calico-crd:
         repo: rancher-rke2-charts
         version: v3.24.102
+  - version: v1.23.14+rke2r1
+    minChannelServerVersion: v2.6.4-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v1-23-8-rke2r1
+    agentArgs: *agentArgs-v1-23-8-rke2r1
+    charts: &charts-v1-23-14-rke2r1
+      <<: *charts-v1-23-13-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.12.302
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.24.103
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.24.103
     featureVersions: *featureVersions-v1
   - version: v1.24.2+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
@@ -852,4 +875,27 @@ releases:
       rke2-calico-crd:
         repo: rancher-rke2-charts
         version: v3.24.102
+    featureVersions: *featureVersions-v1
+  - version: v1.24.8+rke2r1
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v1-24-2-rke2r1
+    agentArgs: *agentArgs-v1-24-2-rke2r1
+    charts: &charts-v1-24-8-rke2r1
+      <<: *charts-v1-24-7-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.12.302
+      rancher-vsphere-cpi:
+        repo: rancher-charts
+        version: 1.4.100
+      rancher-vsphere-csi:
+        repo: rancher-rke2-charts
+        version: 2.6.2-rancher100
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.24.103
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.24.103
     featureVersions: *featureVersions-v1
