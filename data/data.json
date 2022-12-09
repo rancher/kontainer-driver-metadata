@@ -12737,7 +12737,7 @@
   ],
   "channels": [
    {
-    "latest": "v1.22.16+k3s1",
+    "latest": "v1.22.17-rc1+k3s1",
     "name": "default"
    }
   ],
