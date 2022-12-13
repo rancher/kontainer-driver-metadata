@@ -17604,7 +17604,7 @@
   ],
   "channels": [
    {
-    "latest": "v1.22.17-rc1+rke2r1",
+    "latest": "v1.22.17-rc2+rke2r1",
     "name": "default"
    }
   ],
@@ -23238,7 +23238,7 @@
       "type": "array"
      }
     },
-    "version": "v1.22.17-rc1+rke2r1"
+    "version": "v1.22.17-rc2+rke2r1"
    },
    {
     "agentArgs": {
@@ -25585,7 +25585,7 @@
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
-      "version": "1.12.401"
+      "version": "1.12.402"
      },
      "rke2-coredns": {
       "repo": "rancher-rke2-charts",
@@ -26835,7 +26835,7 @@
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
-      "version": "1.12.401"
+      "version": "1.12.402"
      },
      "rke2-coredns": {
       "repo": "rancher-rke2-charts",
@@ -27085,7 +27085,7 @@
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
-      "version": "1.12.401"
+      "version": "1.12.402"
      },
      "rke2-coredns": {
       "repo": "rancher-rke2-charts",
