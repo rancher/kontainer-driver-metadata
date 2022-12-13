@@ -853,7 +853,7 @@ releases:
         version: v3.24.501
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
-        version: 4.1.007
+        version: 4.1.008
       rke2-metrics-server:
         repo: rancher-rke2-charts
         version: 2.11.100-build2022101107
@@ -961,7 +961,7 @@ releases:
         version: v3.24.501
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
-        version: 4.1.007
+        version: 4.1.008
       rke2-metrics-server:
         repo: rancher-rke2-charts
         version: 2.11.100-build2022101107
