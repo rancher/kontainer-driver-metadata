@@ -25586,7 +25586,7 @@
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
-      "version": "4.1.007"
+      "version": "4.1.008"
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
@@ -26836,7 +26836,7 @@
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
-      "version": "4.1.007"
+      "version": "4.1.008"
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
@@ -27086,7 +27086,7 @@
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
-      "version": "4.1.007"
+      "version": "4.1.008"
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
