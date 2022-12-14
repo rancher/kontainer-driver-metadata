@@ -289,7 +289,7 @@ releases:
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
-  - version: v1.23.15-rc2+k3s1
+  - version: v1.23.15-rc3+k3s1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v3
@@ -321,7 +321,7 @@ releases:
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
-  - version: v1.24.9-rc2+k3s1
+  - version: v1.24.9-rc3+k3s1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v3
