@@ -1,6 +1,6 @@
 channels:
   - name: default
-    latest: v1.22.17-rc2+rke2r1
+    latest: v1.22.17+rke2r1
 appDefaults:
   - appName: rancher
     defaults:
@@ -630,12 +630,12 @@ releases:
         version: v3.24.1-build2022101102
     featureVersions: &featureVersions-v1
       <<: *featureVersions-v1-22-11-rke2r1
-  - version: v1.22.17-rc2+rke2r1
+  - version: v1.22.17+rke2r1
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v1-22-11-rke2r1
     agentArgs: *agentArgs-v1-22-11-rke2r1
-    charts: &charts-v1-22-17-rc2-rke2r1
+    charts: &charts-v1-22-17-rke2r1
       <<: *charts-v1-22-15-rke2r2
       rke2-cilium:
         repo: rancher-rke2-charts
@@ -832,12 +832,12 @@ releases:
         repo: rancher-rke2-charts
         version: v3.24.103
     featureVersions: *featureVersions-v1
-  - version: v1.23.15-rc4+rke2r1
+  - version: v1.23.15+rke2r1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v1-23-8-rke2r1
     agentArgs: *agentArgs-v1-23-8-rke2r1
-    charts: &charts-v1-23-15-rc4-rke2r1
+    charts: &charts-v1-23-15-rke2r1
       <<: *charts-v1-23-14-rke2r1
       rke2-cilium:
         repo: rancher-rke2-charts
@@ -940,12 +940,12 @@ releases:
         repo: rancher-rke2-charts
         version: v3.24.103
     featureVersions: *featureVersions-v1
-  - version: v1.24.9-rc4+rke2r1
+  - version: v1.24.9+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v1-24-2-rke2r1
     agentArgs: *agentArgs-v1-24-2-rke2r1
-    charts: &charts-v1-24-9-rc4-rke2r1
+    charts: &charts-v1-24-9-rke2r1
       <<: *charts-v1-24-8-rke2r1
       rke2-cilium:
         repo: rancher-rke2-charts
@@ -969,11 +969,11 @@ releases:
         repo: rancher-rke2-charts
         version: v3.9-build2022102805
     featureVersions: *featureVersions-v1
-  - version: v1.25.5-rc4+rke2r1
+  - version: v1.25.5+rke2r1
     minChannelServerVersion: v2.7.2-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v1-24-2-rke2r1
     agentArgs: *agentArgs-v1-24-2-rke2r1
-    charts: &charts-v1-25-5-rc4-rke2r1
-      <<: *charts-v1-24-9-rc4-rke2r1
+    charts: &charts-v1-25-5-rke2r1
+      <<: *charts-v1-24-9-rke2r1
     featureVersions: *featureVersions-v1
