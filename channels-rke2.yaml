@@ -906,4 +906,25 @@ releases:
     agentArgs: *agentArgs-v1-24-2-rke2r1
     charts: &charts-v1-25-5-rke2r1
       <<: *charts-v1-24-8-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.12.402
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.24.5-build2022120101
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.24.501
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.24.501
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.1.008
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 2.11.100-build2022101107
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v3.9-build2022102805
     featureVersions: *featureVersions-v1
