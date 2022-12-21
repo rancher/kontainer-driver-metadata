@@ -312,7 +312,7 @@ releases:
   #  v1.25.1+k3s1 was never released
   #  v1.25.2+k3s1 is not released through KDM yet
   - version: v1.25.5+k3s1
-    minChannelServerVersion: v2.6.7-alpha1
+    minChannelServerVersion: v2.7.2-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
