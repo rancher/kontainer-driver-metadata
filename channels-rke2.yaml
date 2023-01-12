@@ -794,7 +794,7 @@ releases:
         repo: rancher-rke2-charts
         version: v3.8-build2022101103
       rancher-vsphere-cpi:
-        repo: rancher-charts
+        repo: rancher-rke2-charts
         version: 1.4.001
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
@@ -866,7 +866,7 @@ releases:
         repo: rancher-rke2-charts
         version: v3.8-build2022101103
       rancher-vsphere-cpi:
-        repo: rancher-charts
+        repo: rancher-rke2-charts
         version: 1.4.001
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
@@ -889,7 +889,7 @@ releases:
         repo: rancher-rke2-charts
         version: 1.12.302
       rancher-vsphere-cpi:
-        repo: rancher-charts
+        repo: rancher-rke2-charts
         version: 1.4.100
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
