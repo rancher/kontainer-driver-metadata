@@ -24810,7 +24810,7 @@
       "version": "0.1.1100"
      },
      "rancher-vsphere-cpi": {
-      "repo": "rancher-charts",
+      "repo": "rancher-rke2-charts",
       "version": "1.4.001"
      },
      "rancher-vsphere-csi": {
@@ -25060,7 +25060,7 @@
       "version": "0.1.1100"
      },
      "rancher-vsphere-cpi": {
-      "repo": "rancher-charts",
+      "repo": "rancher-rke2-charts",
       "version": "1.4.001"
      },
      "rancher-vsphere-csi": {
@@ -25810,7 +25810,7 @@
       "version": "0.1.1100"
      },
      "rancher-vsphere-cpi": {
-      "repo": "rancher-charts",
+      "repo": "rancher-rke2-charts",
       "version": "1.4.001"
      },
      "rancher-vsphere-csi": {
@@ -26060,7 +26060,7 @@
       "version": "0.1.1100"
      },
      "rancher-vsphere-cpi": {
-      "repo": "rancher-charts",
+      "repo": "rancher-rke2-charts",
       "version": "1.4.100"
      },
      "rancher-vsphere-csi": {
