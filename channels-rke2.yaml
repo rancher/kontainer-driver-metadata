@@ -1000,6 +1000,12 @@ releases:
       rke2-multus:
         repo: rancher-rke2-charts
         version: v3.9.3-build2023010901
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.1.1400
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.1500
     featureVersions: *featureVersions-v1
   - version: v1.25.5+rke2r2
     minChannelServerVersion: v2.7.2-alpha1
