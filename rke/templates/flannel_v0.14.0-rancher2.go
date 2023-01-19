@@ -1,17 +1,60 @@
 package templates
 
 /*
-FlannelTemplateV0_19_2 is based on upstream flannel v0.19.2
-Source: https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
-Upstream Changelog:
-- Remove PodSecurityPolicy, and use the PodSecurity Admission Controller instead
-- Add /run/xtables.lock mount to prevent iptables contention with kube-proxy and the host OS
+FlannelTemplateV0_14_0Rancher2 is based on upstream flannel v0.14.0
+Source: https://raw.githubusercontent.com/flannel-io/flannel/v0.14.0/Documentation/kube-flannel.yml
+
 Rancher Changelog:
-- Remove duplicated sections for NodeSelector and priorityClassName
 - Removed resource limits for kube-flannel DaemonSet. ref: https://github.com/flannel-io/flannel/pull/1694
 */
-
-const FlannelTemplateV0_19_2 = `
+const FlannelTemplateV0_14_0Rancher2 = `
+---
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: psp.flannel.unprivileged
+  annotations:
+    seccomp.security.alpha.kubernetes.io/allowedProfileNames: docker/default
+    seccomp.security.alpha.kubernetes.io/defaultProfileName: docker/default
+    apparmor.security.beta.kubernetes.io/allowedProfileNames: runtime/default
+    apparmor.security.beta.kubernetes.io/defaultProfileName: runtime/default
+spec:
+  privileged: false
+  volumes:
+  - configMap
+  - secret
+  - emptyDir
+  - hostPath
+  allowedHostPaths:
+  - pathPrefix: "/etc/cni/net.d"
+  - pathPrefix: "/etc/kube-flannel"
+  - pathPrefix: "/run/flannel"
+  readOnlyRootFilesystem: false
+  # Users and groups
+  runAsUser:
+    rule: RunAsAny
+  supplementalGroups:
+    rule: RunAsAny
+  fsGroup:
+    rule: RunAsAny
+  # Privilege Escalation
+  allowPrivilegeEscalation: false
+  defaultAllowPrivilegeEscalation: false
+  # Capabilities
+  allowedCapabilities: ['NET_ADMIN', 'NET_RAW']
+  defaultAddCapabilities: []
+  requiredDropCapabilities: []
+  # Host namespaces
+  hostPID: false
+  hostIPC: false
+  hostNetwork: true
+  hostPorts:
+  - min: 0
+    max: 65535
+  # SELinux
+  seLinux:
+    # SELinux is unused in CaaSP
+    rule: 'RunAsAny'
 {{- if eq .RBACConfig "rbac"}}
 ---
 kind: ClusterRole
@@ -19,6 +62,10 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: flannel
 rules:
+- apiGroups: ['extensions']
+  resources: ['podsecuritypolicies']
+  verbs: ['use']
+  resourceNames: ['psp.flannel.unprivileged']
 - apiGroups:
   - ""
   resources:
@@ -134,7 +181,16 @@ spec:
 {{end}}
       hostNetwork: true
 # Rancher specific change
-      priorityClassName: {{ .KubeFlannelPriorityClassName | default "system-node-critical" }}
+{{- if .KubeFlannelPriorityClassName }}
+      priorityClassName: {{ .KubeFlannelPriorityClassName }}
+{{- end }}
+{{if .NodeSelector}}
+      nodeSelector:
+      {{ range $k, $v := .NodeSelector }}
+        {{ $k }}: "{{ $v }}"
+      {{ end }}
+{{end}}
+      priorityClassName: system-node-critical
       tolerations:
       {{- if ge .ClusterVersion "v1.12" }}
       - operator: Exists
@@ -197,32 +253,26 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-        - name: EVENT_QUEUE_DEPTH
-          value: "5000"
         volumeMounts:
         - name: run
-          mountPath: /run/flannel
+          mountPath: /run
+        - name: cni
+          mountPath: /etc/cni/net.d
         - name: flannel-cfg
           mountPath: /etc/kube-flannel/
-        - name: xtables-lock
-          mountPath: /run/xtables.lock
       volumes:
-      - name: run
-        hostPath:
-          path: /run/flannel
-      - name: host-cni-bin
-        hostPath:
-          path: /opt/cni/bin
-      - name: cni
-        hostPath:
-          path: /etc/cni/net.d
-      - name: flannel-cfg
-        configMap:
-          name: kube-flannel-cfg
-      - name: xtables-lock
-        hostPath:
-          path: /run/xtables.lock
-          type: FileOrCreate
+        - name: run
+          hostPath:
+            path: /run
+        - name: cni
+          hostPath:
+            path: /etc/cni/net.d
+        - name: flannel-cfg
+          configMap:
+            name: kube-flannel-cfg
+        - name: host-cni-bin
+          hostPath:
+            path: /opt/cni/bin
   updateStrategy:
 {{if .UpdateStrategy}}
 {{ toYaml .UpdateStrategy | indent 4}}

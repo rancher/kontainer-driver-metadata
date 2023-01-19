@@ -45,11 +45,12 @@ const (
 	canalv3225                    = "canal-v3.22.5"
 	canalv3241                    = "canal-v3.24.1"
 
-	flannelv18   = "flannel-v1.8"
-	flannelv115  = "flannel-v1.15"
-	flannelv116  = "flannel-v1.16"
-	flannelv0140 = "flannel-v0.14.0"
-	flannelv0192 = "flannel-v0.19.2"
+	flannelv18           = "flannel-v1.8"
+	flannelv115          = "flannel-v1.15"
+	flannelv116          = "flannel-v1.16"
+	flannelv0140         = "flannel-v0.14.0"
+	flannelv0140Rancher2 = "flannel-v0.14.0-rancher2"
+	flannelv0192         = "flannel-v0.19.2"
 
 	coreDnsv18          = "coredns-v1.8"
 	coreDnsv116         = "coredns-v1.16"
@@ -158,11 +159,14 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":        canalv18,
 		},
 		kdm.Flannel: {
-			">=1.25.2-rancher-1-1":               flannelv0192,
-			">=1.21.0-alpha <1.25.2-rancher-1-1": flannelv0140,
-			">=1.16.0-alpha <1.21.0-alpha":       flannelv116,
-			">=1.15.0-rancher0 <1.16.0-alpha":    flannelv115,
-			">=1.8.0-rancher0 <1.15.0-rancher0":  flannelv18,
+			">=1.25.0-rancher-1-1":                     flannelv0192,
+			">=1.24.10-rancher1-1 <1.25.0-rancher-1-1": flannelv0140Rancher2,
+			">=1.24.0-rancher1-1 <1.24.10-rancher1-1":  flannelv0140,
+			">=1.23.16-rancher1-1 <1.24.0-rancher1-1":  flannelv0140Rancher2,
+			">=1.21.0-alpha <1.23.16-rancher1-1":       flannelv0140,
+			">=1.16.0-alpha <1.21.0-alpha":             flannelv116,
+			">=1.15.0-rancher0 <1.16.0-alpha":          flannelv115,
+			">=1.8.0-rancher0 <1.15.0-rancher0":        flannelv18,
 		},
 		kdm.CoreDNS: {
 			">=1.21.9-rancher1-2":                     coreDnsv183Rancher2,
@@ -268,11 +272,12 @@ func getTemplates() map[string]string {
 		calicov3225:          CalicoTemplateV3_22_5,
 		calicov3241:          CalicoTemplateV3_24_1,
 
-		flannelv115:  FlannelTemplateV115,
-		flannelv116:  FlannelTemplateV116,
-		flannelv0140: FlannelTemplateV0_14_0,
-		flannelv0192: FlannelTemplateV0_19_2,
-		flannelv18:   FlannelTemplate,
+		flannelv115:          FlannelTemplateV115,
+		flannelv116:          FlannelTemplateV116,
+		flannelv0140:         FlannelTemplateV0_14_0,
+		flannelv0140Rancher2: FlannelTemplateV0_14_0Rancher2,
+		flannelv0192:         FlannelTemplateV0_19_2,
+		flannelv18:           FlannelTemplate,
 
 		canalv113:                     CanalTemplateV113,
 		canalv18:                      CanalTemplateV112,
