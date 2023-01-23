@@ -862,6 +862,7 @@ releases:
       rke2-multus:
         repo: rancher-rke2-charts
         version: v3.9-build2022102805
+    featureVersions: *featureVersions-v1
   - version: v1.23.16-rc1+rke2r1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.7.99
