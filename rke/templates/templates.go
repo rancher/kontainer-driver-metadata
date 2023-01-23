@@ -88,6 +88,7 @@ const (
 	nginxIngressv110Rancher4 = "nginxingress-v1.1.0-rancher4"
 	nginxIngressv120Rancher1 = "nginxingress-v1.2.0-rancher1"
 	nginxIngressv120Rancher2 = "nginxingress-v1.2.0-rancher2"
+	nginxIngressv151Rancher2 = "nginxingress-v1.5.1-rancher2"
 
 	nodelocalv115 = "nodelocal-v1.15"
 	nodelocalv121 = "nodelocal-v1.21"
@@ -236,7 +237,10 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.22.5-rancher2-2 <1.22.9-rancher1-1":   nginxIngressv110Rancher3,
 			">=1.22.9-rancher1-1 <1.23.0-rancher1-1":   nginxIngressv120Rancher2,
 			">=1.23.0-rancher1-1 <1.23.6-rancher1-1":   nginxIngressv110Rancher3,
-			">=1.23.6-rancher1-1":                      nginxIngressv120Rancher2,
+			">=1.23.6-rancher1-1 <1.23.16-rancher1-1":  nginxIngressv120Rancher2,
+			">=1.23.16-rancher1-1 <1.24.0-rancher1-1":  nginxIngressv151Rancher2,
+			">=1.24.2-rancher1-1 <1.24.9-rancher1-1":   nginxIngressv120Rancher2,
+			">=1.24.10-rancher1-1":                     nginxIngressv151Rancher2,
 		},
 		kdm.Nodelocal: {
 			">=1.15.11-rancher0 <1.16.0-alpha":     nodelocalv115,
@@ -324,6 +328,7 @@ func getTemplates() map[string]string {
 		nginxIngressv110Rancher4: NginxIngressTemplateV110Rancher4,
 		nginxIngressv120Rancher1: NginxIngressTemplateV120Rancher1,
 		nginxIngressv120Rancher2: NginxIngressTemplateV120Rancher2,
+		nginxIngressv151Rancher2: NginxIngressTemplateV151Rancher2,
 
 		nodelocalv115: NodelocalTemplateV115,
 		nodelocalv121: NodelocalTemplateV121,
