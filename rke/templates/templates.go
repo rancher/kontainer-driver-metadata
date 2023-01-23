@@ -24,6 +24,7 @@ const (
 	calicov3171          = "calico-v3.17.1"
 	calicov319           = "calico-v3.19.0"
 	calicov3211          = "calico-v3.21.1"
+	calicov3225          = "calico-v3.22.5"
 
 	canalv18                      = "canal-v1.8"
 	canalv113                     = "canal-v1.13"
@@ -40,6 +41,7 @@ const (
 	canalv3171                    = "canal-v3.17.1"
 	canalv319                     = "canal-v3.19.0"
 	canalv3211                    = "canal-v3.21.1"
+	canalv3225                    = "canal-v3.22.5"
 
 	flannelv18   = "flannel-v1.8"
 	flannelv115  = "flannel-v1.15"
@@ -72,6 +74,7 @@ const (
 	aciv500  = "aci-v5.0.0"
 	aciv523  = "aci-v5.2.3"
 	aciv5234 = "aci-v5.2.3.4"
+	aciv5235 = "aci-v5.2.3.5"
 
 	nginxIngressv18          = "nginxingress-v1.8"
 	nginxIngressV115         = "nginxingress-v1.15"
@@ -96,16 +99,21 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.22.0-rancher1-1":                    calicov3211,
-			">=1.21.0-rancher1-1 <1.22.0-rancher1-1": calicov319,
-			">=1.20.4-rancher1-1 <1.21.0-rancher1-1": calicov3171,
-			">=1.19.4-rancher1-2 <1.20.4-rancher1-1": calicov3165,
-			">=1.19.0-rancher0 <1.19.4-rancher1-2":   calicov3160,
-			">=1.17.4-rancher0 <1.19.0-rancher0":     calicov117Privileged,
-			">=1.17.0-rancher0 <1.17.4-rancher0":     calicov117,
-			">=1.16.8-rancher0 <1.17.0-rancher0":     calicov117Privileged,
-			">=1.16.4-rancher1 <1.16.8-rancher0":     calicov117,
-			">=1.16.0-alpha <1.16.4-rancher1":        calicov116,
+			">=1.24.9-rancher1-1":                     calicov3225,
+			">=1.24.0-rancher1-1 <1.24.9-rancher1-1":  calicov3211,
+			">=1.23.15-rancher1-1 <1.24.0-rancher1-1": calicov3225,
+			">=1.23.0-rancher1-1 <1.23.15-rancher1-1": calicov3211,
+			">=1.22.17-rancher1-1 <1.23.0-rancher1-1": calicov3225,
+			">=1.22.0-rancher1-1 <1.22.17-rancher1-1": calicov3211,
+			">=1.21.0-rancher1-1 <1.22.0-rancher1-1":  calicov319,
+			">=1.20.4-rancher1-1 <1.21.0-rancher1-1":  calicov3171,
+			">=1.19.4-rancher1-2 <1.20.4-rancher1-1":  calicov3165,
+			">=1.19.0-rancher0 <1.19.4-rancher1-2":    calicov3160,
+			">=1.17.4-rancher0 <1.19.0-rancher0":      calicov117Privileged,
+			">=1.17.0-rancher0 <1.17.4-rancher0":      calicov117,
+			">=1.16.8-rancher0 <1.17.0-rancher0":      calicov117Privileged,
+			">=1.16.4-rancher1 <1.16.8-rancher0":      calicov117,
+			">=1.16.0-alpha <1.16.4-rancher1":         calicov116,
 
 			">=1.15.11-rancher1-1 <1.15.12-rancher1-1": calicov115Privileged,
 			// 1.15.12-rancher1-1 comes from 2.2.13, uses calicov115 template with new key calicov11512
@@ -118,7 +126,12 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
 		kdm.Canal: {
-			">=1.22.0-rancher1-1":                      canalv3211,
+			">=1.24.9-rancher1-1":                      canalv3225,
+			">=1.24.0-rancher1-1 <1.24.9-rancher1-1":   canalv3211,
+			">=1.23.15-rancher1-1 <1.24.0-rancher1-1":  canalv3225,
+			">=1.23.0-rancher1-1 <1.23.15-rancher1-1":  canalv3211,
+			">=1.22.17-rancher1-1 <1.23.0-rancher1-1":  canalv3225,
+			">=1.22.0-rancher1-1 <1.22.17-rancher1-1":  canalv3211,
 			">=1.21.0-rancher1-1 <1.22.0-rancher1-1":   canalv319,
 			">=1.20.4-rancher1-1 <1.21.0-rancher1-1":   canalv3171,
 			">=1.19.4-rancher1-2 <1.20.4-rancher1-1":   canalv3165,
@@ -177,12 +190,15 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.21.14-rancher1-1 <1.22.0-rancher0":    aciv523,
 			">=1.22.0-rancher0 <1.22.11-rancher1-1":    aciv500,
 			">=1.22.11-rancher1-1 <1.22.16-rancher1-1": aciv523,
-			">=1.22.16-rancher1-1 <1.23.0-rancher0":    aciv5234,
+			">=1.22.16-rancher1-1 <1.22.17-rancher1-1": aciv5234,
+			">=1.22.17-rancher1-1 <1.23.0-rancher0":    aciv5235,
 			">=1.23.0-rancher0 <1.23.8-rancher1-1":     aciv500,
 			">=1.23.8-rancher1-1 <1.23.14-rancher1-1":  aciv523,
-			">=1.23.14-rancher1-1 <1.24.0-rancher0":    aciv5234,
+			">=1.23.14-rancher1-1 <1.23.15-rancher1-1": aciv5234,
+			">=1.23.15-rancher1-1 <1.24.0-rancher0":    aciv5235,
 			">=1.24.0-rancher0 <1.24.8-rancher1-1":     aciv523,
-			">=1.24.8-rancher1-1":                      aciv5234,
+			">=1.24.8-rancher1-1 <1.24.9-rancher1-1":   aciv5234,
+			">=1.24.9-rancher1-1":                      aciv5235,
 		},
 		kdm.NginxIngress: {
 			">=1.8.0-rancher0 <1.13.10-rancher1-3":  nginxIngressv18,
@@ -243,6 +259,7 @@ func getTemplates() map[string]string {
 		calicov3171:          CalicoTemplateV3_17_1,
 		calicov319:           CalicoTemplateV3_19_0,
 		calicov3211:          CalicoTemplateV3_21_1,
+		calicov3225:          CalicoTemplateV3_22_5,
 
 		flannelv115:  FlannelTemplateV115,
 		flannelv116:  FlannelTemplateV116,
@@ -264,6 +281,7 @@ func getTemplates() map[string]string {
 		canalv3171:                    CanalTemplateV3_17_1,
 		canalv319:                     CanalTemplateV3_19_0,
 		canalv3211:                    CanalTemplateV3_21_1,
+		canalv3225:                    CanalTemplateV3_22_5,
 
 		coreDnsv18:          CoreDNSTemplate,
 		coreDnsv116:         CoreDNSTemplateV116,
@@ -288,6 +306,7 @@ func getTemplates() map[string]string {
 		aciv500:  AciTemplateV500,
 		aciv523:  AciTemplateV523,
 		aciv5234: AciTemplateV5234,
+		aciv5235: AciTemplateV5235,
 
 		nginxIngressv18:          NginxIngressTemplate,
 		nginxIngressV115:         NginxIngressTemplateV0251Rancher1,
