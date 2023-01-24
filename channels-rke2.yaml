@@ -863,12 +863,12 @@ releases:
         repo: rancher-rke2-charts
         version: v3.9-build2022102805
     featureVersions: *featureVersions-v1
-  - version: v1.23.16-rc1+rke2r1
+  - version: v1.23.16-rc2+rke2r1
     minChannelServerVersion: v2.6.4-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v1-23-8-rke2r1
     agentArgs: *agentArgs-v1-23-8-rke2r1
-    charts: &charts-v1-23-16-rc1-rke2r1
+    charts: &charts-v1-23-16-rc2-rke2r1
       <<: *charts-v1-23-15-rke2r1
       rancher-vsphere-cpi:
         repo: rancher-rke2-charts
