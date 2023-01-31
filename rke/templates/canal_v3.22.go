@@ -741,6 +741,7 @@ spec:
     plural: felixconfigurations
     singular: felixconfiguration
   scope: Cluster
+  preserveUnknownFields: false
   versions:
   - name: v1
     schema:
@@ -2358,6 +2359,7 @@ spec:
     plural: ipamblocks
     singular: ipamblock
   scope: Cluster
+  preserveUnknownFields: false
   versions:
   - name: v1
     schema:
