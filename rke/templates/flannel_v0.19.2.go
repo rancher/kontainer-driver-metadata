@@ -8,6 +8,7 @@ Upstream Changelog:
 - Add /run/xtables.lock mount to prevent iptables contention with kube-proxy and the host OS
 Rancher Changelog:
 - Remove duplicated sections for NodeSelector and priorityClassName
+- Removed resource limits for kube-flannel DaemonSet. ref: https://github.com/flannel-io/flannel/pull/1694
 */
 
 const FlannelTemplateV0_19_2 = `
@@ -179,9 +180,6 @@ spec:
         {{end}}
         resources:
           requests:
-            cpu: "100m"
-            memory: "50Mi"
-          limits:
             cpu: "100m"
             memory: "50Mi"
         securityContext:
