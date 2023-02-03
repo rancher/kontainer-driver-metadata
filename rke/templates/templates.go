@@ -239,7 +239,7 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.23.0-rancher1-1 <1.23.6-rancher1-1":   nginxIngressv110Rancher3,
 			">=1.23.6-rancher1-1 <1.23.16-rancher1-1":  nginxIngressv120Rancher2,
 			">=1.23.16-rancher1-1 <1.24.0-rancher1-1":  nginxIngressv151Rancher2,
-			">=1.24.2-rancher1-1 <1.24.9-rancher1-1":   nginxIngressv120Rancher2,
+			">=1.24.2-rancher1-1 <1.24.10-rancher1-1":   nginxIngressv120Rancher2,
 			">=1.24.10-rancher1-1":                     nginxIngressv151Rancher2,
 		},
 		kdm.Nodelocal: {
