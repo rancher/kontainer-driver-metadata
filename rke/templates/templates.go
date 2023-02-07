@@ -43,6 +43,7 @@ const (
 	canalv319                     = "canal-v3.19.0"
 	canalv3211                    = "canal-v3.21.1"
 	canalv3225                    = "canal-v3.22.5"
+	canalv3225Rancher2            = "canal-v3.22.5-rancher2"
 
 	flannelv18           = "flannel-v1.8"
 	flannelv115          = "flannel-v1.15"
@@ -132,11 +133,14 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
 		kdm.Canal: {
-			">=1.24.9-rancher1-1":                      canalv3225,
+			">=1.24.10-rancher1-1":                     canalv3225Rancher2,
+			">=1.24.9-rancher1-1 <1.24.10-rancher1-1":  canalv3225,
 			">=1.24.0-rancher1-1 <1.24.9-rancher1-1":   canalv3211,
-			">=1.23.15-rancher1-1 <1.24.0-rancher1-1":  canalv3225,
+			">=1.23.16-rancher1-1 <1.24.0-rancher1-1":  canalv3225Rancher2,
+			">=1.23.15-rancher1-1 <1.23.16-rancher1-1": canalv3225,
 			">=1.23.0-rancher1-1 <1.23.15-rancher1-1":  canalv3211,
-			">=1.22.17-rancher1-1 <1.23.0-rancher1-1":  canalv3225,
+			">=1.22.17-rancher1-2 <1.23.0-rancher1-1":  canalv3225Rancher2,
+			">=1.22.17-rancher1-1 <1.22.17-rancher1-2": canalv3225,
 			">=1.22.0-rancher1-1 <1.22.17-rancher1-1":  canalv3211,
 			">=1.21.0-rancher1-1 <1.22.0-rancher1-1":   canalv319,
 			">=1.20.4-rancher1-1 <1.21.0-rancher1-1":   canalv3171,
@@ -296,6 +300,7 @@ func getTemplates() map[string]string {
 		canalv319:                     CanalTemplateV3_19_0,
 		canalv3211:                    CanalTemplateV3_21_1,
 		canalv3225:                    CanalTemplateV3_22_5,
+		canalv3225Rancher2:            CanalTemplateV3_22_5Rancher2,
 
 		coreDnsv18:          CoreDNSTemplate,
 		coreDnsv116:         CoreDNSTemplateV116,
