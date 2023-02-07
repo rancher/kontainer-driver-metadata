@@ -1012,7 +1012,13 @@ releases:
     minChannelServerVersion: v2.7.2-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v1-24-2-rke2r1
-    agentArgs: *agentArgs-v1-24-2-rke2r1
+    agentArgs: &agentArgs-v1-25-5-rke2r2
+      <<: *agentArgs-v1-24-2-rke2r1
+      profile:
+        type: enum
+        options:
+        - cis-1.23
+        nullable: true
     charts: &charts-v1-25-5-rke2r2
       <<: *charts-v1-24-8-rke2r1
       rke2-cilium:
@@ -1041,7 +1047,7 @@ releases:
     minChannelServerVersion: v2.7.2-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v1-24-2-rke2r1
-    agentArgs: *agentArgs-v1-24-2-rke2r1
+    agentArgs: *agentArgs-v1-25-5-rke2r2
     charts: &charts-v1-25-6-rke2r1
       <<: *charts-v1-25-5-rke2r2
       rke2-multus:
