@@ -25,6 +25,7 @@ const (
 	calicov319           = "calico-v3.19.0"
 	calicov3211          = "calico-v3.21.1"
 	calicov3225          = "calico-v3.22.5"
+	calicov3225Rancher2  = "calico-v3.22.5-rancher2"
 	calicov3241          = "calico-v3.24.1"
 
 	canalv18                      = "canal-v1.8"
@@ -43,6 +44,7 @@ const (
 	canalv319                     = "canal-v3.19.0"
 	canalv3211                    = "canal-v3.21.1"
 	canalv3225                    = "canal-v3.22.5"
+	canalv3225Rancher2            = "canal-v3.22.5-rancher2"
 	canalv3241                    = "canal-v3.24.1"
 
 	flannelv18           = "flannel-v1.8"
@@ -104,22 +106,25 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.25.0-rancher1-1":                     calicov3241,
-			">=1.24.9-rancher1-1 <1.25.0-rancher1-1":  calicov3225,
-			">=1.24.0-rancher1-1 <1.24.9-rancher1-1":  calicov3211,
-			">=1.23.15-rancher1-1 <1.24.0-rancher1-1": calicov3225,
-			">=1.23.0-rancher1-1 <1.23.15-rancher1-1": calicov3211,
-			">=1.22.17-rancher1-1 <1.23.0-rancher1-1": calicov3225,
-			">=1.22.0-rancher1-1 <1.22.17-rancher1-1": calicov3211,
-			">=1.21.0-rancher1-1 <1.22.0-rancher1-1":  calicov319,
-			">=1.20.4-rancher1-1 <1.21.0-rancher1-1":  calicov3171,
-			">=1.19.4-rancher1-2 <1.20.4-rancher1-1":  calicov3165,
-			">=1.19.0-rancher0 <1.19.4-rancher1-2":    calicov3160,
-			">=1.17.4-rancher0 <1.19.0-rancher0":      calicov117Privileged,
-			">=1.17.0-rancher0 <1.17.4-rancher0":      calicov117,
-			">=1.16.8-rancher0 <1.17.0-rancher0":      calicov117Privileged,
-			">=1.16.4-rancher1 <1.16.8-rancher0":      calicov117,
-			">=1.16.0-alpha <1.16.4-rancher1":         calicov116,
+			">=1.25.0-rancher1-1":                      calicov3241,
+			">=1.24.10-rancher1-1 <1.25.0-rancher1-1":  calicov3225Rancher2,
+			">=1.24.9-rancher1-1 <1.24.10-rancher1-1":  calicov3225,
+			">=1.24.0-rancher1-1 <1.24.9-rancher1-1":   calicov3211,
+			">=1.23.16-rancher1-1 <1.24.0-rancher1-1":  calicov3225Rancher2,
+			">=1.23.15-rancher1-1 <1.23.16-rancher1-1": calicov3225,
+			">=1.23.0-rancher1-1 <1.23.15-rancher1-1":  calicov3211,
+			">=1.22.17-rancher1-2 <1.23.0-rancher1-1":  calicov3225Rancher2,
+			">=1.22.17-rancher1-1 <1.22.17-rancher1-2": calicov3225,
+			">=1.22.0-rancher1-1 <1.22.17-rancher1-1":  calicov3211,
+			">=1.21.0-rancher1-1 <1.22.0-rancher1-1":   calicov319,
+			">=1.20.4-rancher1-1 <1.21.0-rancher1-1":   calicov3171,
+			">=1.19.4-rancher1-2 <1.20.4-rancher1-1":   calicov3165,
+			">=1.19.0-rancher0 <1.19.4-rancher1-2":     calicov3160,
+			">=1.17.4-rancher0 <1.19.0-rancher0":       calicov117Privileged,
+			">=1.17.0-rancher0 <1.17.4-rancher0":       calicov117,
+			">=1.16.8-rancher0 <1.17.0-rancher0":       calicov117Privileged,
+			">=1.16.4-rancher1 <1.16.8-rancher0":       calicov117,
+			">=1.16.0-alpha <1.16.4-rancher1":          calicov116,
 
 			">=1.15.11-rancher1-1 <1.15.12-rancher1-1": calicov115Privileged,
 			// 1.15.12-rancher1-1 comes from 2.2.13, uses calicov115 template with new key calicov11512
@@ -133,11 +138,14 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 		},
 		kdm.Canal: {
 			">=1.25.0-rancher1-1":                      canalv3241,
-			">=1.24.9-rancher1-1 <1.25.0-rancher1-1":   canalv3225,
+			">=1.24.10-rancher1-1 <1.25.0-rancher1-1":  canalv3225Rancher2,
+			">=1.24.9-rancher1-1 <1.24.10-rancher1-1":  canalv3225,
 			">=1.24.0-rancher1-1 <1.24.9-rancher1-1":   canalv3211,
-			">=1.23.15-rancher1-1 <1.24.0-rancher1-1":  canalv3225,
+			">=1.23.16-rancher1-1 <1.24.0-rancher1-1":  canalv3225Rancher2,
+			">=1.23.15-rancher1-1 <1.23.16-rancher1-1": canalv3225,
 			">=1.23.0-rancher1-1 <1.23.15-rancher1-1":  canalv3211,
-			">=1.22.17-rancher1-1 <1.23.0-rancher1-1":  canalv3225,
+			">=1.22.17-rancher1-2 <1.23.0-rancher1-1":  canalv3225Rancher2,
+			">=1.22.17-rancher1-1 <1.22.17-rancher1-2": canalv3225,
 			">=1.22.0-rancher1-1 <1.22.17-rancher1-1":  canalv3211,
 			">=1.21.0-rancher1-1 <1.22.0-rancher1-1":   canalv319,
 			">=1.20.4-rancher1-1 <1.21.0-rancher1-1":   canalv3171,
@@ -274,6 +282,7 @@ func getTemplates() map[string]string {
 		calicov319:           CalicoTemplateV3_19_0,
 		calicov3211:          CalicoTemplateV3_21_1,
 		calicov3225:          CalicoTemplateV3_22_5,
+		calicov3225Rancher2:  CalicoTemplateV3_22_5Rancher2,
 		calicov3241:          CalicoTemplateV3_24_1,
 
 		flannelv115:          FlannelTemplateV115,
@@ -299,6 +308,7 @@ func getTemplates() map[string]string {
 		canalv319:                     CanalTemplateV3_19_0,
 		canalv3211:                    CanalTemplateV3_21_1,
 		canalv3225:                    CanalTemplateV3_22_5,
+		canalv3225Rancher2:            CanalTemplateV3_22_5Rancher2,
 		canalv3241:                    CanalTemplateV3_24_1,
 
 		coreDnsv18:          CoreDNSTemplate,
