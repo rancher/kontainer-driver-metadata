@@ -8,8 +8,10 @@ appDefaults:
         defaultVersion: '1.22.x'
       - appVersion: '>= 2.6.5-0 < 2.6.7-0'
         defaultVersion: '1.23.x'
-      - appVersion: '>= 2.6.7-0 < 2.7.100-0'
+      - appVersion: '>= 2.6.7-0 < 2.7.2-0'
         defaultVersion: '1.24.x'
+      - appVersion: '>= 2.7.2-0 < 2.7.100-0'
+        defaultVersion: '1.25.x'
 releases:
   - version: v1.19.16+rke2r1
     minChannelServerVersion: v2.6.0-alpha1
@@ -804,7 +806,7 @@ releases:
         repo: rancher-rke2-charts
         version: v3.8-build2022101103
       rancher-vsphere-cpi:
-        repo: rancher-charts
+        repo: rancher-rke2-charts
         version: 1.4.001
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
@@ -861,6 +863,23 @@ releases:
         repo: rancher-rke2-charts
         version: v3.9-build2022102805
     featureVersions: *featureVersions-v1
+  - version: v1.23.16+rke2r1
+    minChannelServerVersion: v2.6.4-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v1-23-8-rke2r1
+    agentArgs: *agentArgs-v1-23-8-rke2r1
+    charts: &charts-v1-23-16-rke2r1
+      <<: *charts-v1-23-15-rke2r1
+      rancher-vsphere-cpi:
+        repo: rancher-rke2-charts
+        version: 1.4.101
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.1.1400
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.1500
+    featureVersions: *featureVersions-v1
   - version: v1.24.2+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.6.99
@@ -905,7 +924,7 @@ releases:
         repo: rancher-rke2-charts
         version: v3.8-build2022101103
       rancher-vsphere-cpi:
-        repo: rancher-charts
+        repo: rancher-rke2-charts
         version: 1.4.001
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
@@ -928,7 +947,7 @@ releases:
         repo: rancher-rke2-charts
         version: 1.12.302
       rancher-vsphere-cpi:
-        repo: rancher-charts
+        repo: rancher-rke2-charts
         version: 1.4.100
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
@@ -968,4 +987,65 @@ releases:
       rke2-multus:
         repo: rancher-rke2-charts
         version: v3.9-build2022102805
+    featureVersions: *featureVersions-v1
+  - version: v1.24.10+rke2r1
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v1-24-2-rke2r1
+    agentArgs: *agentArgs-v1-24-2-rke2r1
+    charts: &charts-v1-24-10-rke2r1
+      <<: *charts-v1-24-9-rke2r2
+      rancher-vsphere-cpi:
+        repo: rancher-rke2-charts
+        version: 1.4.101
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v3.9.3-build2023010901
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.1.1400
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.1500
+    featureVersions: *featureVersions-v1
+  - version: v1.25.6+rke2r1
+    minChannelServerVersion: v2.7.2-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v1-24-2-rke2r1
+    agentArgs: &agentArgs-v1-25-6-rke2r1
+      <<: *agentArgs-v1-24-2-rke2r1
+      profile:
+        type: enum
+        options:
+        - cis-1.23
+        nullable: true
+    charts: &charts-v1-25-6-rke2r1
+      <<: *charts-v1-24-8-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.12.402
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.24.5-build2022120101
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.24.501
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.24.501
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.1.008
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 2.11.100-build2022101107
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v3.9.3-build2023010901
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.1.1400
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.1500
     featureVersions: *featureVersions-v1

@@ -8,8 +8,10 @@ appDefaults:
         defaultVersion: '1.22.x'
       - appVersion: '>= 2.6.5-0 < 2.6.7-0'
         defaultVersion: '1.23.x'
-      - appVersion: '>= 2.6.7-0 < 2.7.100-0'
+      - appVersion: '>= 2.6.7-0 < 2.7.2-0'
         defaultVersion: '1.24.x'
+      - appVersion: '>= 2.7.2-0 < 2.7.100-0'
+        defaultVersion: '1.25.x'
 releases:
   - version: v1.18.20+k3s1
     minChannelServerVersion: v2.6.0-alpha1
@@ -295,6 +297,12 @@ releases:
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
+  - version: v1.23.16+k3s1
+    minChannelServerVersion: v2.6.4-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v3
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
   - version: v1.24.2+k3s2
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.6.99
@@ -329,3 +337,16 @@ releases:
     featureVersions: *featureVersions-v1
   #  v1.25.1+k3s1 was never released
   #  v1.25.2+k3s1 is not released through KDM yet
+  - version: v1.24.10+k3s1
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v3
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
+  # v1.25.6 will be the first version released in the v1.25.x line.
+  - version: v1.25.6+k3s1
+    minChannelServerVersion: v2.7.2-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v3
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
