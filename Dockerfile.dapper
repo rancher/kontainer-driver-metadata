@@ -2,6 +2,7 @@ FROM registry.suse.com/bci/golang:1.19
 
 ARG DAPPER_HOST_ARCH
 ENV ARCH $DAPPER_HOST_ARCH
+ENV GOLANGCI_LINT v1.50.1
 
 RUN zypper -n install git docker vim less file curl wget python3 python3-requests python3-PyYAML
 RUN go install golang.org/x/tools/cmd/goimports@latest
