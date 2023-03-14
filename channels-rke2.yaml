@@ -890,6 +890,26 @@ releases:
         repo: rancher-rke2-charts
         version: 0.1.1500
     featureVersions: *featureVersions-v1
+  - version: v1.23.17+rke2r1
+    minChannelServerVersion: v2.6.4-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v1-23-8-rke2r1
+    agentArgs: *agentArgs-v1-23-8-rke2r1
+    charts: &charts-v1-23-17-rke2r1
+      <<: *charts-v1-23-16-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.12.500
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.25.0-build2023020901
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.25.001
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.25.001
+    featureVersions: *featureVersions-v1
   - version: v1.24.2+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.6.99
@@ -1032,5 +1052,25 @@ releases:
       harvester-csi-driver:
         repo: rancher-rke2-charts
         version: 0.1.1500
+    featureVersions: *featureVersions-v1
+  - version: v1.24.11+rke2r1
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: *serverArgs-v1-24-2-rke2r1
+    agentArgs: *agentArgs-v1-24-2-rke2r1
+    charts: &charts-v1-24-11-rke2r1
+      <<: *charts-v1-24-10-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.12.500
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.25.0-build2023020901
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.25.001
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.25.001
     featureVersions: *featureVersions-v1
 
