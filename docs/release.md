@@ -35,6 +35,17 @@ A couple of example PRs to help:
 - https://github.com/rancher/kontainer-driver-metadata/pull/1027
 - https://github.com/rancher/kontainer-driver-metadata/pull/1084 
 
+## Prepare for prime images update
+
+Prime images only need to be updated for out-of-band KDM releases, ie KDM releases without corresponding rancher server version releases. OOB KDM was released for v2.7 using https://github.com/rancher/kontainer-driver-metadata/pull/1126 but there was no release of Rancher version v2.7.x with it, so prime images needed to be updated in this case.
+ 
+1. Create a custom branch based on the latest rancher patch version. The branch name should be of the format `latestPatch-kdm-2.6.x` or `latestPatch-kdm-[0-9]*`
+2. Update KDM branches to read from the dev branch. This branch must be the target dev branch (`dev-v2.7`/`dev-v2.7-for-2.6.12`) 
+3. Request PR reviews. One or two reviews should suffice @HarrisonWAffel @kinarashah @snasovich
+4. Merge PR and tag Rancher of the format `latestPatch-kdm-image-2.6.x` or `latestPatch-kdm-image-[0-9]*` 
+5. Notify internal teams so they can kickstart the sync process Ping @HarrisonWAffel @kinarashah for more details
+6. Notify QA release captain to validate the necessary images have been updated
+
 ### Prepare release notes for KDM (TBD)
 
 ## Review PRs 
@@ -68,11 +79,12 @@ Note: This is our current process, but we also have https://github.com/rancherla
 
 ## Release KDM
 
-1. PRs to be merged by @kinarashah or @snasovich 
-2. QA to perform post release checks for KDM after drone publish tasks are successfully completed (monitor at https://drone-publish.rancher.io/rancher/kontainer-driver-metadata)
-3. Release RKE1 (refer to Release RKE1 section)
-4. QA to perform post release checks for RKE after RKE tags are available 
-5. Announce in [rancher forums](https://forums.rancher.com/c/announcements/) and slack. Example forums posts for reference: 
+1. Confirm prime images are updated before proceeding, refer to section above on prime images update
+2. PRs to be merged by @kinarashah or @snasovich 
+3. QA to perform post release checks for KDM after drone publish tasks are successfully completed (monitor at https://drone-publish.rancher.io/rancher/kontainer-driver-metadata)
+4. Release RKE1 (refer to Release RKE1 section)
+5. QA to perform post release checks for RKE after RKE tags are available 
+6. Announce in [rancher forums](https://forums.rancher.com/c/announcements/) and slack. Example forums posts for reference: 
 - https://forums.rancher.com/t/kubernetes-v1-24-10-and-v1-23-16/40218
 - https://forums.rancher.com/t/kubernetes-v1-24-8-v1-23-14-and-v1-22-16/39559
 
