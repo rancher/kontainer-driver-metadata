@@ -15,6 +15,14 @@ const (
 
 func loadK8sVersionServiceOptions() map[string]v3.KubernetesServicesOptions {
 	return map[string]v3.KubernetesServicesOptions{
+		"v1.26": {
+			Etcd:           getETCDOptions122(),
+			KubeAPI:        getKubeAPIOptions124(),
+			Kubelet:        getKubeletOptions124(),
+			KubeController: getKubeControllerOptions124(),
+			Kubeproxy:      getKubeProxyOptions(),
+			Scheduler:      getSchedulerOptions124(),
+		},
 		"v1.25": {
 			Etcd:           getETCDOptions122(),
 			KubeAPI:        getKubeAPIOptions124(),
