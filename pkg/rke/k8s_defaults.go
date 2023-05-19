@@ -10,7 +10,7 @@ import (
 	"sigs.k8s.io/yaml"
 
 	"github.com/blang/semver"
-	"github.com/rancher/kontainer-driver-metadata/rke/templates"
+	"github.com/rancher/kontainer-driver-metadata/pkg/rke/templates"
 	"github.com/rancher/rke/types/image"
 	"github.com/rancher/rke/types/kdm"
 	"github.com/sirupsen/logrus"
@@ -197,7 +197,7 @@ func GenerateData() {
 		}
 	}
 
-	//todo: zip file
+	// todo: zip file
 	strData, _ := json.MarshalIndent(DriverData, "", " ")
 	jsonFile, err := os.Create(rkeDataFilePath)
 	if err != nil {

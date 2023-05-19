@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/rancher/kontainer-driver-metadata/rke"
+	"github.com/rancher/kontainer-driver-metadata/pkg/rke"
 )
 
 func main() {
