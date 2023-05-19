@@ -12,6 +12,7 @@ require (
 	github.com/rancher/rke v1.3.0-rc8.0.20210706205346-22b82828ffa0
 	github.com/sirupsen/logrus v1.7.0
 	github.com/stretchr/testify v1.7.0
+	k8s.io/apimachinery v0.21.0
 	sigs.k8s.io/yaml v1.2.0
 )
 
@@ -50,7 +51,6 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c // indirect
 	k8s.io/api v0.21.0 // indirect
-	k8s.io/apimachinery v0.21.0 // indirect
 	k8s.io/apiserver v0.21.0 // indirect
 	k8s.io/client-go v12.0.0+incompatible // indirect
 	k8s.io/klog/v2 v2.8.0 // indirect

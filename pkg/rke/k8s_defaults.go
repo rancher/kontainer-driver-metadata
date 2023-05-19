@@ -17,7 +17,7 @@ import (
 )
 
 const (
-	rkeDataFilePath = "./data/data.json"
+	DataFilePath = "./data/data.json"
 )
 
 var (
@@ -199,7 +199,7 @@ func GenerateData() {
 
 	// todo: zip file
 	strData, _ := json.MarshalIndent(DriverData, "", " ")
-	jsonFile, err := os.Create(rkeDataFilePath)
+	jsonFile, err := os.Create(DataFilePath)
 	if err != nil {
 		panic(fmt.Errorf("err creating data file %v", err))
 	}
