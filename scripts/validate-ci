@@ -11,7 +11,7 @@ echo Running go mod verify
 go mod verify
 
 echo Running go test
-go test ./rke/...
+go test ./pkg/...
 
 echo Running go generate
 go generate
@@ -25,4 +25,4 @@ if [ -n "$DIRTY" ]; then
 fi
 
 echo Checking if released versions are not changed
-python3 check-kdm-data.py release-v2.5 release-v2.6
+go run ./pkg/validation/validation.go release-v2.7
