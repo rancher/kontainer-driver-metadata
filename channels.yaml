@@ -396,7 +396,7 @@ releases:
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: &serverArgs-v4
-      <<: &serverArgs-v3
+      <<: *serverArgs-v3
       flannel-backend:
         type: enum
         options:
@@ -405,5 +405,6 @@ releases:
         - ipsec
         - host-gw
         - wireguard
+        - wiregaurd-native
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
