@@ -395,6 +395,15 @@ releases:
   - version: v1.26.5-rc3+k3s1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
-    serverArgs: *serverArgs-v3
+    serverArgs: &serverArgs-v4
+      <<: &serverArgs-v3
+      flannel-backend:
+        type: enum
+        options:
+        - none
+        - vxlan
+        - ipsec
+        - host-gw
+        - wireguard
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
