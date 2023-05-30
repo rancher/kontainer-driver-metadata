@@ -56,7 +56,6 @@ const (
 	flannelv0140Rancher2 = "flannel-v0.14.0-rancher2"
 	flannelv0192         = "flannel-v0.19.2"
 	flannelv0214         = "flannel-v0.21.4"
-	flannelv0222         = "flannel-v0.22.2"
 
 	coreDnsv18          = "coredns-v1.8"
 	coreDnsv116         = "coredns-v1.16"
@@ -178,8 +177,7 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":        canalv18,
 		},
 		kdm.Flannel: {
-			">=1.27.0-rancher1-1":                     flannelv0222,
-			">=1.26.0-rancher1-1 <1.27.0-rancher1-1":  flannelv0214,
+			">=1.26.0-rancher1-1":                     flannelv0214,
 			">=1.25.0-rancher1-1 <1.26.0-rancher1-1":  flannelv0192,
 			">=1.24.10-rancher1-1 <1.25.0-rancher1-1": flannelv0140Rancher2,
 			">=1.24.0-rancher1-1 <1.24.10-rancher1-1": flannelv0140,
@@ -313,7 +311,6 @@ func getTemplates() map[string]string {
 		flannelv0140Rancher2: FlannelTemplateV0_14_0Rancher2,
 		flannelv0192:         FlannelTemplateV0_19_2,
 		flannelv0214:         FlannelTemplateV0_21_4,
-		flannelv0222:         FlannelTemplateV0_22_2,
 		flannelv18:           FlannelTemplate,
 
 		canalv113:                     CanalTemplateV113,

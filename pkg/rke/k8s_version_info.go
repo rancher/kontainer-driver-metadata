@@ -54,7 +54,7 @@ func loadRKEDefaultK8sVersions() map[string]string {
 	return map[string]string{
 		"0.3": "v1.16.3-rancher1-1",
 		// rke will use default if its version is absent
-		"default": "v1.26.7-rancher1-1",
+		"default": "v1.27.5-rancher1-1",
 	}
 }
 
@@ -655,6 +655,10 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 		"v1.26": {
 			MinRancherVersion: "2.7.5-patch0",
 			MinRKEVersion:     "1.4.0-rc0",
+		},
+		"v1.27": {
+			MinRancherVersion: "2.8.0-patch0",
+			MinRKEVersion:     "1.5.0-rc0",
 		},
 		"v1.22.4-rancher1-1": {
 			MinRancherVersion: "2.6.3-patch0",
