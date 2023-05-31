@@ -361,6 +361,12 @@ releases:
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
+  - version: v1.24.14+k3s1
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v3
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
   # v1.25.7 will be the first version released in the v1.25.x line.
   - version: v1.25.7+k3s1
     minChannelServerVersion: v2.7.2-alpha1
@@ -374,9 +380,25 @@ releases:
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
-  - version: v1.26.4+k3s1
-    minChannelServerVersion: v2.7.5-alpha1
+  - version: v1.25.10+k3s1
+    minChannelServerVersion: v2.7.2-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
-    featureVersions: *featureVersions-v1    
+    featureVersions: *featureVersions-v1
+  - version: v1.26.5+k3s1
+    minChannelServerVersion: v2.7.5-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: &serverArgs-v4
+      <<: *serverArgs-v3
+      flannel-backend:
+        type: enum
+        options:
+        - none
+        - vxlan
+        - ipsec
+        - host-gw
+        - wireguard
+        - wiregaurd-native
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
