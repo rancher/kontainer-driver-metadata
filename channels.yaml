@@ -399,6 +399,6 @@ releases:
         - ipsec
         - host-gw
         - wireguard
-        - wiregaurd-native
+        - wireguard-native
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
