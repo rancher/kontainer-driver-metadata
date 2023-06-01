@@ -1,0 +1,22 @@
+version: 1
+creds:
+  - registry: '{{`{{ env "REGISTRY_ENDPOINT" }}`}}'
+    user: '{{`{{ env "REGISTRY_USERNAME" }}`}}'
+    pass: '{{`{{ env "REGISTRY_PASSWORD" }}`}}'
+defaults:
+  mediaTypes:
+    - application/vnd.docker.distribution.manifest.v2+json
+    - application/vnd.docker.distribution.manifest.list.v2+json
+    - application/vnd.oci.image.manifest.v1+json
+    - application/vnd.oci.image.index.v1+json
+sync:
+{{- range $key, $val := . }}
+  - source: docker.io/{{ $key }}
+    target: '{{`{{ env "REGISTRY_ENDPOINT" }}`}}/{{ $key }}'
+    type: repository
+    tags:
+      allow:
+        {{- range $key, $val := $val }}
+        - {{ $key }}
+        {{- end }}
+{{- end }}
