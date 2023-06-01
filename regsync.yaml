@@ -1,0 +1,781 @@
+version: 1
+creds:
+  - registry: '{{ env "REGISTRY_ENDPOINT" }}'
+    user: '{{ env "REGISTRY_USERNAME" }}'
+    pass: '{{ env "REGISTRY_PASSWORD" }}'
+defaults:
+  mediaTypes:
+    - application/vnd.docker.distribution.manifest.v2+json
+    - application/vnd.docker.distribution.manifest.list.v2+json
+    - application/vnd.oci.image.manifest.v1+json
+    - application/vnd.oci.image.index.v1+json
+sync:
+  - source: docker.io/rancher/K3S-upgrade
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/K3S-upgrade'
+    type: repository
+    tags:
+      allow:
+        - v1.23.10-k3s1
+        - v1.23.13-k3s1
+        - v1.23.14-k3s1
+        - v1.23.15-k3s1
+        - v1.23.16-k3s1
+        - v1.23.17-k3s1
+        - v1.24.10-k3s1
+        - v1.24.11-k3s1
+        - v1.24.13-k3s1
+        - v1.24.4-k3s1
+        - v1.24.7-k3s1
+        - v1.24.8-k3s1
+        - v1.24.9-k3s2
+        - v1.25.7-k3s1
+        - v1.25.9-k3s1
+  - source: docker.io/rancher/RKE2-upgrade
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/RKE2-upgrade'
+    type: repository
+    tags:
+      allow:
+        - v1.23.10-rke2r1
+        - v1.23.13-rke2r1
+        - v1.23.14-rke2r1
+        - v1.23.15-rke2r1
+        - v1.23.16-rke2r1
+        - v1.23.17-rke2r1
+        - v1.24.10-rke2r1
+        - v1.24.11-rke2r1
+        - v1.24.13-rke2r1
+        - v1.24.4-rke2r1
+        - v1.24.7-rke2r1
+        - v1.24.8-rke2r1
+        - v1.24.9-rke2r2
+        - v1.25.7-rke2r1
+        - v1.25.9-rke2r1
+  - source: docker.io/rancher/calico-cni
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/calico-cni'
+    type: repository
+    tags:
+      allow:
+        - v3.22.0-rancher1
+        - v3.22.5-rancher1
+        - v3.24.1-rancher1
+  - source: docker.io/rancher/flannel-cni
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/flannel-cni'
+    type: repository
+    tags:
+      allow:
+        - v0.3.0-rancher6
+        - v0.3.0-rancher7
+  - source: docker.io/rancher/hardened-calico
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-calico'
+    type: repository
+    tags:
+      allow:
+        - v3.22.2-build20220509
+        - v3.24.1-build20221011
+        - v3.24.5-build20221201
+        - v3.25.0-build20230209
+  - source: docker.io/rancher/hardened-cluster-autoscaler
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-cluster-autoscaler'
+    type: repository
+    tags:
+      allow:
+        - v1.8.5-build20211119
+        - v1.8.5-build20221011
+        - v1.8.6-build20230406
+  - source: docker.io/rancher/hardened-cni-plugins
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-cni-plugins'
+    type: repository
+    tags:
+      allow:
+        - v1.0.1-build20220223
+        - v1.0.1-build20221011
+  - source: docker.io/rancher/hardened-coredns
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-coredns'
+    type: repository
+    tags:
+      allow:
+        - v1.10.1-build20230406
+        - v1.9.3-build20220613
+        - v1.9.3-build20221011
+  - source: docker.io/rancher/hardened-dns-node-cache
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-dns-node-cache'
+    type: repository
+    tags:
+      allow:
+        - 1.21.2-build20211119
+        - 1.21.2-build20221011
+        - 1.22.20-build20230406
+  - source: docker.io/rancher/hardened-etcd
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-etcd'
+    type: repository
+    tags:
+      allow:
+        - v3.5.4-k3s1-build20220504
+        - v3.5.4-k3s1-build20221011
+        - v3.5.7-k3s1-build20230406
+  - source: docker.io/rancher/hardened-flannel
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-flannel'
+    type: repository
+    tags:
+      allow:
+        - v0.17.0-build20220317
+        - v0.19.1-build20221011
+        - v0.20.2-build20221201
+        - v0.21.1-build20230208
+        - v0.21.3-build20230308
+  - source: docker.io/rancher/hardened-ib-sriov-cni
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-ib-sriov-cni'
+    type: repository
+    tags:
+      allow:
+        - v1.0.2-build20220419
+        - v1.0.2-build20221014
+  - source: docker.io/rancher/hardened-k8s-metrics-server
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-k8s-metrics-server'
+    type: repository
+    tags:
+      allow:
+        - v0.5.0-build20211119
+        - v0.6.1-build20221011
+        - v0.6.2-build20221202
+  - source: docker.io/rancher/hardened-kubernetes
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-kubernetes'
+    type: repository
+    tags:
+      allow:
+        - v1.23.10-rke2r1-build20220817
+        - v1.23.13-rke2r1-build20221013
+        - v1.23.14-rke2r1-build20221110
+        - v1.23.15-rke2r1-build20221208
+        - v1.23.16-rke2r1-build20230118
+        - v1.23.17-rke2r1-build20230228
+        - v1.24.10-rke2r1-build20230119
+        - v1.24.11-rke2r1-build20230228
+        - v1.24.13-rke2r1-build20230412
+        - v1.24.4-rke2r1-build20220817
+        - v1.24.7-rke2r1-build20221013
+        - v1.24.8-rke2r1-build20221110
+        - v1.24.9-rke2r2-build20230104
+        - v1.25.7-rke2r1-build20230228
+        - v1.25.9-rke2r1-build20230412
+  - source: docker.io/rancher/hardened-multus-cni
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-multus-cni'
+    type: repository
+    tags:
+      allow:
+        - v3.8-build20211104
+        - v3.8-build20221011
+        - v3.9-build20221028
+        - v3.9.3-build20230109
+  - source: docker.io/rancher/hardened-sriov-cni
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-cni'
+    type: repository
+    tags:
+      allow:
+        - v2.6.2-build20220419
+        - v2.6.3-build20221014
+  - source: docker.io/rancher/hardened-sriov-network-config-daemon
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-config-daemon'
+    type: repository
+    tags:
+      allow:
+        - v1.1.0-build20220419
+        - v1.2.0-build20221014
+  - source: docker.io/rancher/hardened-sriov-network-device-plugin
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-device-plugin'
+    type: repository
+    tags:
+      allow:
+        - v3.4.0-build20220419
+        - v3.5.1-build20221014
+  - source: docker.io/rancher/hardened-sriov-network-operator
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-operator'
+    type: repository
+    tags:
+      allow:
+        - v1.1.0-build20220419
+        - v1.2.0-build20221014
+  - source: docker.io/rancher/hardened-sriov-network-resources-injector
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-resources-injector'
+    type: repository
+    tags:
+      allow:
+        - v1.3-build20220419
+        - v1.5-build20221014
+  - source: docker.io/rancher/hardened-sriov-network-webhook
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-webhook'
+    type: repository
+    tags:
+      allow:
+        - v1.1.0-build20220419
+        - v1.2.0-build20221014
+  - source: docker.io/rancher/hardened-whereabouts
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-whereabouts'
+    type: repository
+    tags:
+      allow:
+        - v0.5.3-build20220610
+        - v0.5.3-build20221027
+        - v0.6-build20230109
+        - v0.6.1-build20230330
+  - source: docker.io/rancher/harvester-cloud-provider
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/harvester-cloud-provider'
+    type: repository
+    tags:
+      allow:
+        - v0.1.4
+        - v0.1.5
+  - source: docker.io/rancher/harvester-csi-driver
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/harvester-csi-driver'
+    type: repository
+    tags:
+      allow:
+        - v0.1.3
+        - v0.1.4
+        - v0.1.5
+  - source: docker.io/rancher/hyperkube
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hyperkube'
+    type: repository
+    tags:
+      allow:
+        - v1.23.10-rancher1
+        - v1.23.12-rancher1
+        - v1.23.14-rancher1
+        - v1.23.15-rancher1
+        - v1.23.16-rancher2
+        - v1.23.4-rancher1
+        - v1.23.6-rancher1
+        - v1.23.7-rancher1
+        - v1.23.8-rancher1
+        - v1.24.10-rancher2
+        - v1.24.10-rancher4
+        - v1.24.13-rancher2
+        - v1.24.2-rancher1
+        - v1.24.4-rancher1
+        - v1.24.6-rancher1
+        - v1.24.8-rancher1
+        - v1.24.9-rancher1
+        - v1.25.6-rancher2
+        - v1.25.6-rancher4
+        - v1.25.9-rancher2
+  - source: docker.io/rancher/klipper-helm
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/klipper-helm'
+    type: repository
+    tags:
+      allow:
+        - v0.7.3-build20220613
+        - v0.7.4-build20221121
+        - v0.7.6-build20230223
+        - v0.7.7-build20230403
+  - source: docker.io/rancher/klipper-lb
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/klipper-lb'
+    type: repository
+    tags:
+      allow:
+        - v0.3.5
+        - v0.4.0
+        - v0.4.3
+  - source: docker.io/rancher/local-path-provisioner
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/local-path-provisioner'
+    type: repository
+    tags:
+      allow:
+        - v0.0.21
+        - v0.0.23
+        - v0.0.24
+  - source: docker.io/rancher/longhornio-csi-attacher
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/longhornio-csi-attacher'
+    type: repository
+    tags:
+      allow:
+        - v3.2.1
+  - source: docker.io/rancher/longhornio-csi-node-driver-registrar
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/longhornio-csi-node-driver-registrar'
+    type: repository
+    tags:
+      allow:
+        - v2.3.0
+  - source: docker.io/rancher/longhornio-csi-provisioner
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/longhornio-csi-provisioner'
+    type: repository
+    tags:
+      allow:
+        - v2.1.2
+  - source: docker.io/rancher/longhornio-csi-resizer
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/longhornio-csi-resizer'
+    type: repository
+    tags:
+      allow:
+        - v1.2.0
+  - source: docker.io/rancher/mirrored-calico-apiserver
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-apiserver'
+    type: repository
+    tags:
+      allow:
+        - v3.23.1
+        - v3.24.1
+        - v3.24.5
+        - v3.25.0
+  - source: docker.io/rancher/mirrored-calico-cni
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-cni'
+    type: repository
+    tags:
+      allow:
+        - v3.22.0
+        - v3.23.1
+        - v3.24.1
+        - v3.24.5
+        - v3.25.0
+  - source: docker.io/rancher/mirrored-calico-ctl
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-ctl'
+    type: repository
+    tags:
+      allow:
+        - v3.22.0
+        - v3.22.5
+        - v3.23.1
+        - v3.24.1
+        - v3.24.5
+        - v3.25.0
+  - source: docker.io/rancher/mirrored-calico-kube-controllers
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-kube-controllers'
+    type: repository
+    tags:
+      allow:
+        - v3.22.0
+        - v3.22.5
+        - v3.23.1
+        - v3.24.1
+        - v3.24.5
+        - v3.25.0
+  - source: docker.io/rancher/mirrored-calico-node
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-node'
+    type: repository
+    tags:
+      allow:
+        - v3.22.0
+        - v3.22.5
+        - v3.23.1
+        - v3.24.1
+        - v3.24.5
+        - v3.25.0
+  - source: docker.io/rancher/mirrored-calico-operator
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-operator'
+    type: repository
+    tags:
+      allow:
+        - v1.27.1
+        - v1.28.1
+        - v1.28.5
+        - v1.29.0
+  - source: docker.io/rancher/mirrored-calico-pod2daemon-flexvol
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-pod2daemon-flexvol'
+    type: repository
+    tags:
+      allow:
+        - v3.22.0
+        - v3.22.5
+        - v3.23.1
+        - v3.24.1
+        - v3.24.5
+        - v3.25.0
+  - source: docker.io/rancher/mirrored-calico-typha
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-typha'
+    type: repository
+    tags:
+      allow:
+        - v3.23.1
+        - v3.24.1
+        - v3.24.5
+        - v3.25.0
+  - source: docker.io/rancher/mirrored-cilium-certgen
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-certgen'
+    type: repository
+    tags:
+      allow:
+        - v0.1.8
+  - source: docker.io/rancher/mirrored-cilium-cilium
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-cilium'
+    type: repository
+    tags:
+      allow:
+        - v1.12.0
+        - v1.12.1
+        - v1.12.3
+        - v1.12.4
+        - v1.12.5
+        - v1.13.0
+  - source: docker.io/rancher/mirrored-cilium-cilium-etcd-operator
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-cilium-etcd-operator'
+    type: repository
+    tags:
+      allow:
+        - v2.0.7
+  - source: docker.io/rancher/mirrored-cilium-clustermesh-apiserver
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-clustermesh-apiserver'
+    type: repository
+    tags:
+      allow:
+        - v1.12.4
+        - v1.12.5
+        - v1.13.0
+  - source: docker.io/rancher/mirrored-cilium-hubble-relay
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-hubble-relay'
+    type: repository
+    tags:
+      allow:
+        - v1.12.4
+        - v1.12.5
+        - v1.13.0
+  - source: docker.io/rancher/mirrored-cilium-hubble-ui
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-hubble-ui'
+    type: repository
+    tags:
+      allow:
+        - v0.10.0
+        - v0.9.2
+  - source: docker.io/rancher/mirrored-cilium-hubble-ui-backend
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-hubble-ui-backend'
+    type: repository
+    tags:
+      allow:
+        - v0.10.0
+        - v0.9.2
+  - source: docker.io/rancher/mirrored-cilium-operator-aws
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-operator-aws'
+    type: repository
+    tags:
+      allow:
+        - v1.12.0
+        - v1.12.1
+        - v1.12.3
+        - v1.12.4
+        - v1.12.5
+        - v1.13.0
+  - source: docker.io/rancher/mirrored-cilium-operator-azure
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-operator-azure'
+    type: repository
+    tags:
+      allow:
+        - v1.12.0
+        - v1.12.1
+        - v1.12.3
+        - v1.12.4
+        - v1.12.5
+        - v1.13.0
+  - source: docker.io/rancher/mirrored-cilium-operator-generic
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-operator-generic'
+    type: repository
+    tags:
+      allow:
+        - v1.12.0
+        - v1.12.1
+        - v1.12.3
+        - v1.12.4
+        - v1.12.5
+        - v1.13.0
+  - source: docker.io/rancher/mirrored-cilium-startup-script
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-startup-script'
+    type: repository
+    tags:
+      allow:
+        - d69851597ea019af980891a4628fb36b7880ec26
+  - source: docker.io/rancher/mirrored-cloud-provider-vsphere-cpi-release-manager
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cloud-provider-vsphere-cpi-release-manager'
+    type: repository
+    tags:
+      allow:
+        - v1.22.5
+        - v1.23.1
+        - v1.23.3
+        - v1.24.1
+        - v1.24.2
+        - v1.24.3
+        - v1.25.0
+  - source: docker.io/rancher/mirrored-cloud-provider-vsphere-csi-release-driver
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cloud-provider-vsphere-csi-release-driver'
+    type: repository
+    tags:
+      allow:
+        - v2.5.0
+        - v2.5.3
+        - v2.6.1
+        - v2.6.2
+        - v2.7.0
+  - source: docker.io/rancher/mirrored-cloud-provider-vsphere-csi-release-syncer
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cloud-provider-vsphere-csi-release-syncer'
+    type: repository
+    tags:
+      allow:
+        - v2.5.0
+        - v2.5.3
+        - v2.6.1
+        - v2.6.2
+        - v2.7.0
+  - source: docker.io/rancher/mirrored-cluster-proportional-autoscaler
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cluster-proportional-autoscaler'
+    type: repository
+    tags:
+      allow:
+        - 1.8.5
+        - 1.8.6
+  - source: docker.io/rancher/mirrored-coredns-coredns
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-coredns-coredns'
+    type: repository
+    tags:
+      allow:
+        - 1.10.1
+        - 1.9.0
+        - 1.9.1
+        - 1.9.3
+        - 1.9.4
+  - source: docker.io/rancher/mirrored-coreos-etcd
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-coreos-etcd'
+    type: repository
+    tags:
+      allow:
+        - v3.5.2
+        - v3.5.3
+        - v3.5.4
+        - v3.5.6
+  - source: docker.io/rancher/mirrored-coreos-flannel
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-coreos-flannel'
+    type: repository
+    tags:
+      allow:
+        - v0.15.1
+  - source: docker.io/rancher/mirrored-flannelcni-flannel
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-flannelcni-flannel'
+    type: repository
+    tags:
+      allow:
+        - v0.17.0
+        - v0.19.2
+  - source: docker.io/rancher/mirrored-ingress-nginx-kube-webhook-certgen
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-ingress-nginx-kube-webhook-certgen'
+    type: repository
+    tags:
+      allow:
+        - v1.1.1
+        - v20230312-helm-chart-4.5.2-28-g66a760794
+  - source: docker.io/rancher/mirrored-k8s-dns-dnsmasq-nanny
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-k8s-dns-dnsmasq-nanny'
+    type: repository
+    tags:
+      allow:
+        - 1.21.1
+        - 1.22.8
+  - source: docker.io/rancher/mirrored-k8s-dns-kube-dns
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-k8s-dns-kube-dns'
+    type: repository
+    tags:
+      allow:
+        - 1.21.1
+        - 1.22.8
+  - source: docker.io/rancher/mirrored-k8s-dns-node-cache
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-k8s-dns-node-cache'
+    type: repository
+    tags:
+      allow:
+        - 1.21.1
+        - 1.22.10
+  - source: docker.io/rancher/mirrored-k8s-dns-sidecar
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-k8s-dns-sidecar'
+    type: repository
+    tags:
+      allow:
+        - 1.21.1
+        - 1.22.8
+  - source: docker.io/rancher/mirrored-library-busybox
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-library-busybox'
+    type: repository
+    tags:
+      allow:
+        - 1.34.1
+  - source: docker.io/rancher/mirrored-library-traefik
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-library-traefik'
+    type: repository
+    tags:
+      allow:
+        - 2.6.2
+        - 2.9.1
+        - 2.9.4
+  - source: docker.io/rancher/mirrored-metrics-server
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-metrics-server'
+    type: repository
+    tags:
+      allow:
+        - v0.5.2
+        - v0.6.1
+        - v0.6.2
+  - source: docker.io/rancher/mirrored-nginx-ingress-controller-defaultbackend
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-nginx-ingress-controller-defaultbackend'
+    type: repository
+    tags:
+      allow:
+        - 1.5-rancher1
+  - source: docker.io/rancher/mirrored-pause
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-pause'
+    type: repository
+    tags:
+      allow:
+        - 3.6
+        - 3.7
+  - source: docker.io/rancher/mirrored-sig-storage-csi-attacher
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-sig-storage-csi-attacher'
+    type: repository
+    tags:
+      allow:
+        - v3.4.0
+  - source: docker.io/rancher/mirrored-sig-storage-csi-node-driver-registrar
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-sig-storage-csi-node-driver-registrar'
+    type: repository
+    tags:
+      allow:
+        - v2.5.0
+        - v2.5.1
+  - source: docker.io/rancher/mirrored-sig-storage-csi-provisioner
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-sig-storage-csi-provisioner'
+    type: repository
+    tags:
+      allow:
+        - v3.1.0
+        - v3.2.1
+  - source: docker.io/rancher/mirrored-sig-storage-csi-resizer
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-sig-storage-csi-resizer'
+    type: repository
+    tags:
+      allow:
+        - v1.4.0
+  - source: docker.io/rancher/mirrored-sig-storage-livenessprobe
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-sig-storage-livenessprobe'
+    type: repository
+    tags:
+      allow:
+        - v2.6.0
+        - v2.7.0
+  - source: docker.io/rancher/mirrored-sig-storage-snapshot-controller
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-sig-storage-snapshot-controller'
+    type: repository
+    tags:
+      allow:
+        - v6.2.1
+  - source: docker.io/rancher/mirrored-sig-storage-snapshot-validation-webhook
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-sig-storage-snapshot-validation-webhook'
+    type: repository
+    tags:
+      allow:
+        - v6.2.1
+  - source: docker.io/rancher/nginx-ingress-controller
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/nginx-ingress-controller'
+    type: repository
+    tags:
+      allow:
+        - nginx-1.1.1-rancher1
+        - nginx-1.2.0-rancher1
+        - nginx-1.2.1-hardened7
+        - nginx-1.2.1-hardened9
+        - nginx-1.2.1-rancher1
+        - nginx-1.4.1-hardened2
+        - nginx-1.5.1-rancher2
+        - nginx-1.6.4-hardened4
+  - source: docker.io/rancher/pause
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/pause'
+    type: repository
+    tags:
+      allow:
+        - 3.6
+        - 3.6-windows-1809-amd64
+        - 3.6-windows-ltsc2022-amd64
+  - source: docker.io/rancher/rke-tools
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke-tools'
+    type: repository
+    tags:
+      allow:
+        - v0.1.80
+        - v0.1.87
+        - v0.1.88
+  - source: docker.io/rancher/rke2-cloud-provider
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-cloud-provider'
+    type: repository
+    tags:
+      allow:
+        - v0.0.3-build20211118
+        - v1.25.3-build20221017
+        - v1.26.1-build20230210
+        - v1.26.3-build20230406
+  - source: docker.io/rancher/rke2-runtime
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-runtime'
+    type: repository
+    tags:
+      allow:
+        - v1.23.10-rke2r1
+        - v1.23.10-rke2r1-windows-amd64
+        - v1.23.13-rke2r1
+        - v1.23.13-rke2r1-windows-amd64
+        - v1.23.14-rke2r1
+        - v1.23.14-rke2r1-windows-amd64
+        - v1.23.15-rke2r1
+        - v1.23.15-rke2r1-windows-amd64
+        - v1.23.16-rke2r1
+        - v1.23.16-rke2r1-windows-amd64
+        - v1.23.17-rke2r1
+        - v1.23.17-rke2r1-windows-amd64
+        - v1.24.10-rke2r1
+        - v1.24.10-rke2r1-windows-amd64
+        - v1.24.11-rke2r1
+        - v1.24.11-rke2r1-windows-amd64
+        - v1.24.13-rke2r1
+        - v1.24.13-rke2r1-windows-amd64
+        - v1.24.4-rke2r1
+        - v1.24.4-rke2r1-windows-amd64
+        - v1.24.7-rke2r1
+        - v1.24.7-rke2r1-windows-amd64
+        - v1.24.8-rke2r1
+        - v1.24.8-rke2r1-windows-amd64
+        - v1.24.9-rke2r2
+        - v1.24.9-rke2r2-windows-amd64
+        - v1.25.7-rke2r1
+        - v1.25.7-rke2r1-windows-amd64
+        - v1.25.9-rke2r1
+        - v1.25.9-rke2r1-windows-amd64
+  - source: docker.io/rancher/system-agent-installer-K3S
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-K3S'
+    type: repository
+    tags:
+      allow:
+        - v1.23.10-k3s1
+        - v1.23.13-k3s1
+        - v1.23.14-k3s1
+        - v1.23.15-k3s1
+        - v1.23.16-k3s1
+        - v1.23.17-k3s1
+        - v1.24.10-k3s1
+        - v1.24.11-k3s1
+        - v1.24.13-k3s1
+        - v1.24.4-k3s1
+        - v1.24.7-k3s1
+        - v1.24.8-k3s1
+        - v1.24.9-k3s2
+        - v1.25.7-k3s1
+        - v1.25.9-k3s1
+  - source: docker.io/rancher/system-agent-installer-RKE2
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-RKE2'
+    type: repository
+    tags:
+      allow:
+        - v1.23.10-rke2r1
+        - v1.23.13-rke2r1
+        - v1.23.14-rke2r1
+        - v1.23.15-rke2r1
+        - v1.23.16-rke2r1
+        - v1.23.17-rke2r1
+        - v1.24.10-rke2r1
+        - v1.24.11-rke2r1
+        - v1.24.13-rke2r1
+        - v1.24.4-rke2r1
+        - v1.24.7-rke2r1
+        - v1.24.8-rke2r1
+        - v1.24.9-rke2r2
+        - v1.25.7-rke2r1
+        - v1.25.9-rke2r1
