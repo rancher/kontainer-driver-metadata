@@ -18,6 +18,8 @@ import (
 )
 
 const (
+	RegSyncFilePath = "./regsync.yaml"
+
 	rke2LinuxImageURL   = "https://github.com/rancher/rke2/releases/download/%s/rke2-images-all.linux-amd64.txt"
 	rke2WindowsImageURL = "https://github.com/rancher/rke2/releases/download/%s/rke2-images.windows-amd64.txt"
 	k3sLinuxImageURL    = "https://github.com/k3s-io/k3s/releases/download/%s/k3s-images.txt"
@@ -26,9 +28,9 @@ const (
 	upgradeImage              = "rancher/%s-upgrade:%s"
 	releasesKey               = "releases"
 	templateFilePath          = "./pkg/images/template.go.tmpl"
-	regsyncFilePath           = "./regsync.yaml"
-	linux                     = "linux"
-	window                    = "windows"
+
+	linux  = "linux"
+	window = "windows"
 )
 
 var (
@@ -66,7 +68,7 @@ func GenerateRegSyncFile() {
 	if err != nil {
 		logrus.Fatalf("failed to parse the template file: %v ", err)
 	}
-	file, err := os.Create(regsyncFilePath)
+	file, err := os.Create(RegSyncFilePath)
 	if err != nil {
 		logrus.Fatalf("failed to create the regsync file: %v ", err)
 	}

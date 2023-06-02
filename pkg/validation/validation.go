@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	utiliies "github.com/rancher/kontainer-driver-metadata/pkg"
+	"github.com/rancher/kontainer-driver-metadata/pkg/images"
 	"github.com/rancher/rke/types/kdm"
 	"github.com/sirupsen/logrus"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
@@ -16,7 +17,17 @@ import (
 
 var (
 	releaseDataURL = "https://releases.rancher.com/kontainer-driver-metadata/%s/data.json"
+
+	// We can not merge commits into the release branch when we are not releasing new versions,
+	// but the validation tests requires the regsync.yaml file in the release branch to run.
+	// As the workaround, we use a URL to a branch which contains the necessary regsync.yaml file.
+	// FIXME: we need to switch back to the legit URL after the next release: uncomment the following line and delete the next
+	// releaseRegSyncURL = "https://raw.githubusercontent.com/rancher/kontainer-driver-metadata/%s/regsync.yaml"
+	releaseRegSyncURL = "https://raw.githubusercontent.com/rancher/kontainer-driver-metadata/%s-with-regsync-file/regsync.yaml"
 )
+
+// imageTags holds images and their tags as nested maps to make the comparison easy
+type imageTags map[string]map[string]bool
 
 func main() {
 	args := os.Args
@@ -36,11 +47,76 @@ func main() {
 			logrus.Fatalf("failed to get the KDM data for release [%s]: %v", release, err)
 		}
 		if err = validate(dev, released); err != nil {
-			logrus.Fatalf("failed to validte the release [%s]: %v", release, err)
+			logrus.Fatalf("failed to validte the KDM data for the release [%s]: %v", release, err)
+		}
+		if err := validateRegSync(release); err != nil {
+			logrus.Fatalf("failed to validte the regsync file for the release [%s]: %v", release, err)
 		}
 	}
 	logrus.Info("validation is passed")
 	return
+}
+
+func validateRegSync(release string) error {
+	raw, err := utiliies.DownloadFromURL(fmt.Sprintf(releaseRegSyncURL, release))
+	if err != nil {
+		return fmt.Errorf("failed to download the upstream regsync file: %v", err)
+	}
+	upstream, err := getImageTags([]byte(raw))
+	if err != nil {
+		return fmt.Errorf("failed to extract images and tags from the upstream: %v", err)
+	}
+	file, err := os.ReadFile(images.RegSyncFilePath)
+	if err != nil {
+		return err
+	}
+	local, err := getImageTags(file)
+	if err != nil {
+		return fmt.Errorf("failed to extract images and tags from the local: %v", err)
+	}
+	// RKE2 and K3s releases may need to be fixed after the fact,
+	// so we just make sure we don't remove any released image or tag
+	for name, tags := range upstream {
+		localTags, found := local[name]
+		if !found {
+			return fmt.Errorf("a released image [%s] is missing in the dev regSync file", name)
+		}
+		for tag := range tags {
+			if !localTags[tag] {
+				return fmt.Errorf("a released tag [%s:%s] is missing in the dev regSync file", name, tag)
+			}
+		}
+	}
+	return nil
+}
+
+func getImageTags(source []byte) (imageTags, error) {
+	var upstream map[string]interface{}
+	if err := yaml.Unmarshal(source, &upstream); err != nil {
+		return nil, fmt.Errorf("failed to unmarshal: %v", err)
+	}
+	sync, _, err := unstructured.NestedSlice(upstream, "sync")
+	if err != nil {
+		return nil, err
+	}
+	upstreamImageTag := imageTags{}
+	for _, item := range sync {
+		source, _, err := unstructured.NestedString(item.(map[string]interface{}), "source")
+		if err != nil {
+			return nil, err
+		}
+		allowTags, _, err := unstructured.NestedSlice(item.(map[string]interface{}), "tags", "allow")
+		if err != nil {
+			return nil, err
+		}
+		tags := map[string]bool{}
+		for _, tag := range allowTags {
+			t, _ := tag.(string)
+			tags[t] = true
+		}
+		upstreamImageTag[source] = tags
+	}
+	return upstreamImageTag, nil
 }
 
 // validate checks the versions in the local data.json by comparing with the released data.json,
