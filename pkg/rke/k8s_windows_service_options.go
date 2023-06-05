@@ -9,7 +9,7 @@ func loadK8sVersionWindowsServiceOptions() map[string]v3.KubernetesServicesOptio
 			Kubelet:   getWindowsKubeletOptions124(),
 			Kubeproxy: getWindowsKubeProxyOptions123(),
 		},
-        "v1.26": {
+		"v1.26": {
 			Kubelet:   getWindowsKubeletOptions124(),
 			Kubeproxy: getWindowsKubeProxyOptions123(),
 		},
