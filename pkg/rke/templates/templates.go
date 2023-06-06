@@ -85,6 +85,7 @@ const (
 	aciv5234 = "aci-v5.2.3.4"
 	aciv5235 = "aci-v5.2.3.5"
 	aciv5236 = "aci-v5.2.3.6"
+	aciv5271 = "aci-v5.2.7.1"
 
 	nginxIngressv18          = "nginxingress-v1.8"
 	nginxIngressV115         = "nginxingress-v1.15"
@@ -223,13 +224,16 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.23.8-rancher1-1 <1.23.14-rancher1-1":  aciv523,
 			">=1.23.14-rancher1-1 <1.23.15-rancher1-1": aciv5234,
 			">=1.23.15-rancher1-1 <1.23.16-rancher2-2": aciv5235,
-			">=1.23.16-rancher2-2 <1.24.0-rancher0":    aciv5236,
+			">=1.23.16-rancher2-2 <1.23.16-rancher2-3": aciv5236,
+			">=1.23.16-rancher2-3 <1.24.0-rancher0":    aciv5271,
 			">=1.24.0-rancher0 <1.24.8-rancher1-1":     aciv523,
 			">=1.24.8-rancher1-1 <1.24.9-rancher1-1":   aciv5234,
 			">=1.24.9-rancher1-1 <1.24.13-rancher2-1":  aciv5235,
-			">=1.24.13-rancher2-1 <1.25.0-rancher0":    aciv5236,
+			">=1.24.13-rancher2-1 <1.24.13-rancher2-2": aciv5236,
+			">=1.24.13-rancher2-2 <1.25.0-rancher0":    aciv5271,
 			">=1.25.0-rancher0 <1.25.9-rancher2-1":     aciv5235,
-			">=1.25.9-rancher2-1":                      aciv5236,
+			">=1.25.9-rancher2-1 <1.25.9-rancher2-2":   aciv5236,
+			">=1.25.9-rancher2-2":                      aciv5271,
 		},
 		kdm.NginxIngress: {
 			">=1.8.0-rancher0 <1.13.10-rancher1-3":  nginxIngressv18,
@@ -352,6 +356,7 @@ func getTemplates() map[string]string {
 		aciv5234: AciTemplateV5234,
 		aciv5235: AciTemplateV5235,
 		aciv5236: AciTemplateV5236,
+		aciv5271: AciTemplateV5271,
 
 		nginxIngressv18:          NginxIngressTemplate,
 		nginxIngressV115:         NginxIngressTemplateV0251Rancher1,
