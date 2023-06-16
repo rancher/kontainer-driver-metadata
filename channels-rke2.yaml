@@ -1305,7 +1305,7 @@ releases:
     serverArgs: *serverArgs-v1-24-2-rke2r1
     agentArgs: *agentArgs-v1-25-7-rke2r1
     charts: &charts-v1-26-6-rc2-rke2r1
-      <<: *harts-v1-26-4-rke2r1
+      <<: *charts-v1-26-4-rke2r1
       rke2-canal:
         repo: rancher-rke2-charts
         version: v3.25.1-build2023051201
