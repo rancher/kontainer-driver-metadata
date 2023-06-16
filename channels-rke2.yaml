@@ -1134,8 +1134,8 @@ releases:
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v1-24-2-rke2r1
     agentArgs: *agentArgs-v1-24-2-rke2r1
-    charts: &charts-v1-25-15-rc2-rke2r1
-      <<: *charts-v1-25-14-rke2r1
+    charts: &charts-v1-24-15-rc2-rke2r1
+      <<: *charts-v1-24-14-rke2r1
       rke2-canal:
         repo: rancher-rke2-charts
         version: v3.25.1-build2023051201
