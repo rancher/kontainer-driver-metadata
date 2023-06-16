@@ -165,8 +165,8 @@ func getImages(distro string, versions []interface{}) (all []string, err error) 
 			// - rancher/rancher-<distro>-upgrade
 			// - rancher/system-agent-installer-<distro>
 			safeVersion := strings.ReplaceAll(v, "+", "-")
-			upgradeImage := fmt.Sprintf(upgradeImage, distro, safeVersion)
-			systemAgentInstallerImage := fmt.Sprintf(systemAgentInstallerImage, distro, safeVersion)
+			upgradeImage := fmt.Sprintf(upgradeImage, strings.ToLower(distro), safeVersion)
+			systemAgentInstallerImage := fmt.Sprintf(systemAgentInstallerImage, strings.ToLower(distro), safeVersion)
 			all = append(all, upgradeImage, systemAgentInstallerImage)
 		}
 	}
