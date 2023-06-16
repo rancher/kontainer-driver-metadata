@@ -1312,3 +1312,6 @@ releases:
       rke2-coredns:
         repo: rancher-rke2-charts
         version: 1.24.002
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.2.200
