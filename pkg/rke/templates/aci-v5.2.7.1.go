@@ -1511,10 +1511,10 @@ data:
         "aci-multipod": {{.AciMultipod}},
 {{- end}}
 {{- if ne .DhcpRenewMaxRetryCount "0" }}
-        "dhcp_renew_max_retry_count": {{.DhcpRenewMaxRetryCount}},
+        "dhcp-renew-max-retry-count": {{.DhcpRenewMaxRetryCount}},
 {{- end}}
 {{- if ne .DhcpDelay "0" }}
-        "dhcp_delay": {{.DhcpDelay}},
+        "dhcp-delay": {{.DhcpDelay}},
 {{- end}}
 {{- if ne .OpflexMode ""}}
         "opflex-mode": "{{.OpflexMode}}",
