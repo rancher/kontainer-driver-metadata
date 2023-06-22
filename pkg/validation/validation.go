@@ -16,14 +16,8 @@ import (
 )
 
 var (
-	releaseDataURL = "https://releases.rancher.com/kontainer-driver-metadata/%s/data.json"
-
-	// We can not merge commits into the release branch when we are not releasing new versions,
-	// but the validation tests requires the regsync.yaml file in the release branch to run.
-	// As the workaround, we use a URL to a branch which contains the necessary regsync.yaml file.
-	// FIXME: we need to switch back to the legit URL after the next release: uncomment the following line and delete the next
-	// releaseRegSyncURL = "https://raw.githubusercontent.com/rancher/kontainer-driver-metadata/%s/regsync.yaml"
-	releaseRegSyncURL = "https://raw.githubusercontent.com/rancher/kontainer-driver-metadata/%s-with-regsync-file/regsync.yaml"
+	releaseDataURL    = "https://releases.rancher.com/kontainer-driver-metadata/%s/data.json"
+	releaseRegSyncURL = "https://raw.githubusercontent.com/rancher/kontainer-driver-metadata/%s/regsync.yaml"
 )
 
 // imageTags holds images and their tags as nested maps to make the comparison easy
