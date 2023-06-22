@@ -4,11 +4,11 @@ ARG DAPPER_HOST_ARCH
 ENV ARCH $DAPPER_HOST_ARCH
 ENV GOLANGCI_LINT v1.50.1
 
-RUN zypper -n install git docker vim less file curl wget python3 python3-requests python3-PyYAML
+RUN zypper -n install git docker vim less file curl wget
 RUN go install golang.org/x/tools/cmd/goimports@latest
 RUN if [[ "${ARCH}" == "amd64" ]]; then \
         curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s ${GOLANGCI_LINT}; \
-        curl -sL https://github.com/rancher/wharfie/releases/download/v0.5.2/wharfie-amd64 -o /bin/wharfie && chmod +x /bin/wharfie; \
+        curl -sL https://github.com/rancher/wharfie/releases/download/v0.6.1/wharfie-amd64 -o /bin/wharfie && chmod +x /bin/wharfie; \
     fi
 
 ENV DAPPER_ENV REPO TAG DRONE_TAG
