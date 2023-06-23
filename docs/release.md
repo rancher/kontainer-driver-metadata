@@ -37,14 +37,13 @@ A couple of example PRs to help:
 
 ## Prepare for prime images update
 
-Prime images only need to be updated for out-of-band KDM releases, ie KDM releases without corresponding rancher server version releases. OOB KDM was released for v2.7 using https://github.com/rancher/kontainer-driver-metadata/pull/1126 but there was no release of Rancher version v2.7.x with it, so prime images needed to be updated in this case.
- 
-1. Create a custom branch based on the latest rancher patch version. The branch name should be of the format `latestPatch-kdm-2.6.x` or `latestPatch-kdm-[0-9]*`
-2. Update KDM branches to read from the dev branch. This branch must be the target dev branch (`dev-v2.7`/`dev-v2.7-for-2.6.12`) 
-3. Request PR reviews. One or two reviews should suffice @HarrisonWAffel @kinarashah @snasovich
-4. Merge PR and tag Rancher of the format `latestPatch-kdm-image-2.6.x` or `latestPatch-kdm-image-[0-9]*` 
-5. Notify internal teams so they can kickstart the sync process Ping @HarrisonWAffel @kinarashah for more details
-6. Notify QA release captain to validate the necessary images have been updated
+Prime images only need to be updated for out-of-band KDM releases, ie KDM releases without corresponding rancher server version releases. For example, https://github.com/rancher/kontainer-driver-metadata/pull/1126 was an OOB KDM release for Rancher v2.7 but there was no release of Rancher version v2.7.x with it, so prime images needed to be updated in this case.
+
+A `regsync.yaml` file is generated and used as the source of truth for images to be mirrored. 
+
+1. After the PR containing the OOB KDM release is merged into the target dev branch, such as `dev-v2.7`, 
+we need notify the EIO team to start the image mirroring process by using the `regsync.yaml` file in the target branch. (**Note**: This step will be automated in the near feature)
+1. After the image mirroring is done, we need notify QA release captain to validate the necessary images have been updated.
 
 ### Prepare release notes for KDM (TBD)
 
