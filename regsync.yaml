@@ -217,15 +217,18 @@ sync:
         - v1.24.10-rancher2
         - v1.24.10-rancher4
         - v1.24.13-rancher2
+        - v1.24.15-rancher1
         - v1.24.2-rancher1
         - v1.24.4-rancher1
         - v1.24.6-rancher1
         - v1.24.8-rancher1
         - v1.24.9-rancher1
+        - v1.25.11-rancher1
         - v1.25.6-rancher2
         - v1.25.6-rancher4
         - v1.25.9-rancher2
         - v1.26.4-rancher2
+        - v1.26.6-rancher1
   - source: docker.io/rancher/k3s-upgrade
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/k3s-upgrade'
     type: repository
@@ -241,14 +244,17 @@ sync:
         - v1.24.11-k3s1
         - v1.24.13-k3s1
         - v1.24.14-k3s1
+        - v1.24.15-k3s1
         - v1.24.4-k3s1
         - v1.24.7-k3s1
         - v1.24.8-k3s1
         - v1.24.9-k3s2
         - v1.25.10-k3s1
+        - v1.25.11-k3s1
         - v1.25.7-k3s1
         - v1.25.9-k3s1
         - v1.26.5-k3s1
+        - v1.26.6-k3s1
   - source: docker.io/rancher/klipper-helm
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/klipper-helm'
     type: repository
@@ -267,6 +273,7 @@ sync:
         - v0.3.5
         - v0.4.0
         - v0.4.3
+        - v0.4.4
   - source: docker.io/rancher/local-path-provisioner
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/local-path-provisioner'
     type: repository
@@ -807,14 +814,17 @@ sync:
         - v1.24.11-k3s1
         - v1.24.13-k3s1
         - v1.24.14-k3s1
+        - v1.24.15-k3s1
         - v1.24.4-k3s1
         - v1.24.7-k3s1
         - v1.24.8-k3s1
         - v1.24.9-k3s2
         - v1.25.10-k3s1
+        - v1.25.11-k3s1
         - v1.25.7-k3s1
         - v1.25.9-k3s1
         - v1.26.5-k3s1
+        - v1.26.6-k3s1
   - source: docker.io/rancher/system-agent-installer-rke2
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-rke2'
     type: repository

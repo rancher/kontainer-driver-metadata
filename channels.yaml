@@ -367,6 +367,12 @@ releases:
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
+  - version: v1.24.15+k3s1
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v3
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
   # v1.25.7 will be the first version released in the v1.25.x line.
   - version: v1.25.7+k3s1
     minChannelServerVersion: v2.7.2-alpha1
@@ -386,6 +392,22 @@ releases:
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
+  - version: v1.25.11+k3s1
+    minChannelServerVersion: v2.7.2-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: &serverArgs-v5
+      <<: *serverArgs-v3
+      vpn-auth:
+        type: string
+      vpn-auth-file:
+        type: string
+    agentArgs: &agentArgs-v3
+      <<: *agentArgs-v2
+      vpn-auth:
+        type: string
+      vpn-auth-file:
+        type: string
+    featureVersions: *featureVersions-v1
   - version: v1.26.5+k3s1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
@@ -401,4 +423,15 @@ releases:
         - wireguard
         - wireguard-native
     agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
+  - version: v1.26.6+k3s1
+    minChannelServerVersion: v2.7.5-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: &serverArgs-v6
+      <<: *serverArgs-v4
+      vpn-auth:
+        type: string
+      vpn-auth-file:
+        type: string
+    agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
