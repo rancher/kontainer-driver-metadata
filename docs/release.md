@@ -41,9 +41,9 @@ Prime images only need to be updated for out-of-band KDM releases, ie KDM releas
 
 A `regsync.yaml` file is generated and used as the source of truth for images to be mirrored. 
 
-1. After the PR containing the OOB KDM release is merged into the target dev branch, such as `dev-v2.7`, 
-we need notify the EIO team to start the image mirroring process by using the `regsync.yaml` file in the target branch. (**Note**: This step will be automated in the near feature)
-1. After the image mirroring is done, we need notify QA release captain to validate the necessary images have been updated.
+1. After the PR containing the OOB KDM release is merged into the target dev branch, such as `dev-v2.7`,
+Drone CI is triggered to run the `mirror-images` step which mirrors new images and tags to Rancher Trusted Registry. 
+2. After the Drone CI finishes successfully, we need notify QA release captain to validate the necessary images have been updated.
 
 ### Prepare release notes for KDM (TBD)
 
