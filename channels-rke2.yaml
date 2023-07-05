@@ -1153,8 +1153,8 @@ releases:
         version: 2.11.100-build2023051508
     featureVersions: *featureVersions-v1
   - version: v1.24.15+rke2r1
-    minChannelServerVersion: v2.7.5-alpha1
-    maxChannelServerVersion: v2.7.99
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.6.99
     serverArgs: *serverArgs-v1-24-2-rke2r1
     agentArgs: *agentArgs-v1-24-2-rke2r1
     charts: &charts-v1-24-15-rke2r1
