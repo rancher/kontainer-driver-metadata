@@ -11,9 +11,37 @@ steps:
     image: rancher/dapper:v0.6.0
     commands:
     - dapper ci
+    environment:
+      REGISTRY_ENDPOINT:
+        from_secret: REGISTRY_ENDPOINT
     volumes:
     - name: docker
       path: /var/run/docker.sock
+
+  - name: mirror-images
+    image: rancher/dapper:v0.6.0
+    commands:
+    - dapper mirror-images
+    environment:
+      REGISTRY_ENDPOINT:
+        from_secret: REGISTRY_ENDPOINT
+      REGISTRY_USERNAME:
+        from_secret: REGISTRY_USERNAME
+      REGISTRY_PASSWORD:
+        from_secret: REGISTRY_PASSWORD
+    volumes:
+    - name: docker
+      path: /var/run/docker.sock
+    depends_on:
+    - validate
+    when:
+      ref:
+        include:
+          - "refs/heads/release-v*"
+      event:
+      - push
+      instance:
+      - drone-publish.rancher.io
 
   - name: upload
     pull: default
@@ -31,7 +59,7 @@ steps:
       - push
     depends_on:
     - validate
-
+    - mirror-images
 
   - name: dispatch
     image: curlimages/curl:7.81.0
