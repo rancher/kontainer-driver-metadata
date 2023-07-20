@@ -122,12 +122,14 @@ sync:
         - v1.24.13-rke2r1-build20230412
         - v1.24.14-rke2r1-build20230518
         - v1.24.15-rke2r1-build20230614
+        - v1.24.16-rke2r1-build20230719
         - v1.24.4-rke2r1-build20220817
         - v1.24.7-rke2r1-build20221013
         - v1.24.8-rke2r1-build20221110
         - v1.24.9-rke2r2-build20230104
         - v1.25.10-rke2r1-build20230518
         - v1.25.11-rke2r1-build20230614
+        - v1.25.12-rke2r1-build20230719
         - v1.25.7-rke2r1-build20230228
         - v1.25.9-rke2r1-build20230412
         - v1.26.5-rke2r1-build20230518
@@ -787,6 +789,8 @@ sync:
         - v1.24.14-rke2r1-windows-amd64
         - v1.24.15-rke2r1
         - v1.24.15-rke2r1-windows-amd64
+        - v1.24.16-rc1-rke2r1
+        - v1.24.16-rc1-rke2r1-windows-amd64
         - v1.24.4-rke2r1
         - v1.24.4-rke2r1-windows-amd64
         - v1.24.7-rke2r1
@@ -799,6 +803,8 @@ sync:
         - v1.25.10-rke2r1-windows-amd64
         - v1.25.11-rke2r1
         - v1.25.11-rke2r1-windows-amd64
+        - v1.25.12-rc1-rke2r1
+        - v1.25.12-rc1-rke2r1-windows-amd64
         - v1.25.7-rke2r1
         - v1.25.7-rke2r1-windows-amd64
         - v1.25.9-rke2r1
@@ -825,12 +831,14 @@ sync:
         - v1.24.13-rke2r1
         - v1.24.14-rke2r1
         - v1.24.15-rke2r1
+        - v1.24.16-rc1-rke2r1
         - v1.24.4-rke2r1
         - v1.24.7-rke2r1
         - v1.24.8-rke2r1
         - v1.24.9-rke2r2
         - v1.25.10-rke2r1
         - v1.25.11-rke2r1
+        - v1.25.12-rc1-rke2r1
         - v1.25.7-rke2r1
         - v1.25.9-rke2r1
         - v1.26.5-rke2r1
@@ -878,12 +886,14 @@ sync:
         - v1.24.13-rke2r1
         - v1.24.14-rke2r1
         - v1.24.15-rke2r1
+        - v1.24.16-rc1-rke2r1
         - v1.24.4-rke2r1
         - v1.24.7-rke2r1
         - v1.24.8-rke2r1
         - v1.24.9-rke2r2
         - v1.25.10-rke2r1
         - v1.25.11-rke2r1
+        - v1.25.12-rc1-rke2r1
         - v1.25.7-rke2r1
         - v1.25.9-rke2r1
         - v1.26.5-rke2r1
