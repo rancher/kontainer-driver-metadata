@@ -1347,3 +1347,25 @@ releases:
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.2.200
+  - version: v1.26.7-rc1+rke2r1
+    minChannelServerVersion: v2.7.5-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v1-24-2-rke2r1
+    agentArgs: *agentArgs-v1-25-7-rke2r1
+    charts: &charts-v1-26-7-rc1-rke2r1
+      <<: *charts-v1-26-6-rke2r1
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.25.1-build2023051203
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.26.100
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.26.100
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.6.100
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.0.2-build2023070701
