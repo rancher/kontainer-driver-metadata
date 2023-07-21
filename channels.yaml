@@ -427,11 +427,6 @@ releases:
   - version: v1.26.6+k3s1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
-    serverArgs: &serverArgs-v6
-      <<: *serverArgs-v4
-      vpn-auth:
-        type: string
-      vpn-auth-file:
-        type: string
+    serverArgs: *serverArgs-v5
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
