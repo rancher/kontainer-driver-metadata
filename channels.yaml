@@ -373,6 +373,15 @@ releases:
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
+  - version: v1.24.16-rc1+k3s1
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: &serverArgs-v6
+      <<: *serverArgs-v3
+      helm-job-image:
+        type: string
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
   # v1.25.7 will be the first version released in the v1.25.x line.
   - version: v1.25.7+k3s1
     minChannelServerVersion: v2.7.2-alpha1
@@ -408,6 +417,15 @@ releases:
       vpn-auth-file:
         type: string
     featureVersions: *featureVersions-v1
+  - version: v1.25.12-rc1+k3s1
+    minChannelServerVersion: v2.7.2-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: &serverArgs-v7
+      <<: *serverArgs-v5
+      helm-job-image:
+        type: string
+    agentArgs: *agentArgs-v3
+    featureVersions: *featureVersions-v1
   - version: v1.26.5+k3s1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
@@ -428,5 +446,11 @@ releases:
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v5
+    agentArgs: *agentArgs-v3
+    featureVersions: *featureVersions-v1
+  - version: v1.26.7-rc1+k3s1
+    minChannelServerVersion: v2.7.5-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v7
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
