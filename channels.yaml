@@ -373,7 +373,7 @@ releases:
     serverArgs: *serverArgs-v3
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
-  - version: v1.24.16-rc3+k3s1
+  - version: v1.24.16+k3s1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: &serverArgs-v6
@@ -417,7 +417,7 @@ releases:
       vpn-auth-file:
         type: string
     featureVersions: *featureVersions-v1
-  - version: v1.25.12-rc3+k3s1
+  - version: v1.25.12+k3s1
     minChannelServerVersion: v2.7.2-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: &serverArgs-v7
@@ -448,7 +448,7 @@ releases:
     serverArgs: *serverArgs-v5
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
-  - version: v1.26.7-rc3+k3s1
+  - version: v1.26.7+k3s1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v7
