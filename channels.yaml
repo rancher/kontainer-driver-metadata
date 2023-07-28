@@ -415,10 +415,7 @@ releases:
   - version: v1.25.12+k3s1
     minChannelServerVersion: v2.7.2-alpha1
     maxChannelServerVersion: v2.7.99
-    serverArgs: &serverArgs-v6
-      <<: *serverArgs-v3
-      helm-job-image:
-        type: string
+    serverArgs: *serverArgs-v5
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
   - version: v1.26.5+k3s1
@@ -440,12 +437,15 @@ releases:
   - version: v1.26.6+k3s1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
-    serverArgs: *serverArgs-v3
+    serverArgs: *serverArgs-v4
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
   - version: v1.26.7+k3s1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
-    serverArgs: *serverArgs-v6
+    serverArgs: 
+      <<: *serverArgs-v4
+      helm-job-image:
+        type: string
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
