@@ -1145,6 +1145,7 @@ releases:
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.2.200
+    featureVersions: *featureVersions-v1
   - version: v1.24.16+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.7.99
@@ -1167,6 +1168,7 @@ releases:
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.0.2-build2023070701
+    featureVersions: *featureVersions-v1
   - version: v1.25.7+rke2r1
     minChannelServerVersion: v2.7.2-alpha1
     maxChannelServerVersion: v2.7.99
@@ -1321,6 +1323,7 @@ releases:
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.2.200
+    featureVersions: *featureVersions-v1
   - version: v1.25.12+rke2r1
     minChannelServerVersion: v2.7.2-alpha1
     maxChannelServerVersion: v2.7.99
@@ -1343,6 +1346,7 @@ releases:
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.0.2-build2023070701
+    featureVersions: *featureVersions-v1
   - version: v1.26.5+rke2r1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
@@ -1391,6 +1395,7 @@ releases:
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.2.200
+    featureVersions: *featureVersions-v1
   - version: v1.26.7+rke2r1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
@@ -1413,3 +1418,4 @@ releases:
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.0.2-build2023070701
+    featureVersions: *featureVersions-v1
