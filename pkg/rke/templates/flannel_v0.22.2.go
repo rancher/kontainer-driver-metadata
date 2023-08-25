@@ -1,21 +1,24 @@
 package templates
 
 /*
-FlannelTemplateV0_21_4 is based on upstream flannel v0.21.4
+FlannelTemplateV0_22_2 is based on upstream flannel v0.22.2
 Source: https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 Upstream Changelog:
 - added get verb for nodes in flannel ClusterRole
 - added clustercidrs resources list and watch permission for flannel ClusterRole.
+- added k8s-app label
 Rancher Changelog:
 - No new Rancher specific changes, same as FlannelTemplateV0_21_4
 */
 
-const FlannelTemplateV0_21_4 = `
+const FlannelTemplateV0_22_2 = `
 {{- if eq .RBACConfig "rbac"}}
 ---
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
+  labels:
+    k8s-app: flannel
   name: flannel
 rules:
 - apiGroups:
@@ -39,7 +42,7 @@ rules:
   verbs:
   - patch
 - apiGroups:
-  - "networking.k8s.io"
+  - networking.k8s.io
   resources:
   - clustercidrs
   verbs:
@@ -49,6 +52,8 @@ rules:
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
+  labels:
+    k8s-app: flannel
   name: flannel
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -62,6 +67,8 @@ subjects:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
+  labels:
+    k8s-app: flannel
   name: flannel
   namespace: kube-system
 {{- end}}
@@ -73,6 +80,7 @@ metadata:
   namespace: kube-system
   labels:
     tier: node
+    k8s-app: flannel
     app: flannel
 data:
   cni-conf.json: |
