@@ -1380,6 +1380,9 @@ releases:
       rke2-cilium:
         repo: rancher-rke2-charts
         version: 1.14.000
+      rke2-snapshot-validation-webhook:
+        repo: rancher-rke2-charts
+        version: 1.7.300
     featureVersions: *featureVersions-v1
   - version: v1.26.5+rke2r1
     minChannelServerVersion: v2.7.5-alpha1
@@ -1469,4 +1472,7 @@ releases:
       rke2-cilium:
         repo: rancher-rke2-charts
         version: 1.14.000
+      rke2-snapshot-validation-webhook:
+        repo: rancher-rke2-charts
+        version: 1.7.300
     featureVersions: *featureVersions-v1
