@@ -372,9 +372,18 @@ releases:
   - version: v1.24.16+k3s1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.6.99
-    serverArgs: 
+    serverArgs: &serverArgs-v4
       <<: *serverArgs-v3
       helm-job-image:
         type: string
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
+  - version: v1.24.17-rc2+k3s1
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.6.99
+    serverArgs: 
+      <<: *serverArgs-v4
+      tls-san-security:
+        type: boolean
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
