@@ -762,6 +762,7 @@ sync:
         - v0.1.87
         - v0.1.88
         - v0.1.89
+        - v0.1.90
   - source: docker.io/rancher/rke2-cloud-provider
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-cloud-provider'
     type: repository
