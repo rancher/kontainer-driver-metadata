@@ -1498,4 +1498,7 @@ releases:
       rke2-snapshot-validation-webhook:
         repo: rancher-rke2-charts
         version: 1.7.300
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.24.004
     featureVersions: *featureVersions-v1
