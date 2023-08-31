@@ -1,16 +1,16 @@
 package templates
 
 /*
-CanalTemplateV3_25_0 is based on upstream canal v3.25.0
-https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/canal.yaml
+CanalTemplateV3_26_1 is based on upstream canal v3.26.1
+https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/canal.yaml
 Upstream Changelog:
 - Multiple updates on the CRDs
 
 Rancher Changelog:
 - No new Rancher specific changes, same as CanalTemplateV3_19_0
 */
-const CanalTemplateV3_25_0 = `
-# Canal Template based on Canal v3.25.0
+const CanalTemplateV3_26_1 = `
+# Canal Template based on Canal v3.26.1
 ---
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Canal installation.
@@ -278,6 +278,130 @@ status:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: (devel)
+  creationTimestamp: null
+  name: bgpfilters.crd.projectcalico.org
+spec:
+  group: crd.projectcalico.org
+  names:
+    kind: BGPFilter
+    listKind: BGPFilterList
+    plural: bgpfilters
+    singular: bgpfilter
+  scope: Cluster
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: BGPFilterSpec contains the IPv4 and IPv6 filter rules of
+              the BGP Filter.
+            properties:
+              exportV4:
+                description: The ordered set of IPv4 BGPFilter rules acting on exporting
+                  routes to a peer.
+                items:
+                  description: BGPFilterRuleV4 defines a BGP filter rule consisting
+                    a single IPv4 CIDR block and a filter action for this CIDR.
+                  properties:
+                    action:
+                      type: string
+                    cidr:
+                      type: string
+                    matchOperator:
+                      type: string
+                  required:
+                  - action
+                  - cidr
+                  - matchOperator
+                  type: object
+                type: array
+              exportV6:
+                description: The ordered set of IPv6 BGPFilter rules acting on exporting
+                  routes to a peer.
+                items:
+                  description: BGPFilterRuleV6 defines a BGP filter rule consisting
+                    a single IPv6 CIDR block and a filter action for this CIDR.
+                  properties:
+                    action:
+                      type: string
+                    cidr:
+                      type: string
+                    matchOperator:
+                      type: string
+                  required:
+                  - action
+                  - cidr
+                  - matchOperator
+                  type: object
+                type: array
+              importV4:
+                description: The ordered set of IPv4 BGPFilter rules acting on importing
+                  routes from a peer.
+                items:
+                  description: BGPFilterRuleV4 defines a BGP filter rule consisting
+                    a single IPv4 CIDR block and a filter action for this CIDR.
+                  properties:
+                    action:
+                      type: string
+                    cidr:
+                      type: string
+                    matchOperator:
+                      type: string
+                  required:
+                  - action
+                  - cidr
+                  - matchOperator
+                  type: object
+                type: array
+              importV6:
+                description: The ordered set of IPv6 BGPFilter rules acting on importing
+                  routes from a peer.
+                items:
+                  description: BGPFilterRuleV6 defines a BGP filter rule consisting
+                    a single IPv6 CIDR block and a filter action for this CIDR.
+                  properties:
+                    action:
+                      type: string
+                    cidr:
+                      type: string
+                    matchOperator:
+                      type: string
+                  required:
+                  - action
+                  - cidr
+                  - matchOperator
+                  type: object
+                type: array
+            type: object
+        type: object
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
+---
+# Source: calico/templates/kdd-crds.yaml
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
   name: bgppeers.crd.projectcalico.org
 spec:
   group: crd.projectcalico.org
@@ -312,6 +436,11 @@ spec:
                 description: The AS Number of the peer.
                 format: int32
                 type: integer
+              filters:
+                description: The ordered set of BGPFilters applied on this BGP peer.
+                items:
+                  type: string
+                type: array
               keepOriginalNextHop:
                 description: Option to keep the original nexthop field when routes
                   are sent to a BGP Peer. Setting "true" configures the selected BGP
@@ -862,6 +991,13 @@ spec:
                   connections.  The only reason to disable it is for debugging purposes.  [Default:
                   true]'
                 type: boolean
+              bpfDSROptoutCIDRs:
+                description: BPFDSROptoutCIDRs is a list of CIDRs which are excluded
+                  from DSR. That is, clients in those CIDRs will accesses nodeports
+                  as if BPFExternalServiceMode was set to Tunnel.
+                items:
+                  type: string
+                type: array
               bpfDataIfacePattern:
                 description: BPFDataIfacePattern is a regular expression that controls
                   which interfaces Felix should attach BPF programs to in order to
@@ -884,7 +1020,7 @@ spec:
               bpfEnforceRPF:
                 description: 'BPFEnforceRPF enforce strict RPF on all interfaces with
                   BPF programs regardless of what is the per-interfaces or global
-                  setting. Possible values are Disabled or Strict. [Default: Strict]'
+                  setting. Possible values are Disabled, Strict or Loose. [Default: Loose]'
                 type: string
               bpfExtToServiceConnmark:
                 description: 'BPFExtToServiceConnmark in BPF mode, control a 32bit
@@ -1207,6 +1343,12 @@ spec:
                   be used. The default is Auto.
                 type: string
               iptablesFilterAllowAction:
+                type: string
+              iptablesFilterDenyAction:
+                description: IptablesFilterDenyAction controls what happens to traffic
+                  that is denied by network policy. By default Calico blocks traffic
+                  with an iptables "DROP" action. If you want to use "REJECT" action
+                  instead you can configure it in here.
                 type: string
               iptablesLockFilePath:
                 description: 'IptablesLockFilePath is the location of the iptables
@@ -4245,6 +4387,7 @@ rules:
       - serviceaccounts/token
     resourceNames:
       - canal
+      - calico-cni-plugin
     verbs:
       - create
   # The CNI plugin needs to get pods, nodes, and namespaces.
@@ -4315,6 +4458,7 @@ rules:
       - globalfelixconfigs
       - felixconfigurations
       - bgppeers
+      - bgpfilters
       - globalbgpconfigs
       - bgpconfigurations
       - ippools
@@ -4365,6 +4509,26 @@ rules:
       - create
       - update
 
+---
+# Source: calico/templates/calico-node-rbac.yaml
+# CNI cluster role
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: calico-cni-plugin
+rules:
+  - apiGroups: [""]
+    resources:
+      - pods
+      - nodes
+      - namespaces
+    verbs:
+      - get
+  - apiGroups: [""]
+    resources:
+      - pods/status
+    verbs:
+      - patch
 ---
 # Source: calico/templates/calico-node-rbac.yaml
 # Flannel ClusterRole
@@ -4419,6 +4583,20 @@ subjects:
   name: canal
   namespace: kube-system
 {{end}}
+---
+# Source: calico/templates/calico-node-rbac.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: calico-cni-plugin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: calico-cni-plugin
+subjects:
+- kind: ServiceAccount
+  name: calico-cni-plugin
+  namespace: kube-system
 ---
 # Source: calico/templates/calico-node.yaml
 # This manifest installs the canal container, as well
@@ -4760,6 +4938,14 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: canal
+  namespace: kube-system
+{{end}}
+---
+{{if eq .RBACConfig "rbac"}}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: calico-cni-plugin
   namespace: kube-system
 {{end}}
 ---
