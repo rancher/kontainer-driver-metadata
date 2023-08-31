@@ -19,6 +19,7 @@ sync:
         - v3.22.5-rancher1
         - v3.24.1-rancher1
         - v3.25.0-rancher1
+        - v3.26.1-rancher1
   - source: docker.io/rancher/flannel-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/flannel-cni'
     type: repository
@@ -244,6 +245,7 @@ sync:
         - v1.26.4-rancher2
         - v1.26.6-rancher1
         - v1.26.7-rancher1
+        - v1.27.5-rancher1
   - source: docker.io/rancher/k3s-upgrade
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/k3s-upgrade'
     type: repository
@@ -576,6 +578,7 @@ sync:
         - v3.5.3
         - v3.5.4
         - v3.5.6
+        - v3.5.7
   - source: docker.io/rancher/mirrored-coreos-flannel
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-coreos-flannel'
     type: repository
@@ -742,6 +745,7 @@ sync:
         - nginx-1.6.4-hardened4
         - nginx-1.7.0-rancher1
         - nginx-1.7.1-hardened1
+        - nginx-1.8.1-rancher1
   - source: docker.io/rancher/pause
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/pause'
     type: repository
@@ -759,6 +763,7 @@ sync:
         - v0.1.87
         - v0.1.88
         - v0.1.89
+        - v0.1.90
   - source: docker.io/rancher/rke2-cloud-provider
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-cloud-provider'
     type: repository
