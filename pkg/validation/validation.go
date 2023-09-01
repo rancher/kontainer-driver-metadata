@@ -202,7 +202,7 @@ func validateEncryptedKeyRotation(release map[string]interface{}) error {
 	if compareVersions != 0 && compareVersions != -1 {
 		return nil
 	}
-	logrus.Infof("validating encrypted key rotation key on version: %s", version)
+	logrus.Info("validating encrypted key rotation key on version: " + version)
 
 	featureVersions, foundFeatureVersions, err := unstructured.NestedMap(release, "featureVersions")
 	if err != nil {
