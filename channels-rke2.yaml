@@ -1197,6 +1197,8 @@ releases:
     maxChannelServerVersion: v2.6.99
     serverArgs: &serverArgs-v1-24-17-rc3-rke2r1
       <<: *serverArgs-v1-24-2-rke2r1
+      tls-san-security:
+        type: boolean
     agentArgs: *agentArgs-v1-24-2-rke2r1
     charts: &charts-v1-24-17-rc3-rke2r1
       <<: *charts-v1-24-16-rke2r1
