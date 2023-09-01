@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"os/exec"
@@ -208,13 +209,13 @@ func validateEncryptedKeyRotation(release map[string]interface{}) error {
 		return err
 	}
 	if !foundFeatureVersions {
-		return fmt.Errorf("missing featureVersions on version: %s", version)
+		return errors.New("missing featureVersions on version: " + version)
 	}
 
 	_, foundEncryptionKeyRotation := featureVersions["encryption-key-rotation"]
 
 	if !foundEncryptionKeyRotation {
-		return fmt.Errorf("missing encryption-key-rotation on version: %s", version)
+		return errors.New("missing encryption-key-rotation on version: " + version)
 	}
 
 	return nil
