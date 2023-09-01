@@ -180,10 +180,10 @@ func validateDistro(distro string, dev, released kdm.Data) error {
 		for _, r := range raw {
 			release, ok := r.(map[string]interface{})
 			if !ok {
-				return err
+				return errors.New("failed to parse map")
 			}
 			if err := validateEncryptedKeyRotation(release); err != nil {
-				return fmt.Errorf("failed to validate k3s encrypted key rotation: %v", err)
+				return fmt.Errorf("failed to validate k3s encrypted key rotation: %w", err)
 			}
 		}
 	}
