@@ -195,7 +195,7 @@ func validateEncryptedKeyRotation(release map[string]interface{}) error {
 	if err != nil {
 		return err
 	}
-	// this is the first version that hasn't reached it's end of life that requires
+	// this is the first version that hasn't reached its end of life that requires
 	// the encrypted-key-rotation key to exist when this validation is being written
 	const firstVersionToCheckEncryptedKeyRotation = "v1.25.11"
 	compareVersions := semver.Compare(firstVersionToCheckEncryptedKeyRotation, version)
