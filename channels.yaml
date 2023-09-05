@@ -382,6 +382,15 @@ releases:
         type: string
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
+  - version: v1.24.17+k3s1
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: &serverArgs-v6
+      <<: *serverArgs-v5
+      tls-san-security:
+          type: boolean
+    agentArgs: *agentArgs-v2
+    featureVersions: *featureVersions-v1
   # v1.25.7 will be the first version released in the v1.25.x line.
   - version: v1.25.7+k3s1
     minChannelServerVersion: v2.7.2-alpha1
@@ -418,6 +427,12 @@ releases:
     serverArgs: *serverArgs-v5
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
+  - version: v1.25.13+k3s1
+    minChannelServerVersion: v2.7.2-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v6
+    agentArgs: *agentArgs-v3
+    featureVersions: *featureVersions-v1
   - version: v1.26.5+k3s1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
@@ -443,9 +458,24 @@ releases:
   - version: v1.26.7+k3s1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
-    serverArgs: 
+    serverArgs: &serverArgs-v7
       <<: *serverArgs-v4
       helm-job-image:
         type: string
+    agentArgs: *agentArgs-v3
+    featureVersions: *featureVersions-v1
+  - version: v1.26.8+k3s1
+    minChannelServerVersion: v2.7.5-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: &serverArgs-v8
+      <<: *serverArgs-v7
+      tls-san-security:
+          type: boolean
+    agentArgs: *agentArgs-v3
+    featureVersions: *featureVersions-v1
+  - version: v1.27.5+k3s1
+    minChannelServerVersion: v2.7.5-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v8
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
