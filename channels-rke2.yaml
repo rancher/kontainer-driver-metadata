@@ -1192,15 +1192,15 @@ releases:
         repo: rancher-rke2-charts
         version: v4.0.2-build2023070701
     featureVersions: *featureVersions-v1
-  - version: v1.24.17-rc3+rke2r1
+  - version: v1.24.17+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.6.99
-    serverArgs: &serverArgs-v1-24-17-rc3-rke2r1
+    serverArgs: &serverArgs-v1-24-17-rke2r1
       <<: *serverArgs-v1-24-2-rke2r1
       tls-san-security:
         type: boolean
     agentArgs: *agentArgs-v1-24-2-rke2r1
-    charts: &charts-v1-24-17-rc3-rke2r1
+    charts: &charts-v1-24-17-rke2r1
       <<: *charts-v1-24-16-rke2r1
       rke2-multus:
         repo: rancher-rke2-charts
