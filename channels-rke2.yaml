@@ -12,8 +12,10 @@ appDefaults:
         defaultVersion: '1.24.x'
       - appVersion: '>= 2.7.2-0 < 2.7.5-0'
         defaultVersion: '1.25.x'
-      - appVersion: '>= 2.7.5-0 < 2.7.100-0'
+      - appVersion: '>= 2.7.5-0 < 2.8.0-0'
         defaultVersion: '1.26.x'
+      - appVersion: '>= 2.8.0-0 < 2.8.100-0'
+        defaultVersion: '1.27.x'
 releases:
   - version: v1.19.16+rke2r1
     minChannelServerVersion: v2.6.0-alpha1
@@ -1219,6 +1221,26 @@ releases:
         repo: rancher-rke2-charts
         version: 1.7.100
     featureVersions: *featureVersions-v1
+  - version: v1.24.17+rke2r1
+    minChannelServerVersion: v2.6.7-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: &serverArgs-v1-24-17-rke1r1
+      <<: *serverArgs-v1-24-2-rke2r1
+      tls-san-security:
+        type: boolean
+    agentArgs: *agentArgs-v1-24-2-rke2r1
+    charts: &charts-v1-24-17-rke2r1
+      <<: *charts-v1-24-16-rke2r1
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.0.2-build2023081100
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.26.1-build2023080200
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.14.000
+    featureVersions: *featureVersions-v1
   - version: v1.25.9+rke2r1
     minChannelServerVersion: v2.7.2-alpha1
     maxChannelServerVersion: v2.7.99
@@ -1347,6 +1369,29 @@ releases:
         repo: rancher-rke2-charts
         version: v4.0.2-build2023070701
     featureVersions: *featureVersions-v1
+  - version: v1.25.13+rke2r1
+    minChannelServerVersion: v2.7.2-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: &serverArgs-v1-25-13-rke2r1
+      <<: *serverArgs-v1-24-2-rke2r1
+      tls-san-security:
+        type: boolean
+    agentArgs: *agentArgs-v1-25-7-rke2r1
+    charts: &charts-v1-25-13-rke2r1
+      <<: *charts-v1-25-12-rke2r1
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.0.2-build2023081100
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.26.1-build2023080200
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.14.000
+      rke2-snapshot-validation-webhook:
+        repo: rancher-rke2-charts
+        version: 1.7.300
+    featureVersions: *featureVersions-v1
   - version: v1.26.5+rke2r1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
@@ -1418,4 +1463,56 @@ releases:
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.0.2-build2023070701
+    featureVersions: *featureVersions-v1
+  - version: v1.26.8+rke2r1
+    minChannelServerVersion: v2.7.5-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: &serverArgs-v1-26-8-rke2r1
+      <<: *serverArgs-v1-24-2-rke2r1
+      tls-san-security:
+        type: boolean
+    agentArgs: *agentArgs-v1-25-7-rke2r1
+    charts: &charts-v1-26-8-rke2r1
+      <<: *charts-v1-26-7-rke2r1
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.0.2-build2023081100
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.26.1-build2023080200
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.14.000
+      rke2-snapshot-validation-webhook:
+        repo: rancher-rke2-charts
+        version: 1.7.300
+    featureVersions: *featureVersions-v1
+  - version: v1.27.5+rke2r1
+    minChannelServerVersion: v2.8.0-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: &serverArgs-v1-27-5-rke2r1
+      <<: *serverArgs-v1-24-2-rke2r1
+      tls-san-security:
+        type: boolean
+    agentArgs: *agentArgs-v1-25-7-rke2r1
+    charts: &charts-v1-27-5-rke2r1
+      <<: *charts-v1-26-7-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.14.000
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.26.1-build2023080200
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.0.2-build2023081100
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 2.11.100-build2023051509
+      rke2-snapshot-validation-webhook:
+        repo: rancher-rke2-charts
+        version: 1.7.300
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.24.004
     featureVersions: *featureVersions-v1
