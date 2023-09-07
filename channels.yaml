@@ -43,11 +43,11 @@ releases:
       flannel-backend:
         type: enum
         options:
-          - none
-          - vxlan
-          - ipsec
-          - host-gw
-          - wireguard
+        - none
+        - vxlan
+        - ipsec
+        - host-gw
+        - wireguard
       kube-apiserver-arg:
         type: array
       kube-scheduler-arg:
@@ -72,11 +72,11 @@ releases:
       disable:
         type: array
         options:
-          - coredns
-          - servicelb
-          - traefik
-          - local-storage
-          - metrics-server
+        - coredns
+        - servicelb
+        - traefik
+        - local-storage
+        - metrics-server
       disable-scheduler:
         type: boolean
         default: false
@@ -382,7 +382,7 @@ releases:
         type: string
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
-  - version: v1.24.17-rc3+k3s1
+  - version: v1.24.17+k3s1
     minChannelServerVersion: v2.6.7-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: &serverArgs-v6
@@ -427,7 +427,7 @@ releases:
     serverArgs: *serverArgs-v5
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
-  - version: v1.25.13-rc4+k3s1
+  - version: v1.25.13+k3s1
     minChannelServerVersion: v2.7.2-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v6
@@ -441,12 +441,12 @@ releases:
       flannel-backend:
         type: enum
         options:
-          - none
-          - vxlan
-          - ipsec
-          - host-gw
-          - wireguard
-          - wireguard-native
+        - none
+        - vxlan
+        - ipsec
+        - host-gw
+        - wireguard
+        - wireguard-native
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
   - version: v1.26.6+k3s1
@@ -464,7 +464,7 @@ releases:
         type: string
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
-  - version: v1.26.8-rc3+k3s1
+  - version: v1.26.8+k3s1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs:
