@@ -12,6 +12,7 @@ require (
 	github.com/rancher/rke v1.3.0-rc8.0.20210706205346-22b82828ffa0
 	github.com/sirupsen/logrus v1.7.0
 	github.com/stretchr/testify v1.7.0
+	golang.org/x/mod v0.3.1-0.20200828183125-ce943fd02449
 	k8s.io/apimachinery v0.21.0
 	sigs.k8s.io/yaml v1.2.0
 )
