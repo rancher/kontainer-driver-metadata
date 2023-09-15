@@ -25,7 +25,7 @@ if [ -n "$DIRTY" ]; then
 fi
 
 echo Checking if released versions are not changed
-go run ./pkg/validation/validation.go release-v2.7
+go run ./pkg/validation/validation.go release-v2.8
 
 echo Checking the generated regsync.yaml file
 regsync check --config ./regsync.yaml
