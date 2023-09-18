@@ -643,10 +643,14 @@ func loadK8sVersionInfo() map[string]v3.K8sVersionInfo {
 		"v1.23": {
 			MinRancherVersion: "2.6.4-patch0",
 			MinRKEVersion:     "1.3.8-rc0",
+			MaxRancherVersion: "2.7.99",
+			MaxRKEVersion:     "1.4.99",
 		},
 		"v1.24": {
 			MinRancherVersion: "2.6.7-patch0",
 			MinRKEVersion:     "1.3.13-rc0",
+			MaxRancherVersion: "2.7.99",
+			MaxRKEVersion:     "1.4.99",
 		},
 		"v1.25": {
 			MinRancherVersion: "2.7.2-patch0",
