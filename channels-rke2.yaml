@@ -1223,7 +1223,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.24.17+rke2r1
     minChannelServerVersion: v2.6.7-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.7.99
     serverArgs: &serverArgs-v1-24-17-rke1r1
       <<: *serverArgs-v1-24-2-rke2r1
       tls-san-security:

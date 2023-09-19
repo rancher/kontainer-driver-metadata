@@ -386,7 +386,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.24.17+k3s1
     minChannelServerVersion: v2.6.7-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.7.99
     serverArgs: &serverArgs-v6
       <<: *serverArgs-v5
       tls-san-security:
