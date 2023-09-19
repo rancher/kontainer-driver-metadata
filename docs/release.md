@@ -37,7 +37,7 @@ A couple of example PRs to help:
 
 ## Prepare for prime images update
 
-Prime images only need to be updated for out-of-band KDM releases, ie KDM releases without corresponding rancher server version releases. For example, https://github.com/rancher/kontainer-driver-metadata/pull/1126 was an OOB KDM release for Rancher v2.7 but there was no release of Rancher version v2.7.x with it, so prime images needed to be updated in this case.
+Prime images only need to be updated for out-of-band KDM releases, i.e. KDM releases without corresponding rancher server version releases. For example, https://github.com/rancher/kontainer-driver-metadata/pull/1126 was an OOB KDM release for Rancher v2.7 but there was no release of Rancher version v2.7.x with it, so prime images needed to be updated in this case.
 
 A `regsync.yaml` file is generated and used as the source of truth for images to be mirrored. 
 
@@ -49,7 +49,7 @@ Drone CI is triggered to run the `mirror-images` step which mirrors new images a
 
 ### Prepare release notes for KDM (TBD)
 
-## Review PRs 
+## Review KDM PRs 
 
 There are a few common things to check while reviewing PRs for release. Most of this should already have been reviewed during the developer workflow. We do end up catching last minute bugs when reviewing PRs at release time so it's often a good idea to double check things.
 
@@ -80,18 +80,19 @@ Note: This is our current process, but we also have https://github.com/rancherla
 
 ## Release KDM
 
-1. Confirm prime images are updated before proceeding, refer to section above on prime images update
-2. PRs to be merged by @kinarashah or @snasovich 
-3. QA to perform post release checks for KDM after drone publish tasks are successfully completed (monitor at https://drone-publish.rancher.io/rancher/kontainer-driver-metadata)
-4. Release RKE1 (refer to Release RKE1 section)
-5. QA to perform post release checks for RKE after RKE tags are available 
-6. Announce in [rancher forums](https://forums.rancher.com/c/announcements/) and slack. Example forums posts for reference: 
+1. PRs to be merged by @kinarashah or @snasovich 
+2. Once merged, look at the drone pipeline and ensure that all prime images have been successfully pushed to the trusted registry (monitor at https://drone-publish.rancher.io/rancher/kontainer-driver-metadata) 
+3. QA to perform post release checks for KDM after drone publish tasks are successfully completed 
+4. QA to perform post sync checks for Rancher prime after drone publish tasks are successfully completed
+5. Release RKE1 (refer to Release RKE1 section)
+6. QA to perform post release checks for RKE after RKE tags are available 
+7. Announce in [rancher forums](https://forums.rancher.com/c/announcements/) and slack (use the `team-rancher-release-coordination` channel). Example forums posts for reference: 
 - https://forums.rancher.com/t/kubernetes-v1-24-10-and-v1-23-16/40218
 - https://forums.rancher.com/t/kubernetes-v1-24-8-v1-23-14-and-v1-22-16/39559
 
 ## Release RKE1
 
-We release RKE after KDM is released. Currently we are managing releases for 
+We release RKE after KDM is released. Currently, we are managing releases for 
 - RKE v1.3.x (`release/v1.3`) corresponding to Rancher v2.6.x (https://github.com/rancher/rancher/blob/v2.6.11/go.mod#L121)
 - RKE v1.4.x (`release/v1.4`) corresponding to Rancher v2.7.x (https://github.com/rancher/rancher/blob/v2.7.1/go.mod#L119)
 
@@ -114,3 +115,15 @@ Example PRs:
 7. Monitor drone status for tag (https://drone-publish.rancher.io/rancher/rke). Drone uploads the release manifests to the release tag under Assets (https://github.com/rancher/rke/releases) 
 8. Copy release notes from our draft release notes to the released tag 
 9. Mark the patch version for the latest minor version (`v1.4.x` if releasing both `v1.3.x` and `v1.4.x` as the latest version)
+10. Once the release has been completed, raise a PR to switch back from release-v2.7 to dev-v2.7
+
+
+## Post OOB Release Tasks for KDM
+
+Some OOB releases utilize branches other than dev-v2.7 or dev-v2.6 so that others are not blocked prior to a KDM release. In these cases, the primary dev branch needs to be updated post release. 
+This can be done by either merging the secondary dev branch into the primary dev branch, or by merging the release branch into the primary dev branch. 
+
+Here are a few example PR's for this process. While typically one review will suffice, double check with @snasovich or @kinarashah before merging, as this may impact the work of others.  
++ https://github.com/rancher/kontainer-driver-metadata/pull/1167
++ https://github.com/rancher/kontainer-driver-metadata/pull/1131
+
