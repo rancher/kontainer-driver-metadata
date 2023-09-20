@@ -72,11 +72,11 @@ releases:
       disable:
         type: array
         options:
-          - coredns
-          - servicelb
-          - traefik
-          - local-storage
-          - metrics-server
+        - coredns
+        - servicelb
+        - traefik
+        - local-storage
+        - metrics-server
       disable-scheduler:
         type: boolean
         default: false
