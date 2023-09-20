@@ -4,16 +4,16 @@ channels:
 appDefaults:
   - appName: rancher
     defaults:
-      - appVersion: ">= 2.6.0-0 < 2.6.5-0"
-        defaultVersion: "1.22.x"
-      - appVersion: ">= 2.6.5-0 < 2.6.7-0"
-        defaultVersion: "1.23.x"
-      - appVersion: ">= 2.6.7-0 < 2.7.2-0"
-        defaultVersion: "1.24.x"
-      - appVersion: ">= 2.7.2-0 < 2.7.5-0"
-        defaultVersion: "1.25.x"
-      - appVersion: ">= 2.7.5-0 < 2.7.100-0"
-        defaultVersion: "1.26.x"
+      - appVersion: '>= 2.6.0-0 < 2.6.5-0'
+        defaultVersion: '1.22.x'
+      - appVersion: '>= 2.6.5-0 < 2.6.7-0'
+        defaultVersion: '1.23.x'
+      - appVersion: '>= 2.6.7-0 < 2.7.2-0'
+        defaultVersion: '1.24.x'
+      - appVersion: '>= 2.7.2-0 < 2.7.5-0'
+        defaultVersion: '1.25.x'
+      - appVersion: '>= 2.7.5-0 < 2.7.100-0'
+        defaultVersion: '1.26.x'
 releases:
   - version: v1.18.20+k3s1
     minChannelServerVersion: v2.6.0-alpha1
@@ -43,11 +43,11 @@ releases:
       flannel-backend:
         type: enum
         options:
-          - none
-          - vxlan
-          - ipsec
-          - host-gw
-          - wireguard
+        - none
+        - vxlan
+        - ipsec
+        - host-gw
+        - wireguard
       kube-apiserver-arg:
         type: array
       kube-scheduler-arg:
@@ -447,12 +447,12 @@ releases:
       flannel-backend:
         type: enum
         options:
-          - none
-          - vxlan
-          - ipsec
-          - host-gw
-          - wireguard
-          - wireguard-native
+        - none
+        - vxlan
+        - ipsec
+        - host-gw
+        - wireguard
+        - wireguard-native
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
   - version: v1.26.6+k3s1
