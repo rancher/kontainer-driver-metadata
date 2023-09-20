@@ -4,16 +4,16 @@ channels:
 appDefaults:
   - appName: rancher
     defaults:
-      - appVersion: '>= 2.6.0-0 < 2.6.5-0'
-        defaultVersion: '1.22.x'
-      - appVersion: '>= 2.6.5-0 < 2.6.7-0'
-        defaultVersion: '1.23.x'
-      - appVersion: '>= 2.6.7-0 < 2.7.2-0'
-        defaultVersion: '1.24.x'
-      - appVersion: '>= 2.7.2-0 < 2.7.5-0'
-        defaultVersion: '1.25.x'
-      - appVersion: '>= 2.7.5-0 < 2.7.100-0'
-        defaultVersion: '1.26.x'
+      - appVersion: ">= 2.6.0-0 < 2.6.5-0"
+        defaultVersion: "1.22.x"
+      - appVersion: ">= 2.6.5-0 < 2.6.7-0"
+        defaultVersion: "1.23.x"
+      - appVersion: ">= 2.6.7-0 < 2.7.2-0"
+        defaultVersion: "1.24.x"
+      - appVersion: ">= 2.7.2-0 < 2.7.5-0"
+        defaultVersion: "1.25.x"
+      - appVersion: ">= 2.7.5-0 < 2.7.100-0"
+        defaultVersion: "1.26.x"
 releases:
   - version: v1.18.20+k3s1
     minChannelServerVersion: v2.6.0-alpha1
@@ -43,11 +43,11 @@ releases:
       flannel-backend:
         type: enum
         options:
-        - none
-        - vxlan
-        - ipsec
-        - host-gw
-        - wireguard
+          - none
+          - vxlan
+          - ipsec
+          - host-gw
+          - wireguard
       kube-apiserver-arg:
         type: array
       kube-scheduler-arg:
@@ -72,11 +72,11 @@ releases:
       disable:
         type: array
         options:
-        - coredns
-        - servicelb
-        - traefik
-        - local-storage
-        - metrics-server
+          - coredns
+          - servicelb
+          - traefik
+          - local-storage
+          - metrics-server
       disable-scheduler:
         type: boolean
         default: false
@@ -433,6 +433,12 @@ releases:
     serverArgs: *serverArgs-v6
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
+  - version: v1.25.14-rc2+k3s1
+    minChannelServerVersion: v2.7.2-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v6
+    agentArgs: *agentArgs-v3
+    featureVersions: *featureVersions-v1
   - version: v1.26.5+k3s1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
@@ -441,12 +447,12 @@ releases:
       flannel-backend:
         type: enum
         options:
-        - none
-        - vxlan
-        - ipsec
-        - host-gw
-        - wireguard
-        - wireguard-native
+          - none
+          - vxlan
+          - ipsec
+          - host-gw
+          - wireguard
+          - wireguard-native
     agentArgs: *agentArgs-v2
     featureVersions: *featureVersions-v1
   - version: v1.26.6+k3s1
@@ -467,9 +473,15 @@ releases:
   - version: v1.26.8+k3s1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
-    serverArgs:
+    serverArgs: &serverArgs-v8
       <<: *serverArgs-v7
       tls-san-security:
         type: boolean
+    agentArgs: *agentArgs-v3
+    featureVersions: *featureVersions-v1
+  - version: v1.26.9-rc1+k3s1
+    minChannelServerVersion: v2.7.5-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v8
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
