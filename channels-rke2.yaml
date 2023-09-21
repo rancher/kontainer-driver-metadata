@@ -1392,6 +1392,17 @@ releases:
         repo: rancher-rke2-charts
         version: 1.7.300
     featureVersions: *featureVersions-v1
+  - version: v1.25.14+rke2r1
+    minChannelServerVersion: v2.7.2-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: *serverArgs-v1-25-13-rke2r1
+    agentArgs: *agentArgs-v1-25-7-rke2r1
+    charts: &charts-v1-25-14-rke2r1
+      <<: *charts-v1-25-13-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.14.100
+    featureVersions: *featureVersions-v1
   - version: v1.26.5+rke2r1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
@@ -1487,6 +1498,17 @@ releases:
         repo: rancher-rke2-charts
         version: 1.7.300
     featureVersions: *featureVersions-v1
+  - version: v1.26.9+rke2r1
+    minChannelServerVersion: v2.7.5-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: *serverArgs-v1-26-8-rke2r1
+    agentArgs: *agentArgs-v1-25-7-rke2r1
+    charts: &charts-v1-26-9-rke2r1
+      <<: *charts-v1-26-8-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.14.100
+    featureVersions: *featureVersions-v1
   - version: v1.27.5+rke2r1
     minChannelServerVersion: v2.8.0-alpha1
     maxChannelServerVersion: v2.8.99
@@ -1515,4 +1537,15 @@ releases:
       rke2-coredns:
         repo: rancher-rke2-charts
         version: 1.24.004
+    featureVersions: *featureVersions-v1
+  - version: v1.27.6+rke2r1
+    minChannelServerVersion: v2.8.0-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: *serverArgs-v1-27-5-rke2r1
+    agentArgs: *agentArgs-v1-25-7-rke2r1
+    charts: &charts-v1-27-6-rke2r1
+      <<: *charts-v1-27-5-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.14.100
     featureVersions: *featureVersions-v1
