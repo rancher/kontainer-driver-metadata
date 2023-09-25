@@ -8943,44 +8943,6 @@ spec:
           hostPath:
             path: /var/lib/calico
 ---
-# This section includes base Calico installation configuration.
-# For more information, see: https://projectcalico.docs.tigera.io/master/reference/installation/api#operator.tigera.io/v1.Installation
-{{if .CalicoUseOperator }}
-apiVersion: operator.tigera.io/v1
-kind: Installation
-metadata:
-  name: default
-spec:
-  # Configures Calico networking.
-  calicoNetwork:
-{{- if .MTU }}
-{{- if ne .MTU 0 }}
-    mtu: {{.MTU}}
-{{- end}}
-{{- else }}
-    mtu: 1440
-{{- end}}
-    # Note: The ipPools section cannot be modified post-install.
-    ipPools:
-{{range $cidrs }}
-    - cidr: "{{ . }}"
-#      encapsulation: IPIP VXLANCrossSubnet
-      natOutgoing: Enabled
-      nodeSelector: all()
-{{end}}
-{{end}}
----
-
-# This section configures the Calico API server.
-# For more information, see: https://projectcalico.docs.tigera.io/master/reference/installation/api#operator.tigera.io/v1.APIServer
-{{if .CalicoUseOperator }}
-apiVersion: operator.tigera.io/v1
-kind: APIServer
-metadata:
-  name: default
-spec: {}
-{{end}}
----
 # Source: calico/templates/calico-kube-controllers.yaml
 # This manifest creates a Pod Disruption Budget for Controller to allow K8s Cluster Autoscaler to evict
 {{if not .CalicoUseOperator}}
@@ -9887,5 +9849,43 @@ spec:
               - /usr/bin/check-status
               - -r
             periodSeconds: 10
+{{end}}
+---
+# This section includes base Calico installation configuration.
+# For more information, see: https://projectcalico.docs.tigera.io/master/reference/installation/api#operator.tigera.io/v1.Installation
+{{if .CalicoUseOperator }}
+apiVersion: operator.tigera.io/v1
+kind: Installation
+metadata:
+  name: default
+spec:
+  # Configures Calico networking.
+  calicoNetwork:
+{{- if .MTU }}
+{{- if ne .MTU 0 }}
+    mtu: {{.MTU}}
+{{- end}}
+{{- else }}
+    mtu: 1440
+{{- end}}
+    # Note: The ipPools section cannot be modified post-install.
+    ipPools:
+{{range $cidrs }}
+    - cidr: "{{ . }}"
+#      encapsulation: IPIP VXLANCrossSubnet
+      natOutgoing: Enabled
+      nodeSelector: all()
+{{end}}
+{{end}}
+---
+
+# This section configures the Calico API server.
+# For more information, see: https://projectcalico.docs.tigera.io/master/reference/installation/api#operator.tigera.io/v1.APIServer
+{{if .CalicoUseOperator }}
+apiVersion: operator.tigera.io/v1
+kind: APIServer
+metadata:
+  name: default
+spec: {}
 {{end}}
 `
