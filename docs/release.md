@@ -16,12 +16,18 @@ Terms used often:
 1. Dev branch - the branch changes are merged from, of the format `dev-v2.x` or `dev-v2.x-for-rancher-x.y.z`. Dev branches change often according to release lifecycle and we could be maintaining multiple dev branches simultaneously. 
 2. Release branch - the branch changes are merged to, of the format `release-v2.x`. 
 3. Release/KDM url - url where KDM data is published and publicly accessed, of the format `https://releases.rancher.com/kontainer-driver-metadata/branch_name/data.json`. 
+4. Release Milestone - a GitHub milestone within the [rancher/rancher repository](https://github.com/rancher/rancher) which is used to track issues that are included in KDM releases. All issues in a KDM milestone must be resolved (Tested, Closed out, etc) before a release.
 
 Examples: 
 
 - Dev branch: `dev-v2.6`, `dev-v2.7-for-2.6.11` 
 - Release branch: `release-v2.6`, `release-v2.7`
 - Release/KDM url: https://releases.rancher.com/kontainer-driver-metadata/release-v2.6/data.json, https://releases.rancher.com/kontainer-driver-metadata/dev-v2.7/data.json
+- Release Milestone: `v2.7-KDM-Aug-2023-patches`, `v2.6-KDM-Aug-2023-patches` 
+
+## Review Issues in Current Milestone
+
+Before any pull requests are opened, be sure to double check the relevant release milestone for the upcoming KDM release. Ensure that all issues in the current milestone have been resolved. The release captain should raise concerns regarding any open issues or bugs, and ensure they are closed out before the release process begins. 
 
 ## Prepare PRs 
 
