@@ -264,6 +264,7 @@ sync:
         - v1.25.11-rancher1
         - v1.25.12-rancher1
         - v1.25.13-rancher1
+        - v1.25.14-rancher1
         - v1.25.6-rancher2
         - v1.25.6-rancher4
         - v1.25.9-rancher2
@@ -271,7 +272,8 @@ sync:
         - v1.26.6-rancher1
         - v1.26.7-rancher1
         - v1.26.8-rancher1
-        - v1.27.5-rancher1
+        - v1.26.9-rancher1
+        - v1.27.6-rancher1
   - source: docker.io/rancher/k3s-upgrade
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/k3s-upgrade'
     type: repository
@@ -828,6 +830,7 @@ sync:
         - v0.1.88
         - v0.1.89
         - v0.1.90
+        - v0.1.93
   - source: docker.io/rancher/rke2-cloud-provider
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-cloud-provider'
     type: repository
