@@ -1,17 +1,18 @@
 package templates
 
 /*
-CalicoTemplateV3_26_1 is based on upstream calico v3.26.1
-Source: https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
+CalicoTemplateV3_24_1 is based on upstream canal v3.24.1
+Source: https://raw.githubusercontent.com/projectcalico/calico/v3.24.1/manifests/calico.yaml
 Upstream Changelog:
-- Multiple updates on the CRDs.
+- Features that used to depend on FlexVolumes have been migrated to instead use CSI.
+- Multiple updates on the CRDs
 Rancher Changelog:
 - No new Rancher specific changes, same as CalicoTemplateV3_19_0
 */
 
-const CalicoTemplateV3_26_1Rancher2 = `
+const CalicoTemplateV3_24_1Rancher2 = `
 {{- $cidrs := splitList "," .ClusterCIDR }}
-# Calico Template based on Calico v3.26.1
+# Calico Template based on Calico v3.24.1
 ---
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Calico installation.
@@ -129,12 +130,6 @@ spec:
                   64512]'
                 format: int32
                 type: integer
-              bindMode:
-                description: BindMode indicates whether to listen for BGP connections
-                  on all addresses (None) or only on the node's canonical IP address
-                  Node.Spec.BGP.IPvXAddress (NodeIP). Default behaviour is to listen
-                  for BGP connections on all addresses.
-                type: string
               communities:
                 description: Communities is a list of BGP community values and their
                   arbitrary names for tagging routes.
@@ -154,12 +149,6 @@ spec:
                       pattern: ^(\d+):(\d+)$|^(\d+):(\d+):(\d+)$
                       type: string
                   type: object
-                type: array
-              ignoredInterfaces:
-                description: IgnoredInterfaces indicates the network interfaces that
-                  needs to be excluded when reading device routes.
-                items:
-                  type: string
                 type: array
               listenPort:
                 description: ListenPort is the port where BGP protocol should listen.
@@ -279,131 +268,6 @@ status:
 ---
 
 ---
-# Source: calico/templates/kdd-crds.yaml
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: (devel)
-  creationTimestamp: null
-  name: bgpfilters.crd.projectcalico.org
-spec:
-  group: crd.projectcalico.org
-  names:
-    kind: BGPFilter
-    listKind: BGPFilterList
-    plural: bgpfilters
-    singular: bgpfilter
-  scope: Cluster
-  versions:
-  - name: v1
-    schema:
-      openAPIV3Schema:
-        properties:
-          apiVersion:
-            description: 'APIVersion defines the versioned schema of this representation
-              of an object. Servers should convert recognized schemas to the latest
-              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
-            type: string
-          kind:
-            description: 'Kind is a string value representing the REST resource this
-              object represents. Servers may infer this from the endpoint the client
-              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-            type: string
-          metadata:
-            type: object
-          spec:
-            description: BGPFilterSpec contains the IPv4 and IPv6 filter rules of
-              the BGP Filter.
-            properties:
-              exportV4:
-                description: The ordered set of IPv4 BGPFilter rules acting on exporting
-                  routes to a peer.
-                items:
-                  description: BGPFilterRuleV4 defines a BGP filter rule consisting
-                    a single IPv4 CIDR block and a filter action for this CIDR.
-                  properties:
-                    action:
-                      type: string
-                    cidr:
-                      type: string
-                    matchOperator:
-                      type: string
-                  required:
-                  - action
-                  - cidr
-                  - matchOperator
-                  type: object
-                type: array
-              exportV6:
-                description: The ordered set of IPv6 BGPFilter rules acting on exporting
-                  routes to a peer.
-                items:
-                  description: BGPFilterRuleV6 defines a BGP filter rule consisting
-                    a single IPv6 CIDR block and a filter action for this CIDR.
-                  properties:
-                    action:
-                      type: string
-                    cidr:
-                      type: string
-                    matchOperator:
-                      type: string
-                  required:
-                  - action
-                  - cidr
-                  - matchOperator
-                  type: object
-                type: array
-              importV4:
-                description: The ordered set of IPv4 BGPFilter rules acting on importing
-                  routes from a peer.
-                items:
-                  description: BGPFilterRuleV4 defines a BGP filter rule consisting
-                    a single IPv4 CIDR block and a filter action for this CIDR.
-                  properties:
-                    action:
-                      type: string
-                    cidr:
-                      type: string
-                    matchOperator:
-                      type: string
-                  required:
-                  - action
-                  - cidr
-                  - matchOperator
-                  type: object
-                type: array
-              importV6:
-                description: The ordered set of IPv6 BGPFilter rules acting on importing
-                  routes from a peer.
-                items:
-                  description: BGPFilterRuleV6 defines a BGP filter rule consisting
-                    a single IPv6 CIDR block and a filter action for this CIDR.
-                  properties:
-                    action:
-                      type: string
-                    cidr:
-                      type: string
-                    matchOperator:
-                      type: string
-                  required:
-                  - action
-                  - cidr
-                  - matchOperator
-                  type: object
-                type: array
-            type: object
-        type: object
-    served: true
-    storage: true
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []
----
-# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -441,11 +305,6 @@ spec:
                 description: The AS Number of the peer.
                 format: int32
                 type: integer
-              filters:
-                description: The ordered set of BGPFilters applied on this BGP peer.
-                items:
-                  type: string
-                type: array
               keepOriginalNextHop:
                 description: Option to keep the original nexthop field when routes
                   are sent to a BGP Peer. Setting "true" configures the selected BGP
@@ -511,23 +370,12 @@ spec:
                   remote AS number comes from the remote node's NodeBGPSpec.ASNumber,
                   or the global default if that is not set.
                 type: string
-              reachableBy:
-                description: Add an exact, i.e. /32, static route toward peer IP in
-                  order to prevent route flapping. ReachableBy contains the address
-                  of the gateway which peer can be reached by.
-                type: string
               sourceAddress:
                 description: Specifies whether and how to configure a source address
                   for the peerings generated by this BGPPeer resource.  Default value
                   "UseNodeIP" means to configure the node IP as the source address.  "None"
                   means not to configure a source address.
                 type: string
-              ttlSecurity:
-                description: TTLSecurity enables the generalized TTL security mechanism
-                  (GTSM) which protects against spoofed packets by ignoring received
-                  packets with a smaller than expected TTL value. The provided value
-                  is the number of hops (edges) between the peers.
-                type: integer
             type: object
         type: object
     served: true
@@ -542,7 +390,6 @@ status:
 ---
 
 ---
-# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -607,7 +454,6 @@ status:
 ---
 
 ---
-# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -872,7 +718,6 @@ status:
   storedVersions: []
 
 ---
-# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -940,7 +785,6 @@ status:
 ---
 
 ---
-# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -1002,13 +846,6 @@ spec:
                   connections.  The only reason to disable it is for debugging purposes.  [Default:
                   true]'
                 type: boolean
-              bpfDSROptoutCIDRs:
-                description: BPFDSROptoutCIDRs is a list of CIDRs which are excluded
-                  from DSR. That is, clients in those CIDRs will accesses nodeports
-                  as if BPFExternalServiceMode was set to Tunnel.
-                items:
-                  type: string
-                type: array
               bpfDataIfacePattern:
                 description: BPFDataIfacePattern is a regular expression that controls
                   which interfaces Felix should attach BPF programs to in order to
@@ -1029,10 +866,9 @@ spec:
                   [Default: false]'
                 type: boolean
               bpfEnforceRPF:
-                description: 'BPFEnforceRPF enforce strict RPF on all host interfaces
-                  with BPF programs regardless of what is the per-interfaces or global
-                  setting. Possible values are Disabled, Strict or Loose. [Default:
-                  Loose]'
+                description: 'BPFEnforceRPF enforce strict RPF on all interfaces with
+                  BPF programs regardless of what is the per-interfaces or global
+                  setting. Possible values are Disabled or Strict. [Default: Strict]'
                 type: string
               bpfExtToServiceConnmark:
                 description: 'BPFExtToServiceConnmark in BPF mode, control a 32bit
@@ -1051,11 +887,6 @@ spec:
                   node appears to use the IP of the ingress node; this requires a
                   permissive L2 network.  [Default: Tunnel]'
                 type: string
-              bpfHostConntrackBypass:
-                description: 'BPFHostConntrackBypass Controls whether to bypass Linux
-                  conntrack in BPF mode for workloads and services. [Default: true
-                  - bypass Linux conntrack]'
-                type: boolean
               bpfKubeProxyEndpointSlicesEnabled:
                 description: BPFKubeProxyEndpointSlicesEnabled in BPF mode, controls
                   whether Felix's embedded kube-proxy accepts EndpointSlices or not.
@@ -1071,14 +902,6 @@ spec:
                   minimum time between updates to the dataplane for Felix''s embedded
                   kube-proxy.  Lower values give reduced set-up latency.  Higher values
                   reduce Felix CPU usage by batching up more work.  [Default: 1s]'
-                type: string
-              bpfL3IfacePattern:
-                description: BPFL3IfacePattern is a regular expression that allows
-                  to list tunnel devices like wireguard or vxlan (i.e., L3 devices)
-                  in addition to BPFDataIfacePattern. That is, tunnel interfaces not
-                  created by Calico, that Calico workload traffic flows over as well
-                  as any interfaces that handle incoming traffic to nodeports and
-                  services from outside the cluster.
                 type: string
               bpfLogLevel:
                 description: 'BPFLogLevel controls the log level of the BPF programs
@@ -1155,12 +978,11 @@ spec:
                   to use.  Only used if UseInternalDataplaneDriver is set to false.
                 type: string
               dataplaneWatchdogTimeout:
-                description: "DataplaneWatchdogTimeout is the readiness/liveness timeout
-                  used for Felix's (internal) dataplane driver. Increase this value
+                description: 'DataplaneWatchdogTimeout is the readiness/liveness timeout
+                  used for Felix''s (internal) dataplane driver. Increase this value
                   if you experience spurious non-ready or non-live events when Felix
                   is under heavy load. Decrease the value to get felix to report non-live
-                  or non-ready more quickly. [Default: 90s] \n Deprecated: replaced
-                  by the generic HealthTimeoutOverrides."
+                  or non-ready more quickly. [Default: 90s]'
                 type: string
               debugDisableLogDropping:
                 type: boolean
@@ -1264,21 +1086,15 @@ spec:
                   type: object
                 type: array
               featureDetectOverride:
-                description: FeatureDetectOverride is used to override feature detection
-                  based on auto-detected platform capabilities.  Values are specified
-                  in a comma separated list with no spaces, example; "SNATFullyRandom=true,MASQFullyRandom=false,RestoreSupportsLock=".  "true"
-                  or "false" will force the feature, empty or omitted values are auto-detected.
-                type: string
-              featureGates:
-                description: FeatureGates is used to enable or disable tech-preview
-                  Calico features. Values are specified in a comma separated list
-                  with no spaces, example; "BPFConnectTimeLoadBalancingWorkaround=enabled,XyZ=false".
-                  This is used to enable features that are not fully production ready.
+                description: FeatureDetectOverride is used to override the feature
+                  detection. Values are specified in a comma separated list with no
+                  spaces, example; "SNATFullyRandom=true,MASQFullyRandom=false,RestoreSupportsLock=".
+                  "true" or "false" will force the feature, empty or omitted values
+                  are auto-detected.
                 type: string
               floatingIPs:
                 description: FloatingIPs configures whether or not Felix will program
-                  non-OpenStack floating IP addresses.  (OpenStack-derived floating
-                  IPs are always programmed, regardless of this setting.)
+                  floating IP addresses.
                 enum:
                 - Enabled
                 - Disabled
@@ -1295,23 +1111,6 @@ spec:
                 type: string
               healthPort:
                 type: integer
-              healthTimeoutOverrides:
-                description: HealthTimeoutOverrides allows the internal watchdog timeouts
-                  of individual subcomponents to be overridden.  This is useful for
-                  working around "false positive" liveness timeouts that can occur
-                  in particularly stressful workloads or if CPU is constrained.  For
-                  a list of active subcomponents, see Felix's logs.
-                items:
-                  properties:
-                    name:
-                      type: string
-                    timeout:
-                      type: string
-                  required:
-                  - name
-                  - timeout
-                  type: object
-                type: array
               interfaceExclude:
                 description: 'InterfaceExclude is a comma-separated list of interfaces
                   that Felix should exclude when monitoring for host endpoints. The
@@ -1353,15 +1152,9 @@ spec:
                 type: string
               iptablesBackend:
                 description: IptablesBackend specifies which backend of iptables will
-                  be used. The default is Auto.
+                  be used. The default is legacy.
                 type: string
               iptablesFilterAllowAction:
-                type: string
-              iptablesFilterDenyAction:
-                description: IptablesFilterDenyAction controls what happens to traffic
-                  that is denied by network policy. By default Calico blocks traffic
-                  with an iptables "DROP" action. If you want to use "REJECT" action
-                  instead you can configure it in here.
                 type: string
               iptablesLockFilePath:
                 description: 'IptablesLockFilePath is the location of the iptables
@@ -1626,8 +1419,8 @@ spec:
                 type: boolean
               vxlanEnabled:
                 description: 'VXLANEnabled overrides whether Felix should create the
-                  VXLAN tunnel device for IPv4 VXLAN networking. Optional as Felix 
-                  determines this based on the existing IP pools. [Default: nil (unset)]'
+                  VXLAN tunnel device for VXLAN networking. Optional as Felix determines
+                  this based on the existing IP pools. [Default: nil (unset)]'
                 type: boolean
               vxlanMTU:
                 description: 'VXLANMTU is the MTU to set on the IPv4 VXLAN tunnel
@@ -1715,7 +1508,6 @@ status:
   storedVersions: []
 
 ---
-# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -2574,7 +2366,6 @@ status:
 ---
 
 ---
-# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -2629,7 +2420,6 @@ status:
   storedVersions: []
 
 ---
-# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -2739,7 +2529,6 @@ status:
   storedVersions: []
 
 ---
-# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -2860,7 +2649,6 @@ status:
   storedVersions: []
 
 ---
-# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -2920,7 +2708,6 @@ status:
   storedVersions: []
 
 ---
-# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -2978,7 +2765,6 @@ status:
   storedVersions: []
 
 ---
-# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -3062,7 +2848,7 @@ spec:
                   for internal use only.'
                 type: boolean
               natOutgoing:
-                description: When natOutgoing is true, packets sent from Calico networked
+                description: When nat-outgoing is true, packets sent from Calico networked
                   containers in this pool to destinations outside of this pool will
                   be masqueraded.
                 type: boolean
@@ -3089,7 +2875,6 @@ status:
   storedVersions: []
 
 ---
-# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -4288,41 +4073,6 @@ status:
   storedVersions: []
 ---
 ---
-# Source: calico/templates/calico-node-rbac.yaml
-# CNI cluster role
-kind: ClusterRole
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: calico-cni-plugin
-rules:
-  - apiGroups: [""]
-    resources:
-      - pods
-      - nodes
-      - namespaces
-    verbs:
-      - get
-  - apiGroups: [""]
-    resources:
-      - pods/status
-    verbs:
-      - patch
-  - apiGroups: ["crd.projectcalico.org"]
-    resources:
-      - blockaffinities
-      - ipamblocks
-      - ipamhandles
-      - clusterinformations
-      - ippools
-      - ipreservations
-      - ipamconfigs
-    verbs:
-      - get
-      - list
-      - create
-      - update
-      - delete
----
 # Source: calico/templates/calico-kube-controllers-rbac.yaml
 
 {{if eq .RBACConfig "rbac"}}
@@ -4436,7 +4186,7 @@ rules:
     resources:
       - serviceaccounts/token
     resourceNames:
-      - calico-cni-plugin
+      - calico-node
     verbs:
       - create
   # The CNI plugin needs to get pods, nodes, and namespaces.
@@ -4507,7 +4257,6 @@ rules:
       - globalfelixconfigs
       - felixconfigurations
       - bgppeers
-      - bgpfilters
       - globalbgpconfigs
       - bgpconfigurations
       - ippools
@@ -4605,20 +4354,6 @@ subjects:
   name: calico-node
   namespace: kube-system
 {{end}}
----
-# Source: calico/templates/calico-node-rbac.yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: calico-cni-plugin
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: calico-cni-plugin
-subjects:
-- kind: ServiceAccount
-  name: calico-cni-plugin
-  namespace: kube-system
 ---
 # Source: calico/templates/calico-node.yaml
 # This manifest installs the calico-node container, as well
@@ -4995,14 +4730,6 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: calico-node
-  namespace: kube-system
-{{end}}
----
-{{if eq .RBACConfig "rbac"}}
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: calico-cni-plugin
   namespace: kube-system
 {{end}}
 ---
