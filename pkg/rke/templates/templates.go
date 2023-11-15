@@ -29,6 +29,7 @@ const (
 	calicov3241          = "calico-v3.24.1"
 	calicov3250          = "calico-v3.25.0"
 	calicov3261          = "calico-v3.26.1"
+	tigeraoperatorv3261  = "tigera-operator-v3.26.1"
 
 	canalv18                      = "canal-v1.8"
 	canalv113                     = "canal-v1.13"
@@ -116,8 +117,8 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.27.0-rancher1-1":                      calicov3261,
-			">=1.26.0-rancher1-1 <1.27.0-rancher1":     calicov3250,
+			">=1.27.0-rancher1-1":                      tigeraoperatorv3261,
+			">=1.26.0-rancher1-1 <1.27.0-rancher1":     calicov3261, //TODO_TF: only for tests, REVERT
 			">=1.25.0-rancher1-1 <1.26.0-rancher1-1":   calicov3241,
 			">=1.24.10-rancher1-1 <1.25.0-rancher1-1":  calicov3225Rancher2,
 			">=1.24.9-rancher1-1 <1.24.10-rancher1-1":  calicov3225,
@@ -314,6 +315,7 @@ func getTemplates() map[string]string {
 		calicov3241:          CalicoTemplateV3_24_1,
 		calicov3250:          CalicoTemplateV3_25_0,
 		calicov3261:          CalicoTemplateV3_26_1,
+		tigeraoperatorv3261:  TigeraOperatorTemplateV3_26_1,
 
 		flannelv115:          FlannelTemplateV115,
 		flannelv116:          FlannelTemplateV116,
