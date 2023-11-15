@@ -1390,6 +1390,45 @@ releases:
         repo: rancher-rke2-charts
         version: 1.7.300
     featureVersions: *featureVersions-v1
+  - version: v1.25.15+rke2r2
+    minChannelServerVersion: v2.7.2-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: &serverArgs-v1-25-15-rke2r2
+      <<: *serverArgs-v1-25-13-rke2r1
+      kube-cloud-controller-manager-arg:
+        type: array
+    agentArgs: &agentArgs-v1-25-15-rke2r2
+      <<: *agentArgs-v1-25-7-rke2r1
+      profile:
+        type: enum
+        options:
+        - cis
+        - cis-1.23
+        nullable: true
+    charts: &charts-v1-25-15-rke2r2
+      <<: *charts-v1-25-13-rke2r1
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.26.101
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.26.101
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.24.006
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.8.200
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 2.11.100-build2023051510
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.14.200
+      rke2-snapshot-validation-webhook:
+        repo: rancher-rke2-charts
+        version: 1.7.302
+    featureVersions: *featureVersions-v1
   - version: v1.26.5+rke2r1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
@@ -1465,7 +1504,7 @@ releases:
   - version: v1.26.8+rke2r1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
-    serverArgs: &serverArgs-v1-26-rke2r1
+    serverArgs: &serverArgs-v1-26-8-rke2r1
       <<: *serverArgs-v1-24-2-rke2r1
       tls-san-security:
         type: boolean
@@ -1484,4 +1523,43 @@ releases:
       rke2-snapshot-validation-webhook:
         repo: rancher-rke2-charts
         version: 1.7.300
+    featureVersions: *featureVersions-v1
+  - version: v1.26.10+rke2r2
+    minChannelServerVersion: v2.7.5-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: &serverArgs-v1-26-10-rke2r2
+      <<: *serverArgs-v1-26-8-rke2r1
+      kube-cloud-controller-manager-arg:
+        type: array
+    agentArgs: &agentArgs-v1-26-10-rke2r2
+      <<: *agentArgs-v1-25-7-rke2r1
+      profile:
+        type: enum
+        options:
+        - cis
+        - cis-1.23
+        nullable: true
+    charts: &charts-v1-26-10-rke2r2
+      <<: *charts-v1-26-8-rke2r1
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.26.101
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.26.101
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.24.006
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.8.200
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 2.11.100-build2023051510
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.14.200
+      rke2-snapshot-validation-webhook:
+        repo: rancher-rke2-charts
+        version: 1.7.302
     featureVersions: *featureVersions-v1
