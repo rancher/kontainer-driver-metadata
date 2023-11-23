@@ -117,9 +117,10 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.27.0-rancher1-1":                      calicov3261,
-			">=1.26.0-rancher1-1 <1.27.0-rancher1":     calicov3250,
-			">=1.25.0-rancher1-1 <1.26.0-rancher1-1":   calicov3241,
+			">=1.26.11-rancher1":                       calicov3261,
+			">=1.26.0-rancher1-1 <1.26.11-rancher1":    calicov3250,
+			">=1.25.16-rancher1-1 <1.26.0-rancher1-1":  calicov3261,
+			">=1.25.0-rancher1-1 <1.25.16-rancher1-1":  calicov3241,
 			">=1.24.10-rancher1-1 <1.25.0-rancher1-1":  calicov3225Rancher2,
 			">=1.24.9-rancher1-1 <1.24.10-rancher1-1":  calicov3225,
 			">=1.24.0-rancher1-1 <1.24.9-rancher1-1":   calicov3211,
@@ -150,9 +151,10 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
 		kdm.Canal: {
-			">=1.27.0-rancher1-1":                      canalv3261,
-			">=1.26.0-rancher1-1 <1.27.0-rancher1":     canalv3250,
-			">=1.25.0-rancher1-1 <1.26.0-rancher1-1":   canalv3241,
+			">=1.26.11-rancher1":                       canalv3261,
+			">=1.26.0-rancher1-1 <1.26.11-rancher1":    canalv3250,
+			">=1.25.16-rancher1-1 <1.26.0-rancher1-1":  canalv3261,
+			">=1.25.0-rancher1-1 <1.25.16-rancher1-1":  canalv3241,
 			">=1.24.10-rancher1-1 <1.25.0-rancher1-1":  canalv3225Rancher2,
 			">=1.24.9-rancher1-1 <1.24.10-rancher1-1":  canalv3225,
 			">=1.24.0-rancher1-1 <1.24.9-rancher1-1":   canalv3211,
