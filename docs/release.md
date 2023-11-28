@@ -121,7 +121,8 @@ Example PRs:
 7. Monitor drone status for tag (https://drone-publish.rancher.io/rancher/rke). Drone uploads the release manifests to the release tag under Assets (https://github.com/rancher/rke/releases) 
 8. Copy release notes from our draft release notes to the released tag 
 9. Mark the patch version for the latest minor version (`v1.4.x` if releasing both `v1.3.x` and `v1.4.x` as the latest version)
-10. Once the release has been completed, raise a PR to switch back from release-v2.7 to dev-v2.7
+10. Check that version has been released on https://registry.terraform.io/providers/rancher/rke/latest. If not, create an EIO issue to trigger the registry sync.
+11. Once the release has been completed, raise a PR to switch back from release-v2.7 to dev-v2.7
 
 
 ## Post OOB Release Tasks for KDM
