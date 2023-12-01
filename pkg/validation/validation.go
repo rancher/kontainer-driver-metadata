@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"os/exec"
@@ -11,6 +12,7 @@ import (
 	"github.com/rancher/kontainer-driver-metadata/pkg/images"
 	"github.com/rancher/rke/types/kdm"
 	"github.com/sirupsen/logrus"
+	"golang.org/x/mod/semver"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"sigs.k8s.io/yaml"
 )
@@ -48,7 +50,6 @@ func main() {
 		}
 	}
 	logrus.Info("validation is passed")
-	return
 }
 
 func validateRegSync(release string) error {
@@ -165,8 +166,58 @@ func validateDistro(distro string, dev, released kdm.Data) error {
 				logrus.Infof("the release: %v", release)
 				return fmt.Errorf("failed to validate RKE2 charts: %v", err)
 			}
+			if err := validateEncryptedKeyRotation(release); err != nil {
+				return fmt.Errorf("failed to validate rke2 encrypted key rotation: %v", err)
+			}
 		}
 	}
+
+	if distro == utiliies.K3S {
+		raw, _, err := unstructured.NestedSlice(dev.K3S, "releases")
+		if err != nil {
+			return err
+		}
+		for _, r := range raw {
+			release, ok := r.(map[string]interface{})
+			if !ok {
+				return errors.New("failed to parse map")
+			}
+			if err := validateEncryptedKeyRotation(release); err != nil {
+				return fmt.Errorf("failed to validate k3s encrypted key rotation: %w", err)
+			}
+		}
+	}
+	return nil
+}
+
+func validateEncryptedKeyRotation(release map[string]interface{}) error {
+	version, _, err := unstructured.NestedString(release, "version")
+	if err != nil {
+		return err
+	}
+	// this is the first version that hasn't reached its end of life that requires
+	// the encrypted-key-rotation key to exist when this validation is being written
+	const firstVersionToCheckEncryptedKeyRotation = "v1.25.11"
+	compareVersions := semver.Compare(firstVersionToCheckEncryptedKeyRotation, version)
+	if compareVersions != 0 && compareVersions != -1 {
+		return nil
+	}
+	logrus.Info("validating encrypted key rotation key on version: " + version)
+
+	featureVersions, foundFeatureVersions, err := unstructured.NestedMap(release, "featureVersions")
+	if err != nil {
+		return err
+	}
+	if !foundFeatureVersions {
+		return errors.New("missing featureVersions on version: " + version)
+	}
+
+	_, foundEncryptionKeyRotation := featureVersions["encryption-key-rotation"]
+
+	if !foundEncryptionKeyRotation {
+		return errors.New("missing encryption-key-rotation on version: " + version)
+	}
+
 	return nil
 }
 
