@@ -20,6 +20,7 @@ sync:
         - v3.24.1-rancher1
         - v3.25.0-rancher1
         - v3.26.1-rancher1
+        - v3.26.3-rancher1
   - source: docker.io/rancher/flannel-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/flannel-cni'
     type: repository
@@ -265,15 +266,18 @@ sync:
         - v1.25.12-rancher1
         - v1.25.13-rancher1
         - v1.25.14-rancher1
+        - v1.25.16-rancher2
         - v1.25.6-rancher2
         - v1.25.6-rancher4
         - v1.25.9-rancher2
+        - v1.26.11-rancher2
         - v1.26.4-rancher2
         - v1.26.6-rancher1
         - v1.26.7-rancher1
         - v1.26.8-rancher1
         - v1.26.9-rancher1
         - v1.27.6-rancher1
+        - v1.27.8-rancher2
   - source: docker.io/rancher/k3s-upgrade
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/k3s-upgrade'
     type: repository
@@ -395,6 +399,7 @@ sync:
         - v3.24.5
         - v3.25.0
         - v3.26.1
+        - v3.26.3
   - source: docker.io/rancher/mirrored-calico-kube-controllers
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-kube-controllers'
     type: repository
@@ -407,6 +412,7 @@ sync:
         - v3.24.5
         - v3.25.0
         - v3.26.1
+        - v3.26.3
   - source: docker.io/rancher/mirrored-calico-node
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-node'
     type: repository
@@ -419,6 +425,7 @@ sync:
         - v3.24.5
         - v3.25.0
         - v3.26.1
+        - v3.26.3
   - source: docker.io/rancher/mirrored-calico-operator
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-operator'
     type: repository
@@ -441,6 +448,7 @@ sync:
         - v3.24.5
         - v3.25.0
         - v3.26.1
+        - v3.26.3
   - source: docker.io/rancher/mirrored-calico-typha
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-typha'
     type: repository
@@ -644,6 +652,7 @@ sync:
         - v3.5.4
         - v3.5.6
         - v3.5.7
+        - v3.5.9
   - source: docker.io/rancher/mirrored-coreos-flannel
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-coreos-flannel'
     type: repository
@@ -670,6 +679,7 @@ sync:
       allow:
         - v1.1.1
         - v20230312-helm-chart-4.5.2-28-g66a760794
+        - v20231011-8b53cabe0
   - source: docker.io/rancher/mirrored-k8s-dns-dnsmasq-nanny
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-k8s-dns-dnsmasq-nanny'
     type: repository
@@ -677,6 +687,7 @@ sync:
       allow:
         - 1.21.1
         - 1.22.20
+        - 1.22.28
         - 1.22.8
   - source: docker.io/rancher/mirrored-k8s-dns-kube-dns
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-k8s-dns-kube-dns'
@@ -685,6 +696,7 @@ sync:
       allow:
         - 1.21.1
         - 1.22.20
+        - 1.22.28
         - 1.22.8
   - source: docker.io/rancher/mirrored-k8s-dns-node-cache
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-k8s-dns-node-cache'
@@ -694,6 +706,7 @@ sync:
         - 1.21.1
         - 1.22.10
         - 1.22.20
+        - 1.22.28
   - source: docker.io/rancher/mirrored-k8s-dns-sidecar
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-k8s-dns-sidecar'
     type: repository
@@ -701,6 +714,7 @@ sync:
       allow:
         - 1.21.1
         - 1.22.20
+        - 1.22.28
         - 1.22.8
   - source: docker.io/rancher/mirrored-kube-vip-kube-vip-iptables
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-kube-vip-kube-vip-iptables'
@@ -817,6 +831,7 @@ sync:
         - nginx-1.7.1-hardened1
         - nginx-1.8.1-rancher1
         - nginx-1.9.3-hardened1
+        - nginx-1.9.4-rancher1
   - source: docker.io/rancher/pause
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/pause'
     type: repository
