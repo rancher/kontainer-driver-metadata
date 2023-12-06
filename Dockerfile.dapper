@@ -1,10 +1,74 @@
-FROM registry.suse.com/bci/golang:1.19
+ARG RANCHER_VERSION=v2.8-head
+
+FROM rancher/rancher:$RANCHER_VERSION as rancher
+
+FROM registry.suse.com/bci/golang:1.20
+
+RUN mkdir -p /var/lib/rancher
+COPY --from=rancher /var/lib/rancher /var/lib/rancher
+# config and k3s.yaml
+#RUN mkdir -p /root/.kube
+#COPY --from=rancher /root/.kube /root/.kube
+
+COPY --from=rancher /run /run
+RUN mkdir -p /usr/share/rancher
+COPY --from=rancher /usr/share/rancher /usr/share/rancher
+
+COPY --from=rancher/k3s:v1.27.6-k3s1 \
+    /bin/blkid \
+    /bin/bandwidth \
+    /bin/cni \
+    /bin/conntrack \
+    /bin/containerd \
+    /bin/containerd-shim-runc-v2 \
+    /bin/ethtool \
+    /bin/firewall \
+    /bin/ip \
+    /bin/ipset \
+    /bin/k3s \
+    /bin/losetup \
+    /bin/pigz \
+    /bin/runc \
+    /bin/which \
+    /bin/aux/xtables-legacy-multi \
+/usr/bin/
+
+COPY --from=rancher \
+    /usr/bin/rancher \
+    /usr/bin/rancher-helm \
+    /usr/bin/rancher-tiller \
+    /usr/bin/rancher-machine \
+/usr/bin/
+
+RUN mkdir -p /go/src/github.com/rancher/kontainer-driver-metadata/.kube
+
+RUN ln -s /usr/bin/cni /usr/bin/bridge && \
+    ln -s /usr/bin/cni /usr/bin/flannel && \
+    ln -s /usr/bin/cni /usr/bin/host-local && \
+    ln -s /usr/bin/cni /usr/bin/loopback && \
+    ln -s /usr/bin/cni /usr/bin/portmap && \
+    ln -s /usr/bin/k3s /usr/bin/crictl && \
+    ln -s /usr/bin/k3s /usr/bin/ctr && \
+    ln -s /usr/bin/k3s /usr/bin/k3s-agent && \
+    ln -s /usr/bin/k3s /usr/bin/k3s-etcd-snapshot && \
+    ln -s /usr/bin/k3s /usr/bin/k3s-server && \
+    ln -s /usr/bin/k3s /usr/bin/kubectl && \
+    ln -s /usr/bin/pigz /usr/bin/unpigz && \
+    ln -s /usr/bin/xtables-legacy-multi /usr/bin/iptables && \
+    ln -s /usr/bin/xtables-legacy-multi /usr/bin/iptables-save && \
+    ln -s /usr/bin/xtables-legacy-multi /usr/bin/iptables-restore && \
+    ln -s /usr/bin/xtables-legacy-multi /usr/bin/iptables-translate && \
+    ln -s /usr/bin/xtables-legacy-multi /usr/bin/ip6tables && \
+    ln -s /usr/bin/xtables-legacy-multi /usr/bin/ip6tables-save && \
+    ln -s /usr/bin/xtables-legacy-multi /usr/bin/ip6tables-restore && \
+    ln -s /usr/bin/xtables-legacy-multi /usr/bin/ip6tables-translate && \
+    ln -s /etc/rancher/k3s/k3s.yaml /go/src/github.com/rancher/kontainer-driver-metadata/.kube/k3s.yaml
 
 ARG DAPPER_HOST_ARCH
 ENV ARCH $DAPPER_HOST_ARCH
-ENV GOLANGCI_LINT v1.50.1
+ENV GOLANGCI_LINT v1.52.0
 
-RUN zypper -n install git docker vim less file curl wget
+RUN zypper -n install git docker vim less file curl wget jq awk && rpm -e --nodeps --noscripts containerd
 RUN go install golang.org/x/tools/cmd/goimports@latest
 RUN if [[ "${ARCH}" == "amd64" ]]; then \
         curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s ${GOLANGCI_LINT}; \
@@ -12,11 +76,18 @@ RUN if [[ "${ARCH}" == "amd64" ]]; then \
         curl -sL https://github.com/regclient/regclient/releases/download/v0.4.8/regsync-linux-amd64 -o /bin/regsync && chmod +x /bin/regsync; \
     fi
 
-ENV DAPPER_ENV REPO TAG DRONE_TAG REGISTRY_ENDPOINT REGISTRY_USERNAME REGISTRY_PASSWORD
+ENV DAPPER_ENV REPO TAG CI DRONE_BUILD_NUMBER DRONE_BUILD_EVENT DRONE_TAG \
+    REGISTRY_ENDPOINT REGISTRY_USERNAME REGISTRY_PASSWORD \
+    V2PROV_TEST_DIST V2PROV_TEST_RUN_REGEX KDM_TEST_K8S_MINOR DEBUG
 ENV DAPPER_SOURCE /go/src/github.com/rancher/kontainer-driver-metadata
 ENV DAPPER_DOCKER_SOCKET true
+ARG CI
+ARG DRONE_BUILD_NUMBER
+ENV DAPPER_RUN_ARGS "--privileged --label CI=${CI} --label DRONE_BUILD_NUMBER=${DRONE_BUILD_NUMBER}"
 ENV HOME ${DAPPER_SOURCE}
 ENV GOPATH /go
+VOLUME /var/lib/rancher
+VOLUME /var/lib/kubelet
 WORKDIR ${DAPPER_SOURCE}
 
 ENTRYPOINT ["./scripts/entry"]

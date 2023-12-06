@@ -1,0 +1,91 @@
+#!/bin/bash
+set -x
+
+cd "$(dirname "$0")/.." || exit 1
+
+# If not running in CI, populate k8s versions for testing
+if [ "$V2PROV_TEST_DIST" != "rke2" ] && [ "$V2PROV_TEST_DIST" != "k3s" ]; then
+  export V2PROV_TEST_DIST=rke2
+fi
+
+# If not running in CI, run everything applicable for KDM
+if [ -z "${V2PROV_TEST_RUN_REGEX}" ]; then
+  export V2PROV_TEST_RUN_REGEX="^Test_(Provisioning|Operation)_.*$"
+fi
+
+# Select relevant channels file for parsing test version from
+
+if [ -z "${CHANNELS_FILE}" ]; then
+  case "$V2PROV_TEST_DIST" in
+  k3s)
+    export CHANNELS_FILE=channels.yaml
+    ;;
+  rke2 | *)
+    export CHANNELS_FILE=channels-rke2.yaml
+    ;;
+  esac
+fi
+
+if ! ./scripts/test-run-required.sh; then
+  exit
+fi
+
+set -ex
+
+# Copy local KDM data to expected path so we do not have to cold-start during provisioning tests
+METADATA_DIR=/var/lib/rancher-data/driver-metadata
+
+mkdir -p $METADATA_DIR
+
+cp ./data/data.json "$METADATA_DIR"
+
+# Create dummy git repo to serve KDM data via git branch
+TMP_DIR="$(mktemp -d)"
+
+cp -r . "$TMP_DIR"
+
+pushd "$TMP_DIR"
+
+# Need to create dummy KDM branch for rancher to clone from
+git checkout -b kdm-prov-tests
+
+if [ -n "$(git status --porcelain --untracked-files=no 2>/dev/null)" ]; then
+  git -c user.name='Rancher CI' -c user.email='ci@rancher.com' commit -a -m "KDM Provisioning Tests"
+fi
+
+popd
+
+# Configure Rancher KDM setting for provisioning tests
+export CATTLE_RKE_METADATA_CONFIG="{\"refresh-interval-minutes\":1440,\"url\":\"file://$TMP_DIR/.git\",\"branch\":\"kdm-prov-tests\"}"
+
+# Select k8s version based on latest applicable patch version from desired minor (defaults to latest if running locally)
+if [ -z "${SOME_K8S_VERSION}" ]; then
+  if [ -n "${KDM_TEST_K8S_MINOR}" ]; then
+    # Get git diff in relevant channel file, find all added versions matching k8s minor, and get the last one
+    # There should never be a version of a given distro with multiple patches on the same minor added at the same time
+    # This command should be in sync with the one in test-run-required.sh
+    SOME_K8S_VERSION=$(git --no-pager diff --no-color -G "^  - version:" HEAD~1 -- "$CHANNELS_FILE" | grep -P "(^\+\s+- version: v1.$KDM_TEST_K8S_MINOR)" | sed 's/\(^\+\s\+- version: \)//' | tail -n 1)
+  else
+    # Only possible when not running in CI and env var is not provided, in this case just use latest from data.json
+    SOME_K8S_VERSION=$(jq -r ".$V2PROV_TEST_DIST.releases[-1].version" <"$METADATA_DIR/data.json")
+  fi
+  export SOME_K8S_VERSION
+fi
+
+# Copy rancher provisioning tests, and enter directory they exist
+source ./scripts/fetch-provisioning-tests
+
+cd "$RANCHER_DIR"
+
+# Uncomment to get provisioning tests to write commands being run to stdout
+#sed -i '2s/set -e/set -ex/' ./scripts/provisioning-tests
+
+# Uncomment to get startup logs. Don't leave them on because it slows drone down too much
+#sed -i '110s/#//' ./scripts/provisioning-tests
+#sed -i '111s/#//' ./scripts/provisioning-tests
+#sed -i '141s/#//' ./scripts/provisioning-tests
+
+# Remove superfluous check for UI only bumps in this context
+sed -i -e '3,5d' ./scripts/provisioning-tests
+
+./scripts/provisioning-tests
