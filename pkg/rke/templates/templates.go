@@ -252,7 +252,9 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.25.9-rancher2-2 <1.25.13-rancher1-1":  aciv5271,
 			">=1.25.13-rancher1-1 <1.26.0-rancher0":    aciv6031,
 			">=1.26.0-rancher0 <1.26.8-rancher1-1":     aciv5271,
-			">=1.26.8-rancher1-1":                      aciv6031,
+			">=1.26.8-rancher1-1 <1.27.0-rancher1-1":   aciv6031,
+			">=1.27.0-rancher1-1 <1.27.8-rancher2-1":   aciv5271,
+			">=1.27.8-rancher2-1":                      aciv6031,
 		},
 		kdm.NginxIngress: {
 			">=1.8.0-rancher0 <1.13.10-rancher1-3":  nginxIngressv18,
