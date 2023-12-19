@@ -29,6 +29,7 @@ const (
 	calicov3241          = "calico-v3.24.1"
 	calicov3250          = "calico-v3.25.0"
 	calicov3261          = "calico-v3.26.1"
+	calicov3261Rancher2  = "calico-v3.26.1-rancher2"
 
 	canalv18                      = "canal-v1.8"
 	canalv113                     = "canal-v1.13"
@@ -50,6 +51,7 @@ const (
 	canalv3241                    = "canal-v3.24.1"
 	canalv3250                    = "canal-v3.25.0"
 	canalv3261                    = "canal-v3.26.1"
+	canalv3261Rancher2            = "canal-v3.26.1-rancher2"
 
 	flannelv18           = "flannel-v1.8"
 	flannelv115          = "flannel-v1.15"
@@ -104,6 +106,7 @@ const (
 	nginxIngressv151Rancher2 = "nginxingress-v1.5.1-rancher2"
 	nginxIngressv170Rancher1 = "nginxingress-v1.7.0-rancher1"
 	nginxIngressv181Rancher1 = "nginxingress-v1.8.1-rancher1"
+	nginxIngressv194Rancher1 = "nginxingress-v1.9.4-rancher1"
 
 	nodelocalv115 = "nodelocal-v1.15"
 	nodelocalv121 = "nodelocal-v1.21"
@@ -116,9 +119,12 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.27.0-rancher1-1":                      calicov3261,
-			">=1.26.0-rancher1-1 <1.27.0-rancher1":     calicov3250,
-			">=1.25.0-rancher1-1 <1.26.0-rancher1-1":   calicov3241,
+			">=1.27.8-rancher2-1":                      calicov3261Rancher2,
+			">=1.27.0-rancher1-1 <1.27.8-rancher2-1":   calicov3261,
+			">=1.26.11-rancher2-1 <1.27.0-rancher1-1":  calicov3261Rancher2,
+			">=1.26.0-rancher1-1 <1.26.11-rancher2-1":  calicov3250,
+			">=1.25.16-rancher2-1 <1.26.0-rancher1-1":  calicov3261Rancher2,
+			">=1.25.0-rancher1-1 <1.25.16-rancher2-1":  calicov3241,
 			">=1.24.10-rancher1-1 <1.25.0-rancher1-1":  calicov3225Rancher2,
 			">=1.24.9-rancher1-1 <1.24.10-rancher1-1":  calicov3225,
 			">=1.24.0-rancher1-1 <1.24.9-rancher1-1":   calicov3211,
@@ -149,9 +155,12 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
 		kdm.Canal: {
-			">=1.27.0-rancher1-1":                      canalv3261,
-			">=1.26.0-rancher1-1 <1.27.0-rancher1":     canalv3250,
-			">=1.25.0-rancher1-1 <1.26.0-rancher1-1":   canalv3241,
+			">=1.27.8-rancher2-1":                      canalv3261Rancher2,
+			">=1.27.0-rancher1-1 <1.27.8-rancher2-1":   canalv3261,
+			">=1.26.11-rancher2-1 <1.27.0-rancher1-1":  canalv3261Rancher2,
+			">=1.26.0-rancher1-1 <1.26.11-rancher2-1":  canalv3250,
+			">=1.25.16-rancher2-1 <1.26.0-rancher1-1":  canalv3261Rancher2,
+			">=1.25.0-rancher1-1 <1.25.16-rancher2-1":  canalv3241,
 			">=1.24.10-rancher1-1 <1.25.0-rancher1-1":  canalv3225Rancher2,
 			">=1.24.9-rancher1-1 <1.24.10-rancher1-1":  canalv3225,
 			">=1.24.0-rancher1-1 <1.24.9-rancher1-1":   canalv3211,
@@ -243,7 +252,9 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.25.9-rancher2-2 <1.25.13-rancher1-1":  aciv5271,
 			">=1.25.13-rancher1-1 <1.26.0-rancher0":    aciv6031,
 			">=1.26.0-rancher0 <1.26.8-rancher1-1":     aciv5271,
-			">=1.26.8-rancher1-1":                      aciv6031,
+			">=1.26.8-rancher1-1 <1.27.0-rancher1-1":   aciv6031,
+			">=1.27.0-rancher1-1 <1.27.8-rancher2-1":   aciv5271,
+			">=1.27.8-rancher2-1":                      aciv6031,
 		},
 		kdm.NginxIngress: {
 			">=1.8.0-rancher0 <1.13.10-rancher1-3":  nginxIngressv18,
@@ -280,9 +291,12 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.23.6-rancher1-1 <1.23.16-rancher1-1":  nginxIngressv120Rancher2,
 			">=1.23.16-rancher1-1 <1.24.0-rancher1-1":  nginxIngressv151Rancher2,
 			">=1.24.2-rancher1-1 <1.24.10-rancher1-1":  nginxIngressv120Rancher2,
-			">=1.24.10-rancher1-1 <1.26.0-rancher1-1":  nginxIngressv151Rancher2,
-			">=1.26.0-rancher1-1 <1.27.0-rancher1-1":   nginxIngressv170Rancher1,
-			">=1.27.0-rancher1-1":                      nginxIngressv181Rancher1,
+			">=1.24.10-rancher1-1 <1.25.16-rancher2-1": nginxIngressv151Rancher2,
+			">=1.25.16-rancher2-1 <1.26.0-rancher1-1":  nginxIngressv194Rancher1,
+			">=1.26.0-rancher1-1 <1.26.11-rancher2-1":  nginxIngressv170Rancher1,
+			">=1.26.11-rancher2-1 <1.27.0-rancher1-1":  nginxIngressv194Rancher1,
+			">=1.27.0-rancher1-1 <1.27.8-rancher2-1":   nginxIngressv181Rancher1,
+			">=1.27.8-rancher2-1":                      nginxIngressv194Rancher1,
 		},
 		kdm.Nodelocal: {
 			">=1.15.11-rancher0 <1.16.0-alpha":     nodelocalv115,
@@ -314,6 +328,7 @@ func getTemplates() map[string]string {
 		calicov3241:          CalicoTemplateV3_24_1,
 		calicov3250:          CalicoTemplateV3_25_0,
 		calicov3261:          CalicoTemplateV3_26_1,
+		calicov3261Rancher2:  CalicoTemplateV3_26_1Rancher2,
 
 		flannelv115:          FlannelTemplateV115,
 		flannelv116:          FlannelTemplateV116,
@@ -343,6 +358,7 @@ func getTemplates() map[string]string {
 		canalv3241:                    CanalTemplateV3_24_1,
 		canalv3250:                    CanalTemplateV3_25_0,
 		canalv3261:                    CanalTemplateV3_26_1,
+		canalv3261Rancher2:            CanalTemplateV3_26_1Rancher2,
 
 		coreDnsv18:          CoreDNSTemplate,
 		coreDnsv116:         CoreDNSTemplateV116,
@@ -386,6 +402,7 @@ func getTemplates() map[string]string {
 		nginxIngressv151Rancher2: NginxIngressTemplateV151Rancher2,
 		nginxIngressv170Rancher1: NginxIngressTemplateV170Rancher1,
 		nginxIngressv181Rancher1: NginxIngressTemplateV181Rancher1,
+		nginxIngressv194Rancher1: NginxIngressTemplateV194Rancher1,
 
 		nodelocalv115: NodelocalTemplateV115,
 		nodelocalv121: NodelocalTemplateV121,
