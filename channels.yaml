@@ -546,3 +546,4 @@ releases:
     maxChannelServerVersion: v2.8.99
     serverArgs: *serverArgs-v7
     agentArgs: *agentArgs-v6
+    featureVersions: *featureVersions-v1
