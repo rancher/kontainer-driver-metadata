@@ -14,6 +14,8 @@ appDefaults:
         defaultVersion: '1.25.x'
       - appVersion: '>= 2.7.5-0 < 2.7.100-0'
         defaultVersion: '1.26.x'
+      - appVersion: '>= 2.7.11-0 < 2.7.100-0'
+        defaultVersion: '1.27.x'
 releases:
   - version: v1.18.20+k3s1
     minChannelServerVersion: v2.6.0-alpha1
@@ -498,5 +500,23 @@ releases:
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v8
+    agentArgs: *agentArgs-v4
+    featureVersions: *featureVersions-v1
+  - version: v1.27.5+k3s1
+    minChannelServerVersion: v2.7.11
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v6
+    agentArgs: *agentArgs-v3
+    featureVersions: *featureVersions-v1
+  - version: v1.27.7+k3s2
+    minChannelServerVersion: v2.7.11
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v6
+    agentArgs: *agentArgs-v3
+    featureVersions: *featureVersions-v1
+  - version: v1.27.8+k3s2
+    minChannelServerVersion: v2.7.11
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v6
     agentArgs: *agentArgs-v4
     featureVersions: *featureVersions-v1
