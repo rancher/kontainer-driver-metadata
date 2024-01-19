@@ -1706,16 +1706,13 @@ releases:
     agentArgs: *agentArgs-v1-25-15-rke2r2
     charts: &charts-v1-27-10-rc2-rke2r1
       <<: *charts-v1-27-8-rke2r1
-      rke2-calico:
+      rke2-metrics-server:
         repo: rancher-rke2-charts
-        version: v3.26.300
-      rke2-calico-crd:
+        version: 2.11.100-build2023081107
+      rke2-multus:
         repo: rancher-rke2-charts
-        version: v3.26.300
-      rke2-canal:
+        version: v4.0.2-build2023081106
+      rke2-coredns:
         repo: rancher-rke2-charts
-        version: v3.26.3-build2023110900
-      rke2-cilium:
-        repo: rancher-rke2-charts
-        version: 1.14.400
+        version: 1.24.008
     featureVersions: *featureVersions-v1
