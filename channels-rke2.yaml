@@ -1714,5 +1714,5 @@ releases:
         version: v4.0.2-build2023081103
       rke2-coredns:
         repo: rancher-rke2-charts
-        version: 1.24.008
+        version: 1.24.007
     featureVersions: *featureVersions-v1
