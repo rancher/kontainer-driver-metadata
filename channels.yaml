@@ -494,15 +494,6 @@ releases:
     serverArgs: *serverArgs-v6
     agentArgs: *agentArgs-v4
     featureVersions: *featureVersions-v1
-  - version: v1.26.12+k3s1
-    minChannelServerVersion: v2.7.5-alpha1
-    maxChannelServerVersion: v2.7.99
-    serverArgs: *serverArgs-v8
-    agentArgs: &agentArgs-v5
-      <<: *agentArgs-v4
-      default-runtime:
-        type: string
-    featureVersions: *featureVersions-v1
   - version: v1.26.13-rc2+k3s1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
@@ -511,7 +502,9 @@ releases:
       embedded-registry:
         type: boolean
     agentArgs: 
-      <<: *agentArgs-v5
+      <<: *agentArgs-v4
+      default-runtime:
+        type: string
       disable-default-registry-endpoint:
         type: boolean
     featureVersions: *featureVersions-v1
