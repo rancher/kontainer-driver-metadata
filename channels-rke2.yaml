@@ -1711,7 +1711,7 @@ releases:
         version: 2.11.100-build2023081107
       rke2-multus:
         repo: rancher-rke2-charts
-        version: v4.0.2-build2023081103
+        version: v4.0.2-build2023081107
       rke2-coredns:
         repo: rancher-rke2-charts
         version: 1.24.008
