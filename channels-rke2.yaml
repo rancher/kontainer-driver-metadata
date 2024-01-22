@@ -1705,10 +1705,10 @@ releases:
       <<: *charts-v1-27-8-rke2r1
       rke2-metrics-server:
         repo: rancher-rke2-charts
-        version: 2.11.100-build2023051510
+        version: 2.11.100-build2023051511
       rke2-multus:
         repo: rancher-rke2-charts
-        version: v4.0.2-build2023081108
+        version: v4.0.2-build2023081107
       rke2-coredns:
         repo: rancher-rke2-charts
         version: 1.24.008
