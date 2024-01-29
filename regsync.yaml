@@ -277,6 +277,7 @@ sync:
         - v1.25.6-rancher4
         - v1.25.9-rancher2
         - v1.26.11-rancher2
+        - v1.26.13-rancher1
         - v1.26.4-rancher2
         - v1.26.6-rancher1
         - v1.26.7-rancher1
@@ -670,6 +671,7 @@ sync:
     type: repository
     tags:
       allow:
+        - v3.5.10
         - v3.5.2
         - v3.5.3
         - v3.5.4
