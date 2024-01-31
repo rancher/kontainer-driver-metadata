@@ -497,10 +497,7 @@ releases:
   - version: v1.26.13+k3s1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
-    serverArgs: 
-      <<: *serverArgs-v8
-      embedded-registry:
-        type: boolean
+    serverArgs: *serverArgs-v8
     agentArgs: 
       <<: *agentArgs-v4
       default-runtime:
