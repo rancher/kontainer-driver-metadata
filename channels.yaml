@@ -498,7 +498,7 @@ releases:
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: 
-      <<: *serverArgs-v8
+      <<: *serverArgs-v6
       embedded-registry:
         type: boolean
     agentArgs: 
