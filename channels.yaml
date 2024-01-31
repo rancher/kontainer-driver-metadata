@@ -508,3 +508,4 @@ releases:
       disable-default-registry-endpoint:
         type: boolean
     featureVersions: *featureVersions-v1
+
