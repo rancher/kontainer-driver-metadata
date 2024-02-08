@@ -76,7 +76,7 @@ RUN if [[ "${ARCH}" == "amd64" ]]; then \
         curl -sL https://github.com/regclient/regclient/releases/download/v0.4.8/regsync-linux-amd64 -o /bin/regsync && chmod +x /bin/regsync; \
     fi
 
-ENV DAPPER_ENV REPO TAG CI DRONE_BUILD_NUMBER DRONE_BUILD_EVENT DRONE_TAG \
+ENV DAPPER_ENV REPO TAG CI DRONE_BUILD_NUMBER DRONE_BUILD_EVENT DRONE_TAG DRONE_COMMIT_BEFORE \
     REGISTRY_ENDPOINT REGISTRY_USERNAME REGISTRY_PASSWORD \
     V2PROV_TEST_DIST V2PROV_TEST_RUN_REGEX KDM_TEST_K8S_MINOR DEBUG
 ENV DAPPER_SOURCE /go/src/github.com/rancher/kontainer-driver-metadata
