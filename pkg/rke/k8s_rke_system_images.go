@@ -9720,7 +9720,6 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.22.28",
 		},
-<<<<<<< HEAD
 		// Enabled in Rancher v2.7.11, originally in v2.8.0
 		"v1.27.6-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.7",
