@@ -12,7 +12,7 @@ appDefaults:
         defaultVersion: '1.24.x'
       - appVersion: '>= 2.7.2-0 < 2.7.5-0'
         defaultVersion: '1.25.x'
-      - appVersion: '>= 2.7.5-0 < 2.7.100-0'
+      - appVersion: '>= 2.7.5-0 < 2.7.11-0'
         defaultVersion: '1.26.x'
       - appVersion: '>= 2.7.11-0 < 2.7.100-0'
         defaultVersion: '1.27.x'
