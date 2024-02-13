@@ -5,6 +5,10 @@ import v3 "github.com/rancher/rke/types"
 func loadK8sVersionWindowsServiceOptions() map[string]v3.KubernetesServicesOptions {
 	// since 1.14, windows has been supported
 	return map[string]v3.KubernetesServicesOptions{
+		"v1.28": {
+			Kubelet:   getWindowsKubeletOptions124(),
+			Kubeproxy: getWindowsKubeProxyOptions123(),
+		},
 		"v1.27": {
 			Kubelet:   getWindowsKubeletOptions124(),
 			Kubeproxy: getWindowsKubeProxyOptions123(),
