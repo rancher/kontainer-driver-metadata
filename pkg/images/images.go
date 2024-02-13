@@ -35,7 +35,7 @@ const (
 
 var (
 	v270 = semver.MustParse("2.7.0")
-	v280 = semver.MustParse("2.8.0")
+	v290 = semver.MustParse("2.9.0")
 
 	data     = kdm.Data{}
 	releases = map[string][]map[string]interface{}{}
@@ -43,7 +43,7 @@ var (
 )
 
 // GenerateRegSyncFile generates the regsync.yaml file which contains all images used by
-// the supported RKE, RKE2, and K3s k8s version in Rancher v2.7.x.
+// the supported RKE, RKE2, and K3s k8s version in Rancher v2.8.x.
 func GenerateRegSyncFile() {
 	logrus.Info("generating the regsync.yaml file")
 	if err := initData(); err != nil {
@@ -237,7 +237,7 @@ func initData() (err error) {
 	return nil
 }
 
-// releaseToKeep returns a boolean to indicate if the provided RKE2/K3s release should be available in Rancher v2.7.x.
+// releaseToKeep returns a boolean to indicate if the provided RKE2/K3s release should be available in Rancher v2.8.x.
 // it returns false and an error when something goes wrong.
 func releaseToKeep(release map[string]interface{}) (bool, error) {
 	version, ok := release["version"].(string)
@@ -246,7 +246,7 @@ func releaseToKeep(release map[string]interface{}) (bool, error) {
 	}
 	minChannelServerVersion, ok := release["minChannelServerVersion"].(string)
 	if ok && minChannelServerVersion != "" {
-		if min, err := semver.ParseTolerant(minChannelServerVersion); err != nil || min.GE(v280) {
+		if min, err := semver.ParseTolerant(minChannelServerVersion); err != nil || min.GE(v290) {
 			return false, err
 		}
 	}
@@ -259,7 +259,7 @@ func releaseToKeep(release map[string]interface{}) (bool, error) {
 	return true, nil
 }
 
-// toKeep returns a boolean to indicate if the provided RKE k8s version should be available in Rancher v2.7.x.
+// toKeep returns a boolean to indicate if the provided RKE k8s version should be available in Rancher v2.8.x.
 // it returns false and an error when something goes wrong.
 func toKeep(info v3.K8sVersionInfo) (bool, error) {
 	if info.DeprecateRancherVersion != "" {
@@ -276,7 +276,7 @@ func toKeep(info v3.K8sVersionInfo) (bool, error) {
 		if err != nil {
 			return false, fmt.Errorf("failed to parse %s: %v", info.MinRancherVersion, err)
 		}
-		if min.GE(v280) {
+		if min.GE(v290) {
 			return false, nil
 		}
 	}
@@ -293,7 +293,7 @@ func toKeep(info v3.K8sVersionInfo) (bool, error) {
 	return true, nil
 }
 
-// filterVersions returns suitable versions of the provided distro that are available for Rancher 2.7.x.
+// filterVersions returns suitable versions of the provided distro that are available for Rancher 2.8.x.
 // It returns an empty slice and an error when something goes wrong.
 // In the case of RKE, the type of the returned object is slice of Strings;
 // in the case of RKE2 or K3s, it is a slice of Maps (map[string]interface).
