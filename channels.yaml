@@ -14,8 +14,10 @@ appDefaults:
         defaultVersion: '1.25.x'
       - appVersion: '>= 2.7.5-0 < 2.7.100-0'
         defaultVersion: '1.26.x'
-      - appVersion: '>= 2.8.0-0 < 2.8.100-0'
+      - appVersion: '>= 2.8.0-0 < 2.8.3-0'
         defaultVersion: '1.27.x'
+      - appVersion: '>= 2.8.3-0 < 2.8.100-0'
+        defaultVersion: '1.28.x'
 releases:
   - version: v1.18.20+k3s1
     minChannelServerVersion: v2.6.0-alpha1
@@ -533,4 +535,18 @@ releases:
     maxChannelServerVersion: v2.8.99
     serverArgs: *serverArgs-v7
     agentArgs: *agentArgs-v5
+    featureVersions: *featureVersions-v1
+  - version: v1.28.6+k3s2
+    minChannelServerVersion: v2.8.3-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs:
+      <<: *serverArgs-v6
+      embedded-registry:
+        type: boolean
+    agentArgs:
+      <<: *agentArgs-v4
+      default-runtime:
+        type: string
+      disable-default-registry-endpoint:
+        type: boolean
     featureVersions: *featureVersions-v1
