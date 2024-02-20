@@ -1755,13 +1755,31 @@ releases:
     agentArgs: *agentArgs-v1-25-15-rke2r2
     charts: &charts-v1-27-11-rc1-rke2r1
       <<: *charts-v1-27-10-rke2r1
-      rke2-metrics-server:
+      rke2-cilium:
         repo: rancher-rke2-charts
-        version: 2.11.100-build2023051511
-      rke2-multus:
+        version: 1.15.100
+      rancher-vsphere-csi:
+        repo: rancher-charts
+        version: 3.0.1-rancher101
+      rke2-calico:
         repo: rancher-rke2-charts
-        version: v4.0.2-build2023081107
+        version: v3.27.002
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.27.002
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.27.0-build2024020601
       rke2-coredns:
         repo: rancher-rke2-charts
-        version: 1.24.008
+        version: 1.29.000
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.0.2-build2024020800
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 2.11.100-build2023051513
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.1700
     featureVersions: *featureVersions-v1
