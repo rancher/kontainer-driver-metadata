@@ -1,6 +1,17 @@
 package templates
 
-const MetricsServerTemplateV0_6_4 = `
+/*
+# Based on https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.7.0/components.yaml
+
+Upstream Changelog:
+- Update metrics-server deployment's containerPort from 4443 to 10250
+- Add drop ALL capabilty in metrics-server deployment's securityContext
+- Add type RuntimeDefault in seccompProfile of metrics-server's deployment.
+Rancher Changelog:
+- No new Rancher specific changes, same as MetricsServerTemplateV0_6_1
+*/
+
+const MetricsServerTemplateV0_7_0 = `
 {{- if eq .RBACConfig "rbac"}}
 ---
 apiVersion: v1
@@ -187,7 +198,7 @@ spec:
           periodSeconds: 10
         args:
         - --cert-dir=/tmp
-        - --secure-port=4443
+        - --secure-port=10250
         # Rancher specific: connecting to kubelet using insecure tls
         - --kubelet-insecure-tls
         - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
@@ -196,7 +207,7 @@ spec:
         -  --{{ $k }}={{ $v }}
         {{ end }}
         ports:
-        - containerPort: 4443
+        - containerPort: 10250
           name: https
           protocol: TCP
         readinessProbe:
@@ -212,10 +223,15 @@ spec:
             cpu: 100m
             memory: 200Mi
         securityContext:
-          allowPrivilegeEscalation: false          
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
           readOnlyRootFilesystem: true
           runAsNonRoot: true
           runAsUser: 1000
+          seccompProfile:
+            type: RuntimeDefault
         volumeMounts:
         - mountPath: /tmp
           name: tmp-dir

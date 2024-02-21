@@ -78,7 +78,7 @@ const (
 	metricsServerv050 = "metricsserver-v0.5.0"
 	metricsServerv052 = "metricsserver-v0.5.2"
 	metricsServerv061 = "metricsserver-v0.6.1"
-	metricsServerv064 = "metricsserver-v0.6.4"
+	metricsServerv070 = "metricsserver-v0.7.0"
 
 	weavev18  = "weave-v1.8"
 	weavev116 = "weave-v1.16"
@@ -112,7 +112,7 @@ const (
 	nginxIngressv170Rancher1 = "nginxingress-v1.7.0-rancher1"
 	nginxIngressv181Rancher1 = "nginxingress-v1.8.1-rancher1"
 	nginxIngressv194Rancher1 = "nginxingress-v1.9.4-rancher1"
-	nginxIngressv195Rancher1 = "nginxingress-v1.9.5-rancher1"
+	nginxIngressv196Rancher1 = "nginxingress-v1.9.6-rancher1"
 
 	nodelocalv115 = "nodelocal-v1.15"
 	nodelocalv121 = "nodelocal-v1.21"
@@ -223,7 +223,7 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.16.0-alpha": kubeDnsv18,
 		},
 		kdm.MetricsServer: {
-			">=1.28.6-rancher1-1":                      metricsServerv064,
+			">=1.28.6-rancher1-1":                      metricsServerv070,
 			">=1.23.3-rancher1-1 <1.28.6-rancher1-1":   metricsServerv061,
 			">=1.22.15-rancher1-1 <1.23.3-rancher1-1":  metricsServerv052,
 			">=1.20.14-rancher2-1 <1.22.15-rancher1-1": metricsServerv050,
@@ -310,7 +310,7 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.26.11-rancher2-1 <1.27.0-rancher1-1":  nginxIngressv194Rancher1,
 			">=1.27.0-rancher1-1 <1.27.8-rancher2-1":   nginxIngressv181Rancher1,
 			">=1.27.8-rancher2-1 <1.28.6-rancher1-1":   nginxIngressv194Rancher1,
-			">=1.28.6-rancher1-1":                      nginxIngressv195Rancher1,
+			">=1.28.6-rancher1-1":                      nginxIngressv196Rancher1,
 		},
 		kdm.Nodelocal: {
 			">=1.15.11-rancher0 <1.16.0-alpha":     nodelocalv115,
@@ -391,7 +391,7 @@ func getTemplates() map[string]string {
 		metricsServerv050: MetricsServerTemplateV0_5_0,
 		metricsServerv052: MetricsServerTemplateV0_5_2,
 		metricsServerv061: MetricsServerTemplateV0_6_1,
-		metricsServerv064: MetricsServerTemplateV0_6_4,
+		metricsServerv070: MetricsServerTemplateV0_7_0,
 
 		weavev18:  WeaveTemplate,
 		weavev116: WeaveTemplateV116,
@@ -422,7 +422,7 @@ func getTemplates() map[string]string {
 		nginxIngressv170Rancher1: NginxIngressTemplateV170Rancher1,
 		nginxIngressv181Rancher1: NginxIngressTemplateV181Rancher1,
 		nginxIngressv194Rancher1: NginxIngressTemplateV194Rancher1,
-		nginxIngressv195Rancher1: NginxIngressTemplateV195Rancher1,
+		nginxIngressv196Rancher1: NginxIngressTemplateV196Rancher1,
 
 		nodelocalv115: NodelocalTemplateV115,
 		nodelocalv121: NodelocalTemplateV121,

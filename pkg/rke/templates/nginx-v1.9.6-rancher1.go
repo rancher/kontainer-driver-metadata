@@ -2,13 +2,13 @@ package templates
 
 /*
 Upstream Changelog:
-- update app.kubernetes.io/version label value from 1.9.4 to 1.9.5
+- update app.kubernetes.io/version label value from 1.9.4 to 1.9.6
 
 Rancher Changelog:
 - No new Rancher specific changes, same as NginxIngressTemplateV194Rancher1
 */
-const NginxIngressTemplateV195Rancher1 = `
-# Based on https://github.com/kubernetes/ingress-nginx/blob/controller-v1.9.5/deploy/static/provider/cloud/deploy.yaml
+const NginxIngressTemplateV196Rancher1 = `
+# Based on https://github.com/kubernetes/ingress-nginx/blob/controller-v1.9.6/deploy/static/provider/cloud/deploy.yaml
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -25,7 +25,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.5
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: controller
   name: ingress-nginx
   namespace: ingress-nginx
@@ -39,7 +39,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.5
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: controller
   name: ingress-nginx-controller
   namespace: ingress-nginx
@@ -68,7 +68,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.5
+    app.kubernetes.io/version: 1.9.6
   name: ingress-nginx
 rules:
   - apiGroups:
@@ -148,7 +148,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.5
+    app.kubernetes.io/version: 1.9.6
   name: ingress-nginx
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -166,7 +166,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.5
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: controller
   name: ingress-nginx
   namespace: ingress-nginx
@@ -264,7 +264,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.5
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: controller
   name: ingress-nginx
   namespace: ingress-nginx
@@ -285,7 +285,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.4
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: controller
   name: ingress-nginx-controller-admission
   namespace: ingress-nginx
@@ -311,7 +311,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.4
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: controller
   name: nginx-ingress-controller  # Rancher specific: Do NOT change the name, a new workload will be deployed after a k8s upgrade
   namespace: ingress-nginx
@@ -501,7 +501,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.4
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: controller
   name: nginx
   namespace: ingress-nginx
@@ -520,7 +520,7 @@ metadata:
     app.kubernetes.io/instance: ingress-nginx
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/part-of: ingress-nginx
-    app.kubernetes.io/version: 1.9.5
+    app.kubernetes.io/version: 1.9.6
   name: ingress-nginx-admission
   namespace: ingress-nginx
 spec:
@@ -544,7 +544,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.4
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: admission-webhook
   name: ingress-nginx-admission
 webhooks:
@@ -583,7 +583,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.4
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: admission-webhook
 ---
 # Source: ingress-nginx/templates/admission-webhooks/job-patch/clusterrole.yaml
@@ -597,7 +597,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.5
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: admission-webhook
 rules:
   - apiGroups:
@@ -619,7 +619,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.5
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: admission-webhook
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -642,7 +642,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.5
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: admission-webhook
 rules:
   - apiGroups:
@@ -665,7 +665,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.5
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: admission-webhook
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -689,7 +689,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.5
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: admission-webhook
 spec:
   template:
@@ -698,7 +698,7 @@ spec:
       labels:
         app.kubernetes.io/name: ingress-nginx
         app.kubernetes.io/instance: ingress-nginx
-        app.kubernetes.io/version: 1.9.5
+        app.kubernetes.io/version: 1.9.6
         app.kubernetes.io/component: admission-webhook
     spec:
       tolerations:
@@ -747,7 +747,7 @@ metadata:
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 1.9.5
+    app.kubernetes.io/version: 1.9.6
     app.kubernetes.io/component: admission-webhook
 spec:
   template:
@@ -756,7 +756,7 @@ spec:
       labels:
         app.kubernetes.io/name: ingress-nginx
         app.kubernetes.io/instance: ingress-nginx
-        app.kubernetes.io/version: 1.9.5
+        app.kubernetes.io/version: 1.9.6
         app.kubernetes.io/component: admission-webhook
     spec:
       tolerations:
