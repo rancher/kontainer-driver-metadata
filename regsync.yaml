@@ -734,6 +734,7 @@ sync:
         - v1.1.1
         - v20230312-helm-chart-4.5.2-28-g66a760794
         - v20231011-8b53cabe0
+        - v20231226-1a7112e06
   - source: docker.io/rancher/mirrored-k8s-dns-dnsmasq-nanny
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-k8s-dns-dnsmasq-nanny'
     type: repository
@@ -826,7 +827,7 @@ sync:
         - v0.6.1
         - v0.6.2
         - v0.6.3
-        - v0.6.4
+        - v0.7.0
   - source: docker.io/rancher/mirrored-nginx-ingress-controller-defaultbackend
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-nginx-ingress-controller-defaultbackend'
     type: repository
@@ -911,7 +912,7 @@ sync:
         - nginx-1.8.1-rancher1
         - nginx-1.9.3-hardened1
         - nginx-1.9.4-rancher1
-        - nginx-1.9.5-rancher1
+        - nginx-1.9.6-rancher1
   - source: docker.io/rancher/pause
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/pause'
     type: repository
