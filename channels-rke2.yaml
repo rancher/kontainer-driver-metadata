@@ -1639,7 +1639,7 @@ releases:
         version: v3.27.0-build2024020601
       rke2-coredns:
         repo: rancher-rke2-charts
-        version: 1.29.000
+        version: 1.29.001
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.0.2-build2024020800
@@ -1772,7 +1772,7 @@ releases:
         version: v3.27.0-build2024020601
       rke2-coredns:
         repo: rancher-rke2-charts
-        version: 1.29.000
+        version: 1.29.001
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.0.2-build2024020800
