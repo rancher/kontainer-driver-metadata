@@ -19,6 +19,7 @@ sync:
         - v3.22.5-rancher1
         - v3.24.1-rancher1
         - v3.25.0-rancher1
+        - v3.26.1-rancher1
         - v3.26.3-rancher1
   - source: docker.io/rancher/flannel-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/flannel-cni'
@@ -110,6 +111,7 @@ sync:
       allow:
         - v1.0.2-build20220419
         - v1.0.2-build20221014
+        - v1.0.2-build20230607
         - v1.0.2-build20231009
   - source: docker.io/rancher/hardened-k8s-metrics-server
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-k8s-metrics-server'
@@ -159,6 +161,10 @@ sync:
         - v1.26.6-rke2r1-build20230614
         - v1.26.7-rke2r1-build20230719
         - v1.26.8-rke2r1-build20230824
+        - v1.27.10-rke2r1-build20240117
+        - v1.27.5-rke2r1-build20230824
+        - v1.27.7-rke2r2-build20231102
+        - v1.27.8-rke2r1-build20231115
   - source: docker.io/rancher/hardened-multus-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-multus-cni'
     type: repository
@@ -178,6 +184,7 @@ sync:
       allow:
         - v2.6.2-build20220419
         - v2.6.3-build20221014
+        - v2.6.3-build20230607
         - v2.6.3-build20231009
   - source: docker.io/rancher/hardened-sriov-network-config-daemon
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-config-daemon'
@@ -186,6 +193,7 @@ sync:
       allow:
         - v1.1.0-build20220419
         - v1.2.0-build20221014
+        - v1.2.0-build20230607
         - v1.2.0-build20231010
   - source: docker.io/rancher/hardened-sriov-network-device-plugin
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-device-plugin'
@@ -194,6 +202,7 @@ sync:
       allow:
         - v3.4.0-build20220419
         - v3.5.1-build20221014
+        - v3.5.1-build20230607
         - v3.5.1-build20231009
   - source: docker.io/rancher/hardened-sriov-network-operator
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-operator'
@@ -202,6 +211,7 @@ sync:
       allow:
         - v1.1.0-build20220419
         - v1.2.0-build20221014
+        - v1.2.0-build20230607
         - v1.2.0-build20231010
   - source: docker.io/rancher/hardened-sriov-network-resources-injector
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-resources-injector'
@@ -210,6 +220,7 @@ sync:
       allow:
         - v1.3-build20220419
         - v1.5-build20221014
+        - v1.5-build20230607
         - v1.5-build20231009
   - source: docker.io/rancher/hardened-sriov-network-webhook
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-webhook'
@@ -218,6 +229,7 @@ sync:
       allow:
         - v1.1.0-build20220419
         - v1.2.0-build20221014
+        - v1.2.0-build20230607
         - v1.2.0-build20231010
   - source: docker.io/rancher/hardened-whereabouts
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-whereabouts'
@@ -281,11 +293,16 @@ sync:
         - v1.25.9-rancher2
         - v1.26.11-rancher2
         - v1.26.13-rancher1
+        - v1.26.14-rancher1
         - v1.26.4-rancher2
         - v1.26.6-rancher1
         - v1.26.7-rancher1
         - v1.26.8-rancher1
         - v1.26.9-rancher1
+        - v1.27.10-rancher1
+        - v1.27.11-rancher1
+        - v1.27.6-rancher1
+        - v1.27.8-rancher2
   - source: docker.io/rancher/k3s-upgrade
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/k3s-upgrade'
     type: repository
@@ -323,6 +340,10 @@ sync:
         - v1.26.6-k3s1
         - v1.26.7-k3s1
         - v1.26.8-k3s1
+        - v1.27.10-k3s2
+        - v1.27.5-k3s1
+        - v1.27.7-k3s2
+        - v1.27.8-k3s2
   - source: docker.io/rancher/klipper-helm
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/klipper-helm'
     type: repository
@@ -676,6 +697,7 @@ sync:
         - v3.5.3
         - v3.5.4
         - v3.5.6
+        - v3.5.7
         - v3.5.9
   - source: docker.io/rancher/mirrored-coreos-flannel
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-coreos-flannel'
@@ -808,6 +830,8 @@ sync:
     tags:
       allow:
         - 3.6
+        - 3.6-windows-1809-amd64
+        - 3.6-windows-ltsc2022-amd64
         - 3.7
   - source: docker.io/rancher/mirrored-sig-storage-csi-attacher
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-sig-storage-csi-attacher'
@@ -875,6 +899,7 @@ sync:
         - nginx-1.6.4-hardened4
         - nginx-1.7.0-rancher1
         - nginx-1.7.1-hardened1
+        - nginx-1.8.1-rancher1
         - nginx-1.9.3-hardened1
         - nginx-1.9.4-rancher1
   - source: docker.io/rancher/pause
@@ -905,6 +930,8 @@ sync:
         - v1.25.3-build20221017
         - v1.26.1-build20230210
         - v1.26.3-build20230406
+        - v1.26.3-build20230608
+        - v1.28.2-build20231016
   - source: docker.io/rancher/rke2-runtime
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-runtime'
     type: repository
@@ -974,6 +1001,14 @@ sync:
         - v1.26.7-rke2r1-windows-amd64
         - v1.26.8-rke2r1
         - v1.26.8-rke2r1-windows-amd64
+        - v1.27.10-rke2r1
+        - v1.27.10-rke2r1-windows-amd64
+        - v1.27.5-rke2r1
+        - v1.27.5-rke2r1-windows-amd64
+        - v1.27.7-rke2r2
+        - v1.27.7-rke2r2-windows-amd64
+        - v1.27.8-rke2r1
+        - v1.27.8-rke2r1-windows-amd64
   - source: docker.io/rancher/rke2-upgrade
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-upgrade'
     type: repository
@@ -1011,6 +1046,10 @@ sync:
         - v1.26.6-rke2r1
         - v1.26.7-rke2r1
         - v1.26.8-rke2r1
+        - v1.27.10-rke2r1
+        - v1.27.5-rke2r1
+        - v1.27.7-rke2r2
+        - v1.27.8-rke2r1
   - source: docker.io/rancher/system-agent-installer-k3s
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-k3s'
     type: repository
@@ -1048,6 +1087,10 @@ sync:
         - v1.26.6-k3s1
         - v1.26.7-k3s1
         - v1.26.8-k3s1
+        - v1.27.10-k3s2
+        - v1.27.5-k3s1
+        - v1.27.7-k3s2
+        - v1.27.8-k3s2
   - source: docker.io/rancher/system-agent-installer-rke2
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-rke2'
     type: repository
@@ -1085,3 +1128,7 @@ sync:
         - v1.26.6-rke2r1
         - v1.26.7-rke2r1
         - v1.26.8-rke2r1
+        - v1.27.10-rke2r1
+        - v1.27.5-rke2r1
+        - v1.27.7-rke2r2
+        - v1.27.8-rke2r1
