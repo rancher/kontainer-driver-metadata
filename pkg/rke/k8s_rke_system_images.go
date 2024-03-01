@@ -9762,7 +9762,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.22.28",
 		},
-		// Enabled out of band post v2.8.3
+		// Enabled out of band post v2.8.2
 		"v1.26.14-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.10",
 			Kubernetes:                "rancher/hyperkube:v1.26.14-rancher1",
@@ -9974,7 +9974,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.22.28",
 		},
-		// Enabled out of band post v2.8.3
+		// Enabled out of band post v2.8.2
 		"v1.27.11-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.10",
 			Kubernetes:                "rancher/hyperkube:v1.27.11-rancher1",
