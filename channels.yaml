@@ -129,6 +129,8 @@ releases:
         default: false
       resolv-conf:
         type: string
+      debug:
+        type: bool
   - version: v1.21.5+k3s1
     minChannelServerVersion: v2.6.0-alpha1
     maxChannelServerVersion: v2.6.4
