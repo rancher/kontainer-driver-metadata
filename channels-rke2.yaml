@@ -157,6 +157,8 @@ releases:
         type: array
       cloud-controller-manager-extra-env:
         type: array
+      debug:
+        type: bool
     charts: &charts-v1-21-4-rke2r2
       rke2-cilium:
         repo: rancher-rke2-charts
