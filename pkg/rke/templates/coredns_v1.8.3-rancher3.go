@@ -2,9 +2,15 @@ package templates
 
 /*
 Rancher Changelog:
-# CoreDNS template with autoscaler liveness and readiness probe configuration
+- coredns deployment: liveness and readiness probe configuration
+- coredns deployment: drop the replica
+- coredns deployment: replace the usage of `beta.kubernetes.io/os: linux` with `kubernetes.io/os: linux`
+- coredns deployment: replace the seccomp annotation with seccompProfile
+- coredns-autoscaler deployment: liveness and readiness probe configuration
+- coredns-autoscaler deployment: replace the usage of `beta.kubernetes.io/os: linux` with `kubernetes.io/os: linux`
 */
-const CoreDNSTemplateV183Rancher2 = `
+
+const CoreDNSTemplateV183Rancher3 = `
 # Based on coredns/deployment/kubernetes/coredns.yaml.sed v1.8.3
 ---
 {{- if eq .RBACConfig "rbac"}}
@@ -97,7 +103,6 @@ metadata:
 spec:
   # replicas is not specified in upstream template, default is 1. 
   # Will be tuned in real time if DNS horizontal auto-scaling is turned on.
-  replicas: 1
   strategy:
 {{if .UpdateStrategy}}
 {{ toYaml .UpdateStrategy | indent 4}}
@@ -134,7 +139,7 @@ spec:
           operator: Exists
 {{- end }}
       nodeSelector:
-        beta.kubernetes.io/os: linux
+        kubernetes.io/os: linux
       {{ range $k, $v := .NodeSelector }}
         {{ $k }}: "{{ $v }}"
       {{ end }}
@@ -202,6 +207,8 @@ spec:
             drop:
             - all
           readOnlyRootFilesystem: true
+          seccompProfile:
+            type: RuntimeDefault
       dnsPolicy: Default
       volumes:
         - name: config-volume
@@ -262,7 +269,7 @@ spec:
       priorityClassName: {{ .CoreDNSAutoscalerPriorityClassName }}
 {{- end }}
       nodeSelector:
-        beta.kubernetes.io/os: linux
+        kubernetes.io/os: linux
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -318,7 +325,7 @@ spec:
 {{else}}
           - --default-params={"linear":{"coresPerReplica":128,"nodesPerReplica":4,"min":1,"preventSinglePointFailure":true}}
 {{end}}
-          - --nodelabels=node-role.kubernetes.io/worker=true,beta.kubernetes.io/os=linux
+          - --nodelabels=node-role.kubernetes.io/worker=true,kubernetes.io/os=linux
           - --logtostderr=true
           - --v=2
 {{- if eq .RBACConfig "rbac"}}
