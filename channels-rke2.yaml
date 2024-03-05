@@ -1618,7 +1618,19 @@ releases:
   - version: v1.26.14+rke2r1
     minChannelServerVersion: v2.7.5-alpha1
     maxChannelServerVersion: v2.8.99
-    serverArgs: *serverArgs-v1-26-10-rke2r2
+    serverArgs: &serverArgs-v1-26-14-rke2r1
+      <<: *serverArgs-v1-26-10-rke2r2
+      cni:
+        default: calico
+        type: array
+        options:
+        - canal
+        - cilium
+        - calico
+        - flannel
+        - multus,canal
+        - multus,cilium
+        - multus,calico
     agentArgs: *agentArgs-v1-25-15-rke2r2
     charts: &charts-v1-26-14-rke2r1
       <<: *charts-v1-26-13-rke2r1
@@ -1751,7 +1763,19 @@ releases:
   - version: v1.27.11+rke2r1
     minChannelServerVersion: v2.8.0-alpha1
     maxChannelServerVersion: v2.8.99
-    serverArgs: *serverArgs-v1-27-7-rke2r2
+    serverArgs: &serverArgs-v1-27-11-rke2r1
+      <<: *serverArgs-v1-27-7-rke2r2
+      cni:
+        default: calico
+        type: array
+        options:
+        - canal
+        - cilium
+        - calico
+        - flannel
+        - multus,canal
+        - multus,cilium
+        - multus,calico
     agentArgs: *agentArgs-v1-25-15-rke2r2
     charts: &charts-v1-27-11-rke2r1
       <<: *charts-v1-27-10-rke2r1
