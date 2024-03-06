@@ -1768,7 +1768,7 @@ releases:
         version: 1.24.008
     featureVersions: *featureVersions-v1
   - version: v1.27.11+rke2r1
-    minChannelServerVersion: v2.8.0-alpha1
+    minChannelServerVersion: v2.7.11-alpha1
     maxChannelServerVersion: v2.8.99
     serverArgs: &serverArgs-v1-27-11-rke2r1
       <<: *serverArgs-v1-27-7-rke2r2
