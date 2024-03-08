@@ -1762,22 +1762,6 @@ releases:
         repo: rancher-rke2-charts
         version: 1.24.008
     featureVersions: *featureVersions-v1
-  - version: v1.28.6+rke2r1
-    minChannelServerVersion: v2.8.3-alpha1
-    maxChannelServerVersion: v2.8.99
-    serverArgs: &serverArgs-v1-28-6-rke2r1
-      <<: *serverArgs-v1-27-7-rke2r2
-      embedded-registry:
-        type: boolean
-    agentArgs: &agentArgs-v1-28-6-rke2r1
-      <<: *agentArgs-v1-25-15-rke2r2
-      default-runtime:
-        type: string
-      disable-default-registry-endpoint:
-        type: boolean
-    charts: &charts-v1-28-6-rke2r1
-      <<: *charts-v1-27-10-rke2r1
-    featureVersions: *featureVersions-v1
   - version: v1.27.11+rke2r1
     minChannelServerVersion: v2.8.0-alpha1
     maxChannelServerVersion: v2.8.99
@@ -1824,4 +1808,20 @@ releases:
       harvester-csi-driver:
         repo: rancher-rke2-charts
         version: 0.1.1700
+    featureVersions: *featureVersions-v1
+  - version: v1.28.7+rke2r1
+    minChannelServerVersion: v2.8.3-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: &serverArgs-v1-28-7-rke2r1
+      <<: *serverArgs-v1-27-7-rke2r2
+      embedded-registry:
+        type: boolean
+    agentArgs: &agentArgs-v1-28-7-rke2r1
+      <<: *agentArgs-v1-25-15-rke2r2
+      default-runtime:
+        type: string
+      disable-default-registry-endpoint:
+        type: boolean
+    charts: &charts-v1-28-7-rke2r1
+      <<: *charts-v1-27-10-rke2r1
     featureVersions: *featureVersions-v1
