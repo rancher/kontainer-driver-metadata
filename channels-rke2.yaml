@@ -231,7 +231,7 @@ releases:
         version: 2.11.100-build2021022302
       rke2-multus:
         repo: rancher-rke2-charts
-        version: v3.7.1-build2021041604    
+        version: v3.7.1-build2021041604
   - version: v1.21.5+rke2r2
     minChannelServerVersion: v2.6.1-alpha1
     maxChannelServerVersion: v2.6.4
@@ -742,7 +742,7 @@ releases:
         version: v3.23.103
       rke2-calico-crd:
         repo: rancher-rke2-charts
-        version: v3.23.103    
+        version: v3.23.103
       rke2-multus:
         repo: rancher-rke2-charts
         version: v3.8-build2021110402
@@ -1617,6 +1617,53 @@ releases:
         repo: rancher-rke2-charts
         version: 1.24.008
     featureVersions: *featureVersions-v1
+  - version: v1.26.14+rke2r1
+    minChannelServerVersion: v2.7.5-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: &serverArgs-v1-26-14-rke2r1
+      <<: *serverArgs-v1-26-10-rke2r2
+      cni:
+        default: calico
+        type: array
+        options:
+        - canal
+        - cilium
+        - calico
+        - flannel
+        - multus,canal
+        - multus,cilium
+        - multus,calico
+    agentArgs: *agentArgs-v1-25-15-rke2r2
+    charts: &charts-v1-26-14-rke2r1
+      <<: *charts-v1-26-13-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.15.100
+      rancher-vsphere-csi:
+        repo: rancher-charts
+        version: 3.0.1-rancher101
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.27.002
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.27.002
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.27.0-build2024020601
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.29.001
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.0.2-build2024020800
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 2.11.100-build2023051513
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.1700
+    featureVersions: *featureVersions-v1
   - version: v1.27.5+rke2r1
     minChannelServerVersion: v2.8.0-alpha1
     maxChannelServerVersion: v2.8.99
@@ -1715,19 +1762,66 @@ releases:
         repo: rancher-rke2-charts
         version: 1.24.008
     featureVersions: *featureVersions-v1
-  - version: v1.28.6+rke2r1
+  - version: v1.27.11+rke2r1
+    minChannelServerVersion: v2.8.0-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: &serverArgs-v1-27-11-rke2r1
+      <<: *serverArgs-v1-27-7-rke2r2
+      cni:
+        default: calico
+        type: array
+        options:
+        - canal
+        - cilium
+        - calico
+        - flannel
+        - multus,canal
+        - multus,cilium
+        - multus,calico
+    agentArgs: *agentArgs-v1-25-15-rke2r2
+    charts: &charts-v1-27-11-rke2r1
+      <<: *charts-v1-27-10-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.15.100
+      rancher-vsphere-csi:
+        repo: rancher-charts
+        version: 3.0.1-rancher101
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.27.002
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.27.002
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.27.0-build2024020601
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.29.001
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.0.2-build2024020800
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 2.11.100-build2023051513
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.1700
+    featureVersions: *featureVersions-v1
+  - version: v1.28.7+rke2r1
     minChannelServerVersion: v2.8.3-alpha1
     maxChannelServerVersion: v2.8.99
-    serverArgs: &serverArgs-v1-28-6-rke2r1
-      <<: *serverArgs-v1-27-7-rke2r2
+    serverArgs: &serverArgs-v1-28-7-rke2r1
+      <<: *serverArgs-v1-27-11-rke2r1
       embedded-registry:
         type: boolean
-    agentArgs: &agentArgs-v1-28-6-rke2r1
+    agentArgs: &agentArgs-v1-28-7-rke2r1
       <<: *agentArgs-v1-25-15-rke2r2
       default-runtime:
         type: string
       disable-default-registry-endpoint:
         type: boolean
-    charts: &charts-v1-28-6-rke2r1
-      <<: *charts-v1-27-10-rke2r1
+    charts: &charts-v1-28-7-rke2r1
+      <<: *charts-v1-27-11-rke2r1
     featureVersions: *featureVersions-v1

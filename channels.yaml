@@ -512,6 +512,12 @@ releases:
       disable-default-registry-endpoint:
         type: boolean
     featureVersions: *featureVersions-v1
+  - version: v1.26.14+k3s1
+    minChannelServerVersion: v2.7.5-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: *serverArgs-v7
+    agentArgs: *agentArgs-v5
+    featureVersions: *featureVersions-v1
   - version: v1.27.5+k3s1
     minChannelServerVersion: v2.8.0-alpha1
     maxChannelServerVersion: v2.8.99
@@ -536,7 +542,13 @@ releases:
     serverArgs: *serverArgs-v7
     agentArgs: *agentArgs-v5
     featureVersions: *featureVersions-v1
-  - version: v1.28.6+k3s2
+  - version: v1.27.11+k3s1
+    minChannelServerVersion: v2.8.0-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: *serverArgs-v7
+    agentArgs: *agentArgs-v5
+    featureVersions: *featureVersions-v1
+  - version: v1.28.7+k3s1
     minChannelServerVersion: v2.8.3-alpha1
     maxChannelServerVersion: v2.8.99
     serverArgs:
