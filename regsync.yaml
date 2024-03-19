@@ -180,7 +180,6 @@ sync:
         - v1.27.5-rke2r1-build20230824
         - v1.27.7-rke2r2-build20231102
         - v1.27.8-rke2r1-build20231115
-        - v1.28.7-rke2r1-build20240214
         - v1.28.8-rke2r1-build20240315
   - source: docker.io/rancher/hardened-multus-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-multus-cni'
@@ -369,7 +368,6 @@ sync:
         - v1.27.5-k3s1
         - v1.27.7-k3s2
         - v1.27.8-k3s2
-        - v1.28.7-k3s1
         - v1.28.8-rc1-k3s1
   - source: docker.io/rancher/klipper-helm
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/klipper-helm'
@@ -1098,8 +1096,6 @@ sync:
         - v1.27.7-rke2r2-windows-amd64
         - v1.27.8-rke2r1
         - v1.27.8-rke2r1-windows-amd64
-        - v1.28.7-rke2r1
-        - v1.28.7-rke2r1-windows-amd64
         - v1.28.8-rc1-rke2r1
         - v1.28.8-rc1-rke2r1-windows-amd64
   - source: docker.io/rancher/rke2-upgrade
@@ -1147,7 +1143,6 @@ sync:
         - v1.27.5-rke2r1
         - v1.27.7-rke2r2
         - v1.27.8-rke2r1
-        - v1.28.7-rke2r1
         - v1.28.8-rc1-rke2r1
   - source: docker.io/rancher/system-agent-installer-k3s
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-k3s'
@@ -1194,7 +1189,6 @@ sync:
         - v1.27.5-k3s1
         - v1.27.7-k3s2
         - v1.27.8-k3s2
-        - v1.28.7-k3s1
         - v1.28.8-rc1-k3s1
   - source: docker.io/rancher/system-agent-installer-rke2
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-rke2'
@@ -1241,5 +1235,4 @@ sync:
         - v1.27.5-rke2r1
         - v1.27.7-rke2r2
         - v1.27.8-rke2r1
-        - v1.28.7-rke2r1
         - v1.28.8-rc1-rke2r1
