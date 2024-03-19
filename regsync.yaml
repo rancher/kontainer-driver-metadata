@@ -353,12 +353,14 @@ sync:
         - v1.26.11-k3s2
         - v1.26.13-k3s2
         - v1.26.14-k3s1
+        - v1.26.15-rc1-k3s1
         - v1.26.5-k3s1
         - v1.26.6-k3s1
         - v1.26.7-k3s1
         - v1.26.8-k3s1
         - v1.27.10-k3s2
         - v1.27.11-k3s1
+        - v1.27.12-rc1-k3s1
         - v1.27.5-k3s1
         - v1.27.7-k3s2
         - v1.27.8-k3s2
@@ -880,6 +882,7 @@ sync:
         - v0.6.1
         - v0.6.2
         - v0.6.3
+        - v0.7.0
   - source: docker.io/rancher/mirrored-nginx-ingress-controller-defaultbackend
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-nginx-ingress-controller-defaultbackend'
     type: repository
@@ -1163,12 +1166,14 @@ sync:
         - v1.26.11-k3s2
         - v1.26.13-k3s2
         - v1.26.14-k3s1
+        - v1.26.15-rc1-k3s1
         - v1.26.5-k3s1
         - v1.26.6-k3s1
         - v1.26.7-k3s1
         - v1.26.8-k3s1
         - v1.27.10-k3s2
         - v1.27.11-k3s1
+        - v1.27.12-rc1-k3s1
         - v1.27.5-k3s1
         - v1.27.7-k3s2
         - v1.27.8-k3s2
