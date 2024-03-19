@@ -266,8 +266,19 @@ func validateRKE2Charts(release map[string]interface{}) error {
 		if err != nil {
 			return err
 		}
+		var chartIndex string
+		var otherChartIndex string
+		if repo == "rancher-charts" {
+			chartIndex = "https://charts.rancher.io"
+			otherChartIndex = "https://github.com/rancher/charts/"
+		} else if repo == "rancher-rke2-charts" {
+			chartIndex = "https://rke2-charts.rancher.io"
+		} else {
+			chartIndex = fmt.Sprintf("https://%s", repo)
+		}
 		expectedChartTarball := fmt.Sprintf("%s-%s.tgz", chartName, chartVersion)
-		if !strings.Contains(chartURL, expectedChartTarball) {
+		if !strings.Contains(chartURL, expectedChartTarball) ||
+			!(strings.HasPrefix(chartURL, chartIndex) || strings.HasPrefix(chartURL, otherChartIndex)) {
 			return fmt.Errorf("unexpected chart URL for %s/%s:%s: %s", repo, chartName, chartVersion, chartURL)
 		}
 	}
