@@ -278,7 +278,7 @@ func validateRKE2Charts(release map[string]interface{}) error {
 		case "rancher-rke2-charts":
 			isValidRepo = strings.HasPrefix(chartURL, rke2Chart)
 		default:
-			isValidRepo = strings.HasPrefix(chartURL, fmt.Sprintf("https://%s", repo))
+			isValidRepo = strings.HasPrefix(chartURL, "https://"+repo)
 		}
 		expectedChartTarball := fmt.Sprintf("%s-%s.tgz", chartName, chartVersion)
 		if !strings.Contains(chartURL, expectedChartTarball) || !isValidRepo {
