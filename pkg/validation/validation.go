@@ -266,19 +266,22 @@ func validateRKE2Charts(release map[string]interface{}) error {
 		if err != nil {
 			return err
 		}
-		var chartIndex string
-		var otherChartIndex string
-		if repo == "rancher-charts" {
-			chartIndex = "https://charts.rancher.io"
-			otherChartIndex = "https://github.com/rancher/charts/"
-		} else if repo == "rancher-rke2-charts" {
-			chartIndex = "https://rke2-charts.rancher.io"
-		} else {
-			chartIndex = fmt.Sprintf("https://%s", repo)
+		var isValidRepo bool
+		const (
+			rancherChart    = "https://charts.rancher.io"
+			oldRancherChart = "https://github.com/rancher/charts/"
+			rke2Chart       = "https://rke2-charts.rancher.io"
+		)
+		switch repo {
+		case "rancher-charts":
+			isValidRepo = strings.HasPrefix(chartURL, rancherChart) || strings.HasPrefix(chartURL, oldRancherChart)
+		case "rancher-rke2-charts":
+			isValidRepo = strings.HasPrefix(chartURL, rke2Chart)
+		default:
+			isValidRepo = strings.HasPrefix(chartURL, fmt.Sprintf("https://%s", repo))
 		}
 		expectedChartTarball := fmt.Sprintf("%s-%s.tgz", chartName, chartVersion)
-		if !strings.Contains(chartURL, expectedChartTarball) ||
-			!(strings.HasPrefix(chartURL, chartIndex) || strings.HasPrefix(chartURL, otherChartIndex)) {
+		if !strings.Contains(chartURL, expectedChartTarball) || !isValidRepo {
 			return fmt.Errorf("unexpected chart URL for %s/%s:%s: %s", repo, chartName, chartVersion, chartURL)
 		}
 	}
