@@ -2,7 +2,7 @@ ARG RANCHER_VERSION=v2.8-head
 
 FROM rancher/rancher:$RANCHER_VERSION as rancher
 
-FROM registry.suse.com/bci/golang:1.21-2.2.25
+FROM registry.suse.com/bci/golang:1.21
 
 RUN mkdir -p /var/lib/rancher
 COPY --from=rancher /var/lib/rancher /var/lib/rancher
