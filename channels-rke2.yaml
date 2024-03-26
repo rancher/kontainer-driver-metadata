@@ -1664,6 +1664,32 @@ releases:
         repo: rancher-rke2-charts
         version: 0.1.1700
     featureVersions: *featureVersions-v1
+  - version: v1.26.15+rke2r1
+    minChannelServerVersion: v2.7.5-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: *serverArgs-v1-26-14-rke2r1
+    agentArgs: *agentArgs-v1-25-15-rke2r2
+    charts: &charts-v1-26-15-rke2r1
+      <<: *charts-v1-26-14-rke2r1
+      rancher-vsphere-csi:
+        repo: rancher-rke2-charts
+        version: 3.1.2-rancher101
+      rancher-vsphere-cpi:
+        repo: rancher-rke2-charts
+        version: 1.7.001
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.29.002
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.27.2-build2024030800
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.27.200
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.0.2-build2024020802
+    featureVersions: *featureVersions-v1
   - version: v1.27.5+rke2r1
     minChannelServerVersion: v2.8.0-alpha1
     maxChannelServerVersion: v2.8.99
@@ -1809,19 +1835,63 @@ releases:
         repo: rancher-rke2-charts
         version: 0.1.1700
     featureVersions: *featureVersions-v1
-  - version: v1.28.7+rke2r1
+  - version: v1.27.12+rke2r1
+    minChannelServerVersion: v2.8.0-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: *serverArgs-v1-27-11-rke2r1
+    agentArgs: *agentArgs-v1-25-15-rke2r2
+    charts: &charts-v1-27-12-rke2r1
+      <<: *charts-v1-27-11-rke2r1
+      rancher-vsphere-csi:
+        repo: rancher-rke2-charts
+        version: 3.1.2-rancher101
+      rancher-vsphere-cpi:
+        repo: rancher-rke2-charts
+        version: 1.7.001
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.29.002
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.27.2-build2024030800
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.27.200
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.0.2-build2024020802
+    featureVersions: *featureVersions-v1
+  - version: v1.28.8+rke2r1
     minChannelServerVersion: v2.8.3-alpha1
     maxChannelServerVersion: v2.8.99
-    serverArgs: &serverArgs-v1-28-7-rke2r1
+    serverArgs: &serverArgs-v1-28-8-rke2r1
       <<: *serverArgs-v1-27-11-rke2r1
       embedded-registry:
         type: boolean
-    agentArgs: &agentArgs-v1-28-7-rke2r1
+    agentArgs: &agentArgs-v1-28-8-rke2r1
       <<: *agentArgs-v1-25-15-rke2r2
       default-runtime:
         type: string
       disable-default-registry-endpoint:
         type: boolean
-    charts: &charts-v1-28-7-rke2r1
+    charts: &charts-v1-28-8-rke2r1
       <<: *charts-v1-27-11-rke2r1
+      rancher-vsphere-csi:
+        repo: rancher-rke2-charts
+        version: 3.1.2-rancher101
+      rancher-vsphere-cpi:
+        repo: rancher-rke2-charts
+        version: 1.7.001
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.29.002
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.27.2-build2024030800
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.27.200
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.0.2-build2024020802
     featureVersions: *featureVersions-v1
