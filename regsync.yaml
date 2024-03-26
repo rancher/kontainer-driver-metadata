@@ -1074,8 +1074,8 @@ sync:
         - v1.26.13-rke2r1-windows-amd64
         - v1.26.14-rke2r1
         - v1.26.14-rke2r1-windows-amd64
-        - v1.26.15-rc1-rke2r1
-        - v1.26.15-rc1-rke2r1-windows-amd64
+        - v1.26.15-rke2r1
+        - v1.26.15-rke2r1-windows-amd64
         - v1.26.5-rke2r1
         - v1.26.5-rke2r1-windows-amd64
         - v1.26.6-rke2r1
@@ -1088,16 +1088,16 @@ sync:
         - v1.27.10-rke2r1-windows-amd64
         - v1.27.11-rke2r1
         - v1.27.11-rke2r1-windows-amd64
-        - v1.27.12-rc1-rke2r1
-        - v1.27.12-rc1-rke2r1-windows-amd64
+        - v1.27.12-rke2r1
+        - v1.27.12-rke2r1-windows-amd64
         - v1.27.5-rke2r1
         - v1.27.5-rke2r1-windows-amd64
         - v1.27.7-rke2r2
         - v1.27.7-rke2r2-windows-amd64
         - v1.27.8-rke2r1
         - v1.27.8-rke2r1-windows-amd64
-        - v1.28.8-rc1-rke2r1
-        - v1.28.8-rc1-rke2r1-windows-amd64
+        - v1.28.8-rke2r1
+        - v1.28.8-rke2r1-windows-amd64
   - source: docker.io/rancher/rke2-upgrade
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-upgrade'
     type: repository
@@ -1132,18 +1132,18 @@ sync:
         - v1.26.11-rke2r1
         - v1.26.13-rke2r1
         - v1.26.14-rke2r1
-        - v1.26.15-rc1-rke2r1
+        - v1.26.15-rke2r1
         - v1.26.5-rke2r1
         - v1.26.6-rke2r1
         - v1.26.7-rke2r1
         - v1.26.8-rke2r1
         - v1.27.10-rke2r1
         - v1.27.11-rke2r1
-        - v1.27.12-rc1-rke2r1
+        - v1.27.12-rke2r1
         - v1.27.5-rke2r1
         - v1.27.7-rke2r2
         - v1.27.8-rke2r1
-        - v1.28.8-rc1-rke2r1
+        - v1.28.8-rke2r1
   - source: docker.io/rancher/system-agent-installer-k3s
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-k3s'
     type: repository
@@ -1224,15 +1224,15 @@ sync:
         - v1.26.11-rke2r1
         - v1.26.13-rke2r1
         - v1.26.14-rke2r1
-        - v1.26.15-rc1-rke2r1
+        - v1.26.15-rke2r1
         - v1.26.5-rke2r1
         - v1.26.6-rke2r1
         - v1.26.7-rke2r1
         - v1.26.8-rke2r1
         - v1.27.10-rke2r1
         - v1.27.11-rke2r1
-        - v1.27.12-rc1-rke2r1
+        - v1.27.12-rke2r1
         - v1.27.5-rke2r1
         - v1.27.7-rke2r2
         - v1.27.8-rke2r1
-        - v1.28.8-rc1-rke2r1
+        - v1.28.8-rke2r1
