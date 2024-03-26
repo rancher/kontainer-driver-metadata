@@ -17,6 +17,12 @@ import (
 	"sigs.k8s.io/yaml"
 )
 
+const (
+	rancherChart    = "https://charts.rancher.io"
+	oldRancherChart = "https://github.com/rancher/charts"
+	rke2Chart       = "https://rke2-charts.rancher.io"
+)
+
 var (
 	releaseDataURL    = "https://releases.rancher.com/kontainer-driver-metadata/%s/data.json"
 	releaseRegSyncURL = "https://raw.githubusercontent.com/rancher/kontainer-driver-metadata/%s/regsync.yaml"
@@ -267,11 +273,6 @@ func validateRKE2Charts(release map[string]interface{}) error {
 			return err
 		}
 		var isValidRepo bool
-		const (
-			rancherChart    = "https://charts.rancher.io"
-			oldRancherChart = "https://github.com/rancher/charts/"
-			rke2Chart       = "https://rke2-charts.rancher.io"
-		)
 		switch repo {
 		case "rancher-charts":
 			isValidRepo = strings.HasPrefix(chartURL, rancherChart) || strings.HasPrefix(chartURL, oldRancherChart)
