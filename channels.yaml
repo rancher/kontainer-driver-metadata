@@ -552,7 +552,7 @@ releases:
     serverArgs: *serverArgs-v7
     agentArgs: *agentArgs-v5
     featureVersions: *featureVersions-v1
-  - version: v1.27.12-rc1+k3s1
+  - version: v1.27.12+k3s1
     minChannelServerVersion: v2.7.11-alpha1
     maxChannelServerVersion: v2.7.99
     serverArgs: *serverArgs-v7
