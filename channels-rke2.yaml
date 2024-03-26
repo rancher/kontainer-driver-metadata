@@ -1677,10 +1677,10 @@ releases:
     charts: &charts-v1-26-15-rke2r1
       <<: *charts-v1-26-14-rke2r1
       rancher-vsphere-csi:
-        repo: rancher-charts
+        repo: rancher-rke2-charts
         version: 3.1.2-rancher101
       rancher-vsphere-cpi:
-        repo: rancher-charts
+        repo: rancher-rke2-charts
         version: 1.7.001
       rke2-coredns:
         repo: rancher-rke2-charts
