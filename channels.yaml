@@ -563,14 +563,6 @@ releases:
   - version: v1.28.8+k3s1
     minChannelServerVersion: v2.8.3-alpha1
     maxChannelServerVersion: v2.8.99
-    serverArgs: &serverArgs-v8
-      <<: *serverArgs-v7
-      embedded-registry:
-        type: boolean
-    agentArgs: &agentArgs-v6
-      <<: *agentArgs-v5
-      default-runtime:
-        type: string
-      disable-default-registry-endpoint:
-        type: boolean
+    serverArgs: *serverArgs-v7
+    agentArgs: *agentArgs-v5
     featureVersions: *featureVersions-v1
