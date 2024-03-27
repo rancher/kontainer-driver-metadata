@@ -1,0 +1,47 @@
+#!/bin/bash
+set -ex
+
+cd $(dirname $0)/..
+
+# Create binary directory for running provisioning tests
+mkdir -p "./bin"
+BIN_DIR="$(realpath ./bin)"
+
+TMP_DIR=$(mktemp -d)
+
+pushd "$TMP_DIR"
+
+IMAGE_REPO=${IMAGE_REPO:-rancher/rancher}
+IMAGE_TAG=${IMAGE_TAG:-v2.8-head}
+IMAGE=${IMAGE:-$IMAGE_REPO:$IMAGE_TAG}
+
+# Inspect image, get server version and extract rancher commit 
+if [ -n "$RANCHER_COMMIT" ]; then
+  RANCHER_COMMIT=$(awk -F '=' '{print $2}' <<< "$CATTLE_SERVER_VERSION")
+  case $RANCHER_COMMIT in *-head)
+    # If the rancher commit ends with '-head', it is usually of the form 'v2.x-<COMMIT>-head', so extract everything between dashes
+    RANCHER_COMMIT=$(awk -F '[-]' '{print $2}' <<< "$RANCHER_COMMIT");;
+  esac
+fi
+
+mkdir -p rancher
+
+# Although using the commit so the image matches the source code, use the default branch associated with that release line
+# Git clones must have a branch, and the release branch is likely to contain the commit anyway
+GIT_URL=${GIT_URL:-https://github.com/rancher/rancher.git}
+GIT_BRANCH=${GIT_BRANCH:-release/v2.8}
+
+git clone --depth 1 -b $GIT_BRANCH $GIT_URL ./rancher
+
+export RANCHER_DIR=$TMP_DIR/rancher
+
+# Checkout commit image was built on
+pushd ./rancher
+
+git checkout $RANCHER_COMMIT
+
+mkdir -p "$RANCHER_DIR/bin"
+
+cp /usr/bin/rancher "$RANCHER_DIR/bin/rancher"
+
+popd

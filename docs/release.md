@@ -133,3 +133,12 @@ Here are a few example PR's for this process. While typically one review will su
 + https://github.com/rancher/kontainer-driver-metadata/pull/1167
 + https://github.com/rancher/kontainer-driver-metadata/pull/1131
 
+## Prepare KDM For A Rancher/Rancher Release 
+
+All officially released versions of Rancher are expected to use the KDM release branches. Rancher references a particular KDM branch in a number of places within its code base. A majority of the time, Rancher will be referencing a KDM development branch so that developers do not have to update any environment variables to work with the latest KDM data. However, when preparing for a Rancher release, this reference **must** be updated to point at a release branch - otherwise development work done within KDM will negatively impact users of Rancher. 
+
+This step typically occurs during the preparation of the final RC for a rancher/rancher release. A final RC should **never** use KDMs development branches.  
+
+Here's an example PR for this change: 
++ https://github.com/rancher/rancher/pull/42954/files
+
