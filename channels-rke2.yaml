@@ -1640,7 +1640,7 @@ releases:
         repo: rancher-rke2-charts
         version: 1.15.100
       rancher-vsphere-csi:
-        repo: rancher-charts
+        repo: rancher-rke2-charts
         version: 3.0.1-rancher101
       rke2-calico:
         repo: rancher-rke2-charts
@@ -1811,7 +1811,7 @@ releases:
         repo: rancher-rke2-charts
         version: 1.15.100
       rancher-vsphere-csi:
-        repo: rancher-charts
+        repo: rancher-rke2-charts
         version: 3.0.1-rancher101
       rke2-calico:
         repo: rancher-rke2-charts
