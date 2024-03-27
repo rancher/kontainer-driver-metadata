@@ -30,6 +30,7 @@ const (
 	calicov3250          = "calico-v3.25.0"
 	calicov3261          = "calico-v3.26.1"
 	calicov3261Rancher2  = "calico-v3.26.1-rancher2"
+	calicov3270          = "calico-v3.27.0"
 
 	canalv18                      = "canal-v1.8"
 	canalv113                     = "canal-v1.13"
@@ -52,6 +53,7 @@ const (
 	canalv3250                    = "canal-v3.25.0"
 	canalv3261                    = "canal-v3.26.1"
 	canalv3261Rancher2            = "canal-v3.26.1-rancher2"
+	canalv3270                    = "canal-v3.27.0"
 
 	flannelv18           = "flannel-v1.8"
 	flannelv115          = "flannel-v1.15"
@@ -60,6 +62,7 @@ const (
 	flannelv0140Rancher2 = "flannel-v0.14.0-rancher2"
 	flannelv0192         = "flannel-v0.19.2"
 	flannelv0214         = "flannel-v0.21.4"
+	flannelv0242         = "flannel-v0.24.2"
 
 	coreDnsv18          = "coredns-v1.8"
 	coreDnsv116         = "coredns-v1.16"
@@ -75,6 +78,7 @@ const (
 	metricsServerv050 = "metricsserver-v0.5.0"
 	metricsServerv052 = "metricsserver-v0.5.2"
 	metricsServerv061 = "metricsserver-v0.6.1"
+	metricsServerv070 = "metricsserver-v0.7.0"
 
 	weavev18  = "weave-v1.8"
 	weavev116 = "weave-v1.16"
@@ -110,6 +114,7 @@ const (
 	nginxIngressv170Rancher1 = "nginxingress-v1.7.0-rancher1"
 	nginxIngressv181Rancher1 = "nginxingress-v1.8.1-rancher1"
 	nginxIngressv194Rancher1 = "nginxingress-v1.9.4-rancher1"
+	nginxIngressv196Rancher1 = "nginxingress-v1.9.6-rancher1"
 
 	nodelocalv115 = "nodelocal-v1.15"
 	nodelocalv121 = "nodelocal-v1.21"
@@ -122,7 +127,8 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.27.8-rancher2-1":                      calicov3261Rancher2,
+			">=1.28.6-rancher1-1":                      calicov3270,
+			">=1.27.8-rancher2-1 <1.28.6-rancher1-1":   calicov3261Rancher2,
 			">=1.27.0-rancher1-1 <1.27.8-rancher2-1":   calicov3261,
 			">=1.26.11-rancher2-1 <1.27.0-rancher1-1":  calicov3261Rancher2,
 			">=1.26.0-rancher1-1 <1.26.11-rancher2-1":  calicov3250,
@@ -158,7 +164,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
 		kdm.Canal: {
-			">=1.27.8-rancher2-1":                      canalv3261Rancher2,
+			">=1.28.6-rancher1-1":                      canalv3270,
+			">=1.27.8-rancher2-1 <1.28.6-rancher1-1":   canalv3261Rancher2,
 			">=1.27.0-rancher1-1 <1.27.8-rancher2-1":   canalv3261,
 			">=1.26.11-rancher2-1 <1.27.0-rancher1-1":  canalv3261Rancher2,
 			">=1.26.0-rancher1-1 <1.26.11-rancher2-1":  canalv3250,
@@ -194,7 +201,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":        canalv18,
 		},
 		kdm.Flannel: {
-			">=1.26.0-rancher1-1":                     flannelv0214,
+			">=1.28.6-rancher1-1":                     flannelv0242,
+			">=1.26.0-rancher1-1 <1.28.6-rancher1-1":  flannelv0214,
 			">=1.25.0-rancher1-1 <1.26.0-rancher1-1":  flannelv0192,
 			">=1.24.10-rancher1-1 <1.25.0-rancher1-1": flannelv0140Rancher2,
 			">=1.24.0-rancher1-1 <1.24.10-rancher1-1": flannelv0140,
@@ -217,7 +225,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.16.0-alpha": kubeDnsv18,
 		},
 		kdm.MetricsServer: {
-			">=1.23.3-rancher1-1":                      metricsServerv061,
+			">=1.28.6-rancher1-1":                      metricsServerv070,
+			">=1.23.3-rancher1-1 <1.28.6-rancher1-1":   metricsServerv061,
 			">=1.22.15-rancher1-1 <1.23.3-rancher1-1":  metricsServerv052,
 			">=1.20.14-rancher2-1 <1.22.15-rancher1-1": metricsServerv050,
 			">=1.20.4-rancher1-1 <1.20.14-rancher2-1":  metricsServerv120,
@@ -307,7 +316,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.26.0-rancher1-1 <1.26.11-rancher2-1":  nginxIngressv170Rancher1,
 			">=1.26.11-rancher2-1 <1.27.0-rancher1-1":  nginxIngressv194Rancher1,
 			">=1.27.0-rancher1-1 <1.27.8-rancher2-1":   nginxIngressv181Rancher1,
-			">=1.27.8-rancher2-1":                      nginxIngressv194Rancher1,
+			">=1.27.8-rancher2-1 <1.28.6-rancher1-1":   nginxIngressv194Rancher1,
+			">=1.28.6-rancher1-1":                      nginxIngressv196Rancher1,
 		},
 		kdm.Nodelocal: {
 			">=1.15.11-rancher0 <1.16.0-alpha":     nodelocalv115,
@@ -340,6 +350,7 @@ func getTemplates() map[string]string {
 		calicov3250:          CalicoTemplateV3_25_0,
 		calicov3261:          CalicoTemplateV3_26_1,
 		calicov3261Rancher2:  CalicoTemplateV3_26_1Rancher2,
+		calicov3270:          CalicoTemplateV3_27_0,
 
 		flannelv115:          FlannelTemplateV115,
 		flannelv116:          FlannelTemplateV116,
@@ -347,6 +358,7 @@ func getTemplates() map[string]string {
 		flannelv0140Rancher2: FlannelTemplateV0_14_0Rancher2,
 		flannelv0192:         FlannelTemplateV0_19_2,
 		flannelv0214:         FlannelTemplateV0_21_4,
+		flannelv0242:         FlannelTemplateV0_24_2,
 		flannelv18:           FlannelTemplate,
 
 		canalv113:                     CanalTemplateV113,
@@ -370,6 +382,7 @@ func getTemplates() map[string]string {
 		canalv3250:                    CanalTemplateV3_25_0,
 		canalv3261:                    CanalTemplateV3_26_1,
 		canalv3261Rancher2:            CanalTemplateV3_26_1Rancher2,
+		canalv3270:                    CanalTemplateV3_27_0,
 
 		coreDnsv18:          CoreDNSTemplate,
 		coreDnsv116:         CoreDNSTemplateV116,
@@ -385,6 +398,7 @@ func getTemplates() map[string]string {
 		metricsServerv050: MetricsServerTemplateV0_5_0,
 		metricsServerv052: MetricsServerTemplateV0_5_2,
 		metricsServerv061: MetricsServerTemplateV0_6_1,
+		metricsServerv070: MetricsServerTemplateV0_7_0,
 
 		weavev18:  WeaveTemplate,
 		weavev116: WeaveTemplateV116,
@@ -417,6 +431,7 @@ func getTemplates() map[string]string {
 		nginxIngressv170Rancher1: NginxIngressTemplateV170Rancher1,
 		nginxIngressv181Rancher1: NginxIngressTemplateV181Rancher1,
 		nginxIngressv194Rancher1: NginxIngressTemplateV194Rancher1,
+		nginxIngressv196Rancher1: NginxIngressTemplateV196Rancher1,
 
 		nodelocalv115: NodelocalTemplateV115,
 		nodelocalv121: NodelocalTemplateV121,
