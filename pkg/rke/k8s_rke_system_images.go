@@ -9888,10 +9888,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.22.28",
 		},
-		// Enabled out of band post v2.8.2
-		"v1.26.14-rancher1-1": {
+		// Enabled out of band post v2.8.3
+		"v1.26.15-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.10",
-			Kubernetes:                "rancher/hyperkube:v1.26.14-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.26.15-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.96",
 			NginxProxy:                "rancher/rke-tools:v0.1.96",
 			CertDownloader:            "rancher/rke-tools:v0.1.96",
@@ -9899,7 +9899,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			KubeDNS:                   "rancher/mirrored-k8s-dns-kube-dns:1.22.28",
 			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.22.28",
 			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.22.28",
-			KubeDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.8.6",
+			KubeDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:v1.8.9",
 			Flannel:                   "rancher/mirrored-flannel-flannel:v0.21.4",
 			FlannelCNI:                "rancher/flannel-cni:v0.3.0-rancher8",
 			CalicoNode:                "rancher/mirrored-calico-node:v3.26.3",
@@ -9926,7 +9926,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			IngressWebhook:            "rancher/mirrored-ingress-nginx-kube-webhook-certgen:v20231011-8b53cabe0",
 			MetricsServer:             "rancher/mirrored-metrics-server:v0.6.3",
 			CoreDNS:                   "rancher/mirrored-coredns-coredns:1.9.4",
-			CoreDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.8.6",
+			CoreDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:v1.8.9",
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.22.28",
 		},
@@ -10184,10 +10184,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.22.28",
 		},
-		// Enabled out of band post v2.8.2
-		"v1.27.11-rancher1-1": {
+		// Enabled out of band post v2.8.3
+		"v1.27.12-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.10",
-			Kubernetes:                "rancher/hyperkube:v1.27.11-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.27.12-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.96",
 			NginxProxy:                "rancher/rke-tools:v0.1.96",
 			CertDownloader:            "rancher/rke-tools:v0.1.96",
@@ -10195,7 +10195,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			KubeDNS:                   "rancher/mirrored-k8s-dns-kube-dns:1.22.28",
 			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.22.28",
 			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.22.28",
-			KubeDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.8.6",
+			KubeDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:v1.8.9",
 			Flannel:                   "rancher/mirrored-flannel-flannel:v0.21.4",
 			FlannelCNI:                "rancher/flannel-cni:v0.3.0-rancher8",
 			CalicoNode:                "rancher/mirrored-calico-node:v3.26.3",
@@ -10222,7 +10222,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			IngressWebhook:            "rancher/mirrored-ingress-nginx-kube-webhook-certgen:v20231011-8b53cabe0",
 			MetricsServer:             "rancher/mirrored-metrics-server:v0.6.3",
 			CoreDNS:                   "rancher/mirrored-coredns-coredns:1.10.1",
-			CoreDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.8.6",
+			CoreDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:v1.8.9",
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.22.28",
 		},
@@ -10268,10 +10268,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.22.28",
 		},
-		// Enabled with Rancher v2.8.3
-		"v1.28.7-rancher1-1": {
+		// Enabled out of band post v2.8.3
+		"v1.28.8-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.10",
-			Kubernetes:                "rancher/hyperkube:v1.28.7-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.28.8-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.96",
 			NginxProxy:                "rancher/rke-tools:v0.1.96",
 			CertDownloader:            "rancher/rke-tools:v0.1.96",
@@ -10279,7 +10279,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			KubeDNS:                   "rancher/mirrored-k8s-dns-kube-dns:1.22.28",
 			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.22.28",
 			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.22.28",
-			KubeDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.8.6",
+			KubeDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:v1.8.9",
 			Flannel:                   "rancher/mirrored-flannel-flannel:v0.24.2",
 			FlannelCNI:                "rancher/flannel-cni:v0.3.0-rancher9",
 			CalicoNode:                "rancher/mirrored-calico-node:v3.27.0",
@@ -10306,7 +10306,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			IngressWebhook:            "rancher/mirrored-ingress-nginx-kube-webhook-certgen:v20231226-1a7112e06",
 			MetricsServer:             "rancher/mirrored-metrics-server:v0.7.0",
 			CoreDNS:                   "rancher/mirrored-coredns-coredns:1.10.1",
-			CoreDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:1.8.6",
+			CoreDNSAutoscaler:         "rancher/mirrored-cluster-proportional-autoscaler:v1.8.9",
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.22.28",
 		},
