@@ -1,4 +1,4 @@
-ARG RANCHER_VERSION=v2.8-head
+ARG RANCHER_VERSION=v2.9-head
 
 FROM rancher/rancher:$RANCHER_VERSION as rancher
 
