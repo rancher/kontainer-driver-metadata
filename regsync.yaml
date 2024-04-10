@@ -310,6 +310,7 @@ sync:
         - v1.26.11-rancher2
         - v1.26.13-rancher1
         - v1.26.14-rancher1
+        - v1.26.15-rancher1
         - v1.26.4-rancher2
         - v1.26.6-rancher1
         - v1.26.7-rancher1
@@ -317,6 +318,7 @@ sync:
         - v1.26.9-rancher1
         - v1.27.10-rancher1
         - v1.27.11-rancher1
+        - v1.27.12-rancher1
         - v1.27.6-rancher1
         - v1.27.8-rancher2
   - source: docker.io/rancher/k3s-upgrade
@@ -741,6 +743,7 @@ sync:
       allow:
         - 1.8.5
         - 1.8.6
+        - v1.8.9
   - source: docker.io/rancher/mirrored-coredns-coredns
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-coredns-coredns'
     type: repository
