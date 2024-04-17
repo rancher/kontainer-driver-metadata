@@ -16,7 +16,7 @@ appDefaults:
         defaultVersion: '1.26.x'
       - appVersion: '>= 2.8.0-0 < 2.8.3-0'
         defaultVersion: '1.27.x'
-      - appVersion: '>= 2.8.3-0 < 2.8.100-0'
+      - appVersion: '>= 2.8.3-0 < 2.9.100-0'
         defaultVersion: '1.28.x'
 releases:
   - version: v1.18.20+k3s1
@@ -443,19 +443,19 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.25.13+k3s1
     minChannelServerVersion: v2.7.2-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v6
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
   - version: v1.25.15+k3s2
     minChannelServerVersion: v2.7.2-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v6
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
   - version: v1.25.16+k3s4
     minChannelServerVersion: v2.7.2-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v6
     agentArgs: &agentArgs-v4
       <<: *agentArgs-v3
@@ -482,25 +482,25 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.26.8+k3s1
     minChannelServerVersion: v2.7.5-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v6
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
   - version: v1.26.10+k3s2
     minChannelServerVersion: v2.7.5-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v6
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
   - version: v1.26.11+k3s2
     minChannelServerVersion: v2.7.5-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v6
     agentArgs: *agentArgs-v4
     featureVersions: *featureVersions-v1
   - version: v1.26.13+k3s2
     minChannelServerVersion: v2.7.5-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: &serverArgs-v7
       <<: *serverArgs-v6
       embedded-registry:
@@ -514,55 +514,55 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.26.14+k3s1
     minChannelServerVersion: v2.7.5-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v7
     agentArgs: *agentArgs-v5
     featureVersions: *featureVersions-v1
   - version: v1.26.15+k3s1
     minChannelServerVersion: v2.7.5-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v7
     agentArgs: *agentArgs-v5
     featureVersions: *featureVersions-v1
   - version: v1.27.5+k3s1
     minChannelServerVersion: v2.8.0-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v6
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
   - version: v1.27.7+k3s2
     minChannelServerVersion: v2.8.0-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v6
     agentArgs: *agentArgs-v3
     featureVersions: *featureVersions-v1
   - version: v1.27.8+k3s2
     minChannelServerVersion: v2.8.0-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v6
     agentArgs: *agentArgs-v4
     featureVersions: *featureVersions-v1
   - version: v1.27.10+k3s2
     minChannelServerVersion: v2.8.0-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v7
     agentArgs: *agentArgs-v5
     featureVersions: *featureVersions-v1
   - version: v1.27.11+k3s1
     minChannelServerVersion: v2.8.0-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v7
     agentArgs: *agentArgs-v5
     featureVersions: *featureVersions-v1
   - version: v1.27.12+k3s1
     minChannelServerVersion: v2.8.0-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v7
     agentArgs: *agentArgs-v5
     featureVersions: *featureVersions-v1
   - version: v1.28.8+k3s1
     minChannelServerVersion: v2.8.3-alpha1
-    maxChannelServerVersion: v2.8.99
+    maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v7
     agentArgs: *agentArgs-v5
     featureVersions: *featureVersions-v1
