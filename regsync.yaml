@@ -16,6 +16,12 @@ sync:
     tags:
       allow:
         - v1.29.0-rancher1
+  - source: docker.io/krunalhingu/rke-tools
+    target: '{{ env "REGISTRY_ENDPOINT" }}/krunalhingu/rke-tools'
+    type: repository
+    tags:
+      allow:
+        - v0.0.2
   - source: docker.io/rancher/calico-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/calico-cni'
     type: repository
