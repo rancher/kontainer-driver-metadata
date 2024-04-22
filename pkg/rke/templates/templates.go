@@ -69,6 +69,7 @@ const (
 	coreDnsv117         = "coredns-v1.17"
 	coreDnsv183         = "coredns-v1.8.3"
 	coreDnsv183Rancher2 = "coredns-v1.8.3-rancher2"
+	coreDnsv183Rancher3 = "coredns-v1.8.3-rancher3"
 
 	kubeDnsv18  = "kubedns-v1.8"
 	kubeDnsv116 = "kubedns-v1.16"
@@ -213,7 +214,10 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.15.0-rancher0":       flannelv18,
 		},
 		kdm.CoreDNS: {
-			">=1.21.9-rancher1-2":                     coreDnsv183Rancher2,
+			">=1.28.9-rancher1-1":                     coreDnsv183Rancher3,
+			">=1.28.0-rancher1-1 <1.28.9-rancher1-1":  coreDnsv183Rancher2,
+			">=1.27.13-rancher1-1 <1.28.0-rancher1-1": coreDnsv183Rancher3,
+			">=1.21.9-rancher1-2 <1.27.13-rancher1-1": coreDnsv183Rancher2,
 			">=1.21.0-rancher1-1 <1.21.9-rancher1-2":  coreDnsv183,
 			">=1.20.15-rancher1-2 <1.21.0-rancher1-1": coreDnsv183Rancher2,
 			">=1.17.0-alpha <1.20.15-rancher1-2":      coreDnsv117,
@@ -389,6 +393,7 @@ func getTemplates() map[string]string {
 		coreDnsv117:         CoreDNSTemplateV117,
 		coreDnsv183:         CoreDNSTemplateV183,
 		coreDnsv183Rancher2: CoreDNSTemplateV183Rancher2,
+		coreDnsv183Rancher3: CoreDNSTemplateV183Rancher3,
 
 		kubeDnsv18:  KubeDNSTemplate,
 		kubeDnsv116: KubeDNSTemplateV116,

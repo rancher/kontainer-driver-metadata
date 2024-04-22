@@ -128,7 +128,7 @@ func validateTemplateMatch() {
 			for toTestRange, key := range pluginData {
 				testRange, err := semver.ParseRange(toTestRange)
 				if err != nil {
-					panic(fmt.Sprintf("range for %s not sem-ver %v %v", plugin, testRange, err))
+					panic(fmt.Sprintf("range for %s not sem-ver %v %v", plugin, toTestRange, err))
 				}
 				if testRange(toMatch) {
 					// only one range should be matched
