@@ -560,9 +560,24 @@ releases:
     serverArgs: *serverArgs-v7
     agentArgs: *agentArgs-v5
     featureVersions: *featureVersions-v1
+  - version: v1.27.13+k3s1
+    minChannelServerVersion: v2.8.0-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: &serverArgs-v8
+      <<: *serverArgs-v7
+      kine-tls:
+        type: boolean
+    agentArgs: *agentArgs-v5
+    featureVersions: *featureVersions-v1
   - version: v1.28.8+k3s1
     minChannelServerVersion: v2.8.3-alpha1
     maxChannelServerVersion: v2.8.99
     serverArgs: *serverArgs-v7
+    agentArgs: *agentArgs-v5
+    featureVersions: *featureVersions-v1
+  - version: v1.28.9+k3s1
+    minChannelServerVersion: v2.8.3-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: *serverArgs-v8
     agentArgs: *agentArgs-v5
     featureVersions: *featureVersions-v1
