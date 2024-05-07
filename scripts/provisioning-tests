@@ -26,6 +26,21 @@ if [ -z "${CHANNELS_FILE}" ]; then
   esac
 fi
 
+# Set previous commit SHA
+
+env
+
+if [ "${GITHUB_EVENT_NAME}" == "push" ]
+then
+  export PREV_COMMIT_SHA=${PREV_COMMIT_PUSH_SHA}
+elif [ "${GITHUB_EVENT_NAME}" == "pull_request" ]
+then
+  export PREV_COMMIT_SHA=${PREV_COMMIT_PR_SHA}
+fi
+
+# To be removed
+export DRONE_BUILD_NUMBER=${GITHUB_RUN_NUMBER}
+
 if ! ./scripts/test-run-required.sh; then
   exit
 fi
@@ -64,11 +79,14 @@ if [ -z "${SOME_K8S_VERSION}" ]; then
     # Get git diff in relevant channel file, find all added versions matching k8s minor, and get the last one
     # There should never be a version of a given distro with multiple patches on the same minor added at the same time
     # This command should be in sync with the one in test-run-required.sh
-    SOME_K8S_VERSION=$(git --no-pager diff --no-color -G "^  - version:" $DRONE_COMMIT_BEFORE -- "$CHANNELS_FILE" | grep -P "(^\+\s+- version: v1.$KDM_TEST_K8S_MINOR)" | sed 's/\(^\+\s\+- version: \)//' | tail -n 1)
+    SOME_K8S_VERSION=$(git --no-pager diff --no-color -G "^  - version:" $PREV_COMMIT_SHA -- "$CHANNELS_FILE" | grep -P "(^\+\s+- version: v1.$KDM_TEST_K8S_MINOR)" | sed 's/\(^\+\s\+- version: \)//' | tail -n 1)
   else
     # Only possible when not running in CI and env var is not provided, in this case just use latest from data.json
     SOME_K8S_VERSION=$(jq -r ".$V2PROV_TEST_DIST.releases[-1].version" <"$METADATA_DIR/data.json")
   fi
+  #TO BE REMOVED
+  SOME_K8S_VERSION=`grep "v1.$KDM_TEST_K8S_MINOR" $CHANNELS_FILE | grep version | tail -n -1 | cut -d: -f2 | tr -d ' '`
+  echo "Setting SOME_K8S_VERSION to $SOME_K8S_VERSION"
   export SOME_K8S_VERSION
 fi
 
@@ -86,6 +104,6 @@ cd "$RANCHER_DIR"
 #sed -i '141s/#//' ./scripts/provisioning-tests
 
 # Remove superfluous check for UI only bumps in this context
-sed -i -e '3,5d' ./scripts/provisioning-tests
+#sed -i -e '3,5d' ./scripts/provisioning-tests
 
 ./scripts/provisioning-tests

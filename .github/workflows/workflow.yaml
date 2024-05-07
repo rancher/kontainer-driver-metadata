@@ -20,6 +20,11 @@ jobs:
     container: 
       image: rancher/dapper:v0.6.0
     steps:
+      - name: Force Install GIT latest
+        run: |
+          apk add git --update-cache
+          git --version
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Retrieve Registy secrets from vault
