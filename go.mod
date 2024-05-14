@@ -1,6 +1,6 @@
 module github.com/rancher/kontainer-driver-metadata
 
-go 1.21
+go 1.22
 
 replace (
 	github.com/knative/pkg => github.com/rancher/pkg v0.0.0-20190514055449-b30ab9de040e
