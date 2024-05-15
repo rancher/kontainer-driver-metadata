@@ -12,7 +12,7 @@ TMP_DIR=$(mktemp -d)
 pushd "$TMP_DIR"
 
 IMAGE_REPO=${IMAGE_REPO:-rancher/rancher}
-IMAGE_TAG=${IMAGE_TAG:-v2.8-head}
+IMAGE_TAG=${IMAGE_TAG:-v2.9-head}
 IMAGE=${IMAGE:-$IMAGE_REPO:$IMAGE_TAG}
 
 # Inspect image, get server version and extract rancher commit 
@@ -29,7 +29,7 @@ mkdir -p rancher
 # Although using the commit so the image matches the source code, use the default branch associated with that release line
 # Git clones must have a branch, and the release branch is likely to contain the commit anyway
 GIT_URL=${GIT_URL:-https://github.com/rancher/rancher.git}
-GIT_BRANCH=${GIT_BRANCH:-release/v2.8}
+GIT_BRANCH=${GIT_BRANCH:-release/v2.9}
 
 git clone --depth 1 -b $GIT_BRANCH $GIT_URL ./rancher
 

@@ -6,7 +6,7 @@ REPO="https://api.github.com/repos/rancher/rke/actions/workflows/git-actions-go-
 
 case $DRONE_BRANCH in
   dev-v2.8|release-v2.8)
-    ACTION_TARGET_BRANCH="release/v1.5"
+    ACTION_TARGET_BRANCH="release/v1.6"
     ;;
   *)
     echo "Not a valid branch, not dispatching event"
