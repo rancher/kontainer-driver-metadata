@@ -187,6 +187,7 @@ sync:
         - v1.27.11-rke2r1-build20240214
         - v1.27.12-rke2r1-build20240315
         - v1.27.13-rke2r1-build20240416
+        - v1.27.14-rke2r1-build20240515
         - v1.27.5-rke2r1-build20230824
         - v1.27.7-rke2r2-build20231102
         - v1.27.8-rke2r1-build20231115
@@ -1128,6 +1129,8 @@ sync:
         - v1.27.12-rke2r1-windows-amd64
         - v1.27.13-rke2r1
         - v1.27.13-rke2r1-windows-amd64
+        - v1.27.14-rc2-rke2r1
+        - v1.27.14-rc2-rke2r1-windows-amd64
         - v1.27.5-rke2r1
         - v1.27.5-rke2r1-windows-amd64
         - v1.27.7-rke2r2
@@ -1177,6 +1180,7 @@ sync:
         - v1.27.11-rke2r1
         - v1.27.12-rke2r1
         - v1.27.13-rke2r1
+        - v1.27.14-rc2-rke2r1
         - v1.27.5-rke2r1
         - v1.27.7-rke2r2
         - v1.27.8-rke2r1
@@ -1269,6 +1273,7 @@ sync:
         - v1.27.11-rke2r1
         - v1.27.12-rke2r1
         - v1.27.13-rke2r1
+        - v1.27.14-rc2-rke2r1
         - v1.27.5-rke2r1
         - v1.27.7-rke2r2
         - v1.27.8-rke2r1
