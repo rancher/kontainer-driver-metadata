@@ -339,8 +339,10 @@ sync:
         - v1.27.11-rancher1
         - v1.27.12-rancher1
         - v1.27.13-rancher1
+        - v1.27.14-rancher1
         - v1.27.6-rancher1
         - v1.27.8-rancher2
+        - v1.28.10-rancher1
         - v1.28.7-rancher1
         - v1.28.8-rancher1
         - v1.28.9-rancher1
