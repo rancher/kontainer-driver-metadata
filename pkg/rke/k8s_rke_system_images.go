@@ -10268,10 +10268,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.22.28",
 		},
-		// Enabled in Rancher v2.8.4
-		"v1.27.13-rancher1-1": {
+		// Enabled in Rancher v2.9.0
+		"v1.27.14-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.10",
-			Kubernetes:                "rancher/hyperkube:v1.27.13-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.27.14-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.96",
 			NginxProxy:                "rancher/rke-tools:v0.1.96",
 			CertDownloader:            "rancher/rke-tools:v0.1.96",
@@ -10436,10 +10436,10 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.22.28",
 		},
-			// Enabled in Rancher v2.8.4
-		"v1.28.9-rancher1-1": {
+		// Enabled in Rancher v2.9.0
+		"v1.28.10-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.10",
-			Kubernetes:                "rancher/hyperkube:v1.28.9-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.28.10-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.96",
 			NginxProxy:                "rancher/rke-tools:v0.1.96",
 			CertDownloader:            "rancher/rke-tools:v0.1.96",
@@ -10479,9 +10479,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.22.28",
 		},
 		// Enabled in v2.9.0
-		"v1.29.3-rancher1-1": {
+		"v1.29.5-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.12",
-			Kubernetes:                "rancher/hyperkube:v1.29.3-rancher1",
+			Kubernetes:                "rancher/hyperkube:v1.29.5-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.97",
 			NginxProxy:                "rancher/rke-tools:v0.1.97",
 			CertDownloader:            "rancher/rke-tools:v0.1.97",
