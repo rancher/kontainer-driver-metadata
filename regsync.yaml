@@ -187,6 +187,7 @@ sync:
         - v1.27.11-rke2r1-build20240214
         - v1.27.12-rke2r1-build20240315
         - v1.27.13-rke2r1-build20240416
+        - v1.27.14-rke2r1-build20240515
         - v1.27.5-rke2r1-build20230824
         - v1.27.7-rke2r2-build20231102
         - v1.27.8-rke2r1-build20231115
@@ -333,6 +334,7 @@ sync:
         - v1.27.11-rancher1
         - v1.27.12-rancher1
         - v1.27.13-rancher1
+        - v1.27.14-rancher1
         - v1.27.6-rancher1
         - v1.27.8-rancher2
   - source: docker.io/rancher/k3s-upgrade
@@ -378,6 +380,7 @@ sync:
         - v1.27.11-k3s1
         - v1.27.12-k3s1
         - v1.27.13-k3s1
+        - v1.27.14-k3s1
         - v1.27.5-k3s1
         - v1.27.7-k3s2
         - v1.27.8-k3s2
@@ -578,6 +581,7 @@ sync:
     tags:
       allow:
         - v0.1.11
+        - v0.1.12
         - v0.1.8
         - v0.1.9
   - source: docker.io/rancher/mirrored-cilium-cilium
@@ -597,6 +601,7 @@ sync:
         - v1.14.4
         - v1.15.1
         - v1.15.4
+        - v1.15.5
   - source: docker.io/rancher/mirrored-cilium-cilium-envoy
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-cilium-envoy'
     type: repository
@@ -607,6 +612,7 @@ sync:
         - v1.26.6-ff0d5d3f77d610040e93c7c7a430d61a0c0b90c1
         - v1.27.3-713b673cccf1af661efd75ca20532336517ddcb9
         - v1.27.4-21905253931655328edaacf3cd16aeda73bbea2f
+        - v1.28.3-31ec52ec5f2e4d28a8e19a0bfb872fa48cf7a515
   - source: docker.io/rancher/mirrored-cilium-cilium-etcd-operator
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-cilium-etcd-operator'
     type: repository
@@ -627,6 +633,7 @@ sync:
         - v1.14.4
         - v1.15.1
         - v1.15.4
+        - v1.15.5
   - source: docker.io/rancher/mirrored-cilium-hubble-relay
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-hubble-relay'
     type: repository
@@ -641,6 +648,7 @@ sync:
         - v1.14.4
         - v1.15.1
         - v1.15.4
+        - v1.15.5
   - source: docker.io/rancher/mirrored-cilium-hubble-ui
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-hubble-ui'
     type: repository
@@ -688,6 +696,7 @@ sync:
         - v1.14.4
         - v1.15.1
         - v1.15.4
+        - v1.15.5
   - source: docker.io/rancher/mirrored-cilium-operator-azure
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-operator-azure'
     type: repository
@@ -705,6 +714,7 @@ sync:
         - v1.14.4
         - v1.15.1
         - v1.15.4
+        - v1.15.5
   - source: docker.io/rancher/mirrored-cilium-operator-generic
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-operator-generic'
     type: repository
@@ -722,6 +732,7 @@ sync:
         - v1.14.4
         - v1.15.1
         - v1.15.4
+        - v1.15.5
   - source: docker.io/rancher/mirrored-cilium-startup-script
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-startup-script'
     type: repository
@@ -1128,6 +1139,8 @@ sync:
         - v1.27.12-rke2r1-windows-amd64
         - v1.27.13-rke2r1
         - v1.27.13-rke2r1-windows-amd64
+        - v1.27.14-rke2r1
+        - v1.27.14-rke2r1-windows-amd64
         - v1.27.5-rke2r1
         - v1.27.5-rke2r1-windows-amd64
         - v1.27.7-rke2r2
@@ -1177,6 +1190,7 @@ sync:
         - v1.27.11-rke2r1
         - v1.27.12-rke2r1
         - v1.27.13-rke2r1
+        - v1.27.14-rke2r1
         - v1.27.5-rke2r1
         - v1.27.7-rke2r2
         - v1.27.8-rke2r1
@@ -1223,6 +1237,7 @@ sync:
         - v1.27.11-k3s1
         - v1.27.12-k3s1
         - v1.27.13-k3s1
+        - v1.27.14-k3s1
         - v1.27.5-k3s1
         - v1.27.7-k3s2
         - v1.27.8-k3s2
@@ -1269,6 +1284,7 @@ sync:
         - v1.27.11-rke2r1
         - v1.27.12-rke2r1
         - v1.27.13-rke2r1
+        - v1.27.14-rke2r1
         - v1.27.5-rke2r1
         - v1.27.7-rke2r2
         - v1.27.8-rke2r1
