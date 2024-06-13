@@ -577,6 +577,22 @@ releases:
     serverArgs: *serverArgs-v8
     agentArgs: *agentArgs-v5
     featureVersions: *featureVersions-v1
+  - version: v1.27.15+k3s2
+    minChannelServerVersion: v2.8.0-alpha1
+    maxChannelServerVersion: v2.9.99
+    serverArgs: &serverArgs-v9
+      <<: *serverArgs-v8
+      supervisor-metrics:
+        type: boolean
+      write-kubeconfig-group:
+        type: string
+    agentArgs: &agentArgs-v6
+      <<: *agentArgs-v5
+      enable-pprof:
+        type: boolean
+      bind-address:
+        type: string
+    featureVersions: *featureVersions-v1
   - version: v1.28.8+k3s1
     minChannelServerVersion: v2.8.3-alpha1
     maxChannelServerVersion: v2.9.99
@@ -594,6 +610,12 @@ releases:
     maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v8
     agentArgs: *agentArgs-v5
+    featureVersions: *featureVersions-v1
+  - version: v1.28.11+k3s2
+    minChannelServerVersion: v2.8.3-alpha1
+    maxChannelServerVersion: v2.9.99
+    serverArgs: *serverArgs-v9
+    agentArgs: *agentArgs-v6
     featureVersions: *featureVersions-v1
   - version: v1.29.3+k3s1
     minChannelServerVersion: v2.9.0-alpha1
@@ -613,9 +635,21 @@ releases:
     serverArgs: *serverArgs-v8
     agentArgs: *agentArgs-v5
     featureVersions: *featureVersions-v1
+  - version: v1.29.6+k3s2
+    minChannelServerVersion: v2.9.0-alpha1
+    maxChannelServerVersion: v2.9.99
+    serverArgs: *serverArgs-v9
+    agentArgs: *agentArgs-v6
+    featureVersions: *featureVersions-v1
   - version: v1.30.1+k3s1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v8
     agentArgs: *agentArgs-v5
+    featureVersions: *featureVersions-v1
+  - version: v1.30.2+k3s2
+    minChannelServerVersion: v2.9.0-alpha1
+    maxChannelServerVersion: v2.9.99
+    serverArgs: *serverArgs-v9
+    agentArgs: *agentArgs-v6
     featureVersions: *featureVersions-v1
