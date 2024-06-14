@@ -85,6 +85,60 @@ volumes:
 ---
 
 kind: pipeline
+name: provisioning-tests-rke2-1-30
+
+platform:
+  os: linux
+  arch: amd64
+
+environment:
+  V2PROV_TEST_DIST: "rke2"
+  V2PROV_TEST_RUN_REGEX: "^Test_Provisioning_.*$"
+  KDM_TEST_K8S_MINOR: "30"
+
+steps:
+  - name: provisioning-tests-pr
+    image: rancher/dapper:v0.6.0
+    commands:
+      - dapper provisioning-tests
+    privileged: true
+    volumes:
+      - name: docker
+        path: /var/run/docker.sock
+    when:
+      event:
+        - pull_request
+  - name: provisioning-tests-push
+    image: rancher/dapper:v0.6.0
+    failure: ignore
+    commands:
+      - dapper provisioning-tests
+    privileged: true
+    volumes:
+      - name: docker
+        path: /var/run/docker.sock
+    when:
+      instance:
+        - drone-publish.rancher.io
+      ref:
+        include:
+          - "refs/heads/dev-v2.*"
+      event:
+        - push
+
+volumes:
+  - name: docker
+    host:
+      path: /var/run/docker.sock
+
+trigger:
+  event:
+    exclude:
+      - promote
+
+---
+
+kind: pipeline
 name: provisioning-tests-rke2-1-29
 
 platform:
@@ -311,6 +365,59 @@ environment:
   V2PROV_TEST_DIST: "rke2"
   V2PROV_TEST_RUN_REGEX: "^Test_Provisioning_.*$"
   KDM_TEST_K8S_MINOR: "25"
+
+steps:
+  - name: provisioning-tests-pr
+    image: rancher/dapper:v0.6.0
+    commands:
+      - dapper provisioning-tests
+    privileged: true
+    volumes:
+      - name: docker
+        path: /var/run/docker.sock
+    when:
+      event:
+        - pull_request
+  - name: provisioning-tests-push
+    image: rancher/dapper:v0.6.0
+    failure: ignore
+    commands:
+      - dapper provisioning-tests
+    privileged: true
+    volumes:
+      - name: docker
+        path: /var/run/docker.sock
+    when:
+      instance:
+        - drone-publish.rancher.io
+      ref:
+        include:
+          - "refs/heads/dev-v2.*"
+      event:
+        - push
+
+volumes:
+  - name: docker
+    host:
+      path: /var/run/docker.sock
+
+trigger:
+  event:
+    exclude:
+      - promote
+---
+
+kind: pipeline
+name: provisioning-tests-k3s-1-30
+
+platform:
+  os: linux
+  arch: amd64
+
+environment:
+  V2PROV_TEST_DIST: "k3s"
+  V2PROV_TEST_RUN_REGEX: "^Test_Provisioning_.*$"
+  KDM_TEST_K8S_MINOR: "30"
 
 steps:
   - name: provisioning-tests-pr
@@ -625,6 +732,60 @@ trigger:
 ---
 
 kind: pipeline
+name: provisioning-operations-tests-rke2-1-30
+
+platform:
+  os: linux
+  arch: amd64
+
+environment:
+  V2PROV_TEST_DIST: "rke2"
+  V2PROV_TEST_RUN_REGEX: "^Test_Operation_SetA_.*$"
+  KDM_TEST_K8S_MINOR: "30"
+
+steps:
+  - name: provisioning-operations-tests-pr
+    image: rancher/dapper:v0.6.0
+    commands:
+      - dapper provisioning-tests
+    privileged: true
+    volumes:
+      - name: docker
+        path: /var/run/docker.sock
+    when:
+      event:
+        - pull_request
+  - name: provisioning-operations-tests-push
+    image: rancher/dapper:v0.6.0
+    failure: ignore
+    commands:
+      - dapper provisioning-tests
+    privileged: true
+    volumes:
+      - name: docker
+        path: /var/run/docker.sock
+    when:
+      instance:
+        - drone-publish.rancher.io
+      ref:
+        include:
+          - "refs/heads/dev-v2.*"
+      event:
+        - push
+
+volumes:
+  - name: docker
+    host:
+      path: /var/run/docker.sock
+
+trigger:
+  event:
+    exclude:
+      - promote
+
+---
+
+kind: pipeline
 name: provisioning-operations-tests-rke2-1-29
 
 platform:
@@ -851,6 +1012,60 @@ environment:
   V2PROV_TEST_DIST: "rke2"
   V2PROV_TEST_RUN_REGEX: "^Test_Operation_SetA_.*$"
   KDM_TEST_K8S_MINOR: "25"
+
+steps:
+  - name: provisioning-operations-tests-pr
+    image: rancher/dapper:v0.6.0
+    commands:
+      - dapper provisioning-tests
+    privileged: true
+    volumes:
+      - name: docker
+        path: /var/run/docker.sock
+    when:
+      event:
+        - pull_request
+  - name: provisioning-operations-tests-push
+    image: rancher/dapper:v0.6.0
+    failure: ignore
+    commands:
+      - dapper provisioning-tests
+    privileged: true
+    volumes:
+      - name: docker
+        path: /var/run/docker.sock
+    when:
+      instance:
+        - drone-publish.rancher.io
+      ref:
+        include:
+          - "refs/heads/dev-v2.*"
+      event:
+        - push
+
+volumes:
+  - name: docker
+    host:
+      path: /var/run/docker.sock
+
+trigger:
+  event:
+    exclude:
+      - promote
+
+---
+
+kind: pipeline
+name: provisioning-operations-tests-k3s-1-30
+
+platform:
+  os: linux
+  arch: amd64
+
+environment:
+  V2PROV_TEST_DIST: "k3s"
+  V2PROV_TEST_RUN_REGEX: "^Test_Operation_SetA_.*$"
+  KDM_TEST_K8S_MINOR: "30"
 
 steps:
   - name: provisioning-operations-tests-pr
