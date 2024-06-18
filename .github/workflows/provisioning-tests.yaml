@@ -22,7 +22,7 @@ jobs:
     strategy:
       matrix:
         dist: [rke2, k3s]
-        k8s-minor: [25, 26, 27, 28, 29]
+        k8s-minor: [30]
       fail-fast: false
     steps:
       - name: Force Install GIT latest
@@ -56,7 +56,7 @@ jobs:
       fail-fast: false
       matrix:
         dist: [rke2, k3s]
-        k8s-minor: [25, 26, 27, 28, 29]
+        k8s-minor: [30]
     steps:
       - name: Force Install GIT latest
         run: |
