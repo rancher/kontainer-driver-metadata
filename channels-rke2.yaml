@@ -120,8 +120,6 @@ releases:
         type: bool
       audit-policy-file:
         type: string
-      system-default-registry:
-        type: string
       protect-kernel-defaults:
         type: boolean
         default: false
