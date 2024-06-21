@@ -335,6 +335,7 @@ sync:
         - v1.27.12-rancher1
         - v1.27.13-rancher1
         - v1.27.14-rancher1
+        - v1.27.15-rancher1
         - v1.27.6-rancher1
         - v1.27.8-rancher2
   - source: docker.io/rancher/k3s-upgrade
