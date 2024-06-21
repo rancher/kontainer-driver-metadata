@@ -65,7 +65,7 @@ func loadRKEDefaultK8sVersions() map[string]string {
 	return map[string]string{
 		"0.3": "v1.16.3-rancher1-1",
 		// rke will use default if its version is absent
-		"default": "v1.30.1-rancher1-1",
+		"default": "v1.30.2-rancher1-1",
 	}
 }
 
