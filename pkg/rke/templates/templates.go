@@ -95,7 +95,6 @@ const (
 	aciv6032 = "aci-v6.0.3.2"
 	aciv6033 = "aci-v6.0.3.3"
 	aciv6041 = "aci-v6.0.4.1"
-	aciv6042 = "aci-v6.0.4.2"
 
 	nginxIngressv18          = "nginxingress-v1.8"
 	nginxIngressV115         = "nginxingress-v1.15"
@@ -268,8 +267,7 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.27.8-rancher2-1 <1.27.8-rancher2-2":   aciv6031,
 			">=1.27.8-rancher2-2 <1.27.10-rancher1-2":  aciv6032,
 			">=1.27.10-rancher1-2 <1.27.11-rancher1-1": aciv6033,
-			">=1.27.11-rancher1-1 <1.27.15-rancher1-1": aciv6041,
-			">=1.27.15-rancher1-1":                     aciv6042,
+			">=1.27.11-rancher1-1":                     aciv6041,
 		},
 		kdm.NginxIngress: {
 			">=1.8.0-rancher0 <1.13.10-rancher1-3":  nginxIngressv18,
@@ -406,7 +404,6 @@ func getTemplates() map[string]string {
 		aciv6032: AciTemplateV6032,
 		aciv6033: AciTemplateV6033,
 		aciv6041: AciTemplateV6041,
-		aciv6042: AciTemplateV6042,
 
 		nginxIngressv18:          NginxIngressTemplate,
 		nginxIngressV115:         NginxIngressTemplateV0251Rancher1,
