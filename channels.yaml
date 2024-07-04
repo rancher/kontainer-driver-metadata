@@ -573,3 +573,19 @@ releases:
     serverArgs: *serverArgs-v8
     agentArgs: *agentArgs-v5
     featureVersions: *featureVersions-v1
+  - version: v1.27.15+k3s2
+    minChannelServerVersion: v2.7.11-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: &serverArgs-v9
+      <<: *serverArgs-v8
+      supervisor-metrics:
+        type: boolean
+      write-kubeconfig-group:
+        type: string
+    agentArgs: &agentArgs-v6
+      <<: *agentArgs-v5
+      enable-pprof:
+        type: boolean
+      bind-address:
+        type: string
+    featureVersions: *featureVersions-v1
