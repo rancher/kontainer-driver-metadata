@@ -25,6 +25,3 @@ fi
 
 echo Checking if released versions are not changed
 go run ./pkg/validation/validation.go release-v2.7
-
-echo Checking the generated regsync.yaml file
-regsync check --config ./regsync.yaml

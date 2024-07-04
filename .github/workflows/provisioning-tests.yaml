@@ -1,0 +1,78 @@
+name: Provisioning tests
+
+on:
+  push: 
+    branches:
+      - 'dev-v*'
+      - 'release-v*'
+  pull_request:
+    branches:
+      - 'dev-v*'
+      - 'release-v*'
+
+jobs:
+  provisioning-test:
+    permissions:
+      contents: read
+    runs-on: runs-on,runner=4cpu-linux-x64,image=legacy-cgroups-for-x64,run-id=${{ github.run_id }}
+    container: 
+      image: rancher/dapper:v0.6.0
+      options: --privileged
+    timeout-minutes: 90
+    strategy:
+      matrix:
+        dist: [rke2, k3s]
+        k8s-minor: [23, 24, 25, 26, 27]
+      fail-fast: false
+    steps:
+      - name: Force Install GIT latest
+        run: |
+          apk add git --update-cache
+          git --version
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: "0"
+      - name: Provisioning test
+        run: |
+          dapper provisioning-tests
+        env:
+          V2PROV_TEST_DIST: ${{ matrix.dist }}
+          V2PROV_TEST_RUN_REGEX: "^Test_Provisioning_.*$"
+          KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
+          PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
+          PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
+
+  provisioning-operations-test:
+    permissions:
+      contents: read
+    runs-on: runs-on,runner=4cpu-linux-x64,image=legacy-cgroups-for-x64,run-id=${{ github.run_id }}
+    container: 
+      image: rancher/dapper:v0.6.0
+      options: --privileged
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        dist: [rke2, k3s]
+        k8s-minor: [23, 24, 25, 26, 27]
+    steps:
+      - name: Force Install GIT latest
+        run: |
+          apk add git --update-cache
+          git --version
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: "0"
+      - name: Provisioning Operations tests
+        run: |
+          dapper provisioning-tests
+        env:
+          V2PROV_TEST_DIST: ${{ matrix.dist }}
+          V2PROV_TEST_RUN_REGEX: "^Test_Operation_SetA_.*$"
+          KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
+          PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
+          PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
