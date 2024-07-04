@@ -51,6 +51,7 @@ sync:
         - v3.27.0-build20240206
         - v3.27.2-build20240308
         - v3.27.3-build20240423
+        - v3.28.0-build20240625
   - source: docker.io/rancher/hardened-cluster-autoscaler
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-cluster-autoscaler'
     type: repository
@@ -73,6 +74,7 @@ sync:
         - v1.2.0-build20231009
         - v1.4.0-build20240122
         - v1.4.1-build20240325
+        - v1.4.1-build20240430
   - source: docker.io/rancher/hardened-coredns
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-coredns'
     type: repository
@@ -101,6 +103,7 @@ sync:
     type: repository
     tags:
       allow:
+        - v3.5.13-k3s1-build20240531
         - v3.5.4-k3s1-build20220504
         - v3.5.4-k3s1-build20221011
         - v3.5.7-k3s1-build20230406
@@ -123,6 +126,7 @@ sync:
         - v0.24.2-build20240122
         - v0.24.3-build20240307
         - v0.25.1-build20240423
+        - v0.25.4-build20240610
   - source: docker.io/rancher/hardened-ib-sriov-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-ib-sriov-cni'
     type: repository
@@ -132,6 +136,7 @@ sync:
         - v1.0.2-build20221014
         - v1.0.2-build20230607
         - v1.0.2-build20231009
+        - v1.0.3-build20240327
   - source: docker.io/rancher/hardened-k8s-metrics-server
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-k8s-metrics-server'
     type: repository
@@ -188,6 +193,7 @@ sync:
         - v1.27.12-rke2r1-build20240315
         - v1.27.13-rke2r1-build20240416
         - v1.27.14-rke2r1-build20240515
+        - v1.27.15-rke2r1-build20240619
         - v1.27.5-rke2r1-build20230824
         - v1.27.7-rke2r2-build20231102
         - v1.27.8-rke2r1-build20231115
@@ -204,6 +210,13 @@ sync:
         - v4.0.2-build20230811
         - v4.0.2-build20231009
         - v4.0.2-build20240208
+        - v4.0.2-build20240418
+  - source: docker.io/rancher/hardened-node-feature-discovery
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-node-feature-discovery'
+    type: repository
+    tags:
+      allow:
+        - v0.15.4-build20240513
   - source: docker.io/rancher/hardened-sriov-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-cni'
     type: repository
@@ -213,6 +226,7 @@ sync:
         - v2.6.3-build20221014
         - v2.6.3-build20230607
         - v2.6.3-build20231009
+        - v2.7.0-build20240327
   - source: docker.io/rancher/hardened-sriov-network-config-daemon
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-config-daemon'
     type: repository
@@ -222,6 +236,7 @@ sync:
         - v1.2.0-build20221014
         - v1.2.0-build20230607
         - v1.2.0-build20231010
+        - v1.2.0-build20240327
   - source: docker.io/rancher/hardened-sriov-network-device-plugin
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-device-plugin'
     type: repository
@@ -231,6 +246,7 @@ sync:
         - v3.5.1-build20221014
         - v3.5.1-build20230607
         - v3.5.1-build20231009
+        - v3.6.2-build20240327
   - source: docker.io/rancher/hardened-sriov-network-operator
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-operator'
     type: repository
@@ -240,6 +256,7 @@ sync:
         - v1.2.0-build20221014
         - v1.2.0-build20230607
         - v1.2.0-build20231010
+        - v1.2.0-build20240327
   - source: docker.io/rancher/hardened-sriov-network-resources-injector
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-resources-injector'
     type: repository
@@ -249,6 +266,7 @@ sync:
         - v1.5-build20221014
         - v1.5-build20230607
         - v1.5-build20231009
+        - v1.5-build20240327
   - source: docker.io/rancher/hardened-sriov-network-webhook
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-network-webhook'
     type: repository
@@ -258,6 +276,7 @@ sync:
         - v1.2.0-build20221014
         - v1.2.0-build20230607
         - v1.2.0-build20231010
+        - v1.2.0-build20240327
   - source: docker.io/rancher/hardened-whereabouts
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-whereabouts'
     type: repository
@@ -270,6 +289,7 @@ sync:
         - v0.6.2-build20230717
         - v0.6.3-build20240109
         - v0.6.3-build20240208
+        - v0.7.0-build20240429
   - source: docker.io/rancher/harvester-cloud-provider
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/harvester-cloud-provider'
     type: repository
@@ -1031,6 +1051,7 @@ sync:
         - nginx-1.9.3-hardened1
         - nginx-1.9.4-rancher1
         - nginx-1.9.6-hardened1
+        - v1.10.1-hardened1
   - source: docker.io/rancher/pause
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/pause'
     type: repository
@@ -1062,6 +1083,7 @@ sync:
         - v1.26.3-build20230608
         - v1.28.2-build20231016
         - v1.29.3-build20240412
+        - v1.29.3-build20240515
   - source: docker.io/rancher/rke2-runtime
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-runtime'
     type: repository
@@ -1145,6 +1167,8 @@ sync:
         - v1.27.13-rke2r1-windows-amd64
         - v1.27.14-rke2r1
         - v1.27.14-rke2r1-windows-amd64
+        - v1.27.15-rke2r1
+        - v1.27.15-rke2r1-windows-amd64
         - v1.27.5-rke2r1
         - v1.27.5-rke2r1-windows-amd64
         - v1.27.7-rke2r2
@@ -1195,6 +1219,7 @@ sync:
         - v1.27.12-rke2r1
         - v1.27.13-rke2r1
         - v1.27.14-rke2r1
+        - v1.27.15-rke2r1
         - v1.27.5-rke2r1
         - v1.27.7-rke2r2
         - v1.27.8-rke2r1
@@ -1290,6 +1315,7 @@ sync:
         - v1.27.12-rke2r1
         - v1.27.13-rke2r1
         - v1.27.14-rke2r1
+        - v1.27.15-rke2r1
         - v1.27.5-rke2r1
         - v1.27.7-rke2r2
         - v1.27.8-rke2r1
