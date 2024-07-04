@@ -1913,6 +1913,39 @@ releases:
         repo: rancher-rke2-charts
         version: 1.15.500
     featureVersions: *featureVersions-v1
+  - version: v1.27.15+rke2r1
+    minChannelServerVersion: v2.8.0-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: &serverArgs-v1-27-15-rke2r1
+      <<: *serverArgs-v1-27-13-rke2r1
+      supervisor-metrics:
+        type: boolean
+      write-kubeconfig-group:
+        type: string
+    agentArgs: &agentArgs-v1-27-15-rke2r1
+      <<: *agentArgs-v1-25-15-rke2r2
+      enable-pprof:
+        type: boolean
+      bind-address:
+        type: string
+    charts: &charts-v1-27-15-rke2r1
+      <<: *charts-v1-27-14-rke2r1
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.28.0-build2024062503
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.10.101
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.0.205
+      rke2-flannel:
+        repo: rancher-rke2-charts
+        version: v0.25.400
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.2.400
+    featureVersions: *featureVersions-v1
   - version: v1.28.8+rke2r1
     minChannelServerVersion: v2.8.3-alpha1
     maxChannelServerVersion: v2.8.99
@@ -1998,4 +2031,37 @@ releases:
       rke2-cilium:
         repo: rancher-rke2-charts
         version: 1.15.500
+    featureVersions: *featureVersions-v1
+  - version: v1.28.11+rke2r1
+    minChannelServerVersion: v2.8.3-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: &serverArgs-v1-28-11-rke2r1
+      <<: *serverArgs-v1-28-9-rke2r1
+      supervisor-metrics:
+        type: boolean
+      write-kubeconfig-group:
+        type: string
+    agentArgs: &agentArgs-v1-28-11-rke2r1
+      <<: *agentArgs-v1-28-8-rke2r1
+      enable-pprof:
+        type: boolean
+      bind-address:
+        type: string
+    charts: &charts-v1-28-11-rke2r1
+      <<: *charts-v1-28-10-rke2r1
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.28.0-build2024062503
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.10.101
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.0.205
+      rke2-flannel:
+        repo: rancher-rke2-charts
+        version: v0.25.400
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.2.400
     featureVersions: *featureVersions-v1
