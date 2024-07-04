@@ -27,9 +27,6 @@ if [ -z "${CHANNELS_FILE}" ]; then
 fi
 
 # Set previous commit SHA
-
-env
-
 if [ "${GITHUB_EVENT_NAME}" == "push" ]; then
   export PREV_COMMIT_SHA=${PREV_COMMIT_PUSH_SHA}
 elif [ "${GITHUB_EVENT_NAME}" == "pull_request" ]; then
