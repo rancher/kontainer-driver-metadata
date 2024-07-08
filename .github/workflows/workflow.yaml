@@ -80,6 +80,7 @@ jobs:
           destination: releases.rancher.com/kontainer-driver-metadata/${{ github.ref_name }}
           parent: false
           predefinedAcl: publicRead
+          process_gcloudignore: false
           headers: |-
             cache-control: public,no-cache,proxy-revalidate
 
@@ -101,5 +102,6 @@ jobs:
             secret/data/github/repo/${{ github.repository }}/github-token/credentials token | PAT_TOKEN
       - name: Run dispatch
         run: |
-          echo ${{ env.PAT_TOKEN }} | gh auth login --with-token
           gh workflow run "Go Generate" --repo rancher/rke --ref release/v1.4 -F source_author=${{ github.actor }}
+        env:
+          GH_TOKEN: ${{ env.PAT_TOKEN }}
