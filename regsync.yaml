@@ -1115,14 +1115,13 @@ sync:
     type: repository
     tags:
       allow:
+        - v0.1.100
         - v0.1.80
         - v0.1.87
         - v0.1.88
         - v0.1.89
         - v0.1.90
         - v0.1.96
-        - v0.1.97
-        - v0.1.99
   - source: docker.io/rancher/rke2-cloud-provider
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-cloud-provider'
     type: repository
