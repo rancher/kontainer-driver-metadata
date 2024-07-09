@@ -1084,6 +1084,7 @@ sync:
     type: repository
     tags:
       allow:
+        - v0.1.100
         - v0.1.80
         - v0.1.87
         - v0.1.88
