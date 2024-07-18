@@ -589,3 +589,9 @@ releases:
       bind-address:
         type: string
     featureVersions: *featureVersions-v1
+  - version: v1.27.16+k3s1
+    minChannelServerVersion: v2.7.11-alpha1
+    maxChannelServerVersion: v2.7.99
+    serverArgs: *serverArgs-v9
+    agentArgs: *agentArgs-v6
+    featureVersions: *featureVersions-v1
