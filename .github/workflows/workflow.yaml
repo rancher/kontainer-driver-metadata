@@ -35,7 +35,6 @@ jobs:
       contents: read
       id-token: write
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     needs: validate
     container: 
       image: rancher/dapper:v0.6.0
