@@ -404,6 +404,7 @@ sync:
         - v1.27.13-k3s1
         - v1.27.14-k3s1
         - v1.27.15-k3s2
+        - v1.27.16-k3s1
         - v1.27.5-k3s1
         - v1.27.7-k3s2
         - v1.27.8-k3s2
@@ -441,6 +442,7 @@ sync:
         - v0.0.24
         - v0.0.26
         - v0.0.27
+        - v0.0.28
   - source: docker.io/rancher/longhornio-csi-attacher
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/longhornio-csi-attacher'
     type: repository
@@ -1270,6 +1272,7 @@ sync:
         - v1.27.13-k3s1
         - v1.27.14-k3s1
         - v1.27.15-k3s2
+        - v1.27.16-k3s1
         - v1.27.5-k3s1
         - v1.27.7-k3s2
         - v1.27.8-k3s2
