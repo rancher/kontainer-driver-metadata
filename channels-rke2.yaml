@@ -1955,3 +1955,31 @@ releases:
         repo: rancher-rke2-charts
         version: 0.2.400
     featureVersions: *featureVersions-v1
+  - version: v1.27.16-rc2+rke2r1
+    minChannelServerVersion: v2.7.11-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: &serverArgs-v1-27-16-rc2-rke2r1
+      <<: *serverArgs-v1-27-15-rke2r1
+    agentArgs: &agentArgs-v1-27-16-rc2-rke2r1
+      <<: *agentArgs-v1-27-15-rke2r1
+    charts: &charts-v1-27-16-rc2-rke2r1
+      <<: *charts-v1-27-15-rke2r1
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.10.102
+      rke2-traefik:
+        repo: rancher-rke2-charts
+        version: 25.0.000
+      rke2-traefik-crd:
+        repo: rancher-rke2-charts
+        version: 25.0.000
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.0.206
+      rancher-vsphere-cpi:
+        repo: rancher-rke2-charts
+        version: 1.8.000
+      rancher-vsphere-csi:
+        repo: rancher-rke2-charts
+        version: 3.3.0-rancher100
+    featureVersions: *featureVersions-v1
