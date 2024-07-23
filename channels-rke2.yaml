@@ -2104,4 +2104,7 @@ releases:
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
         version: 3.3.0-rancher100
+      rke2-flannel:
+        repo: rancher-rke2-charts
+        version: v0.25.402
     featureVersions: *featureVersions-v1
