@@ -196,11 +196,13 @@ sync:
         - v1.27.13-rke2r1-build20240416
         - v1.27.14-rke2r1-build20240515
         - v1.27.15-rke2r1-build20240619
+        - v1.27.16-rke2r1-build20240717
         - v1.27.5-rke2r1-build20230824
         - v1.27.7-rke2r2-build20231102
         - v1.27.8-rke2r1-build20231115
         - v1.28.10-rke2r1-build20240514
         - v1.28.11-rke2r1-build20240619
+        - v1.28.12-rke2r1-build20240717
         - v1.28.8-rke2r1-build20240315
         - v1.28.9-rke2r1-build20240416
   - source: docker.io/rancher/hardened-multus-cni
@@ -217,6 +219,7 @@ sync:
         - v4.0.2-build20231009
         - v4.0.2-build20240208
         - v4.0.2-build20240418
+        - v4.0.2-build20240612
   - source: docker.io/rancher/hardened-node-feature-discovery
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-node-feature-discovery'
     type: repository
@@ -808,6 +811,7 @@ sync:
         - v2.7.0
         - v3.0.1
         - v3.1.2
+        - v3.3.0
   - source: docker.io/rancher/mirrored-cloud-provider-vsphere-csi-release-syncer
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cloud-provider-vsphere-csi-release-syncer'
     type: repository
@@ -820,6 +824,7 @@ sync:
         - v2.7.0
         - v3.0.1
         - v3.1.2
+        - v3.3.0
   - source: docker.io/rancher/mirrored-cluster-proportional-autoscaler
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cluster-proportional-autoscaler'
     type: repository
@@ -996,11 +1001,13 @@ sync:
         - v3.4.0
         - v4.2.0
         - v4.3.0
+        - v4.5.1
   - source: docker.io/rancher/mirrored-sig-storage-csi-node-driver-registrar
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-sig-storage-csi-node-driver-registrar'
     type: repository
     tags:
       allow:
+        - v2.10.1
         - v2.5.0
         - v2.5.1
         - v2.7.0
@@ -1014,11 +1021,13 @@ sync:
         - v3.2.1
         - v3.4.0
         - v3.5.0
+        - v4.0.1
   - source: docker.io/rancher/mirrored-sig-storage-csi-resizer
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-sig-storage-csi-resizer'
     type: repository
     tags:
       allow:
+        - v1.10.1
         - v1.4.0
         - v1.7.0
         - v1.8.0
@@ -1028,12 +1037,14 @@ sync:
     tags:
       allow:
         - v6.2.1
+        - v7.0.2
   - source: docker.io/rancher/mirrored-sig-storage-livenessprobe
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-sig-storage-livenessprobe'
     type: repository
     tags:
       allow:
         - v2.10.0
+        - v2.12.0
         - v2.6.0
         - v2.7.0
         - v2.9.0
@@ -1189,6 +1200,8 @@ sync:
         - v1.27.14-rke2r1-windows-amd64
         - v1.27.15-rke2r1
         - v1.27.15-rke2r1-windows-amd64
+        - v1.27.16-rc3-rke2r1
+        - v1.27.16-rc3-rke2r1-windows-amd64
         - v1.27.5-rke2r1
         - v1.27.5-rke2r1-windows-amd64
         - v1.27.7-rke2r2
@@ -1199,6 +1212,8 @@ sync:
         - v1.28.10-rke2r1-windows-amd64
         - v1.28.11-rke2r1
         - v1.28.11-rke2r1-windows-amd64
+        - v1.28.12-rc3-rke2r1
+        - v1.28.12-rc3-rke2r1-windows-amd64
         - v1.28.8-rke2r1
         - v1.28.8-rke2r1-windows-amd64
         - v1.28.9-rke2r1
@@ -1248,11 +1263,13 @@ sync:
         - v1.27.13-rke2r1
         - v1.27.14-rke2r1
         - v1.27.15-rke2r1
+        - v1.27.16-rc3-rke2r1
         - v1.27.5-rke2r1
         - v1.27.7-rke2r2
         - v1.27.8-rke2r1
         - v1.28.10-rke2r1
         - v1.28.11-rke2r1
+        - v1.28.12-rc3-rke2r1
         - v1.28.8-rke2r1
         - v1.28.9-rke2r1
   - source: docker.io/rancher/system-agent-installer-k3s
@@ -1352,10 +1369,12 @@ sync:
         - v1.27.13-rke2r1
         - v1.27.14-rke2r1
         - v1.27.15-rke2r1
+        - v1.27.16-rc3-rke2r1
         - v1.27.5-rke2r1
         - v1.27.7-rke2r2
         - v1.27.8-rke2r1
         - v1.28.10-rke2r1
         - v1.28.11-rke2r1
+        - v1.28.12-rc3-rke2r1
         - v1.28.8-rke2r1
         - v1.28.9-rke2r1
