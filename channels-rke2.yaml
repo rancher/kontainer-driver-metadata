@@ -2091,7 +2091,7 @@ releases:
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-28-16-rc4-rke2r1
-      <<: *charts-v1-28-10-rke2r1
+      <<: *charts-v1-28-11-rke2r1
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.10.102
