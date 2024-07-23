@@ -1949,10 +1949,8 @@ releases:
   - version: v1.27.16-rc4+rke2r1
     minChannelServerVersion: v2.8.0-alpha1
     maxChannelServerVersion: v2.8.99
-    serverArgs: &serverArgs-v1-27-16-rc4-rke2r1
-      <<: *serverArgs-v1-27-15-rke2r1
-    agentArgs: &agentArgs-v1-27-16-rc4-rke2r1
-      <<: *agentArgs-v1-25-15-rke2r2
+    serverArgs: *serverArgs-v1-27-15-rke2r1
+    agentArgs: *agentArgs-v1-25-15-rke2r2
     charts: &charts-v1-27-16-rc4-rke2r1
       <<: *charts-v1-27-15-rke2r1
       rke2-ingress-nginx:
@@ -2090,10 +2088,8 @@ releases:
   - version: v1.28.12-rc4+rke2r1
     minChannelServerVersion: v2.8.3-alpha1
     maxChannelServerVersion: v2.8.99
-    serverArgs: &serverArgs-v1-28-12-rc4-rke2r1
-      <<: *serverArgs-v1-28-11-rke2r1
-    agentArgs: &agentArgs-v1-28-12-rc4-rke2r1
-      <<: *agentArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-11-rke2r1
+    agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-28-16-rc4-rke2r1
       <<: *charts-v1-28-10-rke2r1
       rke2-ingress-nginx:
