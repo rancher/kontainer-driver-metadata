@@ -1958,12 +1958,6 @@ releases:
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.10.102
-      rke2-traefik:
-        repo: rancher-rke2-charts
-        version: 25.0.000
-      rke2-traefik-crd:
-        repo: rancher-rke2-charts
-        version: 25.0.000
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.0.206
@@ -2105,12 +2099,6 @@ releases:
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.10.102
-      rke2-traefik:
-        repo: rancher-rke2-charts
-        version: 25.0.000
-      rke2-traefik-crd:
-        repo: rancher-rke2-charts
-        version: 25.0.000
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.0.206
