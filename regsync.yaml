@@ -1200,8 +1200,8 @@ sync:
         - v1.27.14-rke2r1-windows-amd64
         - v1.27.15-rke2r1
         - v1.27.15-rke2r1-windows-amd64
-        - v1.27.16-rc4-rke2r1
-        - v1.27.16-rc4-rke2r1-windows-amd64
+        - v1.27.16-rke2r1
+        - v1.27.16-rke2r1-windows-amd64
         - v1.27.5-rke2r1
         - v1.27.5-rke2r1-windows-amd64
         - v1.27.7-rke2r2
@@ -1212,8 +1212,8 @@ sync:
         - v1.28.10-rke2r1-windows-amd64
         - v1.28.11-rke2r1
         - v1.28.11-rke2r1-windows-amd64
-        - v1.28.12-rc4-rke2r1
-        - v1.28.12-rc4-rke2r1-windows-amd64
+        - v1.28.12-rke2r1
+        - v1.28.12-rke2r1-windows-amd64
         - v1.28.8-rke2r1
         - v1.28.8-rke2r1-windows-amd64
         - v1.28.9-rke2r1
@@ -1263,13 +1263,13 @@ sync:
         - v1.27.13-rke2r1
         - v1.27.14-rke2r1
         - v1.27.15-rke2r1
-        - v1.27.16-rc4-rke2r1
+        - v1.27.16-rke2r1
         - v1.27.5-rke2r1
         - v1.27.7-rke2r2
         - v1.27.8-rke2r1
         - v1.28.10-rke2r1
         - v1.28.11-rke2r1
-        - v1.28.12-rc4-rke2r1
+        - v1.28.12-rke2r1
         - v1.28.8-rke2r1
         - v1.28.9-rke2r1
   - source: docker.io/rancher/system-agent-installer-k3s
@@ -1369,12 +1369,12 @@ sync:
         - v1.27.13-rke2r1
         - v1.27.14-rke2r1
         - v1.27.15-rke2r1
-        - v1.27.16-rc4-rke2r1
+        - v1.27.16-rke2r1
         - v1.27.5-rke2r1
         - v1.27.7-rke2r2
         - v1.27.8-rke2r1
         - v1.28.10-rke2r1
         - v1.28.11-rke2r1
-        - v1.28.12-rc4-rke2r1
+        - v1.28.12-rke2r1
         - v1.28.8-rke2r1
         - v1.28.9-rke2r1
