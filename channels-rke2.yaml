@@ -1948,12 +1948,12 @@ releases:
         repo: rancher-rke2-charts
         version: 0.2.400
     featureVersions: *featureVersions-v1
-  - version: v1.27.16-rc4+rke2r1
+  - version: v1.27.16+rke2r1
     minChannelServerVersion: v2.8.0-alpha1
     maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v1-27-15-rke2r1
     agentArgs: *agentArgs-v1-27-15-rke2r1
-    charts: &charts-v1-27-16-rc4-rke2r1
+    charts: &charts-v1-27-16-rke2r1
       <<: *charts-v1-27-15-rke2r1
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
@@ -2087,12 +2087,12 @@ releases:
         repo: rancher-rke2-charts
         version: 0.2.400
     featureVersions: *featureVersions-v1
-  - version: v1.28.12-rc4+rke2r1
+  - version: v1.28.12+rke2r1
     minChannelServerVersion: v2.8.3-alpha1
     maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
-    charts: &charts-v1-28-12-rc4-rke2r1
+    charts: &charts-v1-28-12-rke2r1
       <<: *charts-v1-28-11-rke2r1
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
@@ -2135,12 +2135,12 @@ releases:
     agentArgs: *agentArgs-v1-28-8-rke2r1
     charts: *charts-v1-28-11-rke2r1
     featureVersions: *featureVersions-v1
-  - version: v1.29.7-rc4+rke2r1
+  - version: v1.29.7+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v1-28-9-rke2r1
     agentArgs: *agentArgs-v1-28-8-rke2r1
-    charts: &charts-v1-29-7-rc4-rke2r1
+    charts: &charts-v1-29-7-rke2r1
       <<: *charts-v1-28-11-rke2r1
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
@@ -2185,12 +2185,12 @@ releases:
         repo: rancher-rke2-charts
         version: 0.2.400
     featureVersions: *featureVersions-v1
-  - version: v1.30.3-rc5+rke2r1
+  - version: v1.30.3+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.9.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
-    charts: &charts-v1-30-3-rc5-rke2r1
+    charts: &charts-v1-30-3-rke2r1
       <<: *charts-v1-30-2-rke2r1
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
