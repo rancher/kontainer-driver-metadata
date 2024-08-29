@@ -1977,3 +1977,28 @@ releases:
         repo: rancher-rke2-charts
         version: 3.3.0-rancher100
     featureVersions: *featureVersions-v1
+  - version: v1.27.16+rke2r2
+    minChannelServerVersion: v2.7.11-alpha1
+    maxChannelServerVersion: v2.8.99
+    serverArgs: &serverArgs-v1-27-16-rke2r2
+      <<: *serverArgs-v1-27-16-rke2r1
+    agentArgs: &agentArgs-v1-27-16-rke2r2
+      <<: *agentArgs-v1-27-16-rke2r1
+    charts: &charts-v1-27-16-rke2r2
+      <<: *charts-v1-27-16-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.16.000
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.28.1-build2024080600
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.10.401
+      rke2-flannel:
+        repo: rancher-rke2-charts
+        version: v0.25.501
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.1800
+    featureVersions: *featureVersions-v1
