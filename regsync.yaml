@@ -58,6 +58,7 @@ sync:
         - v3.27.3-build20240423
         - v3.28.0-build20240625
         - v3.28.1-build20240806
+        - v3.28.1-build20240827
   - source: docker.io/rancher/hardened-cluster-autoscaler
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-cluster-autoscaler'
     type: repository
@@ -135,6 +136,7 @@ sync:
         - v0.25.1-build20240423
         - v0.25.4-build20240610
         - v0.25.5-build20240801
+        - v0.25.6-build20240828
   - source: docker.io/rancher/hardened-ib-sriov-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-ib-sriov-cni'
     type: repository
@@ -223,6 +225,7 @@ sync:
         - v1.30.2-rke2r1-build20240619
         - v1.30.3-rke2r1-build20240717
         - v1.30.4-rke2r1-build20240815
+        - v1.31.0-rke2r1-build20240815
   - source: docker.io/rancher/hardened-multus-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-multus-cni'
     type: repository
@@ -326,6 +329,7 @@ sync:
         - v0.1.5
         - v0.2.0
         - v0.2.1
+        - v0.2.2
   - source: docker.io/rancher/harvester-csi-driver
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/harvester-csi-driver'
     type: repository
@@ -475,6 +479,7 @@ sync:
         - v0.8.2-build20230815
         - v0.8.3-build20240228
         - v0.8.4-build20240523
+        - v0.9.1-build20240731
   - source: docker.io/rancher/klipper-lb
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/klipper-lb'
     type: repository
@@ -700,6 +705,7 @@ sync:
         - v1.15.4
         - v1.15.5
         - v1.16.0
+        - v1.16.1
   - source: docker.io/rancher/mirrored-cilium-cilium-envoy
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-cilium-envoy'
     type: repository
@@ -734,6 +740,7 @@ sync:
         - v1.15.4
         - v1.15.5
         - v1.16.0
+        - v1.16.1
   - source: docker.io/rancher/mirrored-cilium-hubble-relay
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-hubble-relay'
     type: repository
@@ -750,6 +757,7 @@ sync:
         - v1.15.4
         - v1.15.5
         - v1.16.0
+        - v1.16.1
   - source: docker.io/rancher/mirrored-cilium-hubble-ui
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-hubble-ui'
     type: repository
@@ -801,6 +809,7 @@ sync:
         - v1.15.4
         - v1.15.5
         - v1.16.0
+        - v1.16.1
   - source: docker.io/rancher/mirrored-cilium-operator-azure
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-operator-azure'
     type: repository
@@ -820,6 +829,7 @@ sync:
         - v1.15.4
         - v1.15.5
         - v1.16.0
+        - v1.16.1
   - source: docker.io/rancher/mirrored-cilium-operator-generic
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-operator-generic'
     type: repository
@@ -839,12 +849,19 @@ sync:
         - v1.15.4
         - v1.15.5
         - v1.16.0
+        - v1.16.1
   - source: docker.io/rancher/mirrored-cilium-startup-script
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-startup-script'
     type: repository
     tags:
       allow:
         - d69851597ea019af980891a4628fb36b7880ec26
+  - source: docker.io/rancher/mirrored-cloud-provider-vsphere
+    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cloud-provider-vsphere'
+    type: repository
+    tags:
+      allow:
+        - v1.31.0
   - source: docker.io/rancher/mirrored-cloud-provider-vsphere-cpi-release-manager
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cloud-provider-vsphere-cpi-release-manager'
     type: repository
@@ -878,6 +895,7 @@ sync:
         - v3.0.1
         - v3.1.2
         - v3.3.0
+        - v3.3.1
   - source: docker.io/rancher/mirrored-cloud-provider-vsphere-csi-release-syncer
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cloud-provider-vsphere-csi-release-syncer'
     type: repository
@@ -891,6 +909,7 @@ sync:
         - v3.0.1
         - v3.1.2
         - v3.3.0
+        - v3.3.1
   - source: docker.io/rancher/mirrored-cluster-proportional-autoscaler
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cluster-proportional-autoscaler'
     type: repository
@@ -1077,12 +1096,14 @@ sync:
         - v4.2.0
         - v4.3.0
         - v4.5.1
+        - v4.7.0
   - source: docker.io/rancher/mirrored-sig-storage-csi-node-driver-registrar
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-sig-storage-csi-node-driver-registrar'
     type: repository
     tags:
       allow:
         - v2.10.1
+        - v2.12.0
         - v2.5.0
         - v2.5.1
         - v2.7.0
@@ -1120,6 +1141,7 @@ sync:
       allow:
         - v2.10.0
         - v2.12.0
+        - v2.14.0
         - v2.6.0
         - v2.7.0
         - v2.9.0
@@ -1319,6 +1341,8 @@ sync:
         - v1.30.3-rke2r1-windows-amd64
         - v1.30.4-rke2r1
         - v1.30.4-rke2r1-windows-amd64
+        - v1.31.0-rke2r1
+        - v1.31.0-rke2r1-windows-amd64
   - source: docker.io/rancher/rke2-upgrade
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-upgrade'
     type: repository
@@ -1385,6 +1409,7 @@ sync:
         - v1.30.2-rke2r1
         - v1.30.3-rke2r1
         - v1.30.4-rke2r1
+        - v1.31.0-rke2r1
   - source: docker.io/rancher/system-agent-installer-k3s
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-k3s'
     type: repository
@@ -1516,3 +1541,4 @@ sync:
         - v1.30.2-rke2r1
         - v1.30.3-rke2r1
         - v1.30.4-rke2r1
+        - v1.31.0-rke2r1
