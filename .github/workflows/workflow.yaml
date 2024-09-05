@@ -90,7 +90,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     needs: upload
-    if: github.event_name == 'push' && (github.ref_name == 'release-v2.9' || github.ref_name == 'dev-v2.9')
+    if: github.event_name == 'push' && (github.ref_name == 'release-v2.10' || github.ref_name == 'dev-v2.10')
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
