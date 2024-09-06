@@ -101,22 +101,23 @@ const (
 	aciv6041 = "aci-v6.0.4.1"
 	aciv6042 = "aci-v6.0.4.2"
 
-	nginxIngressv18          = "nginxingress-v1.8"
-	nginxIngressV115         = "nginxingress-v1.15"
-	nginxIngressV11512       = "nginxingress-v1.15.12"
-	nginxIngressv0481        = "nginxingress-v0.48.1"
-	nginxIngressv0493        = "nginxingress-v0.49.3"
-	nginxIngressv110         = "nginxingress-v1.1.0"
-	nginxIngressv110Rancher2 = "nginxingress-v1.1.0-rancher2"
-	nginxIngressv110Rancher3 = "nginxingress-v1.1.0-rancher3"
-	nginxIngressv110Rancher4 = "nginxingress-v1.1.0-rancher4"
-	nginxIngressv120Rancher1 = "nginxingress-v1.2.0-rancher1"
-	nginxIngressv120Rancher2 = "nginxingress-v1.2.0-rancher2"
-	nginxIngressv151Rancher2 = "nginxingress-v1.5.1-rancher2"
-	nginxIngressv170Rancher1 = "nginxingress-v1.7.0-rancher1"
-	nginxIngressv181Rancher1 = "nginxingress-v1.8.1-rancher1"
-	nginxIngressv194Rancher1 = "nginxingress-v1.9.4-rancher1"
-	nginxIngressv196Rancher1 = "nginxingress-v1.9.6-rancher1"
+	nginxIngressv18           = "nginxingress-v1.8"
+	nginxIngressV115          = "nginxingress-v1.15"
+	nginxIngressV11512        = "nginxingress-v1.15.12"
+	nginxIngressv0481         = "nginxingress-v0.48.1"
+	nginxIngressv0493         = "nginxingress-v0.49.3"
+	nginxIngressv110          = "nginxingress-v1.1.0"
+	nginxIngressv110Rancher2  = "nginxingress-v1.1.0-rancher2"
+	nginxIngressv110Rancher3  = "nginxingress-v1.1.0-rancher3"
+	nginxIngressv110Rancher4  = "nginxingress-v1.1.0-rancher4"
+	nginxIngressv120Rancher1  = "nginxingress-v1.2.0-rancher1"
+	nginxIngressv120Rancher2  = "nginxingress-v1.2.0-rancher2"
+	nginxIngressv151Rancher2  = "nginxingress-v1.5.1-rancher2"
+	nginxIngressv170Rancher1  = "nginxingress-v1.7.0-rancher1"
+	nginxIngressv181Rancher1  = "nginxingress-v1.8.1-rancher1"
+	nginxIngressv194Rancher1  = "nginxingress-v1.9.4-rancher1"
+	nginxIngressv196Rancher1  = "nginxingress-v1.9.6-rancher1"
+	nginxIngressv1112Rancher1 = "nginxingress-v1.11.2-rancher1"
 
 	nodelocalv115 = "nodelocal-v1.15"
 	nodelocalv121 = "nodelocal-v1.21"
@@ -325,7 +326,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.26.11-rancher2-1 <1.27.0-rancher1-1":  nginxIngressv194Rancher1,
 			">=1.27.0-rancher1-1 <1.27.8-rancher2-1":   nginxIngressv181Rancher1,
 			">=1.27.8-rancher2-1 <1.28.6-rancher1-1":   nginxIngressv194Rancher1,
-			">=1.28.6-rancher1-1":                      nginxIngressv196Rancher1,
+			">=1.28.6-rancher1-1 <1.28.13-rancher1-1":  nginxIngressv196Rancher1,
+			">=1.28.13-rancher1-1":                     nginxIngressv1112Rancher1,
 		},
 		kdm.Nodelocal: {
 			">=1.15.11-rancher0 <1.16.0-alpha":     nodelocalv115,
@@ -426,22 +428,23 @@ func getTemplates() map[string]string {
 		aciv6041: AciTemplateV6041,
 		aciv6042: AciTemplateV6042,
 
-		nginxIngressv18:          NginxIngressTemplate,
-		nginxIngressV115:         NginxIngressTemplateV0251Rancher1,
-		nginxIngressV11512:       NginxIngressTemplateV0320Rancher1,
-		nginxIngressv0481:        NginxIngressTemplateV0481Rancher1,
-		nginxIngressv0493:        NginxIngressTemplateV0493Rancher1,
-		nginxIngressv110:         NginxIngressTemplateV110Rancher1,
-		nginxIngressv110Rancher2: NginxIngressTemplateV110Rancher2,
-		nginxIngressv110Rancher3: NginxIngressTemplateV110Rancher3,
-		nginxIngressv110Rancher4: NginxIngressTemplateV110Rancher4,
-		nginxIngressv120Rancher1: NginxIngressTemplateV120Rancher1,
-		nginxIngressv120Rancher2: NginxIngressTemplateV120Rancher2,
-		nginxIngressv151Rancher2: NginxIngressTemplateV151Rancher2,
-		nginxIngressv170Rancher1: NginxIngressTemplateV170Rancher1,
-		nginxIngressv181Rancher1: NginxIngressTemplateV181Rancher1,
-		nginxIngressv194Rancher1: NginxIngressTemplateV194Rancher1,
-		nginxIngressv196Rancher1: NginxIngressTemplateV196Rancher1,
+		nginxIngressv18:           NginxIngressTemplate,
+		nginxIngressV115:          NginxIngressTemplateV0251Rancher1,
+		nginxIngressV11512:        NginxIngressTemplateV0320Rancher1,
+		nginxIngressv0481:         NginxIngressTemplateV0481Rancher1,
+		nginxIngressv0493:         NginxIngressTemplateV0493Rancher1,
+		nginxIngressv110:          NginxIngressTemplateV110Rancher1,
+		nginxIngressv110Rancher2:  NginxIngressTemplateV110Rancher2,
+		nginxIngressv110Rancher3:  NginxIngressTemplateV110Rancher3,
+		nginxIngressv110Rancher4:  NginxIngressTemplateV110Rancher4,
+		nginxIngressv120Rancher1:  NginxIngressTemplateV120Rancher1,
+		nginxIngressv120Rancher2:  NginxIngressTemplateV120Rancher2,
+		nginxIngressv151Rancher2:  NginxIngressTemplateV151Rancher2,
+		nginxIngressv170Rancher1:  NginxIngressTemplateV170Rancher1,
+		nginxIngressv181Rancher1:  NginxIngressTemplateV181Rancher1,
+		nginxIngressv194Rancher1:  NginxIngressTemplateV194Rancher1,
+		nginxIngressv196Rancher1:  NginxIngressTemplateV196Rancher1,
+		nginxIngressv1112Rancher1: NginxIngressTemplateV1112Rancher1,
 
 		nodelocalv115: NodelocalTemplateV115,
 		nodelocalv121: NodelocalTemplateV121,
