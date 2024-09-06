@@ -1,18 +1,20 @@
 package templates
 
 /*
-CanalTemplateV3_28_0 is based on upstream canal v3.28.0
+CanalTemplateV3_28_1 is based on upstream canal v3.28.1
 https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/canal.yaml
 Upstream Changelog:
 - `bpfKubeProxyEndpointSlicesEnabled`, `numAllowedLocalASNumbers`, `bpfKubeProxyEndpointSlicesEnabled`,
 `metadataAddr` and `selector` properties description updated.
 - added property `debugHost`, `debugPort`, `debugSimulateCalcGraphHangAfter` and `endpointStatusPathPrefix`
+- added `type: DirectoryOrCreate` in calico-node DaemonSet
+- added `-bird-live` command in livenessProbe of canal Daemonset
 - whitespace fixes
 Rancher Changelog:
 - No new Rancher specific changes, same as CanalTemplateV3_26_1
 */
-const CanalTemplateV3_28_0 = `
-# Canal Template based on Canal v3.28.0
+const CanalTemplateV3_28_0Rancher2 = `
+# Canal Template based on Canal v3.28.1
 ---
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Canal installation.
@@ -88,7 +90,6 @@ data:
     }
 ---
 # Source: calico/templates/kdd-crds.yaml
-
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -274,7 +275,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -543,7 +543,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -606,76 +605,8 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: clusterinformations.crd.projectcalico.org
-spec:
-  group: crd.projectcalico.org
-  names:
-    kind: ClusterInformation
-    listKind: ClusterInformationList
-    plural: clusterinformations
-    singular: clusterinformation
-  preserveUnknownFields: false
-  scope: Cluster
-  versions:
-  - name: v1
-    schema:
-      openAPIV3Schema:
-        description: ClusterInformation contains the cluster specific information.
-        properties:
-          apiVersion:
-            description: 'APIVersion defines the versioned schema of this representation
-              of an object. Servers should convert recognized schemas to the latest
-              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
-            type: string
-          kind:
-            description: 'Kind is a string value representing the REST resource this
-              object represents. Servers may infer this from the endpoint the client
-              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-            type: string
-          metadata:
-            type: object
-          spec:
-            description: ClusterInformationSpec contains the values of describing
-              the cluster.
-            properties:
-              calicoVersion:
-                description: CalicoVersion is the version of Calico that the cluster
-                  is running
-                type: string
-              clusterGUID:
-                description: ClusterGUID is the GUID of the cluster
-                type: string
-              clusterType:
-                description: ClusterType describes the type of the cluster
-                type: string
-              datastoreReady:
-                description: DatastoreReady is used during significant datastore migrations
-                  to signal to components such as Felix that it should wait before
-                  accessing the datastore.
-                type: boolean
-              variant:
-                description: Variant declares which variant of Calico should be active.
-                type: string
-            type: object
-        type: object
-    served: true
-    storage: true
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []
-
----
-
----
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -938,7 +869,71 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
+---
+# Source: calico/templates/kdd-crds.yaml
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: clusterinformations.crd.projectcalico.org
+spec:
+  group: crd.projectcalico.org
+  names:
+    kind: ClusterInformation
+    listKind: ClusterInformationList
+    plural: clusterinformations
+    singular: clusterinformation
+  preserveUnknownFields: false
+  scope: Cluster
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: ClusterInformation contains the cluster specific information.
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ClusterInformationSpec contains the values of describing
+              the cluster.
+            properties:
+              calicoVersion:
+                description: CalicoVersion is the version of Calico that the cluster
+                  is running
+                type: string
+              clusterGUID:
+                description: ClusterGUID is the GUID of the cluster
+                type: string
+              clusterType:
+                description: ClusterType describes the type of the cluster
+                type: string
+              datastoreReady:
+                description: DatastoreReady is used during significant datastore migrations
+                  to signal to components such as Felix that it should wait before
+                  accessing the datastore.
+                type: boolean
+              variant:
+                description: Variant declares which variant of Calico should be active.
+                type: string
+            type: object
+        type: object
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
 ---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
@@ -1834,7 +1829,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -2704,7 +2698,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -2759,7 +2752,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -2869,7 +2861,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -2990,7 +2981,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -3050,7 +3040,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -3108,7 +3097,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -3219,7 +3207,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -3275,7 +3262,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -3530,7 +3516,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -4381,7 +4366,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -4434,7 +4418,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
----
 ---
 # Source: calico/templates/calico-kube-controllers-rbac.yaml
 {{if eq .RBACConfig "rbac"}}
@@ -4532,8 +4515,6 @@ subjects:
 - kind: ServiceAccount
   name: calico-kube-controllers
   namespace: kube-system
----
-
 ---
 # Rancher-specific: Change the calico-node ClusterRole name to calico for backwards compatibility
 # Source: calico/templates/calico-node-rbac.yaml
@@ -4978,6 +4959,7 @@ spec:
               command:
               - /bin/calico-node
               - -felix-live
+              - -bird-live
             periodSeconds: 10
             initialDelaySeconds: 10
             failureThreshold: 6
@@ -5056,9 +5038,11 @@ spec:
         - name: var-run-calico
           hostPath:
             path: /var/run/calico
+            type: DirectoryOrCreate
         - name: var-lib-calico
           hostPath:
             path: /var/lib/calico
+            type: DirectoryOrCreate
         - name: xtables-lock
           hostPath:
             path: /run/xtables.lock
@@ -5083,6 +5067,7 @@ spec:
         - name: cni-bin-dir
           hostPath:
             path: /opt/cni/bin
+            type: DirectoryOrCreate
         - name: cni-net-dir
           hostPath:
             path: /etc/cni/net.d

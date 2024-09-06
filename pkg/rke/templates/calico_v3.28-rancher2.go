@@ -1,20 +1,21 @@
 package templates
 
 /*
-CalicoTemplateV3_28_0 is based on upstream calico v3.28.0
-Source: https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/calico.yaml
+CalicoTemplateV3_28_1 is based on upstream calico v3.28.1
+Source: https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/calico.yaml
 Upstream Changelog:
 - `bpfKubeProxyEndpointSlicesEnabled`, `numAllowedLocalASNumbers`, `bpfKubeProxyEndpointSlicesEnabled`,
 `metadataAddr` and `selector` properties description updated.
 - added property `debugHost`, `debugPort`, `debugSimulateCalcGraphHangAfter` and `endpointStatusPathPrefix`
+- added `type: DirectoryOrCreate` in calico-node DaemonSet
 - whitespace fixes
 Rancher Changelog:
 - No new Rancher specific changes, same as CalicoTemplateV3_26_1
 */
 
-const CalicoTemplateV3_28_0 = `
+const CalicoTemplateV3_28_0Rancher2 = `
 {{- $cidrs := splitList "," .ClusterCIDR }}
-# Calico Template based on Calico v3.28.0
+# Calico Template based on Calico v3.28.1
 ---
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Calico installation.
@@ -82,7 +83,6 @@ data:
     }
 ---
 # Source: calico/templates/kdd-crds.yaml
----
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -268,9 +268,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
----
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -539,9 +536,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
----
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -604,9 +598,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
----
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -871,7 +862,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -937,9 +927,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
----
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -1837,7 +1824,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -2707,9 +2693,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
----
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -2764,7 +2747,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -2874,7 +2856,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -2995,7 +2976,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -3055,7 +3035,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -3113,7 +3092,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -3224,7 +3202,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -3280,8 +3257,8 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
+# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -3534,8 +3511,8 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
+# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -4384,8 +4361,8 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
+# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -4437,7 +4414,6 @@ status:
   conditions: []
   storedVersions: []
 ---
----
 # Source: calico/templates/calico-node-rbac.yaml
 # CNI cluster role
 kind: ClusterRole
@@ -4473,9 +4449,8 @@ rules:
       - update
       - delete
 ---
-# Source: calico/templates/calico-kube-controllers-rbac.yaml
-
 {{if eq .RBACConfig "rbac"}}
+# Source: calico/templates/calico-kube-controllers-rbac.yaml
 # Include a clusterrole for the kube-controllers component,
 # and bind it to the calico-kube-controllers serviceaccount.
 kind: ClusterRole
@@ -4570,8 +4545,6 @@ subjects:
 - kind: ServiceAccount
   name: calico-kube-controllers
   namespace: kube-system
----
-
 ---
 # Source: calico/templates/calico-node-rbac.yaml
 # Include a clusterrole for the calico-node DaemonSet,
@@ -4740,7 +4713,6 @@ rules:
       - daemonsets
     verbs:
       - get
-
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -5098,9 +5070,11 @@ spec:
         - name: var-run-calico
           hostPath:
             path: /var/run/calico
+            type: DirectoryOrCreate
         - name: var-lib-calico
           hostPath:
             path: /var/lib/calico
+            type: DirectoryOrCreate
         - name: xtables-lock
           hostPath:
             path: /run/xtables.lock
@@ -5121,6 +5095,7 @@ spec:
         - name: cni-bin-dir
           hostPath:
             path: /opt/cni/bin
+            type: DirectoryOrCreate
         - name: cni-net-dir
           hostPath:
             path: /etc/cni/net.d
