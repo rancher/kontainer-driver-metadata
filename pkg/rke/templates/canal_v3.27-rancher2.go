@@ -1,17 +1,16 @@
 package templates
 
 /*
-CanalTemplateV3_27_0 is based on upstream canal v3.27.0
-https://raw.githubusercontent.com/projectcalico/calico/v3.27.0/manifests/canal.yaml
+CanalTemplateV3_27_4 is based on upstream canal v3.27.4
+https://raw.githubusercontent.com/projectcalico/calico/v3.27.4/manifests/canal.yaml
 Upstream Changelog:
-- BGPFilter definition updated
-- Pattern added to the definition
-- windowsManageFirewallRules, performanceHints added
+- Added `type: DirectoryOrCreate` in calico-node DaemonSet
+- whitespace fixes
 Rancher Changelog:
 - No new Rancher specific changes, same as CanalTemplateV3_26_1
 */
-const CanalTemplateV3_27_0 = `
-# Canal Template based on Canal v3.27.0
+const CanalTemplateV3_27_0Rancher2 = `
+# Canal Template based on Canal v3.27.4
 ---
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Canal installation.
@@ -77,6 +76,7 @@ data:
         }
       ]
     }
+
   # Flannel network configuration. Mounted into the flannel container.
   net-conf.json: |
     {
@@ -87,7 +87,6 @@ data:
     }
 ---
 # Source: calico/templates/kdd-crds.yaml
-
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -273,7 +272,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -542,7 +540,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -605,7 +602,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -671,9 +667,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
----
-
 ---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
@@ -937,8 +930,8 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
+# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -1058,6 +1051,13 @@ spec:
                   setting. Possible values are Disabled, Strict or Loose. [Default: Loose]'
                 pattern: ^(?i)(Disabled|Strict|Loose)?$
                 type: string
+              bpfExcludeCIDRsFromNAT:
+                description: BPFExcludeCIDRsFromNAT is a list of CIDRs that are to
+                  be excluded from NAT resolution so that host can handle them. A
+                  typical usecase is node local DNS cache.
+                items:
+                  type: string
+                type: array
               bpfExtToServiceConnmark:
                 description: 'BPFExtToServiceConnmark in BPF mode, control a 32bit
                   mark that is set on connections from an external client to a local
@@ -1807,7 +1807,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -2677,7 +2676,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -2732,7 +2730,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -2842,7 +2839,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -2963,7 +2959,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -3023,7 +3018,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -3081,7 +3075,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -3192,7 +3185,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: calico/templates/calico-node-rbac.yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -3245,9 +3237,8 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
-# Source: calico/templates/calico-node-rbac.yaml
+# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -3500,9 +3491,8 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
-# Source: calico/templates/calico-node-rbac.yaml
+# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -4351,9 +4341,8 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
-# Source: calico/templates/calico-node-rbac.yaml
+# Source: calico/templates/kdd-crds.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -4404,7 +4393,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
----
 ---
 # Source: calico/templates/calico-kube-controllers-rbac.yaml
 {{if eq .RBACConfig "rbac"}}
@@ -4502,8 +4490,6 @@ subjects:
 - kind: ServiceAccount
   name: calico-kube-controllers
   namespace: kube-system
----
-
 ---
 # Rancher-specific: Change the calico-node ClusterRole name to calico for backwards compatibility
 # Source: calico/templates/calico-node-rbac.yaml
@@ -4641,7 +4627,6 @@ rules:
     verbs:
       - create
       - update
-
 ---
 # Source: calico/templates/calico-node-rbac.yaml
 # CNI cluster role
@@ -4688,6 +4673,7 @@ rules:
     verbs:
       - patch
 ---
+# Source: calico/templates/calico-node-rbac.yaml
 # Bind the flannel ClusterRole to the canal ServiceAccount.
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
@@ -5026,9 +5012,11 @@ spec:
         - name: var-run-calico
           hostPath:
             path: /var/run/calico
+            type: DirectoryOrCreate
         - name: var-lib-calico
           hostPath:
             path: /var/lib/calico
+            type: DirectoryOrCreate
         - name: xtables-lock
           hostPath:
             path: /run/xtables.lock
@@ -5053,6 +5041,7 @@ spec:
         - name: cni-bin-dir
           hostPath:
             path: /opt/cni/bin
+            type: DirectoryOrCreate
         - name: cni-net-dir
           hostPath:
             path: /etc/cni/net.d
