@@ -187,7 +187,7 @@ rules:
       - nodes
       - pods
       - secrets
-      - namespaces
+      - namespace
     verbs:
       - list
       - watch
@@ -379,7 +379,7 @@ metadata:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/version: 1.11.2
-  name: ingress-nginx-controller-admission
+  name: ingress-nginx-controller
   namespace: ingress-nginx
 spec:
   ports:
