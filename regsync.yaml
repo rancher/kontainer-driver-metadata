@@ -23,9 +23,7 @@ sync:
         - v3.26.3-rancher1
         - v3.27.0-rancher1
         - v3.27.3-rancher1
-        - v3.27.4-rancher1
         - v3.28.0-rancher1
-        - v3.28.1-rancher1
   - source: docker.io/rancher/flannel-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/flannel-cni'
     type: repository
@@ -582,7 +580,6 @@ sync:
         - v3.27.0
         - v3.27.2
         - v3.27.3
-        - v3.27.4
         - v3.28.0
         - v3.28.1
   - source: docker.io/rancher/mirrored-calico-kube-controllers
@@ -601,7 +598,6 @@ sync:
         - v3.27.0
         - v3.27.2
         - v3.27.3
-        - v3.27.4
         - v3.28.0
         - v3.28.1
   - source: docker.io/rancher/mirrored-calico-node
@@ -620,7 +616,6 @@ sync:
         - v3.27.0
         - v3.27.2
         - v3.27.3
-        - v3.27.4
         - v3.28.0
         - v3.28.1
   - source: docker.io/rancher/mirrored-calico-node-driver-registrar
@@ -662,7 +657,6 @@ sync:
         - v3.27.0
         - v3.27.2
         - v3.27.3
-        - v3.27.4
         - v3.28.0
         - v3.28.1
   - source: docker.io/rancher/mirrored-calico-typha
