@@ -8,7 +8,6 @@ Upstream Changelog:
 `metadataAddr` and `selector` properties description updated.
 - added property `debugHost`, `debugPort`, `debugSimulateCalcGraphHangAfter` and `endpointStatusPathPrefix`
 - added `type: DirectoryOrCreate` in calico-node DaemonSet
-- added `-bird-live` command in livenessProbe of canal Daemonset
 - whitespace fixes
 Rancher Changelog:
 - No new Rancher specific changes, same as CanalTemplateV3_26_1
@@ -4959,7 +4958,6 @@ spec:
               command:
               - /bin/calico-node
               - -felix-live
-              - -bird-live
             periodSeconds: 10
             initialDelaySeconds: 10
             failureThreshold: 6
