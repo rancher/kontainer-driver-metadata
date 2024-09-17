@@ -69,7 +69,7 @@ ENV ARCH $DAPPER_HOST_ARCH
 ENV GOLANGCI_LINT v1.56.2
 
 RUN zypper -n install git docker vim less file curl wget jq awk && rpm -e --nodeps --noscripts containerd
-RUN go install golang.org/x/tools/cmd/goimports@latest
+RUN go install golang.org/x/tools/cmd/goimports@v0.24.0
 RUN if [[ "${ARCH}" == "amd64" ]]; then \
         curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s ${GOLANGCI_LINT}; \
         curl -sL https://github.com/rancher/wharfie/releases/download/v0.6.1/wharfie-amd64 -o /bin/wharfie && chmod +x /bin/wharfie; \
