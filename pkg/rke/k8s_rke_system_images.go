@@ -10689,13 +10689,13 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.22.28",
 		},
 		// Enabled in Rancher v2.9.3
-		"v1.28.13-rancher1-1": {
+		"v1.28.14-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.10",
-			Kubernetes:                "rancher/hyperkube:v1.28.13-rancher1",
-			Alpine:                    "rancher/rke-tools:v0.1.102",
-			NginxProxy:                "rancher/rke-tools:v0.1.102",
-			CertDownloader:            "rancher/rke-tools:v0.1.102",
-			KubernetesServicesSidecar: "rancher/rke-tools:v0.1.102",
+			Kubernetes:                "rancher/hyperkube:v1.28.14-rancher1",
+			Alpine:                    "rancher/rke-tools:v0.1.103",
+			NginxProxy:                "rancher/rke-tools:v0.1.103",
+			CertDownloader:            "rancher/rke-tools:v0.1.103",
+			KubernetesServicesSidecar: "rancher/rke-tools:v0.1.103",
 			KubeDNS:                   "rancher/mirrored-k8s-dns-kube-dns:1.22.28",
 			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.22.28",
 			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.22.28",
@@ -10856,14 +10856,14 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.22.28",
 		},
-		// Enabled in Rancher v2.9.2
-		"v1.29.8-rancher1-1": {
+		// Enabled in Rancher v2.9.3
+		"v1.29.9-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.12",
-			Kubernetes:                "rancher/hyperkube:v1.29.8-rancher1",
-			Alpine:                    "rancher/rke-tools:v0.1.102",
-			NginxProxy:                "rancher/rke-tools:v0.1.102",
-			CertDownloader:            "rancher/rke-tools:v0.1.102",
-			KubernetesServicesSidecar: "rancher/rke-tools:v0.1.102",
+			Kubernetes:                "rancher/hyperkube:v1.29.9-rancher1",
+			Alpine:                    "rancher/rke-tools:v0.1.103",
+			NginxProxy:                "rancher/rke-tools:v0.1.103",
+			CertDownloader:            "rancher/rke-tools:v0.1.103",
+			KubernetesServicesSidecar: "rancher/rke-tools:v0.1.103",
 			KubeDNS:                   "rancher/mirrored-k8s-dns-kube-dns:1.22.28",
 			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.22.28",
 			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.22.28",
@@ -11018,14 +11018,14 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.23.0",
 		},
-		// Enabled in Rancher v2.9.2
-		"v1.30.4-rancher1-1": {
+		// Enabled in Rancher v2.9.3
+		"v1.30.5-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.12",
-			Kubernetes:                "rancher/hyperkube:v1.30.4-rancher1",
-			Alpine:                    "rancher/rke-tools:v0.1.102",
-			NginxProxy:                "rancher/rke-tools:v0.1.102",
-			CertDownloader:            "rancher/rke-tools:v0.1.102",
-			KubernetesServicesSidecar: "rancher/rke-tools:v0.1.102",
+			Kubernetes:                "rancher/hyperkube:v1.30.5-rancher1",
+			Alpine:                    "rancher/rke-tools:v0.1.103",
+			NginxProxy:                "rancher/rke-tools:v0.1.103",
+			CertDownloader:            "rancher/rke-tools:v0.1.103",
+			KubernetesServicesSidecar: "rancher/rke-tools:v0.1.103",
 			KubeDNS:                   "rancher/mirrored-k8s-dns-kube-dns:1.23.0",
 			DNSmasq:                   "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.23.0",
 			KubeDNSSidecar:            "rancher/mirrored-k8s-dns-sidecar:1.23.0",
