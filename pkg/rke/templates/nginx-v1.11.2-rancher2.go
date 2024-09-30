@@ -7,9 +7,12 @@ Upstream Changelog:
 - Added `app.kubernetes.io/part-of: ingress-nginx`
 
 Rancher Changelog:
-- No new Rancher specific changes, same as NginxIngressTemplateV194Rancher1
+- removed --enable-metrics=false for controller container in nginx-ingress-controller DaemonSet.
+The default behaviour of the controller is to keep the metrics enabled.
+upstream issue: https://github.com/kubernetes/ingress-nginx/issues/12023
+- other Rancher specific changes, are same as NginxIngressTemplateV194Rancher1
 */
-const NginxIngressTemplateV1112Rancher1 = `
+const NginxIngressTemplateV1112Rancher2 = `
 # Based on https://github.com/kubernetes/ingress-nginx/blob/controller-v1.11.2/deploy/static/provider/cloud/deploy.yaml
 apiVersion: v1
 kind: Namespace
@@ -495,7 +498,8 @@ spec:
             - --validating-webhook=:8443
             - --validating-webhook-certificate=/usr/local/certificates/cert
             - --validating-webhook-key=/usr/local/certificates/key
-            - --enable-metrics=false
+# Rancher specific: Intentionally removed
+#           - --enable-metrics=false
           {{- range $k, $v := .ExtraArgs }}
             - --{{ $k }}{{if ne $v "" }}={{ $v }}{{end}}
           {{- end }}
