@@ -392,6 +392,7 @@ sync:
         - v1.28.11-rancher1
         - v1.28.12-rancher1
         - v1.28.13-rancher1
+        - v1.28.14-rancher1
         - v1.28.7-rancher1
         - v1.28.8-rancher1
         - v1.28.9-rancher1
@@ -1164,6 +1165,7 @@ sync:
       allow:
         - v0.1.100
         - v0.1.102
+        - v0.1.103
         - v0.1.80
         - v0.1.87
         - v0.1.88
