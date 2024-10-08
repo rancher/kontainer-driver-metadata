@@ -101,6 +101,6 @@ jobs:
             secret/data/github/repo/${{ github.repository }}/github-token/credentials token | PAT_TOKEN
       - name: Run dispatch
         run: |
-          gh workflow run "Go Generate" --repo rancher/rke --ref release/v1.6 -F source_author=${{ github.actor }}
+          gh workflow run "Go Generate" --repo rancher/rke --ref release/v1.7 -F source_author=${{ github.actor }}
         env:
           GH_TOKEN: ${{ env.PAT_TOKEN }}
