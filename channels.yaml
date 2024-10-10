@@ -167,8 +167,6 @@ releases:
     serverArgs: *serverArgs-v2
     agentArgs: &agentArgs-v2
       <<: *agentArgs-v1
-      system-default-registry:
-        type: string
   - version: v1.21.10+k3s1
     minChannelServerVersion: v2.6.3-alpha1
     maxChannelServerVersion: v2.6.4
