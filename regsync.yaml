@@ -1120,7 +1120,6 @@ sync:
     type: repository
     tags:
       allow:
-        - 3.10
         - 3.6
         - 3.6-windows-1809-amd64
         - 3.6-windows-ltsc2022-amd64
