@@ -110,6 +110,7 @@ const (
 	aciv6041 = "aci-v6.0.4.1"
 	aciv6042 = "aci-v6.0.4.2"
 	aciv6043 = "aci-v6.0.4.3"
+	aciv6111 = "aci-v6.1.1.1"
 
 	nginxIngressv18           = "nginxingress-v1.8"
 	nginxIngressV115          = "nginxingress-v1.15"
@@ -129,6 +130,7 @@ const (
 	nginxIngressv196Rancher1  = "nginxingress-v1.9.6-rancher1"
 	nginxIngressv1101Rancher1 = "nginxingress-v1.10.1-rancher1"
 	nginxIngressv1112Rancher1 = "nginxingress-v1.11.2-rancher1"
+	nginxIngressv1112Rancher2 = "nginxingress-v1.11.2-rancher2"
 
 	nodelocalv115 = "nodelocal-v1.15"
 	nodelocalv121 = "nodelocal-v1.21"
@@ -306,11 +308,14 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.27.15-rancher1-1 < 1.28.0-rancher0":    aciv6042,
 			">=1.28.0-rancher0 < 1.28.11-rancher1-1":    aciv6041,
 			">=1.28.11-rancher1-1 < 1.28.13-rancher1-1": aciv6042,
-			">=1.28.13-rancher1-1 < 1.29.0-rancher0":    aciv6043,
+			">=1.28.13-rancher1-1 < 1.28.14-rancher1-1": aciv6043,
+			">=1.28.14-rancher1-1 < 1.29.0-rancher0":    aciv6111,
 			">=1.29.0-rancher0 < 1.29.8-rancher1-1":     aciv6042,
-			">=1.29.8-rancher1-1 < 1.30.0-rancher0":     aciv6043,
+			">=1.29.8-rancher1-1 < 1.29.9-rancher1-1":   aciv6043,
+			">=1.29.9-rancher1-1 < 1.30.0-rancher0":     aciv6111,
 			">=1.30.0-rancher0 < 1.30.4-rancher1-1":     aciv6042,
-			">=1.30.4-rancher1-1":                       aciv6043,
+			">=1.30.4-rancher1-1 < 1.30.5-rancher1-1":   aciv6043,
+			">=1.30.5-rancher1-1":                       aciv6111,
 		},
 		kdm.NginxIngress: {
 			">=1.8.0-rancher0 <1.13.10-rancher1-3":  nginxIngressv18,
@@ -354,11 +359,14 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.27.0-rancher1-1 <1.27.8-rancher2-1":   nginxIngressv181Rancher1,
 			">=1.27.8-rancher2-1 <1.28.6-rancher1-1":   nginxIngressv194Rancher1,
 			">=1.28.6-rancher1-1 <1.28.13-rancher1-1":  nginxIngressv196Rancher1,
-			">=1.28.13-rancher1-1 <1.29.0-rancher1-1":  nginxIngressv1112Rancher1,
+			">=1.28.13-rancher1-1 <1.28.14-rancher1-1": nginxIngressv1112Rancher1,
+			">=1.28.14-rancher1-1 <1.29.0-rancher1-1":  nginxIngressv1112Rancher2,
 			">=1.29.0-rancher1-1 <1.29.8-rancher1-1":   nginxIngressv196Rancher1,
-			">=1.29.8-rancher1-1 <1.30.0-rancher1-1":   nginxIngressv1112Rancher1,
+			">=1.29.8-rancher1-1 <1.29.9-rancher1-1":   nginxIngressv1112Rancher1,
+			">=1.29.9-rancher1-1 <1.30.0-rancher1-1":   nginxIngressv1112Rancher2,
 			">=1.30.0-rancher1-1 <1.30.4-rancher1-1":   nginxIngressv1101Rancher1,
-			">=1.30.4-rancher1-1":                      nginxIngressv1112Rancher1,
+			">=1.30.4-rancher1-1 <1.30.5-rancher1-1":   nginxIngressv1112Rancher1,
+			">=1.30.5-rancher1-1":                      nginxIngressv1112Rancher2,
 		},
 		kdm.Nodelocal: {
 			">=1.15.11-rancher0 <1.16.0-alpha":     nodelocalv115,
@@ -468,6 +476,7 @@ func getTemplates() map[string]string {
 		aciv6041: AciTemplateV6041,
 		aciv6042: AciTemplateV6042,
 		aciv6043: AciTemplateV6043,
+		aciv6111: AciTemplateV6111,
 
 		nginxIngressv18:           NginxIngressTemplate,
 		nginxIngressV115:          NginxIngressTemplateV0251Rancher1,
@@ -487,6 +496,7 @@ func getTemplates() map[string]string {
 		nginxIngressv196Rancher1:  NginxIngressTemplateV196Rancher1,
 		nginxIngressv1101Rancher1: NginxIngressTemplateV1101Rancher1,
 		nginxIngressv1112Rancher1: NginxIngressTemplateV1112Rancher1,
+		nginxIngressv1112Rancher2: NginxIngressTemplateV1112Rancher2,
 
 		nodelocalv115: NodelocalTemplateV115,
 		nodelocalv121: NodelocalTemplateV121,
