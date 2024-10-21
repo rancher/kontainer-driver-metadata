@@ -4,4 +4,4 @@ set -e
 cd $(dirname $0)/..
 
 echo Regsync mirroring images
-regsync once --config ./regsync.yaml
+regsync once --missing --config ./regsync.yaml
