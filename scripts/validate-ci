@@ -24,4 +24,4 @@ if [ -n "$DIRTY" ]; then
 fi
 
 echo Checking if released versions are not changed
-go run ./pkg/validation/validation.go release-v2.8
+go run ./pkg/validation/validation.go release-v2.9
