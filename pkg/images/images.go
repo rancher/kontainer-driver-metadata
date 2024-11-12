@@ -1,10 +1,12 @@
 package images
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"os"
 	"strings"
+	"sync"
 	"text/template"
 
 	"github.com/blang/semver"
@@ -113,6 +115,9 @@ func unique(imageTag map[string]map[string]bool, images []string) error {
 // getImages returns all images, for Linux and Windows, used by the provided distro and k8s versions.
 // It returns an empty slice and an error if something goes wrong.
 func getImages(distro string, versions []interface{}) (all []string, err error) {
+	var wg sync.WaitGroup
+	var mu sync.Mutex
+	errCh := make(chan error, 1) // Buffer size of 1 to ensure immediate return on error
 	for _, version := range versions {
 		switch distro {
 		case utiliies.RKE:
@@ -148,30 +153,65 @@ func getImages(distro string, versions []interface{}) (all []string, err error) 
 				all = append(all, converted)
 			}
 		case utiliies.RKE2, utiliies.K3S:
-			temp, _ := version.(map[string]interface{})
-			v, _ := temp["version"].(string)
-			for _, os := range []string{linux, window} {
-				url, _ := urls[distro][os]
-				if url != "" {
-					images, err := getImagesFromURL(fmt.Sprintf(url, v))
-					if err != nil {
-						return nil, fmt.Errorf("failed to get images: %o", err)
-					}
-					if len(images) > 0 {
-						logrus.Tracef("distro %s version %s adds %s ", distro, version, images)
-						all = append(all, images...)
+			ctx, cancel := context.WithCancel(context.Background())
+			defer cancel()
+
+			wg.Add(1)
+			go func(version interface{}) {
+				defer wg.Done()
+				select {
+				case <-ctx.Done():
+					return // Exit if context is canceled
+				default:
+				}
+
+				temp, _ := version.(map[string]interface{})
+				v, _ := temp["version"].(string)
+
+				for _, os := range []string{linux, window} {
+					url := urls[distro][os]
+					if url != "" {
+						images, err := getImagesFromURL(fmt.Sprintf(url, v))
+						if err != nil {
+							select {
+							case errCh <- fmt.Errorf("failed to get images: %w", err):
+								cancel() // Cancel all goroutines on error
+							default:
+							}
+							return
+						}
+						if len(images) > 0 {
+							logrus.Tracef("distro %s version %s adds %s", distro, version, images)
+							mu.Lock()
+							all = append(all, images...)
+							mu.Unlock()
+						}
 					}
 				}
-			}
-			// add the following images which are not in the upstream images.txt file
-			// - rancher/rancher-<distro>-upgrade
-			// - rancher/system-agent-installer-<distro>
-			safeVersion := strings.ReplaceAll(v, "+", "-")
-			upgradeImage := fmt.Sprintf(upgradeImage, strings.ToLower(distro), safeVersion)
-			systemAgentInstallerImage := fmt.Sprintf(systemAgentInstallerImage, strings.ToLower(distro), safeVersion)
-			all = append(all, upgradeImage, systemAgentInstallerImage)
+				// add the following images which are not in the upstream images.txt file
+				// - rancher/rancher-<distro>-upgrade
+				// - rancher/system-agent-installer-<distro>
+				safeVersion := strings.ReplaceAll(v, "+", "-")
+				upgradeImage := fmt.Sprintf(upgradeImage, strings.ToLower(distro), safeVersion)
+				systemAgentInstallerImage := fmt.Sprintf(systemAgentInstallerImage, strings.ToLower(distro), safeVersion)
+				mu.Lock()
+				all = append(all, upgradeImage, systemAgentInstallerImage)
+				mu.Unlock()
+			}(version)
 		}
 	}
+
+	// Wait for all goroutines to complete
+	go func() {
+		wg.Wait()
+		close(errCh)
+	}()
+
+	// Return the first error encountered, if any
+	if err := <-errCh; err != nil {
+		return nil, err
+	}
+
 	return all, nil
 }
 
