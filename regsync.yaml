@@ -26,6 +26,7 @@ sync:
         - v3.27.4-rancher1
         - v3.28.0-rancher1
         - v3.28.1-rancher1
+        - v3.29.0-rancher1
   - source: docker.io/rancher/flannel-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/flannel-cni'
     type: repository
@@ -433,6 +434,7 @@ sync:
         - v1.28.8-rancher1
         - v1.28.9-rancher1
         - v1.29.10-rancher1
+        - v1.29.11-rancher1
         - v1.29.6-rancher1
         - v1.29.7-rancher1
         - v1.29.8-rancher1
@@ -442,7 +444,9 @@ sync:
         - v1.30.4-rancher1
         - v1.30.5-rancher1
         - v1.30.6-rancher1
+        - v1.30.7-rancher1
         - v1.31.2-rancher2
+        - v1.31.3-rancher1
   - source: docker.io/rancher/k3s-upgrade
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/k3s-upgrade'
     type: repository
@@ -642,6 +646,7 @@ sync:
         - v3.28.0
         - v3.28.1
         - v3.28.2
+        - v3.29.0
   - source: docker.io/rancher/mirrored-calico-kube-controllers
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-kube-controllers'
     type: repository
@@ -662,6 +667,7 @@ sync:
         - v3.28.0
         - v3.28.1
         - v3.28.2
+        - v3.29.0
   - source: docker.io/rancher/mirrored-calico-node
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-node'
     type: repository
@@ -682,6 +688,7 @@ sync:
         - v3.28.0
         - v3.28.1
         - v3.28.2
+        - v3.29.0
   - source: docker.io/rancher/mirrored-calico-node-driver-registrar
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-node-driver-registrar'
     type: repository
@@ -727,6 +734,7 @@ sync:
         - v3.28.0
         - v3.28.1
         - v3.28.2
+        - v3.29.0
   - source: docker.io/rancher/mirrored-calico-typha
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-typha'
     type: repository
@@ -1284,6 +1292,7 @@ sync:
         - v0.1.102
         - v0.1.103
         - v0.1.105
+        - v0.1.106
         - v0.1.80
         - v0.1.87
         - v0.1.88
