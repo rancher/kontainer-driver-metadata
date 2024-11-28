@@ -1355,7 +1355,7 @@ spec:
                   type: string
                 type: array
               failsafeInboundHostPorts:
-               description: 'FailsafeInboundHostPorts is a list of PortProto struct
+                description: 'FailsafeInboundHostPorts is a list of PortProto struct
                   objects including UDP/TCP/SCTP ports and CIDRs that Felix will allow
                   incoming traffic to host endpoints on irrespective of the security
                   policy. This is useful to avoid accidentally cutting off a host
@@ -1654,7 +1654,7 @@ spec:
                 pattern: ^(?i)(Debug|Info|Warning|Error|Fatal)?$
                 type: string
               maxIpsetSize:
-                 description: MaxIpsetSize is the maximum number of IP addresses that
+                description: MaxIpsetSize is the maximum number of IP addresses that
                   can be stored in an IP set. Not applicable if using the nftables
                   backend.
                 type: integer
