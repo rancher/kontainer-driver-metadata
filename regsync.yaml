@@ -1166,6 +1166,7 @@ sync:
     tags:
       allow:
         - 1.5-rancher1
+        - 1.5-rancher2
   - source: docker.io/rancher/mirrored-pause
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-pause'
     type: repository
