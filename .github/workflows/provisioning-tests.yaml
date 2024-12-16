@@ -23,7 +23,7 @@ jobs:
       fail-fast: false
       matrix:
         dist: [rke2, k3s]
-        k8s-minor: [27, 28, 29, 30, 31]
+        k8s-minor: [28, 29, 30, 31]
         test-regex: ["^Test_Provisioning_.*$", "^Test_Operation_SetA_.*$", "^Test_Operation_SetB_.*$"]
     steps:
       - name: Force Install GIT latest
