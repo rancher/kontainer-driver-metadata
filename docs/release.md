@@ -128,6 +128,7 @@ Example PRs:
 6. Monitor GHA status for tag (https://github.com/rancher/rke/actions). GHA uploads the release manifests to the release tag under Assets (https://github.com/rancher/rke/releases) 
 7. Copy release notes from our draft release notes to the released tag 
 8. Mark the patch version for the latest minor version as the latest release. This should always be done for the highest patch version (e.g. if both `1.5.x` and `1.7.x` were released, `1.7.x` should be marked as latest)
+9. Delete the draft release created for drafting release notes from https://github.com/rancher/rke/releases. We should only keep tagged versions here.
 
 ## Post OOB Release Tasks for KDM
 
