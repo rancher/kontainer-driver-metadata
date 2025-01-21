@@ -2508,6 +2508,9 @@ releases:
       rke2-snapshot-controller-crd:
         repo: rancher-rke2-charts
         version: 4.0.002
+      rke2-snapshot-validation-webhook:
+        repo: rancher-rke2-charts
+        version: 0.0.0
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.1.400
@@ -2792,6 +2795,9 @@ releases:
       rke2-snapshot-controller-crd:
         repo: rancher-rke2-charts
         version: 4.0.002
+      rke2-snapshot-validation-webhook:
+        repo: rancher-rke2-charts
+        version: 0.0.0
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.1.400
@@ -3035,6 +3041,9 @@ releases:
       rke2-snapshot-controller-crd:
         repo: rancher-rke2-charts
         version: 4.0.002
+      rke2-snapshot-validation-webhook:
+        repo: rancher-rke2-charts
+        version: 0.0.0
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.1.400
