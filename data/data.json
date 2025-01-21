@@ -63894,7 +63894,7 @@
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.29.100"
+      "version": "v3.29.101"
      },
      "rke2-calico-crd": {
       "repo": "rancher-rke2-charts",
@@ -63902,11 +63902,11 @@
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.29.1-build2024121100"
+      "version": "v3.29.1-build2025011000"
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
-      "version": "1.16.400"
+      "version": "1.16.501"
      },
      "rke2-coredns": {
       "repo": "rancher-rke2-charts",
@@ -63914,7 +63914,7 @@
      },
      "rke2-flannel": {
       "repo": "rancher-rke2-charts",
-      "version": "v0.26.101"
+      "version": "v0.26.300"
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
@@ -63922,7 +63922,7 @@
      },
      "rke2-metrics-server": {
       "repo": "rancher-rke2-charts",
-      "version": "3.12.004"
+      "version": "3.12.200"
      },
      "rke2-multus": {
       "repo": "rancher-rke2-charts",
@@ -63930,15 +63930,15 @@
      },
      "rke2-snapshot-controller": {
       "repo": "rancher-rke2-charts",
-      "version": "3.0.601"
+      "version": "4.0.002"
      },
      "rke2-snapshot-controller-crd": {
       "repo": "rancher-rke2-charts",
-      "version": "3.0.601"
+      "version": "4.0.002"
      },
      "rke2-snapshot-validation-webhook": {
       "repo": "rancher-rke2-charts",
-      "version": "1.9.001"
+      "version": "0.0.0"
      },
      "rke2-traefik": {
       "repo": "rancher-rke2-charts",
