@@ -59213,7 +59213,7 @@
      },
      "rke2-multus": {
       "repo": "rancher-rke2-charts",
-      "version": "v4.1.301"
+      "version": "v4.1.400"
      },
      "rke2-snapshot-controller": {
       "repo": "rancher-rke2-charts",
@@ -62024,7 +62024,7 @@
      },
      "rke2-multus": {
       "repo": "rancher-rke2-charts",
-      "version": "v4.1.301"
+      "version": "v4.1.400"
      },
      "rke2-snapshot-controller": {
       "repo": "rancher-rke2-charts",
@@ -63926,7 +63926,7 @@
      },
      "rke2-multus": {
       "repo": "rancher-rke2-charts",
-      "version": "v4.1.301"
+      "version": "v4.1.400"
      },
      "rke2-snapshot-controller": {
       "repo": "rancher-rke2-charts",
