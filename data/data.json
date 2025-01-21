@@ -59165,7 +59165,7 @@
     "charts": {
      "harvester-cloud-provider": {
       "repo": "rancher-rke2-charts",
-      "version": "0.2.600"
+      "version": "0.2.900"
      },
      "harvester-csi-driver": {
       "repo": "rancher-rke2-charts",
@@ -61976,7 +61976,7 @@
     "charts": {
      "harvester-cloud-provider": {
       "repo": "rancher-rke2-charts",
-      "version": "0.2.600"
+      "version": "0.2.900"
      },
      "harvester-csi-driver": {
       "repo": "rancher-rke2-charts",
@@ -63878,7 +63878,7 @@
     "charts": {
      "harvester-cloud-provider": {
       "repo": "rancher-rke2-charts",
-      "version": "0.2.600"
+      "version": "0.2.900"
      },
      "harvester-csi-driver": {
       "repo": "rancher-rke2-charts",
