@@ -2493,6 +2493,9 @@ releases:
       rke2-calico:
         repo: rancher-rke2-charts
         version: v3.29.101
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.29.101
       rke2-metrics-server:
         repo: rancher-rke2-charts
         version: 3.12.200
@@ -2771,6 +2774,9 @@ releases:
       rke2-calico:
         repo: rancher-rke2-charts
         version: v3.29.101
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.29.101
       rke2-metrics-server:
         repo: rancher-rke2-charts
         version: 3.12.200
@@ -3006,6 +3012,9 @@ releases:
         repo: rancher-rke2-charts
         version: v3.29.1-build2025011000
       rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.29.101
+      rke2-calico-crd:
         repo: rancher-rke2-charts
         version: v3.29.101
       rke2-metrics-server:
