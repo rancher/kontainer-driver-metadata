@@ -705,6 +705,17 @@ releases:
     serverArgs: *serverArgs-v9
     agentArgs: *agentArgs-v6
     featureVersions: *featureVersions-v1
+  - version: v1.29.12+k3s1
+    minChannelServerVersion: v2.9.0-alpha1
+    maxChannelServerVersion: v2.10.99
+    serverArgs: *serverArgs-v9
+    agentArgs: &agentArgs-v7
+      <<: *agentArgs-v6
+      node-internal-dns:
+        type: array
+      node-external-dns:
+        type: array
+    featureVersions: *featureVersions-v1
   - version: v1.30.1+k3s1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.9.99
@@ -747,6 +758,12 @@ releases:
     serverArgs: *serverArgs-v9
     agentArgs: *agentArgs-v6
     featureVersions: *featureVersions-v1
+  - version: v1.30.8+k3s1
+    minChannelServerVersion: v2.9.0-alpha1
+    maxChannelServerVersion: v2.10.99
+    serverArgs: *serverArgs-v9
+    agentArgs: *agentArgs-v7
+    featureVersions: *featureVersions-v1
   - version: v1.31.1+k3s1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
@@ -764,4 +781,10 @@ releases:
     maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v9
     agentArgs: *agentArgs-v6
+    featureVersions: *featureVersions-v1
+  - version: v1.31.4+k3s1
+    minChannelServerVersion: v2.9.0-alpha1
+    maxChannelServerVersion: v2.10.99
+    serverArgs: *serverArgs-v9
+    agentArgs: *agentArgs-v7
     featureVersions: *featureVersions-v1
