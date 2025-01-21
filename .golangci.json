@@ -11,13 +11,13 @@
 		]
 	},
 	"run": {
-		"skip-files": [
-			"/zz_generated_"
-		],
 		"deadline": "5m"
 	},
     "issues": {
         "exclude-rules": [
+            {
+                "text:" "/zz_generated_*"
+            },
             {
                 "linters": "revive",
                 "text": "should have comment or be unexported"
