@@ -2505,9 +2505,6 @@ releases:
       rke2-snapshot-controller-crd:
         repo: rancher-rke2-charts
         version: 4.0.002
-      rke2-snapshot-validation-webhook:
-        repo: rancher-rke2-charts
-        version: 0.0.0
     featureVersions: *featureVersions-v1
   - version: v1.30.1+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
@@ -2783,9 +2780,6 @@ releases:
       rke2-snapshot-controller-crd:
         repo: rancher-rke2-charts
         version: 4.0.002
-      rke2-snapshot-validation-webhook:
-        repo: rancher-rke2-charts
-        version: 0.0.0
     featureVersions: *featureVersions-v1
   - version: v1.31.0+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
@@ -3020,7 +3014,4 @@ releases:
       rke2-snapshot-controller-crd:
         repo: rancher-rke2-charts
         version: 4.0.002
-      rke2-snapshot-validation-webhook:
-        repo: rancher-rke2-charts
-        version: 0.0.0
     featureVersions: *featureVersions-v1
