@@ -259,6 +259,9 @@ func validateRKE2Charts(release map[string]interface{}) error {
 		if err != nil {
 			return err
 		}
+		if chartVersion == "0.0.0" {
+			continue
+		}
 		logrus.Infof("checking RKE2 %s %s/%s:%s", rke2Version, repo, chartName, chartVersion)
 		var info map[string]interface{}
 		bytes, err := os.ReadFile(fmt.Sprintf("%s/charts/%s.yaml", dir, chartName))
