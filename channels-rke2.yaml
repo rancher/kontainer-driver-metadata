@@ -2807,6 +2807,9 @@ releases:
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.2.900
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.2200
     featureVersions: *featureVersions-v1
   - version: v1.31.0+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
@@ -3053,4 +3056,7 @@ releases:
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.2.900
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.2200
     featureVersions: *featureVersions-v1
