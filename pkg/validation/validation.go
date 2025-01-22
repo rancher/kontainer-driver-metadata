@@ -259,7 +259,7 @@ func validateRKE2Charts(release map[string]interface{}) error {
 		if err != nil {
 			return err
 		}
-		logrus.Infof("checking RKE2 %s %s/%s:%s", rke2Version, repo, chartName, chartVersion)
+		logrus.Infof("checking RKE2 %s %s/%s:%s %s", rke2Version, repo, chartName, chartVersion, fmt.Sprintf("%s/charts/%s.yaml", dir, chartName))
 		var info map[string]interface{}
 		bytes, err := os.ReadFile(fmt.Sprintf("%s/charts/%s.yaml", dir, chartName))
 		if err != nil {
@@ -268,10 +268,12 @@ func validateRKE2Charts(release map[string]interface{}) error {
 		if err := yaml.Unmarshal(bytes, &info); err != nil {
 			return fmt.Errorf("failed to unmarshal the chart yaml: %v", err)
 		}
+		logrus.Infof("info %v", info)
 		chartURL, _, err := unstructured.NestedString(info, "metadata", "annotations", "helm.cattle.io/chart-url")
 		if err != nil {
 			return err
 		}
+		fmt.Println("chartURL ", chartURL)
 		var isValidRepo bool
 		switch repo {
 		case "rancher-charts":
