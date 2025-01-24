@@ -2762,7 +2762,7 @@ releases:
         repo: rancher-rke2-charts
         version: 0.1.2100
     featureVersions: *featureVersions-v1
-- version: v1.30.9-rc3+rke2r1
+  - version: v1.30.9-rc3+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
