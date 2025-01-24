@@ -59357,7 +59357,7 @@
       "type": "boolean"
      }
     },
-    "version": "v1.29.13-rc2+rke2r1"
+    "version": "v1.29.13-rc3+rke2r1"
    },
    {
     "agentArgs": {
@@ -62182,7 +62182,7 @@
       "type": "string"
      }
     },
-    "version": "v1.30.9-rc2+rke2r1"
+    "version": "v1.30.9-rc3+rke2r1"
    },
    {
     "agentArgs": {
@@ -64084,7 +64084,7 @@
       "type": "string"
      }
     },
-    "version": "v1.31.5-rc2+rke2r1"
+    "version": "v1.31.5-rc3+rke2r1"
    }
   ]
  }
