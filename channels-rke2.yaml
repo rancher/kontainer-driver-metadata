@@ -2539,12 +2539,6 @@ releases:
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.12.004
-      rke2-traefik:
-        repo: rancher-rke2-charts
-        version: 34.2.000
-      rke2-traefik-crd:
-        repo: rancher-rke2-charts
-        version: 34.2.000
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.1.403
