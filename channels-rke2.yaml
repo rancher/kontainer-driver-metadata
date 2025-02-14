@@ -2536,9 +2536,6 @@ releases:
       rke2-calico:
         repo: rancher-rke2-charts
         version: v3.29.200
-      rke2-ingress-nginx:
-        repo: rancher-rke2-charts
-        version: 4.12.004
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.1.403
