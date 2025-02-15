@@ -2530,9 +2530,6 @@ releases:
       rke2-cilium:
         repo: rancher-rke2-charts
         version: 1.17.000
-      rke2-calico:
-        repo: rancher-rke2-charts
-        version: v3.29.200
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.1.403
