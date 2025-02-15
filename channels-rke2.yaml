@@ -2527,9 +2527,6 @@ releases:
     serverArgs: *serverArgs-v1-28-9-rke2r1
     agentArgs: *agentArgs-v1-28-8-rke2r1
     charts: &charts-v1-29-14-rc1-rke2r1
-      rke2-cilium:
-        repo: rancher-rke2-charts
-        version: 1.17.000
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.1.403
