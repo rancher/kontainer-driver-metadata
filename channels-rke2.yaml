@@ -2472,6 +2472,53 @@ releases:
         repo: rancher-rke2-charts
         version: 0.1.2100
     featureVersions: *featureVersions-v1
+  - version: v1.29.13+rke2r1
+    minChannelServerVersion: v2.9.0-alpha1
+    maxChannelServerVersion: v2.10.99
+    serverArgs: *serverArgs-v1-28-9-rke2r1
+    agentArgs: *agentArgs-v1-28-8-rke2r1
+    charts: &charts-v1-29-13-rke2r1
+      <<: *charts-v1-29-12-rke2r1
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.12.003
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.16.501
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.29.1-build2025011000
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.29.101
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.29.101
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 3.12.200
+      rke2-flannel:
+        repo: rancher-rke2-charts
+        version: v0.26.300
+      rke2-snapshot-controller:
+        repo: rancher-rke2-charts
+        version: 4.0.002
+      rke2-snapshot-controller-crd:
+        repo: rancher-rke2-charts
+        version: 4.0.002
+      rke2-snapshot-validation-webhook:
+        repo: rancher-rke2-charts
+        version: 0.0.0
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.1.400
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.2.900
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.2200
+    featureVersions: *featureVersions-v1
   - version: v1.30.1+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.9.99
@@ -2714,4 +2761,51 @@ releases:
       harvester-csi-driver:
         repo: rancher-rke2-charts
         version: 0.1.2100
+    featureVersions: *featureVersions-v1
+  - version: v1.30.9+rke2r1
+    minChannelServerVersion: v2.9.0-alpha1
+    maxChannelServerVersion: v2.10.99
+    serverArgs: *serverArgs-v1-28-11-rke2r1
+    agentArgs: *agentArgs-v1-28-11-rke2r1
+    charts: &charts-v1-30-9-rke2r1
+      <<: *charts-v1-30-8-rke2r1
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.12.003
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.16.501
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.29.1-build2025011000
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.29.101
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.29.101
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 3.12.200
+      rke2-flannel:
+        repo: rancher-rke2-charts
+        version: v0.26.300
+      rke2-snapshot-controller:
+        repo: rancher-rke2-charts
+        version: 4.0.002
+      rke2-snapshot-controller-crd:
+        repo: rancher-rke2-charts
+        version: 4.0.002
+      rke2-snapshot-validation-webhook:
+        repo: rancher-rke2-charts
+        version: 0.0.0
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.1.400
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.2.900
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.2200
     featureVersions: *featureVersions-v1
