@@ -2536,9 +2536,6 @@ releases:
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
         version: 3.3.1-rancher900
-      rke2-cilium:
-        repo: rancher-rke2-charts
-        version: 1.17.000
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
         version: 3.3.1-rancher900
