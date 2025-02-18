@@ -2558,6 +2558,9 @@ releases:
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.12.004
+      rke2-traefik-crd:
+        repo: rancher-rke2-charts
+        version: 27.0.201
     featureVersions: *featureVersions-v1
   - version: v1.30.1+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
