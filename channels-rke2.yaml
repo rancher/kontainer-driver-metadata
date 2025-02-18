@@ -2540,7 +2540,6 @@ releases:
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
         version: 3.3.1-rancher900
-      <<: *charts-v1-29-13-rke2r1
     featureVersions: *featureVersions-v1
   - version: v1.30.1+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
