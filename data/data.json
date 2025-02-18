@@ -60940,7 +60940,7 @@
      },
      "rancher-vsphere-csi": {
       "repo": "rancher-rke2-charts",
-      "version": "3.3.1-rancher700"
+      "version": "3.3.1-rancher900"
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
@@ -60964,7 +60964,7 @@
      },
      "rke2-flannel": {
       "repo": "rancher-rke2-charts",
-      "version": "v0.26.300"
+      "version": "v0.26.402"
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
@@ -60976,7 +60976,7 @@
      },
      "rke2-multus": {
       "repo": "rancher-rke2-charts",
-      "version": "v4.1.400"
+      "version": "v4.1.403"
      },
      "rke2-snapshot-controller": {
       "repo": "rancher-rke2-charts",
