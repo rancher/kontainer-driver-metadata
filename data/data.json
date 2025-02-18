@@ -60932,7 +60932,7 @@
      },
      "harvester-csi-driver": {
       "repo": "rancher-rke2-charts",
-      "version": "0.1.2200"
+      "version": "0.1.2300"
      },
      "rancher-vsphere-cpi": {
       "repo": "rancher-rke2-charts",
