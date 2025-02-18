@@ -60989,6 +60989,10 @@
      "rke2-snapshot-validation-webhook": {
       "repo": "rancher-rke2-charts",
       "version": "0.0.0"
+     },
+     "rke2-traefik-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "27.0.201"
      }
     },
     "featureVersions": {
