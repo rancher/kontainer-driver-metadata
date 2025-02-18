@@ -60948,7 +60948,7 @@
      },
      "rke2-calico-crd": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.29.200"
+      "version": "v3.29.101"
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
