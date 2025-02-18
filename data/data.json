@@ -60952,7 +60952,7 @@
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.29.1-build2025011000"
+      "version": "v3.29.2-build2025020600"
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
