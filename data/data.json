@@ -64120,11 +64120,11 @@
      },
      "rke2-traefik": {
       "repo": "rancher-rke2-charts",
-      "version": "34.2.000"
+      "version": "27.0.201"
      },
      "rke2-traefik-crd": {
       "repo": "rancher-rke2-charts",
-      "version": "34.2.000"
+      "version": "27.0.201"
      }
     },
     "featureVersions": {
@@ -66339,11 +66339,11 @@
      },
      "rke2-traefik": {
       "repo": "rancher-rke2-charts",
-      "version": "34.2.000"
+      "version": "27.0.201"
      },
      "rke2-traefik-crd": {
       "repo": "rancher-rke2-charts",
-      "version": "34.2.000"
+      "version": "27.0.201"
      }
     },
     "featureVersions": {
