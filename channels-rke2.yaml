@@ -2533,7 +2533,7 @@ releases:
         version: v4.1.403
       rke2-flannel:
         repo: rancher-rke2-charts
-        version: v0.26.402
+        version: v0.26.403
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
         version: 3.3.1-rancher900
@@ -2879,7 +2879,7 @@ releases:
         version: v4.1.403
       rke2-flannel:
         repo: rancher-rke2-charts
-        version: v0.26.402
+        version: v0.26.403
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
         version: 3.3.1-rancher900
@@ -3166,7 +3166,7 @@ releases:
         version: v4.1.403
       rke2-flannel:
         repo: rancher-rke2-charts
-        version: v0.26.402
+        version: v0.26.403
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
         version: 3.3.1-rancher900
