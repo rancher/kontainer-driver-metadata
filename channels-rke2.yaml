@@ -2557,7 +2557,7 @@ releases:
         version: 0.1.2300
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
-        version: 4.12.004
+        version: 4.12.005
     featureVersions: *featureVersions-v1
   - version: v1.30.1+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
@@ -2867,7 +2867,7 @@ releases:
         version: v3.29.200
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
-        version: 4.12.004
+        version: 4.12.005
       rke2-traefik:
         repo: rancher-rke2-charts
         version: 27.0.201
@@ -3154,7 +3154,7 @@ releases:
         version: v3.29.200
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
-        version: 4.12.004
+        version: 4.12.005
       rke2-traefik:
         repo: rancher-rke2-charts
         version: 27.0.201
