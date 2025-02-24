@@ -2551,7 +2551,7 @@ releases:
         version: v3.29.101
       rke2-canal:
         repo: rancher-rke2-charts
-        version: v3.29.2-build2025020600
+        version: v3.29.2-build2025021800
       harvester-csi-driver:
         repo: rancher-rke2-charts
         version: 0.1.2300
@@ -2861,7 +2861,7 @@ releases:
         version: 1.17.000
       rke2-canal:
         repo: rancher-rke2-charts
-        version: v3.29.2-build2025020600
+        version: v3.29.2-build2025021800
       rke2-calico:
         repo: rancher-rke2-charts
         version: v3.29.200
@@ -3148,7 +3148,7 @@ releases:
         version: 1.17.000
       rke2-canal:
         repo: rancher-rke2-charts
-        version: v3.29.2-build2025020600
+        version: v3.29.2-build2025021800
       rke2-calico:
         repo: rancher-rke2-charts
         version: v3.29.200
