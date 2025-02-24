@@ -60964,7 +60964,7 @@
      },
      "rke2-flannel": {
       "repo": "rancher-rke2-charts",
-      "version": "v0.26.402"
+      "version": "v0.26.403"
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
@@ -64092,7 +64092,7 @@
      },
      "rke2-flannel": {
       "repo": "rancher-rke2-charts",
-      "version": "v0.26.402"
+      "version": "v0.26.403"
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
@@ -66311,7 +66311,7 @@
      },
      "rke2-flannel": {
       "repo": "rancher-rke2-charts",
-      "version": "v0.26.402"
+      "version": "v0.26.403"
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
