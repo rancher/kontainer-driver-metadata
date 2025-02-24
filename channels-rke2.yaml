@@ -2521,12 +2521,12 @@ releases:
         repo: rancher-rke2-charts
         version: 0.1.2200
     featureVersions: *featureVersions-v1
-  - version: v1.29.14-rc1+rke2r1
+  - version: v1.29.14-rc2+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-9-rke2r1
     agentArgs: *agentArgs-v1-28-8-rke2r1
-    charts: &charts-v1-29-14-rc1-rke2r1
+    charts: &charts-v1-29-14-rc2-rke2r1
       <<: *charts-v1-29-13-rke2r1
       rke2-multus:
         repo: rancher-rke2-charts
@@ -2849,12 +2849,12 @@ releases:
         repo: rancher-rke2-charts
         version: 0.1.2200
     featureVersions: *featureVersions-v1
-  - version: v1.30.10-rc1+rke2r1
+  - version: v1.30.10-rc2+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
-    charts: &charts-v1-30-10-rc1-rke2r1
+    charts: &charts-v1-30-10-rc2-rke2r1
       <<: *charts-v1-30-9-rke2r1
       rke2-cilium:
         repo: rancher-rke2-charts
@@ -3136,12 +3136,12 @@ releases:
         repo: rancher-rke2-charts
         version: 0.1.2200
     featureVersions: *featureVersions-v1
-  - version: v1.31.6-rc1+rke2r1
+  - version: v1.31.6-rc3+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
-    charts: &charts-v1-31-6-rc1-rke2r1
+    charts: &charts-v1-31-6-rc3-rke2r1
       <<: *charts-v1-31-5-rke2r1
       rke2-cilium:
         repo: rancher-rke2-charts
