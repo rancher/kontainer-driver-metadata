@@ -60952,7 +60952,7 @@
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.29.2-build2025020600"
+      "version": "v3.29.2-build2025021800"
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
@@ -64080,7 +64080,7 @@
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.29.2-build2025020600"
+      "version": "v3.29.2-build2025021800"
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
@@ -66299,7 +66299,7 @@
      },
      "rke2-canal": {
       "repo": "rancher-rke2-charts",
-      "version": "v3.29.2-build2025020600"
+      "version": "v3.29.2-build2025021800"
      },
      "rke2-cilium": {
       "repo": "rancher-rke2-charts",
