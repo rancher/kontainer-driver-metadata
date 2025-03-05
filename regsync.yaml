@@ -465,6 +465,7 @@ sync:
         - v1.29.11-rancher1
         - v1.29.12-rancher1
         - v1.29.13-rancher1
+        - v1.29.14-rancher1
         - v1.29.6-rancher1
         - v1.29.7-rancher1
         - v1.29.8-rancher1
