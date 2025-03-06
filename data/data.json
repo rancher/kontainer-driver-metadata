@@ -60692,6 +60692,10 @@
      "rke2-snapshot-validation-webhook": {
       "repo": "rancher-rke2-charts",
       "version": "0.0.0"
+     },
+     "runtimeclasses": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.000"
      }
     },
     "featureVersions": {
@@ -60989,6 +60993,10 @@
      "rke2-snapshot-validation-webhook": {
       "repo": "rancher-rke2-charts",
       "version": "0.0.0"
+     },
+     "runtimeclasses": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.000"
      }
     },
     "featureVersions": {
