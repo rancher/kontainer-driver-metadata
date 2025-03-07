@@ -60681,6 +60681,10 @@
       "repo": "rancher-rke2-charts",
       "version": "v4.1.400"
      },
+     "rke2-runtimeclasses": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.000"
+     },
      "rke2-snapshot-controller": {
       "repo": "rancher-rke2-charts",
       "version": "4.0.002"
@@ -60692,10 +60696,6 @@
      "rke2-snapshot-validation-webhook": {
       "repo": "rancher-rke2-charts",
       "version": "0.0.0"
-     },
-     "runtimeclasses": {
-      "repo": "rancher-rke2-charts",
-      "version": "0.1.000"
      }
     },
     "featureVersions": {
@@ -60982,6 +60982,10 @@
       "repo": "rancher-rke2-charts",
       "version": "v4.1.403"
      },
+     "rke2-runtimeclasses": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.000"
+     },
      "rke2-snapshot-controller": {
       "repo": "rancher-rke2-charts",
       "version": "4.0.002"
@@ -60993,10 +60997,6 @@
      "rke2-snapshot-validation-webhook": {
       "repo": "rancher-rke2-charts",
       "version": "0.0.0"
-     },
-     "runtimeclasses": {
-      "repo": "rancher-rke2-charts",
-      "version": "0.1.000"
      }
     },
     "featureVersions": {
