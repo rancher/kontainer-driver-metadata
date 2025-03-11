@@ -57440,7 +57440,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "2.9.99",
+    "maxChannelServerVersion": "v2.10.99",
     "minChannelServerVersion": "v2.8.3-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -59806,7 +59806,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "2.9.99",
+    "maxChannelServerVersion": "v2.10.99",
     "minChannelServerVersion": "v2.9.0-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -60103,7 +60103,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "2.9.99",
+    "maxChannelServerVersion": "v2.10.99",
     "minChannelServerVersion": "v2.9.0-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -60400,7 +60400,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "2.9.99",
+    "maxChannelServerVersion": "v2.10.99",
     "minChannelServerVersion": "v2.9.0-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -60701,7 +60701,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "2.9.99",
+    "maxChannelServerVersion": "v2.10.99",
     "minChannelServerVersion": "v2.9.0-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -65731,7 +65731,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "2.9.99",
+    "maxChannelServerVersion": "v2.10.99",
     "minChannelServerVersion": "v2.9.0-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -66052,7 +66052,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "2.9.99",
+    "maxChannelServerVersion": "v2.10.99",
     "minChannelServerVersion": "v2.9.0-alpha1",
     "serverArgs": {
      "audit-policy-file": {
@@ -66373,7 +66373,7 @@
     "featureVersions": {
      "encryption-key-rotation": "2.0.0"
     },
-    "maxChannelServerVersion": "2.9.99",
+    "maxChannelServerVersion": "v2.10.99",
     "minChannelServerVersion": "v2.9.0-alpha1",
     "serverArgs": {
      "audit-policy-file": {
