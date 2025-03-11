@@ -2327,7 +2327,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.29.9+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: 2.9.99
+    maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-9-rke2r1
     agentArgs: *agentArgs-v1-28-8-rke2r1
     charts: &charts-v1-29-9-rke2r1
@@ -2526,7 +2526,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.29.14+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: 2.9.99
+    maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-9-rke2r1
     agentArgs: *agentArgs-v1-28-8-rke2r1
     charts: &charts-v1-29-14-rke2r1
@@ -2652,7 +2652,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.30.5+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: 2.9.99
+    maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-5-rke2r1
@@ -2684,7 +2684,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.30.6+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: 2.9.99
+    maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-6-rke2r1
@@ -2737,7 +2737,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.30.7+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: 2.9.99
+    maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-7-rke2r1
@@ -2775,7 +2775,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.30.8+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: 2.9.99
+    maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-8-rke2r1
@@ -2807,7 +2807,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.30.9+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: 2.9.99
+    maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-9-rke2r1
@@ -2857,7 +2857,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.30.10+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: 2.9.99
+    maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-10-rke2r1
@@ -2945,7 +2945,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.31.1+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: 2.9.99
+    maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-1-rke2r1
@@ -2974,7 +2974,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.31.2+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: 2.9.99
+    maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-2-rke2r1
@@ -3027,7 +3027,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.31.3+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: 2.9.99
+    maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-3-rke2r1
