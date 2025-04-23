@@ -476,6 +476,7 @@ sync:
         - v1.29.9-rancher1
         - v1.30.10-rancher1
         - v1.30.11-rancher1
+        - v1.30.12-rancher1
         - v1.30.2-rancher1
         - v1.30.3-rancher1
         - v1.30.4-rancher1
@@ -1104,6 +1105,7 @@ sync:
         - 1.8.5
         - 1.8.6
         - v1.8.9
+        - v1.9.0
   - source: docker.io/rancher/mirrored-coredns-coredns
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-coredns-coredns'
     type: repository
@@ -1412,6 +1414,7 @@ sync:
         - v0.1.108
         - v0.1.109
         - v0.1.111
+        - v0.1.112
         - v0.1.80
         - v0.1.87
         - v0.1.88
