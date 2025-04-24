@@ -800,6 +800,15 @@ releases:
     serverArgs: *serverArgs-v9
     agentArgs: *agentArgs-v7
     featureVersions: *featureVersions-v1
+  - version: v1.30.12-rc1+k3s1
+    minChannelServerVersion: v2.9.0-alpha1
+    maxChannelServerVersion: v2.10.99
+    serverArgs: &serverArgs-v10
+      <<: *serverArgs-v9
+      secrets-encryption-provider:
+        type: string
+    agentArgs: *agentArgs-v7
+    featureVersions: *featureVersions-v1
   - version: v1.31.1+k3s1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
@@ -840,5 +849,14 @@ releases:
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v9
+    agentArgs: *agentArgs-v7
+    featureVersions: *featureVersions-v1
+  - version: v1.31.8-rc1+k3s1
+    minChannelServerVersion: v2.9.0-alpha1
+    maxChannelServerVersion: v2.10.99
+    serverArgs: &serverArgs-v10
+      <<: *serverArgs-v9
+      secrets-encryption-provider:
+        type: string
     agentArgs: *agentArgs-v7
     featureVersions: *featureVersions-v1
