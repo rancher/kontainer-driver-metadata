@@ -854,9 +854,6 @@ releases:
   - version: v1.31.8-rc1+k3s1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: &serverArgs-v10
-      <<: *serverArgs-v9
-      secrets-encryption-provider:
-        type: string
+    serverArgs: *serverArgs-v10
     agentArgs: *agentArgs-v7
     featureVersions: *featureVersions-v1
