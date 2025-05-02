@@ -798,3 +798,12 @@ releases:
     serverArgs: *serverArgs-v9
     agentArgs: *agentArgs-v7
     featureVersions: *featureVersions-v1
+  - version: v1.30.12+k3s1
+    minChannelServerVersion: v2.9.0-alpha1
+    maxChannelServerVersion: v2.9.99
+    serverArgs: &serverArgs-v10
+      <<: *serverArgs-v9
+      secrets-encryption-provider:
+        type: string
+    agentArgs: *agentArgs-v7
+    featureVersions: *featureVersions-v1
