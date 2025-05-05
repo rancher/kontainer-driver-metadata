@@ -73,6 +73,7 @@ sync:
         - v3.29.1-build20250110
         - v3.29.2-build20250218
         - v3.29.2-build20250306
+        - v3.29.3-build20250408
   - source: docker.io/rancher/hardened-cluster-autoscaler
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-cluster-autoscaler'
     type: repository
@@ -87,6 +88,7 @@ sync:
         - v1.8.6-build20230609
         - v1.8.6-build20231009
         - v1.9.0-build20241126
+        - v1.9.0-build20241203
   - source: docker.io/rancher/hardened-cni-plugins
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-cni-plugins'
     type: repository
@@ -118,6 +120,7 @@ sync:
         - v1.11.1-build20240910
         - v1.11.3-build20241018
         - v1.12.0-build20241126
+        - v1.12.1-build20250401
         - v1.9.3-build20220613
         - v1.9.3-build20221011
   - source: docker.io/rancher/hardened-dns-node-cache
@@ -134,6 +137,7 @@ sync:
         - 1.23.1-build20240910
         - 1.23.1-build20241008
         - 1.24.0-build20241211
+        - 1.25.0-build20250127
   - source: docker.io/rancher/hardened-etcd
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-etcd'
     type: repository
@@ -144,6 +148,7 @@ sync:
         - v3.5.16-k3s1-build20241106
         - v3.5.18-k3s1-build20250210
         - v3.5.19-k3s1-build20250306
+        - v3.5.21-k3s1-build20250411
         - v3.5.4-k3s1-build20220504
         - v3.5.4-k3s1-build20221011
         - v3.5.7-k3s1-build20230406
@@ -177,6 +182,7 @@ sync:
         - v0.26.3-build20250108
         - v0.26.4-build20250218
         - v0.26.5-build20250306
+        - v0.26.6-build20250414
   - source: docker.io/rancher/hardened-ib-sriov-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-ib-sriov-cni'
     type: repository
@@ -276,6 +282,7 @@ sync:
         - v1.30.1-rke2r1-build20240515
         - v1.30.10-rke2r1-build20250213
         - v1.30.11-rke2r1-build20250312
+        - v1.30.12-rke2r1-build20250423
         - v1.30.2-rke2r1-build20240619
         - v1.30.3-rke2r1-build20240717
         - v1.30.4-rke2r1-build20240815
@@ -292,9 +299,11 @@ sync:
         - v1.31.5-rke2r1-build20250115
         - v1.31.6-rke2r1-build20250213
         - v1.31.7-rke2r1-build20250312
+        - v1.31.8-rke2r1-build20250423
         - v1.32.1-rke2r1-build20250115
         - v1.32.2-rke2r1-build20250213
         - v1.32.3-rke2r1-build20250312
+        - v1.32.4-rke2r1-build20250423
   - source: docker.io/rancher/hardened-multus-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-multus-cni'
     type: repository
@@ -314,6 +323,7 @@ sync:
         - v4.1.2-build20241011
         - v4.1.3-build20241028
         - v4.1.4-build20250108
+        - v4.2.0-build20250326
   - source: docker.io/rancher/hardened-node-feature-discovery
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-node-feature-discovery'
     type: repository
@@ -396,6 +406,7 @@ sync:
         - v0.8.0-build20240910
         - v0.8.0-build20241011
         - v0.8.0-build20250131
+        - v0.9.0-build20250403
   - source: docker.io/rancher/harvester-cloud-provider
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/harvester-cloud-provider'
     type: repository
@@ -692,6 +703,7 @@ sync:
         - v3.29.0
         - v3.29.1
         - v3.29.2
+        - v3.29.3
   - source: docker.io/rancher/mirrored-calico-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-cni'
     type: repository
@@ -712,6 +724,7 @@ sync:
         - v3.29.0
         - v3.29.1
         - v3.29.2
+        - v3.29.3
   - source: docker.io/rancher/mirrored-calico-csi
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-csi'
     type: repository
@@ -724,6 +737,7 @@ sync:
         - v3.29.0
         - v3.29.1
         - v3.29.2
+        - v3.29.3
   - source: docker.io/rancher/mirrored-calico-ctl
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-ctl'
     type: repository
@@ -808,6 +822,7 @@ sync:
         - v3.29.0
         - v3.29.1
         - v3.29.2
+        - v3.29.3
   - source: docker.io/rancher/mirrored-calico-operator
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-operator'
     type: repository
@@ -827,6 +842,7 @@ sync:
         - v1.36.0
         - v1.36.2
         - v1.36.5
+        - v1.36.7
   - source: docker.io/rancher/mirrored-calico-pod2daemon-flexvol
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-pod2daemon-flexvol'
     type: repository
@@ -870,6 +886,7 @@ sync:
         - v3.29.0
         - v3.29.1
         - v3.29.2
+        - v3.29.3
   - source: docker.io/rancher/mirrored-cilium-certgen
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-certgen'
     type: repository
@@ -907,6 +924,7 @@ sync:
         - v1.16.5
         - v1.17.0
         - v1.17.1
+        - v1.17.3
   - source: docker.io/rancher/mirrored-cilium-cilium-envoy
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-cilium-envoy'
     type: repository
@@ -925,6 +943,7 @@ sync:
         - v1.30.8-1733837904-eaae5aca0fb988583e5617170a65ac5aa51c0aa8
         - v1.31.5-1737535524-fe8efeb16a7d233bffd05af9ea53599340d3f18e
         - v1.31.5-1739264036-958bef243c6c66fcfd73ca319f2eb49fff1eb2ae
+        - v1.32.5-1744305768-f9ddca7dcd91f7ca25a505560e655c47d3dec2cf
   - source: docker.io/rancher/mirrored-cilium-cilium-etcd-operator
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-cilium-etcd-operator'
     type: repository
@@ -954,6 +973,7 @@ sync:
         - v1.16.5
         - v1.17.0
         - v1.17.1
+        - v1.17.3
   - source: docker.io/rancher/mirrored-cilium-hubble-relay
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-hubble-relay'
     type: repository
@@ -977,6 +997,7 @@ sync:
         - v1.16.5
         - v1.17.0
         - v1.17.1
+        - v1.17.3
   - source: docker.io/rancher/mirrored-cilium-hubble-ui
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-hubble-ui'
     type: repository
@@ -988,6 +1009,7 @@ sync:
         - v0.12.1
         - v0.13.0
         - v0.13.1
+        - v0.13.2
         - v0.9.2
   - source: docker.io/rancher/mirrored-cilium-hubble-ui-backend
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-hubble-ui-backend'
@@ -1000,6 +1022,7 @@ sync:
         - v0.12.1
         - v0.13.0
         - v0.13.1
+        - v0.13.2
         - v0.9.2
   - source: docker.io/rancher/mirrored-cilium-kvstoremesh
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-kvstoremesh'
@@ -1035,6 +1058,7 @@ sync:
         - v1.16.5
         - v1.17.0
         - v1.17.1
+        - v1.17.3
   - source: docker.io/rancher/mirrored-cilium-operator-azure
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-operator-azure'
     type: repository
@@ -1061,6 +1085,7 @@ sync:
         - v1.16.5
         - v1.17.0
         - v1.17.1
+        - v1.17.3
   - source: docker.io/rancher/mirrored-cilium-operator-generic
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-operator-generic'
     type: repository
@@ -1087,6 +1112,7 @@ sync:
         - v1.16.5
         - v1.17.0
         - v1.17.1
+        - v1.17.3
   - source: docker.io/rancher/mirrored-cilium-startup-script
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-startup-script'
     type: repository
@@ -1455,6 +1481,7 @@ sync:
         - v1.12.0-hardened2
         - v1.12.0-hardened6
         - v1.12.1-hardened1
+        - v1.12.1-hardened3
   - source: docker.io/rancher/pause
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/pause'
     type: repository
@@ -1647,6 +1674,8 @@ sync:
         - v1.30.10-rke2r1-windows-amd64
         - v1.30.11-rke2r1
         - v1.30.11-rke2r1-windows-amd64
+        - v1.30.12-rke2r1
+        - v1.30.12-rke2r1-windows-amd64
         - v1.30.2-rke2r1
         - v1.30.2-rke2r1-windows-amd64
         - v1.30.3-rke2r1
@@ -1679,12 +1708,16 @@ sync:
         - v1.31.6-rke2r1-windows-amd64
         - v1.31.7-rke2r1
         - v1.31.7-rke2r1-windows-amd64
+        - v1.31.8-rke2r1
+        - v1.31.8-rke2r1-windows-amd64
         - v1.32.1-rke2r1
         - v1.32.1-rke2r1-windows-amd64
         - v1.32.2-rke2r1
         - v1.32.2-rke2r1-windows-amd64
         - v1.32.3-rke2r1
         - v1.32.3-rke2r1-windows-amd64
+        - v1.32.4-rke2r1
+        - v1.32.4-rke2r1-windows-amd64
   - source: docker.io/rancher/rke2-upgrade
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-upgrade'
     type: repository
@@ -1759,6 +1792,7 @@ sync:
         - v1.30.1-rke2r1
         - v1.30.10-rke2r1
         - v1.30.11-rke2r1
+        - v1.30.12-rke2r1
         - v1.30.2-rke2r1
         - v1.30.3-rke2r1
         - v1.30.4-rke2r1
@@ -1775,9 +1809,11 @@ sync:
         - v1.31.5-rke2r1
         - v1.31.6-rke2r1
         - v1.31.7-rke2r1
+        - v1.31.8-rke2r1
         - v1.32.1-rke2r1
         - v1.32.2-rke2r1
         - v1.32.3-rke2r1
+        - v1.32.4-rke2r1
   - source: docker.io/rancher/system-agent-installer-k3s
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-k3s'
     type: repository
@@ -1946,6 +1982,7 @@ sync:
         - v1.30.1-rke2r1
         - v1.30.10-rke2r1
         - v1.30.11-rke2r1
+        - v1.30.12-rke2r1
         - v1.30.2-rke2r1
         - v1.30.3-rke2r1
         - v1.30.4-rke2r1
@@ -1962,6 +1999,8 @@ sync:
         - v1.31.5-rke2r1
         - v1.31.6-rke2r1
         - v1.31.7-rke2r1
+        - v1.31.8-rke2r1
         - v1.32.1-rke2r1
         - v1.32.2-rke2r1
         - v1.32.3-rke2r1
+        - v1.32.4-rke2r1
