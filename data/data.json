@@ -71799,7 +71799,7 @@
      },
      "rancher-vsphere-cpi": {
       "repo": "rancher-rke2-charts",
-      "version": "1.10.000"
+      "version": "1.11.000"
      },
      "rancher-vsphere-csi": {
       "repo": "rancher-rke2-charts",
