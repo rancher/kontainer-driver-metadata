@@ -25,7 +25,7 @@ appDefaults:
       - appVersion: '>= 2.11.0-0 < 2.12.100-0'
         defaultVersion: '1.32.x'
       - appVersion: '>= 2.12.0-0 < 2.13.100-0'
-        defaultVersion: '1.32.x' # todo: change to 1.33.x once it is added
+        defaultVersion: '1.33.x' # todo: change to 1.33.x once it is added
 releases:
   - version: v1.19.16+rke2r1
     minChannelServerVersion: v2.6.0-alpha1
@@ -3447,4 +3447,18 @@ releases:
       rke2-flannel:
         repo: rancher-rke2-charts
         version: v0.26.601
+    featureVersions: *featureVersions-v1
+  - version: v1.33.0+rke2r1
+    minChannelServerVersion: v2.12.0-alpha1
+    maxChannelServerVersion: v2.12.99
+    serverArgs: *serverArgs-v1-28-11-rke2r1
+    agentArgs: *agentArgs-v1-28-11-rke2r1
+    charts: &charts-v1-33-0-rke2r1
+      <<: *charts-v1-32-4-rke2r1
+      rancher-vsphere-cpi:
+        repo: rancher-rke2-charts
+        version: 1.11.000
+      rancher-vsphere-csi:
+        repo: rancher-rke2-charts
+        version: 3.3.1-rancher1000
     featureVersions: *featureVersions-v1
