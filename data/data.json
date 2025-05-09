@@ -71803,7 +71803,7 @@
      },
      "rancher-vsphere-csi": {
       "repo": "rancher-rke2-charts",
-      "version": "3.3.1-rancher900"
+      "version": "3.3.1-rancher1000"
      },
      "rke2-calico": {
       "repo": "rancher-rke2-charts",
