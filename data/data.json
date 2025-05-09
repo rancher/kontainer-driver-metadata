@@ -71870,7 +71870,7 @@
      "encryption-key-rotation": "2.0.0"
     },
     "maxChannelServerVersion": "v2.12.99",
-    "minChannelServerVersion": "v2.11.0-alpha1",
+    "minChannelServerVersion": "v2.12.0-alpha1",
     "serverArgs": {
      "audit-policy-file": {
       "type": "string"
