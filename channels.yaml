@@ -24,6 +24,8 @@ appDefaults:
         defaultVersion: '1.31.x'
       - appVersion: '>= 2.11.0-0 < 2.12.100-0'
         defaultVersion: '1.32.x'
+      - appVersion: '>= 2.12.0-0 < 2.13.100-0'
+        defaultVersion: '1.32.x' # todo: change to 1.33.x once it is added
 releases:
   - version: v1.18.20+k3s1
     minChannelServerVersion: v2.6.0-alpha1
@@ -855,7 +857,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.31.8+k3s1
     minChannelServerVersion: v2.10.0-alpha1
-    maxChannelServerVersion: v2.11.99
+    maxChannelServerVersion: v2.12.99
     serverArgs: *serverArgs-v10
     agentArgs: *agentArgs-v7
     featureVersions: *featureVersions-v1
@@ -879,7 +881,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.32.4+k3s1
     minChannelServerVersion: v2.11.0-alpha1
-    maxChannelServerVersion: v2.11.99
+    maxChannelServerVersion: v2.12.99
     serverArgs: *serverArgs-v10
     agentArgs: *agentArgs-v7
     featureVersions: *featureVersions-v1
