@@ -3455,4 +3455,7 @@ releases:
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-33-0-rke2r1
       <<: *charts-v1-32-4-rke2r1
+      rancher-vsphere-cpi:
+        repo: rancher-rke2-charts
+        version: 1.11.000
     featureVersions: *featureVersions-v1
