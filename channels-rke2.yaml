@@ -2978,7 +2978,8 @@ releases:
       rke2-flannel:
         repo: rancher-rke2-charts
         version: v0.26.601
-    featureVersions: *featureVersions-v1
+    # featureVersions: *featureVersions-v1
+    # featureVersions field is intentionally not defined to disable encryption key rotation for April 2025 patches due to https://github.com/rancher/rke2/issues/8236
   - version: v1.31.0+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.9.99
@@ -3329,7 +3330,8 @@ releases:
       rke2-flannel:
         repo: rancher-rke2-charts
         version: v0.26.601
-    featureVersions: *featureVersions-v1
+    # featureVersions: *featureVersions-v1
+    # featureVersions field is intentionally not defined to disable encryption key rotation for April 2025 patches due to https://github.com/rancher/rke2/issues/8236
   - version: v1.32.1+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
     maxChannelServerVersion: v2.11.99
@@ -3445,4 +3447,5 @@ releases:
       rke2-flannel:
         repo: rancher-rke2-charts
         version: v0.26.601
-    featureVersions: *featureVersions-v1
+    # featureVersions: *featureVersions-v1
+    # featureVersions field is intentionally not defined to disable encryption key rotation for April 2025 patches due to https://github.com/rancher/rke2/issues/8236
