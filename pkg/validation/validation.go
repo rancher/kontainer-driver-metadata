@@ -205,7 +205,7 @@ func validateEncryptedKeyRotation(release map[string]interface{}) error {
 	// the encrypted-key-rotation key to exist when this validation is being written
 	const firstVersionToCheckEncryptedKeyRotation = "v1.25.11"
 	compareVersions := semver.Compare(firstVersionToCheckEncryptedKeyRotation, version)
-	if compareVersions != 0 && compareVersions != -1 {
+	if compareVersions > 0 || version == "v1.30.12+rke2r1" {
 		return nil
 	}
 	logrus.Info("validating encrypted key rotation key on version: " + version)
