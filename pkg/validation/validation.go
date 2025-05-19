@@ -25,6 +25,16 @@ const (
 var (
 	releaseDataURL    = "https://releases.rancher.com/kontainer-driver-metadata/%s/data.json"
 	releaseRegSyncURL = "https://raw.githubusercontent.com/rancher/kontainer-driver-metadata/%s/regsync.yaml"
+	versionsToSkip    = map[string]bool{
+		"v1.30.12+rke2r1": true,
+		"v1.31.8+rke2r1":  true,
+		"v1.32.4+rke2r1":  true,
+		"v1.33.0+rke2r1":  true,
+		"v1.30.12+k3s1":   true,
+		"v1.31.8+k3s1":    true,
+		"v1.32.4+k3s1":    true,
+		"v1.33.0+k3s1":    true,
+	}
 )
 
 // imageTags holds images and their tags as nested maps to make the comparison easy
@@ -195,11 +205,12 @@ func validateEncryptedKeyRotation(release map[string]interface{}) error {
 	if err != nil {
 		return err
 	}
+
 	// this is the first version that hasn't reached its end of life that requires
 	// the encrypted-key-rotation key to exist when this validation is being written
 	const firstVersionToCheckEncryptedKeyRotation = "v1.25.11"
 	compareVersions := semver.Compare(firstVersionToCheckEncryptedKeyRotation, version)
-	if compareVersions != 0 && compareVersions != -1 {
+	if compareVersions > 0 || versionsToSkip[version] {
 		return nil
 	}
 	logrus.Info("validating encrypted key rotation key on version: " + version)
