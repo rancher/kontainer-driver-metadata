@@ -2977,4 +2977,5 @@ releases:
       rke2-flannel:
         repo: rancher-rke2-charts
         version: v0.26.601
-    featureVersions: *featureVersions-v1
+    # featureVersions: *featureVersions-v1
+    # featureVersions field is intentionally not defined to disable encryption key rotation for April 2025 patches due to https://github.com/rancher/rke2/issues/8236
