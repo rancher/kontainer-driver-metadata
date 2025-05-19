@@ -67604,9 +67604,6 @@
       "version": "27.0.202"
      }
     },
-    "featureVersions": {
-     "encryption-key-rotation": "2.0.0"
-    },
     "maxChannelServerVersion": "v2.11.99",
     "minChannelServerVersion": "v2.9.0-alpha1",
     "serverArgs": {
@@ -70473,9 +70470,6 @@
       "version": "27.0.202"
      }
     },
-    "featureVersions": {
-     "encryption-key-rotation": "2.0.0"
-    },
     "maxChannelServerVersion": "v2.12.99",
     "minChannelServerVersion": "v2.10.0-alpha1",
     "serverArgs": {
@@ -72075,9 +72069,6 @@
       "version": "34.2.002"
      }
     },
-    "featureVersions": {
-     "encryption-key-rotation": "2.0.0"
-    },
     "maxChannelServerVersion": "v2.12.99",
     "minChannelServerVersion": "v2.11.0-alpha1",
     "serverArgs": {
@@ -72713,9 +72704,6 @@
       "repo": "rancher-rke2-charts",
       "version": "34.2.002"
      }
-    },
-    "featureVersions": {
-     "encryption-key-rotation": "2.0.0"
     },
     "maxChannelServerVersion": "v2.12.99",
     "minChannelServerVersion": "v2.12.0-alpha1",
