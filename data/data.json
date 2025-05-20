@@ -67023,7 +67023,7 @@
      },
      "rke2-flannel": {
       "repo": "rancher-rke2-charts",
-      "version": "v0.26.601"
+      "version": "v0.26.701"
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
@@ -67197,7 +67197,7 @@
       "type": "string"
      }
     },
-    "version": "v1.30.13-rc2+rke2r1"
+    "version": "v1.30.13+rke2r1"
    },
    {
     "agentArgs": {
@@ -70210,7 +70210,7 @@
      },
      "rke2-flannel": {
       "repo": "rancher-rke2-charts",
-      "version": "v0.26.601"
+      "version": "v0.26.701"
      },
      "rke2-ingress-nginx": {
       "repo": "rancher-rke2-charts",
@@ -70253,7 +70253,7 @@
      "encryption-key-rotation": "2.0.0"
     },
     "maxChannelServerVersion": "v2.10.99",
-    "minChannelServerVersion": "v2.9.0-alpha1",
+    "minChannelServerVersion": "v2.10.0-alpha1",
     "serverArgs": {
      "audit-policy-file": {
       "type": "string"
@@ -70384,7 +70384,7 @@
       "type": "string"
      }
     },
-    "version": "v1.31.9-rc2+rke2r1"
+    "version": "v1.31.9+rke2r1"
    }
   ]
  }
