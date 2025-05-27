@@ -810,6 +810,20 @@ releases:
     agentArgs: *agentArgs-v7
     # featureVersions: *featureVersions-v1
     # featureVersions field is intentionally not defined to disable encryption key rotation for April 2025 patches due to https://github.com/rancher/rke2/issues/8236
+  - version: v1.30.13+k3s1
+    minChannelServerVersion: v2.9.0-alpha1
+    maxChannelServerVersion: v2.10.99
+    serverArgs: &serverArgs-v11
+      <<: *serverArgs-v10
+      etcd-s3-bucket-lookup-type:
+        type: enum
+        options:
+        - auto
+        - dns
+        - path
+        default: auto
+    agentArgs: *agentArgs-v7
+    featureVersions: *featureVersions-v1
   - version: v1.31.1+k3s1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
@@ -859,3 +873,9 @@ releases:
     agentArgs: *agentArgs-v7
     # featureVersions: *featureVersions-v1
     # featureVersions field is intentionally not defined to disable encryption key rotation for April 2025 patches due to https://github.com/rancher/rke2/issues/8236
+  - version: v1.31.9+k3s1
+    minChannelServerVersion: v2.9.0-alpha1
+    maxChannelServerVersion: v2.10.99
+    serverArgs: *serverArgs-v11
+    agentArgs: *agentArgs-v7
+    featureVersions: *featureVersions-v1
