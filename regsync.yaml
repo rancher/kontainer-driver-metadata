@@ -10,34 +10,6 @@ defaults:
     - application/vnd.oci.image.manifest.v1+json
     - application/vnd.oci.image.index.v1+json
 sync:
-  - source: docker.io/rancher/calico-cni
-    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/calico-cni'
-    type: repository
-    tags:
-      allow:
-        - v3.22.0-rancher1
-        - v3.22.5-rancher1
-        - v3.24.1-rancher1
-        - v3.25.0-rancher1
-        - v3.26.1-rancher1
-        - v3.26.3-rancher1
-        - v3.27.0-rancher1
-        - v3.27.3-rancher1
-        - v3.27.4-rancher1
-        - v3.28.0-rancher1
-        - v3.28.1-rancher1
-        - v3.29.0-rancher1
-        - v3.29.3-rancher1
-  - source: docker.io/rancher/flannel-cni
-    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/flannel-cni'
-    type: repository
-    tags:
-      allow:
-        - v0.3.0-rancher6
-        - v0.3.0-rancher7
-        - v0.3.0-rancher8
-        - v0.3.0-rancher9
-        - v1.4.1-rancher1
   - source: docker.io/rancher/hardened-addon-resizer
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-addon-resizer'
     type: repository
@@ -441,100 +413,6 @@ sync:
         - v0.1.7
         - v0.2.1
         - v0.2.2
-  - source: docker.io/rancher/hyperkube
-    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hyperkube'
-    type: repository
-    tags:
-      allow:
-        - v1.23.10-rancher1
-        - v1.23.12-rancher1
-        - v1.23.14-rancher1
-        - v1.23.15-rancher1
-        - v1.23.16-rancher2
-        - v1.23.4-rancher1
-        - v1.23.6-rancher1
-        - v1.23.7-rancher1
-        - v1.23.8-rancher1
-        - v1.24.10-rancher2
-        - v1.24.10-rancher4
-        - v1.24.13-rancher2
-        - v1.24.15-rancher1
-        - v1.24.16-rancher1
-        - v1.24.17-rancher1
-        - v1.24.2-rancher1
-        - v1.24.4-rancher1
-        - v1.24.6-rancher1
-        - v1.24.8-rancher1
-        - v1.24.9-rancher1
-        - v1.25.11-rancher1
-        - v1.25.12-rancher1
-        - v1.25.13-rancher1
-        - v1.25.14-rancher1
-        - v1.25.16-rancher2
-        - v1.25.6-rancher2
-        - v1.25.6-rancher4
-        - v1.25.9-rancher2
-        - v1.26.11-rancher2
-        - v1.26.13-rancher1
-        - v1.26.14-rancher1
-        - v1.26.15-rancher1
-        - v1.26.4-rancher2
-        - v1.26.6-rancher1
-        - v1.26.7-rancher1
-        - v1.26.8-rancher1
-        - v1.26.9-rancher1
-        - v1.27.10-rancher1
-        - v1.27.11-rancher1
-        - v1.27.12-rancher1
-        - v1.27.13-rancher1
-        - v1.27.14-rancher1
-        - v1.27.15-rancher1
-        - v1.27.16-rancher1
-        - v1.27.6-rancher1
-        - v1.27.8-rancher2
-        - v1.28.10-rancher1
-        - v1.28.11-rancher1
-        - v1.28.12-rancher1
-        - v1.28.13-rancher1
-        - v1.28.14-rancher1
-        - v1.28.15-rancher1
-        - v1.28.7-rancher1
-        - v1.28.8-rancher1
-        - v1.28.9-rancher1
-        - v1.29.10-rancher1
-        - v1.29.11-rancher1
-        - v1.29.12-rancher1
-        - v1.29.13-rancher1
-        - v1.29.14-rancher1
-        - v1.29.15-rancher1
-        - v1.29.6-rancher1
-        - v1.29.7-rancher1
-        - v1.29.8-rancher1
-        - v1.29.9-rancher1
-        - v1.30.10-rancher1
-        - v1.30.11-rancher1
-        - v1.30.12-rancher1
-        - v1.30.13-rancher1
-        - v1.30.2-rancher1
-        - v1.30.3-rancher1
-        - v1.30.4-rancher1
-        - v1.30.5-rancher1
-        - v1.30.6-rancher1
-        - v1.30.7-rancher1
-        - v1.30.8-rancher1
-        - v1.30.9-rancher1
-        - v1.31.2-rancher2
-        - v1.31.3-rancher1
-        - v1.31.4-rancher1
-        - v1.31.5-rancher1
-        - v1.31.6-rancher1
-        - v1.31.7-rancher1
-        - v1.31.8-rancher1
-        - v1.31.9-rancher1
-        - v1.32.2-rancher1
-        - v1.32.3-rancher1
-        - v1.32.4-rancher1
-        - v1.32.5-rancher1
   - source: docker.io/rancher/k3s-upgrade
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/k3s-upgrade'
     type: repository
@@ -727,7 +605,6 @@ sync:
     type: repository
     tags:
       allow:
-        - v3.22.0
         - v3.23.1
         - v3.24.1
         - v3.24.5
@@ -763,8 +640,6 @@ sync:
     type: repository
     tags:
       allow:
-        - v3.22.0
-        - v3.22.5
         - v3.23.1
         - v3.24.1
         - v3.24.5
@@ -774,8 +649,6 @@ sync:
         - v3.27.0
         - v3.27.2
         - v3.27.3
-        - v3.27.4
-        - v3.28.0
         - v3.28.1
         - v3.28.2
         - v3.29.0
@@ -788,8 +661,6 @@ sync:
     type: repository
     tags:
       allow:
-        - v3.22.0
-        - v3.22.5
         - v3.23.1
         - v3.24.1
         - v3.24.5
@@ -799,8 +670,6 @@ sync:
         - v3.27.0
         - v3.27.2
         - v3.27.3
-        - v3.27.4
-        - v3.28.0
         - v3.28.1
         - v3.28.2
         - v3.29.0
@@ -813,8 +682,6 @@ sync:
     type: repository
     tags:
       allow:
-        - v3.22.0
-        - v3.22.5
         - v3.23.1
         - v3.24.1
         - v3.24.5
@@ -824,8 +691,6 @@ sync:
         - v3.27.0
         - v3.27.2
         - v3.27.3
-        - v3.27.4
-        - v3.28.0
         - v3.28.1
         - v3.28.2
         - v3.29.0
@@ -873,8 +738,6 @@ sync:
     type: repository
     tags:
       allow:
-        - v3.22.0
-        - v3.22.5
         - v3.23.1
         - v3.24.1
         - v3.24.5
@@ -884,8 +747,6 @@ sync:
         - v3.27.0
         - v3.27.2
         - v3.27.3
-        - v3.27.4
-        - v3.28.0
         - v3.28.1
         - v3.28.2
         - v3.29.0
@@ -1201,66 +1062,17 @@ sync:
         - v3.1.2
         - v3.3.0
         - v3.3.1
-  - source: docker.io/rancher/mirrored-cluster-proportional-autoscaler
-    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cluster-proportional-autoscaler'
-    type: repository
-    tags:
-      allow:
-        - 1.8.5
-        - 1.8.6
-        - v1.8.9
-        - v1.9.0
   - source: docker.io/rancher/mirrored-coredns-coredns
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-coredns-coredns'
     type: repository
     tags:
       allow:
         - 1.10.1
-        - 1.11.1
         - 1.11.3
         - 1.12.0
         - 1.12.1
-        - 1.9.0
         - 1.9.1
-        - 1.9.3
         - 1.9.4
-  - source: docker.io/rancher/mirrored-coreos-etcd
-    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-coreos-etcd'
-    type: repository
-    tags:
-      allow:
-        - v3.5.10
-        - v3.5.12
-        - v3.5.15
-        - v3.5.16
-        - v3.5.2
-        - v3.5.3
-        - v3.5.4
-        - v3.5.6
-        - v3.5.7
-        - v3.5.9
-  - source: docker.io/rancher/mirrored-coreos-flannel
-    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-coreos-flannel'
-    type: repository
-    tags:
-      allow:
-        - v0.15.1
-  - source: docker.io/rancher/mirrored-flannel-flannel
-    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-flannel-flannel'
-    type: repository
-    tags:
-      allow:
-        - v0.21.4
-        - v0.24.2
-        - v0.25.1
-        - v0.26.4
-  - source: docker.io/rancher/mirrored-flannelcni-flannel
-    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-flannelcni-flannel'
-    type: repository
-    tags:
-      allow:
-        - v0.17.0
-        - v0.19.2
   - source: docker.io/rancher/mirrored-ingress-nginx-kube-webhook-certgen
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-ingress-nginx-kube-webhook-certgen'
     type: repository
@@ -1272,48 +1084,6 @@ sync:
         - v1.5.0
         - v1.5.2
         - v20230312-helm-chart-4.5.2-28-g66a760794
-        - v20231011-8b53cabe0
-        - v20231226-1a7112e06
-  - source: docker.io/rancher/mirrored-k8s-dns-dnsmasq-nanny
-    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-k8s-dns-dnsmasq-nanny'
-    type: repository
-    tags:
-      allow:
-        - 1.21.1
-        - 1.22.20
-        - 1.22.28
-        - 1.22.8
-        - 1.23.0
-  - source: docker.io/rancher/mirrored-k8s-dns-kube-dns
-    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-k8s-dns-kube-dns'
-    type: repository
-    tags:
-      allow:
-        - 1.21.1
-        - 1.22.20
-        - 1.22.28
-        - 1.22.8
-        - 1.23.0
-  - source: docker.io/rancher/mirrored-k8s-dns-node-cache
-    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-k8s-dns-node-cache'
-    type: repository
-    tags:
-      allow:
-        - 1.21.1
-        - 1.22.10
-        - 1.22.20
-        - 1.22.28
-        - 1.23.0
-  - source: docker.io/rancher/mirrored-k8s-dns-sidecar
-    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-k8s-dns-sidecar'
-    type: repository
-    tags:
-      allow:
-        - 1.21.1
-        - 1.22.20
-        - 1.22.28
-        - 1.22.8
-        - 1.23.0
   - source: docker.io/rancher/mirrored-kube-vip-kube-vip-iptables
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-kube-vip-kube-vip-iptables'
     type: repository
@@ -1380,15 +1150,7 @@ sync:
         - v0.6.2
         - v0.6.3
         - v0.7.0
-        - v0.7.1
         - v0.7.2
-  - source: docker.io/rancher/mirrored-nginx-ingress-controller-defaultbackend
-    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-nginx-ingress-controller-defaultbackend'
-    type: repository
-    tags:
-      allow:
-        - 1.5-rancher1
-        - 1.5-rancher2
   - source: docker.io/rancher/mirrored-pause
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-pause'
     type: repository
@@ -1397,7 +1159,6 @@ sync:
         - 3.6
         - 3.6-windows-1809-amd64
         - 3.6-windows-ltsc2022-amd64
-        - 3.7
   - source: docker.io/rancher/mirrored-sig-storage-csi-attacher
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-sig-storage-csi-attacher'
     type: repository
@@ -1477,29 +1238,13 @@ sync:
     type: repository
     tags:
       allow:
-        - nginx-1.1.1-rancher1
-        - nginx-1.10.1-rancher1
-        - nginx-1.11.2-rancher1
-        - nginx-1.11.3-rancher1
-        - nginx-1.11.5-rancher1
-        - nginx-1.12.0-rancher1
-        - nginx-1.12.1-rancher1
-        - nginx-1.12.1-rancher2
-        - nginx-1.12.1-rancher3
-        - nginx-1.2.0-rancher1
         - nginx-1.2.1-hardened7
         - nginx-1.2.1-hardened9
-        - nginx-1.2.1-rancher1
         - nginx-1.4.1-hardened2
-        - nginx-1.5.1-rancher2
         - nginx-1.6.4-hardened4
-        - nginx-1.7.0-rancher1
         - nginx-1.7.1-hardened1
-        - nginx-1.8.1-rancher1
         - nginx-1.9.3-hardened1
-        - nginx-1.9.4-rancher1
         - nginx-1.9.6-hardened1
-        - nginx-1.9.6-rancher1
         - v1.10.1-hardened1
         - v1.10.4-hardened2
         - v1.10.4-hardened3
@@ -1519,26 +1264,6 @@ sync:
         - 3.6
         - 3.6-windows-1809-amd64
         - 3.6-windows-ltsc2022-amd64
-  - source: docker.io/rancher/rke-tools
-    target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke-tools'
-    type: repository
-    tags:
-      allow:
-        - v0.1.100
-        - v0.1.102
-        - v0.1.103
-        - v0.1.105
-        - v0.1.108
-        - v0.1.109
-        - v0.1.111
-        - v0.1.112
-        - v0.1.113
-        - v0.1.80
-        - v0.1.87
-        - v0.1.88
-        - v0.1.89
-        - v0.1.90
-        - v0.1.96
   - source: docker.io/rancher/rke2-cloud-provider
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-cloud-provider'
     type: repository
