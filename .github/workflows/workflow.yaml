@@ -82,25 +82,3 @@ jobs:
           process_gcloudignore: false
           headers: |-
             cache-control: public,no-cache,proxy-revalidate
-
-  dispatch:
-    permissions:
-      contents: read
-      id-token: write
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    needs: upload
-    if: github.event_name == 'push' && (github.ref_name == 'release-v2.11' || github.ref_name == 'dev-v2.11')
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Retrieve token from vault
-        uses: rancher-eio/read-vault-secrets@main
-        with:
-          secrets: |
-            secret/data/github/repo/${{ github.repository }}/github-token/credentials token | PAT_TOKEN
-      - name: Run dispatch
-        run: |
-          gh workflow run "Go Generate" --repo rancher/rke --ref release/v1.8 -F source_author=${{ github.actor }}
-        env:
-          GH_TOKEN: ${{ env.PAT_TOKEN }}

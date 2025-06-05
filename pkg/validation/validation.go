@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
-	"reflect"
 	"strings"
 
 	utiliies "github.com/rancher/kontainer-driver-metadata/pkg"
@@ -33,6 +32,8 @@ var (
 		"v1.30.12+k3s1":   true,
 		"v1.31.8+k3s1":    true,
 		"v1.32.4+k3s1":    true,
+		"v1.33.0+rke2r1":  true,
+		"v1.33.0+k3s1":    true,
 	}
 )
 
@@ -131,7 +132,7 @@ func getImageTags(source []byte) (imageTags, error) {
 // validate checks the versions in the local data.json by comparing with the released data.json,
 // Supported releases are RKE, RKE2 and K3s.
 func validate(dev, released kdm.Data) error {
-	for _, distro := range []string{utiliies.RKE, utiliies.RKE2, utiliies.K3S} {
+	for _, distro := range []string{utiliies.RKE2, utiliies.K3S} {
 		if err := validateDistro(distro, dev, released); err != nil {
 			return fmt.Errorf("failed to validate the distro [%s]: %v", distro, err)
 		}
@@ -158,13 +159,8 @@ func validateDistro(distro string, dev, released kdm.Data) error {
 		if !dv[version] {
 			return fmt.Errorf("a released version [%s] is missing in the dev data", version)
 		}
-		if distro == utiliies.RKE {
-			// RKE release images cannot be changed after the fact
-			if !reflect.DeepEqual(released.K8sVersionRKESystemImages[version], dev.K8sVersionRKESystemImages[version]) {
-				return fmt.Errorf("image(s) for a released version [%s] is changed in the dev data", version)
-			}
-		}
 	}
+
 	// check charts for RKE2 release
 	if distro == utiliies.RKE2 {
 		raw, _, err := unstructured.NestedSlice(dev.RKE2, "releases")
@@ -209,6 +205,7 @@ func validateEncryptedKeyRotation(release map[string]interface{}) error {
 	if err != nil {
 		return err
 	}
+
 	// this is the first version that hasn't reached its end of life that requires
 	// the encrypted-key-rotation key to exist when this validation is being written
 	const firstVersionToCheckEncryptedKeyRotation = "v1.25.11"
@@ -318,13 +315,6 @@ func getVersions(distro string, dev, released kdm.Data) (devVersions, releasedVe
 	}
 
 	switch distro {
-	case utiliies.RKE:
-		for version := range dev.K8sVersionRKESystemImages {
-			devVersions = append(devVersions, version)
-		}
-		for version := range released.K8sVersionRKESystemImages {
-			releasedVersions = append(releasedVersions, version)
-		}
 	case utiliies.RKE2:
 		devVersions, err = helper(dev.RKE2)
 		if err != nil {
