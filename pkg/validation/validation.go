@@ -29,10 +29,10 @@ var (
 		"v1.30.12+rke2r1": true,
 		"v1.31.8+rke2r1":  true,
 		"v1.32.4+rke2r1":  true,
-		"v1.33.0+rke2r1":  true,
 		"v1.30.12+k3s1":   true,
 		"v1.31.8+k3s1":    true,
 		"v1.32.4+k3s1":    true,
+		"v1.33.0+rke2r1":  true,
 		"v1.33.0+k3s1":    true,
 	}
 )

@@ -2982,6 +2982,44 @@ releases:
         version: v0.26.601
     # featureVersions: *featureVersions-v1
     # featureVersions field is intentionally not defined to disable encryption key rotation for April 2025 patches due to https://github.com/rancher/rke2/issues/8236
+  - version: v1.30.13+rke2r1
+    minChannelServerVersion: v2.9.0-alpha1
+    maxChannelServerVersion: v2.11.99
+    serverArgs: *serverArgs-v1-28-11-rke2r1
+    agentArgs: *agentArgs-v1-28-11-rke2r1
+    charts: &charts-v1-30-13-rke2r1
+      <<: *charts-v1-30-12-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.17.301
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.30.0-build2025051500
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.30.001
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.30.001
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.42.000
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.12.103
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 3.12.201
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.2.002
+      rke2-flannel:
+        repo: rancher-rke2-charts
+        version: v0.26.701
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.2.1000
+    featureVersions: *featureVersions-v1
   - version: v1.31.0+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.9.99
@@ -3334,6 +3372,44 @@ releases:
         version: v0.26.601
     # featureVersions: *featureVersions-v1
     # featureVersions field is intentionally not defined to disable encryption key rotation for April 2025 patches due to https://github.com/rancher/rke2/issues/8236
+  - version: v1.31.9+rke2r1
+    minChannelServerVersion: v2.10.0-alpha1
+    maxChannelServerVersion: v2.11.99
+    serverArgs: *serverArgs-v1-28-11-rke2r1
+    agentArgs: *agentArgs-v1-28-11-rke2r1
+    charts: &charts-v1-31-9-rke2r1
+      <<: *charts-v1-31-8-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.17.301
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.30.0-build2025051500
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.30.001
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.30.001
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.42.000
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.12.103
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 3.12.201
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.2.002
+      rke2-flannel:
+        repo: rancher-rke2-charts
+        version: v0.26.701
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.2.1000
+    featureVersions: *featureVersions-v1
   - version: v1.32.1+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
     maxChannelServerVersion: v2.11.99
@@ -3451,6 +3527,44 @@ releases:
         version: v0.26.601
     # featureVersions: *featureVersions-v1
     # featureVersions field is intentionally not defined to disable encryption key rotation for April 2025 patches due to https://github.com/rancher/rke2/issues/8236
+  - version: v1.32.5+rke2r1
+    minChannelServerVersion: v2.11.0-alpha1
+    maxChannelServerVersion: v2.11.99
+    serverArgs: *serverArgs-v1-28-11-rke2r1
+    agentArgs: *agentArgs-v1-28-11-rke2r1
+    charts: &charts-v1-32-5-rke2r1
+      <<: *charts-v1-32-4-rke2r1
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.17.301
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.30.0-build2025051500
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.30.001
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.30.001
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.42.000
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.12.103
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 3.12.201
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.2.002
+      rke2-flannel:
+        repo: rancher-rke2-charts
+        version: v0.26.701
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.2.1000
+    featureVersions: *featureVersions-v1
   - version: v1.33.0+rke2r1
     minChannelServerVersion: v2.12.0-alpha1
     maxChannelServerVersion: v2.12.99
