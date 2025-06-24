@@ -17610,7 +17610,7 @@
      },
      {
       "appVersion": "\u003e= 2.12.0-0 \u003c 2.13.100-0",
-      "defaultVersion": "1.32.x"
+      "defaultVersion": "1.33.x"
      }
     ]
    }
