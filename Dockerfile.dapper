@@ -2,7 +2,7 @@ ARG RANCHER_VERSION=head
 
 FROM rancher/rancher:$RANCHER_VERSION as rancher
 
-FROM registry.suse.com/bci/golang:1.23
+FROM registry.suse.com/bci/golang:1.24
 
 RUN mkdir -p /var/lib/rancher
 COPY --from=rancher /var/lib/rancher /var/lib/rancher
@@ -14,7 +14,7 @@ COPY --from=rancher /run /run
 RUN mkdir -p /usr/share/rancher
 COPY --from=rancher /usr/share/rancher /usr/share/rancher
 
-COPY --from=rancher/k3s:v1.32.1-k3s1 \
+COPY --from=rancher/k3s:v1.33.1-k3s1 \
     /bin/blkid \
     /bin/bandwidth \
     /bin/cni \
