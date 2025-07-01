@@ -2,7 +2,6 @@ package images
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"os"
 	"strings"
@@ -11,10 +10,7 @@ import (
 
 	"github.com/blang/semver"
 	utiliies "github.com/rancher/kontainer-driver-metadata/pkg"
-	v3 "github.com/rancher/rke/types"
-	image2 "github.com/rancher/rke/types/image"
 	"github.com/rancher/rke/types/kdm"
-	"github.com/rancher/rke/util"
 	"github.com/sirupsen/logrus"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 )
@@ -52,7 +48,7 @@ func GenerateRegSyncFile() {
 		logrus.Fatalf("failed to initilize data: %v", err)
 	}
 	var imageTag = map[string]map[string]bool{}
-	for _, distro := range []string{utiliies.RKE, utiliies.RKE2, utiliies.K3S} {
+	for _, distro := range []string{utiliies.RKE2, utiliies.K3S} {
 		versions, err := filterVersions(distro)
 		if err != nil {
 			logrus.Fatalf("failed to filter versions for %s: %v", distro, err)
@@ -120,38 +116,6 @@ func getImages(distro string, versions []interface{}) (all []string, err error) 
 	errCh := make(chan error, 1) // Buffer size of 1 to ensure immediate return on error
 	for _, version := range versions {
 		switch distro {
-		case utiliies.RKE:
-			v, _ := version.(string)
-			images, ok := data.K8sVersionRKESystemImages[v]
-			if !ok {
-				return nil, fmt.Errorf("failed to find the RKE system images for the version %s", v)
-			}
-			obj := map[string]interface{}{}
-
-			bytes, err := json.Marshal(images)
-			if err != nil {
-				return nil, err
-			}
-			if err = json.Unmarshal(bytes, &obj); err != nil {
-				return nil, err
-			}
-			for _, o := range obj {
-				image, ok := o.(string)
-				if !ok || image == "" {
-					continue
-				}
-				converted := image2.Mirror(image)
-				// skip images that we do not mirror and maintain
-				if strings.HasPrefix(image, "weaveworks") || strings.HasPrefix(image, "noiro") {
-					continue
-				}
-				// all images should be prefixed by "rancher"
-				if !strings.HasPrefix(converted, "rancher") {
-					return nil, fmt.Errorf("RKE system image %s does not start with rancher", converted)
-				}
-				logrus.Tracef("distro %s version %s adds %s ", distro, version, converted)
-				all = append(all, converted)
-			}
 		case utiliies.RKE2, utiliies.K3S:
 			ctx, cancel := context.WithCancel(context.Background())
 			defer cancel()
@@ -299,70 +263,12 @@ func releaseToKeep(release map[string]interface{}) (bool, error) {
 	return true, nil
 }
 
-// toKeep returns a boolean to indicate if the provided RKE k8s version should be available in Rancher v2.8.x.
-// it returns false and an error when something goes wrong.
-func toKeep(info v3.K8sVersionInfo) (bool, error) {
-	if info.DeprecateRancherVersion != "" {
-		drv, err := semver.ParseTolerant(info.DeprecateRancherVersion)
-		if err != nil {
-			return false, fmt.Errorf("failed to parse %s: %v", info.DeprecateRancherVersion, err)
-		}
-		if drv.LE(minAllowedServerVersion) {
-			return false, nil
-		}
-	}
-	if info.MinRancherVersion != "" {
-		minVer, err := semver.ParseTolerant(info.MinRancherVersion)
-		if err != nil {
-			return false, fmt.Errorf("failed to parse %s: %v", info.MinRancherVersion, err)
-		}
-		if minVer.GE(maxAllowedServerVersion) {
-			return false, nil
-		}
-	}
-
-	if info.MaxRancherVersion != "" {
-		maxVer, err := semver.ParseTolerant(info.MaxRancherVersion)
-		if err != nil {
-			return false, fmt.Errorf("failed to parse %s: %v", info.MaxRancherVersion, err)
-		}
-		if maxVer.LT(minAllowedServerVersion) {
-			return false, nil
-		}
-	}
-	return true, nil
-}
-
 // filterVersions returns suitable versions of the provided distro that are available for Rancher 2.8.x.
 // It returns an empty slice and an error when something goes wrong.
 // In the case of RKE, the type of the returned object is slice of Strings;
 // in the case of RKE2 or K3s, it is a slice of Maps (map[string]interface).
 func filterVersions(distro string) (filteredVersions []interface{}, err error) {
 	switch distro {
-	case utiliies.RKE:
-		for k8sVersion := range data.K8sVersionRKESystemImages {
-			if info, ok := data.K8sVersionInfo[k8sVersion]; ok {
-				keep, err := toKeep(info)
-				if err != nil {
-					return nil, err
-				}
-				if !keep {
-					continue
-				}
-			}
-			majorVersion := util.GetTagMajorVersion(k8sVersion)
-			if info, ok := data.K8sVersionInfo[majorVersion]; ok {
-				keep, err := toKeep(info)
-				if err != nil {
-					return nil, err
-				}
-				if !keep {
-					continue
-				}
-			}
-			logrus.Debugf("adding %v", k8sVersion)
-			filteredVersions = append(filteredVersions, k8sVersion)
-		}
 	case utiliies.RKE2, utiliies.K3S:
 		for _, r := range releases[distro] {
 			if r == nil {

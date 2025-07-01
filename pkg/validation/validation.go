@@ -87,6 +87,40 @@ func validateRegSync(release string) error {
 	// RKE2 and K3s releases may need to be fixed after the fact,
 	// so we just make sure we don't remove any released image or tag
 	for name, tags := range upstream {
+		// RKE entries removed; validate-ci fails as it compares against release-v2.11 which still includes RKE.
+		// This will be removed once release-v2.12 is branched and validation is updated accordingly.
+		excluded := map[string]bool{
+			"docker.io/rancher/flannel-cni":                                      true,
+			"docker.io/rancher/mirrored-k8s-dns-node-cache":                      true,
+			"docker.io/rancher/mirrored-flannelcni-flannel":                      true,
+			"docker.io/rancher/mirrored-coredns-coredns":                         true,
+			"docker.io/rancher/hyperkube":                                        true,
+			"docker.io/rancher/mirrored-calico-pod2daemon-flexvol":               true,
+			"docker.io/rancher/mirrored-calico-kube-controllers":                 true,
+			"docker.io/rancher/mirrored-k8s-dns-dnsmasq-nanny":                   true,
+			"docker.io/rancher/mirrored-coreos-etcd":                             true,
+			"docker.io/rancher/mirrored-calico-node":                             true,
+			"docker.io/rancher/mirrored-calico-cni":                              true,
+			"docker.io/rancher/mirrored-calico-typha":                            true,
+			"docker.io/rancher/mirrored-calico-kube-proxy":                       true,
+			"docker.io/rancher/mirrored-calico-ctl":                              true,
+			"docker.io/rancher/mirrored-k8s-dns-kube-dns":                        true,
+			"docker.io/rancher/mirrored-metrics-server":                          true,
+			"docker.io/rancher/mirrored-coreos-flannel":                          true,
+			"docker.io/rancher/calico-cni":                                       true,
+			"docker.io/rancher/mirrored-flannel-flannel":                         true,
+			"docker.io/rancher/rke-tools":                                        true,
+			"docker.io/rancher/nginx-ingress-controller":                         true,
+			"docker.io/rancher/mirrored-cluster-proportional-autoscaler":         true,
+			"docker.io/rancher/mirrored-k8s-dns-sidecar":                         true,
+			"docker.io/rancher/mirrored-nginx-ingress-controller-defaultbackend": true,
+			"docker.io/rancher/mirrored-ingress-nginx-kube-webhook-certgen":      true,
+		}
+
+		if excluded[name] {
+			continue
+		}
+
 		localTags, found := local[name]
 		if !found {
 			return fmt.Errorf("a released image [%s] is missing in the dev regSync file", name)

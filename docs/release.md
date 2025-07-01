@@ -2,7 +2,7 @@
 
 ## Introduction
 
-All metadata related to provisioning kubernetes clusters for Rancher supported distros (RKE1/RKE2/k3s) is present in [data.json](https://github.com/rancher/kontainer-driver-metadata/blob/dev-v2.7/data/data.json). Releasing KDM is publishing this data.json to `releases.rancher.com/` which is then accessed by Rancher to provision clusters. Refer to [rancher docs](https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/upgrade-kubernetes-without-upgrading-rancher#configuring-the-metadata-synchronization) on how data refresh is managed by Rancher.
+All metadata related to provisioning kubernetes clusters for Rancher supported distros (RKE2/k3s) is present in [data.json](https://github.com/rancher/kontainer-driver-metadata/blob/dev-v2.7/data/data.json). Releasing KDM is publishing this data.json to `releases.rancher.com/` which is then accessed by Rancher to provision clusters. Refer to [rancher docs](https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/upgrade-kubernetes-without-upgrading-rancher#configuring-the-metadata-synchronization) on how data refresh is managed by Rancher.
 RKE1 binary also independently [embeds this data](https://github.com/rancher/rke/blob/v1.4.3/codegen/codegen.go#L13) to be able to provision RKE1 standalone clusters.
 
 Releases are merged to `releases.rancher.com/` using our automated [GHA logic](https://github.com/rancher/kontainer-driver-metadata/blob/dev-v2.10/.github/workflows/workflow.yaml#L79) from `release-v2.x` branches. Data at `releases.rancher.com/` is accessed by both existing rancher server and new rancher installs. `release-v2.x` branches are thus critical and protected, only few people are granted to merge PRs to `release-v2.x` branches.
@@ -65,29 +65,12 @@ The KDM release process will automatically sync the newly released images into t
 
 There are a few common things to check while reviewing PRs for release. Most of this should already have been reviewed during the developer workflow. We do end up catching last minute bugs when reviewing PRs at release time so it's often a good idea to double check things.
 
-RKE1: (Reviewers: @snasovich @kinarashah @jiaqiluo)
-1. Kubernetes versions are correct according to the release plan
-2. Rancher server information is correct
-3. Default kubernetes version is correct 
-4. Only one kubernetes version per minor version is released
-5. Addon version information is correct
-6. Service options are correct if updated for a patch version
-
 RKE2/K3s: (Reviewers: @snasovich @rancher-max @kinarashah @jiaqiluo)
 1. Kubernetes versions are correct according to the release plan (no RC versions)
 2. Rancher server information is correct
 3. Default kubernetes version is correct
 4. Server and Agent arg information is correct
 5. Chart information is correct
-
-## Prepare draft release notes for RKE1
-
-1. Draft a release note under https://github.com/rancher/rke/releases, it should have no tag attached and title would be "Draft Release vX.Y.Z" 
-2. Copy & paste the existing release notes from the latest tag 
-3. Add major bug fixes and enhancements based on PRs present in diff between the last release and latest HEAD commit. Contact developers of PRs if more context is required. If the diff only includes KDM data, update enhancement section with the latest k8s versions about to be released.
-4. List of kubernetes versions to be released is populated automatically on our RC tags under `RKE Kubernetes versions` (Example: https://github.com/rancher/rke/releases/tag/v1.4.4-rc7)
-
-Note: This is our current process, but we also have https://github.com/rancherlabs/release-notes/tree/main/rke/ (which seems outdated at the moment). Skip this section if docs team is creating draft release notes.
 
 ## Release KDM
 
@@ -101,34 +84,6 @@ Note: This is our current process, but we also have https://github.com/rancherla
 - https://forums.rancher.com/t/kubernetes-v1-24-10-and-v1-23-16/40218
 - https://forums.rancher.com/t/kubernetes-v1-24-8-v1-23-14-and-v1-22-16/39559
 
-## Release RKE1
-
-We release RKE after KDM is released. Currently, we are managing releases for 
-- RKE v1.5.x (`release/v1.5`) corresponding to Rancher v2.8.x (https://github.com/rancher/rancher/blob/3efffc27adbc443bc3d102e8c475cebee1e21fa9/go.mod#L129)
-- RKE v1.6.x (`release/v1.6`) corresponding to Rancher v2.9.x (https://github.com/rancher/rancher/blob/a9037b6546fbebe14f2cebb0dbbe7cfc34dcac97/go.mod#L141)
-- RKE v1.7.x (`release/v1.7`) corresponding to Rancher v2.10.x _and_ main (https://github.com/rancher/rancher/blob/dcf5576add60419055b4ab772c2fccc15adec070/go.mod#L140, https://github.com/rancher/rancher/blob/598640d1556c91561ba11ac8a9741e1dbe06d303/go.mod#L140)
-- 
-
-1. Checkout the right branch for RKE (`release/v1.x`).
-2. Run `TAG=<RKE_TAG> go generate ./...` to pull in any updated KDM data.
-   3. Ensure that the resulting log message references the correct KDM branch. If KDM data is already up-to-date, potentially due to a recently released RC version, no changes will occur.
-3. Generated data/data.json should match with the latest changes. Open a pull request with the changes, one review should suffice. (Reviewers: @kinarashah @snasovich @jiaqiluo @HarrisonWAffel) 
-
-Example PRs: 
-- https://github.com/rancher/rke/pull/3193 
-- https://github.com/rancher/rke/pull/3194 
-4. After the PR is merged, checkout the branch at latest `release/v1.x` 
-5. Tag and push,
-
-   ```
-      git remote add rancher https://github.com/rancher/rke.git
-      git tag vX.Y.Z
-      git push rancher vX.Y.Z
-   ```
-6. Monitor GHA status for tag (https://github.com/rancher/rke/actions). GHA uploads the release manifests to the release tag under Assets (https://github.com/rancher/rke/releases) 
-7. Copy release notes from our draft release notes to the released tag 
-8. Mark the patch version for the latest minor version as the latest release. This should always be done for the highest patch version (e.g. if both `1.5.x` and `1.7.x` were released, `1.7.x` should be marked as latest)
-9. Delete the draft release created for drafting release notes from https://github.com/rancher/rke/releases. We should only keep tagged versions here.
 
 ## Post OOB Release Tasks for KDM
 

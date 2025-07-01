@@ -11,7 +11,6 @@ import (
 )
 
 const (
-	RKE  = "RKE"
 	RKE2 = "RKE2"
 	K3S  = "K3S"
 )
