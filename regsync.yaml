@@ -529,6 +529,7 @@ sync:
         - v1.30.11-rancher1
         - v1.30.12-rancher1
         - v1.30.13-rancher1
+        - v1.30.14-rancher1
         - v1.30.2-rancher1
         - v1.30.3-rancher1
         - v1.30.4-rancher1
@@ -537,6 +538,7 @@ sync:
         - v1.30.7-rancher1
         - v1.30.8-rancher1
         - v1.30.9-rancher1
+        - v1.31.10-rancher1
         - v1.31.2-rancher2
         - v1.31.3-rancher1
         - v1.31.4-rancher1
@@ -549,6 +551,7 @@ sync:
         - v1.32.3-rancher1
         - v1.32.4-rancher1
         - v1.32.5-rancher1
+        - v1.32.6-rancher1
   - source: docker.io/rancher/k3s-upgrade
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/k3s-upgrade'
     type: repository
@@ -802,6 +805,7 @@ sync:
         - v3.29.3
         - v3.30.0
         - v3.30.1
+        - v3.30.2
   - source: docker.io/rancher/mirrored-calico-kube-controllers
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-kube-controllers'
     type: repository
@@ -828,6 +832,7 @@ sync:
         - v3.29.3
         - v3.30.0
         - v3.30.1
+        - v3.30.2
   - source: docker.io/rancher/mirrored-calico-node
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-node'
     type: repository
@@ -854,6 +859,7 @@ sync:
         - v3.29.3
         - v3.30.0
         - v3.30.1
+        - v3.30.2
   - source: docker.io/rancher/mirrored-calico-node-driver-registrar
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-node-driver-registrar'
     type: repository
@@ -917,6 +923,7 @@ sync:
         - v3.29.3
         - v3.30.0
         - v3.30.1
+        - v3.30.2
   - source: docker.io/rancher/mirrored-calico-typha
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-calico-typha'
     type: repository
@@ -1515,6 +1522,7 @@ sync:
         - nginx-1.11.2-rancher1
         - nginx-1.11.3-rancher1
         - nginx-1.11.5-rancher1
+        - nginx-1.11.5-rancher4
         - nginx-1.12.0-rancher1
         - nginx-1.12.1-rancher1
         - nginx-1.12.1-rancher2
@@ -1567,6 +1575,7 @@ sync:
         - v0.1.111
         - v0.1.112
         - v0.1.113
+        - v0.1.114
         - v0.1.80
         - v0.1.87
         - v0.1.88
