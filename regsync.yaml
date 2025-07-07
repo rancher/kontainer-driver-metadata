@@ -508,6 +508,7 @@ sync:
         - v1.30.11-rancher1
         - v1.30.12-rancher1
         - v1.30.13-rancher1
+        - v1.30.14-rancher1
         - v1.30.2-rancher1
         - v1.30.3-rancher1
         - v1.30.4-rancher1
@@ -1504,6 +1505,7 @@ sync:
         - v0.1.111
         - v0.1.112
         - v0.1.113
+        - v0.1.114
         - v0.1.80
         - v0.1.87
         - v0.1.88
