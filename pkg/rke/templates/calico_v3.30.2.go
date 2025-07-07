@@ -167,11 +167,11 @@ spec:
                       description: Name given to community value.
                       type: string
                     value:
-                      description: Value must be of format `aa:nn` or `aa:nn:mm`.
-                        For standard community use `aa:nn` format, where `aa` and
-                        `nn` are 16 bit number. For large community use `aa:nn:mm`
-                        format, where `aa`, `nn` and `mm` are 32 bit number. Where,
-                        `aa` is an AS Number, `nn` and `mm` are per-AS identifier.
+                      description: |-
+                        Value must be of format "aa:nn" or "aa:nn:mm".
+                        For standard community use "aa:nn" format, where "aa" and "nn" are 16 bit number.
+                        For large community use "aa:nn:mm" format, where "aa", "nn" and "mm" are 32 bit number.
+                        Where, "aa" is an AS Number, "nn" and "mm" are per-AS identifier.
                       pattern: ^(\d+):(\d+)$|^(\d+):(\d+):(\d+)$
                       type: string
                   type: object
@@ -250,12 +250,12 @@ spec:
                       type: string
                     communities:
                       description: Communities can be list of either community names
-                        already defined in `Specs.Communities` or community value
-                        of format `aa:nn` or `aa:nn:mm`. For standard community use
-                        `aa:nn` format, where `aa` and `nn` are 16 bit number. For
-                        large community use `aa:nn:mm` format, where `aa`, `nn` and
-                        `mm` are 32 bit number. Where,`aa` is an AS Number, `nn` and
-                        `mm` are per-AS identifier.
+                        already defined in "Specs.Communities" or community value
+                        of format "aa:nn" or "aa:nn:mm". For standard community use
+                        "aa:nn" format, where "aa" and "nn" are 16 bit number. For
+                        large community use "aa:nn:mm" format, where "aa", "nn" and
+                        "mm" are 32 bit number. Where,"aa" is an AS Number, "nn" and
+                        "mm" are per-AS identifier.
                       items:
                         type: string
                       type: array
@@ -624,8 +624,8 @@ spec:
                 type: object
               peerIP:
                 description: The IP address of the peer followed by an optional port
-                  number to peer with. If port number is given, format should be `[<IPv6>]:port`
-                  or `<IPv4>:<port>` for IPv4. If optional port number is not set,
+                  number to peer with. If port number is given, format should be "[<IPv6>]:port"
+                  or "<IPv4>:<port>" for IPv4. If optional port number is not set,
                   and this peer IP and ASNumber belongs to a calico/node with ListenPort
                   set in BGPConfiguration, then we use that port to peer.
                 type: string
@@ -1158,8 +1158,8 @@ spec:
                 type: string
               bpfConntrackMode:
                 description: |-
-                  BPFConntrackCleanupMode controls how BPF conntrack entries are cleaned up.  `Auto` will use a BPF program if supported,
-                  falling back to userspace if not.  `Userspace` will always use the userspace cleanup code.  `BPFProgram` will
+                  BPFConntrackCleanupMode controls how BPF conntrack entries are cleaned up.  "Auto" will use a BPF program if supported,
+                  falling back to userspace if not.  "Userspace" will always use the userspace cleanup code.  "BPFProgram" will
                   always use the BPF program (failing if not supported).
                   [Default: Auto]
                 enum:
@@ -1170,7 +1170,7 @@ spec:
               bpfConntrackTimeouts:
                 description: |-
                   BPFConntrackTimers overrides the default values for the specified conntrack timer if
-                  set. Each value can be either a duration or `Auto` to pick the value from
+                  set. Each value can be either a duration or "Auto" to pick the value from
                   a Linux conntrack timeout.
 
                   Configurable timers are: CreationGracePeriod, TCPSynSent,
@@ -1373,7 +1373,7 @@ spec:
                 description: 'BPFLogLevel controls the log level of the BPF programs
                   when in BPF dataplane mode.  One of "Off", "Info", or "Debug".  The
                   logs are emitted to the BPF trace pipe, accessible with the command
-                  `tc exec bpf debug`. [Default: Off].'
+                  "tc exec bpf debug". [Default: Off].'
                 pattern: ^(?i)(Off|Info|Debug)?$
                 type: string
               bpfMapSizeConntrack:
@@ -1815,8 +1815,8 @@ spec:
               iptablesFilterAllowAction:
                 description: |-
                   IptablesFilterAllowAction controls what happens to traffic that is accepted by a Felix policy chain in the
-                  iptables filter table (which is used for "normal" policy). The default will immediately `Accept` the traffic. Use
-                  `Return` to send the traffic back up to the system chains for further processing.
+                  iptables filter table (which is used for "normal" policy). The default will immediately "Accept" the traffic. Use
+                  "Return" to send the traffic back up to the system chains for further processing.
                 pattern: ^(?i)(Accept|Return)?$
                 type: string
               iptablesFilterDenyAction:
@@ -1851,8 +1851,8 @@ spec:
               iptablesMangleAllowAction:
                 description: |-
                   IptablesMangleAllowAction controls what happens to traffic that is accepted by a Felix policy chain in the
-                  iptables mangle table (which is used for "pre-DNAT" policy). The default will immediately `Accept` the traffic.
-                  Use `Return` to send the traffic back up to the system chains for further processing.
+                  iptables mangle table (which is used for "pre-DNAT" policy). The default will immediately "Accept" the traffic.
+                  Use "Return" to send the traffic back up to the system chains for further processing.
                 pattern: ^(?i)(Accept|Return)?$
                 type: string
               iptablesMarkMask:
@@ -1984,8 +1984,8 @@ spec:
               nftablesFilterAllowAction:
                 description: |-
                   NftablesFilterAllowAction controls the nftables action that Felix uses to represent the "allow" policy verdict
-                  in the filter table. The default is to `ACCEPT` the traffic, which is a terminal action.  Alternatively,
-                  `RETURN` can be used to return the traffic back to the top-level chain for further processing by your rules.
+                  in the filter table. The default is to "ACCEPT" the traffic, which is a terminal action.  Alternatively,
+                  "RETURN" can be used to return the traffic back to the top-level chain for further processing by your rules.
                 pattern: ^(?i)(Accept|Return)?$
                 type: string
               nftablesFilterDenyAction:
@@ -1998,8 +1998,8 @@ spec:
               nftablesMangleAllowAction:
                 description: |-
                   NftablesMangleAllowAction controls the nftables action that Felix uses to represent the "allow" policy verdict
-                  in the mangle table. The default is to `ACCEPT` the traffic, which is a terminal action.  Alternatively,
-                  `RETURN` can be used to return the traffic back to the top-level chain for further processing by your rules.
+                  in the mangle table. The default is to "ACCEPT" the traffic, which is a terminal action.  Alternatively,
+                  "RETURN" can be used to return the traffic back to the top-level chain for further processing by your rules.
                 pattern: ^(?i)(Accept|Return)?$
                 type: string
               nftablesMarkMask:
@@ -2114,7 +2114,7 @@ spec:
               routeTableRanges:
                 description: Calico programs additional Linux route tables for various
                   purposes. RouteTableRanges specifies a set of table index ranges
-                  that Calico should use. Deprecates`RouteTableRange`, overrides `RouteTableRange`.
+                  that Calico should use. Deprecates "RouteTableRange", overrides "RouteTableRange".
                 items:
                   properties:
                     max:
@@ -2241,9 +2241,9 @@ spec:
                 description: |-
                   WireguardThreadingEnabled controls whether Wireguard has Threaded NAPI enabled. [Default: false]
                   This increases the maximum number of packets a Wireguard interface can process.
-                  Consider threaded NAPI only if you have high packets per second workloads that are causing dropping packets due to a saturated `softirq` CPU core.
+                  Consider threaded NAPI only if you have high packets per second workloads that are causing dropping packets due to a saturated "softirq" CPU core.
                   There is a [known issue](https://lore.kernel.org/netdev/CALrw=nEoT2emQ0OAYCjM1d_6Xe_kNLSZ6dhjb5FxrLFYh4kozA@mail.gmail.com/T/) with this setting
-                  that may cause NAPI to get stuck holding the global `rtnl_mutex` when a peer is removed.
+                  that may cause NAPI to get stuck holding the global "rtnl_mutex" when a peer is removed.
                   Workaround: Make sure your Linux kernel [includes this patch](https://github.com/torvalds/linux/commit/56364c910691f6d10ba88c964c9041b9ab777bd6) to unwedge NAPI.
                 type: boolean
               workloadSourceSpoofing:
@@ -2350,7 +2350,7 @@ spec:
                             will be selected by the rule. \n For NetworkPolicy, an
                             empty NamespaceSelector implies that the Selector is limited
                             to selecting only workload endpoints in the same namespace
-                            as the NetworkPolicy. \n For NetworkPolicy, `global()`
+                            as the NetworkPolicy. \n For NetworkPolicy, "global()"
                             NamespaceSelector implies that the Selector is limited
                             to selecting only GlobalNetworkSet or HostEndpoint. \n
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies
@@ -2481,7 +2481,7 @@ spec:
                             the rule to apply to HTTP requests that use one of the
                             listed HTTP Paths. Multiple paths are OR''d together.
                             e.g: - exact: /foo - prefix: /bar NOTE: Each entry may
-                            ONLY specify either a `exact` or a `prefix` match. The
+                            ONLY specify either a "exact" or a "prefix" match. The
                             validator will check for it.'
                           items:
                             description: 'HTTPPath specifies an HTTP path to match.
@@ -2576,7 +2576,7 @@ spec:
                             will be selected by the rule. \n For NetworkPolicy, an
                             empty NamespaceSelector implies that the Selector is limited
                             to selecting only workload endpoints in the same namespace
-                            as the NetworkPolicy. \n For NetworkPolicy, `global()`
+                            as the NetworkPolicy. \n For NetworkPolicy, "global()"
                             NamespaceSelector implies that the Selector is limited
                             to selecting only GlobalNetworkSet or HostEndpoint. \n
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies
@@ -2723,7 +2723,7 @@ spec:
                             will be selected by the rule. \n For NetworkPolicy, an
                             empty NamespaceSelector implies that the Selector is limited
                             to selecting only workload endpoints in the same namespace
-                            as the NetworkPolicy. \n For NetworkPolicy, `global()`
+                            as the NetworkPolicy. \n For NetworkPolicy, "global()"
                             NamespaceSelector implies that the Selector is limited
                             to selecting only GlobalNetworkSet or HostEndpoint. \n
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies
@@ -2854,7 +2854,7 @@ spec:
                             the rule to apply to HTTP requests that use one of the
                             listed HTTP Paths. Multiple paths are OR''d together.
                             e.g: - exact: /foo - prefix: /bar NOTE: Each entry may
-                            ONLY specify either a `exact` or a `prefix` match. The
+                            ONLY specify either a "exact" or a "prefix" match. The
                             validator will check for it.'
                           items:
                             description: 'HTTPPath specifies an HTTP path to match.
@@ -2949,7 +2949,7 @@ spec:
                             will be selected by the rule. \n For NetworkPolicy, an
                             empty NamespaceSelector implies that the Selector is limited
                             to selecting only workload endpoints in the same namespace
-                            as the NetworkPolicy. \n For NetworkPolicy, `global()`
+                            as the NetworkPolicy. \n For NetworkPolicy, "global()"
                             NamespaceSelector implies that the Selector is limited
                             to selecting only GlobalNetworkSet or HostEndpoint. \n
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies
@@ -4136,7 +4136,7 @@ spec:
                             will be selected by the rule. \n For NetworkPolicy, an
                             empty NamespaceSelector implies that the Selector is limited
                             to selecting only workload endpoints in the same namespace
-                            as the NetworkPolicy. \n For NetworkPolicy, `global()`
+                            as the NetworkPolicy. \n For NetworkPolicy, "global()"
                             NamespaceSelector implies that the Selector is limited
                             to selecting only GlobalNetworkSet or HostEndpoint. \n
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies
@@ -4267,7 +4267,7 @@ spec:
                             the rule to apply to HTTP requests that use one of the
                             listed HTTP Paths. Multiple paths are OR''d together.
                             e.g: - exact: /foo - prefix: /bar NOTE: Each entry may
-                            ONLY specify either a `exact` or a `prefix` match. The
+                            ONLY specify either a "exact" or a "prefix" match. The
                             validator will check for it.'
                           items:
                             description: 'HTTPPath specifies an HTTP path to match.
@@ -4362,7 +4362,7 @@ spec:
                             will be selected by the rule. \n For NetworkPolicy, an
                             empty NamespaceSelector implies that the Selector is limited
                             to selecting only workload endpoints in the same namespace
-                            as the NetworkPolicy. \n For NetworkPolicy, `global()`
+                            as the NetworkPolicy. \n For NetworkPolicy, "global()"
                             NamespaceSelector implies that the Selector is limited
                             to selecting only GlobalNetworkSet or HostEndpoint. \n
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies
@@ -4509,7 +4509,7 @@ spec:
                             will be selected by the rule. \n For NetworkPolicy, an
                             empty NamespaceSelector implies that the Selector is limited
                             to selecting only workload endpoints in the same namespace
-                            as the NetworkPolicy. \n For NetworkPolicy, `global()`
+                            as the NetworkPolicy. \n For NetworkPolicy, "global()"
                             NamespaceSelector implies that the Selector is limited
                             to selecting only GlobalNetworkSet or HostEndpoint. \n
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies
@@ -4640,7 +4640,7 @@ spec:
                             the rule to apply to HTTP requests that use one of the
                             listed HTTP Paths. Multiple paths are OR''d together.
                             e.g: - exact: /foo - prefix: /bar NOTE: Each entry may
-                            ONLY specify either a `exact` or a `prefix` match. The
+                            ONLY specify either a "exact" or a "prefix" match. The
                             validator will check for it.'
                           items:
                             description: 'HTTPPath specifies an HTTP path to match.
@@ -4735,7 +4735,7 @@ spec:
                             will be selected by the rule. \n For NetworkPolicy, an
                             empty NamespaceSelector implies that the Selector is limited
                             to selecting only workload endpoints in the same namespace
-                            as the NetworkPolicy. \n For NetworkPolicy, `global()`
+                            as the NetworkPolicy. \n For NetworkPolicy, "global()"
                             NamespaceSelector implies that the Selector is limited
                             to selecting only GlobalNetworkSet or HostEndpoint. \n
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies
@@ -5068,7 +5068,7 @@ spec:
                             For NetworkPolicy, an empty NamespaceSelector implies that the Selector is limited to selecting
                             only workload endpoints in the same namespace as the NetworkPolicy.
 
-                            For NetworkPolicy, `global()` NamespaceSelector implies that the Selector is limited to selecting
+                            For NetworkPolicy, "global()"" NamespaceSelector implies that the Selector is limited to selecting
                             only GlobalNetworkSet or HostEndpoint.
 
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies the Selector applies to workload
@@ -5198,7 +5198,7 @@ spec:
                             e.g:
                             - exact: /foo
                             - prefix: /bar
-                            NOTE: Each entry may ONLY specify either a `exact` or a `prefix` match. The validator will check for it.
+                            NOTE: Each entry may ONLY specify either a "exact" or a "prefix" match. The validator will check for it.
                           items:
                             description: |-
                               HTTPPath specifies an HTTP path to match. It may be either of the form:
@@ -5296,7 +5296,7 @@ spec:
                             For NetworkPolicy, an empty NamespaceSelector implies that the Selector is limited to selecting
                             only workload endpoints in the same namespace as the NetworkPolicy.
 
-                            For NetworkPolicy, `global()` NamespaceSelector implies that the Selector is limited to selecting
+                            For NetworkPolicy, "global()" NamespaceSelector implies that the Selector is limited to selecting
                             only GlobalNetworkSet or HostEndpoint.
 
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies the Selector applies to workload
@@ -5440,7 +5440,7 @@ spec:
                             For NetworkPolicy, an empty NamespaceSelector implies that the Selector is limited to selecting
                             only workload endpoints in the same namespace as the NetworkPolicy.
 
-                            For NetworkPolicy, `global()` NamespaceSelector implies that the Selector is limited to selecting
+                            For NetworkPolicy, "global()" NamespaceSelector implies that the Selector is limited to selecting
                             only GlobalNetworkSet or HostEndpoint.
 
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies the Selector applies to workload
@@ -5570,7 +5570,7 @@ spec:
                             e.g:
                             - exact: /foo
                             - prefix: /bar
-                            NOTE: Each entry may ONLY specify either a `exact` or a `prefix` match. The validator will check for it.
+                            NOTE: Each entry may ONLY specify either a "exact" or a "prefix" match. The validator will check for it.
                           items:
                             description: |-
                               HTTPPath specifies an HTTP path to match. It may be either of the form:
@@ -5668,7 +5668,7 @@ spec:
                             For NetworkPolicy, an empty NamespaceSelector implies that the Selector is limited to selecting
                             only workload endpoints in the same namespace as the NetworkPolicy.
 
-                            For NetworkPolicy, `global()` NamespaceSelector implies that the Selector is limited to selecting
+                            For NetworkPolicy, "global()" NamespaceSelector implies that the Selector is limited to selecting
                             only GlobalNetworkSet or HostEndpoint.
 
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies the Selector applies to workload
@@ -6452,7 +6452,7 @@ spec:
                             For NetworkPolicy, an empty NamespaceSelector implies that the Selector is limited to selecting
                             only workload endpoints in the same namespace as the NetworkPolicy.
 
-                            For NetworkPolicy, `global()` NamespaceSelector implies that the Selector is limited to selecting
+                            For NetworkPolicy, "global()" NamespaceSelector implies that the Selector is limited to selecting
                             only GlobalNetworkSet or HostEndpoint.
 
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies the Selector applies to workload
@@ -6582,7 +6582,7 @@ spec:
                             e.g:
                             - exact: /foo
                             - prefix: /bar
-                            NOTE: Each entry may ONLY specify either a `exact` or a `prefix` match. The validator will check for it.
+                            NOTE: Each entry may ONLY specify either a "exact" or a "prefix" match. The validator will check for it.
                           items:
                             description: |-
                               HTTPPath specifies an HTTP path to match. It may be either of the form:
@@ -6680,7 +6680,7 @@ spec:
                             For NetworkPolicy, an empty NamespaceSelector implies that the Selector is limited to selecting
                             only workload endpoints in the same namespace as the NetworkPolicy.
 
-                            For NetworkPolicy, `global()` NamespaceSelector implies that the Selector is limited to selecting
+                            For NetworkPolicy, "global()" NamespaceSelector implies that the Selector is limited to selecting
                             only GlobalNetworkSet or HostEndpoint.
 
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies the Selector applies to workload
@@ -6824,7 +6824,7 @@ spec:
                             For NetworkPolicy, an empty NamespaceSelector implies that the Selector is limited to selecting
                             only workload endpoints in the same namespace as the NetworkPolicy.
 
-                            For NetworkPolicy, `global()` NamespaceSelector implies that the Selector is limited to selecting
+                            For NetworkPolicy, "global()" NamespaceSelector implies that the Selector is limited to selecting
                             only GlobalNetworkSet or HostEndpoint.
 
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies the Selector applies to workload
@@ -6954,7 +6954,7 @@ spec:
                             e.g:
                             - exact: /foo
                             - prefix: /bar
-                            NOTE: Each entry may ONLY specify either a `exact` or a `prefix` match. The validator will check for it.
+                            NOTE: Each entry may ONLY specify either a 'exact" or a "prefix" match. The validator will check for it.
                           items:
                             description: |-
                               HTTPPath specifies an HTTP path to match. It may be either of the form:
@@ -7052,7 +7052,7 @@ spec:
                             For NetworkPolicy, an empty NamespaceSelector implies that the Selector is limited to selecting
                             only workload endpoints in the same namespace as the NetworkPolicy.
 
-                            For NetworkPolicy, `global()` NamespaceSelector implies that the Selector is limited to selecting
+                            For NetworkPolicy, "global()" NamespaceSelector implies that the Selector is limited to selecting
                             only GlobalNetworkSet or HostEndpoint.
 
                             For GlobalNetworkPolicy, an empty NamespaceSelector implies the Selector applies to workload
@@ -7591,7 +7591,7 @@ spec:
                               This is intended for representing entities that live outside the cluster,
                               which can't be selected by pods, namespaces and nodes peers, but note
                               that cluster-internal traffic will be checked against the rule as
-                              well. So if you Allow or Deny traffic to `"0.0.0.0/0"`, that will allow
+                              well. So if you Allow or Deny traffic to "0.0.0.0/0", that will allow
                               or deny all IPv4 pod-to-pod traffic as well. If you don't want that,
                               add a rule that Passes all pod traffic before the Networks rule.
 
@@ -8317,8 +8317,8 @@ spec:
                     observations of a foo's current state.\n\t    // Known .status.conditions.type
                     are: \"Available\", \"Progressing\", and \"Degraded\"\n\t    //
                     +patchMergeKey=type\n\t    // +patchStrategy=merge\n\t    // +listType=map\n\t
-                    \   // +listMapKey=type\n\t    Conditions []metav1.Condition `json:\"conditions,omitempty\"
-                    patchStrategy:\"merge\" patchMergeKey:\"type\" protobuf:\"bytes,1,rep,name=conditions\"`\n\n\n\t
+                    \   // +listMapKey=type\n\t    Conditions []metav1.Condition "json:\"conditions,omitempty\"
+                    patchStrategy:\"merge\" patchMergeKey:\"type\" protobuf:\"bytes,1,rep,name=conditions\""\n\n\n\t
                     \   // other fields\n\t}"
                   properties:
                     lastTransitionTime:
@@ -8665,7 +8665,7 @@ spec:
                               This is intended for representing entities that live outside the cluster,
                               which can't be selected by pods, namespaces and nodes peers, but note
                               that cluster-internal traffic will be checked against the rule as
-                              well. So if you Allow or Deny traffic to `"0.0.0.0/0"`, that will allow
+                              well. So if you Allow or Deny traffic to "0.0.0.0/0", that will allow
                               or deny all IPv4 pod-to-pod traffic as well. If you don't want that,
                               add a rule that Passes all pod traffic before the Networks rule.
 
@@ -9372,8 +9372,8 @@ spec:
                     observations of a foo's current state.\n\t    // Known .status.conditions.type
                     are: \"Available\", \"Progressing\", and \"Degraded\"\n\t    //
                     +patchMergeKey=type\n\t    // +patchStrategy=merge\n\t    // +listType=map\n\t
-                    \   // +listMapKey=type\n\t    Conditions []metav1.Condition `json:\"conditions,omitempty\"
-                    patchStrategy:\"merge\" patchMergeKey:\"type\" protobuf:\"bytes,1,rep,name=conditions\"`\n\n\n\t
+                    \   // +listMapKey=type\n\t    Conditions []metav1.Condition "json:\"conditions,omitempty\"
+                    patchStrategy:\"merge\" patchMergeKey:\"type\" protobuf:\"bytes,1,rep,name=conditions\""\n\n\n\t
                     \   // other fields\n\t}"
                   properties:
                     lastTransitionTime:
@@ -10054,10 +10054,10 @@ spec:
                   key: veth_mtu
             # The default IPv4 pool to create on startup if none exists. Pod IPs will be
             # chosen from this range. Changing this value after installation will have
-            # no effect. This should fall within `--cluster-cidr`.
+            # no effect. This should fall within "--cluster-cidr".
             # - name: CALICO_IPV4POOL_CIDR
             #   value: "192.168.0.0/16"
-            # Disable file logging so `kubectl logs` works.
+            # Disable file logging so "kubectl logs" works.
             - name: CALICO_DISABLE_FILE_LOGGING
               value: "true"
             # Set Felix endpoint to host default action to ACCEPT.
