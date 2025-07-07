@@ -36,6 +36,7 @@ const (
 	calicov3280          = "calico-v3.28.0"
 	calicov3281          = "calico-v3.28.1"
 	calicov3290          = "calico-v3.29.0"
+	calicov3302          = "calico-v3.30.2"
 
 	canalv18                      = "canal-v1.8"
 	canalv113                     = "canal-v1.13"
@@ -64,6 +65,7 @@ const (
 	canalv3280                    = "canal-v3.28.0"
 	canalv3281                    = "canal-v3.28.1"
 	canalv3290                    = "canal-v3.29.0"
+	canalv3302                    = "canal-v3.30.2"
 
 	flannelv18           = "flannel-v1.8"
 	flannelv115          = "flannel-v1.15"
@@ -150,7 +152,8 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.31.3-rancher1-1":                      calicov3290,
+			">=1.31.10-rancher1-1 < 1.32.0-rancher1-1": calicov3302,
+			">=1.31.3-rancher1-1 < 1.31.10-rancher1-1": calicov3290,
 			">=1.30.4-rancher1-1 <1.31.3-rancher1-1":   calicov3281,
 			">=1.30.0-rancher1-1 <1.30.4-rancher1-1":   calicov3280,
 			">=1.29.8-rancher1-1 <1.30.0-rancher1-1":   calicov3274,
@@ -193,7 +196,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
 		kdm.Canal: {
-			">=1.31.3-rancher1-1":                      canalv3290,
+			">=1.31.10-rancher1-1 < 1.32.0-rancher1-1": canalv3302,
+			">=1.31.3-rancher1-1 < 1.31.10-rancher1-1": canalv3290,
 			">=1.30.4-rancher1-1 <1.31.3-rancher1-1":   canalv3281,
 			">=1.30.0-rancher1-1 <1.30.4-rancher1-1":   canalv3280,
 			">=1.29.8-rancher1-1 <1.30.0-rancher1-1":   canalv3274,
@@ -427,6 +431,7 @@ func getTemplates() map[string]string {
 		calicov3280:          CalicoTemplateV3_28_0,
 		calicov3281:          CalicoTemplateV3_28_1,
 		calicov3290:          CalicoTemplateV3_29_0,
+		calicov3302:          CalicoTemplateV3_30_2,
 
 		flannelv115:          FlannelTemplateV115,
 		flannelv116:          FlannelTemplateV116,
@@ -465,6 +470,7 @@ func getTemplates() map[string]string {
 		canalv3280:                    CanalTemplateV3_28_0,
 		canalv3281:                    CanalTemplateV3_28_1,
 		canalv3290:                    CanalTemplateV3_29_0,
+		canalv3302:                    CanalTemplateV3_30_2,
 
 		coreDnsv18:          CoreDNSTemplate,
 		coreDnsv116:         CoreDNSTemplateV116,
