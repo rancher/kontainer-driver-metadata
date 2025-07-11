@@ -12,7 +12,7 @@ Rancher Changelog:
 - No new Rancher specific changes, same as CanalTemplateV3_26_1
 */
 const CanalTemplateV3_30_2 = `
-# Canal Template based on Canal v3.29.0
+# Canal Template based on Canal v3.30.2
 ---
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Canal installation.
