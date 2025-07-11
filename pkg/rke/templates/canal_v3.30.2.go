@@ -12,7 +12,7 @@ Rancher Changelog:
 - No new Rancher specific changes, same as CanalTemplateV3_26_1
 */
 const CanalTemplateV3_30_2 = `
-# Canal Template based on Canal v3.29.0
+# Canal Template based on Canal v3.30.2
 ---
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Canal installation.
@@ -9479,7 +9479,7 @@ subjects:
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: calico-node
+  name: calico
 rules:
   # Used for creating service account tokens to be used by the CNI plugin
   - apiGroups: [""]
@@ -9726,7 +9726,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: calico-node
+  name: calico
 subjects:
 - kind: ServiceAccount
   name: canal

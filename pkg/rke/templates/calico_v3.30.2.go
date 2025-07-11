@@ -14,7 +14,7 @@ Rancher Changelog:
 
 const CalicoTemplateV3_30_2 = `
 {{- $cidrs := splitList "," .ClusterCIDR }}
-# Calico Template based on Calico v3.29.0
+# Calico Template based on Calico v3.30.2
 ---
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Calico installation.
