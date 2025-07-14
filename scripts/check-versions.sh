@@ -19,18 +19,19 @@ if ! command -v curl &> /dev/null; then
     exit 1
 fi
 
+# Check if branch name is provided
+if [[ -z "$1" ]]; then
+    echo "Check if any released RKE/RKE2/K3s version from the target branch is missing in the local data.json file"
+    echo "Usage:"
+    echo "  $0 <branch-name>"
+    exit 1
+fi
+
 # Local file
 FILE_LOCAL="$(dirname $0)/../data/data.json"
 # Check if local file exists and is readable
 if [[ ! -f "$FILE_LOCAL" ]]; then
     echo "Error: Local file not found: $FILE_LOCAL"
-    exit 1
-fi
-
-# Check if branch name is provided
-if [[ -z "$1" ]]; then
-    echo "Check if any released RKE/RKE2/K3s version from the target branch is missing in the local data.json file"
-    echo "Usage: $0 <branch-name>"
     exit 1
 fi
 
