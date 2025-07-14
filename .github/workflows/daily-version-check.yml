@@ -26,7 +26,6 @@ jobs:
           - 'release-v2.8'
           - 'release-v2.9'
           - 'release-v2.10'
-          - 'release-v2.11'
 
     steps:
       - name: Checkout Repository
