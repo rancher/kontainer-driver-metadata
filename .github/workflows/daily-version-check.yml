@@ -1,0 +1,74 @@
+name: Daily Released Version Check
+
+on:
+  schedule:
+    # Runs at 02:00 UTC every day
+    - cron: '0 2 * * *'
+
+  # Allows you to run this workflow manually from the Actions tab
+  # When triggered manually, it will run for ALL branches defined in the matrix below.
+  workflow_dispatch:
+
+jobs:
+  check_released_versions:
+    name: Check Branch ${{ matrix.target_branch }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    strategy:
+      # fail-fast: false ensures that if one branch check fails,
+      # the checks for other branches will still run to completion.
+      fail-fast: false
+      matrix:
+        target_branch:
+          # The list needs to be adjusted based on the branch where the workflow runs
+          - 'release-v2.8'
+          - 'release-v2.9'
+          - 'release-v2.10'
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Dependencies (jq, curl)
+        run: |
+          echo "Installing jq and curl..."
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq jq curl
+
+      - name: Run Version Check for ${{ matrix.target_branch }}
+        # This step runs for each branch defined in the matrix.
+        # The script receives the specific branch from the matrix context.
+        run: |
+          echo "Running check against branch: ${{ matrix.target_branch }}"
+          ./scripts/check-versions.sh "${{ matrix.target_branch }}"
+
+  notify_on_failure:
+    name: Notify Slack on Failure
+    needs: check_released_versions
+    if: failure() # only if the previous job fails
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Read App Secrets
+        uses: rancher-eio/read-vault-secrets@main
+        with:
+          secrets: |
+            secret/data/github/repo/${{ github.repository }}/slack/webhook webhook_url | WEBHOOK_URL
+
+      - name: Set up Dependencies
+        run: |
+          echo "Installing curl..."
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq curl
+
+      - name: Send notification
+        env:
+          WORKFLOW_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        shell: bash
+        run: |
+          curl -X POST ${{ env.WEBHOOK_URL }} -d '{"workflow_url": "${{ env.WORKFLOW_URL }}"}'
