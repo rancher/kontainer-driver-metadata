@@ -12155,7 +12155,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 		// Out of band post Rancher v2.11.3
 		"v1.32.5-rancher2-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.16",
-			Kubernetes:                "rancher/rke-extended-life/hyperkube:v1.32.5-rancher2",
+			Kubernetes:                "rke-extended-life/hyperkube:v1.32.5-rancher2",
 			Alpine:                    "rancher/rke-tools:v0.1.113",
 			NginxProxy:                "rancher/rke-tools:v0.1.113",
 			CertDownloader:            "rancher/rke-tools:v0.1.113",

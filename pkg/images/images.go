@@ -146,7 +146,7 @@ func getImages(distro string, versions []interface{}) (all []string, err error) 
 					continue
 				}
 				// skip post EOL images
-				if strings.HasPrefix(image, "rancher/rke-extended-life") {
+				if strings.HasPrefix(image, "rke-extended-life") {
 					continue
 				}
 				// all images should be prefixed by "rancher"

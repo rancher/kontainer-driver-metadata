@@ -15343,7 +15343,7 @@
    "coredns": "rancher/mirrored-coredns-coredns:1.11.3",
    "corednsAutoscaler": "rancher/mirrored-cluster-proportional-autoscaler:v1.9.0",
    "nodelocal": "rancher/mirrored-k8s-dns-node-cache:1.23.0",
-   "kubernetes": "rancher/rke-extended-life/hyperkube:v1.32.5-rancher2",
+   "kubernetes": "rke-extended-life/hyperkube:v1.32.5-rancher2",
    "flannel": "rancher/mirrored-flannel-flannel:v0.26.4",
    "flannelCni": "rancher/flannel-cni:v1.4.1-rancher1",
    "calicoNode": "rancher/mirrored-calico-node:v3.29.3",

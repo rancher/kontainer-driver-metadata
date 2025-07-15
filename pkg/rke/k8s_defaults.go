@@ -48,7 +48,7 @@ func initData() {
 		}
 
 		if isPostEOLVersion {
-			postEOLImage := "rancher/rke-extended-life/hyperkube:" + version
+			postEOLImage := "rke-extended-life/hyperkube:" + version
 			if !strings.HasPrefix(postEOLImage, images.Kubernetes) {
 				panic(fmt.Sprintf("For K8s version %s, the Kubernetes image tag should be a substring of %s, currently it is %s", version, postEOLImage, images.Kubernetes))
 			}
