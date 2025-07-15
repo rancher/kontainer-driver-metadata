@@ -145,6 +145,10 @@ func getImages(distro string, versions []interface{}) (all []string, err error) 
 				if strings.HasPrefix(image, "weaveworks") || strings.HasPrefix(image, "noiro") {
 					continue
 				}
+				// skip post EOL images
+				if strings.HasPrefix(image, "rke-extended-life") {
+					continue
+				}
 				// all images should be prefixed by "rancher"
 				if !strings.HasPrefix(converted, "rancher") {
 					return nil, fmt.Errorf("RKE system image %s does not start with rancher", converted)

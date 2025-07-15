@@ -33,10 +33,30 @@ func initData() {
 		RKE2:                      map[string]interface{}{},
 	}
 
+	postEOLVersionsRange := []semver.Range{
+		semver.MustParseRange(">= 1.32.5-rancher2-1 <1.32.6-rancher1-1"),
+	}
+
 	for version, images := range DriverData.K8sVersionRKESystemImages {
-		longName := "rancher/hyperkube:" + version
-		if !strings.HasPrefix(longName, images.Kubernetes) {
-			panic(fmt.Sprintf("For K8s version %s, the Kubernetes image tag should be a substring of %s, currently it is %s", version, version, images.Kubernetes))
+		k8sVersion, _ := semver.Parse(version[1:])
+		var isPostEOLVersion bool
+		for _, postEOLVersion := range postEOLVersionsRange {
+			if postEOLVersion(k8sVersion) {
+				isPostEOLVersion = true
+				break
+			}
+		}
+
+		if isPostEOLVersion {
+			postEOLImage := "rke-extended-life/hyperkube:" + version
+			if !strings.HasPrefix(postEOLImage, images.Kubernetes) {
+				panic(fmt.Sprintf("For K8s version %s, the Kubernetes image tag should be a substring of %s, currently it is %s", version, postEOLImage, images.Kubernetes))
+			}
+		} else {
+			longName := "rancher/hyperkube:" + version
+			if !strings.HasPrefix(longName, images.Kubernetes) {
+				panic(fmt.Sprintf("For K8s version %s, the Kubernetes image tag should be a substring of %s, currently it is %s", version, version, images.Kubernetes))
+			}
 		}
 	}
 
