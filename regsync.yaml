@@ -593,6 +593,7 @@ sync:
         - v1.30.12-k3s1
         - v1.30.13-k3s1
         - v1.30.14-k3s1
+        - v1.30.14-k3s2
         - v1.30.2-k3s2
         - v1.30.3-k3s1
         - v1.30.4-k3s1
@@ -619,6 +620,7 @@ sync:
         - v0.9.4-build20250113
         - v0.9.5-build20250306
         - v0.9.7-build20250616
+        - v0.9.8-build20250709
   - source: docker.io/rancher/klipper-lb
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/klipper-lb'
     type: repository
@@ -1858,6 +1860,7 @@ sync:
         - v1.30.12-k3s1
         - v1.30.13-k3s1
         - v1.30.14-k3s1
+        - v1.30.14-k3s2
         - v1.30.2-k3s2
         - v1.30.3-k3s1
         - v1.30.4-k3s1
