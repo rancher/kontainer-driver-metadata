@@ -14841,7 +14841,7 @@
    "aciControllerContainer": "noiro/aci-containers-controller:6.1.1.2.81c2369"
   },
   "v1.31.10-rancher1-1": {
-   "etcd": "rancher/mirrored-coreos-etcd:v3.5.12",
+   "etcd": "rancher/mirrored-coreos-etcd:v3.5.15",
    "alpine": "rancher/rke-tools:v0.1.114",
    "nginxProxy": "rancher/rke-tools:v0.1.114",
    "certDownloader": "rancher/rke-tools:v0.1.114",
@@ -14850,7 +14850,7 @@
    "dnsmasq": "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.23.0",
    "kubednsSidecar": "rancher/mirrored-k8s-dns-sidecar:1.23.0",
    "kubednsAutoscaler": "rancher/mirrored-cluster-proportional-autoscaler:v1.9.0",
-   "coredns": "rancher/mirrored-coredns-coredns:1.11.1",
+   "coredns": "rancher/mirrored-coredns-coredns:1.11.3",
    "corednsAutoscaler": "rancher/mirrored-cluster-proportional-autoscaler:v1.9.0",
    "nodelocal": "rancher/mirrored-k8s-dns-node-cache:1.23.0",
    "kubernetes": "rancher/hyperkube:v1.31.10-rancher1",
@@ -14865,7 +14865,7 @@
    "canalCni": "rancher/calico-cni:v3.30.2-rancher1",
    "canalControllers": "rancher/mirrored-calico-kube-controllers:v3.30.2",
    "canalFlannel": "rancher/mirrored-flannel-flannel:v0.25.1",
-   "canalFlexVol": "rancher/mirrored-calico-pod2daemon-flexvol:v3.28.1",
+   "canalFlexVol": "rancher/mirrored-calico-pod2daemon-flexvol:v3.30.2",
    "podInfraContainer": "rancher/mirrored-pause:3.7",
    "ingress": "rancher/nginx-ingress-controller:nginx-1.12.1-rancher4",
    "ingressBackend": "rancher/mirrored-nginx-ingress-controller-defaultbackend:1.5-rancher2",
