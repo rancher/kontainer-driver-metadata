@@ -55,7 +55,7 @@ func initData() {
 		} else {
 			longName := "rancher/hyperkube:" + version
 			if !strings.HasPrefix(longName, images.Kubernetes) {
-				panic(fmt.Sprintf("For K8s version %s, the Kubernetes image tag should be a substring of %s, currently it is %s", version, version, images.Kubernetes))
+				panic(fmt.Sprintf("For K8s version %s, the Kubernetes image tag should be a substring of %s, currently it is %s", version, longName, images.Kubernetes))
 			}
 		}
 	}
