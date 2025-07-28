@@ -7,14 +7,15 @@ RKE1 binary also independently [embeds this data](https://github.com/rancher/rke
 
 Releases are merged to `releases.rancher.com/` using our automated [GHA logic](https://github.com/rancher/kontainer-driver-metadata/blob/dev-v2.10/.github/workflows/workflow.yaml#L79) from `release-v2.x` branches. Data at `releases.rancher.com/` is accessed by both existing rancher server and new rancher installs. `release-v2.x` branches are thus critical and protected, only few people are granted to merge PRs to `release-v2.x` branches.
 
-KDM is released on rancher minor version basis, so multiple releases could be required depending on the support matrix and product requirements. Currently we are
-managing releases for 
-- Rancher v2.8.x (`release-v2.8` branch)
+KDM is released on a rancher minor version basis, so multiple releases could be required depending on the support matrix and product requirements. Currently, we are
+managing releases for
 - Rancher v2.9.x (`release-v2.9` branch)
 - Rancher v2.10.x (`release-v2.10` branch)
+- Rancher v2.11.x (`release-v2.11` branch)
+- Rancher v2.12.x (`release-v2.12` branch)
 
 Terms used often: 
-1. Dev branch - the branch changes are merged from, of the format `dev-v2.x` or `dev-v2.x-for-rancher-x.y.z`. Dev branches change often according to release lifecycle and we could be maintaining multiple dev branches simultaneously. 
+1. Dev branch - the branch changes are merged from, of the format `dev-v2.x` or `dev-v2.x-for-rancher-x.y.z`. Dev branches change often according to release lifecycle, and we could be maintaining multiple dev branches simultaneously. 
 2. Release branch - the branch changes are merged to, of the format `release-v2.x`. 
 3. Release/KDM url - url where KDM data is published and publicly accessed, of the format `https://releases.rancher.com/kontainer-driver-metadata/branch_name/data.json`. 
 4. Release Milestone - a GitHub milestone within the [rancher/rancher repository](https://github.com/rancher/rancher) which is used to track issues that are included in KDM releases. All issues in a KDM milestone must be resolved (Tested, Closed out, etc) before a release.
@@ -28,7 +29,7 @@ Examples:
 
 ## Review Issues in Current Milestone
 
-Before any pull requests are opened, be sure to double check the relevant release milestone for the upcoming KDM release. Ensure that all issues in the current milestone have been resolved. The release captain should raise concerns regarding any open issues or bugs, and ensure they are closed out before the release process begins.
+Before any pull requests are opened, be sure to double-check the relevant release milestone for the upcoming KDM release. Ensure that all issues in the current milestone have been resolved. The release captain should raise concerns regarding any open issues or bugs, and ensure they are closed out before the release process begins.
 
 ## Prepare PRs 
 
@@ -65,7 +66,7 @@ The KDM release process will automatically sync the newly released images into t
 
 There are a few common things to check while reviewing PRs for release. Most of this should already have been reviewed during the developer workflow. We do end up catching last minute bugs when reviewing PRs at release time so it's often a good idea to double check things.
 
-RKE2/K3s: (Reviewers: @snasovich @rancher-max @kinarashah @jiaqiluo)
+RKE2/K3s: (Reviewers: @ShylajaDevadiga @snasovich)
 1. Kubernetes versions are correct according to the release plan (no RC versions)
 2. Rancher server information is correct
 3. Default kubernetes version is correct
