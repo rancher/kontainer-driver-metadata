@@ -35,12 +35,22 @@ Before any pull requests are opened, be sure to double-check the relevant releas
 
 ### Preparing The Release For a New Rancher Minor Version
 
-When KDM is being released for a new minor version of Rancher (e.g. `v2.10.0`, `v2.11.0`, etc) a few additional checks must be made.
+When KDM is being released for a new minor version of Rancher (e.g. `v2.10.0`, `v2.11.0`, etc) a few additional checks must be made. KDM releases are a collaborative process between rke2 / k3s maintainers and Rancher maintainers. Each side should check different aspects of the upcoming KDM release to ensure that everything is in order. Ideally, many of these checks will have occurred early on in the process of creating the new dev branch, but final checks must be made to prevent unexpected errors when releasing.
 
-+ Ensure that all provisioning tests are utilizing the correct version of Rancher and the correct Kubernetes version range. Ideally this will have been done during the creation of the dev branch, however this should be double checked to ensure that CI functions properly upon release
+#### Checks required from Rancher First Mates
+
++ Ensure that all provisioning tests are utilizing the correct version of Rancher and the correct Kubernetes version range.
    + Example: https://github.com/rancher/kontainer-driver-metadata/pull/1553
 + The `release-v2.x` branch will not exist yet. To ensure that all versions are correctly included, raise a preview PR against the prior release branch (e.g `dev-v2.10` against `release-v2.9`). **Do not merge this PR**
    + Example: https://github.com/rancher/kontainer-driver-metadata/pull/1552
+
+#### Checks required from Distro's First Mates
+
++ Confirm that the correct versions for the latest monthly rke2/k3s release have been properly ported to all dev branches which will be released. 
++ Confirm that the `appDefaults` ranges listed in `channels.yaml` and `channels-rke2.yaml` match the expected Kubernetes release version range for the new Rancher minor version.
+  + For example, if a new release of Rancher (e.g. `v2.12.0`) is being released and is expected to support `v1.31.x`, `v1.32.x`, and `v1.33.x`, ensure that the upper bound for each entry in `appDefaults` list specifies an upper bound of at least `< v2.12.100-0` for those minor versions.
++ Confirm that the rke2 and k3s versions have the `maxChannelServerVersion` appropriately bumped according to the Rancher version associated with the new release branch. 
+  + The goal is to have versions supported in `release-v2.x` also supported in `release-v2.(x+1)`, to cover potential upgrade scenarios. Ask KDM PR reviewers for clarification if version support for a given Rancher minor release is not clear.
 
 Once these checks are complete, creating the KDM release for the new minor version is as simple as creating the new `release-v2.x` branch based off of the corresponding `dev-v2.x` branch and pushing it to Github.
 
@@ -76,7 +86,7 @@ RKE2/K3s: (Reviewers: @ShylajaDevadiga @snasovich)
 ## Release KDM
 
 1. PRs to be merged by @kinarashah or @snasovich 
-2. Once merged, look at the Github Action pipeline and ensure that all prime images have been successfully pushed to the trusted registry (monitor at https://github.com/rancher/kontainer-driver-metadata/actions/workflows/workflow.yaml) 
+2. Once merged, look at the Github Action pipeline and ensure that all prime images have been successfully pushed to the trusted registry (monitor at https://github.com/rancher/kontainer-driver-metadata/actions/workflows/workflow.yaml), and that all validation checks pass
 3. Ping QA in Slack to perform post release checks for KDM once the GHA tasks are successfully completed 
 4. QA to perform post sync checks for Rancher prime after GHA publish tasks are successfully completed
 5. Release RKE1 (refer to Release RKE1 section)
