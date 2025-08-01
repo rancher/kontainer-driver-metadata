@@ -23,6 +23,8 @@ jobs:
     container:
       image: rancher/dapper:v0.6.0
       options: --privileged
+      volumes:
+        - /tmp:/tmp
     timeout-minutes: 90
     strategy:
       fail-fast: false
@@ -30,12 +32,17 @@ jobs:
         dist: [rke2, k3s]
         k8s-minor: [31, 32, 33]
         test-regex: ["^Test_Provisioning_.*$", "^Test_Operation_SetA_.*$", "^Test_Operation_SetB_.*$"]
+    outputs:
+      skip_convert: ${{ steps.test_output.outputs.skip_upload }}
     steps:
       - name: Force Install GIT latest
         run: |
           apk add git --update-cache
           git --version
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Install golang
+        run: |
+          apk add go
       - name: Checkout code
         uses: actions/checkout@v4
         with:
@@ -49,3 +56,57 @@ jobs:
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
           PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
           PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
+      - name: Rename Test Output
+        id: test_output
+        run: |
+          export TESTSUITE="$(echo '${{ matrix.test-regex }}' | tr -d '()|^.*$')"
+          echo "suite=${TESTSUITE}" >> $GITHUB_OUTPUT
+          FILE=$(find /tmp -name out.json)
+          if [ -z $FILE ]; then
+            echo "couldn't find test output - no tests ran."
+            echo "skip_upload=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          mv $FILE /tmp/report-${{ matrix.dist }}-v1${{ matrix.k8s-minor }}-$TESTSUITE.json
+      - name: Upload JSON Test Results
+        if: steps.test_output.outputs.skip_upload != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: "JSON Results ${{ matrix.dist }} v1${{ matrix.k8s-minor }} ${{ steps.test_output.outputs.suite }}"
+          path: "/tmp/report-${{ matrix.dist }}-v1${{ matrix.k8s-minor }}-${{ steps.test_output.outputs.suite }}.json"
+
+  convert-to-xml:
+    needs: [provisioning-test]
+    if: needs.provisioning-test.outputs.skip_convert != 'true'
+    runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
+    container: registry.suse.com/bci/bci-base:15.7
+    steps:
+      - name: Install golang
+        run: |
+          zypper --non-interactive install golang
+      - name: Fetch Raw JSON output
+        uses: actions/download-artifact@v4
+        with:
+          merge-multiple: true
+          path: /tmp/test-results/
+      - name: Convert test results to XML
+        run: |
+          for file in $(ls /tmp/test-results/report-*.json); do
+             echo "Processing $file..."
+             go run github.com/jstemmer/go-junit-report/v2@latest -parser gojson < $file > $(sed 's/json/xml/g' <<<$file)
+          done
+      - name: Upload XML Test Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: XML Results
+          path: "/tmp/test-results/report-*.xml"
+
+  event-file:
+    runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
+    container: registry.suse.com/bci/bci-base:15.7
+    steps:
+      - name: Upload GH Event File
+        uses: actions/upload-artifact@v4
+        with:
+          name: Event File
+          path: ${{ github.event_path }}

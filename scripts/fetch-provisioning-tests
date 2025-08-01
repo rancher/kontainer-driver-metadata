@@ -15,7 +15,7 @@ IMAGE_REPO=${IMAGE_REPO:-rancher/rancher}
 IMAGE_TAG=${IMAGE_TAG:-v2.12-head}
 IMAGE=${IMAGE:-$IMAGE_REPO:$IMAGE_TAG}
 
-# Inspect image, get server version and extract rancher commit 
+# Inspect image, get server version and extract rancher commit
 if [ -n "$RANCHER_COMMIT" ]; then
   RANCHER_COMMIT=$(awk -F '=' '{print $2}' <<< "$CATTLE_SERVER_VERSION")
   case $RANCHER_COMMIT in *-head)
