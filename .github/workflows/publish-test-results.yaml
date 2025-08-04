@@ -22,14 +22,17 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           run-id: ${{ github.event.workflow_run.id }}
-          path: /tmp/test-results/
+          # needed per https://github.com/orgs/community/discussions/106300#discussioncomment-8369881
+          github-token: ${{ github.token }}
           merge-multiple: true
+          path: /tmp/test-results/
           pattern: '*.xml'
 
       - name: Download the Event File
         uses: actions/download-artifact@v4
         with:
           run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
           path: /tmp/test-results/
           pattern: 'event.json'
 
