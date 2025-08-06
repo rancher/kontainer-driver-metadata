@@ -39,7 +39,7 @@ jobs:
 
       - run: ls -l /tmp/test-results/
 
-      - name: [Debug] Downloading everything
+      - name: "[Debug] Downloading everything"
         uses: actions/download-artifact@v4
         with:
           run-id: ${{ github.event.workflow_run.id }}
