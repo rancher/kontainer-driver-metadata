@@ -12072,7 +12072,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.23.0",
 		},
-		// Enabled in Rancher v2.11.5
+		// Enabled in Rancher v2.11.5 as part of RKE1 extended support
 		"v1.31.11-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.15",
 			Kubernetes:                "rke-extended-life/hyperkube:v1.31.11-rancher1",
@@ -12312,7 +12312,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			WindowsPodInfraContainer:  "rancher/mirrored-pause:3.7",
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.23.0",
 		},
-		// Enabled in Rancher v2.11.5
+		// Enabled in Rancher v2.11.5 as part of RKE1 extended support
 		"v1.32.7-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.16",
 			Kubernetes:                "rke-extended-life/hyperkube:v1.32.7-rancher1",
