@@ -9,6 +9,7 @@ Rancher Changelog:
 - No new Rancher specific changes, same as CanalTemplateV3_19_0
 */
 const CanalTemplateV3_22_5 = `
+{{- $cidrs := splitList "," .ClusterCIDR }}
 # Canal Template based on Canal v3.22.5
 ---
 # Source: calico/templates/calico-config.yaml
@@ -52,7 +53,20 @@ data:
           "mtu": __CNI_MTU__,
           "ipam": {
               "type": "host-local",
-              "subnet": "usePodCidr"
+              "ranges": [
+                [
+                  {
+                    "subnet": "usePodCidr"
+                  }
+{{- if eq (len $cidrs) 2 }}
+                ],
+                [
+                  {
+                    "subnet": "usePodCidrIPv6"
+                  }
+{{- end }}
+                ]
+              ]
           },
           "policy": {
               "type": "k8s"
@@ -75,7 +89,11 @@ data:
   # Flannel network configuration. Mounted into the flannel container.
   net-conf.json: |
     {
-      "Network": "{{.ClusterCIDR}}",
+      "Network": "{{ first $cidrs }}",
+{{- if eq (len $cidrs) 2 }}
+      "IPv6Network": "{{ last $cidrs }}",
+      "EnableIPv6": true,
+{{- end }}
       "Backend": {
         "Type": "{{.FlannelBackend.Type}}"
       }

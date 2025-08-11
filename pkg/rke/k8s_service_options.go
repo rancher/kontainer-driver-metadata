@@ -408,7 +408,7 @@ func getKubeAPIOptions() map[string]string {
 		"enable-admission-plugins":           enableAdmissionPlugins, // order doesn't matter >= 1.10
 		"allow-privileged":                   "true",
 		"anonymous-auth":                     "false",
-		"bind-address":                       "0.0.0.0",
+		"bind-address":                       "::",
 		"insecure-port":                      "0",
 		"kubelet-preferred-address-types":    "InternalIP,ExternalIP,Hostname",
 		"profiling":                          "false",
@@ -482,7 +482,7 @@ func getKubeAPIOptions124() map[string]string {
 func getKubeletOptions() map[string]string {
 	return map[string]string{
 		"tls-cipher-suites":                 tlsCipherSuites,
-		"address":                           "0.0.0.0",
+		"address":                           "::",
 		"allow-privileged":                  "true",
 		"anonymous-auth":                    "false",
 		"authentication-token-webhook":      "true",
@@ -528,7 +528,7 @@ func getKubeletOptions124() map[string]string {
 
 func getKubeControllerOptions() map[string]string {
 	return map[string]string{
-		"address":                     "0.0.0.0",
+		"address":                     "::",
 		"allow-untagged-cloud":        "true",
 		"allocate-node-cidrs":         "true",
 		"configure-cloud-routes":      "false",
@@ -568,7 +568,7 @@ func getSchedulerOptions() map[string]string {
 	return map[string]string{
 		"leader-elect": "true",
 		"v":            "2",
-		"address":      "0.0.0.0",
+		"address":      "::",
 		"profiling":    "false",
 	}
 }
