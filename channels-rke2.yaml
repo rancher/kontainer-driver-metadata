@@ -2834,7 +2834,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.30.9+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-9-rke2r1
@@ -2884,7 +2884,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.30.10+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-10-rke2r1
@@ -2922,7 +2922,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.30.11+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-11-rke2r1
@@ -2948,7 +2948,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.30.12+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-12-rke2r1
@@ -2984,7 +2984,7 @@ releases:
     # featureVersions field is intentionally not defined to disable encryption key rotation for April 2025 patches due to https://github.com/rancher/rke2/issues/8236
   - version: v1.30.13+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-13-rke2r1
@@ -3022,7 +3022,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.30.14+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     charts: &chartsv1-30-14-rke2r1
       <<: *charts-v1-30-13-rke2r1
       rke2-canal:
@@ -3375,7 +3375,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.31.8+rke2r1
     minChannelServerVersion: v2.10.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-8-rke2r1
@@ -3411,7 +3411,7 @@ releases:
     # featureVersions field is intentionally not defined to disable encryption key rotation for April 2025 patches due to https://github.com/rancher/rke2/issues/8236
   - version: v1.31.9+rke2r1
     minChannelServerVersion: v2.10.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-9-rke2r1
@@ -3449,7 +3449,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.31.10+rke2r1
     minChannelServerVersion: v2.10.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     charts: &chartsv1-31-10-rke2r1
       <<: *charts-v1-31-9-rke2r1
       rke2-metrics-server:
@@ -3486,7 +3486,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.31.11+rke2r1
     minChannelServerVersion: v2.10.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     charts: &chartsv1-31-11-rke2r1
       <<: *chartsv1-31-10-rke2r1
       harvester-csi-driver:
@@ -3604,7 +3604,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.32.4+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-32-4-rke2r1
@@ -3640,7 +3640,7 @@ releases:
     # featureVersions field is intentionally not defined to disable encryption key rotation for April 2025 patches due to https://github.com/rancher/rke2/issues/8236
   - version: v1.32.5+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-32-5-rke2r1
@@ -3678,7 +3678,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.32.6+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     charts: &chartsv1-32-6-rke2r1
       <<: *charts-v1-32-5-rke2r1
       rke2-canal:
@@ -3715,7 +3715,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.32.7+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     charts: &chartsv1-32-7-rke2r1
       <<: *chartsv1-32-6-rke2r1
       rke2-flannel:
@@ -3752,7 +3752,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.33.0+rke2r1
     minChannelServerVersion: v2.12.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     serverArgs: *serverArgs-v1-28-11-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-33-0-rke2r1
@@ -3767,7 +3767,7 @@ releases:
     # featureVersions field is intentionally not defined to disable encryption key rotation for April 2025 patches due to https://github.com/rancher/rke2/issues/8236
   - version: v1.33.1+rke2r1
     minChannelServerVersion: v2.12.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     charts: &chartsv1-33-1-rke2r1
       <<: *charts-v1-33-0-rke2r1
       rke2-canal:
@@ -3807,7 +3807,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.33.2+rke2r1
     minChannelServerVersion: v2.12.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     charts: &chartsv1-33-2-rke2r1
       <<: *chartsv1-33-1-rke2r1
       rke2-calico:
@@ -3844,7 +3844,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.33.3+rke2r1
     minChannelServerVersion: v2.12.0-alpha1
-    maxChannelServerVersion: v2.12.99
+    maxChannelServerVersion: v2.13.99
     charts: &chartsv1-33-3-rke2r1
       <<: *chartsv1-33-2-rke2r1
       rke2-flannel:
