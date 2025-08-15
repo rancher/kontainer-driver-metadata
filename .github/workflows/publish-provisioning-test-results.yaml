@@ -1,4 +1,4 @@
-name: Publish Tests Results
+name: Publish Provisioning Tests Results
 on:
   workflow_run:
     workflows: ["Provisioning tests"]
@@ -37,22 +37,11 @@ jobs:
           path: /tmp/test-results/
           name: "Event File"
 
-      - run: ls -l /tmp/test-results/
-
-      - name: "[Debug] Downloading everything"
-        uses: actions/download-artifact@v4
-        with:
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ github.token }}
-          merge-multiple: true
-          path: /tmp/test-results/
-
-      - run: ls -l /tmp/test-results/
-
       - name: Publish Test Results
         uses: rancher/publish-unit-test-result-action/linux@3a74b2957438d0b6e2e61d67b05318aa25c9e6c6
         if: (!cancelled())
         with:
+          check_name: Provisioning Tests Results
           commit: ${{ github.event.workflow_run.head_sha }}
           event_name: ${{ github.event.workflow_run.event }}
           event_file: /tmp/test-results/event.json
