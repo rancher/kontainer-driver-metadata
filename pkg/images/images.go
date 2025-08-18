@@ -52,12 +52,13 @@ func GenerateRegSyncFile() {
 		logrus.Fatalf("failed to initilize data: %v", err)
 	}
 	var imageTag = map[string]map[string]bool{}
+	var extendedLifeImages = make(map[string][]string)
 	for _, distro := range []string{utiliies.RKE, utiliies.RKE2, utiliies.K3S} {
 		versions, err := filterVersions(distro)
 		if err != nil {
 			logrus.Fatalf("failed to filter versions for %s: %v", distro, err)
 		}
-		images, err := getImages(distro, versions)
+		images, err := getImages(distro, extendedLifeImages, versions)
 		if err != nil {
 			logrus.Fatalf("failed to get images for %s: %v", distro, err)
 		}
@@ -76,7 +77,15 @@ func GenerateRegSyncFile() {
 	}
 	defer file.Close()
 
-	if err = temp.Execute(file, imageTag); err != nil {
+	data := struct {
+		Images             map[string]map[string]bool
+		ExtendedLifeImages map[string][]string
+	}{
+		Images:             imageTag,
+		ExtendedLifeImages: extendedLifeImages,
+	}
+
+	if err = temp.Execute(file, data); err != nil {
 		logrus.Fatalf("failed to render the file: %v", err)
 	}
 	logrus.Info("finished generating regsync.yaml")
@@ -114,7 +123,7 @@ func unique(imageTag map[string]map[string]bool, images []string) error {
 
 // getImages returns all images, for Linux and Windows, used by the provided distro and k8s versions.
 // It returns an empty slice and an error if something goes wrong.
-func getImages(distro string, versions []interface{}) (all []string, err error) {
+func getImages(distro string, extendedLifeImages map[string][]string, versions []interface{}) (all []string, err error) {
 	var wg sync.WaitGroup
 	var mu sync.Mutex
 	errCh := make(chan error, 1) // Buffer size of 1 to ensure immediate return on error
@@ -145,8 +154,14 @@ func getImages(distro string, versions []interface{}) (all []string, err error) 
 				if strings.HasPrefix(image, "weaveworks") || strings.HasPrefix(image, "noiro") {
 					continue
 				}
-				// skip post EOL images
+				// track post EOL images
 				if strings.HasPrefix(image, "rke-extended-life") {
+					splitImageParts := strings.Split(image, ":")
+					if len(splitImageParts) != 2 {
+						return nil, fmt.Errorf("RKE system image does not have a tag %s", image)
+					}
+					repo, tag := splitImageParts[0], splitImageParts[1]
+					extendedLifeImages[repo] = append(extendedLifeImages[repo], tag)
 					continue
 				}
 				// all images should be prefixed by "rancher"

@@ -48,7 +48,13 @@ jobs:
           secrets: |
             secret/data/github/repo/${{ github.repository }}/registry-endpoint/credentials token | REGISTRY_ENDPOINT ;
             secret/data/github/repo/${{ github.repository }}/registry-username/credentials token | REGISTRY_USERNAME ;
-            secret/data/github/repo/${{ github.repository }}/registry-password/credentials token | REGISTRY_PASSWORD
+            secret/data/github/repo/${{ github.repository }}/registry-password/credentials token | REGISTRY_PASSWORD ;
+            secret/data/github/repo/${{ github.repository }}/stage-registry/rancher/rke-extended-life/credentials endpoint |  STAGE_REGISTRY_ENDPOINT ;
+            secret/data/github/repo/${{ github.repository }}/stage-registry/rancher/rke-extended-life/credentials username |  STAGE_REGISTRY_USERNAME ;
+            secret/data/github/repo/${{ github.repository }}/stage-registry/rancher/rke-extended-life/credentials password |  STAGE_REGISTRY_PASSWORD ;
+            secret/data/github/repo/${{ github.repository }}/prime-registry/rancher/rke-extended-life/credentials endpoint |  PRIME_REGISTRY_ENDPOINT ;
+            secret/data/github/repo/${{ github.repository }}/prime-registry/rancher/rke-extended-life/credentials username |  PRIME_REGISTRY_USERNAME ;
+            secret/data/github/repo/${{ github.repository }}/prime-registry/rancher/rke-extended-life/credentials password |  PRIME_REGISTRY_PASSWORD ;                      
       - name: Validate
         run: dapper mirror-images
 

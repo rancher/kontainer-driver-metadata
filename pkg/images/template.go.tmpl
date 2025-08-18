@@ -3,6 +3,12 @@ creds:
   - registry: '{{`{{ env "REGISTRY_ENDPOINT" }}`}}'
     user: '{{`{{ env "REGISTRY_USERNAME" }}`}}'
     pass: '{{`{{ env "REGISTRY_PASSWORD" }}`}}'
+  - registry: '{{`{{ env "STAGE_REGISTRY_ENDPOINT" }}`}}'
+    user: '{{`{{ env "STAGE_REGISTRY_USERNAME" }}`}}'
+    pass: '{{`{{ env "STAGE_REGISTRY_PASSWORD" }}`}}'
+  - registry: '{{`{{ env "PRIME_REGISTRY_ENDPOINT" }}`}}'
+    user: '{{`{{ env "PRIME_REGISTRY_USERNAME" }}`}}'
+    pass: '{{`{{ env "PRIME_REGISTRY_PASSWORD" }}`}}'
 defaults:
   mediaTypes:
     - application/vnd.docker.distribution.manifest.v2+json
@@ -10,7 +16,7 @@ defaults:
     - application/vnd.oci.image.manifest.v1+json
     - application/vnd.oci.image.index.v1+json
 sync:
-{{- range $key, $val := . }}
+{{- range $key, $val := .Images }}
   - source: docker.io/{{ $key }}
     target: '{{`{{ env "REGISTRY_ENDPOINT" }}`}}/{{ $key }}'
     type: repository
@@ -18,5 +24,16 @@ sync:
       allow:
         {{- range $key, $val := $val }}
         - {{ $key }}
+        {{- end }}
+{{- end }}
+
+{{- range $image, $tags := .ExtendedLifeImages }}
+  - source: '{{`{{ env "STAGE_REGISTRY_ENDPOINT" }}`}}/{{ $image }}'
+    target: '{{`{{ env "PRIME_REGISTRY_ENDPOINT" }}`}}/{{ $image }}'
+    type: repository
+    tags:
+      allow:
+        {{- range $index, $tag := $tags }}
+        - {{ $tag }}
         {{- end }}
 {{- end }}
