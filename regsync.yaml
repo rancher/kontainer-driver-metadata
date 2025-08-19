@@ -3,6 +3,12 @@ creds:
   - registry: '{{ env "REGISTRY_ENDPOINT" }}'
     user: '{{ env "REGISTRY_USERNAME" }}'
     pass: '{{ env "REGISTRY_PASSWORD" }}'
+  - registry: '{{ env "STAGE_REGISTRY_ENDPOINT" }}'
+    user: '{{ env "STAGE_REGISTRY_USERNAME" }}'
+    pass: '{{ env "STAGE_REGISTRY_PASSWORD" }}'
+  - registry: '{{ env "PRIME_REGISTRY_ENDPOINT" }}'
+    user: '{{ env "PRIME_REGISTRY_USERNAME" }}'
+    pass: '{{ env "PRIME_REGISTRY_PASSWORD" }}'
 defaults:
   mediaTypes:
     - application/vnd.docker.distribution.manifest.v2+json
@@ -2163,3 +2169,10 @@ sync:
         - v1.32.5-rke2r1
         - v1.32.6-rke2r1
         - v1.32.7-rke2r1
+  - source: '{{ env "STAGE_REGISTRY_ENDPOINT" }}/rke-extended-life/hyperkube'
+    target: '{{ env "PRIME_REGISTRY_ENDPOINT" }}/rke-extended-life/hyperkube'
+    type: repository
+    tags:
+      allow:
+        - v1.31.11-rancher1
+        - v1.32.7-rancher1
