@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"sort"
 	"strings"
 	"sync"
 	"text/template"
@@ -76,6 +77,11 @@ func GenerateRegSyncFile() {
 		logrus.Fatalf("failed to create the regsync file: %v ", err)
 	}
 	defer file.Close()
+
+	// sort values to keep the order deterministic
+	for _, tags := range extendedLifeImages {
+		sort.Strings(tags)
+	}
 
 	data := struct {
 		Images             map[string]map[string]bool
