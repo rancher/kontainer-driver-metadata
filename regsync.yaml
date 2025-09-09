@@ -2175,4 +2175,6 @@ sync:
     tags:
       allow:
         - v1.31.11-rancher1
+        - v1.31.12-rancher1
         - v1.32.7-rancher1
+        - v1.32.8-rancher1
