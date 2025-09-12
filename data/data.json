@@ -15875,8 +15875,8 @@
    "\u003e=1.28.6-rancher1-1 \u003c1.29.0-rancher1-1": "flannel-v0.24.2",
    "\u003e=1.29.0-rancher1-1 \u003c1.31.12-rancher1-1": "flannel-v0.25.1",
    "\u003e=1.32.0-rancher1-1 \u003c1.32.12-rancher1-1": "flannel-v0.26.4",
-   "\u003e=1.32.11-rancher1-1 \u003c1.32.0-rancher1-1": "flannel-v0.27.3",
    "\u003e=1.32.12-rancher1-1": "flannel-v0.27.3",
+   "\u003e=1.32.12-rancher1-1 \u003c1.32.0-rancher1-1": "flannel-v0.27.3",
    "\u003e=1.8.0-rancher0 \u003c1.15.0-rancher0": "flannel-v1.8"
   },
   "kubeDNS": {
