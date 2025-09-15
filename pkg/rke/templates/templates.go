@@ -248,7 +248,7 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 		kdm.Flannel: {
 			">=1.32.8-rancher1-1":                     flannelv0273,
 			">=1.32.0-rancher1-1 <1.32.8-rancher1-1":  flannelv0264,
-			">=1.32.12-rancher1-1 <1.32.0-rancher1-1": flannelv0273,
+			">=1.31.12-rancher1-1 <1.32.0-rancher1-1": flannelv0273,
 			">=1.29.0-rancher1-1 <1.31.12-rancher1-1": flannelv0251,
 			">=1.28.6-rancher1-1 <1.29.0-rancher1-1":  flannelv0242,
 			">=1.26.0-rancher1-1 <1.28.6-rancher1-1":  flannelv0214,
