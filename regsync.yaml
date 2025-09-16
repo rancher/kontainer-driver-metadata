@@ -1335,6 +1335,7 @@ sync:
         - v0.24.2
         - v0.25.1
         - v0.26.4
+        - v0.27.3
   - source: docker.io/rancher/mirrored-flannelcni-flannel
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-flannelcni-flannel'
     type: repository
