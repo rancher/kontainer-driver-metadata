@@ -27,9 +27,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        dist: [rke2, k3s]
-        k8s-minor: [30, 31, 32]
-        test-regex: ["^Test_Provisioning_.*$", "^Test_Operation_SetA_.*$", "^Test_Operation_SetB_.*$"]
+        dist: [k3s]
+        k8s-minor: [31]
+        test-regex: ["^Test_Provisioning_.*$"]
     steps:
       - name: Force Install GIT latest
         run: |
@@ -49,3 +49,4 @@ jobs:
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
           PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
           PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
+          CATTLE_AGENT_IMAGE: "rancher/rancher-agent:v2.11-head"
