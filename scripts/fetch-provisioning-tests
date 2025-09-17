@@ -44,4 +44,6 @@ mkdir -p "$RANCHER_DIR/bin"
 
 cp /usr/bin/rancher "$RANCHER_DIR/bin/rancher"
 
+CATTLE_AGENT_IMAGE="stgregistry.suse.com/rancher/rancher-agent:$(git tag -l --contains HEAD | head -n 1)"
+
 popd
