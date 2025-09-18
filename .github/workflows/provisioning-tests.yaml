@@ -49,3 +49,4 @@ jobs:
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
           PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
           PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
+          CATTLE_AGENT_IMAGE: "rancher/rancher-agent:v2.12-head"
