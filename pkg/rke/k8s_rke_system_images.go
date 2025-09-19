@@ -12153,9 +12153,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.23.0",
 		},
 		// Enabled out of band as part of RKE1 extended support
-		"v1.31.12-rancher1-1": {
+		"v1.31.13-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.15",
-			Kubernetes:                "rke-extended-life/hyperkube:v1.31.12-rancher1",
+			Kubernetes:                "rke-extended-life/hyperkube:v1.31.13-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.114",
 			NginxProxy:                "rancher/rke-tools:v0.1.114",
 			CertDownloader:            "rancher/rke-tools:v0.1.114",
@@ -12473,9 +12473,9 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			Nodelocal:                 "rancher/mirrored-k8s-dns-node-cache:1.23.0",
 		},
 		// Enabled out of band as part of RKE1 extended support
-		"v1.32.8-rancher1-1": {
+		"v1.32.9-rancher1-1": {
 			Etcd:                      "rancher/mirrored-coreos-etcd:v3.5.16",
-			Kubernetes:                "rke-extended-life/hyperkube:v1.32.8-rancher1",
+			Kubernetes:                "rke-extended-life/hyperkube:v1.32.9-rancher1",
 			Alpine:                    "rancher/rke-tools:v0.1.114",
 			NginxProxy:                "rancher/rke-tools:v0.1.114",
 			CertDownloader:            "rancher/rke-tools:v0.1.114",
