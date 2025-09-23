@@ -909,7 +909,7 @@ releases:
     serverArgs: *serverArgs-v11
     agentArgs: *agentArgs-v7
     featureVersions: *featureVersions-v1
-  - version: v1.31.13-rc1+k3s1
+  - version: v1.31.13+k3s1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
     serverArgs: *serverArgs-v11
