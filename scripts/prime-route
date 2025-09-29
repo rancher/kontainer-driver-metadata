@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+# scripts/prime-route
+# Sets PRIME_MODE, PRIME_CHANNEL, PRIME_REG_HOST and CATTLE_AGENT_IMAGE
+# based on CHANNELS_FILE, SOME_K8S_VERSION, LAST_COMMUNITY_RANCHER.
+# Inputs expected in env:
+#   CHANNELS_FILE, SOME_K8S_VERSION, LAST_COMMUNITY_RANCHER,
+#   REGISTRY_ENDPOINT, REGISTRY_ENDPOINT_STG,
+#   PRIME_AGENT_IMAGE
+set -e
+
+# Compute minChannelServerVersion for the selected K8s version (may be empty)
+MINCHAN="$(scripts/channels-pick-minchan-for-version.awk "${CHANNELS_FILE}" "${SOME_K8S_VERSION}" || true)"
+
+# Defaults
+PRIME_MODE=0
+unset PRIME_CHANNEL
+unset PRIME_REG_HOST
+
+# Decide Prime mode: MINCHAN > LAST_COMMUNITY_RANCHER
+if [[ -n "${MINCHAN}" ]] && scripts/semver_g.awk "${MINCHAN}" "${LAST_COMMUNITY_RANCHER}"; then
+  PRIME_MODE=1
+
+  # --- BEGIN sensitive section (suppress xtrace to avoid printing hosts) ---
+  _TRACE_WAS_ON=0
+  if [[ $- == *x* ]]; then
+    _TRACE_WAS_ON=1
+    set +x
+  fi
+
+  # Choose staging vs production by "-rc" in SOME_K8S_VERSION (prerelease => staging)
+  if [[ "${SOME_K8S_VERSION,,}" == *-rc* ]]; then
+    PRIME_CHANNEL="staging"
+    PRIME_REG_HOST="${REGISTRY_ENDPOINT_STG:-}"
+  else
+    PRIME_CHANNEL="production"
+    PRIME_REG_HOST="${REGISTRY_ENDPOINT:-}"
+  fi
+
+  # If no endpoint available for the chosen channel, disable Prime safely
+  if [[ -z "${PRIME_REG_HOST}" ]]; then
+    PRIME_MODE=0
+    unset PRIME_CHANNEL
+    unset PRIME_REG_HOST
+  else
+    export PRIME_REG_HOST
+  fi
+
+  # If Prime is on override CATTLE_AGENT_IMAGE
+  if [[ "${PRIME_MODE}" == "1" ]]; then
+    export CATTLE_AGENT_IMAGE="${PRIME_AGENT_IMAGE}"
+  fi
+
+  # Restore xtrace if it was enabled
+  if [[ "${_TRACE_WAS_ON}" == "1" ]]; then
+    set -x
+  fi
+  # --- END sensitive section ---
+fi
+
+# Export non-sensitive flags (safe to print)
+export PRIME_MODE PRIME_CHANNEL

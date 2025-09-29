@@ -36,9 +36,9 @@ fi
 # To be removed/changed once drone setup is removed from rancher/rancher repo. 
 export DRONE_BUILD_NUMBER=${GITHUB_RUN_NUMBER}
 
-if ! ./scripts/test-run-required.sh; then
-  exit
-fi
+#if ! ./scripts/test-run-required.sh; then
+#  exit
+#fi
 
 set -ex
 
@@ -81,6 +81,12 @@ if [ -z "${SOME_K8S_VERSION}" ]; then
   fi
   export SOME_K8S_VERSION
 fi
+
+LAST_COMMUNITY_RANCHER="v2.9.0-alpha1"
+PRIME_AGENT_IMAGE="rancher/rancher-agent:v2.9.12"
+source scripts/prime-route
+
+echo "LAST_COMMUNITY_RANCHER=$LAST_COMMUNITY_RANCHER SOME_K8S_VERSION=$SOME_K8S_VERSION PRIME_MODE=$PRIME_MODE PRIME_CHANNEL=${PRIME_CHANNEL:-<none>} CATTLE_AGENT_IMAGE: ${CATTLE_AGENT_IMAGE:-<none>}"
 
 # Copy rancher provisioning tests, and enter directory they exist
 source ./scripts/fetch-provisioning-tests
