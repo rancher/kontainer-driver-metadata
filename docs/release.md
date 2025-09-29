@@ -41,6 +41,31 @@ A couple of example PRs to help:
 - https://github.com/rancher/kontainer-driver-metadata/pull/1027
 - https://github.com/rancher/kontainer-driver-metadata/pull/1084 
 
+## Prime configuration variables
+
+When preparing a new KDM release line (or advancing an existing one), update the prime-related variables used by CI/test scripts to correctly detect prime and select a prime-published agent image:
+
+```bash
+# scripts/prime-route / scripts/provisioning-tests
+LAST_COMMUNITY_RANCHER="v2.9.0-alpha1"
+PRIME_AGENT_IMAGE="rancher/rancher-agent:v2.9.12"
+```
+
+**What to update each release:**
+
+* **`LAST_COMMUNITY_RANCHER`** — Set to the cutoff Rancher server version for *community* builds on this line.
+  This is used when comparing a channel entry’s `minChannelServerVersion` to decide if a K8s release is **prime-only**.
+* **`PRIME_AGENT_IMAGE`** — Set to the **latest prime-published** `rancher/rancher-agent` tag for this release line.
+  This ensures provisioning tests use an agent image available in the prime registry when prime mode is active.
+
+**Where these are used:** KDM CI/test scripts (e.g., `scripts/prime-route`, `scripts/provisioning-tests`) referenced by Rancher provisioning tests.
+
+**When to bump:**
+
+* At the start of a new release line or when the prime cutoff moves (bump `LAST_COMMUNITY_RANCHER`).
+* Whenever a new prime agent is published for this line (bump `PRIME_AGENT_IMAGE`).
+
+
 ## Prepare for prime images update
 
 Prime images only need to be updated for out-of-band KDM releases, i.e. KDM releases without corresponding rancher server version releases. For example, https://github.com/rancher/kontainer-driver-metadata/pull/1126 was an OOB KDM release for Rancher v2.7 but there was no release of Rancher version v2.7.x with it, so prime images needed to be updated in this case.
