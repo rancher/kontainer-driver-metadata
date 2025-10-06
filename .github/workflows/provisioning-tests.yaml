@@ -52,6 +52,8 @@ jobs:
         run: |
           dapper provisioning-tests
         env:
+          LAST_COMMUNITY_RANCHER: v2.9.0-alpha1
+          PRIME_AGENT_IMAGE: rancher/rancher-agent:v2.9.12
           V2PROV_TEST_DIST: ${{ matrix.dist }}
           V2PROV_TEST_RUN_REGEX: ${{ matrix.test-regex }}
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}

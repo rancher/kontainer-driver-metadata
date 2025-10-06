@@ -45,11 +45,16 @@ A couple of example PRs to help:
 
 When preparing a new KDM release line (or advancing an existing one), update the prime-related variables used by CI/test scripts to correctly detect prime and select a prime-published agent image:
 
-```bash
-# scripts/prime-route / scripts/provisioning-tests
-LAST_COMMUNITY_RANCHER="v2.9.0-alpha1"
-PRIME_AGENT_IMAGE="rancher/rancher-agent:v2.9.12"
+```yaml
+# .github/workflows/provisioning-tests.yaml
+- name: Provisioning Operations tests
+  run: dapper provisioning-tests
+  env:
+    LAST_COMMUNITY_RANCHER: v2.9.0-alpha1
+    PRIME_AGENT_IMAGE: rancher/rancher-agent:v2.9.12
+    # ...existing env...
 ```
+**Scripts behavior:** Scripts provide safe defaults only if these variables are not set by the workflow, so local runs still work without extra config.
 
 **What to update each release:**
 
@@ -59,6 +64,8 @@ PRIME_AGENT_IMAGE="rancher/rancher-agent:v2.9.12"
   This ensures provisioning tests use an agent image available in the prime registry when prime mode is active.
 
 **Where these are used:** KDM CI/test scripts (e.g., `scripts/prime-route`, `scripts/provisioning-tests`) referenced by Rancher provisioning tests.
+
+**When creating a new KDM branch:** Set `LAST_COMMUNITY_RANCHER` to a high placeholder similar to how maxChannelServerVersion is used in data.json, for example `v2.X.99`. Replace this placeholder with the agreed cutoff once the Prime-only point is defined for the line.
 
 **When to bump:**
 

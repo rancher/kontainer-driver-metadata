@@ -8,6 +8,16 @@
 #   PRIME_AGENT_IMAGE
 set -e
 
+# only set defaults if not provided by the workflow
+if [ -z "${LAST_COMMUNITY_RANCHER:-}" ]; then
+  LAST_COMMUNITY_RANCHER="v2.9.0-alpha1"
+fi
+
+if [ -z "${PRIME_AGENT_IMAGE:-}" ]; then
+  PRIME_AGENT_IMAGE="rancher/rancher-agent:v2.9.12"
+fi
+
+
 # Compute minChannelServerVersion for the selected K8s version (may be empty)
 MINCHAN="$(scripts/channels-pick-minchan-for-version.awk "${CHANNELS_FILE}" "${SOME_K8S_VERSION}" || true)"
 
