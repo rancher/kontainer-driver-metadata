@@ -46,8 +46,8 @@ jobs:
         uses: rancher-eio/read-vault-secrets@main
         with:
           secrets: |
-            secret/data/github/repo/${{ github.repository }}/rancher-prime-registry/credentials registry |  REGISTRY_ENDPOINT;
-            secret/data/github/repo/${{ github.repository }}/rancher-prime-stg-registry/credentials registry | STAGE_REGISTRY_ENDPOINT
+            secret/data/github/repo/${{ github.repository }}/rancher-prime-stg-registry/credentials registry | STAGE_REGISTRY_ENDPOINT;
+            secret/data/github/repo/${{ github.repository }}/registry-endpoint/credentials token | REGISTRY_ENDPOINT
       - name: Provisioning Operations tests
         run: |
           dapper provisioning-tests

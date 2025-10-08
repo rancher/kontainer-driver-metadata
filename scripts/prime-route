@@ -46,12 +46,12 @@ if [[ -n "${MINCHAN}" ]] && scripts/semver_g.awk "${MINCHAN}" "${LAST_COMMUNITY_
     PRIME_REG_HOST="${REGISTRY_ENDPOINT:-}"
   fi
 
-  if [[ -n "${STAGE_REGISTRY_ENDPOINT}" ]]; then
-    echo "stg registry set"
+  if [[ -z "${STAGE_REGISTRY_ENDPOINT}" ]]; then
+    echo "stg registry is empty"
   fi
 
-  if [[ -n "${REGISTRY_ENDPOINT}" ]]; then
-    echo "prod registry set"
+  if [[ -z "${REGISTRY_ENDPOINT}" ]]; then
+    echo "prod registry is empty"
   fi
 
   # Only export PRIME_REG_HOST if it is set
