@@ -4169,7 +4169,7 @@ releases:
       <<: *chartsv1-33-3-rke2r1
       rancher-vsphere-cpi:
         repo: rancher-rke2-charts
-        version: 1.12.000
+        version: 1.12.100
       rancher-vsphere-csi:
         repo: rancher-rke2-charts
         version: 3.5.0-rancher100
