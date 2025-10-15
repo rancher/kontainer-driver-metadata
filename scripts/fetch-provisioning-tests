@@ -15,14 +15,14 @@ IMAGE_REPO=${IMAGE_REPO:-rancher/rancher}
 IMAGE_TAG=${IMAGE_TAG:-v2.12-head}
 IMAGE=${IMAGE:-$IMAGE_REPO:$IMAGE_TAG}
 
-# Inspect image, get server version and extract rancher commit 
-if [ -n "$RANCHER_COMMIT" ]; then
-  RANCHER_COMMIT=$(awk -F '=' '{print $2}' <<< "$CATTLE_SERVER_VERSION")
-  case $RANCHER_COMMIT in *-head)
-    # If the rancher commit ends with '-head', it is usually of the form 'v2.x-<COMMIT>-head', so extract everything between dashes
-    RANCHER_COMMIT=$(awk -F '[-]' '{print $2}' <<< "$RANCHER_COMMIT");;
-  esac
-fi
+# Inspect image, get server version and extract rancher commit
+# if [ -n "$RANCHER_COMMIT" ]; then
+#   RANCHER_COMMIT=$(awk -F '=' '{print $2}' <<< "$CATTLE_SERVER_VERSION")
+#   case $RANCHER_COMMIT in *-head)
+#     # If the rancher commit ends with '-head', it is usually of the form 'v2.x-<COMMIT>-head', so extract everything between dashes
+#     RANCHER_COMMIT=$(awk -F '[-]' '{print $2}' <<< "$RANCHER_COMMIT");;
+#   esac
+# fi
 
 mkdir -p rancher
 
@@ -40,7 +40,7 @@ export RANCHER_DIR=$TMP_DIR/rancher
 # Checkout commit image was built on
 pushd ./rancher
 
-git checkout $RANCHER_COMMIT
+# git checkout $RANCHER_COMMIT
 
 mkdir -p "$RANCHER_DIR/bin"
 
