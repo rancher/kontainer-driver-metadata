@@ -22533,6 +22533,12 @@
      "kubelet-arg": {
       "type": "array"
      },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -22643,6 +22649,15 @@
      "etcd-expose-metrics": {
       "default": false,
       "type": "boolean"
+     },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
      },
      "flannel-backend": {
       "options": [
@@ -22740,6 +22755,12 @@
      "kubelet-arg": {
       "type": "array"
      },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -22850,6 +22871,15 @@
      "etcd-expose-metrics": {
       "default": false,
       "type": "boolean"
+     },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
      },
      "flannel-backend": {
       "options": [
@@ -22947,6 +22977,12 @@
      "kubelet-arg": {
       "type": "array"
      },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -23057,6 +23093,15 @@
      "etcd-expose-metrics": {
       "default": false,
       "type": "boolean"
+     },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
      },
      "flannel-backend": {
       "options": [
@@ -23154,6 +23199,12 @@
      "kubelet-arg": {
       "type": "array"
      },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -23264,6 +23315,15 @@
      "etcd-expose-metrics": {
       "default": false,
       "type": "boolean"
+     },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
      },
      "flannel-backend": {
       "options": [
@@ -23361,6 +23421,12 @@
      "kubelet-arg": {
       "type": "array"
      },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -23471,6 +23537,15 @@
      "etcd-expose-metrics": {
       "default": false,
       "type": "boolean"
+     },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
      },
      "flannel-backend": {
       "options": [
@@ -23777,6 +23852,12 @@
      "kubelet-arg": {
       "type": "array"
      },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -23888,6 +23969,15 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
      "flannel-backend": {
       "options": [
        "none",
@@ -23925,12 +24015,7 @@
       "type": "boolean"
      },
      "secrets-encryption-provider": {
-      "default": "aescbc",
-      "options": [
-       "aescbc",
-       "secretbox"
-      ],
-      "type": "enum"
+      "type": "string"
      },
      "service-cidr": {
       "type": "string"
@@ -23989,6 +24074,12 @@
      "kubelet-arg": {
       "type": "array"
      },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -24100,6 +24191,15 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
      "flannel-backend": {
       "options": [
        "none",
@@ -24137,12 +24237,7 @@
       "type": "boolean"
      },
      "secrets-encryption-provider": {
-      "default": "aescbc",
-      "options": [
-       "aescbc",
-       "secretbox"
-      ],
-      "type": "enum"
+      "type": "string"
      },
      "service-cidr": {
       "type": "string"
@@ -24201,6 +24296,12 @@
      "kubelet-arg": {
       "type": "array"
      },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -24312,6 +24413,15 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
      "flannel-backend": {
       "options": [
        "none",
@@ -24349,12 +24459,7 @@
       "type": "boolean"
      },
      "secrets-encryption-provider": {
-      "default": "aescbc",
-      "options": [
-       "aescbc",
-       "secretbox"
-      ],
-      "type": "enum"
+      "type": "string"
      },
      "service-cidr": {
       "type": "string"
@@ -24413,6 +24518,12 @@
      "kubelet-arg": {
       "type": "array"
      },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -24524,6 +24635,15 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
      "flannel-backend": {
       "options": [
        "none",
@@ -24561,12 +24681,7 @@
       "type": "boolean"
      },
      "secrets-encryption-provider": {
-      "default": "aescbc",
-      "options": [
-       "aescbc",
-       "secretbox"
-      ],
-      "type": "enum"
+      "type": "string"
      },
      "service-cidr": {
       "type": "string"
@@ -24625,6 +24740,12 @@
      "kubelet-arg": {
       "type": "array"
      },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -24736,6 +24857,15 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
      "flannel-backend": {
       "options": [
        "none",
@@ -24773,12 +24903,7 @@
       "type": "boolean"
      },
      "secrets-encryption-provider": {
-      "default": "aescbc",
-      "options": [
-       "aescbc",
-       "secretbox"
-      ],
-      "type": "enum"
+      "type": "string"
      },
      "service-cidr": {
       "type": "string"
