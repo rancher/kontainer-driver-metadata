@@ -17852,9 +17852,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "maxChannelServerVersion": "v2.6.4",
@@ -18003,9 +18000,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -18156,9 +18150,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "maxChannelServerVersion": "v2.6.4",
@@ -18308,9 +18299,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "maxChannelServerVersion": "v2.6.4",
@@ -18459,9 +18447,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -18913,9 +18898,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "maxChannelServerVersion": "v2.6.99",
@@ -19064,9 +19046,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -19217,9 +19196,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "maxChannelServerVersion": "v2.6.99",
@@ -19368,9 +19344,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -19523,9 +19496,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -19682,9 +19652,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "featureVersions": {
@@ -19839,9 +19806,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -19998,9 +19962,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "featureVersions": {
@@ -20155,9 +20116,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -20314,9 +20272,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "maxChannelServerVersion": "v2.6.99",
@@ -20468,9 +20423,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -20625,9 +20577,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "maxChannelServerVersion": "v2.6.99",
@@ -20780,9 +20729,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -20940,9 +20886,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "featureVersions": {
@@ -21098,9 +21041,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -21258,9 +21198,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "featureVersions": {
@@ -21416,9 +21353,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -21576,9 +21510,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "featureVersions": {
@@ -21734,9 +21665,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -21894,9 +21822,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "featureVersions": {
@@ -22052,9 +21977,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -22212,9 +22134,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "featureVersions": {
@@ -22370,9 +22289,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -22530,9 +22446,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "featureVersions": {
@@ -22688,9 +22601,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -22848,9 +22758,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "featureVersions": {
@@ -23006,9 +22913,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -23166,9 +23070,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "featureVersions": {
@@ -23325,9 +23226,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "featureVersions": {
@@ -23483,9 +23381,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -23645,9 +23540,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -23811,9 +23703,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "featureVersions": {
@@ -23969,9 +23858,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      }
     },
@@ -24129,9 +24015,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "featureVersions": {
@@ -24287,9 +24170,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -24452,9 +24332,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -24620,9 +24497,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -24791,9 +24665,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -24967,9 +24838,6 @@
      "snapshotter": {
       "type": "string"
      },
-     "system-default-registry": {
-      "type": "string"
-     },
      "vpn-auth": {
       "type": "string"
      },
@@ -25137,9 +25005,6 @@
      },
      "snapshotter": {
       "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "featureVersions": {
@@ -25295,9 +25160,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -25460,9 +25322,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -25628,9 +25487,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -25799,9 +25655,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -25973,9 +25826,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -26153,9 +26003,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -26338,9 +26185,6 @@
      "snapshotter": {
       "type": "string"
      },
-     "system-default-registry": {
-      "type": "string"
-     },
      "vpn-auth": {
       "type": "string"
      },
@@ -26521,9 +26365,6 @@
      "snapshotter": {
       "type": "string"
      },
-     "system-default-registry": {
-      "type": "string"
-     },
      "vpn-auth": {
       "type": "string"
      },
@@ -26695,9 +26536,6 @@
      "snapshotter": {
       "type": "string"
      },
-     "system-default-registry": {
-      "type": "string"
-     },
      "vpn-auth": {
       "type": "string"
      },
@@ -26864,9 +26702,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -27038,9 +26873,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -27218,9 +27050,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -27403,9 +27232,6 @@
      "snapshotter": {
       "type": "string"
      },
-     "system-default-registry": {
-      "type": "string"
-     },
      "vpn-auth": {
       "type": "string"
      },
@@ -27586,9 +27412,6 @@
      "snapshotter": {
       "type": "string"
      },
-     "system-default-registry": {
-      "type": "string"
-     },
      "vpn-auth": {
       "type": "string"
      },
@@ -27767,9 +27590,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -27953,9 +27773,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -28537,9 +28354,6 @@
      "snapshotter": {
       "type": "string"
      },
-     "system-default-registry": {
-      "type": "string"
-     },
      "vpn-auth": {
       "type": "string"
      },
@@ -28718,9 +28532,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -28904,9 +28715,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -30082,9 +29890,6 @@
      "snapshotter": {
       "type": "string"
      },
-     "system-default-registry": {
-      "type": "string"
-     },
      "vpn-auth": {
       "type": "string"
      },
@@ -30265,9 +30070,6 @@
      "snapshotter": {
       "type": "string"
      },
-     "system-default-registry": {
-      "type": "string"
-     },
      "vpn-auth": {
       "type": "string"
      },
@@ -30446,9 +30248,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -32636,9 +32435,6 @@
       "type": "boolean"
      },
      "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
       "type": "string"
      },
      "vpn-auth": {
@@ -35780,9 +35576,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -36016,9 +35809,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -36260,9 +36050,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -36504,9 +36291,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -36748,9 +36532,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -36995,9 +36776,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -37242,9 +37020,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -37489,9 +37264,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -37736,9 +37508,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -37983,9 +37752,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -38230,9 +37996,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -38477,9 +38240,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -38727,9 +38487,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -38974,9 +38731,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -39221,9 +38975,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -39468,9 +39219,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -39715,9 +39463,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -39962,9 +39707,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -40209,9 +39951,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -40459,9 +40198,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -40712,9 +40448,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -40965,9 +40698,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -41218,9 +40948,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -41471,9 +41198,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -41718,9 +41442,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -41968,9 +41689,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -42215,9 +41933,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -42462,9 +42177,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -42712,9 +42424,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -42965,9 +42674,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -43218,9 +42924,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -43468,9 +43171,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -43721,9 +43421,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -43974,9 +43671,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -44227,9 +43921,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -44480,9 +44171,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -44733,9 +44421,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -44986,9 +44671,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -45239,9 +44921,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -45492,9 +45171,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -45745,9 +45421,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -45998,9 +45671,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -46251,9 +45921,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -46504,9 +46171,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -46757,9 +46421,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -47010,9 +46671,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -47262,9 +46920,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -47527,9 +47182,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -47782,9 +47434,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -48046,9 +47695,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -48310,9 +47956,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -48574,9 +48217,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -48838,9 +48478,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -49106,9 +48743,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -49377,9 +49011,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -49647,9 +49278,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -49911,9 +49539,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -50175,9 +49800,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -50439,9 +50061,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -50707,9 +50326,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -50978,9 +50594,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -51249,9 +50862,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -51520,9 +51130,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -51792,9 +51399,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -52063,9 +51667,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -52331,9 +51932,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -52602,9 +52200,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -52873,9 +52468,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -53144,9 +52736,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -53416,9 +53005,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -53688,9 +53274,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -53976,9 +53559,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -55170,9 +54750,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -55451,9 +55028,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -55748,9 +55322,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -57590,9 +57161,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -57871,9 +57439,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -58168,9 +57733,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
@@ -61447,9 +61009,6 @@
      },
      "selinux": {
       "type": "bool"
-     },
-     "system-default-registry": {
-      "type": "string"
      }
     },
     "charts": {
