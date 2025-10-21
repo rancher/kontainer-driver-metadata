@@ -14767,9 +14767,6 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -14906,9 +14903,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -14977,9 +14971,6 @@
      "node-internal-dns": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -15116,9 +15107,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -15187,9 +15175,6 @@
      "node-internal-dns": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -15326,9 +15311,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -15397,9 +15379,6 @@
      "node-internal-dns": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -15536,9 +15515,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -15607,9 +15583,6 @@
      "node-internal-dns": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -15746,9 +15719,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -16987,15 +16957,6 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "node-external-dns": {
-      "type": "array"
-     },
-     "node-internal-dns": {
-      "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -17133,9 +17094,6 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "secrets-encryption": {
       "default": false,
       "type": "boolean"
@@ -17197,8 +17155,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -17404,9 +17365,6 @@
      "node-internal-dns": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -17543,9 +17501,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -17614,9 +17569,6 @@
      "node-internal-dns": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -17753,9 +17705,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -17824,9 +17773,6 @@
      "node-internal-dns": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -17964,9 +17910,6 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "secrets-encryption": {
       "default": false,
       "type": "boolean"
@@ -18033,9 +17976,6 @@
      },
      "node-internal-dns": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "pause-image": {
       "type": "string"
@@ -18170,9 +18110,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -18244,9 +18181,6 @@
      "node-internal-dns": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -18392,9 +18326,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -18466,9 +18397,6 @@
      "node-internal-dns": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -18614,9 +18542,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -18688,9 +18613,6 @@
      "node-internal-dns": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -18836,9 +18758,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -19300,15 +19219,6 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "node-external-dns": {
-      "type": "array"
-     },
-     "node-internal-dns": {
-      "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -19445,9 +19355,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -19516,9 +19423,6 @@
      "node-internal-dns": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -19656,9 +19560,6 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "secrets-encryption": {
       "default": false,
       "type": "boolean"
@@ -19725,9 +19626,6 @@
      },
      "node-internal-dns": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "pause-image": {
       "type": "string"
@@ -19866,9 +19764,6 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "secrets-encryption": {
       "default": false,
       "type": "boolean"
@@ -19935,9 +19830,6 @@
      },
      "node-internal-dns": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "pause-image": {
       "type": "string"
@@ -20075,9 +19967,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -20146,9 +20035,6 @@
      "node-internal-dns": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -20286,9 +20172,6 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "secrets-encryption": {
       "default": false,
       "type": "boolean"
@@ -20355,9 +20238,6 @@
      },
      "node-internal-dns": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "pause-image": {
       "type": "string"
@@ -20492,9 +20372,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -20566,9 +20443,6 @@
      "node-internal-dns": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -20715,9 +20589,6 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "secrets-encryption": {
       "default": false,
       "type": "boolean"
@@ -20787,9 +20658,6 @@
      },
      "node-internal-dns": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "pause-image": {
       "type": "string"
@@ -20936,9 +20804,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -21010,8 +20875,221 @@
      "node-internal-dns": {
       "type": "array"
      },
-     "nonroot-devices": {
+     "pause-image": {
+      "type": "string"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
       "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "default": false,
+      "type": "boolean"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "system-default-registry": {
+      "type": "string"
+     },
+     "vpn-auth": {
+      "type": "string"
+     },
+     "vpn-auth-file": {
+      "type": "string"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.12.99",
+    "minChannelServerVersion": "v2.9.0-alpha1",
+    "serverArgs": {
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "datastore-cafile": {
+      "type": "string"
+     },
+     "datastore-certfile": {
+      "type": "string"
+     },
+     "datastore-endpoint": {
+      "type": "string"
+     },
+     "datastore-keyfile": {
+      "type": "string"
+     },
+     "default-local-storage-path": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "coredns",
+       "servicelb",
+       "traefik",
+       "local-storage",
+       "metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-apiserver": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-cloud-controller": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-controller-manager": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-etcd": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-network-policy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "default": false,
+      "type": "boolean"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "embedded-registry": {
+      "type": "boolean"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
+     "flannel-backend": {
+      "options": [
+       "none",
+       "vxlan",
+       "ipsec",
+       "host-gw",
+       "wireguard",
+       "wireguard-native"
+      ],
+      "type": "enum"
+     },
+     "helm-job-image": {
+      "type": "string"
+     },
+     "kine-tls": {
+      "type": "boolean"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-cloud-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "secrets-encryption": {
+      "default": false,
+      "type": "boolean"
+     },
+     "secrets-encryption-provider": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "supervisor-metrics": {
+      "type": "boolean"
+     },
+     "tls-san": {
+      "type": "array"
+     },
+     "tls-san-security": {
+      "type": "boolean"
+     },
+     "write-kubeconfig-group": {
+      "type": "string"
+     }
+    },
+    "version": "v1.31.11+k3s1"
+   },
+   {
+    "agentArgs": {
+     "bind-address": {
+      "type": "string"
+     },
+     "debug": {
+      "type": "bool"
+     },
+     "default-runtime": {
+      "type": "string"
+     },
+     "disable-apiserver-lb": {
+      "type": "boolean"
+     },
+     "disable-default-registry-endpoint": {
+      "type": "boolean"
+     },
+     "docker": {
+      "default": false,
+      "type": "boolean"
+     },
+     "enable-pprof": {
+      "type": "boolean"
+     },
+     "flannel-conf": {
+      "type": "string"
+     },
+     "flannel-iface": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -21159,216 +21237,6 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
-     "secrets-encryption": {
-      "default": false,
-      "type": "boolean"
-     },
-     "secrets-encryption-provider": {
-      "type": "string"
-     },
-     "service-cidr": {
-      "type": "string"
-     },
-     "service-node-port-range": {
-      "type": "string"
-     },
-     "supervisor-metrics": {
-      "type": "boolean"
-     },
-     "tls-san": {
-      "type": "array"
-     },
-     "tls-san-security": {
-      "type": "boolean"
-     },
-     "write-kubeconfig-group": {
-      "type": "string"
-     }
-    },
-    "version": "v1.31.11+k3s1"
-   },
-   {
-    "agentArgs": {
-     "bind-address": {
-      "type": "string"
-     },
-     "debug": {
-      "type": "bool"
-     },
-     "default-runtime": {
-      "type": "string"
-     },
-     "disable-apiserver-lb": {
-      "type": "boolean"
-     },
-     "disable-default-registry-endpoint": {
-      "type": "boolean"
-     },
-     "docker": {
-      "default": false,
-      "type": "boolean"
-     },
-     "enable-pprof": {
-      "type": "boolean"
-     },
-     "flannel-conf": {
-      "type": "string"
-     },
-     "flannel-iface": {
-      "type": "string"
-     },
-     "kube-proxy-arg": {
-      "type": "array"
-     },
-     "kubelet-arg": {
-      "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
-     "pause-image": {
-      "type": "string"
-     },
-     "protect-kernel-defaults": {
-      "default": false,
-      "type": "boolean"
-     },
-     "resolv-conf": {
-      "type": "string"
-     },
-     "selinux": {
-      "default": false,
-      "type": "boolean"
-     },
-     "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
-     },
-     "vpn-auth": {
-      "type": "string"
-     },
-     "vpn-auth-file": {
-      "type": "string"
-     }
-    },
-    "featureVersions": {
-     "encryption-key-rotation": "2.0.0"
-    },
-    "maxChannelServerVersion": "v2.12.99",
-    "minChannelServerVersion": "v2.9.0-alpha1",
-    "serverArgs": {
-     "cluster-cidr": {
-      "type": "string"
-     },
-     "cluster-dns": {
-      "type": "string"
-     },
-     "cluster-domain": {
-      "type": "string"
-     },
-     "datastore-cafile": {
-      "type": "string"
-     },
-     "datastore-certfile": {
-      "type": "string"
-     },
-     "datastore-endpoint": {
-      "type": "string"
-     },
-     "datastore-keyfile": {
-      "type": "string"
-     },
-     "default-local-storage-path": {
-      "type": "string"
-     },
-     "disable": {
-      "options": [
-       "coredns",
-       "servicelb",
-       "traefik",
-       "local-storage",
-       "metrics-server"
-      ],
-      "type": "array"
-     },
-     "disable-apiserver": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-cloud-controller": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-controller-manager": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-etcd": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-kube-proxy": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-network-policy": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-scheduler": {
-      "default": false,
-      "type": "boolean"
-     },
-     "egress-selector-mode": {
-      "type": "string"
-     },
-     "embedded-registry": {
-      "type": "boolean"
-     },
-     "etcd-arg": {
-      "type": "array"
-     },
-     "etcd-expose-metrics": {
-      "default": false,
-      "type": "boolean"
-     },
-     "flannel-backend": {
-      "options": [
-       "none",
-       "vxlan",
-       "ipsec",
-       "host-gw",
-       "wireguard",
-       "wireguard-native"
-      ],
-      "type": "enum"
-     },
-     "helm-job-image": {
-      "type": "string"
-     },
-     "kine-tls": {
-      "type": "boolean"
-     },
-     "kube-apiserver-arg": {
-      "type": "array"
-     },
-     "kube-cloud-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-arg": {
-      "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "secrets-encryption": {
       "default": false,
       "type": "boolean"
@@ -21433,8 +21301,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -21544,212 +21415,14 @@
       "default": false,
       "type": "boolean"
      },
-     "flannel-backend": {
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
       "options": [
-       "none",
-       "vxlan",
-       "ipsec",
-       "host-gw",
-       "wireguard",
-       "wireguard-native"
+       "auto",
+       "dns",
+       "path"
       ],
       "type": "enum"
-     },
-     "helm-job-image": {
-      "type": "string"
-     },
-     "kine-tls": {
-      "type": "boolean"
-     },
-     "kube-apiserver-arg": {
-      "type": "array"
-     },
-     "kube-cloud-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-controller-manager-arg": {
-      "type": "array"
-     },
-     "kube-scheduler-arg": {
-      "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
-     "secrets-encryption": {
-      "default": false,
-      "type": "boolean"
-     },
-     "secrets-encryption-provider": {
-      "type": "string"
-     },
-     "service-cidr": {
-      "type": "string"
-     },
-     "service-node-port-range": {
-      "type": "string"
-     },
-     "supervisor-metrics": {
-      "type": "boolean"
-     },
-     "tls-san": {
-      "type": "array"
-     },
-     "tls-san-security": {
-      "type": "boolean"
-     },
-     "write-kubeconfig-group": {
-      "type": "string"
-     }
-    },
-    "version": "v1.31.12+k3s1"
-   },
-   {
-    "agentArgs": {
-     "bind-address": {
-      "type": "string"
-     },
-     "debug": {
-      "type": "bool"
-     },
-     "default-runtime": {
-      "type": "string"
-     },
-     "disable-apiserver-lb": {
-      "type": "boolean"
-     },
-     "disable-default-registry-endpoint": {
-      "type": "boolean"
-     },
-     "docker": {
-      "default": false,
-      "type": "boolean"
-     },
-     "enable-pprof": {
-      "type": "boolean"
-     },
-     "flannel-conf": {
-      "type": "string"
-     },
-     "flannel-iface": {
-      "type": "string"
-     },
-     "kube-proxy-arg": {
-      "type": "array"
-     },
-     "kubelet-arg": {
-      "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
-     "pause-image": {
-      "type": "string"
-     },
-     "protect-kernel-defaults": {
-      "default": false,
-      "type": "boolean"
-     },
-     "resolv-conf": {
-      "type": "string"
-     },
-     "selinux": {
-      "default": false,
-      "type": "boolean"
-     },
-     "snapshotter": {
-      "type": "string"
-     },
-     "system-default-registry": {
-      "type": "string"
-     },
-     "vpn-auth": {
-      "type": "string"
-     },
-     "vpn-auth-file": {
-      "type": "string"
-     }
-    },
-    "featureVersions": {
-     "encryption-key-rotation": "2.0.0"
-    },
-    "maxChannelServerVersion": "v2.12.99",
-    "minChannelServerVersion": "v2.9.0-alpha1",
-    "serverArgs": {
-     "cluster-cidr": {
-      "type": "string"
-     },
-     "cluster-dns": {
-      "type": "string"
-     },
-     "cluster-domain": {
-      "type": "string"
-     },
-     "datastore-cafile": {
-      "type": "string"
-     },
-     "datastore-certfile": {
-      "type": "string"
-     },
-     "datastore-endpoint": {
-      "type": "string"
-     },
-     "datastore-keyfile": {
-      "type": "string"
-     },
-     "default-local-storage-path": {
-      "type": "string"
-     },
-     "disable": {
-      "options": [
-       "coredns",
-       "servicelb",
-       "traefik",
-       "local-storage",
-       "metrics-server"
-      ],
-      "type": "array"
-     },
-     "disable-apiserver": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-cloud-controller": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-controller-manager": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-etcd": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-kube-proxy": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-network-policy": {
-      "default": false,
-      "type": "boolean"
-     },
-     "disable-scheduler": {
-      "default": false,
-      "type": "boolean"
-     },
-     "egress-selector-mode": {
-      "type": "string"
-     },
-     "embedded-registry": {
-      "type": "boolean"
-     },
-     "etcd-arg": {
-      "type": "array"
-     },
-     "etcd-expose-metrics": {
-      "default": false,
-      "type": "boolean"
      },
      "flannel-backend": {
       "options": [
@@ -21779,9 +21452,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -21847,8 +21517,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -22048,8 +21721,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -22249,8 +21925,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -22450,8 +22129,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -22587,12 +22269,12 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "secrets-encryption": {
       "default": false,
       "type": "boolean"
+     },
+     "secrets-encryption-provider": {
+      "type": "string"
      },
      "service-cidr": {
       "type": "string"
@@ -22651,8 +22333,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -22762,6 +22447,15 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
      "flannel-backend": {
       "options": [
        "none",
@@ -22790,9 +22484,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -22858,8 +22549,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -22969,6 +22663,15 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
      "flannel-backend": {
       "options": [
        "none",
@@ -22997,9 +22700,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -23065,8 +22765,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -23176,6 +22879,15 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
      "flannel-backend": {
       "options": [
        "none",
@@ -23204,9 +22916,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -23272,8 +22981,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -23383,6 +23095,15 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
      "flannel-backend": {
       "options": [
        "none",
@@ -23411,9 +23132,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -23479,8 +23197,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -23590,6 +23311,15 @@
       "default": false,
       "type": "boolean"
      },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
      "flannel-backend": {
       "options": [
        "none",
@@ -23618,9 +23348,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -23686,8 +23413,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -23822,9 +23552,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -23895,8 +23622,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -24034,9 +23764,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -24107,8 +23834,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -24246,9 +23976,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -24319,8 +24046,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -24458,9 +24188,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -24531,8 +24258,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -24670,9 +24400,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
@@ -24743,8 +24470,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -24883,9 +24613,6 @@
      "kube-scheduler-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
-     },
      "secrets-encryption": {
       "default": false,
       "type": "boolean"
@@ -24955,8 +24682,11 @@
      "kubelet-arg": {
       "type": "array"
      },
-     "nonroot-devices": {
-      "type": "boolean"
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
      },
      "pause-image": {
       "type": "string"
@@ -25094,9 +24824,6 @@
      },
      "kube-scheduler-arg": {
       "type": "array"
-     },
-     "nonroot-devices": {
-      "type": "boolean"
      },
      "secrets-encryption": {
       "default": false,
