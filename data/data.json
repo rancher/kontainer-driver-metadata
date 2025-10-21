@@ -39197,6 +39197,12 @@
      "kubelet-arg": {
       "type": "array"
      },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -39307,6 +39313,15 @@
      "etcd-expose-metrics": {
       "default": false,
       "type": "boolean"
+     },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
      },
      "flannel-backend": {
       "options": [
