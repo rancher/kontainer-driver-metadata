@@ -4,7 +4,7 @@
 # Detection is independent of whether endpoints are available.
 # Inputs:
 #   CHANNELS_FILE, SOME_K8S_VERSION, LAST_COMMUNITY_RANCHER
-#   REGISTRY_ENDPOINT, REGISTRY_ENDPOINT_STG
+#   REGISTRY_ENDPOINT, STAGE_REGISTRY_ENDPOINT
 #   PRIME_AGENT_IMAGE
 set -e
 
@@ -44,14 +44,6 @@ if [[ -n "${MINCHAN}" ]] && scripts/semver_g.awk "${MINCHAN}" "${LAST_COMMUNITY_
   else
     PRIME_REGISTRY_ENVIRONMENT="production"
     PRIME_REG_HOST="${REGISTRY_ENDPOINT:-}"
-  fi
-
-  if [[ -z "${STAGE_REGISTRY_ENDPOINT}" ]]; then
-    echo "stg registry is empty"
-  fi
-
-  if [[ -z "${REGISTRY_ENDPOINT}" ]]; then
-    echo "prod registry is empty"
   fi
 
   # Only export PRIME_REG_HOST if it is set

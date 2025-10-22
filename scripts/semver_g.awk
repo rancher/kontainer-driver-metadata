@@ -1,5 +1,5 @@
 #!/usr/bin/awk -f
-# Exit 0 if A>B by major.minor.patch, ignoring pre-release suffix; else 1.
+# Exit codes: 0 if A>B by major.minor.patch (ignoring pre-release suffix), 1 if A<=B, 2 if insufficient arguments.
 # Usage: scripts/semver_g.awk <A> <B>
 function norm(s,  n,i,arr) {
     gsub(/^v/,"",s); sub(/-.*/,"",s)
