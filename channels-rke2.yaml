@@ -3569,7 +3569,7 @@ releases:
       <<: *agentArgsv1-31-10-rke2r1
     featureVersions: *featureVersions-v1
   - version: v1.31.12+rke2r1
-    minChannelServerVersion: v2.10.4-alpha1
+    minChannelServerVersion: v2.10.0-alpha1
     maxChannelServerVersion: v2.10.99
     charts: &chartsv1-31-12-rke2r1
       <<: *chartsv1-31-11-rke2r1
@@ -3609,7 +3609,7 @@ releases:
       <<: *agentArgsv1-31-11-rke2r1
     featureVersions: *featureVersions-v1
   - version: v1.31.13+rke2r1
-    minChannelServerVersion: v2.10.4-alpha1
+    minChannelServerVersion: v2.10.0-alpha1
     maxChannelServerVersion: v2.10.99
     charts: &chartsv1-31-13-rke2r1
       <<: *chartsv1-31-12-rke2r1
@@ -3721,47 +3721,4 @@ releases:
       <<: *serverArgsv1-31-13-rke2r1
     agentArgs: &agentArgsv1-31-14-rke2r1
       <<: *agentArgsv1-31-13-rke2r1
-    featureVersions: *featureVersions-v1
-  - version: v1.31.13+rke2r1
-    minChannelServerVersion: v2.10.4-alpha1
-    maxChannelServerVersion: v2.10.99
-    charts: &chartsv1-31-13-rke2r1
-      <<: *chartsv1-31-12-rke2r1
-      rke2-calico-crd:
-        repo: rancher-rke2-charts
-        version: v3.30.300
-      rke2-coredns:
-        repo: rancher-rke2-charts
-        version: 1.43.302
-      rancher-vsphere-cpi:
-        repo: rancher-rke2-charts
-        version: 1.12.100
-      rke2-cilium:
-        repo: rancher-rke2-charts
-        version: 1.18.103
-      rke2-calico:
-        repo: rancher-rke2-charts
-        version: v3.30.300
-      rke2-ingress-nginx:
-        repo: rancher-rke2-charts
-        version: 4.12.600
-      rke2-metrics-server:
-        repo: rancher-rke2-charts
-        version: 3.13.001
-      rke2-canal:
-        repo: rancher-rke2-charts
-        version: v3.30.3-build2025090900
-      rke2-multus:
-        repo: rancher-rke2-charts
-        version: v4.2.205
-      rke2-flannel:
-        repo: rancher-rke2-charts
-        version: v0.27.302
-      rancher-vsphere-csi:
-        repo: rancher-rke2-charts
-        version: 3.5.0-rancher100
-    serverArgs: &serverArgsv1-31-13-rke2r1
-      <<: *serverArgsv1-31-12-rke2r1
-    agentArgs: &agentArgsv1-31-13-rke2r1
-      <<: *agentArgsv1-31-12-rke2r1
     featureVersions: *featureVersions-v1

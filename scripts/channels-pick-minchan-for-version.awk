@@ -1,6 +1,7 @@
 #!/usr/bin/awk -f
-# Usage: channels-minchan-for-version.awk <channels-file> <exact-version>
-# Prints the minChannelServerVersion for that release (if present), else nothing.
+# Usage: channels-pick-minchan-for-version.awk <channels-file> <exact-version>
+# Prints the minChannelServerVersion for that release (if present), returns 2 
+# if receives insufficient arguments, else nothing.
 
 function trim(s){ sub(/^[ \t\r\n]+/,"",s); sub(/[ \t\r\n]+$/,"",s); return s }
 
