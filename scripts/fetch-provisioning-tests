@@ -28,8 +28,8 @@ mkdir -p rancher
 
 # Although using the commit so the image matches the source code, use the default branch associated with that release line
 # Git clones must have a branch, and the release branch is likely to contain the commit anyway
-GIT_URL=${GIT_URL:-https://github.com/jferrazbr/rancher.git}
-GIT_BRANCH=${GIT_BRANCH:-add-prime-mode-support-to-v2.12-provisioning-tests}
+GIT_URL=${GIT_URL:-https://github.com/rancher/rancher.git}
+GIT_BRANCH=${GIT_BRANCH:-release/v2.12}
 
 git clone --depth 1 -b $GIT_BRANCH $GIT_URL ./rancher
 

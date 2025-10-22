@@ -86,7 +86,7 @@ source scripts/prime-route
 
 if [[ "${PRIME_MODE}" == "1" ]]; then
   # If Prime/Prime-staging is required but endpoints are unavailable (typical in fork PRs), fail early
-  if [[ -z "${REGISTRY_ENDPOINT:-}" && -z "${REGISTRY_ENDPOINT_STG:-}" ]]; then
+  if [[ -z "${REGISTRY_ENDPOINT:-}" && -z "${STAGE_REGISTRY_ENDPOINT:-}" ]]; then
     echo "Registry URL is not provided; most likely this is due to limitations for accessing secrets from PRs from forks; open this PR from branch in the repo itself instead of a fork"
     exit 1
   fi
