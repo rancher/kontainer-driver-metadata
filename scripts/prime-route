@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+# scripts/prime-route
+# Sets PRIME_MODE, PRIME_REGISTRY_ENVIRONMENT, and (optionally) PRIME_REG_HOST/CATTLE_AGENT_IMAGE.
+# Detection is independent of whether endpoints are available.
+# Inputs:
+#   CHANNELS_FILE, SOME_K8S_VERSION, LAST_COMMUNITY_RANCHER
+#   REGISTRY_ENDPOINT, REGISTRY_ENDPOINT_STG
+#   PRIME_AGENT_IMAGE
+set -e
+
+# only set defaults if not provided by the workflow
+if [ -z "${LAST_COMMUNITY_RANCHER:-}" ]; then
+  LAST_COMMUNITY_RANCHER="v2.10.0-alpha1"
+fi
+
+if [ -z "${PRIME_AGENT_IMAGE:-}" ]; then
+  PRIME_AGENT_IMAGE="rancher/rancher-agent:v2.10.10"
+fi
+
+
+# Compute minChannelServerVersion for the selected K8s version (may be empty)
+MINCHAN="$(scripts/channels-pick-minchan-for-version.awk "${CHANNELS_FILE}" "${SOME_K8S_VERSION}" || true)"
+
+# Defaults
+PRIME_MODE=0
+unset PRIME_REGISTRY_ENVIRONMENT
+unset PRIME_REG_HOST
+
+# Decide Prime mode purely by version comparison: MINCHAN > LAST_COMMUNITY_RANCHER
+if [[ -n "${MINCHAN}" ]] && scripts/semver_g.awk "${MINCHAN}" "${LAST_COMMUNITY_RANCHER}"; then
+  PRIME_MODE=1
+
+  # --- BEGIN sensitive section (suppress xtrace to avoid printing hosts) ---
+  _TRACE_WAS_ON=0
+  if [[ $- == *x* ]]; then
+    _TRACE_WAS_ON=1
+    set +x
+  fi
+
+  # Choose staging vs production by "-rc" in SOME_K8S_VERSION (prerelease => staging)
+  if [[ "${SOME_K8S_VERSION,,}" == *-rc* ]]; then
+    PRIME_REGISTRY_ENVIRONMENT="staging"
+    PRIME_REG_HOST="${STAGE_REGISTRY_ENDPOINT:-}"
+  else
+    PRIME_REGISTRY_ENVIRONMENT="production"
+    PRIME_REG_HOST="${REGISTRY_ENDPOINT:-}"
+  fi
+
+  if [[ -z "${STAGE_REGISTRY_ENDPOINT}" ]]; then
+    echo "stg registry is empty"
+  fi
+
+  if [[ -z "${REGISTRY_ENDPOINT}" ]]; then
+    echo "prod registry is empty"
+  fi
+
+  # Only export PRIME_REG_HOST if it is set
+  if [[ -n "${PRIME_REG_HOST}" ]]; then
+    export PRIME_REG_HOST
+  fi
+
+  # If Prime is on and PRIME_AGENT_IMAGE is set, override CATTLE_AGENT_IMAGE
+  if [[ -n "${PRIME_AGENT_IMAGE:-}" ]]; then
+    export CATTLE_AGENT_IMAGE="${PRIME_AGENT_IMAGE}"
+  fi
+
+  # Restore xtrace if it was enabled
+  if [[ "${_TRACE_WAS_ON}" == "1" ]]; then
+    set -x
+  fi
+  # --- END sensitive section ---
+fi
+
+# Export non-sensitive flags (safe to print)
+export PRIME_MODE PRIME_REGISTRY_ENVIRONMENT
