@@ -75994,7 +75994,7 @@
      "embedded-registry": {
       "type": "boolean"
      },
-     "enable-servibelb": {
+     "enable-servicelb": {
       "type": "boolean"
      },
      "etcd-arg": {
@@ -78952,7 +78952,7 @@
      "embedded-registry": {
       "type": "boolean"
      },
-     "enable-servibelb": {
+     "enable-servicelb": {
       "type": "boolean"
      },
      "etcd-arg": {
