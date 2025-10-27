@@ -3636,8 +3636,60 @@ releases:
         version: 1.12.100
     serverArgs: &serverArgsv1-31-13-rke2r1
       <<: *serverArgsv1-31-12-rke2r1
+      helm-job-image:
+        type: string
+      disable-scheduler:
+        type: bool
+      disable-cloud-controller:
+        type: bool
+      servicelb-namespace:
+        type: string
+      enable-servibelb:
+        type: boolean
     agentArgs: &agentArgsv1-31-13-rke2r1
       <<: *agentArgsv1-31-12-rke2r1
+      private-registry:
+        type: string
+      node-ip:
+        type: string
+      node-external-ip:
+        type: string
+      container-runtime-endpoint:
+        type: string
+      kubelet-path:
+        type: string
+      node-name:
+        type: string
+      node-label:
+        type: string
+      node-taint:
+        type: string
+      cloud-controller-manager-image:
+        type: string
+      lb-server-port:
+        type: string
+      image-credential-provider-bin-dir:
+        type: string
+      image-credential-provider-config:
+        type: string
+      kube-proxy-image:
+        type: string
+      etcd-image:
+        type: string
+      pod-security-admission-config-file:
+        type: string
+      control-plane-probe-configuration:
+        type: string
+      with-node-id:
+        type: boolean
+      node-internal-dns:
+        type: string
+      node-external-dns:
+        type: string
+      node-name-from-cloud-provider-metadata:
+        type: string
+      nonroot-devices:
+        type: boolean
     featureVersions: *featureVersions-v1
   - version: v1.32.1+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
@@ -3948,6 +4000,58 @@ releases:
         version: 1.18.103
     serverArgs: &serverArgsv1-32-9-rke2r1
       <<: *serverArgsv1-32-8-rke2r1
+      helm-job-image:
+        type: string
+      disable-scheduler:
+        type: bool
+      disable-cloud-controller:
+        type: bool
+      servicelb-namespace:
+        type: string
+      enable-servibelb:
+        type: boolean
     agentArgs: &agentArgsv1-32-9-rke2r1
       <<: *agentArgsv1-32-8-rke2r1
+      private-registry:
+        type: string
+      node-ip:
+        type: string
+      node-external-ip:
+        type: string
+      container-runtime-endpoint:
+        type: string
+      kubelet-path:
+        type: string
+      node-name:
+        type: string
+      node-label:
+        type: string
+      node-taint:
+        type: string
+      cloud-controller-manager-image:
+        type: string
+      lb-server-port:
+        type: string
+      image-credential-provider-bin-dir:
+        type: string
+      image-credential-provider-config:
+        type: string
+      kube-proxy-image:
+        type: string
+      etcd-image:
+        type: string
+      pod-security-admission-config-file:
+        type: string
+      control-plane-probe-configuration:
+        type: string
+      with-node-id:
+        type: boolean
+      node-internal-dns:
+        type: string
+      node-external-dns:
+        type: string
+      node-name-from-cloud-provider-metadata:
+        type: string
+      nonroot-devices:
+        type: boolean
     featureVersions: *featureVersions-v1
