@@ -3636,10 +3636,6 @@ releases:
       <<: *serverArgsv1-31-12-rke2r1
       helm-job-image:
         type: string
-      disable-scheduler:
-        type: bool
-      disable-cloud-controller:
-        type: bool
       servicelb-namespace:
         type: string
       enable-servicelb:
@@ -3672,12 +3668,10 @@ releases:
         type: string
       kube-proxy-image:
         type: string
-      etcd-image:
-        type: string
       pod-security-admission-config-file:
         type: string
       control-plane-probe-configuration:
-        type: string
+        type: array
       with-node-id:
         type: boolean
       node-internal-dns:
