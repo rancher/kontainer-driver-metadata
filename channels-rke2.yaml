@@ -3648,27 +3648,13 @@ releases:
       <<: *agentArgsv1-31-12-rke2r1
       private-registry:
         type: string
-      node-ip:
-        type: string
-      node-external-ip:
-        type: string
       container-runtime-endpoint:
         type: string
       kubelet-path:
         type: string
-      node-name:
-        type: string
-      node-label:
-        type: string
-      node-taint:
-        type: string
       cloud-controller-manager-image:
         type: string
       lb-server-port:
-        type: string
-      image-credential-provider-bin-dir:
-        type: string
-      image-credential-provider-config:
         type: string
       kube-proxy-image:
         type: string
@@ -3676,14 +3662,6 @@ releases:
         type: string
       control-plane-probe-configuration:
         type: array
-      with-node-id:
-        type: boolean
-      node-internal-dns:
-        type: string
-      node-external-dns:
-        type: string
-      node-name-from-cloud-provider-metadata:
-        type: string
       nonroot-devices:
         type: boolean
     featureVersions: *featureVersions-v1
@@ -4006,27 +3984,13 @@ releases:
       <<: *agentArgsv1-32-8-rke2r1
       private-registry:
         type: string
-      node-ip:
-        type: string
-      node-external-ip:
-        type: string
       container-runtime-endpoint:
         type: string
       kubelet-path:
         type: string
-      node-name:
-        type: string
-      node-label:
-        type: string
-      node-taint:
-        type: string
       cloud-controller-manager-image:
         type: string
       lb-server-port:
-        type: string
-      image-credential-provider-bin-dir:
-        type: string
-      image-credential-provider-config:
         type: string
       kube-proxy-image:
         type: string
@@ -4034,14 +3998,6 @@ releases:
         type: string
       control-plane-probe-configuration:
         type: array
-      with-node-id:
-        type: boolean
-      node-internal-dns:
-        type: string
-      node-external-dns:
-        type: string
-      node-name-from-cloud-provider-metadata:
-        type: string
       nonroot-devices:
         type: boolean
     featureVersions: *featureVersions-v1
@@ -4261,27 +4217,13 @@ releases:
       <<: *agentArgsv1-33-4-rke2r1
       private-registry:
         type: string
-      node-ip:
-        type: string
-      node-external-ip:
-        type: string
       container-runtime-endpoint:
         type: string
       kubelet-path:
         type: string
-      node-name:
-        type: string
-      node-label:
-        type: string
-      node-taint:
-        type: string
       cloud-controller-manager-image:
         type: string
       lb-server-port:
-        type: string
-      image-credential-provider-bin-dir:
-        type: string
-      image-credential-provider-config:
         type: string
       kube-proxy-image:
         type: string
@@ -4289,14 +4231,6 @@ releases:
         type: string
       control-plane-probe-configuration:
         type: array
-      with-node-id:
-        type: boolean
-      node-internal-dns:
-        type: string
-      node-external-dns:
-        type: string
-      node-name-from-cloud-provider-metadata:
-        type: string
       nonroot-devices:
         type: boolean
     featureVersions: *featureVersions-v1
