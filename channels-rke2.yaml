@@ -3670,8 +3670,6 @@ releases:
         type: string
       kube-proxy-image:
         type: string
-      etcd-image:
-        type: string
       pod-security-admission-config-file:
         type: string
       control-plane-probe-configuration:
@@ -4029,8 +4027,6 @@ releases:
       image-credential-provider-config:
         type: string
       kube-proxy-image:
-        type: string
-      etcd-image:
         type: string
       pod-security-admission-config-file:
         type: string

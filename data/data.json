@@ -75740,9 +75740,6 @@
      "etcd-extra-mount": {
       "type": "array"
      },
-     "etcd-image": {
-      "type": "string"
-     },
      "image-credential-provider-bin-dir": {
       "type": "string"
      },
@@ -78697,9 +78694,6 @@
      },
      "etcd-extra-mount": {
       "type": "array"
-     },
-     "etcd-image": {
-      "type": "string"
      },
      "image-credential-provider-bin-dir": {
       "type": "string"
