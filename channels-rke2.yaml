@@ -3648,8 +3648,6 @@ releases:
         type: boolean
     agentArgs: &agentArgsv1-31-13-rke2r1
       <<: *agentArgsv1-31-12-rke2r1
-      private-registry:
-        type: string
       container-runtime-endpoint:
         type: string
       kubelet-path:
@@ -3984,8 +3982,6 @@ releases:
         type: boolean
     agentArgs: &agentArgsv1-32-9-rke2r1
       <<: *agentArgsv1-32-8-rke2r1
-      private-registry:
-        type: string
       container-runtime-endpoint:
         type: string
       kubelet-path:
@@ -4217,8 +4213,6 @@ releases:
         type: boolean
     agentArgs: &agentArgsv1-33-5-rke2r1
       <<: *agentArgsv1-33-4-rke2r1
-      private-registry:
-        type: string
       container-runtime-endpoint:
         type: string
       kubelet-path:
@@ -4284,8 +4278,6 @@ releases:
         type: boolean
     agentArgs: &agentArgsv1-34-1-rke2r1
       <<: *agentArgsv1-33-3-rke2r1
-      private-registry:
-        type: string
       container-runtime-endpoint:
         type: string
       kubelet-path:

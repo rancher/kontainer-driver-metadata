@@ -59603,9 +59603,6 @@
      "pod-security-admission-config-file": {
       "type": "string"
      },
-     "private-registry": {
-      "type": "string"
-     },
      "profile": {
       "nullable": true,
       "options": [
@@ -62525,9 +62522,6 @@
      "pod-security-admission-config-file": {
       "type": "string"
      },
-     "private-registry": {
-      "type": "string"
-     },
      "profile": {
       "nullable": true,
       "options": [
@@ -64484,9 +64478,6 @@
      "pod-security-admission-config-file": {
       "type": "string"
      },
-     "private-registry": {
-      "type": "string"
-     },
      "profile": {
       "nullable": true,
       "options": [
@@ -64839,9 +64830,6 @@
       "type": "boolean"
      },
      "pod-security-admission-config-file": {
-      "type": "string"
-     },
-     "private-registry": {
       "type": "string"
      },
      "profile": {
