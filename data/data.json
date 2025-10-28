@@ -73510,12 +73510,6 @@
      "etcd-extra-mount": {
       "type": "array"
      },
-     "image-credential-provider-bin-dir": {
-      "type": "string"
-     },
-     "image-credential-provider-config": {
-      "type": "string"
-     },
      "kube-apiserver-extra-env": {
       "type": "array"
      },
@@ -73555,30 +73549,6 @@
      "lb-server-port": {
       "type": "string"
      },
-     "node-external-dns": {
-      "type": "string"
-     },
-     "node-external-ip": {
-      "type": "string"
-     },
-     "node-internal-dns": {
-      "type": "string"
-     },
-     "node-ip": {
-      "type": "string"
-     },
-     "node-label": {
-      "type": "string"
-     },
-     "node-name": {
-      "type": "string"
-     },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "string"
-     },
-     "node-taint": {
-      "type": "string"
-     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -73608,9 +73578,6 @@
      },
      "system-default-registry": {
       "type": "string"
-     },
-     "with-node-id": {
-      "type": "boolean"
      }
     },
     "charts": {
