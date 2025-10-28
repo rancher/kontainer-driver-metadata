@@ -59312,7 +59312,7 @@
       "type": "string"
      },
      "control-plane-probe-configuration": {
-      "type": "string"
+      "type": "array"
      },
      "control-plane-resource-limits": {
       "type": "string"
@@ -62270,7 +62270,7 @@
       "type": "string"
      },
      "control-plane-probe-configuration": {
-      "type": "string"
+      "type": "array"
      },
      "control-plane-resource-limits": {
       "type": "string"
@@ -64265,7 +64265,7 @@
       "type": "string"
      },
      "control-plane-probe-configuration": {
-      "type": "string"
+      "type": "array"
      },
      "control-plane-resource-limits": {
       "type": "string"
