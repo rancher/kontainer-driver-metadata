@@ -59532,7 +59532,7 @@
       "type": "string"
      },
      "control-plane-probe-configuration": {
-      "type": "string"
+      "type": "array"
      },
      "control-plane-resource-limits": {
       "type": "string"
@@ -59557,9 +59557,6 @@
      },
      "etcd-extra-mount": {
       "type": "array"
-     },
-     "etcd-image": {
-      "type": "string"
      },
      "image-credential-provider-bin-dir": {
       "type": "string"
@@ -62490,7 +62487,7 @@
       "type": "string"
      },
      "control-plane-probe-configuration": {
-      "type": "string"
+      "type": "array"
      },
      "control-plane-resource-limits": {
       "type": "string"
@@ -62515,9 +62512,6 @@
      },
      "etcd-extra-mount": {
       "type": "array"
-     },
-     "etcd-image": {
-      "type": "string"
      },
      "image-credential-provider-bin-dir": {
       "type": "string"
@@ -64485,7 +64479,7 @@
       "type": "string"
      },
      "control-plane-probe-configuration": {
-      "type": "string"
+      "type": "array"
      },
      "control-plane-resource-limits": {
       "type": "string"
@@ -64510,9 +64504,6 @@
      },
      "etcd-extra-mount": {
       "type": "array"
-     },
-     "etcd-image": {
-      "type": "string"
      },
      "image-credential-provider-bin-dir": {
       "type": "string"
@@ -64878,7 +64869,7 @@
       "type": "string"
      },
      "control-plane-probe-configuration": {
-      "type": "string"
+      "type": "array"
      },
      "control-plane-resource-limits": {
       "type": "string"
@@ -64903,9 +64894,6 @@
      },
      "etcd-extra-mount": {
       "type": "array"
-     },
-     "etcd-image": {
-      "type": "string"
      },
      "image-credential-provider-bin-dir": {
       "type": "string"
