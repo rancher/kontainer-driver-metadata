@@ -3642,8 +3642,6 @@ releases:
         type: boolean
     agentArgs: &agentArgsv1-31-13-rke2r1
       <<: *agentArgsv1-31-12-rke2r1
-      private-registry:
-        type: string
       container-runtime-endpoint:
         type: string
       kubelet-path:
