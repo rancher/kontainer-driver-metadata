@@ -912,6 +912,24 @@ releases:
   - version: v1.31.13+k3s1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v11
-    agentArgs: *agentArgs-v7
+    serverArgs: &serverArgs-v12
+      <<: *serverArgs-v11
+      flannel-ipv6-masq:
+        type: boolean
+      servicelb-namespace:
+        type: string
+    agentArgs: &agentArgs-v8
+      <<: *agentArgs-v7
+      nonroot-devices:
+        type: boolean
+      lb-server-port:
+        type: string
+      container-runtime-endpoint:
+        type: string
+      image-service-endpoint:
+        type: string
+      flannel-cni-conf:
+        type: string
+      prefer-bundled-bin:
+        type: boolean
     featureVersions: *featureVersions-v1
