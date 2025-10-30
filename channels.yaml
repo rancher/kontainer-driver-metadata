@@ -918,8 +918,26 @@ releases:
   - version: v1.31.13+k3s1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.12.99
-    serverArgs: *serverArgs-v11
-    agentArgs: *agentArgs-v7
+    serverArgs: &serverArgs-v12
+      <<: *serverArgs-v11
+      flannel-ipv6-masq:
+        type: boolean
+      servicelb-namespace:
+        type: string
+    agentArgs: &agentArgs-v8
+      <<: *agentArgs-v7
+      nonroot-devices:
+        type: boolean
+      lb-server-port:
+        type: string
+      container-runtime-endpoint:
+        type: string
+      image-service-endpoint:
+        type: string
+      flannel-cni-conf:
+        type: string
+      prefer-bundled-bin:
+        type: boolean
     featureVersions: *featureVersions-v1
   - version: v1.32.1+k3s1
     minChannelServerVersion: v2.11.0-alpha1
@@ -973,8 +991,8 @@ releases:
   - version: v1.32.9+k3s1
     minChannelServerVersion: v2.11.0-alpha1
     maxChannelServerVersion: v2.13.99
-    serverArgs: *serverArgs-v11
-    agentArgs: *agentArgs-v7
+    serverArgs: *serverArgs-v12
+    agentArgs: *agentArgs-v8
     featureVersions: *featureVersions-v1
   - version: v1.33.0+k3s1
     minChannelServerVersion: v2.12.0-alpha1
@@ -1017,12 +1035,19 @@ releases:
   - version: v1.33.5+k3s1
     minChannelServerVersion: v2.12.0-alpha1
     maxChannelServerVersion: v2.13.99
-    serverArgs: *serverArgs-v11
-    agentArgs: *agentArgs-v7
+    serverArgs: &serverArgs-v13 # this was needed since the older secrets-encryption-provider is present in v1.32.x and v1.31.x patches
+      <<: *serverArgs-v12
+      secrets-encryption-provider:
+        type: enum
+        options:
+        - aescbc
+        - secretbox
+        default: aescbc
+    agentArgs: *agentArgs-v8
     featureVersions: *featureVersions-v1
   - version: v1.34.1+k3s1
     minChannelServerVersion: v2.13.0-alpha1
     maxChannelServerVersion: v2.13.99
-    serverArgs: *serverArgs-v11
-    agentArgs: *agentArgs-v7
+    serverArgs: *serverArgs-v13
+    agentArgs: *agentArgs-v8
     featureVersions: *featureVersions-v1
