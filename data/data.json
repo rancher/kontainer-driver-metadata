@@ -38661,16 +38661,13 @@
       "type": "array"
      },
      "nonroot-devices": {
-      "type": "bool"
+      "type": "boolean"
      },
      "pause-image": {
       "type": "string"
      },
-     "prefer-bundle-bin": {
-      "type": "bool"
-     },
-     "private-registry": {
-      "type": "string"
+     "prefer-bundled-bin": {
+      "type": "boolean"
      },
      "protect-kernel-defaults": {
       "default": false,
@@ -38797,11 +38794,8 @@
       ],
       "type": "enum"
      },
-     "flannel-external-ip": {
-      "type": "bool"
-     },
      "flannel-ipv6-masq": {
-      "type": "bool"
+      "type": "boolean"
      },
      "helm-job-image": {
       "type": "string"

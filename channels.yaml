@@ -915,25 +915,21 @@ releases:
     serverArgs: &serverArgs-v12
       <<: *serverArgs-v11
       flannel-ipv6-masq:
-        type: bool
-      flannel-external-ip:
-        type: bool
+        type: boolean
       servicelb-namespace:
         type: string
     agentArgs: &agentArgs-v8
       <<: *agentArgs-v7
       nonroot-devices:
-        type: bool
+        type: boolean
       lb-server-port:
         type: string
       container-runtime-endpoint:
         type: string
       image-service-endpoint:
         type: string
-      private-registry:
-        type: string
       flannel-cni-conf:
         type: string
-      prefer-bundle-bin:
-        type: bool
+      prefer-bundled-bin:
+        type: boolean
     featureVersions: *featureVersions-v1
