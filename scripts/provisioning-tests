@@ -36,9 +36,9 @@ fi
 # To be removed/changed once drone setup is removed from rancher/rancher repo. 
 export DRONE_BUILD_NUMBER=${GITHUB_RUN_NUMBER}
 
-if ! ./scripts/test-run-required.sh; then
-  exit
-fi
+# if ! ./scripts/test-run-required.sh; then
+#   exit
+# fi
 
 set -ex
 
