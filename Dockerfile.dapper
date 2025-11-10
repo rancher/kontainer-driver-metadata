@@ -1,4 +1,4 @@
-ARG RANCHER_VERSION=v2.12-head
+ARG RANCHER_VERSION=v2.13-head
 
 FROM rancher/rancher:$RANCHER_VERSION as rancher
 
@@ -14,7 +14,7 @@ COPY --from=rancher /run /run
 RUN mkdir -p /usr/share/rancher
 COPY --from=rancher /usr/share/rancher /usr/share/rancher
 
-COPY --from=rancher/k3s:v1.33.1-k3s1 \
+COPY --from=rancher/k3s:v1.34.1-k3s1 \
     /bin/blkid \
     /bin/bandwidth \
     /bin/cni \
