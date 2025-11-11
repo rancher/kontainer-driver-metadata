@@ -11,7 +11,7 @@ on:
 
 jobs:
   check_released_versions:
-    name: Check Branch ${{ matrix.target_branch }}
+    name: Compare ${{ matrix.dev_branch }} vs ${{ matrix.release_branch }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -21,12 +21,20 @@ jobs:
       # the checks for other branches will still run to completion.
       fail-fast: false
       matrix:
-        target_branch:
-          # The list needs to be adjusted based on the branch where the workflow runs
-          - 'release-v2.8'
-          - 'release-v2.9'
-          - 'release-v2.10'
-          - 'release-v2.11'
+        include:
+          # The list needs to be adjusted when a new release line is available
+          - dev_branch: dev-v2.9
+            release_branch: release-v2.9
+          - dev_branch: dev-v2.10
+            release_branch: release-v2.10
+          - dev_branch: dev-v2.11
+            release_branch: release-v2.11
+          - dev_branch: dev-v2.12
+            release_branch: release-v2.12
+          - dev_branch: dev-v2.13
+            release_branch: release-v2.13
+          - dev_branch: dev-v2.11-rke-extended-life
+            release_branch: release-v2.11-rke-extended-life
 
     steps:
       - name: Checkout Repository
@@ -38,12 +46,10 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq jq curl
 
-      - name: Run Version Check for ${{ matrix.target_branch }}
-        # This step runs for each branch defined in the matrix.
-        # The script receives the specific branch from the matrix context.
+      - name: Run Version Check
         run: |
-          echo "Running check against branch: ${{ matrix.target_branch }}"
-          ./scripts/check-versions.sh "${{ matrix.target_branch }}"
+          echo "Checking if all versions in ${{ matrix.release_branch }} are in ${{ matrix.dev_branch }} ..."
+          ./scripts/check-versions.sh "${{ matrix.dev_branch }}" "${{ matrix.release_branch }}"
 
   notify_on_failure:
     name: Notify Slack on Failure
