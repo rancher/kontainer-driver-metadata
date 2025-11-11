@@ -3,5 +3,12 @@ set -e
 
 cd $(dirname $0)/..
 
-echo Regsync mirroring images
-regsync once --missing --config ./regsync.yaml  --verbosity debug
+echo "Regsync: splitting regsync file..."
+ruby ./scripts/regsync-split.rb
+
+echo "Regsync: mirroring images from split configs..."
+find ./split-regsync -name 'split-regsync.yaml' | while read -r file; do
+  echo "Syncing with: $file"
+  regsync once --missing --config "$file" -v debug
+done
+
