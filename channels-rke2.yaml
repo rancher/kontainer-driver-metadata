@@ -3565,36 +3565,36 @@ releases:
     maxChannelServerVersion: v2.12.99
     charts: &chartsv1-31-12-rke2r1
       <<: *chartsv1-31-11-rke2r1
-      rancher-vsphere-csi:
-        repo: rancher-rke2-charts
-        version: 3.3.1-rancher1000
-      rke2-calico-crd:
-        repo: rancher-rke2-charts
-        version: v3.30.200
-      rke2-multus:
-        repo: rancher-rke2-charts
-        version: v4.2.202
-      rke2-calico:
-        repo: rancher-rke2-charts
-        version: v3.30.200
-      rke2-coredns:
-        repo: rancher-rke2-charts
-        version: 1.43.101
-      rke2-cilium:
-        repo: rancher-rke2-charts
-        version: 1.18.000
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.12.404
-      rke2-metrics-server:
+      rke2-calico-crd:
         repo: rancher-rke2-charts
-        version: 3.13.000
+        version: v3.30.200
       rke2-flannel:
         repo: rancher-rke2-charts
         version: v0.27.200
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.18.000
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.30.200
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 3.13.000
       rke2-canal:
         repo: rancher-rke2-charts
         version: v3.30.2-build2025073100
+      rancher-vsphere-csi:
+        repo: rancher-rke2-charts
+        version: 3.3.1-rancher1000
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.43.101
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.2.202
     serverArgs: &serverArgsv1-31-12-rke2r1
       <<: *serverArgsv1-31-11-rke2r1
     agentArgs: &agentArgsv1-31-12-rke2r1
@@ -3605,39 +3605,39 @@ releases:
     maxChannelServerVersion: v2.12.99
     charts: &chartsv1-31-13-rke2r1
       <<: *chartsv1-31-12-rke2r1
-      rke2-coredns:
-        repo: rancher-rke2-charts
-        version: 1.43.302
-      rke2-ingress-nginx:
-        repo: rancher-rke2-charts
-        version: 4.12.600
-      rancher-vsphere-cpi:
-        repo: rancher-rke2-charts
-        version: 1.12.100
-      rke2-flannel:
-        repo: rancher-rke2-charts
-        version: v0.27.302
       rke2-cilium:
         repo: rancher-rke2-charts
         version: 1.18.103
       rke2-calico-crd:
         repo: rancher-rke2-charts
         version: v3.30.300
-      rke2-metrics-server:
+      rke2-calico:
         repo: rancher-rke2-charts
-        version: 3.13.001
+        version: v3.30.300
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.12.600
+      rancher-vsphere-cpi:
+        repo: rancher-rke2-charts
+        version: 1.12.100
+      rancher-vsphere-csi:
+        repo: rancher-rke2-charts
+        version: 3.5.0-rancher100
       rke2-canal:
         repo: rancher-rke2-charts
         version: v3.30.3-build2025090900
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.2.205
-      rancher-vsphere-csi:
+      rke2-coredns:
         repo: rancher-rke2-charts
-        version: 3.5.0-rancher100
-      rke2-calico:
+        version: 1.43.302
+      rke2-metrics-server:
         repo: rancher-rke2-charts
-        version: v3.30.300
+        version: 3.13.001
+      rke2-flannel:
+        repo: rancher-rke2-charts
+        version: v0.27.302
     serverArgs: &serverArgsv1-31-13-rke2r1
       <<: *serverArgsv1-31-12-rke2r1
       helm-job-image:
@@ -3939,36 +3939,36 @@ releases:
     maxChannelServerVersion: v2.13.99
     charts: &chartsv1-32-9-rke2r1
       <<: *chartsv1-32-8-rke2r1
-      rke2-coredns:
-        repo: rancher-rke2-charts
-        version: 1.43.302
-      rancher-vsphere-cpi:
-        repo: rancher-rke2-charts
-        version: 1.12.100
-      rke2-calico:
-        repo: rancher-rke2-charts
-        version: v3.30.300
-      rancher-vsphere-csi:
-        repo: rancher-rke2-charts
-        version: 3.5.0-rancher100
-      rke2-cilium:
-        repo: rancher-rke2-charts
-        version: 1.18.103
       rke2-canal:
         repo: rancher-rke2-charts
         version: v3.30.3-build2025090900
-      rke2-multus:
-        repo: rancher-rke2-charts
-        version: v4.2.205
       rke2-flannel:
         repo: rancher-rke2-charts
         version: v0.27.302
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.30.300
       rke2-calico-crd:
         repo: rancher-rke2-charts
         version: v3.30.300
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.12.600
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.18.103
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.2.205
+      rancher-vsphere-csi:
+        repo: rancher-rke2-charts
+        version: 3.5.0-rancher100
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.43.302
+      rancher-vsphere-cpi:
+        repo: rancher-rke2-charts
+        version: 1.12.100
       rke2-metrics-server:
         repo: rancher-rke2-charts
         version: 3.13.001
@@ -4170,37 +4170,37 @@ releases:
     maxChannelServerVersion: v2.13.99
     charts: &chartsv1-33-5-rke2r1
       <<: *chartsv1-33-4-rke2r1
-      rke2-metrics-server:
-        repo: rancher-rke2-charts
-        version: 3.13.001
-      rancher-vsphere-cpi:
-        repo: rancher-rke2-charts
-        version: 1.12.100
-      rke2-canal:
-        repo: rancher-rke2-charts
-        version: v3.30.3-build2025090900
-      rke2-calico-crd:
-        repo: rancher-rke2-charts
-        version: v3.30.300
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.12.600
-      rke2-multus:
-        repo: rancher-rke2-charts
-        version: v4.2.205
-      rancher-vsphere-csi:
-        repo: rancher-rke2-charts
-        version: 3.5.0-rancher100
-      rke2-coredns:
-        repo: rancher-rke2-charts
-        version: 1.43.302
       rke2-flannel:
         repo: rancher-rke2-charts
         version: v0.27.302
       rke2-cilium:
         repo: rancher-rke2-charts
         version: 1.18.103
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.30.3-build2025090900
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 3.13.001
       rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.30.300
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.2.205
+      rancher-vsphere-cpi:
+        repo: rancher-rke2-charts
+        version: 1.12.100
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.43.302
+      rancher-vsphere-csi:
+        repo: rancher-rke2-charts
+        version: 3.5.0-rancher100
+      rke2-calico-crd:
         repo: rancher-rke2-charts
         version: v3.30.300
     serverArgs: &serverArgsv1-33-5-rke2r1
