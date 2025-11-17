@@ -1749,8 +1749,8 @@ sync:
         - v1.31.9-rke2r1-windows-amd64
         - v1.32.1-rke2r1
         - v1.32.1-rke2r1-windows-amd64
-        - v1.32.10-rc1-rke2r1
-        - v1.32.10-rc1-rke2r1-windows-amd64
+        - v1.32.10-rc2-rke2r1
+        - v1.32.10-rc2-rke2r1-windows-amd64
         - v1.32.2-rke2r1
         - v1.32.2-rke2r1-windows-amd64
         - v1.32.3-rke2r1
@@ -1882,7 +1882,7 @@ sync:
         - v1.31.8-rke2r1
         - v1.31.9-rke2r1
         - v1.32.1-rke2r1
-        - v1.32.10-rc1-rke2r1
+        - v1.32.10-rc2-rke2r1
         - v1.32.2-rke2r1
         - v1.32.3-rke2r1
         - v1.32.4-rke2r1
@@ -2113,7 +2113,7 @@ sync:
         - v1.31.8-rke2r1
         - v1.31.9-rke2r1
         - v1.32.1-rke2r1
-        - v1.32.10-rc1-rke2r1
+        - v1.32.10-rc2-rke2r1
         - v1.32.2-rke2r1
         - v1.32.3-rke2r1
         - v1.32.4-rke2r1
