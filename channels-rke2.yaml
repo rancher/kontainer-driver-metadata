@@ -3636,8 +3636,30 @@ releases:
         version: 3.5.0-rancher100
     serverArgs: &serverArgsv1-31-13-rke2r1
       <<: *serverArgsv1-31-12-rke2r1
+      helm-job-image:
+        type: string
+      servicelb-namespace:
+        type: string
+      enable-servicelb:
+        type: boolean
     agentArgs: &agentArgsv1-31-13-rke2r1
       <<: *agentArgsv1-31-12-rke2r1
+      container-runtime-endpoint:
+        type: string
+      kubelet-path:
+        type: string
+      cloud-controller-manager-image:
+        type: string
+      lb-server-port:
+        type: string
+      kube-proxy-image:
+        type: string
+      pod-security-admission-config-file:
+        type: string
+      control-plane-probe-configuration:
+        type: array
+      nonroot-devices:
+        type: boolean
     featureVersions: *featureVersions-v1
   - version: v1.32.1+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
@@ -3948,6 +3970,28 @@ releases:
         version: v4.2.205
     serverArgs: &serverArgsv1-32-9-rke2r1
       <<: *serverArgsv1-32-8-rke2r1
+      helm-job-image:
+        type: string
+      servicelb-namespace:
+        type: string
+      enable-servicelb:
+        type: boolean
     agentArgs: &agentArgsv1-32-9-rke2r1
       <<: *agentArgsv1-32-8-rke2r1
+      container-runtime-endpoint:
+        type: string
+      kubelet-path:
+        type: string
+      cloud-controller-manager-image:
+        type: string
+      lb-server-port:
+        type: string
+      kube-proxy-image:
+        type: string
+      pod-security-admission-config-file:
+        type: string
+      control-plane-probe-configuration:
+        type: array
+      nonroot-devices:
+        type: boolean
     featureVersions: *featureVersions-v1
