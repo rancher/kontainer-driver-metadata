@@ -38611,6 +38611,9 @@
      "bind-address": {
       "type": "string"
      },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
      "debug": {
       "type": "bool"
      },
@@ -38630,10 +38633,16 @@
      "enable-pprof": {
       "type": "boolean"
      },
+     "flannel-cni-conf": {
+      "type": "string"
+     },
      "flannel-conf": {
       "type": "string"
      },
      "flannel-iface": {
+      "type": "string"
+     },
+     "image-service-endpoint": {
       "type": "string"
      },
      "kube-proxy-arg": {
@@ -38642,14 +38651,23 @@
      "kubelet-arg": {
       "type": "array"
      },
+     "lb-server-port": {
+      "type": "string"
+     },
      "node-external-dns": {
       "type": "array"
      },
      "node-internal-dns": {
       "type": "array"
      },
+     "nonroot-devices": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
+     },
+     "prefer-bundled-bin": {
+      "type": "boolean"
      },
      "protect-kernel-defaults": {
       "default": false,
@@ -38776,6 +38794,9 @@
       ],
       "type": "enum"
      },
+     "flannel-ipv6-masq": {
+      "type": "boolean"
+     },
      "helm-job-image": {
       "type": "string"
      },
@@ -38805,6 +38826,9 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "type": "string"
+     },
+     "servicelb-namespace": {
       "type": "string"
      },
      "supervisor-metrics": {
@@ -73461,6 +73485,9 @@
      "cloud-controller-manager-extra-mount": {
       "type": "array"
      },
+     "cloud-controller-manager-image": {
+      "type": "string"
+     },
      "cloud-provider-config": {
       "type": "string"
      },
@@ -73476,6 +73503,12 @@
        "external"
       ],
       "type": "enum"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "control-plane-probe-configuration": {
+      "type": "array"
      },
      "control-plane-resource-limits": {
       "type": "string"
@@ -73522,6 +73555,9 @@
      "kube-proxy-extra-mount": {
       "type": "array"
      },
+     "kube-proxy-image": {
+      "type": "string"
+     },
      "kube-scheduler-extra-env": {
       "type": "array"
      },
@@ -73530,6 +73566,18 @@
      },
      "kubelet-arg": {
       "type": "array"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "lb-server-port": {
+      "type": "string"
+     },
+     "nonroot-devices": {
+      "type": "boolean"
+     },
+     "pod-security-admission-config-file": {
+      "type": "string"
      },
      "profile": {
       "nullable": true,
@@ -73701,6 +73749,9 @@
      "embedded-registry": {
       "type": "boolean"
      },
+     "enable-servicelb": {
+      "type": "boolean"
+     },
      "etcd-arg": {
       "type": "array"
      },
@@ -73709,6 +73760,9 @@
       "type": "boolean"
      },
      "etcd-image": {
+      "type": "string"
+     },
+     "helm-job-image": {
       "type": "string"
      },
      "kube-apiserver-arg": {
@@ -73748,6 +73802,9 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "type": "string"
+     },
+     "servicelb-namespace": {
       "type": "string"
      },
      "snapshotter": {
