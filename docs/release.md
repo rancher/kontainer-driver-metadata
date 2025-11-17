@@ -39,6 +39,9 @@ When KDM is being released for a new minor version of Rancher (e.g. `v2.10.0`, `
 
 + Ensure that all provisioning tests are utilizing the correct version of Rancher and the correct Kubernetes version range. Ideally this will have been done during the creation of the dev branch, however this should be double checked to ensure that CI functions properly upon release
    + Example: https://github.com/rancher/kontainer-driver-metadata/pull/1553
++ Update the [Daily Released Version Check](../.github/workflows/daily-version-check.yml) to include the new release line pair in the matrix, so the cron job will check versions for this new release line.
+  + Note that GitHub runs scheduled workflows (cron jobs) only on the **default branch**, which means changes in this branch will not take effect until it becomes the default branch of the repository.
+  + You can always manually trigger the workflow from the **Actions** tab in the GitHub UI.
 + The `release-v2.x` branch will not exist yet. To ensure that all versions are correctly included, raise a preview PR against the prior release branch (e.g `dev-v2.10` against `release-v2.9`). **Do not merge this PR**
    + Example: https://github.com/rancher/kontainer-driver-metadata/pull/1552
 
