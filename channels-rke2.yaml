@@ -3659,10 +3659,10 @@ releases:
       nonroot-devices:
         type: boolean
     featureVersions: *featureVersions-v1
-  - version: v1.31.14-rc1+rke2r1
+  - version: v1.31.14-rc2+rke2r1
     minChannelServerVersion: v2.10.0-alpha1
     maxChannelServerVersion: v2.10.99
-    charts: &chartsv1-31-14-rc1-rke2r1
+    charts: &chartsv1-31-14-rc2-rke2r1
       <<: *chartsv1-31-13-rke2r1
       rke2-coredns:
         repo: rancher-rke2-charts
@@ -3703,8 +3703,8 @@ releases:
       rke2-calico-crd:
         repo: rancher-rke2-charts
         version: v3.30.401
-    serverArgs: &serverArgsv1-31-14-rc1-rke2r1
+    serverArgs: &serverArgsv1-31-14-rc2-rke2r1
       <<: *serverArgsv1-31-13-rke2r1
-    agentArgs: &agentArgsv1-31-14-rc1-rke2r1
+    agentArgs: &agentArgsv1-31-14-rc2-rke2r1
       <<: *agentArgsv1-31-13-rke2r1
     featureVersions: *featureVersions-v1
