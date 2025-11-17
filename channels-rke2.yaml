@@ -3661,10 +3661,10 @@ releases:
       nonroot-devices:
         type: boolean
     featureVersions: *featureVersions-v1
-  - version: v1.31.14-rc1+rke2r1
+  - version: v1.31.14-rc2+rke2r1
     minChannelServerVersion: v2.10.0-alpha1
     maxChannelServerVersion: v2.11.99
-    charts: &chartsv1-31-14-rc1-rke2r1
+    charts: &chartsv1-31-14-rc2-rke2r1
       <<: *chartsv1-31-13-rke2r1
       rke2-metrics-server:
         repo: rancher-rke2-charts
@@ -3705,9 +3705,9 @@ releases:
       rke2-cilium:
         repo: rancher-rke2-charts
         version: 1.18.300
-    serverArgs: &serverArgsv1-31-14-rc1-rke2r1
+    serverArgs: &serverArgsv1-31-14-rc2-rke2r1
       <<: *serverArgsv1-31-13-rke2r1
-    agentArgs: &agentArgsv1-31-14-rc1-rke2r1
+    agentArgs: &agentArgsv1-31-14-rc2-rke2r1
       <<: *agentArgsv1-31-13-rke2r1
     featureVersions: *featureVersions-v1
   - version: v1.32.1+rke2r1
@@ -4044,10 +4044,10 @@ releases:
       nonroot-devices:
         type: boolean
     featureVersions: *featureVersions-v1
-  - version: v1.32.10-rc1+rke2r1
+  - version: v1.32.10-rc2+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
     maxChannelServerVersion: v2.11.99
-    charts: &chartsv1-32-10-rc1-rke2r1
+    charts: &chartsv1-32-10-rc2-rke2r1
       <<: *chartsv1-32-9-rke2r1
       rke2-multus:
         repo: rancher-rke2-charts
@@ -4088,8 +4088,8 @@ releases:
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
         version: 4.13.400
-    serverArgs: &serverArgsv1-32-10-rc1-rke2r1
+    serverArgs: &serverArgsv1-32-10-rc2-rke2r1
       <<: *serverArgsv1-32-9-rke2r1
-    agentArgs: &agentArgsv1-32-10-rc1-rke2r1
+    agentArgs: &agentArgsv1-32-10-rc2-rke2r1
       <<: *agentArgsv1-32-9-rke2r1
     featureVersions: *featureVersions-v1
