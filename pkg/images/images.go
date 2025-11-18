@@ -36,7 +36,6 @@ const (
 )
 
 var (
-	maxAllowedServerVersion = semver.MustParse("2.11.0")
 	minAllowedServerVersion = semver.MustParse("2.7.0")
 
 	data     = kdm.Data{}
@@ -284,12 +283,7 @@ func releaseToKeep(release map[string]interface{}) (bool, error) {
 	if !ok || version == "" {
 		return false, fmt.Errorf("the value of the version is missing for the release %v", release)
 	}
-	minChannelServerVersion, ok := release["minChannelServerVersion"].(string)
-	if ok && minChannelServerVersion != "" {
-		if minVersion, err := semver.ParseTolerant(minChannelServerVersion); err != nil || minVersion.GE(maxAllowedServerVersion) {
-			return false, err
-		}
-	}
+
 	maxChannelServerVersion, ok := release["maxChannelServerVersion"].(string)
 	if ok && maxChannelServerVersion != "" {
 		if maxVersion, err := semver.ParseTolerant(maxChannelServerVersion); err != nil || maxVersion.LT(minAllowedServerVersion) {
@@ -308,15 +302,6 @@ func toKeep(info v3.K8sVersionInfo) (bool, error) {
 			return false, fmt.Errorf("failed to parse %s: %v", info.DeprecateRancherVersion, err)
 		}
 		if drv.LE(minAllowedServerVersion) {
-			return false, nil
-		}
-	}
-	if info.MinRancherVersion != "" {
-		minVersion, err := semver.ParseTolerant(info.MinRancherVersion)
-		if err != nil {
-			return false, fmt.Errorf("failed to parse %s: %v", info.MinRancherVersion, err)
-		}
-		if minVersion.GE(maxAllowedServerVersion) {
 			return false, nil
 		}
 	}
