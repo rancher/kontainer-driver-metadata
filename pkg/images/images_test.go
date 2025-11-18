@@ -19,8 +19,8 @@ func Test_toKeep(t *testing.T) {
 		{
 			name: "invalid semVer",
 			args: args{info: types.K8sVersionInfo{
-				MinRancherVersion:       "2.6c.0",
-				MaxRancherVersion:       "",
+				MinRancherVersion:       "",
+				MaxRancherVersion:       "2.6c.0",
 				DeprecateRancherVersion: "",
 			}},
 			want:    false,
@@ -77,7 +77,7 @@ func Test_toKeep(t *testing.T) {
 			wantErr: false,
 		},
 		{
-			name: "min < 2.7.0 < 2.9.0 < max",
+			name: "2.7.0 < max",
 			args: args{info: types.K8sVersionInfo{
 				MinRancherVersion:       "2.6.12-alpha2",
 				MaxRancherVersion:       "2.9.2",
@@ -87,60 +87,30 @@ func Test_toKeep(t *testing.T) {
 			wantErr: false,
 		},
 		{
-			name: "min < 2.7.0 < max = 2.9.0",
+			name: "max = 2.7.0",
 			args: args{info: types.K8sVersionInfo{
-				MinRancherVersion:       "2.6.12-alpha2",
-				MaxRancherVersion:       "2.9.0",
+				MinRancherVersion:       "2.6.0",
+				MaxRancherVersion:       "2.7.0",
 				DeprecateRancherVersion: "",
 			}},
 			want:    true,
 			wantErr: false,
 		},
 		{
-			name: "min < 2.8.0 < max < 2.10.0",
+			name: "max < 2.7.0",
 			args: args{info: types.K8sVersionInfo{
-				MinRancherVersion:       "2.7.12-alpha2",
-				MaxRancherVersion:       "2.9.12-patch1",
+				MinRancherVersion:       "2.6.0",
+				MaxRancherVersion:       "2.6.5",
 				DeprecateRancherVersion: "",
 			}},
-			want:    true,
+			want:    false,
 			wantErr: false,
 		},
 		{
-			name: "min = 2.7.0 < max < 2.9.0",
+			name: "max < 2.7.0 alpha",
 			args: args{info: types.K8sVersionInfo{
-				MinRancherVersion:       "2.7.0",
-				MaxRancherVersion:       "2.8.5",
-				DeprecateRancherVersion: "",
-			}},
-			want:    true,
-			wantErr: false,
-		},
-		{
-			name: "min = 2.7.0 < max = 2.9.0",
-			args: args{info: types.K8sVersionInfo{
-				MinRancherVersion:       "2.7.0",
-				MaxRancherVersion:       "2.9.0",
-				DeprecateRancherVersion: "",
-			}},
-			want:    true,
-			wantErr: false,
-		},
-		{
-			name: "2.7.0 < min < max < 2.10.0",
-			args: args{info: types.K8sVersionInfo{
-				MinRancherVersion:       "2.7.1-patch-1",
-				MaxRancherVersion:       "2.9.5",
-				DeprecateRancherVersion: "",
-			}},
-			want:    true,
-			wantErr: false,
-		},
-		{
-			name: "2.10.0 < min < 2.10.99 < max",
-			args: args{info: types.K8sVersionInfo{
-				MinRancherVersion:       "2.10.1-patch1",
-				MaxRancherVersion:       "2.11.0-alpha1",
+				MinRancherVersion:       "2.6.0",
+				MaxRancherVersion:       "2.7.0-alpha1",
 				DeprecateRancherVersion: "",
 			}},
 			want:    false,
@@ -174,8 +144,8 @@ func Test_releaseToKeep(t *testing.T) {
 		{
 			name: "invalid Server Version",
 			args: args{release: map[string]interface{}{
-				"minChannelServerVersion": "",
-				"maxChannelServerVersion": "v2.6c.7-alpha2.3",
+				"minChannelServerVersion": "v2.6c.7-alpha2.3",
+				"maxChannelServerVersion": "",
 				"version":                 ""},
 			},
 			want:    false,
@@ -192,7 +162,7 @@ func Test_releaseToKeep(t *testing.T) {
 			wantErr: true,
 		},
 		{
-			name: "min < 2.8.0 < 2.9.0 < max",
+			name: "max > 2.7.0",
 			args: args{release: map[string]interface{}{
 				"minChannelServerVersion": "v2.7.0-alpha1",
 				"maxChannelServerVersion": "v2.9.9",
@@ -202,61 +172,20 @@ func Test_releaseToKeep(t *testing.T) {
 			wantErr: false,
 		},
 		{
-			name: "min < 2.8.0 < max = 2.10.0",
-			args: args{release: map[string]interface{}{
-				"minChannelServerVersion": "v2.7.99",
-				"maxChannelServerVersion": "v2.10.0",
-				"version":                 "v1.20.15+rke2r2"},
-			},
-			want:    true,
-			wantErr: false,
-		},
-		{
-			name: "min < 2.7.0 < max < 2.10.0",
+			name: "max = 2.7.0",
 			args: args{release: map[string]interface{}{
 				"minChannelServerVersion": "v2.6.12-alpha1",
-				"maxChannelServerVersion": "v2.9.99",
-				"version":                 "v1.20.15+rke2r2"},
-			},
-			want:    true,
-			wantErr: false,
-		},
-
-		{
-			name: "min = 2.7.0 < max < 2.10.0",
-			args: args{release: map[string]interface{}{
-				"minChannelServerVersion": "v2.7.0",
-				"maxChannelServerVersion": "v2.9.99",
+				"maxChannelServerVersion": "v2.7.0",
 				"version":                 "v1.20.15+rke2r2"},
 			},
 			want:    true,
 			wantErr: false,
 		},
 		{
-			name: "min = 2.7.0 < max = 2.10.0",
+			name: "max < 2.7.0",
 			args: args{release: map[string]interface{}{
-				"minChannelServerVersion": "v2.7.0",
-				"maxChannelServerVersion": "v2.10.0",
-				"version":                 "v1.20.15+rke2r2"},
-			},
-			want:    true,
-			wantErr: false,
-		},
-		{
-			name: "2.7.0 < min < max < 2.10.0",
-			args: args{release: map[string]interface{}{
-				"minChannelServerVersion": "v2.7.2-alpha1",
-				"maxChannelServerVersion": "v2.9.14-patch1",
-				"version":                 "v1.20.15+rke2r2"},
-			},
-			want:    true,
-			wantErr: false,
-		},
-		{
-			name: "2.10.0 < min < 2.10.99 < max",
-			args: args{release: map[string]interface{}{
-				"minChannelServerVersion": "v2.10.1-alpha1",
-				"maxChannelServerVersion": "v2.11.0-patch1",
+				"minChannelServerVersion": "v2.6.12-alpha1",
+				"maxChannelServerVersion": "v2.6.14",
 				"version":                 "v1.20.15+rke2r2"},
 			},
 			want:    false,
