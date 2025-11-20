@@ -3999,10 +3999,10 @@ releases:
       nonroot-devices:
         type: boolean
     featureVersions: *featureVersions-v1
-  - version: v1.32.10-rc2+rke2r1
+  - version: v1.32.10+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
     maxChannelServerVersion: v2.13.99
-    charts: &chartsv1-32-10-rc2-rke2r1
+    charts: &chartsv1-32-10-rke2r1
       <<: *chartsv1-32-9-rke2r1
       rke2-calico:
         repo: rancher-rke2-charts
@@ -4043,9 +4043,9 @@ releases:
       rke2-cilium:
         repo: rancher-rke2-charts
         version: 1.18.300
-    serverArgs: &serverArgsv1-32-10-rc2-rke2r1
+    serverArgs: &serverArgsv1-32-10-rke2r1
       <<: *serverArgsv1-32-9-rke2r1
-    agentArgs: &agentArgsv1-32-10-rc2-rke2r1
+    agentArgs: &agentArgsv1-32-10-rke2r1
       <<: *agentArgsv1-32-9-rke2r1
     featureVersions: *featureVersions-v1
   - version: v1.33.0+rke2r1
@@ -4279,10 +4279,10 @@ releases:
       nonroot-devices:
         type: boolean
     featureVersions: *featureVersions-v1
-  - version: v1.33.6-rc2+rke2r1
+  - version: v1.33.6+rke2r1
     minChannelServerVersion: v2.12.0-alpha1
     maxChannelServerVersion: v2.13.99
-    charts: &chartsv1-33-6-rc2-rke2r1
+    charts: &chartsv1-33-6-rke2r1
       <<: *chartsv1-33-5-rke2r1
       rke2-calico-crd:
         repo: rancher-rke2-charts
@@ -4323,9 +4323,9 @@ releases:
       rke2-multus:
         repo: rancher-rke2-charts
         version: v4.2.300
-    serverArgs: &serverArgsv1-33-6-rc2-rke2r1
+    serverArgs: &serverArgsv1-33-6-rke2r1
       <<: *serverArgsv1-33-5-rke2r1
-    agentArgs: &agentArgsv1-33-6-rc2-rke2r1
+    agentArgs: &agentArgsv1-33-6-rke2r1
       <<: *agentArgsv1-33-5-rke2r1
     featureVersions: *featureVersions-v1
   - version: v1.34.1+rke2r1
@@ -4393,10 +4393,10 @@ releases:
       nonroot-devices:
         type: boolean
     featureVersions: *featureVersions-v1
-  - version: v1.34.2-rc2+rke2r1
+  - version: v1.34.2+rke2r1
     minChannelServerVersion: v2.13.0-alpha1
     maxChannelServerVersion: v2.13.99
-    charts: &chartsv1-34-2-rc2-rke2r1
+    charts: &chartsv1-34-2-rke2r1
       <<: *chartsv1-34-1-rke2r1
       rke2-calico-crd:
         repo: rancher-rke2-charts
@@ -4437,8 +4437,8 @@ releases:
       harvester-cloud-provider:
         repo: rancher-rke2-charts
         version: 0.2.1100
-    serverArgs: &serverArgsv1-34-2-rc2-rke2r1
+    serverArgs: &serverArgsv1-34-2-rke2r1
       <<: *serverArgsv1-34-1-rke2r1
-    agentArgs: &agentArgsv1-34-2-rc2-rke2r1
+    agentArgs: &agentArgsv1-34-2-rke2r1
       <<: *agentArgsv1-34-1-rke2r1
     featureVersions: *featureVersions-v1
