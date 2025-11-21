@@ -939,12 +939,6 @@ releases:
       prefer-bundled-bin:
         type: boolean
     featureVersions: *featureVersions-v1
-  - version: v1.31.14-rc2+k3s1
-    minChannelServerVersion: v2.9.0-alpha1
-    maxChannelServerVersion: v2.12.99
-    serverArgs: *serverArgs-v12
-    agentArgs: *agentArgs-v8
-    featureVersions: *featureVersions-v1
   - version: v1.32.1+k3s1
     minChannelServerVersion: v2.11.0-alpha1
     maxChannelServerVersion: v2.11.99
@@ -1000,7 +994,7 @@ releases:
     serverArgs: *serverArgs-v12
     agentArgs: *agentArgs-v8
     featureVersions: *featureVersions-v1
-  - version: v1.32.10-rc2+k3s1
+  - version: v1.32.10+k3s1
     minChannelServerVersion: v2.11.0-alpha1
     maxChannelServerVersion: v2.13.99
     serverArgs: *serverArgs-v12
@@ -1057,7 +1051,7 @@ releases:
         default: aescbc
     agentArgs: *agentArgs-v8
     featureVersions: *featureVersions-v1
-  - version: v1.33.6-rc2+k3s1
+  - version: v1.33.6+k3s1
     minChannelServerVersion: v2.12.0-alpha1
     maxChannelServerVersion: v2.13.99
     serverArgs: *serverArgs-v13
@@ -1069,7 +1063,7 @@ releases:
     serverArgs: *serverArgs-v13
     agentArgs: *agentArgs-v8
     featureVersions: *featureVersions-v1
-  - version: v1.34.2-rc2+k3s1
+  - version: v1.34.2+k3s1
     minChannelServerVersion: v2.13.0-alpha1
     maxChannelServerVersion: v2.13.99
     serverArgs: *serverArgs-v13
