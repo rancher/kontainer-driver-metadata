@@ -37,7 +37,7 @@ sources:
       versionfilter:
         kind: regex
         # pattern matches RKE2 release tags like v1.32.1+rke2r1
-        pattern: "v[0-9]+\\.[0-9]+\\.[0-9]+\\+rke2r[0-9]+"
+        pattern: 'v[0-9]+\.[0-9]+\.[0-9]+\+rke2r[0-9]+'
 
 conditions:
   checkIfReleaseExists:

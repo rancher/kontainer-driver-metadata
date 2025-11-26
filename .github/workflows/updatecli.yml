@@ -2,7 +2,7 @@ name: "Updatecli: Detect new RKE2 releases"
 
 on:
   schedule:
-    # Runs at 06 AM UTC every day
+    # Runs at 06:00 AM UTC every day
     - cron: '0 6 * * *'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
