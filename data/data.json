@@ -77494,6 +77494,14 @@
      "helm-job-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -80838,6 +80846,14 @@
      },
      "helm-job-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
