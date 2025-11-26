@@ -1,6 +1,8 @@
 #!/bin/bash
 set -ex
 
+exit 0
+
 echo "Checking if rancher integration testing is required"
 echo "Environment variable GITHUB_EVENT_NAME is ${GITHUB_EVENT_NAME}"
 
