@@ -62,6 +62,13 @@ releases:
           - rke2-coredns
           - rke2-ingress-nginx
           - rke2-metrics-server
+      ingress-controller:
+        type: enum
+        options:
+          - none
+          - ingress-nginx
+          - traefik
+        nullable: true
       disable-kube-proxy:
         type: boolean
         default: false

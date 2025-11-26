@@ -25967,6 +25967,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -26210,6 +26219,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -26455,6 +26473,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -26698,6 +26725,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -26946,6 +26982,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -27192,6 +27237,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -27440,6 +27494,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -27686,6 +27749,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -27934,6 +28006,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -28181,6 +28262,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -28427,6 +28517,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -28678,6 +28777,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -28924,6 +29032,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -29172,6 +29289,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -29418,6 +29544,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -29666,6 +29801,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -29913,6 +30057,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -30159,6 +30312,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -30409,6 +30571,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -30663,6 +30834,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -30915,6 +31095,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -31169,6 +31358,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -31422,6 +31620,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -31668,6 +31875,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -31919,6 +32135,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -32166,6 +32391,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -32412,6 +32646,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -32662,6 +32905,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -32916,6 +33168,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -33169,6 +33430,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -33418,6 +33688,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -33672,6 +33951,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -33924,6 +34212,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -34178,6 +34475,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -34430,6 +34736,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -34684,6 +34999,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -34936,6 +35260,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -35190,6 +35523,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -35442,6 +35784,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -35696,6 +36047,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -35948,6 +36308,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -36202,6 +36571,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -36454,6 +36832,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -36708,6 +37095,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -36961,6 +37357,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -37213,6 +37618,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -37478,6 +37892,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -37730,6 +38153,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -37998,6 +38430,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -38261,6 +38702,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -38526,6 +38976,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -38790,6 +39249,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -39053,6 +39521,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -39321,6 +39798,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -39593,6 +40079,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -39863,6 +40358,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -40126,6 +40630,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -40391,6 +40904,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -40654,6 +41176,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -40922,6 +41453,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -41194,6 +41734,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -41464,6 +42013,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -41737,6 +42295,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -42009,6 +42576,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -42279,6 +42855,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -42546,6 +43131,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -42818,6 +43412,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -43088,6 +43691,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -43361,6 +43973,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -43632,6 +44253,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -43921,6 +44551,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -44208,6 +44847,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -44502,6 +45150,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -44803,6 +45460,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -45103,6 +45769,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -45389,6 +46064,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -45687,6 +46371,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -45983,6 +46676,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -46286,6 +46988,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -46596,6 +47307,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -46904,6 +47624,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -47214,6 +47943,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -47523,6 +48261,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -47809,6 +48556,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -48107,6 +48863,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -48403,6 +49168,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -48701,6 +49475,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -48997,6 +49780,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -49295,6 +50087,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -49591,6 +50392,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -49889,6 +50699,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -50186,6 +51005,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -50482,6 +51310,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -50784,6 +51621,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -51084,6 +51930,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -51386,6 +52241,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -51682,6 +52546,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -51985,6 +52858,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -52303,6 +53185,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -52619,6 +53510,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -52937,6 +53837,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -53253,6 +54162,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -53571,6 +54489,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -53887,6 +54814,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -54209,6 +55145,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -54529,6 +55474,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -54851,6 +55805,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -55168,6 +56131,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -55490,6 +56462,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -55810,6 +56791,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -56132,6 +57122,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -56448,6 +57447,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -56766,6 +57774,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -57082,6 +58099,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -57400,6 +58426,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -57716,6 +58751,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -58038,6 +59082,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -58358,6 +59411,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -58680,6 +59742,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -58997,6 +60068,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -59319,6 +60399,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -59639,6 +60728,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -59961,6 +61059,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -60281,6 +61388,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -60633,6 +61749,15 @@
      "helm-job-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -60957,6 +62082,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -61277,6 +62411,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -61599,6 +62742,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -61916,6 +63068,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -62238,6 +63399,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -62558,6 +63728,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -62880,6 +64059,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -63200,6 +64388,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -63551,6 +64748,15 @@
      },
      "helm-job-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -63906,6 +65112,15 @@
      "helm-job-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -64226,6 +65441,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -64548,6 +65772,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -64868,6 +66101,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -65190,6 +66432,15 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -65510,6 +66761,15 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -65861,6 +67121,15 @@
      },
      "helm-job-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -66216,6 +67485,15 @@
      "helm-job-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -66570,6 +67848,15 @@
      "helm-job-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -66923,6 +68210,15 @@
      },
      "helm-job-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "nullable": true,
+      "options": [
+       "none",
+       "ingress-nginx",
+       "traefik"
+      ],
+      "type": "enum"
      },
      "kube-apiserver-arg": {
       "type": "array"
