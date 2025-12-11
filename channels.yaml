@@ -28,6 +28,8 @@ appDefaults:
         defaultVersion: '1.33.x' 
       - appVersion: '>= 2.13.0-0 < 2.14.100-0'
         defaultVersion: '1.34.x' 
+      - appVersion: '>= 2.14.0-0 < 2.15.100-0'
+        defaultVersion: '1.34.x'
 releases:
   - version: v1.18.20+k3s1
     minChannelServerVersion: v2.6.0-alpha1
@@ -1002,7 +1004,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.33.0+k3s1
     minChannelServerVersion: v2.12.0-alpha1
-    maxChannelServerVersion: v2.13.99
+    maxChannelServerVersion: v2.14.99
     serverArgs: &serverArgs-v11
       <<: *serverArgs-v10
       secrets-encryption-provider:
@@ -1016,31 +1018,31 @@ releases:
     # featureVersions field is intentionally not defined to disable encryption key rotation for April 2025 patches due to https://github.com/rancher/rke2/issues/8236
   - version: v1.33.1+k3s1
     minChannelServerVersion: v2.12.0-alpha1
-    maxChannelServerVersion: v2.13.99
+    maxChannelServerVersion: v2.14.99
     serverArgs: *serverArgs-v11
     agentArgs: *agentArgs-v7
     featureVersions: *featureVersions-v1
   - version: v1.33.2+k3s1
     minChannelServerVersion: v2.12.0-alpha1
-    maxChannelServerVersion: v2.13.99
+    maxChannelServerVersion: v2.14.99
     serverArgs: *serverArgs-v11
     agentArgs: *agentArgs-v7
     featureVersions: *featureVersions-v1
   - version: v1.33.3+k3s1
     minChannelServerVersion: v2.12.0-alpha1
-    maxChannelServerVersion: v2.13.99
+    maxChannelServerVersion: v2.14.99
     serverArgs: *serverArgs-v11
     agentArgs: *agentArgs-v7
     featureVersions: *featureVersions-v1
   - version: v1.33.4+k3s1
     minChannelServerVersion: v2.12.0-alpha1
-    maxChannelServerVersion: v2.13.99
+    maxChannelServerVersion: v2.14.99
     serverArgs: *serverArgs-v11
     agentArgs: *agentArgs-v7
     featureVersions: *featureVersions-v1
   - version: v1.33.5+k3s1
     minChannelServerVersion: v2.12.0-alpha1
-    maxChannelServerVersion: v2.13.99
+    maxChannelServerVersion: v2.14.99
     serverArgs: &serverArgs-v13 # this was needed since the older secrets-encryption-provider is present in v1.32.x and v1.31.x patches
       <<: *serverArgs-v12
       secrets-encryption-provider:
@@ -1053,19 +1055,19 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.33.6+k3s1
     minChannelServerVersion: v2.12.0-alpha1
-    maxChannelServerVersion: v2.13.99
+    maxChannelServerVersion: v2.14.99
     serverArgs: *serverArgs-v13
     agentArgs: *agentArgs-v8
     featureVersions: *featureVersions-v1
   - version: v1.34.1+k3s1
     minChannelServerVersion: v2.13.0-alpha1
-    maxChannelServerVersion: v2.13.99
+    maxChannelServerVersion: v2.14.99
     serverArgs: *serverArgs-v13
     agentArgs: *agentArgs-v8
     featureVersions: *featureVersions-v1
   - version: v1.34.2+k3s1
     minChannelServerVersion: v2.13.0-alpha1
-    maxChannelServerVersion: v2.13.99
+    maxChannelServerVersion: v2.14.99
     serverArgs: *serverArgs-v13
     agentArgs: *agentArgs-v8
     featureVersions: *featureVersions-v1
