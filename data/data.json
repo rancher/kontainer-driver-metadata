@@ -23430,6 +23430,246 @@
      "bind-address": {
       "type": "string"
      },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "debug": {
+      "type": "bool"
+     },
+     "default-runtime": {
+      "type": "string"
+     },
+     "disable-apiserver-lb": {
+      "type": "boolean"
+     },
+     "disable-default-registry-endpoint": {
+      "type": "boolean"
+     },
+     "docker": {
+      "default": false,
+      "type": "boolean"
+     },
+     "enable-pprof": {
+      "type": "boolean"
+     },
+     "flannel-cni-conf": {
+      "type": "string"
+     },
+     "flannel-conf": {
+      "type": "string"
+     },
+     "flannel-iface": {
+      "type": "string"
+     },
+     "image-service-endpoint": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "lb-server-port": {
+      "type": "string"
+     },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
+     "nonroot-devices": {
+      "type": "boolean"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "prefer-bundled-bin": {
+      "type": "boolean"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "default": false,
+      "type": "boolean"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "system-default-registry": {
+      "type": "string"
+     },
+     "vpn-auth": {
+      "type": "string"
+     },
+     "vpn-auth-file": {
+      "type": "string"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.13.99",
+    "minChannelServerVersion": "v2.11.0-alpha1",
+    "serverArgs": {
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "datastore-cafile": {
+      "type": "string"
+     },
+     "datastore-certfile": {
+      "type": "string"
+     },
+     "datastore-endpoint": {
+      "type": "string"
+     },
+     "datastore-keyfile": {
+      "type": "string"
+     },
+     "default-local-storage-path": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "coredns",
+       "servicelb",
+       "traefik",
+       "local-storage",
+       "metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-apiserver": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-cloud-controller": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-controller-manager": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-etcd": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-network-policy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "default": false,
+      "type": "boolean"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "embedded-registry": {
+      "type": "boolean"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
+     "flannel-backend": {
+      "options": [
+       "none",
+       "vxlan",
+       "ipsec",
+       "host-gw",
+       "wireguard",
+       "wireguard-native"
+      ],
+      "type": "enum"
+     },
+     "flannel-ipv6-masq": {
+      "type": "boolean"
+     },
+     "helm-job-image": {
+      "type": "string"
+     },
+     "kine-tls": {
+      "type": "boolean"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-cloud-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "secrets-encryption": {
+      "default": false,
+      "type": "boolean"
+     },
+     "secrets-encryption-provider": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "servicelb-namespace": {
+      "type": "string"
+     },
+     "supervisor-metrics": {
+      "type": "boolean"
+     },
+     "tls-san": {
+      "type": "array"
+     },
+     "tls-san-security": {
+      "type": "boolean"
+     },
+     "write-kubeconfig-group": {
+      "type": "string"
+     }
+    },
+    "version": "v1.32.10+k3s1"
+   },
+   {
+    "agentArgs": {
+     "bind-address": {
+      "type": "string"
+     },
      "debug": {
       "type": "bool"
      },
@@ -24818,6 +25058,251 @@
      "encryption-key-rotation": "2.0.0"
     },
     "maxChannelServerVersion": "v2.13.99",
+    "minChannelServerVersion": "v2.12.0-alpha1",
+    "serverArgs": {
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "datastore-cafile": {
+      "type": "string"
+     },
+     "datastore-certfile": {
+      "type": "string"
+     },
+     "datastore-endpoint": {
+      "type": "string"
+     },
+     "datastore-keyfile": {
+      "type": "string"
+     },
+     "default-local-storage-path": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "coredns",
+       "servicelb",
+       "traefik",
+       "local-storage",
+       "metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-apiserver": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-cloud-controller": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-controller-manager": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-etcd": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-network-policy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "default": false,
+      "type": "boolean"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "embedded-registry": {
+      "type": "boolean"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
+     "flannel-backend": {
+      "options": [
+       "none",
+       "vxlan",
+       "ipsec",
+       "host-gw",
+       "wireguard",
+       "wireguard-native"
+      ],
+      "type": "enum"
+     },
+     "flannel-ipv6-masq": {
+      "type": "boolean"
+     },
+     "helm-job-image": {
+      "type": "string"
+     },
+     "kine-tls": {
+      "type": "boolean"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-cloud-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "secrets-encryption": {
+      "default": false,
+      "type": "boolean"
+     },
+     "secrets-encryption-provider": {
+      "default": "aescbc",
+      "options": [
+       "aescbc",
+       "secretbox"
+      ],
+      "type": "enum"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "servicelb-namespace": {
+      "type": "string"
+     },
+     "supervisor-metrics": {
+      "type": "boolean"
+     },
+     "tls-san": {
+      "type": "array"
+     },
+     "tls-san-security": {
+      "type": "boolean"
+     },
+     "write-kubeconfig-group": {
+      "type": "string"
+     }
+    },
+    "version": "v1.33.6+k3s1"
+   },
+   {
+    "agentArgs": {
+     "bind-address": {
+      "type": "string"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "debug": {
+      "type": "bool"
+     },
+     "default-runtime": {
+      "type": "string"
+     },
+     "disable-apiserver-lb": {
+      "type": "boolean"
+     },
+     "disable-default-registry-endpoint": {
+      "type": "boolean"
+     },
+     "docker": {
+      "default": false,
+      "type": "boolean"
+     },
+     "enable-pprof": {
+      "type": "boolean"
+     },
+     "flannel-cni-conf": {
+      "type": "string"
+     },
+     "flannel-conf": {
+      "type": "string"
+     },
+     "flannel-iface": {
+      "type": "string"
+     },
+     "image-service-endpoint": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "lb-server-port": {
+      "type": "string"
+     },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
+     "nonroot-devices": {
+      "type": "boolean"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "prefer-bundled-bin": {
+      "type": "boolean"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "default": false,
+      "type": "boolean"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "system-default-registry": {
+      "type": "string"
+     },
+     "vpn-auth": {
+      "type": "string"
+     },
+     "vpn-auth-file": {
+      "type": "string"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.13.99",
     "minChannelServerVersion": "v2.13.0-alpha1",
     "serverArgs": {
      "cluster-cidr": {
@@ -24971,6 +25456,251 @@
      }
     },
     "version": "v1.34.1+k3s1"
+   },
+   {
+    "agentArgs": {
+     "bind-address": {
+      "type": "string"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "debug": {
+      "type": "bool"
+     },
+     "default-runtime": {
+      "type": "string"
+     },
+     "disable-apiserver-lb": {
+      "type": "boolean"
+     },
+     "disable-default-registry-endpoint": {
+      "type": "boolean"
+     },
+     "docker": {
+      "default": false,
+      "type": "boolean"
+     },
+     "enable-pprof": {
+      "type": "boolean"
+     },
+     "flannel-cni-conf": {
+      "type": "string"
+     },
+     "flannel-conf": {
+      "type": "string"
+     },
+     "flannel-iface": {
+      "type": "string"
+     },
+     "image-service-endpoint": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "lb-server-port": {
+      "type": "string"
+     },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
+     "nonroot-devices": {
+      "type": "boolean"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "prefer-bundled-bin": {
+      "type": "boolean"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "default": false,
+      "type": "boolean"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "system-default-registry": {
+      "type": "string"
+     },
+     "vpn-auth": {
+      "type": "string"
+     },
+     "vpn-auth-file": {
+      "type": "string"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.13.99",
+    "minChannelServerVersion": "v2.13.0-alpha1",
+    "serverArgs": {
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "datastore-cafile": {
+      "type": "string"
+     },
+     "datastore-certfile": {
+      "type": "string"
+     },
+     "datastore-endpoint": {
+      "type": "string"
+     },
+     "datastore-keyfile": {
+      "type": "string"
+     },
+     "default-local-storage-path": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "coredns",
+       "servicelb",
+       "traefik",
+       "local-storage",
+       "metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-apiserver": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-cloud-controller": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-controller-manager": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-etcd": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-network-policy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "default": false,
+      "type": "boolean"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "embedded-registry": {
+      "type": "boolean"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
+     "flannel-backend": {
+      "options": [
+       "none",
+       "vxlan",
+       "ipsec",
+       "host-gw",
+       "wireguard",
+       "wireguard-native"
+      ],
+      "type": "enum"
+     },
+     "flannel-ipv6-masq": {
+      "type": "boolean"
+     },
+     "helm-job-image": {
+      "type": "string"
+     },
+     "kine-tls": {
+      "type": "boolean"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-cloud-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "secrets-encryption": {
+      "default": false,
+      "type": "boolean"
+     },
+     "secrets-encryption-provider": {
+      "default": "aescbc",
+      "options": [
+       "aescbc",
+       "secretbox"
+      ],
+      "type": "enum"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "servicelb-namespace": {
+      "type": "string"
+     },
+     "supervisor-metrics": {
+      "type": "boolean"
+     },
+     "tls-san": {
+      "type": "array"
+     },
+     "tls-san-security": {
+      "type": "boolean"
+     },
+     "write-kubeconfig-group": {
+      "type": "string"
+     }
+    },
+    "version": "v1.34.2+k3s1"
    }
   ]
  },
@@ -45866,6 +46596,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -46174,6 +46912,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -46484,6 +47230,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -46792,6 +47546,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -48268,6 +49030,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -48564,6 +49334,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -48862,6 +49640,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -49158,6 +49944,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -49456,6 +50250,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -49752,6 +50554,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -50054,6 +50864,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -50355,6 +51173,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -50655,6 +51481,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -51573,6 +52407,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -51889,6 +52731,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -52207,6 +53057,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -52523,6 +53381,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -52841,6 +53707,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -53157,6 +54031,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -53479,6 +54361,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -53799,6 +54689,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -54121,6 +55019,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -54438,6 +55344,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -54760,6 +55674,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -55080,6 +56002,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -55402,6 +56332,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -55718,6 +56656,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -56036,6 +56982,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -56352,6 +57306,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -56670,6 +57632,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -56986,6 +57956,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -57308,6 +58286,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -57628,6 +58614,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -57950,6 +58944,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -58267,6 +59269,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -58589,6 +59599,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -58909,6 +59927,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -59231,6 +60257,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -59551,6 +60585,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -59903,6 +60945,14 @@
      "helm-job-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -60227,6 +61277,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -60547,6 +61605,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -60869,6 +61935,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -61186,6 +62260,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -61508,6 +62590,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -61828,6 +62918,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -62150,6 +63248,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -62470,6 +63576,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -62822,6 +63936,14 @@
      "helm-job-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -62881,6 +64003,368 @@
      }
     },
     "version": "v1.32.9+rke2r1"
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "bind-address": {
+      "type": "string"
+     },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "cloud-controller-manager-image": {
+      "type": "string"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": null,
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "rancher-vsphere",
+       "harvester",
+       "external"
+      ],
+      "type": "enum"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "control-plane-probe-configuration": {
+      "type": "array"
+     },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "debug": {
+      "type": "bool"
+     },
+     "default-runtime": {
+      "type": "string"
+     },
+     "disable-default-registry-endpoint": {
+      "type": "boolean"
+     },
+     "enable-pprof": {
+      "type": "boolean"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-image": {
+      "type": "string"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "lb-server-port": {
+      "type": "string"
+     },
+     "nonroot-devices": {
+      "type": "boolean"
+     },
+     "pod-security-admission-config-file": {
+      "type": "string"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis",
+       "cis-1.23"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "harvester-cloud-provider": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.2.1100"
+     },
+     "harvester-csi-driver": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.2500"
+     },
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.12.100"
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-rke2-charts",
+      "version": "3.5.0-rancher100"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.30.401"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.30.401"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.30.3-build2025101500"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.18.300"
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.44.300"
+     },
+     "rke2-flannel": {
+      "repo": "rancher-rke2-charts",
+      "version": "v0.27.401"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.13.400"
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "3.13.002"
+     },
+     "rke2-multus": {
+      "repo": "rancher-rke2-charts",
+      "version": "v4.2.300"
+     },
+     "rke2-runtimeclasses": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.000"
+     },
+     "rke2-snapshot-controller": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.0.003"
+     },
+     "rke2-snapshot-controller-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.0.003"
+     },
+     "rke2-snapshot-validation-webhook": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.0.0"
+     },
+     "rke2-traefik": {
+      "repo": "rancher-rke2-charts",
+      "version": "37.1.201"
+     },
+     "rke2-traefik-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "37.1.201"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.13.99",
+    "minChannelServerVersion": "v2.11.0-alpha1",
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "flannel",
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
+      ],
+      "type": "array"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "datastore-cafile": {
+      "type": "string"
+     },
+     "datastore-certfile": {
+      "type": "string"
+     },
+     "datastore-endpoint": {
+      "type": "string"
+     },
+     "datastore-keyfile": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "embedded-registry": {
+      "type": "boolean"
+     },
+     "enable-servicelb": {
+      "type": "boolean"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-image": {
+      "type": "string"
+     },
+     "helm-job-image": {
+      "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
+     "kube-cloud-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "servicelb-namespace": {
+      "type": "string"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "supervisor-metrics": {
+      "type": "boolean"
+     },
+     "tls-san": {
+      "type": "array"
+     },
+     "tls-san-security": {
+      "type": "boolean"
+     },
+     "write-kubeconfig-group": {
+      "type": "string"
+     }
+    },
+    "version": "v1.32.10+rke2r1"
    },
    {
     "agentArgs": {
@@ -63142,6 +64626,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -63464,6 +64956,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -63784,6 +65284,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -64106,6 +65614,14 @@
      "etcd-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -64426,6 +65942,14 @@
      },
      "etcd-image": {
       "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
      },
      "kube-apiserver-arg": {
       "type": "array"
@@ -64778,6 +66302,14 @@
      "helm-job-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -64837,6 +66369,368 @@
      }
     },
     "version": "v1.33.5+rke2r1"
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "bind-address": {
+      "type": "string"
+     },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "cloud-controller-manager-image": {
+      "type": "string"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": null,
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "rancher-vsphere",
+       "harvester",
+       "external"
+      ],
+      "type": "enum"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "control-plane-probe-configuration": {
+      "type": "array"
+     },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "debug": {
+      "type": "bool"
+     },
+     "default-runtime": {
+      "type": "string"
+     },
+     "disable-default-registry-endpoint": {
+      "type": "boolean"
+     },
+     "enable-pprof": {
+      "type": "boolean"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-image": {
+      "type": "string"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "lb-server-port": {
+      "type": "string"
+     },
+     "nonroot-devices": {
+      "type": "boolean"
+     },
+     "pod-security-admission-config-file": {
+      "type": "string"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis",
+       "cis-1.23"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "harvester-cloud-provider": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.2.1100"
+     },
+     "harvester-csi-driver": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.2500"
+     },
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.12.100"
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-rke2-charts",
+      "version": "3.5.0-rancher100"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.30.401"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.30.401"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.30.3-build2025101500"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.18.300"
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.44.300"
+     },
+     "rke2-flannel": {
+      "repo": "rancher-rke2-charts",
+      "version": "v0.27.401"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.13.400"
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "3.13.002"
+     },
+     "rke2-multus": {
+      "repo": "rancher-rke2-charts",
+      "version": "v4.2.300"
+     },
+     "rke2-runtimeclasses": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.000"
+     },
+     "rke2-snapshot-controller": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.0.003"
+     },
+     "rke2-snapshot-controller-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.0.003"
+     },
+     "rke2-snapshot-validation-webhook": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.0.0"
+     },
+     "rke2-traefik": {
+      "repo": "rancher-rke2-charts",
+      "version": "37.1.201"
+     },
+     "rke2-traefik-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "37.1.201"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.13.99",
+    "minChannelServerVersion": "v2.12.0-alpha1",
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "flannel",
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
+      ],
+      "type": "array"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "datastore-cafile": {
+      "type": "string"
+     },
+     "datastore-certfile": {
+      "type": "string"
+     },
+     "datastore-endpoint": {
+      "type": "string"
+     },
+     "datastore-keyfile": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "embedded-registry": {
+      "type": "boolean"
+     },
+     "enable-servicelb": {
+      "type": "boolean"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-image": {
+      "type": "string"
+     },
+     "helm-job-image": {
+      "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
+     "kube-cloud-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "servicelb-namespace": {
+      "type": "string"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "supervisor-metrics": {
+      "type": "boolean"
+     },
+     "tls-san": {
+      "type": "array"
+     },
+     "tls-san-security": {
+      "type": "boolean"
+     },
+     "write-kubeconfig-group": {
+      "type": "string"
+     }
+    },
+    "version": "v1.33.6+rke2r1"
    },
    {
     "agentArgs": {
@@ -65132,6 +67026,14 @@
      "helm-job-image": {
       "type": "string"
      },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
      "kube-apiserver-arg": {
       "type": "array"
      },
@@ -65191,6 +67093,368 @@
      }
     },
     "version": "v1.34.1+rke2r1"
+   },
+   {
+    "agentArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "bind-address": {
+      "type": "string"
+     },
+     "cloud-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "cloud-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "cloud-controller-manager-image": {
+      "type": "string"
+     },
+     "cloud-provider-config": {
+      "type": "string"
+     },
+     "cloud-provider-name": {
+      "default": null,
+      "nullable": true,
+      "options": [
+       "aws",
+       "azure",
+       "gcp",
+       "rancher-vsphere",
+       "harvester",
+       "external"
+      ],
+      "type": "enum"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "control-plane-probe-configuration": {
+      "type": "array"
+     },
+     "control-plane-resource-limits": {
+      "type": "string"
+     },
+     "control-plane-resource-requests": {
+      "type": "string"
+     },
+     "debug": {
+      "type": "bool"
+     },
+     "default-runtime": {
+      "type": "string"
+     },
+     "disable-default-registry-endpoint": {
+      "type": "boolean"
+     },
+     "enable-pprof": {
+      "type": "boolean"
+     },
+     "etcd-extra-env": {
+      "type": "array"
+     },
+     "etcd-extra-mount": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-env": {
+      "type": "array"
+     },
+     "kube-apiserver-extra-mount": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-env": {
+      "type": "array"
+     },
+     "kube-controller-manager-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-proxy-extra-env": {
+      "type": "array"
+     },
+     "kube-proxy-extra-mount": {
+      "type": "array"
+     },
+     "kube-proxy-image": {
+      "type": "string"
+     },
+     "kube-scheduler-extra-env": {
+      "type": "array"
+     },
+     "kube-scheduler-extra-mount": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "lb-server-port": {
+      "type": "string"
+     },
+     "nonroot-devices": {
+      "type": "boolean"
+     },
+     "pod-security-admission-config-file": {
+      "type": "string"
+     },
+     "profile": {
+      "nullable": true,
+      "options": [
+       "cis",
+       "cis-1.23"
+      ],
+      "type": "enum"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "type": "bool"
+     },
+     "system-default-registry": {
+      "type": "string"
+     }
+    },
+    "charts": {
+     "harvester-cloud-provider": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.2.1100"
+     },
+     "harvester-csi-driver": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.2500"
+     },
+     "rancher-vsphere-cpi": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.12.100"
+     },
+     "rancher-vsphere-csi": {
+      "repo": "rancher-rke2-charts",
+      "version": "3.5.0-rancher100"
+     },
+     "rke2-calico": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.30.401"
+     },
+     "rke2-calico-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.30.401"
+     },
+     "rke2-canal": {
+      "repo": "rancher-rke2-charts",
+      "version": "v3.30.3-build2025101500"
+     },
+     "rke2-cilium": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.18.300"
+     },
+     "rke2-coredns": {
+      "repo": "rancher-rke2-charts",
+      "version": "1.44.300"
+     },
+     "rke2-flannel": {
+      "repo": "rancher-rke2-charts",
+      "version": "v0.27.401"
+     },
+     "rke2-ingress-nginx": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.13.400"
+     },
+     "rke2-metrics-server": {
+      "repo": "rancher-rke2-charts",
+      "version": "3.13.002"
+     },
+     "rke2-multus": {
+      "repo": "rancher-rke2-charts",
+      "version": "v4.2.300"
+     },
+     "rke2-runtimeclasses": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.1.000"
+     },
+     "rke2-snapshot-controller": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.0.003"
+     },
+     "rke2-snapshot-controller-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "4.0.003"
+     },
+     "rke2-snapshot-validation-webhook": {
+      "repo": "rancher-rke2-charts",
+      "version": "0.0.0"
+     },
+     "rke2-traefik": {
+      "repo": "rancher-rke2-charts",
+      "version": "37.1.201"
+     },
+     "rke2-traefik-crd": {
+      "repo": "rancher-rke2-charts",
+      "version": "37.1.201"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.13.99",
+    "minChannelServerVersion": "v2.13.0-alpha1",
+    "serverArgs": {
+     "audit-policy-file": {
+      "type": "string"
+     },
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "cni": {
+      "default": "calico",
+      "options": [
+       "canal",
+       "cilium",
+       "calico",
+       "flannel",
+       "multus,canal",
+       "multus,cilium",
+       "multus,calico"
+      ],
+      "type": "array"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "datastore-cafile": {
+      "type": "string"
+     },
+     "datastore-certfile": {
+      "type": "string"
+     },
+     "datastore-endpoint": {
+      "type": "string"
+     },
+     "datastore-keyfile": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "rke2-coredns",
+       "rke2-ingress-nginx",
+       "rke2-metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-cloud-controller": {
+      "type": "bool"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "type": "bool"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "embedded-registry": {
+      "type": "boolean"
+     },
+     "enable-servicelb": {
+      "type": "boolean"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-image": {
+      "type": "string"
+     },
+     "helm-job-image": {
+      "type": "string"
+     },
+     "ingress-controller": {
+      "options": [
+       "ingress-nginx",
+       "traefik",
+       "none"
+      ],
+      "type": "array"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-apiserver-image": {
+      "type": "string"
+     },
+     "kube-cloud-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-image": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-image": {
+      "type": "string"
+     },
+     "kubelet-path": {
+      "type": "string"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "runtime-image": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "servicelb-namespace": {
+      "type": "string"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "supervisor-metrics": {
+      "type": "boolean"
+     },
+     "tls-san": {
+      "type": "array"
+     },
+     "tls-san-security": {
+      "type": "boolean"
+     },
+     "write-kubeconfig-group": {
+      "type": "string"
+     }
+    },
+    "version": "v1.34.2+rke2r1"
    }
   ]
  }

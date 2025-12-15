@@ -2123,7 +2123,14 @@ releases:
   - version: v1.28.12+rke2r1
     minChannelServerVersion: v2.8.3-alpha1
     maxChannelServerVersion: v2.9.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: &serverArgs-v1-28-12-rke2r1
+      <<: *serverArgs-v1-28-11-rke2r1
+      ingress-controller:
+        type: array
+        options:
+          - ingress-nginx
+          - traefik
+          - none
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-28-12-rke2r1
       <<: *charts-v1-28-11-rke2r1
@@ -2143,7 +2150,7 @@ releases:
   - version: v1.28.13+rke2r1
     minChannelServerVersion: v2.8.3-alpha1
     maxChannelServerVersion: v2.9.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-12-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-28-13-rke2r1
       <<: *charts-v1-28-12-rke2r1
@@ -2175,7 +2182,7 @@ releases:
   - version: v1.28.14+rke2r1
     minChannelServerVersion: v2.8.3-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-12-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-28-14-rke2r1
       <<: *charts-v1-28-13-rke2r1
@@ -2207,7 +2214,7 @@ releases:
   - version: v1.28.15+rke2r1
     minChannelServerVersion: v2.8.3-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-12-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-28-15-rke2r1
       <<: *charts-v1-28-14-rke2r1
@@ -2282,7 +2289,14 @@ releases:
   - version: v1.29.7+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.9.99
-    serverArgs: *serverArgs-v1-28-9-rke2r1
+    serverArgs: &serverArgs-v1-29-7-rke2r1
+      <<: *serverArgs-v1-28-9-rke2r1
+      ingress-controller:
+        type: array
+        options:
+          - ingress-nginx
+          - traefik
+          - none
     agentArgs: *agentArgs-v1-28-8-rke2r1
     charts: &charts-v1-29-7-rke2r1
       <<: *charts-v1-28-11-rke2r1
@@ -2302,7 +2316,7 @@ releases:
   - version: v1.29.8+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.9.99
-    serverArgs: *serverArgs-v1-28-9-rke2r1
+    serverArgs: *serverArgs-v1-29-7-rke2r1
     agentArgs: *agentArgs-v1-28-8-rke2r1
     charts: &charts-v1-29-8-rke2r1
       <<: *charts-v1-29-7-rke2r1
@@ -2334,7 +2348,7 @@ releases:
   - version: v1.29.9+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-9-rke2r1
+    serverArgs: *serverArgs-v1-29-7-rke2r1
     agentArgs: *agentArgs-v1-28-8-rke2r1
     charts: &charts-v1-29-9-rke2r1
       <<: *charts-v1-29-8-rke2r1
@@ -2366,7 +2380,7 @@ releases:
   - version: v1.29.10+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-9-rke2r1
+    serverArgs: *serverArgs-v1-29-7-rke2r1
     agentArgs: *agentArgs-v1-28-8-rke2r1
     charts: &charts-v1-29-10-rke2r1
       <<: *charts-v1-29-9-rke2r1
@@ -2413,7 +2427,7 @@ releases:
   - version: v1.29.11+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-9-rke2r1
+    serverArgs: *serverArgs-v1-29-7-rke2r1
     agentArgs: *agentArgs-v1-28-8-rke2r1
     charts: &charts-v1-29-11-rke2r1
       <<: *charts-v1-29-10-rke2r1
@@ -2451,7 +2465,7 @@ releases:
   - version: v1.29.12+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-9-rke2r1
+    serverArgs: *serverArgs-v1-29-7-rke2r1
     agentArgs: *agentArgs-v1-28-8-rke2r1
     charts: &charts-v1-29-12-rke2r1
       <<: *charts-v1-29-11-rke2r1
@@ -2483,7 +2497,7 @@ releases:
   - version: v1.29.13+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-9-rke2r1
+    serverArgs: *serverArgs-v1-29-7-rke2r1
     agentArgs: *agentArgs-v1-28-8-rke2r1
     charts: &charts-v1-29-13-rke2r1
       <<: *charts-v1-29-12-rke2r1
@@ -2533,7 +2547,7 @@ releases:
   - version: v1.29.14+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-9-rke2r1
+    serverArgs: *serverArgs-v1-29-7-rke2r1
     agentArgs: *agentArgs-v1-28-8-rke2r1
     charts: &charts-v1-29-14-rke2r1
       <<: *charts-v1-29-13-rke2r1
@@ -2568,7 +2582,7 @@ releases:
   - version: v1.29.15+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-9-rke2r1
+    serverArgs: *serverArgs-v1-29-7-rke2r1
     agentArgs: *agentArgs-v1-28-8-rke2r1
     charts: &charts-v1-29-15-rke2r1
       <<: *charts-v1-29-14-rke2r1
@@ -2624,7 +2638,7 @@ releases:
   - version: v1.30.3+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.9.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-12-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-3-rke2r1
       <<: *charts-v1-30-2-rke2r1
@@ -2650,7 +2664,7 @@ releases:
   - version: v1.30.4+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.9.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-12-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-4-rke2r1
       <<: *charts-v1-30-3-rke2r1
@@ -2682,7 +2696,7 @@ releases:
   - version: v1.30.5+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-12-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-5-rke2r1
       <<: *charts-v1-30-4-rke2r1
@@ -2714,7 +2728,7 @@ releases:
   - version: v1.30.6+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-12-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-6-rke2r1
       <<: *charts-v1-30-5-rke2r1
@@ -2767,7 +2781,7 @@ releases:
   - version: v1.30.7+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-12-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-7-rke2r1
       <<: *charts-v1-30-6-rke2r1
@@ -2805,7 +2819,7 @@ releases:
   - version: v1.30.8+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-12-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-8-rke2r1
       <<: *charts-v1-30-7-rke2r1
@@ -2837,7 +2851,7 @@ releases:
   - version: v1.30.9+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.11.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-12-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-9-rke2r1
       <<: *charts-v1-30-8-rke2r1
@@ -2887,7 +2901,7 @@ releases:
   - version: v1.30.10+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.11.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-12-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-10-rke2r1
       <<: *charts-v1-30-9-rke2r1
@@ -2925,7 +2939,7 @@ releases:
   - version: v1.30.11+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.11.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-12-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-11-rke2r1
       <<: *charts-v1-30-10-rke2r1
@@ -2951,7 +2965,7 @@ releases:
   - version: v1.30.12+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.11.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-12-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-12-rke2r1
       <<: *charts-v1-30-11-rke2r1
@@ -2987,7 +3001,7 @@ releases:
   - version: v1.30.13+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.11.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-28-12-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-30-13-rke2r1
       <<: *charts-v1-30-12-rke2r1
@@ -3055,7 +3069,7 @@ releases:
         repo: rancher-rke2-charts
         version: 1.42.302
     serverArgs: &serverArgsv1-30-14-rke2r1
-      <<: *serverArgs-v1-28-11-rke2r1
+      <<: *serverArgs-v1-28-12-rke2r1
     agentArgs: &agentArgsv1-30-14-rke2r1
       <<: *agentArgs-v1-28-11-rke2r1
     featureVersions: *featureVersions-v1
@@ -3092,14 +3106,21 @@ releases:
         repo: rancher-rke2-charts
         version: 4.12.401
     serverArgs: &serverArgsv1-30-14-rke2r1
-      <<: *serverArgs-v1-28-11-rke2r1
+      <<: *serverArgs-v1-28-12-rke2r1
     agentArgs: &agentArgsv1-30-14-rke2r1
       <<: *agentArgs-v1-28-11-rke2r1
     featureVersions: *featureVersions-v1
   - version: v1.31.0+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.9.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: &serverArgs-v1-31-0-rke2r1
+      <<: *serverArgs-v1-28-11-rke2r1
+      ingress-controller:
+        type: array
+        options:
+          - ingress-nginx
+          - traefik
+          - none
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-0-rke2r1
       <<: *charts-v1-30-4-rke2r1
@@ -3149,7 +3170,7 @@ releases:
   - version: v1.31.1+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-1-rke2r1
       <<: *charts-v1-31-0-rke2r1
@@ -3178,7 +3199,7 @@ releases:
   - version: v1.31.2+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-2-rke2r1
       <<: *charts-v1-31-1-rke2r1
@@ -3231,7 +3252,7 @@ releases:
   - version: v1.31.3+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-3-rke2r1
       <<: *charts-v1-31-2-rke2r1
@@ -3269,7 +3290,7 @@ releases:
   - version: v1.31.4+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.10.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-4-rke2r1
       <<: *charts-v1-31-3-rke2r1
@@ -3301,7 +3322,7 @@ releases:
   - version: v1.31.5+rke2r1
     minChannelServerVersion: v2.9.0-alpha1
     maxChannelServerVersion: v2.11.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-5-rke2r1
       <<: *charts-v1-31-4-rke2r1
@@ -3351,7 +3372,7 @@ releases:
   - version: v1.31.6+rke2r1
     minChannelServerVersion: v2.10.0-alpha1
     maxChannelServerVersion: v2.11.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-6-rke2r1
       <<: *charts-v1-31-5-rke2r1
@@ -3389,7 +3410,7 @@ releases:
   - version: v1.31.7+rke2r1
     minChannelServerVersion: v2.10.0-alpha1
     maxChannelServerVersion: v2.11.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-7-rke2r1
       <<: *charts-v1-31-6-rke2r1
@@ -3415,7 +3436,7 @@ releases:
   - version: v1.31.8+rke2r1
     minChannelServerVersion: v2.10.0-alpha1
     maxChannelServerVersion: v2.12.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-8-rke2r1
       <<: *charts-v1-31-7-rke2r1
@@ -3451,7 +3472,7 @@ releases:
   - version: v1.31.9+rke2r1
     minChannelServerVersion: v2.10.0-alpha1
     maxChannelServerVersion: v2.12.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-31-9-rke2r1
       <<: *charts-v1-31-8-rke2r1
@@ -3519,7 +3540,7 @@ releases:
         repo: rancher-rke2-charts
         version: 1.42.302
     serverArgs: &serverArgsv1-31-10-rke2r1
-      <<: *serverArgs-v1-28-11-rke2r1
+      <<: *serverArgs-v1-31-0-rke2r1
     agentArgs: &agentArgsv1-31-10-rke2r1
       <<: *agentArgs-v1-28-11-rke2r1
     featureVersions: *featureVersions-v1
@@ -3668,7 +3689,7 @@ releases:
   - version: v1.32.1+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
     maxChannelServerVersion: v2.11.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-32-1-rke2r1
       <<: *charts-v1-31-5-rke2r1
@@ -3685,7 +3706,7 @@ releases:
   - version: v1.32.2+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
     maxChannelServerVersion: v2.11.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-32-2-rke2r1
       <<: *charts-v1-32-1-rke2r1
@@ -3723,7 +3744,7 @@ releases:
   - version: v1.32.3+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
     maxChannelServerVersion: v2.11.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-32-3-rke2r1
       <<: *charts-v1-32-2-rke2r1
@@ -3749,7 +3770,7 @@ releases:
   - version: v1.32.4+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
     maxChannelServerVersion: v2.13.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-32-4-rke2r1
       <<: *charts-v1-32-3-rke2r1
@@ -3785,7 +3806,7 @@ releases:
   - version: v1.32.5+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
     maxChannelServerVersion: v2.13.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-32-5-rke2r1
       <<: *charts-v1-32-4-rke2r1
@@ -3853,7 +3874,7 @@ releases:
         repo: rancher-rke2-charts
         version: 4.12.201
     serverArgs: &serverArgsv1-32-6-rke2r1
-      <<: *serverArgs-v1-28-11-rke2r1
+      <<: *serverArgs-v1-31-0-rke2r1
     agentArgs: &agentArgsv1-32-6-rke2r1
       <<: *agentArgs-v1-28-11-rke2r1
     featureVersions: *featureVersions-v1
@@ -3999,10 +4020,59 @@ releases:
       nonroot-devices:
         type: boolean
     featureVersions: *featureVersions-v1
+  - version: v1.32.10+rke2r1
+    minChannelServerVersion: v2.11.0-alpha1
+    maxChannelServerVersion: v2.13.99
+    charts: &chartsv1-32-10-rke2r1
+      <<: *chartsv1-32-9-rke2r1
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.30.401
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.30.401
+      rke2-traefik:
+        repo: rancher-rke2-charts
+        version: 37.1.201
+      rke2-traefik-crd:
+        repo: rancher-rke2-charts
+        version: 37.1.201
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 3.13.002
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.44.300
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.2500
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.13.400
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.2.300
+      rke2-flannel:
+        repo: rancher-rke2-charts
+        version: v0.27.401
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.30.3-build2025101500
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.2.1100
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.18.300
+    serverArgs: &serverArgsv1-32-10-rke2r1
+      <<: *serverArgsv1-32-9-rke2r1
+    agentArgs: &agentArgsv1-32-10-rke2r1
+      <<: *agentArgsv1-32-9-rke2r1
+    featureVersions: *featureVersions-v1
   - version: v1.33.0+rke2r1
     minChannelServerVersion: v2.12.0-alpha1
     maxChannelServerVersion: v2.13.99
-    serverArgs: *serverArgs-v1-28-11-rke2r1
+    serverArgs: *serverArgs-v1-31-0-rke2r1
     agentArgs: *agentArgs-v1-28-11-rke2r1
     charts: &charts-v1-33-0-rke2r1
       <<: *charts-v1-32-4-rke2r1
@@ -4050,7 +4120,7 @@ releases:
         repo: rancher-rke2-charts
         version: 1.42.000
     serverArgs: &serverArgsv1-33-1-rke2r1
-      <<: *serverArgs-v1-28-11-rke2r1
+      <<: *serverArgs-v1-31-0-rke2r1
     agentArgs: &agentArgsv1-33-1-rke2r1
       <<: *agentArgs-v1-28-11-rke2r1
     featureVersions: *featureVersions-v1
@@ -4230,6 +4300,55 @@ releases:
       nonroot-devices:
         type: boolean
     featureVersions: *featureVersions-v1
+  - version: v1.33.6+rke2r1
+    minChannelServerVersion: v2.12.0-alpha1
+    maxChannelServerVersion: v2.13.99
+    charts: &chartsv1-33-6-rke2r1
+      <<: *chartsv1-33-5-rke2r1
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.30.401
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.2.1100
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.30.401
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.13.400
+      rke2-flannel:
+        repo: rancher-rke2-charts
+        version: v0.27.401
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.18.300
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.30.3-build2025101500
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.2500
+      rke2-traefik:
+        repo: rancher-rke2-charts
+        version: 37.1.201
+      rke2-traefik-crd:
+        repo: rancher-rke2-charts
+        version: 37.1.201
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 3.13.002
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.44.300
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.2.300
+    serverArgs: &serverArgsv1-33-6-rke2r1
+      <<: *serverArgsv1-33-5-rke2r1
+    agentArgs: &agentArgsv1-33-6-rke2r1
+      <<: *agentArgsv1-33-5-rke2r1
+    featureVersions: *featureVersions-v1
   - version: v1.34.1+rke2r1
     minChannelServerVersion: v2.13.0-alpha1
     maxChannelServerVersion: v2.13.99
@@ -4294,4 +4413,53 @@ releases:
         type: array
       nonroot-devices:
         type: boolean
+    featureVersions: *featureVersions-v1
+  - version: v1.34.2+rke2r1
+    minChannelServerVersion: v2.13.0-alpha1
+    maxChannelServerVersion: v2.13.99
+    charts: &chartsv1-34-2-rke2r1
+      <<: *chartsv1-34-1-rke2r1
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.30.401
+      rke2-traefik-crd:
+        repo: rancher-rke2-charts
+        version: 37.1.201
+      rke2-flannel:
+        repo: rancher-rke2-charts
+        version: v0.27.401
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.30.401
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 3.13.002
+      rke2-traefik:
+        repo: rancher-rke2-charts
+        version: 37.1.201
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.2.300
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.2500
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.18.300
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.30.3-build2025101500
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.44.300
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.13.400
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.2.1100
+    serverArgs: &serverArgsv1-34-2-rke2r1
+      <<: *serverArgsv1-34-1-rke2r1
+    agentArgs: &agentArgsv1-34-2-rke2r1
+      <<: *agentArgsv1-34-1-rke2r1
     featureVersions: *featureVersions-v1
