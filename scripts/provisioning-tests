@@ -110,11 +110,4 @@ cd "$RANCHER_DIR"
 # Remove superfluous check for UI only bumps in this context
 sed -i -e '3,5d' ./scripts/provisioning-tests
 
-# setting the agent image to the last community version manually for now,
-# this will be fixed when https://github.com/rancher/kontainer-driver-metadata/pull/1838 merges
-export CATTLE_AGENT_IMAGE=rancher/rancher-agent:v2.12.2
-
-# pulling the image into the local docker daemon to be pushed into the registry-cache when tests run
-docker pull -q rancher/rancher-agent:v2.12.2
-
 ./scripts/provisioning-tests
