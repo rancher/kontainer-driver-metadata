@@ -18,7 +18,6 @@ jobs:
       - runs-on
       - spot=false
       - runner=4cpu-linux-x64
-      - image=legacy-cgroups-for-x64
       - run-id=${{ github.run_id }}
     container:
       image: rancher/dapper:v0.6.0
