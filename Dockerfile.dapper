@@ -2,7 +2,7 @@ ARG RANCHER_VERSION=v2.10-head
 
 FROM rancher/rancher:$RANCHER_VERSION as rancher
 
-FROM registry.suse.com/bci/golang:1.23
+FROM registry.suse.com/bci/golang:1.24
 
 RUN mkdir -p /var/lib/rancher
 COPY --from=rancher /var/lib/rancher /var/lib/rancher
@@ -66,7 +66,7 @@ RUN ln -s /usr/bin/cni /usr/bin/bridge && \
 
 ARG DAPPER_HOST_ARCH
 ENV ARCH $DAPPER_HOST_ARCH
-ENV GOLANGCI_LINT v1.60.3
+ENV GOLANGCI_LINT v1.64.8
 
 RUN zypper -n install git docker vim less file curl wget jq awk ruby && rpm -e --nodeps --noscripts containerd
 RUN go install golang.org/x/tools/cmd/goimports@v0.36.0
@@ -80,7 +80,7 @@ ENV YQ_VERSION v4.41.1
 RUN wget -q https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_${ARCH}.tar.gz -O - | tar xz && mv yq_linux_${ARCH} /usr/bin/yq
 
 ENV DAPPER_ENV REPO TAG CI \
-    LAST_COMMUNITY_RANCHER PRIME_AGENT_IMAGE PREV_COMMIT_PR_SHA PREV_COMMIT_PUSH_SHA GITHUB_EVENT_NAME GITHUB_RUN_NUMBER GITHUB_REF_TYPE GITHUB_REF_NAME \
+    LAST_COMMUNITY_RANCHER CATTLE_AGENT_IMAGE PREV_COMMIT_PR_SHA PREV_COMMIT_PUSH_SHA GITHUB_EVENT_NAME GITHUB_RUN_NUMBER GITHUB_REF_TYPE GITHUB_REF_NAME \
     STAGE_REGISTRY_ENDPOINT REGISTRY_ENDPOINT REGISTRY_USERNAME REGISTRY_PASSWORD \
     V2PROV_TEST_DIST V2PROV_TEST_RUN_REGEX KDM_TEST_K8S_MINOR DEBUG
 ENV DAPPER_SOURCE /go/src/github.com/rancher/kontainer-driver-metadata

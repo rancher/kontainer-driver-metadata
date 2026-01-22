@@ -3674,6 +3674,55 @@ releases:
         type: boolean
     featureVersions: *featureVersions-v1
   - version: v1.31.14+rke2r1
+    minChannelServerVersion: v2.10.4-alpha1
+    maxChannelServerVersion: v2.10.99
+    charts: &chartsv1-31-14-rke2r1
+      <<: *chartsv1-31-13-rke2r1
+      rke2-coredns:
+        repo: rancher-rke2-charts
+        version: 1.44.300
+      rke2-metrics-server:
+        repo: rancher-rke2-charts
+        version: 3.13.002
+      rke2-traefik:
+        repo: rancher-rke2-charts
+        version: 27.0.203
+      rke2-flannel:
+        repo: rancher-rke2-charts
+        version: v0.27.401
+      rke2-cilium:
+        repo: rancher-rke2-charts
+        version: 1.18.300
+      rke2-calico:
+        repo: rancher-rke2-charts
+        version: v3.30.401
+      rke2-multus:
+        repo: rancher-rke2-charts
+        version: v4.2.300
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.13.400
+      rke2-traefik-crd:
+        repo: rancher-rke2-charts
+        version: 27.0.203
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.2.1100
+      harvester-csi-driver:
+        repo: rancher-rke2-charts
+        version: 0.1.2500
+      rke2-canal:
+        repo: rancher-rke2-charts
+        version: v3.30.3-build2025101500
+      rke2-calico-crd:
+        repo: rancher-rke2-charts
+        version: v3.30.401
+    serverArgs: &serverArgsv1-31-14-rke2r1
+      <<: *serverArgsv1-31-13-rke2r1
+    agentArgs: &agentArgsv1-31-14-rke2r1
+      <<: *agentArgsv1-31-13-rke2r1
+    featureVersions: *featureVersions-v1
+  - version: v1.31.14+rke2r1
     minChannelServerVersion: v2.10.0-alpha1
     maxChannelServerVersion: v2.10.99
     charts: &chartsv1-31-14-rke2r1
