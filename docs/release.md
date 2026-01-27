@@ -64,17 +64,13 @@ When preparing a new KDM release line (or advancing an existing one), update the
 - name: Provisioning Operations tests
   run: dapper provisioning-tests
   env:
-    LAST_COMMUNITY_RANCHER: v2.9.0-alpha1
-    PRIME_AGENT_IMAGE: rancher/rancher-agent:v2.9.12
+    LAST_COMMUNITY_RANCHER: v2.9.3
     # ...existing env...
 ```
-
-**Scripts behavior:** scripts provide safe defaults only if these variables are not set by the workflow, so local runs still work without extra config.
 
 **What to update each release:**
 
 * **`LAST_COMMUNITY_RANCHER`** — Set to the cutoff Rancher server version for *community* builds on this line. This is compared to a channel entry’s `minChannelServerVersion` to decide if a K8s release is **prime-only**.
-* **`PRIME_AGENT_IMAGE`** — Set to the **latest prime-published** `rancher/rancher-agent` tag for this release line. This ensures provisioning tests use an agent image available in the prime registry when prime mode is active.
 
 **Where these are used:** KDM CI/test scripts (e.g., `scripts/prime-route`, `scripts/provisioning-tests`) referenced by Rancher provisioning tests.
 
@@ -83,7 +79,6 @@ When preparing a new KDM release line (or advancing an existing one), update the
 **When to bump:**
 
 * At the start of a new release line or when the prime cutoff moves (bump `LAST_COMMUNITY_RANCHER`).
-* Whenever a new prime agent is published for this line (bump `PRIME_AGENT_IMAGE`).
 
 ### During prime cutoff: pin distro versions in rancher/rancher
 
