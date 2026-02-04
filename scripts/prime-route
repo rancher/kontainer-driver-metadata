@@ -38,15 +38,17 @@ MINCHAN="$(
   ' "${CHANNELS_FILE}"
 )"
 
+############################################################
 # Normalize versions:
 # - drop leading v
 # - drop suffix after numeric semver (alpha/rc/build)
 # - deals with multiple lines (should not happen here, but just in case)
+############################################################
 
-minchan_norm="$(printf '%s' "${MINCHAN}" | sed -nE 's#^v([0-9]+\.[0-9]+\.[0-9]+).*$#\1#p;q')"
-community_norm="$(printf '%s' "${LAST_COMMUNITY_RANCHER}" | sed -nE 's#^v([0-9]+\.[0-9]+\.[0-9]+).*$#\1#p;q')"
+NORMALIZED_MIN_CHANNEL_SERVER_VERSION="$(printf '%s' "${MINCHAN}" | sed -nE 's#^v([0-9]+\.[0-9]+\.[0-9]+).*$#\1#p;q')"
+NORMALIZED_LAST_COMMUNITY_RANCHER="$(printf '%s' "${LAST_COMMUNITY_RANCHER}" | sed -nE 's#^v([0-9]+\.[0-9]+\.[0-9]+).*$#\1#p;q')"
 
-if [[ -z "${minchan_norm}" || -z "${community_norm}" ]]; then
+if [[ -z "${NORMALIZED_MIN_CHANNEL_SERVER_VERSION}" || -z "${NORMALIZED_LAST_COMMUNITY_RANCHER}" ]]; then
   echo "ERROR: failed to normalize versions (MINCHAN=${MINCHAN}, LAST_COMMUNITY_RANCHER=${LAST_COMMUNITY_RANCHER})" >&2
   exit 1
 fi
@@ -56,8 +58,8 @@ unset PRIME_REGISTRY_ENVIRONMENT
 unset PRIME_REG_HOST
 
 # PRIME_MODE=1 if MINCHAN > LAST_COMMUNITY_RANCHER
-if [[ "${minchan_norm}" != "${community_norm}" ]] && \
-   [[ "$(printf '%s\n%s\n' "${minchan_norm}" "${community_norm}" | LC_ALL=C sort -V | tail -n1)" == "${minchan_norm}" ]]; then
+if [[ "${NORMALIZED_MIN_CHANNEL_SERVER_VERSION}" != "${NORMALIZED_LAST_COMMUNITY_RANCHER}" ]] && \
+   [[ "$(printf '%s\n%s\n' "${NORMALIZED_MIN_CHANNEL_SERVER_VERSION}" "${NORMALIZED_LAST_COMMUNITY_RANCHER}" | LC_ALL=C sort -V | tail -n1)" == "${NORMALIZED_MIN_CHANNEL_SERVER_VERSION}" ]]; then
   PRIME_MODE=1
 
   # avoid leaking host if xtrace is enabled
