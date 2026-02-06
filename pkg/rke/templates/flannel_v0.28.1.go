@@ -142,6 +142,7 @@ spec:
       {{ end }}
 {{end}}
       hostNetwork: true
+      # Rancher Specific change
       priorityClassName: {{ .KubeFlannelPriorityClassName | default "system-node-critical" }}
       tolerations:
       {{- if ge .ClusterVersion "v1.12" }}
