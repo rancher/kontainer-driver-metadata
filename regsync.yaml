@@ -1780,6 +1780,7 @@ sync:
         - nginx-1.12.1-rancher2
         - nginx-1.12.1-rancher3
         - nginx-1.12.1-rancher4
+        - nginx-1.14.3-rancher2
         - nginx-1.2.0-rancher1
         - nginx-1.2.1-hardened7
         - nginx-1.2.1-hardened9
@@ -2434,6 +2435,7 @@ sync:
         - v1.31.14-rancher1
         - v1.32.10-rancher1
         - v1.32.11-rancher1
+        - v1.32.12-rancher1
         - v1.32.7-rancher1
         - v1.32.8-rancher1
         - v1.32.9-rancher1
