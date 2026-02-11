@@ -2,14 +2,13 @@ package templates
 
 /*
 Upstream Changelog:
-- update app.kubernetes.io/version label value from 1.13.0 to 1.14.3
-- Updated admission webhook jobs to use kube-webhook-certgen v1.6.7
+- update app.kubernetes.io/version label value from 1.12.0 to 1.14.3
+- Changed default --election-id from 'ingress-controller-leader' to 'ingress-nginx-leader'
+- Added ttlSecondsAfterFinished: 0 to admission webhook Jobs for automatic cleanup
 
 Rancher Changelog:
 - Added --enable-metrics=true for controller container in nginx-ingress-controller DaemonSet.
-The default behaviour of the controller is to keep the metrics disabled.
-upstream issue and PR: https://github.com/kubernetes/ingress-nginx/issues/12023, https://github.com/kubernetes/ingress-nginx/pull/12095
-- other Rancher specific changes, are same as NginxIngressTemplateV1143Rancher1
+- other Rancher specific changes, are same as NginxIngressTemplateV1120Rancher1
 */
 const NginxIngressTemplateV1143Rancher1 = `
 # Based on https://github.com/kubernetes/ingress-nginx/blob/controller-v1.14.3/deploy/static/provider/cloud/deploy.yaml
