@@ -404,8 +404,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.30.4-rancher1-1 <1.30.5-rancher1-1":   nginxIngressv1112Rancher1,
 			">=1.30.5-rancher1-1 <1.30.6-rancher1-1":   nginxIngressv1112Rancher2,
 			">=1.30.6-rancher1-1 <1.31.4-rancher1-1":   nginxIngressv1113Rancher1,
-			">=1.31.4-rancher1-1 <1.32.x-rancher1-1":   nginxIngressv1120Rancher1,
-			">=1.32.x-rancher1-1":                      nginxIngressv1143Rancher1,
+			">=1.31.4-rancher1-1 <1.32.12-rancher1-1":  nginxIngressv1120Rancher1,
+			">=1.32.12-rancher1-1":                     nginxIngressv1143Rancher1,
 		},
 		kdm.Nodelocal: {
 			">=1.15.11-rancher0 <1.16.0-alpha":     nodelocalv115,

@@ -9,7 +9,7 @@ Rancher Changelog:
 - Added --enable-metrics=true for controller container in nginx-ingress-controller DaemonSet.
 The default behaviour of the controller is to keep the metrics disabled.
 upstream issue and PR: https://github.com/kubernetes/ingress-nginx/issues/12023, https://github.com/kubernetes/ingress-nginx/pull/12095
-- other Rancher specific changes, are same as NginxIngressTemplateV1130Rancher1
+- other Rancher specific changes, are same as NginxIngressTemplateV1143Rancher1
 */
 const NginxIngressTemplateV1143Rancher1 = `
 # Based on https://github.com/kubernetes/ingress-nginx/blob/controller-v1.14.3/deploy/static/provider/cloud/deploy.yaml
@@ -512,11 +512,6 @@ spec:
           {{- end }}
             runAsUser: 101
             allowPrivilegeEscalation: true
-            readOnlyRootFilesystem: false
-            runAsNonRoot: true
-            runAsGroup: 82
-            seccompProfile:
-              type: RuntimeDefault
           env:
             - name: POD_NAME
               valueFrom:
@@ -670,7 +665,7 @@ spec:
         {{ $k }}: "{{ $v }}"
       {{- end }}
 {{- end }}
-      ttlSecondsAfterFinished: 0
+  ttlSecondsAfterFinished: 0
 ---
 # Source: ingress-nginx/templates/admission-webhooks/job-patch/job-patchWebhook.yaml
 apiVersion: batch/v1
@@ -736,7 +731,7 @@ spec:
 {{- end }}
       restartPolicy: OnFailure
       serviceAccountName: ingress-nginx-admission
-      ttlSecondsAfterFinished: 0
+  ttlSecondsAfterFinished: 0
 ---
 # Source: ingress-nginx/templates/controller-ingressclass.yaml
 # We don't support namespaced ingressClass yet
