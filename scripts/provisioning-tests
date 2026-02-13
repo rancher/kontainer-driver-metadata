@@ -84,14 +84,13 @@ fi
 
 source scripts/prime-route
 
+
 if [[ "${PRIME_MODE}" == "1" ]]; then
-  # If Prime/Prime-staging is required but endpoints are unavailable (typical in fork PRs), fail early
-  if [[ -z "${REGISTRY_ENDPOINT:-}" && -z "${STAGE_REGISTRY_ENDPOINT:-}" ]]; then
-    echo "Registry URL is not provided; most likely this is due to limitations for accessing secrets from PRs from forks; open this PR from branch in the repo itself instead of a fork"
+  if [[ -z "${CATTLE_AGENT_IMAGE}" ]]; then
+    echo "ERROR: In Prime mode (PRIME_MODE=1), CATTLE_AGENT_IMAGE must be set."
     exit 1
   fi
-
-  echo "Prime mode enabled (registry environment=${PRIME_REGISTRY_ENVIRONMENT:-unknown} rancher-agent=${CATTLE_AGENT_IMAGE:-unknown}); proceeding with provisioning tests."
+  echo "Prime mode enabled (rancher-agent=${CATTLE_AGENT_IMAGE}); proceeding with provisioning tests."
 fi
 
 # Copy rancher provisioning tests, and enter directory they exist
