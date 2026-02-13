@@ -1,67 +1,84 @@
 #!/usr/bin/env bash
 # scripts/prime-route
-# Sets PRIME_MODE, PRIME_REGISTRY_ENVIRONMENT, and (optionally) PRIME_REG_HOST/CATTLE_AGENT_IMAGE.
-# Detection is independent of whether endpoints are available.
-# Inputs:
-#   CHANNELS_FILE, SOME_K8S_VERSION, LAST_COMMUNITY_RANCHER
-#   REGISTRY_ENDPOINT, STAGE_REGISTRY_ENDPOINT
-#   PRIME_AGENT_IMAGE
+#
+# Inputs (required):
+#   - CHANNELS_FILE: path to channels yaml (e.g. channels-rke2.yaml)
+#   - SOME_K8S_VERSION: exact release version key (e.g. v1.31.14+rke2r1)
+#   - LAST_COMMUNITY_RANCHER: cutoff Rancher version (e.g. v2.10.3)
+#
+# Inputs (required only when PRIME_MODE=1):
+#   - STAGE_REGISTRY_ENDPOINT: prime registry host
+#
+# Sets:
+#   - PRIME_MODE (0/1)
+#   - PRIME_REG_HOST (when PRIME_MODE=1)
+
 set -e
 
-# only set defaults if not provided by the workflow
-if [ -z "${LAST_COMMUNITY_RANCHER:-}" ]; then
-  LAST_COMMUNITY_RANCHER="v2.11.0-alpha1"
+if [[ ! -f "${CHANNELS_FILE}" ]]; then
+  echo "ERROR: CHANNELS_FILE does not exist: ${CHANNELS_FILE}" >&2
+  exit 1
 fi
 
-if [ -z "${PRIME_AGENT_IMAGE:-}" ]; then
-  PRIME_AGENT_IMAGE="rancher/rancher-agent:v2.11.6"
+if [[ -z "${SOME_K8S_VERSION}" ]]; then
+  echo "ERROR: SOME_K8S_VERSION is required (e.g. v1.31.14+rke2r1)" >&2
+  exit 1
 fi
 
+if [[ -z "${LAST_COMMUNITY_RANCHER}" ]]; then
+  echo "ERROR: LAST_COMMUNITY_RANCHER is required (e.g. v2.10.3)" >&2
+  exit 1
+fi
 
-# Compute minChannelServerVersion for the selected K8s version (may be empty)
-MINCHAN="$(scripts/channels-pick-minchan-for-version.awk "${CHANNELS_FILE}" "${SOME_K8S_VERSION}" || true)"
+MINCHAN="$(
+  yq -r '
+    .releases[]
+    | select(.version == strenv(SOME_K8S_VERSION))
+    | .minChannelServerVersion
+  ' "${CHANNELS_FILE}"
+)"
 
-# Defaults
+############################################################
+# Normalize versions:
+# - drop leading v
+# - drop suffix after numeric semver (alpha/rc/build)
+# - deals with multiple lines (should not happen here, but just in case)
+############################################################
+
+NORMALIZED_MIN_CHANNEL_SERVER_VERSION="$(printf '%s' "${MINCHAN}" | sed -nE 's#^v([0-9]+\.[0-9]+\.[0-9]+).*$#\1#p;q')"
+NORMALIZED_LAST_COMMUNITY_RANCHER="$(printf '%s' "${LAST_COMMUNITY_RANCHER}" | sed -nE 's#^v([0-9]+\.[0-9]+\.[0-9]+).*$#\1#p;q')"
+
+if [[ -z "${NORMALIZED_MIN_CHANNEL_SERVER_VERSION}" || -z "${NORMALIZED_LAST_COMMUNITY_RANCHER}" ]]; then
+  echo "ERROR: failed to normalize versions (MINCHAN=${MINCHAN}, LAST_COMMUNITY_RANCHER=${LAST_COMMUNITY_RANCHER})" >&2
+  exit 1
+fi
+
 PRIME_MODE=0
 unset PRIME_REGISTRY_ENVIRONMENT
 unset PRIME_REG_HOST
 
-# Decide Prime mode purely by version comparison: MINCHAN > LAST_COMMUNITY_RANCHER
-if [[ -n "${MINCHAN}" ]] && scripts/semver_g.awk "${MINCHAN}" "${LAST_COMMUNITY_RANCHER}"; then
+# PRIME_MODE=1 if MINCHAN > LAST_COMMUNITY_RANCHER
+if [[ "${NORMALIZED_MIN_CHANNEL_SERVER_VERSION}" != "${NORMALIZED_LAST_COMMUNITY_RANCHER}" ]] && \
+   [[ "$(printf '%s\n%s\n' "${NORMALIZED_MIN_CHANNEL_SERVER_VERSION}" "${NORMALIZED_LAST_COMMUNITY_RANCHER}" | LC_ALL=C sort -V | tail -n1)" == "${NORMALIZED_MIN_CHANNEL_SERVER_VERSION}" ]]; then
   PRIME_MODE=1
 
-  # --- BEGIN sensitive section (suppress xtrace to avoid printing hosts) ---
+  # avoid leaking host if xtrace is enabled
   _TRACE_WAS_ON=0
   if [[ $- == *x* ]]; then
     _TRACE_WAS_ON=1
     set +x
   fi
 
-  # Choose staging vs production by "-rc" in SOME_K8S_VERSION (prerelease => staging)
-  if [[ "${SOME_K8S_VERSION,,}" == *-rc* ]]; then
-    PRIME_REGISTRY_ENVIRONMENT="staging"
-    PRIME_REG_HOST="${STAGE_REGISTRY_ENDPOINT:-}"
-  else
-    PRIME_REGISTRY_ENVIRONMENT="production"
-    PRIME_REG_HOST="${REGISTRY_ENDPOINT:-}"
+  if [[ -z "${STAGE_REGISTRY_ENDPOINT}" ]]; then
+    echo "ERROR: STAGE_REGISTRY_ENDPOINT is required when PRIME_MODE=1" >&2
+    exit 1
   fi
 
-  # Only export PRIME_REG_HOST if it is set
-  if [[ -n "${PRIME_REG_HOST}" ]]; then
-    export PRIME_REG_HOST
-  fi
+  export PRIME_REG_HOST="${STAGE_REGISTRY_ENDPOINT}"
 
-  # If Prime is on and PRIME_AGENT_IMAGE is set, override CATTLE_AGENT_IMAGE
-  if [[ -n "${PRIME_AGENT_IMAGE:-}" ]]; then
-    export CATTLE_AGENT_IMAGE="${PRIME_AGENT_IMAGE}"
-  fi
-
-  # Restore xtrace if it was enabled
   if [[ "${_TRACE_WAS_ON}" == "1" ]]; then
     set -x
   fi
-  # --- END sensitive section ---
 fi
 
-# Export non-sensitive flags (safe to print)
-export PRIME_MODE PRIME_REGISTRY_ENVIRONMENT
+export PRIME_MODE

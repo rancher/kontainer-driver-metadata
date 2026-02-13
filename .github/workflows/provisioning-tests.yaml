@@ -47,16 +47,14 @@ jobs:
         with:
           secrets: |
             secret/data/github/repo/${{ github.repository }}/rancher-prime-stg-registry/credentials registry | STAGE_REGISTRY_ENDPOINT;
-            secret/data/github/repo/${{ github.repository }}/registry-endpoint/credentials token | REGISTRY_ENDPOINT
       - name: Provisioning Operations tests
         run: |
           dapper provisioning-tests
         env:
-          LAST_COMMUNITY_RANCHER: v2.11.0-alpha1
-          PRIME_AGENT_IMAGE: rancher/rancher-agent:v2.11.6
+          LAST_COMMUNITY_RANCHER: v2.11.3
+          CATTLE_AGENT_IMAGE: rancher/rancher-agent:v2.11-head
           V2PROV_TEST_DIST: ${{ matrix.dist }}
           V2PROV_TEST_RUN_REGEX: ${{ matrix.test-regex }}
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
           PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
           PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
-          CATTLE_AGENT_IMAGE: "rancher/rancher-agent:v2.11-head"
