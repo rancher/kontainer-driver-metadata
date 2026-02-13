@@ -19,6 +19,8 @@ jobs:
     timeout-minutes: 20
     container: 
       image: rancher/dapper:v0.6.0
+    env:
+      DOCKER_API_VERSION: "1.44"
     steps:
       - name: Force Install GIT latest
         run: |
