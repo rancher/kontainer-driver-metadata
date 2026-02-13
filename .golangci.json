@@ -11,9 +11,6 @@
 		]
 	},
 	"run": {
-		"skip-files": [
-			"/zz_generated_"
-		],
 		"deadline": "5m"
 	},
     "issues": {
@@ -43,6 +40,9 @@
                 "path":"rke/templates/nginx-ingress.go",
                 "text":".*permissable.*"
             }
+        ],
+        "exclude-dirs": [
+			"/zz_generated_"
         ]
     }
 }
