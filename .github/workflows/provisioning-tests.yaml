@@ -18,11 +18,7 @@ jobs:
       - runs-on
       - spot=false
       - runner=4cpu-linux-x64
-      - image=legacy-cgroups-for-x64
       - run-id=${{ github.run_id }}
-    container:
-      image: rancher/dapper:v0.6.0
-      options: --privileged
     timeout-minutes: 90
     strategy:
       fail-fast: false
@@ -30,22 +26,40 @@ jobs:
         dist: [rke2, k3s]
         k8s-minor: [31, 32, 33]
         test-regex: ["^Test_Provisioning_.*$", "^Test_Operation_SetA_.*$", "^Test_Operation_SetB_.*$"]
+    env:
+      # this is due to the dapper pod having a host-port on the registry-cache container
+      # we can hit this registry from dapper OR the host docker if we use the docker IP
+      REGISTRY: "172.17.0.2:5000"
     steps:
-      - name: Force Install GIT latest
-        run: |
-          apk add git --update-cache
-          git --version
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: "0"
+      - name: testdata
+        run: mkdir -p build/testdata
+      - name: Install Dapper
+        run: |
+          curl -sL https://releases.rancher.com/dapper/latest/dapper-$(uname -s)-$(uname -m) > ./.dapper
+          chmod +x ./.dapper
+      - name: Configure Docker for cgroupfs/insecure-registry
+        run: |
+          echo '{"insecure-registries": ["172.17.0.2:5000"]}' | sudo tee /etc/docker/daemon.json
+          sudo systemctl restart docker
+          sudo docker info
       - name: Provisioning Operations tests
         run: |
-          dapper provisioning-tests
+          set -eo pipefail
+          ./.dapper provisioning-tests | tee provtest_output.txt
         env:
           V2PROV_TEST_DIST: ${{ matrix.dist }}
           V2PROV_TEST_RUN_REGEX: ${{ matrix.test-regex }}
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
           PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
           PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
+      - name: Upload logdump artifact if we had any test failures
+        if: failure()
+        uses: rancherlabs/cowboy@be178bda40ee2199a674861d8ba1a399b28d5451
+        with:
+          log-file-path: provtest_output.txt
+          artifact-retention-days: 7
+          artifact-name: "Parsed Failure Log Dump (${{ matrix.dist }}, ${{ matrix.k8s-minor }}, ${{ matrix.test-regex }})"
