@@ -48,10 +48,18 @@ jobs:
           sudo docker info
       - name: Provisioning Operations tests
         run: |
-          ./.dapper provisioning-tests
+          set -eo pipefail
+          ./.dapper provisioning-tests | tee provtest_output.txt
         env:
           V2PROV_TEST_DIST: ${{ matrix.dist }}
           V2PROV_TEST_RUN_REGEX: ${{ matrix.test-regex }}
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
           PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
           PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
+      - name: Upload logdump artifact if we had any test failures
+        if: failure()
+        uses: rancherlabs/cowboy@be178bda40ee2199a674861d8ba1a399b28d5451
+        with:
+          log-file-path: provtest_output.txt
+          artifact-retention-days: 7
+          artifact-name: "Parsed Failure Log Dump (${{ matrix.dist }}, ${{ matrix.k8s-minor }}, ${{ matrix.test-regex }})"
