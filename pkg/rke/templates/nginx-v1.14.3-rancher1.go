@@ -8,6 +8,7 @@ Upstream Changelog:
 
 Rancher Changelog:
 - Added --enable-metrics=true for controller container in nginx-ingress-controller DaemonSet.
+- Removed ttlSecondsAfterFinished (present in upstream) to prevent CI verification failures caused by immediate job deletion.
 - other Rancher specific changes, are same as NginxIngressTemplateV1120Rancher1
 */
 const NginxIngressTemplateV1143Rancher1 = `
@@ -664,7 +665,6 @@ spec:
         {{ $k }}: "{{ $v }}"
       {{- end }}
 {{- end }}
-  ttlSecondsAfterFinished: 0
 ---
 # Source: ingress-nginx/templates/admission-webhooks/job-patch/job-patchWebhook.yaml
 apiVersion: batch/v1
@@ -730,7 +730,6 @@ spec:
 {{- end }}
       restartPolicy: OnFailure
       serviceAccountName: ingress-nginx-admission
-  ttlSecondsAfterFinished: 0
 ---
 # Source: ingress-nginx/templates/controller-ingressclass.yaml
 # We don't support namespaced ingressClass yet
