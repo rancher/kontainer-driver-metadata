@@ -85,7 +85,7 @@ ENV DAPPER_SOURCE /go/src/github.com/rancher/kontainer-driver-metadata
 ENV DAPPER_DOCKER_SOCKET true
 ARG CI
 ARG GITHUB_RUN_NUMBER
-ENV DAPPER_RUN_ARGS "--privileged --label CI=${CI} --label DRONE_BUILD_NUMBER=${GITHUB_RUN_NUMBER}"
+ENV DAPPER_RUN_ARGS "-v ./build:/tmp --privileged --label CI=${CI} --label DRONE_BUILD_NUMBER=${GITHUB_RUN_NUMBER}"
 ENV HOME ${DAPPER_SOURCE}
 ENV GOPATH /go
 VOLUME /var/lib/rancher
