@@ -98,4 +98,5 @@ cd "$RANCHER_DIR"
 # Remove superfluous check for UI only bumps in this context
 sed -i -e '3,5d' ./scripts/provisioning-tests
 
+export CATTLE_AGENT_IMAGE=${CATTLE_AGENT_IMAGE:-rancher/rancher-agent:v2.13-head}
 ./scripts/provisioning-tests
