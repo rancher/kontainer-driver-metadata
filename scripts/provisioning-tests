@@ -110,5 +110,3 @@ cd "$RANCHER_DIR"
 sed -i -e '3,5d' ./scripts/provisioning-tests
 
 ./scripts/provisioning-tests
-
-cp ./build/out.txt /tmp/out.txt

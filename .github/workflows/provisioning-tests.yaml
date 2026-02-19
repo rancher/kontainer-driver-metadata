@@ -71,9 +71,16 @@ jobs:
         run: |
           export TESTSUITE="$(echo '${{ matrix.test-regex }}' | sed 's/Test//' | tr -d '()|_^.*$')"
           echo "suite=${TESTSUITE}" >> $GITHUB_OUTPUT
-          # need sudo due to this being created in the dapper container
-          ls -l
-          sudo mv ./build/out.txt /tmp/report-${{ matrix.dist }}-${{ matrix.k8s-minor }}-$TESTSUITE.txt
+          REPORT_PATH="/tmp/report-${{ matrix.dist }}-${{ matrix.k8s-minor }}-$TESTSUITE.txt"
+
+          # check to see if the test results exist - if they do move them out, otherwise just create
+          # an empty file (empty test results)
+          if [ -f ./build/out.txt ]; then
+            # need sudo due to this being created in the dapper container
+            sudo mv ./build/out.txt "$REPORT_PATH"
+          else
+            sudo touch "$REPORT_PATH"
+          fi
       - name: Upload Plain Text Test Results
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
@@ -90,6 +97,7 @@ jobs:
 
   convert-to-xml:
     needs: [provisioning-test]
+    if: always()
     runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
     container: registry.suse.com/bci/bci-base:15.7
     steps:
@@ -103,9 +111,16 @@ jobs:
           path: /tmp/test-results/
       - name: Convert test results to XML
         run: |
-          for file in $(ls /tmp/test-results/report-*.txt); do
-             echo "Processing $file..."
-             go run github.com/jstemmer/go-junit-report/v2@latest < $file > $(sed 's/txt/xml/g' <<<$file)
+          shopt -s nullglob
+          files=(/tmp/test-results/report-*.txt)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No report files found in /tmp/test-results/, skipping conversion."
+            exit 0
+          fi
+          go install github.com/jstemmer/go-junit-report/v2@v2.1.0
+          for file in "${files[@]}"; do
+            echo "Processing $file..."
+            "$(go env GOPATH)/bin/go-junit-report" < "$file" > "${file%.txt}.xml"
           done
       - name: Upload XML Test Results
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
