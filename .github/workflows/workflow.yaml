@@ -1,7 +1,7 @@
 name: Main workflow
 
 on:
-  push: 
+  push:
     branches:
       - 'dev-v*'
       - 'release-v*'
@@ -17,16 +17,15 @@ jobs:
       id-token: write
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    container: 
-      image: rancher/dapper:v0.6.0
     steps:
-      - name: Force Install GIT latest
-        run: |
-          apk add git --update-cache
-          git --version
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Install Dapper
+        run: |
+          curl -sL https://releases.rancher.com/dapper/v0.6.0/dapper-$(uname -s)-$(uname -m) > /usr/local/bin/dapper
+          chmod +x /usr/local/bin/dapper
+
       - name: Validate
         run: dapper ci
 
@@ -36,7 +35,7 @@ jobs:
       id-token: write
     runs-on: ubuntu-latest
     needs: validate
-    container: 
+    container:
       image: rancher/dapper:v0.6.0
     if: github.event_name == 'push' && startsWith(github.ref_name, 'release-v')
     steps:
