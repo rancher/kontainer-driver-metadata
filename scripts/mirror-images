@@ -9,6 +9,6 @@ ruby ./scripts/regsync-split.rb
 echo "Regsync: mirroring images from split configs..."
 find ./split-regsync -name 'split-regsync.yaml' | while read -r file; do
   echo "Syncing with: $file"
-  regsync once --missing --config "$file" -v debug
+  # TEMP DEBUG: skip registry mutation while validating dapper execution in CI.
+  # regsync once --missing --config "$file" -v debug
 done
-
