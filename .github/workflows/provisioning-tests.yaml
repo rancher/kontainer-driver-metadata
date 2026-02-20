@@ -14,6 +14,7 @@ jobs:
   provisioning-test:
     permissions:
       contents: read
+      id-token: write
     runs-on:
       - runs-on
       - spot=false
@@ -46,10 +47,18 @@ jobs:
           echo '{"insecure-registries": ["172.17.0.2:5000"]}' | sudo tee /etc/docker/daemon.json
           sudo systemctl restart docker
           sudo docker info
+      - name: Retrieve Registry Endpoint
+        if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
+        uses: rancher-eio/read-vault-secrets@main
+        with:
+          secrets: |
+            secret/data/github/repo/${{ github.repository }}/rancher-prime-stg-registry/credentials registry | STAGE_REGISTRY_ENDPOINT;
       - name: Provisioning Operations tests
         run: |
           ./.dapper provisioning-tests
         env:
+          LAST_COMMUNITY_RANCHER: v2.14.3
+          CATTLE_AGENT_IMAGE: rancher/rancher-agent:head
           V2PROV_TEST_DIST: ${{ matrix.dist }}
           V2PROV_TEST_RUN_REGEX: ${{ matrix.test-regex }}
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
