@@ -60,7 +60,7 @@ jobs:
           ./.dapper provisioning-tests
         env:
           LAST_COMMUNITY_RANCHER: v2.13.3
-          CATTLE_AGENT_IMAGE: rancher/rancher-agent:v2.13-head
+          CATTLE_AGENT_IMAGE: rancher/rancher-agent:v2.13.2
           V2PROV_TEST_DIST: ${{ matrix.dist }}
           V2PROV_TEST_RUN_REGEX: ${{ matrix.test-regex }}
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
