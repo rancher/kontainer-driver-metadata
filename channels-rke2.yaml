@@ -4212,8 +4212,12 @@ releases:
   - version: v1.33.0+rke2r1
     minChannelServerVersion: v2.12.0-alpha1
     maxChannelServerVersion: v2.14.99
-    serverArgs: *serverArgs-v1-31-0-rke2r1
-    agentArgs: *agentArgs-v1-28-11-rke2r1
+    serverArgs: &serverArgsv1-33-0-rke2r1
+      <<: *serverArgs-v1-31-0-rke2r1
+    agentArgs: &agentArgsv1-33-0-rke2r1
+      <<: *agentArgs-v1-28-11-rke2r1
+      node-name-from-cloud-provider-metadata:
+        type: boolean
     charts: &charts-v1-33-0-rke2r1
       <<: *charts-v1-32-4-rke2r1
       rancher-vsphere-cpi:
@@ -4260,9 +4264,9 @@ releases:
         repo: rancher-rke2-charts
         version: 1.42.000
     serverArgs: &serverArgsv1-33-1-rke2r1
-      <<: *serverArgs-v1-31-0-rke2r1
+      <<: *serverArgsv1-33-0-rke2r1
     agentArgs: &agentArgsv1-33-1-rke2r1
-      <<: *agentArgs-v1-28-11-rke2r1
+      <<: *agentArgsv1-33-0-rke2r1
     featureVersions: *featureVersions-v1
   - version: v1.33.2+rke2r1
     minChannelServerVersion: v2.12.0-alpha1
