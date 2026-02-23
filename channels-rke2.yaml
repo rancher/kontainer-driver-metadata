@@ -4978,7 +4978,7 @@ releases:
       <<: *agentArgsv1-35-0-rke2r1
     featureVersions: *featureVersions-v1
   - version: v1.35.1+rke2r1
-    minChannelServerVersion: v2.13.0-alpha1
+    minChannelServerVersion: v2.14.0-alpha1
     maxChannelServerVersion: v2.14.99
     charts: &chartsv1-35-1-rke2r1
       <<: *chartsv1-35-0-rke2r3
