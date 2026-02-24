@@ -78,7 +78,7 @@ When preparing a new KDM release line (or advancing an existing one), update the
 
 **Where these are used:** KDM CI/test scripts (e.g., `scripts/prime-route`, `scripts/provisioning-tests`) referenced by Rancher provisioning tests.
 
-**When creating a new KDM branch:** set `LAST_COMMUNITY_RANCHER` to a high placeholder similar to how `maxChannelServerVersion` is used in `data.json`, for example `v2.X.99`. Replace this placeholder with the agreed cutoff once the prime-only point is defined for the line.
+**When creating a new KDM branch:** if there is no prime release yet for this Rancher minor, set `LAST_COMMUNITY_RANCHER` to a high placeholder similar to how `maxChannelServerVersion` is used in `data.json` (for example `v2.X.99`). Replace this placeholder with the agreed cutoff once the prime-only point is defined for the line.
 
 **When to bump:**
 
