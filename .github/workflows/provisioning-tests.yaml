@@ -49,18 +49,12 @@ jobs:
         with:
           secrets: |
             secret/data/github/repo/${{ github.repository }}/rancher-prime-stg-registry/credentials registry | STAGE_REGISTRY_ENDPOINT;
-      - name: Retrieve Registry Endpoint
-        if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
-        uses: rancher-eio/read-vault-secrets@main
-        with:
-          secrets: |
-            secret/data/github/repo/${{ github.repository }}/rancher-prime-stg-registry/credentials registry | STAGE_REGISTRY_ENDPOINT;
       - name: Provisioning Operations tests
         run: |
           ./.dapper provisioning-tests
         env:
-          LAST_COMMUNITY_RANCHER: v2.13.3
-          CATTLE_AGENT_IMAGE: rancher/rancher-agent:v2.13.2
+          LAST_COMMUNITY_RANCHER: v2.13.99
+          CATTLE_AGENT_IMAGE: rancher/rancher-agent:v2.13-head
           V2PROV_TEST_DIST: ${{ matrix.dist }}
           V2PROV_TEST_RUN_REGEX: ${{ matrix.test-regex }}
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}

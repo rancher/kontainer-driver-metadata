@@ -247,6 +247,7 @@ func releaseToKeep(release map[string]interface{}) (bool, error) {
 	if !ok || version == "" {
 		return false, fmt.Errorf("the value of the version is missing for the release %v", release)
 	}
+
 	maxChannelServerVersion, ok := release["maxChannelServerVersion"].(string)
 	if ok && maxChannelServerVersion != "" {
 		if maxVer, err := semver.ParseTolerant(maxChannelServerVersion); err != nil || maxVer.LT(minAllowedServerVersion) {
