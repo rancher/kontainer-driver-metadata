@@ -286,13 +286,13 @@ func releaseToKeep(release map[string]interface{}) (bool, error) {
 	}
 	minChannelServerVersion, ok := release["minChannelServerVersion"].(string)
 	if ok && minChannelServerVersion != "" {
-		if minVer, err := semver.ParseTolerant(minChannelServerVersion); err != nil || minVer.GE(maxAllowedServerVersion) {
+		if minVersion, err := semver.ParseTolerant(minChannelServerVersion); err != nil || minVersion.GE(maxAllowedServerVersion) {
 			return false, err
 		}
 	}
 	maxChannelServerVersion, ok := release["maxChannelServerVersion"].(string)
 	if ok && maxChannelServerVersion != "" {
-		if maxVer, err := semver.ParseTolerant(maxChannelServerVersion); err != nil || maxVer.LT(minAllowedServerVersion) {
+		if maxVersion, err := semver.ParseTolerant(maxChannelServerVersion); err != nil || maxVersion.LT(minAllowedServerVersion) {
 			return false, err
 		}
 	}
@@ -312,21 +312,21 @@ func toKeep(info v3.K8sVersionInfo) (bool, error) {
 		}
 	}
 	if info.MinRancherVersion != "" {
-		minVer, err := semver.ParseTolerant(info.MinRancherVersion)
+		minVersion, err := semver.ParseTolerant(info.MinRancherVersion)
 		if err != nil {
 			return false, fmt.Errorf("failed to parse %s: %v", info.MinRancherVersion, err)
 		}
-		if minVer.GE(maxAllowedServerVersion) {
+		if minVersion.GE(maxAllowedServerVersion) {
 			return false, nil
 		}
 	}
 
 	if info.MaxRancherVersion != "" {
-		maxVer, err := semver.ParseTolerant(info.MaxRancherVersion)
+		maxVersion, err := semver.ParseTolerant(info.MaxRancherVersion)
 		if err != nil {
 			return false, fmt.Errorf("failed to parse %s: %v", info.MaxRancherVersion, err)
 		}
-		if maxVer.LT(minAllowedServerVersion) {
+		if maxVersion.LT(minAllowedServerVersion) {
 			return false, nil
 		}
 	}
