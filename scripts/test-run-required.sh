@@ -28,5 +28,4 @@ if [ "${GITHUB_EVENT_NAME}" = "push" ] || [ "${GITHUB_EVENT_NAME}" = "pull_reque
 fi
 
 echo "Skipping CI, no changes detected for relevant minor version"
-touch /tmp/out.txt
 exit 1

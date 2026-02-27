@@ -59,12 +59,13 @@ jobs:
           ./.dapper provisioning-tests | tee ./build/provtest_output.txt
         env:
           LAST_COMMUNITY_RANCHER: v2.14.99
-          CATTLE_AGENT_IMAGE: rancher/rancher-agent:head
           V2PROV_TEST_DIST: ${{ matrix.dist }}
           V2PROV_TEST_RUN_REGEX: ${{ matrix.test-regex }}
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
           PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
           PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
+          # TODO: remove after release/v2.14 branch
+          CATTLE_AGENT_IMAGE: "rancher/rancher-agent:head"
       - name: Move plaintext test results for upload
         if: always()
         id: test_output
@@ -76,10 +77,11 @@ jobs:
           # check to see if the test results exist - if they do move them out, otherwise just create
           # an empty file (empty test results)
           if [ -f ./build/out.txt ]; then
-            # need sudo due to this being created in the dapper container
-            sudo mv ./build/out.txt "$REPORT_PATH"
+            echo "test results found at ./build/out.txt, moving to $REPORT_PATH"
+            mv ./build/out.txt "$REPORT_PATH"
           else
-            sudo touch "$REPORT_PATH"
+            echo "No test results found at ./build/out.txt, creating empty report at $REPORT_PATH"
+            touch "$REPORT_PATH"
           fi
       - name: Upload Plain Text Test Results
         if: always()
