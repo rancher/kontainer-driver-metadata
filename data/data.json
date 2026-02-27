@@ -16101,7 +16101,7 @@
    "\u003e=1.15.0-rancher0 \u003c1.16.0-alpha": "flannel-v1.15",
    "\u003e=1.16.0-alpha \u003c1.21.0-alpha": "flannel-v1.16",
    "\u003e=1.21.0-alpha \u003c1.23.16-rancher1-1": "flannel-v0.14.0",
-   "\u003e=1.23.16-rancher1-1 \u003c1.24.0-rancher1-1": "flannel-v0.14.0-rancher2",
+   "\u003e=1.23.16-rancheFlannelInterfacer1-1 \u003c1.24.0-rancher1-1": "flannel-v0.14.0-rancher2",
    "\u003e=1.24.0-rancher1-1 \u003c1.24.10-rancher1-1": "flannel-v0.14.0",
    "\u003e=1.24.10-rancher1-1 \u003c1.25.0-rancher1-1": "flannel-v0.14.0-rancher2",
    "\u003e=1.25.0-rancher1-1 \u003c1.26.0-rancher1-1": "flannel-v0.19.2",
