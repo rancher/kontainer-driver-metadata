@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+# scripts/prime-route
+#
+# Inputs (required):
+#   - CHANNELS_FILE: path to channels yaml (e.g. channels-rke2.yaml)
+#   - SOME_K8S_VERSION: exact release version key (e.g. v1.31.14+rke2r1)
+#   - LAST_COMMUNITY_RANCHER: cutoff Rancher version (e.g. v2.10.3)
+#
+# Inputs (required only when PRIME_MODE=1):
+#   - STAGE_REGISTRY_ENDPOINT: prime registry host
+#
+# Sets:
+#   - PRIME_MODE (0/1)
+#   - PRIME_REG_HOST (when PRIME_MODE=1)
+
+set -e
+
+if [[ ! -f "${CHANNELS_FILE}" ]]; then
+  echo "ERROR: CHANNELS_FILE does not exist: ${CHANNELS_FILE}" >&2
+  exit 1
+fi
+
+if [[ -z "${SOME_K8S_VERSION}" ]]; then
+  echo "ERROR: SOME_K8S_VERSION is required (e.g. v1.31.14+rke2r1)" >&2
+  exit 1
+fi
+
+if [[ -z "${LAST_COMMUNITY_RANCHER}" ]]; then
+  echo "ERROR: LAST_COMMUNITY_RANCHER is required (e.g. v2.10.3)" >&2
+  exit 1
+fi
+
+MINCHAN="$(
+  yq -r '
+    .releases[]
+    | select(.version == strenv(SOME_K8S_VERSION))
+    | .minChannelServerVersion
+  ' "${CHANNELS_FILE}"
+)"
+
+############################################################
+# Normalize versions:
+# - drop leading v
+# - drop suffix after numeric semver (alpha/rc/build)
+# - deals with multiple lines (should not happen here, but just in case)
+############################################################
+
+NORMALIZED_MIN_CHANNEL_SERVER_VERSION="$(printf '%s' "${MINCHAN}" | sed -nE 's#^v([0-9]+\.[0-9]+\.[0-9]+).*$#\1#p;q')"
+NORMALIZED_LAST_COMMUNITY_RANCHER="$(printf '%s' "${LAST_COMMUNITY_RANCHER}" | sed -nE 's#^v([0-9]+\.[0-9]+\.[0-9]+).*$#\1#p;q')"
+
+if [[ -z "${NORMALIZED_MIN_CHANNEL_SERVER_VERSION}" || -z "${NORMALIZED_LAST_COMMUNITY_RANCHER}" ]]; then
+  echo "ERROR: failed to normalize versions (MINCHAN=${MINCHAN}, LAST_COMMUNITY_RANCHER=${LAST_COMMUNITY_RANCHER})" >&2
+  exit 1
+fi
+
+PRIME_MODE=0
+unset PRIME_REGISTRY_ENVIRONMENT
+unset PRIME_REG_HOST
+
+# PRIME_MODE=1 if MINCHAN > LAST_COMMUNITY_RANCHER
+if [[ "${NORMALIZED_MIN_CHANNEL_SERVER_VERSION}" != "${NORMALIZED_LAST_COMMUNITY_RANCHER}" ]] && \
+   [[ "$(printf '%s\n%s\n' "${NORMALIZED_MIN_CHANNEL_SERVER_VERSION}" "${NORMALIZED_LAST_COMMUNITY_RANCHER}" | LC_ALL=C sort -V | tail -n1)" == "${NORMALIZED_MIN_CHANNEL_SERVER_VERSION}" ]]; then
+  PRIME_MODE=1
+
+  # avoid leaking host if xtrace is enabled
+  _TRACE_WAS_ON=0
+  if [[ $- == *x* ]]; then
+    _TRACE_WAS_ON=1
+    set +x
+  fi
+
+  if [[ -z "${STAGE_REGISTRY_ENDPOINT}" ]]; then
+    echo "ERROR: STAGE_REGISTRY_ENDPOINT is required when PRIME_MODE=1" >&2
+    exit 1
+  fi
+
+  export PRIME_REG_HOST="${STAGE_REGISTRY_ENDPOINT}"
+
+  if [[ "${_TRACE_WAS_ON}" == "1" ]]; then
+    set -x
+  fi
+fi
+
+export PRIME_MODE
