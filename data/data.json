@@ -24626,6 +24626,246 @@
      "bind-address": {
       "type": "string"
      },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "debug": {
+      "type": "bool"
+     },
+     "default-runtime": {
+      "type": "string"
+     },
+     "disable-apiserver-lb": {
+      "type": "boolean"
+     },
+     "disable-default-registry-endpoint": {
+      "type": "boolean"
+     },
+     "docker": {
+      "default": false,
+      "type": "boolean"
+     },
+     "enable-pprof": {
+      "type": "boolean"
+     },
+     "flannel-cni-conf": {
+      "type": "string"
+     },
+     "flannel-conf": {
+      "type": "string"
+     },
+     "flannel-iface": {
+      "type": "string"
+     },
+     "image-service-endpoint": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "lb-server-port": {
+      "type": "string"
+     },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
+     "nonroot-devices": {
+      "type": "boolean"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "prefer-bundled-bin": {
+      "type": "boolean"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "default": false,
+      "type": "boolean"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "system-default-registry": {
+      "type": "string"
+     },
+     "vpn-auth": {
+      "type": "string"
+     },
+     "vpn-auth-file": {
+      "type": "string"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.12.99",
+    "minChannelServerVersion": "v2.11.0-alpha1",
+    "serverArgs": {
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "datastore-cafile": {
+      "type": "string"
+     },
+     "datastore-certfile": {
+      "type": "string"
+     },
+     "datastore-endpoint": {
+      "type": "string"
+     },
+     "datastore-keyfile": {
+      "type": "string"
+     },
+     "default-local-storage-path": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "coredns",
+       "servicelb",
+       "traefik",
+       "local-storage",
+       "metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-apiserver": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-cloud-controller": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-controller-manager": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-etcd": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-network-policy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "default": false,
+      "type": "boolean"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "embedded-registry": {
+      "type": "boolean"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
+     "flannel-backend": {
+      "options": [
+       "none",
+       "vxlan",
+       "ipsec",
+       "host-gw",
+       "wireguard",
+       "wireguard-native"
+      ],
+      "type": "enum"
+     },
+     "flannel-ipv6-masq": {
+      "type": "boolean"
+     },
+     "helm-job-image": {
+      "type": "string"
+     },
+     "kine-tls": {
+      "type": "boolean"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-cloud-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "secrets-encryption": {
+      "default": false,
+      "type": "boolean"
+     },
+     "secrets-encryption-provider": {
+      "type": "string"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "servicelb-namespace": {
+      "type": "string"
+     },
+     "supervisor-metrics": {
+      "type": "boolean"
+     },
+     "tls-san": {
+      "type": "array"
+     },
+     "tls-san-security": {
+      "type": "boolean"
+     },
+     "write-kubeconfig-group": {
+      "type": "string"
+     }
+    },
+    "version": "v1.32.13-rc1+k3s1"
+   },
+   {
+    "agentArgs": {
+     "bind-address": {
+      "type": "string"
+     },
      "debug": {
       "type": "bool"
      },
@@ -26902,6 +27142,251 @@
      }
     },
     "version": "v1.33.8+k3s1"
+   },
+   {
+    "agentArgs": {
+     "bind-address": {
+      "type": "string"
+     },
+     "container-runtime-endpoint": {
+      "type": "string"
+     },
+     "debug": {
+      "type": "bool"
+     },
+     "default-runtime": {
+      "type": "string"
+     },
+     "disable-apiserver-lb": {
+      "type": "boolean"
+     },
+     "disable-default-registry-endpoint": {
+      "type": "boolean"
+     },
+     "docker": {
+      "default": false,
+      "type": "boolean"
+     },
+     "enable-pprof": {
+      "type": "boolean"
+     },
+     "flannel-cni-conf": {
+      "type": "string"
+     },
+     "flannel-conf": {
+      "type": "string"
+     },
+     "flannel-iface": {
+      "type": "string"
+     },
+     "image-service-endpoint": {
+      "type": "string"
+     },
+     "kube-proxy-arg": {
+      "type": "array"
+     },
+     "kubelet-arg": {
+      "type": "array"
+     },
+     "lb-server-port": {
+      "type": "string"
+     },
+     "node-external-dns": {
+      "type": "array"
+     },
+     "node-internal-dns": {
+      "type": "array"
+     },
+     "nonroot-devices": {
+      "type": "boolean"
+     },
+     "pause-image": {
+      "type": "string"
+     },
+     "prefer-bundled-bin": {
+      "type": "boolean"
+     },
+     "protect-kernel-defaults": {
+      "default": false,
+      "type": "boolean"
+     },
+     "resolv-conf": {
+      "type": "string"
+     },
+     "selinux": {
+      "default": false,
+      "type": "boolean"
+     },
+     "snapshotter": {
+      "type": "string"
+     },
+     "system-default-registry": {
+      "type": "string"
+     },
+     "vpn-auth": {
+      "type": "string"
+     },
+     "vpn-auth-file": {
+      "type": "string"
+     }
+    },
+    "featureVersions": {
+     "encryption-key-rotation": "2.0.0"
+    },
+    "maxChannelServerVersion": "v2.12.99",
+    "minChannelServerVersion": "v2.12.0-alpha1",
+    "serverArgs": {
+     "cluster-cidr": {
+      "type": "string"
+     },
+     "cluster-dns": {
+      "type": "string"
+     },
+     "cluster-domain": {
+      "type": "string"
+     },
+     "datastore-cafile": {
+      "type": "string"
+     },
+     "datastore-certfile": {
+      "type": "string"
+     },
+     "datastore-endpoint": {
+      "type": "string"
+     },
+     "datastore-keyfile": {
+      "type": "string"
+     },
+     "default-local-storage-path": {
+      "type": "string"
+     },
+     "disable": {
+      "options": [
+       "coredns",
+       "servicelb",
+       "traefik",
+       "local-storage",
+       "metrics-server"
+      ],
+      "type": "array"
+     },
+     "disable-apiserver": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-cloud-controller": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-controller-manager": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-etcd": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-kube-proxy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-network-policy": {
+      "default": false,
+      "type": "boolean"
+     },
+     "disable-scheduler": {
+      "default": false,
+      "type": "boolean"
+     },
+     "egress-selector-mode": {
+      "type": "string"
+     },
+     "embedded-registry": {
+      "type": "boolean"
+     },
+     "etcd-arg": {
+      "type": "array"
+     },
+     "etcd-expose-metrics": {
+      "default": false,
+      "type": "boolean"
+     },
+     "etcd-s3-bucket-lookup-type": {
+      "default": "auto",
+      "options": [
+       "auto",
+       "dns",
+       "path"
+      ],
+      "type": "enum"
+     },
+     "flannel-backend": {
+      "options": [
+       "none",
+       "vxlan",
+       "ipsec",
+       "host-gw",
+       "wireguard",
+       "wireguard-native"
+      ],
+      "type": "enum"
+     },
+     "flannel-ipv6-masq": {
+      "type": "boolean"
+     },
+     "helm-job-image": {
+      "type": "string"
+     },
+     "kine-tls": {
+      "type": "boolean"
+     },
+     "kube-apiserver-arg": {
+      "type": "array"
+     },
+     "kube-cloud-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-controller-manager-arg": {
+      "type": "array"
+     },
+     "kube-scheduler-arg": {
+      "type": "array"
+     },
+     "secrets-encryption": {
+      "default": false,
+      "type": "boolean"
+     },
+     "secrets-encryption-provider": {
+      "default": "aescbc",
+      "options": [
+       "aescbc",
+       "secretbox"
+      ],
+      "type": "enum"
+     },
+     "service-cidr": {
+      "type": "string"
+     },
+     "service-node-port-range": {
+      "type": "string"
+     },
+     "servicelb-namespace": {
+      "type": "string"
+     },
+     "supervisor-metrics": {
+      "type": "boolean"
+     },
+     "tls-san": {
+      "type": "array"
+     },
+     "tls-san-security": {
+      "type": "boolean"
+     },
+     "write-kubeconfig-group": {
+      "type": "string"
+     }
+    },
+    "version": "v1.33.9-rc1+k3s1"
    }
   ]
  },
