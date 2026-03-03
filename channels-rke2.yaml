@@ -4246,10 +4246,10 @@ releases:
     agentArgs: &agentArgsv1-32-12-rke2r1
       <<: *agentArgsv1-32-11-rke2r3
     featureVersions: *featureVersions-v1
-  - version: v1.32.13-rc1+rke2r1
+  - version: v1.32.13-rc2+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
     maxChannelServerVersion: v2.11.99
-    charts: &chartsv1-32-13-rc1-rke2r1
+    charts: &chartsv1-32-13-rc2-rke2r1
       <<: *chartsv1-32-12-rke2r1
       rke2-ingress-nginx:
         repo: rancher-rke2-charts
@@ -4263,8 +4263,8 @@ releases:
       rke2-traefik:
         repo: rancher-rke2-charts
         version: 39.0.002
-    serverArgs: &serverArgsv1-32-13-rc1-rke2r1
+    serverArgs: &serverArgsv1-32-13-rc2-rke2r1
       <<: *serverArgsv1-32-12-rke2r1
-    agentArgs: &agentArgsv1-32-13-rc1-rke2r1
+    agentArgs: &agentArgsv1-32-13-rc2-rke2r1
       <<: *agentArgsv1-32-12-rke2r1
     featureVersions: *featureVersions-v1
