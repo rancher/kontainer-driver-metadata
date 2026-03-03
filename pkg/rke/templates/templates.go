@@ -78,6 +78,7 @@ const (
 	flannelv0251         = "flannel-v0.25.1"
 	flannelv0264         = "flannel-v0.26.4"
 	flannelv0273         = "flannel-v0.27.3"
+	flannelv0281         = "flannel-v0.28.1"
 
 	coreDnsv18          = "coredns-v1.8"
 	coreDnsv116         = "coredns-v1.16"
@@ -142,6 +143,7 @@ const (
 	nginxIngressv1112Rancher2 = "nginxingress-v1.11.2-rancher2"
 	nginxIngressv1113Rancher1 = "nginxingress-v1.11.3-rancher1"
 	nginxIngressv1120Rancher1 = "nginxingress-v1.12.0-rancher1"
+	nginxIngressv1143Rancher1 = "nginxingress-v1.14.3-rancher1"
 
 	nodelocalv115 = "nodelocal-v1.15"
 	nodelocalv121 = "nodelocal-v1.21"
@@ -246,7 +248,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":        canalv18,
 		},
 		kdm.Flannel: {
-			">=1.32.8-rancher1-1":                     flannelv0273,
+			">=1.32.12-rancher1-1":                    flannelv0281,
+			">=1.32.8-rancher1-1 <1.32.12-rancher1-1": flannelv0273,
 			">=1.32.0-rancher1-1 <1.32.8-rancher1-1":  flannelv0264,
 			">=1.31.12-rancher1-1 <1.32.0-rancher1-1": flannelv0273,
 			">=1.29.0-rancher1-1 <1.31.12-rancher1-1": flannelv0251,
@@ -403,7 +406,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.30.4-rancher1-1 <1.30.5-rancher1-1":   nginxIngressv1112Rancher1,
 			">=1.30.5-rancher1-1 <1.30.6-rancher1-1":   nginxIngressv1112Rancher2,
 			">=1.30.6-rancher1-1 <1.31.4-rancher1-1":   nginxIngressv1113Rancher1,
-			">=1.31.4-rancher1-1 ":                     nginxIngressv1120Rancher1,
+			">=1.31.4-rancher1-1 <1.32.12-rancher1-1":  nginxIngressv1120Rancher1,
+			">=1.32.12-rancher1-1":                     nginxIngressv1143Rancher1,
 		},
 		kdm.Nodelocal: {
 			">=1.15.11-rancher0 <1.16.0-alpha":     nodelocalv115,
@@ -454,6 +458,7 @@ func getTemplates() map[string]string {
 		flannelv0251:         FlannelTemplateV0_25_1,
 		flannelv0264:         FlannelTemplateV0_26_4,
 		flannelv0273:         FlannelTemplateV0_27_3,
+		flannelv0281:         FlannelTemplateV0_28_1,
 		flannelv18:           FlannelTemplate,
 
 		canalv113:                     CanalTemplateV113,
@@ -545,6 +550,7 @@ func getTemplates() map[string]string {
 		nginxIngressv1112Rancher2: NginxIngressTemplateV1112Rancher2,
 		nginxIngressv1113Rancher1: NginxIngressTemplateV1113Rancher1,
 		nginxIngressv1120Rancher1: NginxIngressTemplateV1120Rancher1,
+		nginxIngressv1143Rancher1: NginxIngressTemplateV1143Rancher1,
 
 		nodelocalv115: NodelocalTemplateV115,
 		nodelocalv121: NodelocalTemplateV121,
