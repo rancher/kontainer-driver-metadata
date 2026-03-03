@@ -67371,7 +67371,7 @@
       "type": "string"
      }
     },
-    "version": "v1.32.13-rc1+rke2r1"
+    "version": "v1.32.13-rc2+rke2r1"
    },
    {
     "agentArgs": {
@@ -71185,7 +71185,7 @@
       "type": "string"
      }
     },
-    "version": "v1.33.9-rc1+rke2r1"
+    "version": "v1.33.9-rc2+rke2r1"
    }
   ]
  }
