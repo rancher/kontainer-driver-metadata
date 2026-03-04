@@ -24623,7 +24623,7 @@
       "type": "string"
      }
     },
-    "version": "v1.32.13-rc1+k3s1"
+    "version": "v1.32.13+k3s1"
    },
    {
     "agentArgs": {
@@ -27150,7 +27150,7 @@
       "type": "string"
      }
     },
-    "version": "v1.33.9-rc1+k3s1"
+    "version": "v1.33.9+k3s1"
    },
    {
     "agentArgs": {
@@ -28620,7 +28620,7 @@
       "type": "string"
      }
     },
-    "version": "v1.34.5-rc1+k3s1"
+    "version": "v1.34.5+k3s1"
    }
   ]
  },
