@@ -21,9 +21,6 @@ jobs:
       - runner=4cpu-linux-x64
       - image=legacy-cgroups-for-x64
       - run-id=${{ github.run_id }}
-    container:
-      image: rancher/dapper:v0.6.0
-      options: --privileged
     timeout-minutes: 90
     strategy:
       fail-fast: false
@@ -32,15 +29,21 @@ jobs:
         k8s-minor: [31, 32, 33]
         test-regex: ["^Test_Provisioning_.*$", "^Test_Operation_SetA_.*$", "^Test_Operation_SetB_.*$"]
     steps:
-      - name: Force Install GIT latest
-        run: |
-          apk add git --update-cache
-          git --version
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: "0"
+      - name: testdata
+        run: mkdir -p build/testdata
+      - name: Install Dapper
+        run: |
+          curl -sL https://releases.rancher.com/dapper/latest/dapper-$(uname -s)-$(uname -m) > ./.dapper
+          chmod +x ./.dapper
+      - name: Configure Docker for cgroupfs/insecure-registry
+        run: |
+          echo '{"insecure-registries": ["172.17.0.2:5000"]}' | sudo tee /etc/docker/daemon.json
+          sudo systemctl restart docker
+          sudo docker info
       - name: Retrieve Registry Endpoint
         if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
         uses: rancher-eio/read-vault-secrets@main
@@ -49,7 +52,8 @@ jobs:
             secret/data/github/repo/${{ github.repository }}/rancher-prime-stg-registry/credentials registry | STAGE_REGISTRY_ENDPOINT;
       - name: Provisioning Operations tests
         run: |
-          dapper provisioning-tests
+          set -eo pipefail
+          ./.dapper provisioning-tests | tee ./build/provtest_output.txt
         env:
           LAST_COMMUNITY_RANCHER: v2.12.3
           CATTLE_AGENT_IMAGE: rancher/rancher-agent:v2.12-head
@@ -58,3 +62,76 @@ jobs:
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
           PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
           PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
+      - name: Move plaintext test results for upload
+        if: always()
+        id: test_output
+        run: |
+          export TESTSUITE="$(echo '${{ matrix.test-regex }}' | sed 's/Test//' | tr -d '()|_^.*$')"
+          echo "suite=${TESTSUITE}" >> $GITHUB_OUTPUT
+          REPORT_PATH="/tmp/report-${{ matrix.dist }}-${{ matrix.k8s-minor }}-$TESTSUITE.txt"
+
+          # check to see if the test results exist - if they do move them out, otherwise just create
+          # an empty file (empty test results)
+          if [ -f ./build/out.txt ]; then
+            echo "test results found at ./build/out.txt, moving to $REPORT_PATH"
+            mv ./build/out.txt "$REPORT_PATH"
+          else
+            echo "No test results found at ./build/out.txt, creating empty report at $REPORT_PATH"
+            touch "$REPORT_PATH"
+          fi
+      - name: Upload Plain Text Test Results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: "Test Results ${{ matrix.dist }} ${{ matrix.k8s-minor }} ${{ steps.test_output.outputs.suite }}"
+          path: "/tmp/report-${{ matrix.dist }}-${{ matrix.k8s-minor }}-${{ steps.test_output.outputs.suite }}.*"
+      - name: Upload logdump artifact if we had some tests failures
+        if: failure()
+        uses: rancherlabs/cowboy@be178bda40ee2199a674861d8ba1a399b28d5451
+        with:
+          log-file-path: ./build/provtest_output.txt
+          artifact-retention-days: 7
+          artifact-name: "Parsed Failure Log Dump (${{ matrix.dist }}, ${{ matrix.k8s-minor }}, ${{ steps.test_output.outputs.suite }})"
+
+  convert-to-xml:
+    needs: [provisioning-test]
+    if: always()
+    runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
+    container: registry.suse.com/bci/bci-base:15.7
+    steps:
+      - name: Install golang
+        run: |
+          zypper --non-interactive install golang
+      - name: Fetch plaintext test output
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          merge-multiple: true
+          path: /tmp/test-results/
+      - name: Convert test results to XML
+        run: |
+          shopt -s nullglob
+          files=(/tmp/test-results/report-*.txt)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No report files found in /tmp/test-results/, skipping conversion."
+            exit 0
+          fi
+          go install github.com/jstemmer/go-junit-report/v2@v2.1.0
+          for file in "${files[@]}"; do
+            echo "Processing $file..."
+            "$(go env GOPATH)/bin/go-junit-report" < "$file" > "${file%.txt}.xml"
+          done
+      - name: Upload XML Test Results
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: XML Results
+          path: "/tmp/test-results/report-*.xml"
+
+  event-file:
+    runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
+    container: registry.suse.com/bci/bci-base:15.7
+    steps:
+      - name: Upload GH Event File
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: Event File
+          path: ${{ github.event_path }}
