@@ -42534,7 +42534,7 @@
       "type": "string"
      }
     },
-    "version": "v1.32.13-rc1+k3s1"
+    "version": "v1.32.13+k3s1"
    }
   ]
  },
