@@ -15554,7 +15554,7 @@
    "podInfraContainer": "rancher/mirrored-pause:3.7",
    "ingress": "rancher/nginx-ingress-controller:nginx-1.14.4-rancher1",
    "ingressBackend": "rancher/mirrored-nginx-ingress-controller-defaultbackend:1.5-rancher2",
-   "ingressWebhook": "rancher/mirrored-ingress-nginx-kube-webhook-certgen:v1.5.2",
+   "ingressWebhook": "rancher/mirrored-ingress-nginx-kube-webhook-certgen:v1.6.8",
    "metricsServer": "rancher/mirrored-metrics-server:v0.7.2",
    "windowsPodInfraContainer": "rancher/mirrored-pause:3.7",
    "aciCniDeployContainer": "noiro/cnideploy:6.1.1.4.81c2369",
