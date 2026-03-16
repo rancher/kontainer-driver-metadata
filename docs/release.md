@@ -53,7 +53,49 @@ A couple of example PRs to help:
 - https://github.com/rancher/kontainer-driver-metadata/pull/1104
 - https://github.com/rancher/kontainer-driver-metadata/pull/1056 
 - https://github.com/rancher/kontainer-driver-metadata/pull/1027
-- https://github.com/rancher/kontainer-driver-metadata/pull/1084 
+- https://github.com/rancher/kontainer-driver-metadata/pull/1084
+
+## Prime configuration variables
+
+When preparing a new KDM release line (or advancing an existing one), update the prime-related variables used by CI/test scripts to correctly detect prime and select a prime-published agent image:
+
+```yaml
+# .github/workflows/provisioning-tests.yaml
+- name: Provisioning Operations tests
+  run: dapper provisioning-tests
+  env:
+    LAST_COMMUNITY_RANCHER: v2.9.3
+    # ...existing env...
+```
+
+**What to update each release:**
+
+* **`LAST_COMMUNITY_RANCHER`** — Set to the cutoff Rancher server version for *community* builds on this line. This is compared to a channel entry’s `minChannelServerVersion` to decide if a K8s release is **prime-only**.
+
+**Where these are used:** KDM CI/test scripts (e.g., `scripts/prime-route`, `scripts/provisioning-tests`) referenced by Rancher provisioning tests.
+
+**When creating a new KDM branch:** if there is no prime release yet for this Rancher minor, set `LAST_COMMUNITY_RANCHER` to a high placeholder similar to how `maxChannelServerVersion` is used in `data.json` (for example `v2.X.99`). Replace this placeholder with the agreed cutoff once the prime-only point is defined for the line.
+
+**When to bump:**
+
+* At the start of a new release line or when the prime cutoff moves (bump `LAST_COMMUNITY_RANCHER`).
+
+### During prime cutoff: pin distro versions in rancher/rancher
+
+While a release line is at or near the prime cutoff, CI in **rancher/rancher** should **pin** the Kubernetes versions per distro to avoid unintentionally selecting a prime-only “latest”. Add the per-distro pins in the Rancher workflow’s **Run tests** step:
+
+```yaml
+# rancher/rancher: .github/workflows/provisioning-tests.yml (excerpt)
+- name: Run tests
+  run: ./.dapper provisioning-tests
+  env:
+    # per-distro pins used by the provisioning script if SOME_K8S_VERSION is unset
+    K3S_PINNED_VERSION: "v1.30.14+k3s2"
+    RKE2_PINNED_VERSION: "v1.30.14+rke2r2"
+    # ...existing env...
+```
+
+[Example reference: the change in this commit shows the pins added in the Rancher workflow](https://github.com/rancher/rancher/pull/52176/commits/dcf3704ca888037cdf37513a04eaeb1d07cb3a70#diff-3b900f349b5944ff0314a1b0597aff3c4b531758380e00bd0e3ece5844fead00R57).
 
 ## Prime images update
 
