@@ -35,12 +35,14 @@ jobs:
       id-token: write
     runs-on: ubuntu-latest
     needs: validate
-    container: 
-      image: rancher/dapper:v0.6.0
     if: github.event_name == 'push' && startsWith(github.ref_name, 'release-v')
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Install Dapper
+        run: |
+          curl -sL https://releases.rancher.com/dapper/v0.6.0/dapper-$(uname -s)-$(uname -m) > /usr/local/bin/dapper
+          chmod +x /usr/local/bin/dapper
       - name: Retrieve Registy secrets from vault
         uses: rancher-eio/read-vault-secrets@main
         with:
@@ -48,7 +50,7 @@ jobs:
             secret/data/github/repo/${{ github.repository }}/registry-endpoint/credentials token | REGISTRY_ENDPOINT ;
             secret/data/github/repo/${{ github.repository }}/registry-username/credentials token | REGISTRY_USERNAME ;
             secret/data/github/repo/${{ github.repository }}/registry-password/credentials token | REGISTRY_PASSWORD
-      - name: Validate
+      - name: Mirror images
         run: dapper mirror-images
 
   upload:
