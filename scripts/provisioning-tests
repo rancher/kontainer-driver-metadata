@@ -82,6 +82,17 @@ if [ -z "${SOME_K8S_VERSION}" ]; then
   export SOME_K8S_VERSION
 fi
 
+source scripts/prime-route
+
+
+if [[ "${PRIME_MODE}" == "1" ]]; then
+  if [[ -z "${CATTLE_AGENT_IMAGE}" ]]; then
+    echo "ERROR: In Prime mode (PRIME_MODE=1), CATTLE_AGENT_IMAGE must be set."
+    exit 1
+  fi
+  echo "Prime mode enabled (rancher-agent=${CATTLE_AGENT_IMAGE}); proceeding with provisioning tests."
+fi
+
 # Copy rancher provisioning tests, and enter directory they exist
 source ./scripts/fetch-provisioning-tests
 
@@ -98,11 +109,5 @@ cd "$RANCHER_DIR"
 # Remove superfluous check for UI only bumps in this context
 sed -i -e '3,5d' ./scripts/provisioning-tests
 
-# setting the agent image to the last community version manually for now,
-# this will be fixed when https://github.com/rancher/kontainer-driver-metadata/pull/1838 merges
-export CATTLE_AGENT_IMAGE=rancher/rancher-agent:v2.12.2
-
-# pulling the image into the local docker daemon to be pushed into the registry-cache when tests run
-docker pull -q rancher/rancher-agent:v2.12.2
-
+export CATTLE_AGENT_IMAGE=${CATTLE_AGENT_IMAGE:-rancher/rancher-agent:v2.12-head}
 ./scripts/provisioning-tests
