@@ -2,7 +2,7 @@ ARG RANCHER_VERSION=v2.11-head
 
 FROM rancher/rancher:$RANCHER_VERSION as rancher
 
-FROM registry.suse.com/bci/golang:1.24
+FROM registry.suse.com/bci/golang:1.25
 
 RUN mkdir -p /var/lib/rancher
 COPY --from=rancher /var/lib/rancher /var/lib/rancher
@@ -64,7 +64,7 @@ RUN ln -s /usr/bin/cni /usr/bin/bridge && \
 
 ARG DAPPER_HOST_ARCH
 ENV ARCH $DAPPER_HOST_ARCH
-ENV GOLANGCI_LINT v1.64.7
+ENV GOLANGCI_LINT v1.65.1
 
 RUN zypper -n install git docker vim less file curl wget jq awk ruby && rpm -e --nodeps --noscripts containerd
 RUN go install golang.org/x/tools/cmd/goimports@latest
