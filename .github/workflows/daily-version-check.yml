@@ -33,6 +33,8 @@ jobs:
             release_branch: release-v2.12
           - dev_branch: dev-v2.13
             release_branch: release-v2.13
+          - dev_branch: dev-v2.14
+            release_branch: release-v2.14
           - dev_branch: dev-v2.11-rke-extended-life
             release_branch: release-v2.11-rke-extended-life
 
