@@ -1642,6 +1642,7 @@ sync:
         - v1.6.5
         - v1.6.7
         - v1.6.8
+        - v1.6.9
         - v20230312-helm-chart-4.5.2-28-g66a760794
         - v20231011-8b53cabe0
         - v20231226-1a7112e06
@@ -1880,6 +1881,7 @@ sync:
         - nginx-1.12.1-rancher4
         - nginx-1.14.3-rancher2
         - nginx-1.14.4-rancher1
+        - nginx-1.14.5-rancher1
         - nginx-1.2.0-rancher1
         - nginx-1.2.1-hardened7
         - nginx-1.2.1-hardened9
@@ -2554,6 +2556,7 @@ sync:
         - v1.32.10-rancher1
         - v1.32.11-rancher1
         - v1.32.12-rancher1
+        - v1.32.13-rancher1
         - v1.32.13-rancher1
         - v1.32.7-rancher1
         - v1.32.8-rancher1
