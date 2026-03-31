@@ -9,6 +9,8 @@ on:
   # When triggered manually, it will run for ALL branches defined in the matrix below.
   workflow_dispatch:
 
+permissions: {}
+
 jobs:
   check_released_versions:
     name: Compare ${{ matrix.dev_branch }} vs ${{ matrix.release_branch }}

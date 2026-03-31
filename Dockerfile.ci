@@ -7,18 +7,39 @@ FROM registry.suse.com/bci/golang:1.25
 # --- Tool installations (most expensive, no dependency on rancher content) ---
 ARG TARGETARCH=amd64
 ENV ARCH=${TARGETARCH}
+# renovate: datasource=github-release-attachments depName=golangci/golangci-lint
 ENV GOLANGCI_LINT=v1.64.8
 
 RUN zypper -n install git docker vim less file curl wget jq awk ruby && rpm -e --nodeps --noscripts containerd
-RUN go install golang.org/x/tools/cmd/goimports@latest
+RUN go install golang.org/x/tools/cmd/goimports@v0.43.0
 RUN if [[ "${ARCH}" == "amd64" ]]; then \
-        curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s ${GOLANGCI_LINT}; \
-        curl -sL https://github.com/rancher/wharfie/releases/download/v0.6.1/wharfie-amd64 -o /bin/wharfie && chmod +x /bin/wharfie; \
-        curl -sL https://github.com/regclient/regclient/releases/download/v0.9.0/regsync-linux-amd64 -o /bin/regsync && chmod +x /bin/regsync; \
+        go install github.com/golangci/golangci-lint/cmd/golangci-lint@${GOLANGCI_LINT}; \
+        # renovate: datasource=github-release-attachments depName=rancher/wharfie
+        WHARFIE_VERSION=v0.6.1 && \
+        # renovate: datasource=github-release-attachments depName=rancher/wharfie digestVersion=v0.6.1
+        WHARFIE_SUM=7be7e1640f87389a8818916fb9e310ddb2f3b26f41193bd783f0086f97f0d206 && \
+        curl -sL "https://github.com/rancher/wharfie/releases/download/${WHARFIE_VERSION}/wharfie-amd64" -o /bin/wharfie && \
+        echo "${WHARFIE_SUM}  /bin/wharfie" | sha256sum -c - && \
+        chmod +x /bin/wharfie; \
+        # renovate: datasource=github-release-attachments depName=regclient/regclient
+        REGSYNC_VERSION=v0.9.0 && \
+        # renovate: datasource=github-release-attachments depName=regclient/regclient digestVersion=v0.9.0
+        REGSYNC_SUM=fe8068cfe2fbd81d607608aa627b001311d191be32b8d8e1943fe68c84794522 && \
+        curl -sL "https://github.com/regclient/regclient/releases/download/${REGSYNC_VERSION}/regsync-linux-amd64" -o /bin/regsync && \
+        echo "${REGSYNC_SUM}  /bin/regsync" | sha256sum -c - && \
+        chmod +x /bin/regsync; \
     fi
 
+# renovate: datasource=github-release-attachments depName=mikefarah/yq
 ENV YQ_VERSION=v4.41.1
-RUN wget -q https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_${ARCH}.tar.gz -O - | tar xz && mv yq_linux_${ARCH} /usr/bin/yq
+# renovate: datasource=github-release-attachments depName=mikefarah/yq digestVersion=v4.41.1
+ENV YQ_SUM_amd64=7266178e8ed6e2a00cfb0d870e99da7e3db934135321233ae01b210ca64e71ba
+ENV YQ_SUM="YQ_SUM_${ARCH}"
+RUN wget -q "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_${ARCH}.tar.gz" -O /tmp/yq.tar.gz && \
+    echo "${!YQ_SUM}  /tmp/yq.tar.gz" | sha256sum -c - && \
+    tar xzf /tmp/yq.tar.gz -C /tmp && \
+    mv /tmp/yq_linux_${ARCH} /usr/bin/yq && \
+    rm /tmp/yq.tar.gz
 
 # --- K3s binaries (pinned tag, stable cache key) ---
 COPY --from=rancher/k3s:v1.34.1-k3s1 \

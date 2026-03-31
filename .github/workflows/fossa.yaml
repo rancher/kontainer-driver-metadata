@@ -6,6 +6,8 @@ on:
       - 'dev-v*'
       - 'release-v*'
 
+permissions: {}
+
 jobs:
   fossa:
     runs-on: ubuntu-latest

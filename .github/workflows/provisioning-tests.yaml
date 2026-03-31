@@ -10,6 +10,8 @@ on:
       - 'dev-v*'
       - 'release-v*'
 
+permissions: {}
+
 jobs:
   build-ci-image:
     permissions:
@@ -164,6 +166,8 @@ jobs:
   convert-to-xml:
     needs: [provisioning-test]
     if: always()
+    permissions:
+      contents: read
     runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
     container: registry.suse.com/bci/bci-base:15.7
     steps:
@@ -196,6 +200,8 @@ jobs:
           path: "/tmp/test-results/report-*.xml"
 
   event-file:
+    permissions:
+      contents: read
     runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
     container: registry.suse.com/bci/bci-base:15.7
     steps:

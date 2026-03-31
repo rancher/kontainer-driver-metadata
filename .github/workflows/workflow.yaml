@@ -10,6 +10,8 @@ on:
       - 'dev-v*'
       - 'release-v*'
 
+permissions: {}
+
 jobs:
   build-ci-image:
     permissions:
