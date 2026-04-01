@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "github>rancher/renovate-config#release"
+  ],
+  "baseBranchPatterns": [
+    "dev-v2.14",
+    "dev-v2.13",
+    "dev-v2.12",
+    "dev-v2.11"
+  ],
+  "prHourlyLimit": 2,
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^Dockerfile\\.ci$"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\nENV [A-Z0-9_]+=(?<currentValue>\\S+)",
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\n\\s*[A-Z0-9_]+=(?<currentValue>[^\\s&]+)\\s*&&",
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) digestVersion=(?<currentValue>\\S+)\\n\\s*[A-Z0-9_]+=(?<currentDigest>[a-f0-9]{64})\\s*&&",
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) digestVersion=(?<currentValue>\\S+)\\nENV [A-Z0-9_]+=(?<currentDigest>[a-f0-9]{64})"
+      ]
+    }
+  ]
+}
