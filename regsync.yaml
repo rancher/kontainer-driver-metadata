@@ -380,6 +380,7 @@ sync:
         - v1.33.0-rke2r1-build20250425
         - v1.33.1-rke2r1-build20250515
         - v1.33.10-rke2r1-build20260319
+        - v1.33.10-rke2r2-build20260401
         - v1.33.2-rke2r1-build20250618
         - v1.33.3-rke2r1-build20250716
         - v1.33.4-rke2r1-build20250814
@@ -1983,6 +1984,8 @@ sync:
         - v1.33.1-rke2r1-windows-amd64
         - v1.33.10-rke2r1
         - v1.33.10-rke2r1-windows-amd64
+        - v1.33.10-rke2r2
+        - v1.33.10-rke2r2-windows-amd64
         - v1.33.2-rke2r1
         - v1.33.2-rke2r1-windows-amd64
         - v1.33.3-rke2r1
@@ -2119,6 +2122,7 @@ sync:
         - v1.33.0-rke2r1
         - v1.33.1-rke2r1
         - v1.33.10-rke2r1
+        - v1.33.10-rke2r2
         - v1.33.2-rke2r1
         - v1.33.3-rke2r1
         - v1.33.4-rke2r1
@@ -2371,6 +2375,7 @@ sync:
         - v1.33.0-rke2r1
         - v1.33.1-rke2r1
         - v1.33.10-rke2r1
+        - v1.33.10-rke2r2
         - v1.33.2-rke2r1
         - v1.33.3-rke2r1
         - v1.33.4-rke2r1
