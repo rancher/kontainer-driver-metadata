@@ -4721,6 +4721,19 @@ releases:
     agentArgs: &agentArgsv1-33-10-rke2r1
       <<: *agentArgsv1-33-9-rke2r1
     featureVersions: *featureVersions-v1
+  - version: v1.33.10+rke2r2
+    minChannelServerVersion: v2.12.0-alpha1
+    maxChannelServerVersion: v2.14.99
+    charts: &chartsv1-33-10-rke2r2
+      <<: *chartsv1-33-10-rke2r1
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.14.503
+    serverArgs: &serverArgsv1-33-10-rke2r2
+      <<: *serverArgsv1-33-10-rke2r1
+    agentArgs: &agentArgsv1-33-10-rke2r2
+      <<: *agentArgsv1-33-10-rke2r1
+    featureVersions: *featureVersions-v1
   - version: v1.34.1+rke2r1
     minChannelServerVersion: v2.13.0-alpha1
     maxChannelServerVersion: v2.14.99
@@ -5041,6 +5054,19 @@ releases:
     agentArgs: &agentArgsv1-34-6-rke2r1
       <<: *agentArgsv1-34-5-rke2r1
     featureVersions: *featureVersions-v1
+  - version: v1.34.6+rke2r2
+    minChannelServerVersion: v2.13.0-alpha1
+    maxChannelServerVersion: v2.14.99
+    charts: &chartsv1-34-6-rke2r2
+      <<: *chartsv1-34-6-rke2r1
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.14.503
+    serverArgs: &serverArgsv1-34-6-rke2r2
+      <<: *serverArgsv1-34-6-rke2r1
+    agentArgs: &agentArgsv1-34-6-rke2r2
+      <<: *agentArgsv1-34-6-rke2r1
+    featureVersions: *featureVersions-v1
   - version: v1.35.0+rke2r1
     minChannelServerVersion: v2.14.0-alpha1
     maxChannelServerVersion: v2.14.99
@@ -5249,4 +5275,17 @@ releases:
       <<: *serverArgsv1-35-2-rke2r1
     agentArgs: &agentArgsv1-35-3-rke2r1
       <<: *agentArgsv1-35-2-rke2r1
+    featureVersions: *featureVersions-v1
+  - version: v1.35.3+rke2r2
+    minChannelServerVersion: v2.14.0-alpha1
+    maxChannelServerVersion: v2.14.99
+    charts: &chartsv1-35-3-rke2r2
+      <<: *chartsv1-35-3-rke2r1
+      rke2-ingress-nginx:
+        repo: rancher-rke2-charts
+        version: 4.14.503
+    serverArgs: &serverArgsv1-35-3-rke2r2
+      <<: *serverArgsv1-35-3-rke2r1
+    agentArgs: &agentArgsv1-35-3-rke2r2
+      <<: *agentArgsv1-35-3-rke2r1
     featureVersions: *featureVersions-v1
