@@ -384,6 +384,7 @@ sync:
         - v1.33.0-rke2r1-build20250425
         - v1.33.1-rke2r1-build20250515
         - v1.33.10-rke2r1-build20260319
+        - v1.33.10-rke2r2-build20260401
         - v1.33.2-rke2r1-build20250618
         - v1.33.3-rke2r1-build20250716
         - v1.33.4-rke2r1-build20250814
@@ -400,11 +401,13 @@ sync:
         - v1.34.4-rke2r1-build20260210
         - v1.34.5-rke2r1-build20260227
         - v1.34.6-rke2r1-build20260319
+        - v1.34.6-rke2r2-build20260401
         - v1.35.0-rke2r1-build20251218
         - v1.35.0-rke2r3-build20260127
         - v1.35.1-rke2r1-build20260210
         - v1.35.2-rke2r1-build20260227
         - v1.35.3-rke2r1-build20260319
+        - v1.35.3-rke2r2-build20260401
   - source: docker.io/rancher/hardened-multus-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-multus-cni'
     type: repository
@@ -2017,6 +2020,8 @@ sync:
         - v1.33.1-rke2r1-windows-amd64
         - v1.33.10-rke2r1
         - v1.33.10-rke2r1-windows-amd64
+        - v1.33.10-rke2r2
+        - v1.33.10-rke2r2-windows-amd64
         - v1.33.2-rke2r1
         - v1.33.2-rke2r1-windows-amd64
         - v1.33.3-rke2r1
@@ -2049,6 +2054,8 @@ sync:
         - v1.34.5-rke2r1-windows-amd64
         - v1.34.6-rke2r1
         - v1.34.6-rke2r1-windows-amd64
+        - v1.34.6-rke2r2
+        - v1.34.6-rke2r2-windows-amd64
         - v1.35.0-rke2r1
         - v1.35.0-rke2r1-windows-amd64
         - v1.35.0-rke2r3
@@ -2059,6 +2066,8 @@ sync:
         - v1.35.2-rke2r1-windows-amd64
         - v1.35.3-rke2r1
         - v1.35.3-rke2r1-windows-amd64
+        - v1.35.3-rke2r2
+        - v1.35.3-rke2r2-windows-amd64
   - source: docker.io/rancher/rke2-upgrade
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-upgrade'
     type: repository
@@ -2176,6 +2185,7 @@ sync:
         - v1.33.0-rke2r1
         - v1.33.1-rke2r1
         - v1.33.10-rke2r1
+        - v1.33.10-rke2r2
         - v1.33.2-rke2r1
         - v1.33.3-rke2r1
         - v1.33.4-rke2r1
@@ -2192,11 +2202,13 @@ sync:
         - v1.34.4-rke2r1
         - v1.34.5-rke2r1
         - v1.34.6-rke2r1
+        - v1.34.6-rke2r2
         - v1.35.0-rke2r1
         - v1.35.0-rke2r3
         - v1.35.1-rke2r1
         - v1.35.2-rke2r1
         - v1.35.3-rke2r1
+        - v1.35.3-rke2r2
   - source: docker.io/rancher/system-agent-installer-k3s
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-k3s'
     type: repository
@@ -2450,6 +2462,7 @@ sync:
         - v1.33.0-rke2r1
         - v1.33.1-rke2r1
         - v1.33.10-rke2r1
+        - v1.33.10-rke2r2
         - v1.33.2-rke2r1
         - v1.33.3-rke2r1
         - v1.33.4-rke2r1
@@ -2466,8 +2479,10 @@ sync:
         - v1.34.4-rke2r1
         - v1.34.5-rke2r1
         - v1.34.6-rke2r1
+        - v1.34.6-rke2r2
         - v1.35.0-rke2r1
         - v1.35.0-rke2r3
         - v1.35.1-rke2r1
         - v1.35.2-rke2r1
         - v1.35.3-rke2r1
+        - v1.35.3-rke2r2
