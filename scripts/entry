@@ -2,10 +2,21 @@
 set -e
 
 mkdir -p bin dist
+
+# Mark the workspace as safe for git when running inside a container where the
+# directory is bind-mounted and owned by a different UID than the container user.
+git config --global --add safe.directory /go/src/github.com/rancher/kontainer-driver-metadata
+
+# Recreate the $HOME/.kube/k3s.yaml symlink at runtime. Rancher's embedded k3s
+# writes its kubeconfig to /etc/rancher/k3s/k3s.yaml, and Rancher polls
+# $HOME/.kube/k3s.yaml to detect k3s readiness. The bind mount that overlays
+# the workspace (-v <host-path>:<WORKDIR>) shadows any symlink created at image
+# build time, so we must recreate it here after mounts are in place.
+mkdir -p "$HOME/.kube"
+ln -sf /etc/rancher/k3s/k3s.yaml "$HOME/.kube/k3s.yaml"
+
 if [ -e ./scripts/$1 ]; then
     ./scripts/"$@"
 else
     exec "$@"
 fi
-
-chown -R $DAPPER_UID:$DAPPER_GID .
