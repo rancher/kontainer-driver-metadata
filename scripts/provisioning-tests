@@ -50,7 +50,7 @@ mkdir -p $METADATA_DIR
 cp ./data/data.json "$METADATA_DIR"
 
 # Create dummy git repo to serve KDM data via git branch
-TMP_DIR="$(mktemp -d)"
+TMP_DIR="$(TMPDIR=/var/tmp mktemp -d)"
 
 cp -r . "$TMP_DIR"
 

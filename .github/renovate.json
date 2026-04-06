@@ -1,0 +1,52 @@
+{
+  "extends": [
+    "github>rancher/renovate-config#release"
+  ],
+  "baseBranchPatterns": [
+    "dev-v2.12",
+    "dev-v2.11"
+  ],
+  "prHourlyLimit": 2,
+  "packageRules": [
+    {
+      "matchBaseBranches": [
+        "dev-v2.12"
+      ],
+      "extends": [
+        "github>rancher/renovate-config//rancher-2.12#release"
+      ]
+    },
+    {
+      "matchBaseBranches": [
+        "dev-v2.11"
+      ],
+      "extends": [
+        "github>rancher/renovate-config//rancher-2.11#release"
+      ]
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^Dockerfile\\.ci$"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\nENV [A-Z0-9_]+=(?<currentValue>\\S+)",
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\n\\s*[A-Z0-9_]+=(?<currentValue>[^\\s&]+)\\s*&&",
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) digestVersion=(?<currentValue>\\S+)\\n\\s*[A-Z0-9_]+=(?<currentDigest>[a-f0-9]{64})\\s*&&",
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) digestVersion=(?<currentValue>\\S+)\\nENV [A-Z0-9_a-z]+=(?<currentDigest>[a-f0-9]{64})",
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) digestVersion=(?<currentValue>\\S+)\\nENV [A-Z0-9_a-z]+=(?<currentDigest>[a-f0-9]{40})"
+      ]
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "^\\.github/workflows/.*\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) digestVersion=(?<currentValue>\\S+)\\n\\s*go install \\S+@(?<currentDigest>[a-f0-9]{40})"
+      ]
+    }
+  ]
+}
