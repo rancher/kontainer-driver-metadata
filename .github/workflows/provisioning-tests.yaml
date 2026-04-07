@@ -157,7 +157,7 @@ jobs:
           path: "/tmp/report-${{ matrix.dist }}-${{ matrix.k8s-minor }}-${{ steps.test_output.outputs.suite }}.*"
       - name: Upload logdump artifact if we had some tests failures
         if: failure()
-        uses: rancherlabs/cowboy@be178bda40ee2199a674861d8ba1a399b28d5451
+        uses: rancherlabs/cowboy@73acfb7bc97b55bc18ea5bc1ee8232a8ffcb4576
         with:
           log-file-path: ./build/provtest_output.txt
           artifact-retention-days: 7

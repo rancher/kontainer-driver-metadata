@@ -35,7 +35,7 @@ jobs:
           path: /tmp/test-results/
           name: "Event File"
       - name: Publish Test Results
-        uses: rancher/publish-unit-test-result-action/linux@3a74b2957438d0b6e2e61d67b05318aa25c9e6c6
+        uses: rancher/publish-unit-test-result-action/linux@29a85161a9d18bf8cbf186abc523927ce71221b0
         if: (!cancelled())
         with:
           check_name: Provisioning Tests Results
