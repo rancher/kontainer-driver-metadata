@@ -40,7 +40,7 @@ replace (
 require (
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/rancher/rke v1.8.8
-	github.com/sirupsen/logrus v1.9.3
+	github.com/sirupsen/logrus v1.9.4
 	golang.org/x/mod v0.23.0
 	k8s.io/apimachinery v0.32.1
 	sigs.k8s.io/yaml v1.4.0
