@@ -7,13 +7,15 @@ FROM registry.suse.com/bci/golang:1.25
 # --- Tool installations (most expensive, no dependency on rancher content) ---
 ARG TARGETARCH=amd64
 ENV ARCH=${TARGETARCH}
-# renovate: datasource=github-release-attachments depName=golangci/golangci-lint
-ENV GOLANGCI_LINT=v1.64.8
+# renovate: datasource=github-digest depName=golangci/golangci-lint digestVersion=v1.64.8
+ENV GOLANGCI_LINT_REF=8b37f14162043f908949f1b363d061dc9ba713c0
+# renovate: datasource=github-digest depName=golang/tools digestVersion=v0.43.0
+ENV GOIMPORTS_REF=24a8e95f9d7ae2696f66314da5e50c0d98ccaa90
 
 RUN zypper -n install git docker vim less file curl wget jq awk ruby && rpm -e --nodeps --noscripts containerd
-RUN go install golang.org/x/tools/cmd/goimports@v0.43.0
+RUN go install golang.org/x/tools/cmd/goimports@${GOIMPORTS_REF}
 RUN if [[ "${ARCH}" == "amd64" ]]; then \
-        go install github.com/golangci/golangci-lint/cmd/golangci-lint@${GOLANGCI_LINT}; \
+        go install github.com/golangci/golangci-lint/cmd/golangci-lint@${GOLANGCI_LINT_REF}; \
         # renovate: datasource=github-release-attachments depName=rancher/wharfie
         WHARFIE_VERSION=v0.6.1 && \
         # renovate: datasource=github-release-attachments depName=rancher/wharfie digestVersion=v0.6.1
@@ -34,6 +36,8 @@ RUN if [[ "${ARCH}" == "amd64" ]]; then \
 ENV YQ_VERSION=v4.52.5
 # renovate: datasource=github-release-attachments depName=mikefarah/yq digestVersion=v4.52.5
 ENV YQ_SUM_amd64=c529c33e6b545d95e39445c37f673e31ca110c3ca9310b47ccea78f9190b061e
+# renovate: datasource=github-release-attachments depName=mikefarah/yq digestVersion=v4.52.5
+ENV YQ_SUM_arm64=33cf72426fc5f5e7d9b99801a58d34c6fa7e4426dad594569fb972dde5891109
 ENV YQ_SUM="YQ_SUM_${ARCH}"
 RUN wget -q "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_${ARCH}.tar.gz" -O /tmp/yq.tar.gz && \
     echo "${!YQ_SUM}  /tmp/yq.tar.gz" | sha256sum -c - && \
