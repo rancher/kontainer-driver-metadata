@@ -31,9 +31,9 @@ RUN if [[ "${ARCH}" == "amd64" ]]; then \
     fi
 
 # renovate: datasource=github-release-attachments depName=mikefarah/yq
-ENV YQ_VERSION=v4.41.1
-# renovate: datasource=github-release-attachments depName=mikefarah/yq digestVersion=v4.41.1
-ENV YQ_SUM_amd64=7266178e8ed6e2a00cfb0d870e99da7e3db934135321233ae01b210ca64e71ba
+ENV YQ_VERSION=v4.52.5
+# renovate: datasource=github-release-attachments depName=mikefarah/yq digestVersion=v4.52.5
+ENV YQ_SUM_amd64=c529c33e6b545d95e39445c37f673e31ca110c3ca9310b47ccea78f9190b061e
 ENV YQ_SUM="YQ_SUM_${ARCH}"
 RUN wget -q "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_${ARCH}.tar.gz" -O /tmp/yq.tar.gz && \
     echo "${!YQ_SUM}  /tmp/yq.tar.gz" | sha256sum -c - && \
