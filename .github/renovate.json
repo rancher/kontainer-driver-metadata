@@ -12,8 +12,8 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^Dockerfile\\.ci$"
+      "managerFilePatterns": [
+        "/^Dockerfile\\.ci$/"
       ],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\nENV [A-Z0-9_]+=(?<currentValue>\\S+)",
