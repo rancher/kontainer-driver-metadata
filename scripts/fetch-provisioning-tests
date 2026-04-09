@@ -7,7 +7,7 @@ cd $(dirname $0)/..
 mkdir -p "./bin"
 BIN_DIR="$(realpath ./bin)"
 
-TMP_DIR=$(mktemp -d)
+TMP_DIR=$(TMPDIR=/var/tmp mktemp -d)
 
 pushd "$TMP_DIR"
 
