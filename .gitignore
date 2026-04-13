@@ -3,5 +3,10 @@
 /.trash-cache
 /trash.lock
 /.idea
-.dapper
 .DS_Store
+.cache/
+.config/
+build/
+split-regsync/
+.kube/
+.gitconfig

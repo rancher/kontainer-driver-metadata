@@ -9,6 +9,8 @@ on:
   # When triggered manually, it will run for ALL branches defined in the matrix below.
   workflow_dispatch:
 
+permissions: {}
+
 jobs:
   check_released_versions:
     name: Check Branch ${{ matrix.target_branch }}
@@ -30,17 +32,13 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - name: Set up Dependencies (jq, curl)
         run: |
           echo "Installing jq and curl..."
           sudo apt-get update -qq
           sudo apt-get install -y -qq jq curl
-
-      - name: Run Version Check for ${{ matrix.target_branch }}
-        # This step runs for each branch defined in the matrix.
-        # The script receives the specific branch from the matrix context.
+      - name: Run Version Check
         run: |
           echo "Running check against branch: ${{ matrix.target_branch }}"
           ./scripts/check-versions.sh "${{ matrix.target_branch }}"
@@ -56,17 +54,15 @@ jobs:
 
     steps:
       - name: Read App Secrets
-        uses: rancher-eio/read-vault-secrets@main
+        uses: rancher-eio/read-vault-secrets@0da85151ad1f19ed7986c41587e45aac1ace74b6 # v3
         with:
           secrets: |
             secret/data/github/repo/${{ github.repository }}/slack/webhook webhook_url | WEBHOOK_URL
-
       - name: Set up Dependencies
         run: |
           echo "Installing curl..."
           sudo apt-get update -qq
           sudo apt-get install -y -qq curl
-
       - name: Send notification
         env:
           WORKFLOW_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}

@@ -10,8 +10,33 @@ on:
       - 'dev-v*'
       - 'release-v*'
 
+permissions: {}
+
 jobs:
+  build-ci-image:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd # v4
+
+      - name: Build and cache CI image
+        uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7
+        with:
+          context: .
+          file: Dockerfile.ci
+          tags: kdm-ci:latest
+          load: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
   validate:
+    needs: [build-ci-image]
     permissions:
       contents: read
       id-token: write
@@ -19,38 +44,61 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
-      - name: Install Dapper
-        run: |
-          curl -sL https://releases.rancher.com/dapper/v0.6.0/dapper-$(uname -s)-$(uname -m) > /usr/local/bin/dapper
-          chmod +x /usr/local/bin/dapper
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd # v4
+
+      - name: Build CI image
+        uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7
+        with:
+          context: .
+          file: Dockerfile.ci
+          tags: kdm-ci:latest
+          load: true
+          cache-from: type=gha
 
       - name: Validate
-        run: dapper ci
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/go/src/github.com/rancher/kontainer-driver-metadata \
+            kdm-ci ci
 
   mirror-images:
     permissions:
       contents: read
       id-token: write
     runs-on: ubuntu-latest
-    needs: validate
-    container: 
-      image: rancher/dapper:v0.6.0
+    needs: [build-ci-image, validate]
     if: github.event_name == 'push' && startsWith(github.ref_name, 'release-v')
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd # v4
+      - name: Build CI image
+        uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7
+        with:
+          context: .
+          file: Dockerfile.ci
+          tags: kdm-ci:latest
+          load: true
+          cache-from: type=gha
       - name: Retrieve Registy secrets from vault
-        uses: rancher-eio/read-vault-secrets@main
+        uses: rancher-eio/read-vault-secrets@0da85151ad1f19ed7986c41587e45aac1ace74b6 # v3
         with:
           secrets: |
             secret/data/github/repo/${{ github.repository }}/registry-endpoint/credentials token | REGISTRY_ENDPOINT ;
             secret/data/github/repo/${{ github.repository }}/registry-username/credentials token | REGISTRY_USERNAME ;
             secret/data/github/repo/${{ github.repository }}/registry-password/credentials token | REGISTRY_PASSWORD
-      - name: Validate
-        run: dapper mirror-images
-
+      - name: Mirror images
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/go/src/github.com/rancher/kontainer-driver-metadata \
+            --env REGISTRY_ENDPOINT \
+            --env REGISTRY_USERNAME \
+            --env REGISTRY_PASSWORD \
+            kdm-ci mirror-images
   upload:
     permissions:
       contents: read
@@ -61,18 +109,18 @@ jobs:
     if: github.event_name == 'push'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - name: Retrieve Google auth from vault
-        uses: rancher-eio/read-vault-secrets@main
+        uses: rancher-eio/read-vault-secrets@0da85151ad1f19ed7986c41587e45aac1ace74b6 # v3
         with:
           secrets: |
             secret/data/github/repo/${{ github.repository }}/google-auth/rancher/credentials token | GOOGLE_AUTH ;
       - name: Authenticate with Google Cloud
-        uses: 'google-github-actions/auth@v2'
+        uses: google-github-actions/auth@c200f3691d83b41bf9bbd8638997a462592937ed # v2
         with:
           credentials_json: '${{ env.GOOGLE_AUTH }}'
       - name: Upload to Google Cloud Storage
-        uses: google-github-actions/upload-cloud-storage@v2
+        uses: google-github-actions/upload-cloud-storage@c0f6160ff80057923ff50e5e567695cea181ec23 # v2
         with:
           path: data/
           destination: releases.rancher.com/kontainer-driver-metadata/${{ github.ref_name }}
