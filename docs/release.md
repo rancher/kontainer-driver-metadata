@@ -66,7 +66,11 @@ When preparing a new KDM release line (or advancing an existing one), update the
 ```yaml
 # .github/workflows/provisioning-tests.yaml
 - name: Provisioning Operations tests
-  run: dapper provisioning-tests
+  run: |
+    docker run --rm \
+      -v ${{ github.workspace }}:/go/src/github.com/rancher/kontainer-driver-metadata \
+      ... \
+      kdm-ci provisioning-tests | tee ./build/provtest_output.txt
   env:
     LAST_COMMUNITY_RANCHER: v2.9.3
     # ...existing env...
@@ -91,7 +95,7 @@ While a release line is at or near the prime cutoff, CI in **rancher/rancher** s
 ```yaml
 # rancher/rancher: .github/workflows/provisioning-tests.yml (excerpt)
 - name: Run tests
-  run: ./.dapper provisioning-tests
+  run: ./scripts/provisioning-tests
   env:
     # per-distro pins used by the provisioning script if SOME_K8S_VERSION is unset
     K3S_PINNED_VERSION: "v1.30.14+k3s2"
