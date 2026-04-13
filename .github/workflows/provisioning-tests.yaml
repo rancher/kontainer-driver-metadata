@@ -10,8 +10,37 @@ on:
       - 'dev-v*'
       - 'release-v*'
 
+permissions: {}
+
 jobs:
+  build-ci-image:
+    permissions:
+      contents: read
+    runs-on:
+      - runs-on
+      - spot=false
+      - runner=4cpu-linux-x64
+      - run-id=${{ github.run_id }}
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          fetch-depth: 1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd # v4
+      - name: Build and cache CI image
+        uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7
+        with:
+          context: .
+          file: Dockerfile.ci
+          tags: kdm-ci:latest
+          load: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
   provisioning-test:
+    needs: [build-ci-image]
     permissions:
       contents: read
       id-token: write
@@ -27,17 +56,33 @@ jobs:
         dist: [rke2, k3s]
         k8s-minor: [32, 33, 34]
         test-regex: ["^Test_Provisioning_.*$", "^Test_Operation_SetA_.*$", "^Test_Operation_SetB_.*$"]
+    env:
+      # registry-cache container is reachable from the CI container via the Docker bridge IP
+      REGISTRY: "172.17.0.2:5000"
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           fetch-depth: "0"
       - name: testdata
         run: mkdir -p build/testdata
-      - name: Install Dapper
-        run: |
-          curl -sL https://releases.rancher.com/dapper/latest/dapper-$(uname -s)-$(uname -m) > ./.dapper
-          chmod +x ./.dapper
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd # v4
+      - name: Build CI image
+        uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7
+        with:
+          context: .
+          file: Dockerfile.ci
+          tags: kdm-ci:latest
+          load: true
+          cache-from: type=gha
+      - name: Remove BuildKit builder
+        # The BuildKit builder container would auto-restart after `sudo systemctl restart docker`,
+        # taking the 172.17.0.2 bridge IP before kdm-ci does. The registry-cache pod inside kdm-ci
+        # uses hostPort:5000, so the rancher provisioning-tests script hard-codes 172.17.0.2:5000
+        # as the registry address. Removing the builder here ensures kdm-ci is the first container
+        # on the bridge after Docker restarts and therefore gets 172.17.0.2.
+        run: docker buildx rm
       - name: Configure Docker for cgroupfs/insecure-registry
         run: |
           echo '{"insecure-registries": ["172.17.0.2:5000"]}' | sudo tee /etc/docker/daemon.json
@@ -45,14 +90,30 @@ jobs:
           sudo docker info
       - name: Retrieve Registry Endpoint
         if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
-        uses: rancher-eio/read-vault-secrets@main
+        uses: rancher-eio/read-vault-secrets@0da85151ad1f19ed7986c41587e45aac1ace74b6 # v3
         with:
           secrets: |
             secret/data/github/repo/${{ github.repository }}/rancher-prime-stg-registry/credentials registry | STAGE_REGISTRY_ENDPOINT;
       - name: Provisioning Operations tests
         run: |
           set -eo pipefail
-          ./.dapper provisioning-tests | tee ./build/provtest_output.txt
+          docker run --rm \
+            -v ${{ github.workspace }}:/go/src/github.com/rancher/kontainer-driver-metadata \
+            -v ${{ github.workspace }}/build:/tmp \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            --privileged \
+            --env LAST_COMMUNITY_RANCHER \
+            --env V2PROV_TEST_DIST \
+            --env V2PROV_TEST_RUN_REGEX \
+            --env KDM_TEST_K8S_MINOR \
+            --env PREV_COMMIT_PR_SHA \
+            --env PREV_COMMIT_PUSH_SHA \
+            --env CATTLE_AGENT_IMAGE \
+            --env GITHUB_EVENT_NAME \
+            --env GITHUB_RUN_NUMBER \
+            --env CI \
+            --env STAGE_REGISTRY_ENDPOINT \
+            kdm-ci provisioning-tests | tee ./build/provtest_output.txt
         env:
           LAST_COMMUNITY_RANCHER: v2.13.99
           CATTLE_AGENT_IMAGE: rancher/rancher-agent:v2.13-head
@@ -78,9 +139,19 @@ jobs:
             echo "No test results found at ./build/out.txt, creating empty report at $REPORT_PATH"
             touch "$REPORT_PATH"
           fi
+
+          # Collect Rancher server log (includes embedded k3s output) for debugging startup failures.
+          # /tmp inside the container is bind-mounted to ./build on the host, so rancher.log is at ./build/rancher.log.
+          RANCHER_LOG_PATH="${REPORT_PATH%.txt}.rancher.log"
+          if [ -f ./build/rancher.log ]; then
+            echo "Rancher server log found at ./build/rancher.log, copying to $RANCHER_LOG_PATH"
+            cp ./build/rancher.log "$RANCHER_LOG_PATH"
+          else
+            echo "No Rancher server log found at ./build/rancher.log"
+          fi
       - name: Upload Plain Text Test Results
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: "Test Results ${{ matrix.dist }} ${{ matrix.k8s-minor }} ${{ steps.test_output.outputs.suite }}"
           path: "/tmp/report-${{ matrix.dist }}-${{ matrix.k8s-minor }}-${{ steps.test_output.outputs.suite }}.*"
@@ -95,6 +166,8 @@ jobs:
   convert-to-xml:
     needs: [provisioning-test]
     if: always()
+    permissions:
+      contents: read
     runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
     container: registry.suse.com/bci/bci-base:15.7
     steps:
@@ -102,10 +175,11 @@ jobs:
         run: |
           zypper --non-interactive install golang
       - name: Fetch plaintext test output
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           merge-multiple: true
           path: /tmp/test-results/
+          pattern: "!*.dockerbuild"
       - name: Convert test results to XML
         run: |
           shopt -s nullglob
@@ -114,23 +188,26 @@ jobs:
             echo "No report files found in /tmp/test-results/, skipping conversion."
             exit 0
           fi
-          go install github.com/jstemmer/go-junit-report/v2@v2.1.0
+          # renovate: datasource=github-tags depName=jstemmer/go-junit-report digestVersion=v2.1.0
+          go install github.com/jstemmer/go-junit-report/v2@14d61e6e75e3f3c74551d757ad936e8e88014464
           for file in "${files[@]}"; do
             echo "Processing $file..."
             "$(go env GOPATH)/bin/go-junit-report" < "$file" > "${file%.txt}.xml"
           done
       - name: Upload XML Test Results
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
-          name: XML Results
+          name: 'XML Results'
           path: "/tmp/test-results/report-*.xml"
 
   event-file:
+    permissions:
+      contents: read
     runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
     container: registry.suse.com/bci/bci-base:15.7
     steps:
       - name: Upload GH Event File
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
-          name: Event File
+          name: 'Event File'
           path: ${{ github.event_path }}
