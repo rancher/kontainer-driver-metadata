@@ -30,6 +30,8 @@ appDefaults:
         defaultVersion: '1.34.x'
       - appVersion: '>= 2.14.0-0 < 2.15.100-0'
         defaultVersion: '1.35.x'
+      - appVersion: '>= 2.15.0-0 < 2.16.100-0'
+        defaultVersion: '1.35.x'
 releases:
   - version: v1.19.16+rke2r1
     minChannelServerVersion: v2.6.0-alpha1
@@ -4736,7 +4738,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.34.1+rke2r1
     minChannelServerVersion: v2.13.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-34-1-rke2r1
       <<: *chartsv1-33-3-rke2r1
       rancher-vsphere-cpi:
@@ -4801,7 +4803,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.34.2+rke2r1
     minChannelServerVersion: v2.13.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-34-2-rke2r1
       <<: *chartsv1-34-1-rke2r1
       rke2-calico-crd:
@@ -4850,7 +4852,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.34.3+rke2r1
     minChannelServerVersion: v2.13.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-34-3-rke2r1
       <<: *chartsv1-34-2-rke2r1
       rke2-canal:
@@ -4896,7 +4898,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.34.3+rke2r3
     minChannelServerVersion: v2.13.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-34-3-rke2r3
       <<: *chartsv1-34-3-rke2r1
       rke2-calico:
@@ -4945,7 +4947,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.34.4+rke2r1
     minChannelServerVersion: v2.13.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-34-4-rke2r1
       <<: *chartsv1-34-3-rke2r3
       rke2-traefik-crd:
@@ -4988,7 +4990,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.34.5+rke2r1
     minChannelServerVersion: v2.13.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-34-5-rke2r1
       <<: *chartsv1-34-4-rke2r1
       rke2-cilium:
@@ -5010,7 +5012,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.34.6+rke2r1
     minChannelServerVersion: v2.13.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-34-6-rke2r1
       <<: *chartsv1-34-5-rke2r1
       rke2-cilium:
@@ -5056,7 +5058,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.34.6+rke2r3
     minChannelServerVersion: v2.13.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-34-6-rke2r3
       <<: *chartsv1-34-6-rke2r1
       rke2-ingress-nginx:
@@ -5069,7 +5071,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.35.0+rke2r1
     minChannelServerVersion: v2.14.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-35-0-rke2r1
       <<: *chartsv1-34-2-rke2r1
       rancher-vsphere-cpi:
@@ -5118,7 +5120,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.35.0+rke2r3
     minChannelServerVersion: v2.14.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-35-0-rke2r3
       <<: *chartsv1-35-0-rke2r1
       rke2-calico:
@@ -5167,7 +5169,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.35.1+rke2r1
     minChannelServerVersion: v2.14.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-35-1-rke2r1
       <<: *chartsv1-35-0-rke2r3
       rke2-canal:
@@ -5210,7 +5212,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.35.2+rke2r1
     minChannelServerVersion: v2.14.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-35-2-rke2r1
       <<: *chartsv1-35-1-rke2r1
       rke2-cilium:
@@ -5232,7 +5234,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.35.3+rke2r1
     minChannelServerVersion: v2.14.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-35-3-rke2r1
       <<: *chartsv1-35-2-rke2r1
       rke2-traefik:
@@ -5278,7 +5280,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.35.3+rke2r3
     minChannelServerVersion: v2.14.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-35-3-rke2r3
       <<: *chartsv1-35-3-rke2r1
       rke2-ingress-nginx:
