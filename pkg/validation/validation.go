@@ -7,6 +7,8 @@ import (
 	"os/exec"
 	"strings"
 
+	"golang.org/x/exp/slices"
+
 	utiliies "github.com/rancher/kontainer-driver-metadata/pkg"
 	"github.com/rancher/kontainer-driver-metadata/pkg/data"
 	"github.com/rancher/kontainer-driver-metadata/pkg/images"
@@ -34,6 +36,25 @@ var (
 		"v1.32.4+k3s1":    true,
 		"v1.33.0+rke2r1":  true,
 		"v1.33.0+k3s1":    true,
+	}
+
+	validMessageTypes = []string{
+		"info",
+		"warning",
+		"critical",
+	}
+	validMessageSeverity = []string{
+		"low",
+		"medium",
+		"high",
+	}
+	validMessageFields = map[string]struct{}{
+		"id":       {},
+		"type":     {},
+		"severity": {},
+		"summary":  {},
+		"message":  {},
+		"url":      {},
 	}
 )
 
@@ -213,6 +234,9 @@ func validateDistro(distro string, dev, released data.Data) error {
 			if err := validateEncryptedKeyRotation(release); err != nil {
 				return fmt.Errorf("failed to validate rke2 encrypted key rotation: %v", err)
 			}
+			if err := validateMessages(release); err != nil {
+				return fmt.Errorf("failed to validate messages: %v", err)
+			}
 		}
 	}
 
@@ -228,6 +252,9 @@ func validateDistro(distro string, dev, released data.Data) error {
 			}
 			if err := validateEncryptedKeyRotation(release); err != nil {
 				return fmt.Errorf("failed to validate k3s encrypted key rotation: %w", err)
+			}
+			if err := validateMessages(release); err != nil {
+				return fmt.Errorf("failed to validate messages: %v", err)
 			}
 		}
 	}
@@ -369,4 +396,60 @@ func getVersions(distro string, dev, released data.Data) (devVersions, releasedV
 		}
 	}
 	return devVersions, releasedVersions, err
+}
+
+// validateMessages validates the messages field in a release if present
+func validateMessages(release map[string]interface{}) error {
+	version, _, err := unstructured.NestedString(release, "version")
+	if err != nil {
+		return err
+	}
+
+	messages, found, err := unstructured.NestedSlice(release, "messages")
+	if err != nil {
+		return fmt.Errorf("failed to extract messages from release %s: %v", version, err)
+	}
+
+	if !found {
+		// messages field is optional
+		return nil
+	}
+
+	logrus.Debugf("validating messages for version %s", version)
+
+	for i, msg := range messages {
+		msgMap, ok := msg.(map[string]interface{})
+		if !ok {
+			return fmt.Errorf("invalid message format at index %d in version %s: expected map", i, version)
+		}
+
+		// Check for unexpected fields
+		for field := range msgMap {
+			if _, ok := validMessageFields[field]; !ok {
+				return fmt.Errorf("message at index %d in version %s has unexpected field '%s'", i, version, field)
+			}
+		}
+
+		if msgType, found, _ := unstructured.NestedString(msgMap, "type"); !found || msgType == "" {
+			return fmt.Errorf("message at index %d in version %s is missing required field 'type'", i, version)
+		} else if !slices.Contains(validMessageTypes, msgType) {
+			return fmt.Errorf("message at index %d in version %s has invalid type '%s': must be one of %v", i, version, msgType, validMessageTypes)
+		}
+
+		if severity, found, _ := unstructured.NestedString(msgMap, "severity"); found && !slices.Contains(validMessageSeverity, severity) {
+			return fmt.Errorf("message at index %d in version %s has severity '%s': must be one of %v", i, version, severity, validMessageSeverity)
+		}
+
+		if summary, found, _ := unstructured.NestedString(msgMap, "summary"); !found || summary == "" {
+			return fmt.Errorf("message at index %d in version %s is missing required field 'summary'", i, version)
+		}
+
+		if message, found, _ := unstructured.NestedString(msgMap, "message"); !found || message == "" {
+			return fmt.Errorf("message at index %d in version %s is missing required field 'message'", i, version)
+		}
+
+		logrus.Debugf("message %d in version %s is valid", i, version)
+	}
+
+	return nil
 }
