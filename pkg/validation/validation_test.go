@@ -2,6 +2,7 @@ package main
 
 import (
 	"testing"
+	"strings"
 
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 )
@@ -31,7 +32,6 @@ func TestValidateMessages(t *testing.T) {
 						"severity": "high",
 						"summary":  "Test warning",
 						"message":  "This is a test warning message",
-						"url":      "https://example.com/issue",
 					},
 				},
 			},
@@ -55,11 +55,43 @@ func TestValidateMessages(t *testing.T) {
 						"severity": "low",
 						"summary":  "Issue 2",
 						"message":  "Description 2",
-						"url":      "https://example.com",
 					},
 				},
 			},
 			shouldErr: false,
+		},
+		{
+			name: "message missing id",
+			release: map[string]interface{}{
+				"version": "v1.20.0+rke2r1",
+				"messages": []interface{}{
+					map[string]interface{}{
+						"type":     "warning",
+						"severity": "high",
+						"summary":  "Test",
+						"message":  "Description",
+					},
+				},
+			},
+			shouldErr: true,
+			errMsg:    "missing required field 'id'",
+		},
+		{
+			name: "message with empty id",
+			release: map[string]interface{}{
+				"version": "v1.20.0+rke2r1",
+				"messages": []interface{}{
+					map[string]interface{}{
+						"id":       "",
+						"type":     "warning",
+						"severity": "high",
+						"summary":  "Test",
+						"message":  "Description",
+					},
+				},
+			},
+			shouldErr: true,
+			errMsg:    "missing required field 'id'",
 		},
 		{
 			name: "message missing type",
@@ -95,6 +127,23 @@ func TestValidateMessages(t *testing.T) {
 			errMsg:    "invalid type 'invalid'",
 		},
 		{
+			name: "message with invalid severity",
+			release: map[string]interface{}{
+				"version": "v1.20.0+rke2r1",
+				"messages": []interface{}{
+					map[string]interface{}{
+						"id":       "msg-1",
+						"type":     "warning",
+						"severity": "critical",
+						"summary":  "Test",
+						"message":  "Description",
+					},
+				},
+			},
+			shouldErr: true,
+			errMsg:    "invalid severity 'critical'",
+		},
+		{
 			name: "message missing summary",
 			release: map[string]interface{}{
 				"version": "v1.20.0+rke2r1",
@@ -127,7 +176,22 @@ func TestValidateMessages(t *testing.T) {
 			errMsg:    "missing required field 'message'",
 		},
 		{
-			name: "message with optional url field",
+			name: "message without optional severity field",
+			release: map[string]interface{}{
+				"version": "v1.20.0+rke2r1",
+				"messages": []interface{}{
+					map[string]interface{}{
+						"id":       "msg-1",
+						"type":     "info",
+						"summary":  "Informational",
+						"message":  "Just informational",
+					},
+				},
+			},
+			shouldErr: false,
+		},
+		{
+			name: "message with url field is rejected",
 			release: map[string]interface{}{
 				"version": "v1.20.0+rke2r1",
 				"messages": []interface{}{
@@ -141,23 +205,8 @@ func TestValidateMessages(t *testing.T) {
 					},
 				},
 			},
-			shouldErr: false,
-		},
-		{
-			name: "message without optional url field",
-			release: map[string]interface{}{
-				"version": "v1.20.0+rke2r1",
-				"messages": []interface{}{
-					map[string]interface{}{
-						"id":       "msg-1",
-						"type":     "info",
-						"severity": "low",
-						"summary":  "Informational",
-						"message":  "Just informational",
-					},
-				},
-			},
-			shouldErr: false,
+			shouldErr: true,
+			errMsg:    "unexpected field 'url'",
 		},
 		{
 			name: "invalid message format (not a map)",
@@ -188,37 +237,138 @@ func TestValidateMessages(t *testing.T) {
 			shouldErr: true,
 			errMsg:    "unexpected field 'extra'",
 		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			seenIDs := make(map[string]bool)
+			err := validateMessages(tt.release, seenIDs)
+			if tt.shouldErr {
+				if err == nil {
+					t.Errorf("expected error but got none")
+				} else if tt.errMsg != "" && !strings.Contains(err.Error(), tt.errMsg) {
+					t.Errorf("expected error containing '%s', got: %v", tt.errMsg, err)
+				}
+			} else {
+				if err != nil {
+					t.Errorf("expected no error but got: %v", err)
+				}
+			}
+		})
+	}
+}
+
+func TestValidateMessageDuplicateIDs(t *testing.T) {
+	tests := []struct {
+		name      string
+		releases  []map[string]interface{}
+		shouldErr bool
+		errMsg    string
+	}{
 		{
-			name: "message with multiple unexpected fields",
-			release: map[string]interface{}{
-				"version": "v1.20.0+rke2r1",
-				"messages": []interface{}{
-					map[string]interface{}{
-						"id":       "msg-1",
-						"type":     "warning",
-						"severity": "high",
-						"summary":  "Test",
-						"message":  "Description",
-						"extra1":   "unexpected",
-						"extra2":   "foobar",
+			name: "no duplicate IDs across releases",
+			releases: []map[string]interface{}{
+				{
+					"version": "v1.20.0+rke2r1",
+					"messages": []interface{}{
+						map[string]interface{}{
+							"id":       "msg-1",
+							"type":     "warning",
+							"severity": "high",
+							"summary":  "Issue 1",
+							"message":  "Description 1",
+						},
+					},
+				},
+				{
+					"version": "v1.21.0+rke2r1",
+					"messages": []interface{}{
+						map[string]interface{}{
+							"id":       "msg-2",
+							"type":     "info",
+							"severity": "low",
+							"summary":  "Issue 2",
+							"message":  "Description 2",
+						},
+					},
+				},
+			},
+			shouldErr: false,
+		},
+		{
+			name: "duplicate IDs across releases are rejected",
+			releases: []map[string]interface{}{
+				{
+					"version": "v1.20.0+rke2r1",
+					"messages": []interface{}{
+						map[string]interface{}{
+							"id":       "msg-dup",
+							"type":     "warning",
+							"severity": "high",
+							"summary":  "Issue",
+							"message":  "Description",
+						},
+					},
+				},
+				{
+					"version": "v1.21.0+rke2r1",
+					"messages": []interface{}{
+						map[string]interface{}{
+							"id":       "msg-dup",
+							"type":     "info",
+							"severity": "low",
+							"summary":  "Same issue",
+							"message":  "Another description",
+						},
 					},
 				},
 			},
 			shouldErr: true,
-			errMsg:    "unexpected field",
+			errMsg:    "duplicate id 'msg-dup'",
+		},
+		{
+			name: "duplicate IDs within same release are rejected",
+			releases: []map[string]interface{}{
+				{
+					"version": "v1.20.0+rke2r1",
+					"messages": []interface{}{
+						map[string]interface{}{
+							"id":       "msg-dup",
+							"type":     "warning",
+							"severity": "high",
+							"summary":  "Issue 1",
+							"message":  "Description 1",
+						},
+						map[string]interface{}{
+							"id":       "msg-dup",
+							"type":     "info",
+							"severity": "low",
+							"summary":  "Issue 2",
+							"message":  "Description 2",
+						},
+					},
+				},
+			},
+			shouldErr: true,
+			errMsg:    "duplicate id 'msg-dup'",
 		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			err := validateMessages(tt.release)
+			seenIDs := make(map[string]bool)
+			var err error
+			for _, release := range tt.releases {
+				err = validateMessages(release, seenIDs)
+				if err != nil {
+					break
+				}
+			}
 			if tt.shouldErr {
 				if err == nil {
 					t.Errorf("expected error but got none")
-				} else if tt.errMsg != "" && err.Error() != tt.errMsg {
-					if !contains(err.Error(), tt.errMsg) {
-						t.Errorf("expected error containing '%s', got: %v", tt.errMsg, err)
-					}
+				} else if tt.errMsg != "" && !strings.Contains(err.Error(), tt.errMsg) {
+					t.Errorf("expected error containing '%s', got: %v", tt.errMsg, err)
 				}
 			} else {
 				if err != nil {
@@ -244,7 +394,8 @@ func TestValidateMessageAllTypes(t *testing.T) {
 				},
 			},
 		}
-		err := validateMessages(release)
+		seenIDs := make(map[string]bool)
+		err := validateMessages(release, seenIDs)
 		if err != nil {
 			t.Errorf("expected no error for type '%s', got: %v", msgType, err)
 		}
@@ -258,7 +409,7 @@ func TestValidateMessageAllSeverities(t *testing.T) {
 			"version": "v1.20.0+rke2r1",
 			"messages": []interface{}{
 				map[string]interface{}{
-					"id":       "msg-test",
+					"id":       "msg-test-" + severity,
 					"type":     "warning",
 					"severity": severity,
 					"summary":  "Test message",
@@ -266,16 +417,12 @@ func TestValidateMessageAllSeverities(t *testing.T) {
 				},
 			},
 		}
-		err := validateMessages(release)
+		seenIDs := make(map[string]bool)
+		err := validateMessages(release, seenIDs)
 		if err != nil {
 			t.Errorf("expected no error for severity '%s', got: %v", severity, err)
 		}
 	}
-}
-
-// Helper function to check if a string contains a substring
-func contains(s, substr string) bool {
-	return len(s) >= len(substr) && (s == substr || len(s) > 0 && len(substr) > 0 && s[0:len(substr)] == substr || len(s) > len(substr))
 }
 
 // TestValidateMessageWithUnstructured tests that messages validation works with unstructured data
@@ -289,7 +436,6 @@ func TestValidateMessageWithUnstructured(t *testing.T) {
 				"severity": "high",
 				"summary":  "Known etcd restore issue",
 				"message":  "This version has a known issue with etcd snapshot restores. Please upgrade to v1.20.1+rke2r1.",
-				"url":      "https://github.com/rancher/rke2/issues/12345",
 			},
 		},
 	}
@@ -310,7 +456,8 @@ func TestValidateMessageWithUnstructured(t *testing.T) {
 	}
 
 	// Test validation passes
-	err := validateMessages(release)
+	seenIDs := make(map[string]bool)
+	err := validateMessages(release, seenIDs)
 	if err != nil {
 		t.Errorf("expected no error but got: %v", err)
 	}

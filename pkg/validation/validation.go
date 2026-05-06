@@ -7,8 +7,6 @@ import (
 	"os/exec"
 	"strings"
 
-	"golang.org/x/exp/slices"
-
 	utiliies "github.com/rancher/kontainer-driver-metadata/pkg"
 	"github.com/rancher/kontainer-driver-metadata/pkg/data"
 	"github.com/rancher/kontainer-driver-metadata/pkg/images"
@@ -38,15 +36,15 @@ var (
 		"v1.33.0+k3s1":    true,
 	}
 
-	validMessageTypes = []string{
-		"info",
-		"warning",
-		"critical",
+	validMessageTypes = map[string]struct{}{
+		"info":     {},
+		"warning":  {},
+		"critical": {},
 	}
-	validMessageSeverity = []string{
-		"low",
-		"medium",
-		"high",
+	validMessageSeverity = map[string]struct{}{
+		"low":    {},
+		"medium": {},
+		"high":   {},
 	}
 	validMessageFields = map[string]struct{}{
 		"id":       {},
@@ -54,7 +52,6 @@ var (
 		"severity": {},
 		"summary":  {},
 		"message":  {},
-		"url":      {},
 	}
 )
 
@@ -187,8 +184,9 @@ func getImageTags(source []byte) (imageTags, error) {
 // validate checks the versions in the local data.json by comparing with the released data.json,
 // Supported releases are RKE, RKE2 and K3s.
 func validate(dev, released data.Data) error {
+	seenMessageIDs := make(map[string]bool)
 	for _, distro := range []string{utiliies.RKE2, utiliies.K3S} {
-		if err := validateDistro(distro, dev, released); err != nil {
+		if err := validateDistro(distro, dev, released, seenMessageIDs); err != nil {
 			return fmt.Errorf("failed to validate the distro [%s]: %v", distro, err)
 		}
 	}
@@ -234,7 +232,7 @@ func validateDistro(distro string, dev, released data.Data) error {
 			if err := validateEncryptedKeyRotation(release); err != nil {
 				return fmt.Errorf("failed to validate rke2 encrypted key rotation: %v", err)
 			}
-			if err := validateMessages(release); err != nil {
+			if err := validateMessages(release, seenMessageIDs); err != nil {
 				return fmt.Errorf("failed to validate messages: %v", err)
 			}
 		}
@@ -253,7 +251,7 @@ func validateDistro(distro string, dev, released data.Data) error {
 			if err := validateEncryptedKeyRotation(release); err != nil {
 				return fmt.Errorf("failed to validate k3s encrypted key rotation: %w", err)
 			}
-			if err := validateMessages(release); err != nil {
+			if err := validateMessages(release, seenMessageIDs); err != nil {
 				return fmt.Errorf("failed to validate messages: %v", err)
 			}
 		}
@@ -399,7 +397,7 @@ func getVersions(distro string, dev, released data.Data) (devVersions, releasedV
 }
 
 // validateMessages validates the messages field in a release if present
-func validateMessages(release map[string]interface{}) error {
+func validateMessages(release map[string]interface{}, seenMessageIDs map[string]bool) error {
 	version, _, err := unstructured.NestedString(release, "version")
 	if err != nil {
 		return err
@@ -430,14 +428,28 @@ func validateMessages(release map[string]interface{}) error {
 			}
 		}
 
-		if msgType, found, _ := unstructured.NestedString(msgMap, "type"); !found || msgType == "" {
-			return fmt.Errorf("message at index %d in version %s is missing required field 'type'", i, version)
-		} else if !slices.Contains(validMessageTypes, msgType) {
-			return fmt.Errorf("message at index %d in version %s has invalid type '%s': must be one of %v", i, version, msgType, validMessageTypes)
+		// Validate id is required and non-empty
+		msgID, found, _ := unstructured.NestedString(msgMap, "id")
+		if !found || msgID == "" {
+			return fmt.Errorf("message at index %d in version %s is missing required field 'id'", i, version)
 		}
 
-		if severity, found, _ := unstructured.NestedString(msgMap, "severity"); found && !slices.Contains(validMessageSeverity, severity) {
-			return fmt.Errorf("message at index %d in version %s has severity '%s': must be one of %v", i, version, severity, validMessageSeverity)
+		// Check for duplicate IDs globally
+		if seenMessageIDs[msgID] {
+			return fmt.Errorf("message at index %d in version %s has duplicate id '%s'", i, version, msgID)
+		}
+		seenMessageIDs[msgID] = true
+
+		if msgType, found, _ := unstructured.NestedString(msgMap, "type"); !found || msgType == "" {
+			return fmt.Errorf("message at index %d in version %s is missing required field 'type'", i, version)
+		} else if _, validType := validMessageTypes[msgType]; !validType {
+			return fmt.Errorf("message at index %d in version %s has invalid type '%s': must be one of info, warning, critical", i, version, msgType)
+		}
+
+		if severity, found, _ := unstructured.NestedString(msgMap, "severity"); found {
+			if _, validSeverity := validMessageSeverity[severity]; !validSeverity {
+				return fmt.Errorf("message at index %d in version %s has invalid severity '%s': must be one of low, medium, high", i, version, severity)
+			}
 		}
 
 		if summary, found, _ := unstructured.NestedString(msgMap, "summary"); !found || summary == "" {
