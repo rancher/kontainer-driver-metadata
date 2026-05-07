@@ -5123,7 +5123,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.34.7+rke2r1
     minChannelServerVersion: v2.13.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-34-7-rke2r1
       <<: *chartsv1-34-6-rke2r3
       rke2-coredns:
@@ -5397,7 +5397,7 @@ releases:
     featureVersions: *featureVersions-v1
   - version: v1.35.4+rke2r1
     minChannelServerVersion: v2.14.0-alpha1
-    maxChannelServerVersion: v2.14.99
+    maxChannelServerVersion: v2.15.99
     charts: &chartsv1-35-4-rke2r1
       <<: *chartsv1-35-3-rke2r3
       harvester-csi-driver:
