@@ -1115,6 +1115,12 @@ releases:
     serverArgs: *serverArgs-v13
     agentArgs: *agentArgs-v8
     featureVersions: *featureVersions-v1
+  - version: v1.33.11+k3s1
+    minChannelServerVersion: v2.12.0-alpha1
+    maxChannelServerVersion: v2.14.99
+    serverArgs: *serverArgs-v13
+    agentArgs: *agentArgs-v8
+    featureVersions: *featureVersions-v1
   - version: v1.34.1+k3s1
     minChannelServerVersion: v2.13.0-alpha1
     maxChannelServerVersion: v2.15.99
@@ -1157,6 +1163,12 @@ releases:
     serverArgs: *serverArgs-v13
     agentArgs: *agentArgs-v8
     featureVersions: *featureVersions-v1
+  - version: v1.34.7+k3s1
+    minChannelServerVersion: v2.13.0-alpha1
+    maxChannelServerVersion: v2.15.99
+    serverArgs: *serverArgs-v13
+    agentArgs: *agentArgs-v8
+    featureVersions: *featureVersions-v1
   - version: v1.35.0+k3s1
     minChannelServerVersion: v2.14.0-alpha1
     maxChannelServerVersion: v2.15.99
@@ -1182,6 +1194,18 @@ releases:
     agentArgs: *agentArgs-v8
     featureVersions: *featureVersions-v1
   - version: v1.35.3+k3s1
+    minChannelServerVersion: v2.14.0-alpha1
+    maxChannelServerVersion: v2.15.99
+    serverArgs: *serverArgs-v13
+    agentArgs: *agentArgs-v8
+    featureVersions: *featureVersions-v1
+  - version: v1.35.4+k3s1
+    minChannelServerVersion: v2.14.0-alpha1
+    maxChannelServerVersion: v2.15.99
+    serverArgs: *serverArgs-v13
+    agentArgs: *agentArgs-v8
+    featureVersions: *featureVersions-v1
+  - version: v1.36.0+k3s1
     minChannelServerVersion: v2.14.0-alpha1
     maxChannelServerVersion: v2.15.99
     serverArgs: *serverArgs-v13
