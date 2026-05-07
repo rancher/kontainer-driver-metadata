@@ -54,7 +54,7 @@ jobs:
       fail-fast: false
       matrix:
         dist: [rke2, k3s]
-        k8s-minor: [33, 34, 35]
+        k8s-minor: [34, 35, 36]
         test-regex: ["^Test_Provisioning_.*$", "^Test_Operation_SetA_.*$", "^Test_Operation_SetB_.*$"]
     env:
       # registry-cache container is reachable from the CI container via the Docker bridge IP
