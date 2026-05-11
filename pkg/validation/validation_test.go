@@ -380,14 +380,14 @@ func TestValidateMessageDuplicateIDs(t *testing.T) {
 }
 
 func TestValidateMessageAllTypes(t *testing.T) {
-	types := []string{"info", "warning", "critical"}
+	types := []MessageType{MessageTypeInfo, MessageTypeWarning, MessageTypeCritical}
 	for _, msgType := range types {
 		release := map[string]interface{}{
 			"version": "v1.20.0+rke2r1",
 			"messages": []interface{}{
 				map[string]interface{}{
 					"id":       "msg-test",
-					"type":     msgType,
+					"type":     string(msgType),
 					"severity": "medium",
 					"summary":  "Test message",
 					"message":  "Test description",
@@ -403,15 +403,15 @@ func TestValidateMessageAllTypes(t *testing.T) {
 }
 
 func TestValidateMessageAllSeverities(t *testing.T) {
-	severities := []string{"low", "medium", "high"}
+	severities := []MessageSeverity{MessageSeverityLow, MessageSeverityMedium, MessageSeverityHigh}
 	for _, severity := range severities {
 		release := map[string]interface{}{
 			"version": "v1.20.0+rke2r1",
 			"messages": []interface{}{
 				map[string]interface{}{
-					"id":       "msg-test-" + severity,
+					"id":       "msg-test-" + string(severity),
 					"type":     "warning",
-					"severity": severity,
+					"severity": string(severity),
 					"summary":  "Test message",
 					"message":  "Test description",
 				},

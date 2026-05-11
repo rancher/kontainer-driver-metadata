@@ -22,6 +22,32 @@ const (
 	rke2Chart       = "https://rke2-charts.rancher.io"
 )
 
+type MessageType string
+
+const (
+	MessageTypeInfo     MessageType = "info"
+	MessageTypeWarning  MessageType = "warning"
+	MessageTypeCritical MessageType = "critical"
+)
+
+type MessageSeverity string
+
+const (
+	MessageSeverityLow    MessageSeverity = "low"
+	MessageSeverityMedium MessageSeverity = "medium"
+	MessageSeverityHigh   MessageSeverity = "high"
+)
+
+type MessageField string
+
+const (
+	MessageFieldID       MessageField = "id"
+	MessageFieldType     MessageField = "type"
+	MessageFieldSeverity MessageField = "severity"
+	MessageFieldSummary  MessageField = "summary"
+	MessageFieldMessage  MessageField = "message"
+)
+
 var (
 	releaseDataURL    = "https://releases.rancher.com/kontainer-driver-metadata/%s/data.json"
 	releaseRegSyncURL = "https://raw.githubusercontent.com/rancher/kontainer-driver-metadata/%s/regsync.yaml"
@@ -36,22 +62,22 @@ var (
 		"v1.33.0+k3s1":    true,
 	}
 
-	validMessageTypes = map[string]struct{}{
-		"info":     {},
-		"warning":  {},
-		"critical": {},
+	validMessageTypes = map[MessageType]struct{}{
+		MessageTypeInfo:     {},
+		MessageTypeWarning:  {},
+		MessageTypeCritical: {},
 	}
-	validMessageSeverity = map[string]struct{}{
-		"low":    {},
-		"medium": {},
-		"high":   {},
+	validMessageSeverity = map[MessageSeverity]struct{}{
+		MessageSeverityLow:    {},
+		MessageSeverityMedium: {},
+		MessageSeverityHigh:   {},
 	}
-	validMessageFields = map[string]struct{}{
-		"id":       {},
-		"type":     {},
-		"severity": {},
-		"summary":  {},
-		"message":  {},
+	validMessageFields = map[MessageField]struct{}{
+		MessageFieldID:       {},
+		MessageFieldType:     {},
+		MessageFieldSeverity: {},
+		MessageFieldSummary:  {},
+		MessageFieldMessage:  {},
 	}
 )
 
@@ -423,7 +449,7 @@ func validateMessages(release map[string]interface{}, seenMessageIDs map[string]
 
 		// Check for unexpected fields
 		for field := range msgMap {
-			if _, ok := validMessageFields[field]; !ok {
+			if _, ok := validMessageFields[MessageField(field)]; !ok {
 				return fmt.Errorf("message at index %d in version %s has unexpected field '%s'", i, version, field)
 			}
 		}
@@ -442,12 +468,12 @@ func validateMessages(release map[string]interface{}, seenMessageIDs map[string]
 
 		if msgType, found, _ := unstructured.NestedString(msgMap, "type"); !found || msgType == "" {
 			return fmt.Errorf("message at index %d in version %s is missing required field 'type'", i, version)
-		} else if _, validType := validMessageTypes[msgType]; !validType {
+		} else if _, validType := validMessageTypes[MessageType(msgType)]; !validType {
 			return fmt.Errorf("message at index %d in version %s has invalid type '%s': must be one of info, warning, critical", i, version, msgType)
 		}
 
 		if severity, found, _ := unstructured.NestedString(msgMap, "severity"); found {
-			if _, validSeverity := validMessageSeverity[severity]; !validSeverity {
+			if _, validSeverity := validMessageSeverity[MessageSeverity(severity)]; !validSeverity {
 				return fmt.Errorf("message at index %d in version %s has invalid severity '%s': must be one of low, medium, high", i, version, severity)
 			}
 		}
