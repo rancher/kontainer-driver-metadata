@@ -7,9 +7,10 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"slices"
 	"strings"
 
-	utiliies "github.com/rancher/kontainer-driver-metadata/pkg"
+	utilities "github.com/rancher/kontainer-driver-metadata/pkg"
 	"github.com/rancher/kontainer-driver-metadata/pkg/data"
 	"github.com/rancher/kontainer-driver-metadata/pkg/images"
 	"github.com/sirupsen/logrus"
@@ -55,16 +56,8 @@ var (
 		"v1.33.0+k3s1":    true,
 	}
 
-	validMessageTypes = map[MessageType]struct{}{
-		MessageTypeInfo:     {},
-		MessageTypeWarning:  {},
-		MessageTypeCritical: {},
-	}
-	validMessageSeverity = map[MessageSeverity]struct{}{
-		MessageSeverityLow:    {},
-		MessageSeverityMedium: {},
-		MessageSeverityHigh:   {},
-	}
+	validMessageTypes      = []MessageType{MessageTypeInfo, MessageTypeWarning, MessageTypeCritical}
+	validMessageSeverities = []MessageSeverity{MessageSeverityLow, MessageSeverityMedium, MessageSeverityHigh}
 )
 
 // imageTags holds images and their tags as nested maps to make the comparison easy
@@ -76,14 +69,14 @@ func main() {
 		logrus.Fatal("Usage: go run validation.go <release> [ <release>...]")
 	}
 
-	dev, err := utiliies.FromLocalFile()
+	dev, err := utilities.FromLocalFile()
 	if err != nil {
 		logrus.Fatalf("failed to get the KDM data from the local file: %v", err)
 	}
 
 	for _, release := range args[1:] {
 		logrus.Infof("validating [%s]", release)
-		released, err := utiliies.FromURL(fmt.Sprintf(releaseDataURL, release))
+		released, err := utilities.FromURL(fmt.Sprintf(releaseDataURL, release))
 		if err != nil {
 			logrus.Fatalf("failed to get the KDM data for release [%s]: %v", release, err)
 		}
@@ -98,7 +91,7 @@ func main() {
 }
 
 func validateRegSync(release string) error {
-	raw, err := utiliies.DownloadFromURL(fmt.Sprintf(releaseRegSyncURL, release))
+	raw, err := utilities.DownloadFromURL(fmt.Sprintf(releaseRegSyncURL, release))
 	if err != nil {
 		return fmt.Errorf("failed to download the upstream regsync file: %v", err)
 	}
@@ -229,7 +222,7 @@ func validate(dev, released data.Data) error {
 	if err != nil {
 		return fmt.Errorf("failed to load released K3S releases: %v", err)
 	}
-	for _, distro := range []string{utiliies.RKE2, utiliies.K3S} {
+	for _, distro := range []string{utilities.RKE2, utilities.K3S} {
 		if err := validateDistro(distro, devRKE2, releasedRKE2, devK3S, releasedK3S, seenMessageIDs); err != nil {
 			return fmt.Errorf("failed to validate the distro [%s]: %v", distro, err)
 		}
@@ -242,9 +235,9 @@ func validateDistro(distro string, devRKE2, releasedRKE2, devK3S, releasedK3S *R
 	var versionsInDev, versionsInRelease []string
 	var err error
 	switch distro {
-	case utiliies.RKE2:
+	case utilities.RKE2:
 		versionsInDev, versionsInRelease, err = getVersions(devRKE2.Releases, releasedRKE2.Releases)
-	case utiliies.K3S:
+	case utilities.K3S:
 		versionsInDev, versionsInRelease, err = getVersions(devK3S.Releases, releasedK3S.Releases)
 	}
 	if err != nil {
@@ -266,7 +259,7 @@ func validateDistro(distro string, devRKE2, releasedRKE2, devK3S, releasedK3S *R
 	}
 
 	// check charts for RKE2 release
-	if distro == utiliies.RKE2 {
+	if distro == utilities.RKE2 {
 		for _, release := range devRKE2.Releases {
 			if err := validateRKE2Charts(release); err != nil {
 				logrus.Infof("the release: %+v", release)
@@ -281,7 +274,7 @@ func validateDistro(distro string, devRKE2, releasedRKE2, devK3S, releasedK3S *R
 		}
 	}
 
-	if distro == utiliies.K3S {
+	if distro == utilities.K3S {
 		for _, release := range devK3S.Releases {
 			if err := validateEncryptedKeyRotation(release); err != nil {
 				return fmt.Errorf("failed to validate k3s encrypted key rotation: %w", err)
@@ -406,12 +399,12 @@ func validateMessages(release Releases, seenMessageIDs map[string]bool) error {
 
 		if msg.Type == nil || *msg.Type == "" {
 			return fmt.Errorf("message at index %d in version %s is missing required field 'type'", i, version)
-		} else if _, validType := validMessageTypes[MessageType(*msg.Type)]; !validType {
+		} else if !slices.Contains(validMessageTypes, MessageType(*msg.Type)) {
 			return fmt.Errorf("message at index %d in version %s has invalid type '%s': must be one of info, warning, critical", i, version, *msg.Type)
 		}
 
 		if msg.Severity != nil {
-			if _, validSeverity := validMessageSeverity[MessageSeverity(*msg.Severity)]; !validSeverity {
+			if !slices.Contains(validMessageSeverities, MessageSeverity(*msg.Severity)) {
 				return fmt.Errorf("message at index %d in version %s has invalid severity '%s': must be one of low, medium, high", i, version, *msg.Severity)
 			}
 		}
