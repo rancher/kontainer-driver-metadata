@@ -28,7 +28,8 @@ type AppDefaults struct {
 
 // GenericArgument represents a simple string argument
 type GenericArgument struct {
-	Type string `yaml:"type" json:"type"`
+	Type    string `yaml:"type" json:"type"`
+	Default any    `yaml:"default,omitempty" json:"default,omitempty"`
 }
 
 // BooleanArgument represents a boolean argument with a default value

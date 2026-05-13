@@ -354,7 +354,7 @@ func TestLoadReleasesStrictValidation(t *testing.T) {
 				map[string]interface{}{
 					"version": "v1.33.0+k3s1",
 					"serverArgs": map[string]interface{}{
-						"default-local-storage-path": map[string]interface{}{"type": "string"},
+						"default-local-storage-path": map[string]interface{}{"type": "string", "default": "/var/lib/rancher/k3s/storage"},
 						"disable-apiserver":          map[string]interface{}{"type": "boolean", "default": false},
 						"disable-controller-manager": map[string]interface{}{"type": "boolean", "default": false},
 						"disable-etcd":               map[string]interface{}{"type": "boolean", "default": false},
@@ -406,6 +406,9 @@ func TestLoadReleasesStrictValidation(t *testing.T) {
 		}
 		if loaded.Releases[0].ServerArgs.EtcdS3BucketLookupType.Default != "auto" {
 			t.Fatalf("expected etcd-s3-bucket-lookup-type default to decode")
+		}
+		if loaded.Releases[0].ServerArgs.DefaultLocalStoragePath.Default != "/var/lib/rancher/k3s/storage" {
+			t.Fatalf("expected default-local-storage-path default to decode")
 		}
 		if loaded.Releases[0].AgentArgs.Docker.Type != "boolean" {
 			t.Fatalf("expected docker type to decode")
