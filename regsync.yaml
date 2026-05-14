@@ -709,6 +709,7 @@ sync:
         - v1.33.1-k3s1
         - v1.33.10-k3s1
         - v1.33.11-k3s1
+        - v1.33.12-k3s1
         - v1.33.2-k3s1
         - v1.33.3-k3s1
         - v1.33.4-k3s1
@@ -723,6 +724,7 @@ sync:
     type: repository
     tags:
       allow:
+        - v0.10.0-build20260513
         - v0.7.3-build20220613
         - v0.7.4-build20221121
         - v0.7.6-build20230223
@@ -755,6 +757,7 @@ sync:
         - v0.4.14
         - v0.4.15
         - v0.4.16
+        - v0.4.17
         - v0.4.3
         - v0.4.4
         - v0.4.5
@@ -783,6 +786,7 @@ sync:
         - v0.0.32
         - v0.0.34
         - v0.0.35
+        - v0.0.36
   - source: docker.io/rancher/longhornio-csi-attacher
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/longhornio-csi-attacher'
     type: repository
@@ -1529,6 +1533,7 @@ sync:
         - 1.14.0
         - 1.14.1
         - 1.14.2
+        - 1.14.3
         - 1.9.1
         - 1.9.4
   - source: docker.io/rancher/mirrored-ingress-nginx-kube-webhook-certgen
@@ -2298,6 +2303,7 @@ sync:
         - v1.33.1-k3s1
         - v1.33.10-k3s1
         - v1.33.11-k3s1
+        - v1.33.12-k3s1
         - v1.33.2-k3s1
         - v1.33.3-k3s1
         - v1.33.4-k3s1
