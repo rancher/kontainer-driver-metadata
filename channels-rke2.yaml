@@ -4720,6 +4720,8 @@ releases:
         version: v3.31.400
     serverArgs: &serverArgsv1-33-10-rke2r1
       <<: *serverArgsv1-33-9-rke2r1
+      prime:
+        type: boolean
     agentArgs: &agentArgsv1-33-10-rke2r1
       <<: *agentArgsv1-33-9-rke2r1
     featureVersions: *featureVersions-v1
@@ -5118,6 +5120,8 @@ releases:
         version: v3.31.4-build2026032700
     serverArgs: &serverArgsv1-34-6-rke2r1
       <<: *serverArgsv1-34-5-rke2r1
+      prime:
+        type: boolean
     agentArgs: &agentArgsv1-34-6-rke2r1
       <<: *agentArgsv1-34-5-rke2r1
     featureVersions: *featureVersions-v1
@@ -5392,6 +5396,8 @@ releases:
         version: v3.31.400
     serverArgs: &serverArgsv1-35-3-rke2r1
       <<: *serverArgsv1-35-2-rke2r1
+      prime:
+        type: boolean
     agentArgs: &agentArgsv1-35-3-rke2r1
       <<: *agentArgsv1-35-2-rke2r1
     featureVersions: *featureVersions-v1
