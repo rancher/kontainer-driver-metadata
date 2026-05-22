@@ -68,7 +68,7 @@
      },
      {
       "appVersion": "\u003e= 2.15.0-0 \u003c 2.16.100-0",
-      "defaultVersion": "1.35.x"
+      "defaultVersion": "1.36.x"
      }
     ]
    }
@@ -31661,7 +31661,7 @@
      "encryption-key-rotation": "2.0.0"
     },
     "maxChannelServerVersion": "v2.15.99",
-    "minChannelServerVersion": "v2.14.0-alpha1",
+    "minChannelServerVersion": "v2.15.0-alpha1",
     "serverArgs": {
      "cluster-cidr": {
       "type": "string"
@@ -31906,7 +31906,7 @@
      "encryption-key-rotation": "2.0.0"
     },
     "maxChannelServerVersion": "v2.15.99",
-    "minChannelServerVersion": "v2.14.0-alpha1",
+    "minChannelServerVersion": "v2.15.0-alpha1",
     "serverArgs": {
      "cluster-cidr": {
       "type": "string"
@@ -32121,7 +32121,7 @@
      },
      {
       "appVersion": "\u003e= 2.15.0-0 \u003c 2.16.100-0",
-      "defaultVersion": "1.35.x"
+      "defaultVersion": "1.36.x"
      }
     ]
    }
@@ -84276,7 +84276,7 @@
      "encryption-key-rotation": "2.0.0"
     },
     "maxChannelServerVersion": "v2.15.99",
-    "minChannelServerVersion": "v2.14.0-alpha1",
+    "minChannelServerVersion": "v2.15.0-alpha1",
     "serverArgs": {
      "audit-policy-file": {
       "type": "string"

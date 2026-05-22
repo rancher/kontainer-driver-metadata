@@ -31,7 +31,7 @@ appDefaults:
       - appVersion: '>= 2.14.0-0 < 2.15.100-0'
         defaultVersion: '1.35.x'
       - appVersion: '>= 2.15.0-0 < 2.16.100-0'
-        defaultVersion: '1.35.x'
+        defaultVersion: '1.36.x'
 releases:
   - version: v1.19.16+rke2r1
     minChannelServerVersion: v2.6.0-alpha1
@@ -5553,7 +5553,7 @@ releases:
       <<: *agentArgsv1-35-4-rke2r1
     featureVersions: *featureVersions-v1
   - version: v1.36.1+rke2r2
-    minChannelServerVersion: v2.14.0-alpha1
+    minChannelServerVersion: v2.15.0-alpha1
     maxChannelServerVersion: v2.15.99
     charts: &chartsv1-36-1-rke2r2
       <<: *chartsv1-35-4-rke2r1
