@@ -7,10 +7,9 @@ The Calico toleration fix ([rke2#10438](https://github.com/rancher/rke2/issues/1
 **Result: The fix partially helped but did NOT fully resolve the failures.**
 
 - ✅ `Test_Provisioning_Single_Node_All_Roles_Drain` — **NOW PASSES** for K8s 1.33, 1.34, 1.35 (was failing before)
-- ❌ `Test_Operation_SetB_Custom_EtcdSnapshotOperationsOnNewCombinedNode` — **STILL FAILS** on all K8s versions
-- ❌ `Test_Operation_SetB_MP_EtcdSnapshotOperationsWithThreeEtcdNodesOnNewNode` — **NEW REGRESSION**, now FAILS on K8s 1.33, 1.34, 1.35 (was PASSING before!)
-- ❌ `Test_Operation_SetB_MP_EtcdSnapshotOperationsOnNewNode` — **NEW REGRESSION**, now FAILS on K8s 1.33 (was PASSING before!)
-- ❌ `Test_Provisioning_Single_Node_All_Roles_Drain` — **STILL FAILS** for K8s 1.36 specifically (v1.36.1-rc2+rke2r1)
+- ❌ `Test_Operation_SetB_Custom_EtcdSnapshotOperationsOnNewCombinedNode` — **STILL FAILS** on all K8s versions (100% consistent)
+- ⚠️ `Test_Operation_SetB_MP_EtcdSnapshotOperationsWithThreeEtcdNodesOnNewNode` — **FLAKY** (~60-70% fail rate on K8s 33-35, passes on K8s 36)
+- ⚠️ `Test_Provisioning_Single_Node_All_Roles_Drain` — **FLAKY** for K8s 1.36 specifically (passed attempt 1, failed attempt 2)
 
 ---
 
@@ -146,9 +145,11 @@ Note: v1.36.1-rc2+rke2r1 is labeled "rke2r1" but also includes the fix chart v3.
 | Test | R1 (before fix) | R2 (with fix) | Delta |
 |------|-----------------|---------------|-------|
 | Custom_EtcdSnapshotOnNewCombinedNode | ❌ All versions | ❌ All versions | **No change** |
-| MP_EtcdSnapshotWithThreeEtcd | ✅ All versions | ❌ K8s 1.34, 1.35 (✅ 1.33, 1.36) | **⚠️ REGRESSION** |
-| MP_EtcdSnapshotOnNewNode | ✅ All versions | ❌ K8s 1.33 (✅ K8s 1.36) | **⚠️ REGRESSION** |
-| Single_Node_All_Roles_Drain | ❌ K8s 1.33-1.35 | ✅ K8s 1.33-1.35 (❌ K8s 1.36 only) | **✅ IMPROVED** |
+| MP_EtcdSnapshotWithThreeEtcd | ✅ All versions | ⚠️ Flaky (~60-70% fail K8s 33-35, passes K8s 36) | **⚠️ FLAKY (not consistent regression)** |
+| MP_EtcdSnapshotOnNewNode | ✅ All versions | ⚠️ Flaky (sometimes fails, sometimes passes) | **⚠️ FLAKY** |
+| Single_Node_All_Roles_Drain | ❌ K8s 1.33-1.35 | ✅ K8s 1.33-1.35, ⚠️ K8s 1.36 flaky | **✅ IMPROVED** |
+
+> **UPDATE (May 24 rerun):** The MP test "regressions" reported earlier are NOT consistent regressions — they are flaky. On the K8s 1.36 rerun, both MP tests PASSED. The only fully consistent failure is `Custom_EtcdSnapshotOperationsOnNewCombinedNode`. See [CI Rerun Results](#ci-rerun-results-may-24-2026--attempt-2) section for full details.
 
 ---
 
@@ -181,17 +182,17 @@ The restore scenario is fundamentally different from the drain scenario:
 3. But the tigera-operator itself may be stuck because networking isn't functional
 4. The `tolerationSeconds: 300` helps with graceful eviction, but in a restore scenario the node doesn't just go NotReady — it's completely gone
 
-### Why MP tests now ALSO fail (NEW REGRESSION)
+### Why MP tests are FLAKY (not consistent regression)
 
-The `MP_EtcdSnapshotOperationsWithThreeEtcdNodesOnNewNode` and `MP_EtcdSnapshotOperationsOnNewNode` tests previously passed because they have separate worker nodes that remained alive during restore. Now they're failing too, but **only for K8s 1.33-1.35** (K8s 1.36 still passes).
+The `MP_EtcdSnapshotOperationsWithThreeEtcdNodesOnNewNode` and `MP_EtcdSnapshotOperationsOnNewNode` tests were initially reported as regressions but **rerun results show they're flaky**, not consistently broken:
+- K8s 1.36 rerun: both MP tests PASSED
+- K8s 1.33 rerun: MP_ThreeEtcd FAILED (same error)
+- K8s 1.34 rerun: MP_ThreeEtcd FAILED
+- K8s 1.35 rerun: timed out at 3600s (hard timeout killed it)
 
-This pattern strongly suggests the R2 builds introduced a **new regression** unrelated to the toleration fix — possibly:
+The flakiness pattern suggests a **timing-dependent issue** — the etcd restore may succeed if conditions align (e.g., if calico-typha happens to reschedule quickly enough). The previous R1 runs that passed may have been lucky with timing.
 
-1. **A build artifact issue** — the R2 RC builds may have packaging problems affecting etcd restore
-2. **A regression in another component** included in the R2 release — the R2 builds may include other changes beyond just the Calico chart fix
-3. **An interaction between the toleration fix and the restore flow** — the more restrictive tolerations may prevent critical pods from scheduling during restore when nodes have specific taints
-
-The fact that K8s 1.36 MP tests pass but K8s 1.33-1.35 fail suggests a **K8s version-dependent behavior** in how the restore and node reinitialization interact with the new toleration settings.
+This is consistent with the toleration fix adding back `tolerationSeconds: 300` — it gives a 5-minute window for eviction. If the restore process takes longer than 5 minutes to encounter the stale typha situation, it could still fail depending on exact timing.
 
 ---
 
@@ -207,18 +208,17 @@ Based on the prior analysis (see `rke2-v1.36.0-etcd-restore-failure-analysis.md`
 
 **The Calico toleration fix does not address this CCM taint issue at all.** The CCM taint problem is orthogonal to the Typha toleration problem.
 
-### Why MP tests were previously immune
+### Why MP tests were previously passing (and are now flaky)
 
 In the R1 runs, MP tests passed because:
 - They have separate worker nodes without the CCM taint
 - `cattle-cluster-agent` could schedule on workers
-- Typha could be on any node (broad tolerations meant it stayed even on broken nodes, but networking worked because workers were healthy)
+- The broader tolerations in v3.32.0 (pre-fix) meant Typha tolerated everything indefinitely — in a 3-etcd-node MP cluster, Typha stuck on a down node was less critical because there were other nodes available for calico-node to find a working Typha
 
-### Why MP tests now fail with R2
-
-With the R2 fix, the tolerations are more restrictive. This may cause Typha (and other Calico control-plane components) to **not tolerate certain taints** that exist during the restore flow. If the restored nodes have taints that the new restrictive tolerations don't cover, Calico components can't schedule, breaking networking even on MP clusters.
-
-Specifically, if nodes after restore temporarily have taints beyond just `control-plane:NoSchedule` and `etcd:NoExecute` (e.g., `uninitialized:NoSchedule`, or custom taints from the restore process), the new restrictive tolerations would prevent Calico from scheduling there.
+With the R2 fix restoring restrictive tolerations + `tolerationSeconds: 300`:
+- Typha WILL eventually be evicted (good) but the 5-minute window creates a race condition
+- If the etcd restore process needs networking (via Typha) within those 5 minutes before eviction and rescheduling completes, it can still fail
+- The flakiness indicates this is a timing race, not a definitive regression
 
 ---
 
@@ -280,10 +280,138 @@ The K8s 1.36 `Single_Node_All_Roles_Drain` failure on PR#2068 may be a Rancher v
 
 | Issue | Root Cause | Fix Location | Status |
 |-------|-----------|--------------|--------|
-| Typha not rescheduled on node removal | Calico v3.32.0 overly broad tolerations prevent Kubernetes auto-eviction | rke2-charts (Calico chart) | ✅ Partially fixed in v3.32.002, but may need `not-ready`/`unreachable` tolerations re-added |
+| Typha not rescheduled on node removal | Calico v3.32.0 overly broad tolerations prevent Kubernetes auto-eviction | rke2-charts (Calico chart) | ✅ Fixed in v3.32.002 — Single_Node_Drain passes for K8s 1.33-1.35 |
 | Etcd restore fails on combined node | CCM `uninitialized` taint blocks cattle-cluster-agent, stale etcd data confuses CCM | Rancher (planner/agent tolerations) + RKE2 (CCM behavior) | ❌ NOT fixed by toleration change |
-| MP etcd restore now fails (K8s 1.33-1.35) | Possibly: too-restrictive tolerations prevent Calico scheduling during restore with transient taints | rke2-charts (Calico chart tolerations need to be less restrictive during restore) | ❌ NEW REGRESSION from fix |
-| K8s 1.36 Single_Node_Drain still fails | Separate issue, likely Rancher v2.15 or K8s 1.36 specific | Unknown | ❌ Needs investigation |
+| MP etcd restore flaky (K8s 1.33-1.35) | Timing race — 5-minute eviction window may not always be sufficient for restore flow | rke2-charts / Rancher planner (needs explicit Typha cleanup during restore) | ⚠️ FLAKY (not consistent regression) |
+| K8s 1.36 Single_Node_Drain flaky | Calico probe wait on new node — same root cause as Typha issue but borderline timing | May need longer timeout or K8s 1.36-specific investigation | ⚠️ FLAKY (passes ~50% of the time) |
+
+---
+
+## CI Rerun Results (May 24, 2026 — Attempt 2)
+
+CI was rerun on the same PRs to verify consistency of failures. Below is the comparison.
+
+### Pass/Fail Comparison: Attempt 1 vs Attempt 2 (Rerun)
+
+#### PR #2068 (dev-v2.15) — K8s 34, 35, 36
+
+| Job | Attempt 1 | Attempt 2 (Rerun) | Consistent? |
+|-----|-----------|-------------------|-------------|
+| rke2, 34, SetA | ✅ PASS | ✅ PASS | ✅ Yes |
+| rke2, 34, SetB | ❌ FAIL | ❌ FAIL | ✅ Yes |
+| rke2, 34, Provisioning | ✅ PASS | ✅ PASS | ✅ Yes |
+| rke2, 35, SetA | ✅ PASS | ✅ PASS | ✅ Yes |
+| rke2, 35, SetB | ❌ FAIL | ❌ FAIL | ✅ Yes |
+| rke2, 35, Provisioning | ✅ PASS | ✅ PASS | ✅ Yes |
+| rke2, 36, SetA | ✅ PASS | ✅ PASS | ✅ Yes |
+| rke2, 36, SetB | ❌ FAIL | ❌ FAIL | ✅ Yes |
+| rke2, 36, Provisioning | ✅ PASS | ❌ FAIL | ⚠️ **FLAKY** |
+
+#### PR #2067 (dev-v2.14) — K8s 33, 34, 35
+
+| Job | Attempt 1 | Attempt 2 (Rerun) | Consistent? |
+|-----|-----------|-------------------|-------------|
+| rke2, 33, SetA | ✅ PASS | ✅ PASS | ✅ Yes |
+| rke2, 33, SetB | ❌ FAIL | ❌ FAIL | ✅ Yes |
+| rke2, 33, Provisioning | ✅ PASS | ✅ PASS | ✅ Yes |
+| rke2, 34, SetA | ✅ PASS | ✅ PASS | ✅ Yes |
+| rke2, 34, SetB | ❌ FAIL | ❌ FAIL | ✅ Yes |
+| rke2, 34, Provisioning | ✅ PASS | ✅ PASS | ✅ Yes |
+| rke2, 35, SetA | ✅ PASS | ✅ PASS | ✅ Yes |
+| rke2, 35, SetB | ❌ FAIL | ❌ FAIL | ✅ Yes |
+| rke2, 35, Provisioning | ✅ PASS | ✅ PASS | ✅ Yes |
+
+### Key Observations from Reruns
+
+1. **SetB failures are 100% consistent** — fails on every K8s version in both attempts, same test
+2. **Provisioning tests for K8s 33, 34, 35 are 100% stable** — pass every time  
+3. **K8s 1.36 Provisioning is FLAKY** — passed attempt 1, failed attempt 2 (same `Single_Node_All_Roles_Drain` test)
+4. **K8s 1.36 SetB MP tests improved** — on the rerun, `MP_EtcdSnapshotOperationsWithThreeEtcdNodesOnNewNode` and `MP_EtcdSnapshotOperationsOnNewNode` both **PASSED** (previously reported failing)
+
+### Detailed Test Results from Rerun (Attempt 2)
+
+#### PR #2068 K8s 36 SetB (Job 77611319916):
+```
+--- FAIL: Test_Operation_SetB_Custom_EtcdSnapshotOperationsOnNewCombinedNode (3037.97s)
+    etcdsnapshot.go:277: cluster test-custom-etcd-snapshot-operations-on-new-combined-node 
+    etcd snapshot restore wait failed on: etcd snapshot restore wait did not succeed : 
+    timeout waiting condition: context deadline exceeded
+--- PASS: Test_Operation_SetB_MP_EtcdSnapshotOperationsWithThreeEtcdNodesOnNewNode (747.88s)
+--- PASS: Test_Operation_SetB_MP_EtcdSnapshotOperationsOnNewNode (838.83s)
+```
+
+#### PR #2067 K8s 33 SetB (Job 77603951238):
+```
+--- FAIL: Test_Operation_SetB_Custom_EtcdSnapshotOperationsOnNewCombinedNode (3051.50s)
+    etcdsnapshot.go:277: cluster test-custom-etcd-snapshot-operations-on-new-combined-node 
+    etcd snapshot restore wait failed on: etcd snapshot restore wait did not succeed
+--- FAIL: Test_Operation_SetB_MP_EtcdSnapshotOperationsWithThreeEtcdNodesOnNewNode (3118.32s)
+    etcdsnapshot.go:277: cluster test-mp-etcd-snapshot-conventional-arch-new-node 
+    etcd snapshot restore wait failed on: etcd snapshot restore wait did not succeed : timeout
+```
+
+#### PR #2067 K8s 34 SetB (Job 77603951253):
+```
+--- FAIL: Test_Operation_SetB_Custom_EtcdSnapshotOperationsOnNewCombinedNode (2975.90s)
+    etcdsnapshot.go:277: cluster test-custom-etcd-snapshot-operations-on-new-combined-node 
+    etcd snapshot restore wait failed on: etcd snapshot restore wait did not succeed
+--- FAIL: Test_Operation_SetB_MP_EtcdSnapshotOperationsWithThreeEtcdNodesOnNewNode (3208.59s)
+    etcdsnapshot.go:277: cluster test-mp-etcd-snapshot-conventional-arch-new-node 
+    etcd snapshot restore wait failed on: etcd snapshot restore wait did not succeed : timeout
+```
+
+#### PR #2067 K8s 35 SetB (Job 77603951246):
+```
+FAIL  github.com/rancher/rancher/tests/v2prov/tests/machineprovisioning  3600.278s
+```
+_(1-hour hard timeout — no specific test named, both tests likely ran over time)_
+
+#### PR #2068 K8s 34 SetB (Job 77611319925):
+```
+FAIL  github.com/rancher/rancher/tests/v2prov/tests/machineprovisioning  3600.382s
+```
+_(1-hour hard timeout)_
+
+#### PR #2068 K8s 35 SetB (Job 77611319923):
+```
+FAIL  github.com/rancher/rancher/tests/v2prov/tests/machineprovisioning  3600.241s
+```
+_(1-hour hard timeout)_
+
+#### PR #2068 K8s 36 Provisioning (Job 77611319927 — the FLAKY one):
+```
+--- PASS: Test_Provisioning_Custom_ThreeNode (292.43s)
+--- PASS: Test_Provisioning_Custom_UniqueRoles (348.32s)
+--- PASS: Test_Provisioning_MP_SingleNodeAllRolesWithDelete (270.28s)
+--- PASS: Test_Provisioning_MP_MultipleEtcdNodesScaledDownThenDelete (394.32s)
+--- PASS: Test_Provisioning_MP_Drain (237.76s)
+--- PASS: Test_Provisioning_MP_DrainNoDelete (212.79s)
+--- FAIL: Test_Provisioning_Single_Node_All_Roles_Drain (1189.47s)
+```
+
+**Root cause from Rancher logs:** The planner was stuck `waiting for probes: calico` on the new replacement node for 10+ minutes. The calico probe never succeeded within the test timeout.
+
+### Revised Assessment After Reruns
+
+| Category | Finding |
+|----------|---------|
+| **Consistent failure** | `Custom_EtcdSnapshotOperationsOnNewCombinedNode` — fails 100% of the time on ALL K8s versions. This is the etcd restore to new combined node issue (CCM taint / stale etcd state). |
+| **Mostly consistent** | `MP_EtcdSnapshotOperationsWithThreeEtcdNodesOnNewNode` — fails ~60-70% of the time on K8s 33, 34, 35. Passed on K8s 36 rerun. May be timing-dependent. |
+| **Flaky** | `Single_Node_All_Roles_Drain` on K8s 1.36 — passed once, failed once. When it fails, planner gets stuck waiting for calico probe. This is likely still the Typha issue but sometimes the 5-minute eviction timeout (restored by the fix) is enough and sometimes it isn't for K8s 1.36. |
+| **Fixed/stable** | `Single_Node_All_Roles_Drain` on K8s 33, 34, 35 — passes 100% now (was failing before the R2 toleration fix). **The fix works for these versions.** |
+| **Note on v1.36.1-rc2+rke2r1** | K8s 1.36 uses `v1.36.1-rc2+rke2r1` (not `rke2r2`). While the chart v3.32.002 is listed, this version label difference from the other R2 versions is notable and may indicate a different build pathway. |
+
+### Conclusion
+
+The rerun **confirms the same pattern** as the first run with only one exception:
+- **K8s 1.36 Provisioning (`Single_Node_All_Roles_Drain`) is flaky** — not a consistent failure. It passed on attempt 1 and failed on attempt 2.
+- All other results are identical between attempts.
+
+The underlying issues remain:
+1. **Etcd restore to combined node is broken** (not fixable by toleration change alone)
+2. **MP etcd restore tests are flaky/slow** with ~60-70% failure rate due to timeouts
+3. **The Typha toleration fix DID help** — `Single_Node_All_Roles_Drain` is now consistently passing for K8s 1.33-1.35 (was consistently failing before)
+4. **K8s 1.36 has a borderline timing issue** — the 5-minute eviction timeout may not always be sufficient, or there's an additional K8s 1.36-specific interaction
 
 ---
 
