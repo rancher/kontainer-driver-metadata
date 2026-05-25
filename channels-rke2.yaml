@@ -5552,7 +5552,7 @@ releases:
     agentArgs: &agentArgsv1-35-5-rc2-rke2r2
       <<: *agentArgsv1-35-4-rke2r1
     featureVersions: *featureVersions-v1
-  - version: v1.36.1-rc2+rke2r1
+  - version: v1.36.1-rc2+rke2r2
     minChannelServerVersion: v2.14.0-alpha1
     maxChannelServerVersion: v2.15.99
     charts: &chartsv1-36-1-rc2-rke2r2
