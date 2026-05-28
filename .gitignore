@@ -5,3 +5,7 @@
 /.idea
 .dapper
 .DS_Store
+Dockerfile.dapper*
+.cache/
+.config/
+.kube/
