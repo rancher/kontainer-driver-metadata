@@ -5610,6 +5610,8 @@ releases:
         version: 39.0.702
     serverArgs: &serverArgsv1-36-1-rke2r2
       <<: *serverArgsv1-35-4-rke2r1
+      prime:
+        type: boolean
     agentArgs: &agentArgsv1-36-1-rke2r2
       <<: *agentArgsv1-35-4-rke2r1
     featureVersions: *featureVersions-v1
