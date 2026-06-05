@@ -10,7 +10,7 @@ import (
 
 	"github.com/blang/semver"
 	utiliies "github.com/rancher/kontainer-driver-metadata/pkg"
-	"github.com/rancher/rke/types/kdm"
+	kdm "github.com/rancher/kontainer-driver-metadata/pkg/data"
 	"github.com/sirupsen/logrus"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 )

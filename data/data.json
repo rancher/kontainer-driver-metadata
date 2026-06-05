@@ -1,14 +1,4 @@
 {
- "K8sVersionServiceOptions": null,
- "K8sVersionRKESystemImages": null,
- "K8sVersionedTemplates": null,
- "K8sVersionInfo": null,
- "RancherDefaultK8sVersions": null,
- "RKEDefaultK8sVersions": null,
- "K8sVersionDockerInfo": null,
- "K8sVersionWindowsServiceOptions": null,
- "CisConfigParams": null,
- "CisBenchmarkVersionInfo": null,
  "k3s": {
   "appDefaults": [
    {

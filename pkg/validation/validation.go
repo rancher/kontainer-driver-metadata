@@ -8,8 +8,8 @@ import (
 	"strings"
 
 	utiliies "github.com/rancher/kontainer-driver-metadata/pkg"
+	"github.com/rancher/kontainer-driver-metadata/pkg/data"
 	"github.com/rancher/kontainer-driver-metadata/pkg/images"
-	"github.com/rancher/rke/types/kdm"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/mod/semver"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
@@ -165,7 +165,7 @@ func getImageTags(source []byte) (imageTags, error) {
 
 // validate checks the versions in the local data.json by comparing with the released data.json,
 // Supported releases are RKE, RKE2 and K3s.
-func validate(dev, released kdm.Data) error {
+func validate(dev, released data.Data) error {
 	for _, distro := range []string{utiliies.RKE2, utiliies.K3S} {
 		if err := validateDistro(distro, dev, released); err != nil {
 			return fmt.Errorf("failed to validate the distro [%s]: %v", distro, err)
@@ -174,7 +174,7 @@ func validate(dev, released kdm.Data) error {
 	return nil
 }
 
-func validateDistro(distro string, dev, released kdm.Data) error {
+func validateDistro(distro string, dev, released data.Data) error {
 	logrus.Infof("validating the distro [%s]", distro)
 	versionsInDev, versionsInRelease, err := getVersions(distro, dev, released)
 	if err != nil {
@@ -332,7 +332,7 @@ func validateRKE2Charts(release map[string]interface{}) error {
 }
 
 // getVersions returns the versions found from the dev and released data, and an error if anything goes wrong
-func getVersions(distro string, dev, released kdm.Data) (devVersions, releasedVersions []string, err error) {
+func getVersions(distro string, dev, released data.Data) (devVersions, releasedVersions []string, err error) {
 	helper := func(source map[string]interface{}) ([]string, error) {
 		var results []string
 		versions, _, err := unstructured.NestedSlice(source, "releases")

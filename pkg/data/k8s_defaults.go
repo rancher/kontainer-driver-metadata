@@ -1,30 +1,30 @@
-package rke
+package data
 
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"os"
 
-	"sigs.k8s.io/yaml"
-
-	"github.com/rancher/rke/types/image"
-	"github.com/rancher/rke/types/kdm"
 	"github.com/sirupsen/logrus"
+	"sigs.k8s.io/yaml"
 )
 
 const (
 	DataFilePath = "./data/data.json"
 )
 
+type Data struct {
+	K3S  map[string]interface{} `json:"k3s,omitempty"`
+	RKE2 map[string]interface{} `json:"rke2,omitempty"`
+}
+
 var (
-	DriverData     kdm.Data
+	DriverData     Data
 	MissedTemplate map[string][]string
-	m              = image.Mirror
 )
 
 func initData() {
-	DriverData = kdm.Data{
+	DriverData = Data{
 		K3S:  map[string]interface{}{},
 		RKE2: map[string]interface{}{},
 	}
@@ -38,7 +38,7 @@ func initData() {
 }
 
 func readFile(input string, data map[string]interface{}) error {
-	bytes, err := ioutil.ReadFile(input)
+	bytes, err := os.ReadFile(input)
 	if err != nil {
 		return err
 	}
@@ -68,4 +68,12 @@ func GenerateData() {
 		panic(fmt.Errorf("err writing jsonFile %v", err))
 	}
 	fmt.Println("finished generating data.json")
+}
+
+func FromData(b []byte) (Data, error) {
+	d := &Data{}
+	if err := json.Unmarshal(b, d); err != nil {
+		return Data{}, err
+	}
+	return *d, nil
 }

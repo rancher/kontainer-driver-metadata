@@ -6,8 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/rancher/kontainer-driver-metadata/pkg/rke"
-	"github.com/rancher/rke/types/kdm"
+	kdm "github.com/rancher/kontainer-driver-metadata/pkg/data"
 )
 
 const (
@@ -18,7 +17,7 @@ const (
 // FromLocalFile loads and returns the data object from the given path to a data.json file.
 // It returns an empty data and an error when something goes wrong.
 func FromLocalFile() (kdm.Data, error) {
-	return FromFile(rke.DataFilePath)
+	return FromFile(kdm.DataFilePath)
 }
 
 // FromFile loads and returns the data object from the given path to a data.json file.
