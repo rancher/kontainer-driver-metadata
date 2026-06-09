@@ -76352,6 +76352,9 @@
      "pause-image": {
       "type": "string"
      },
+     "prime": {
+      "type": "boolean"
+     },
      "runtime-image": {
       "type": "string"
      },
@@ -76716,6 +76719,9 @@
      },
      "pause-image": {
       "type": "string"
+     },
+     "prime": {
+      "type": "boolean"
      },
      "runtime-image": {
       "type": "string"
@@ -77082,6 +77088,9 @@
      "pause-image": {
       "type": "string"
      },
+     "prime": {
+      "type": "boolean"
+     },
      "runtime-image": {
       "type": "string"
      },
@@ -77446,6 +77455,9 @@
      },
      "pause-image": {
       "type": "string"
+     },
+     "prime": {
+      "type": "boolean"
      },
      "runtime-image": {
       "type": "string"
@@ -80002,6 +80014,9 @@
      "pause-image": {
       "type": "string"
      },
+     "prime": {
+      "type": "boolean"
+     },
      "runtime-image": {
       "type": "string"
      },
@@ -80366,6 +80381,9 @@
      },
      "pause-image": {
       "type": "string"
+     },
+     "prime": {
+      "type": "boolean"
      },
      "runtime-image": {
       "type": "string"
@@ -80732,6 +80750,9 @@
      "pause-image": {
       "type": "string"
      },
+     "prime": {
+      "type": "boolean"
+     },
      "runtime-image": {
       "type": "string"
      },
@@ -81096,6 +81117,9 @@
      },
      "pause-image": {
       "type": "string"
+     },
+     "prime": {
+      "type": "boolean"
      },
      "runtime-image": {
       "type": "string"
@@ -82922,6 +82946,9 @@
      "pause-image": {
       "type": "string"
      },
+     "prime": {
+      "type": "boolean"
+     },
      "runtime-image": {
       "type": "string"
      },
@@ -83286,6 +83313,9 @@
      },
      "pause-image": {
       "type": "string"
+     },
+     "prime": {
+      "type": "boolean"
      },
      "runtime-image": {
       "type": "string"
@@ -83652,6 +83682,9 @@
      "pause-image": {
       "type": "string"
      },
+     "prime": {
+      "type": "boolean"
+     },
      "runtime-image": {
       "type": "string"
      },
@@ -84016,6 +84049,9 @@
      },
      "pause-image": {
       "type": "string"
+     },
+     "prime": {
+      "type": "boolean"
      },
      "runtime-image": {
       "type": "string"
@@ -84385,6 +84421,9 @@
      },
      "pause-image": {
       "type": "string"
+     },
+     "prime": {
+      "type": "boolean"
      },
      "runtime-image": {
       "type": "string"
