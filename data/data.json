@@ -65887,7 +65887,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -68851,6 +68857,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -68878,7 +68887,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -69213,6 +69228,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -69240,7 +69258,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -69575,6 +69599,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -69602,7 +69629,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -69937,6 +69970,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -69964,7 +70000,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -70299,6 +70341,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -70326,7 +70371,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -70661,6 +70712,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -70688,7 +70742,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -72665,6 +72725,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -72692,7 +72755,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -73027,6 +73096,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -73054,7 +73126,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -73389,6 +73467,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -73416,7 +73497,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -73751,6 +73838,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -73778,7 +73868,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -74113,6 +74209,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -74140,7 +74239,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -74475,6 +74580,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -74502,7 +74610,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -74837,6 +74951,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -74864,7 +74981,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -75199,6 +75322,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -75226,7 +75352,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -75561,6 +75693,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -75588,7 +75723,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -75923,6 +76064,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -75950,7 +76094,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -76647,6 +76797,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -76674,7 +76827,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -77009,6 +77168,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -77036,7 +77198,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -77371,6 +77539,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -77398,7 +77569,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -77733,6 +77910,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -77760,7 +77940,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -78095,6 +78281,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -78122,7 +78311,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -78457,6 +78652,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -78484,7 +78682,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -78819,6 +79023,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -78846,7 +79053,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -79181,6 +79394,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -79208,7 +79424,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -79543,6 +79765,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -79570,7 +79795,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -79905,6 +80136,9 @@
      "kubelet-path": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "pause-image": {
       "type": "string"
      },
@@ -79932,7 +80166,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
