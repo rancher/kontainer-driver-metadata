@@ -169,7 +169,7 @@ jobs:
     permissions:
       contents: read
     runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
-    container: registry.suse.com/bci/bci-base:15.7
+    container: registry.suse.com/bci/bci-base:16.1
     steps:
       - name: Install golang
         run: |
@@ -204,7 +204,7 @@ jobs:
     permissions:
       contents: read
     runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
-    container: registry.suse.com/bci/bci-base:15.7
+    container: registry.suse.com/bci/bci-base:16.1
     steps:
       - name: Upload GH Event File
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
