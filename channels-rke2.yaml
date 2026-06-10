@@ -3669,6 +3669,10 @@ releases:
         type: string
       enable-servicelb:
         type: boolean
+      write-kubeconfig-mode:
+        type: string
+      write-kubeconfig:
+        type: string
     agentArgs: &agentArgsv1-31-13-rke2r1
       <<: *agentArgsv1-31-12-rke2r1
       container-runtime-endpoint:
@@ -4003,6 +4007,10 @@ releases:
         type: string
       enable-servicelb:
         type: boolean
+      write-kubeconfig:
+        type: string
+      write-kubeconfig-mode:
+        type: string
     agentArgs: &agentArgsv1-32-9-rke2r1
       <<: *agentArgsv1-32-8-rke2r1
       container-runtime-endpoint:
@@ -4447,6 +4455,10 @@ releases:
         type: string
       enable-servicelb:
         type: boolean
+      write-kubeconfig:
+        type: string
+      write-kubeconfig-mode:
+        type: string
     agentArgs: &agentArgsv1-33-5-rke2r1
       <<: *agentArgsv1-33-4-rke2r1
       container-runtime-endpoint:
@@ -4921,6 +4933,10 @@ releases:
         type: string
       enable-servicelb:
         type: boolean
+      write-kubeconfig-mode:
+        type: string
+      write-kubeconfig:
+        type: string
     agentArgs: &agentArgsv1-34-1-rke2r1
       <<: *agentArgsv1-33-3-rke2r1
       container-runtime-endpoint:
@@ -5666,6 +5682,10 @@ releases:
         version: 3.13.011
     serverArgs: &serverArgsv1-35-5-rke2r2
       <<: *serverArgsv1-35-4-rke2r1
+      write-kubeconfig-mode:
+        type: string
+      write-kubeconfig:
+        type: string
     agentArgs: &agentArgsv1-35-5-rke2r2
       <<: *agentArgsv1-35-4-rke2r1
     featureVersions: *featureVersions-v1
