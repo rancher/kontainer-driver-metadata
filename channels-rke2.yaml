@@ -3687,6 +3687,8 @@ releases:
         type: array
       nonroot-devices:
         type: boolean
+      node-name-from-cloud-provider-metadata:
+        type: boolean
     featureVersions: *featureVersions-v1
   - version: v1.31.14+rke2r1
     minChannelServerVersion: v2.10.0-alpha1
@@ -4052,8 +4054,6 @@ releases:
         type: string
       enable-servicelb:
         type: boolean
-      node-name-from-cloud-provider-metadata:
-        type: boolean
       write-kubeconfig:
         type: string
       write-kubeconfig-mode:
@@ -4075,6 +4075,8 @@ releases:
       control-plane-probe-configuration:
         type: array
       nonroot-devices:
+        type: boolean
+      node-name-from-cloud-provider-metadata:
         type: boolean
     featureVersions: *featureVersions-v1
   - version: v1.32.10+rke2r1
@@ -4498,8 +4500,6 @@ releases:
         type: string
       enable-servicelb:
         type: boolean
-      node-name-from-cloud-provider-metadata:
-        type: boolean
       write-kubeconfig:
         type: string
       write-kubeconfig-mode:
@@ -4521,6 +4521,8 @@ releases:
       control-plane-probe-configuration:
         type: array
       nonroot-devices:
+        type: boolean
+      node-name-from-cloud-provider-metadata:
         type: boolean
     featureVersions: *featureVersions-v1
   - version: v1.33.6+rke2r1

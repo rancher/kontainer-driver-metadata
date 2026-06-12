@@ -63415,6 +63415,9 @@
      "lb-server-port": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -63782,6 +63785,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -66780,6 +66786,9 @@
      "lb-server-port": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -67007,9 +67016,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -67150,6 +67156,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -67378,9 +67387,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -67521,6 +67527,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -67749,9 +67758,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -67892,6 +67898,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -68120,9 +68129,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -68263,6 +68269,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -68491,9 +68500,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -68634,6 +68640,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -68861,9 +68870,6 @@
      },
      "kubelet-path": {
       "type": "string"
-     },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
      },
      "pause-image": {
       "type": "string"
@@ -70648,6 +70654,9 @@
      "lb-server-port": {
       "type": "string"
      },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
+     },
      "nonroot-devices": {
       "type": "boolean"
      },
@@ -70875,9 +70884,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -71018,6 +71024,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -71246,9 +71255,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -71389,6 +71395,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -71617,9 +71626,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -71760,6 +71766,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -71988,9 +71997,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -72131,6 +72137,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -72359,9 +72368,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -72502,6 +72508,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -72730,9 +72739,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -72873,6 +72879,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -73101,9 +73110,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -73244,6 +73250,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -73472,9 +73481,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -73615,6 +73621,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -73843,9 +73852,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -73986,6 +73992,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -74214,9 +74223,6 @@
      "kubelet-path": {
       "type": "string"
      },
-     "node-name-from-cloud-provider-metadata": {
-      "type": "boolean"
-     },
      "pause-image": {
       "type": "string"
      },
@@ -74357,6 +74363,9 @@
      },
      "lb-server-port": {
       "type": "string"
+     },
+     "node-name-from-cloud-provider-metadata": {
+      "type": "boolean"
      },
      "nonroot-devices": {
       "type": "boolean"
@@ -74612,7 +74621,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
