@@ -5682,10 +5682,6 @@ releases:
         version: 3.13.011
     serverArgs: &serverArgsv1-35-5-rke2r2
       <<: *serverArgsv1-35-4-rke2r1
-      write-kubeconfig-mode:
-        type: string
-      write-kubeconfig:
-        type: string
     agentArgs: &agentArgsv1-35-5-rke2r2
       <<: *agentArgsv1-35-4-rke2r1
     featureVersions: *featureVersions-v1
