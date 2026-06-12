@@ -3689,6 +3689,8 @@ releases:
         type: array
       nonroot-devices:
         type: boolean
+      node-name-from-cloud-provider-metadata:
+        type: boolean
     featureVersions: *featureVersions-v1
   - version: v1.32.1+rke2r1
     minChannelServerVersion: v2.11.0-alpha1
