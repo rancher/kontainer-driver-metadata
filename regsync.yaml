@@ -762,6 +762,7 @@ sync:
         - v1.34.6-k3s1
         - v1.34.7-k3s1
         - v1.34.8-k3s1
+        - v1.34.9-k3s1
         - v1.35.0-k3s1
         - v1.35.0-k3s3
         - v1.35.1-k3s1
@@ -769,14 +770,17 @@ sync:
         - v1.35.3-k3s1
         - v1.35.4-k3s1
         - v1.35.5-k3s1
+        - v1.35.6-k3s1
         - v1.36.0-k3s1
         - v1.36.1-k3s1
+        - v1.36.2-k3s1
   - source: docker.io/rancher/klipper-helm
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/klipper-helm'
     type: repository
     tags:
       allow:
         - v0.10.0-build20260513
+        - v0.11.1-build20260615
         - v0.7.3-build20220613
         - v0.7.4-build20221121
         - v0.7.6-build20230223
@@ -1607,6 +1611,7 @@ sync:
         - 1.14.1
         - 1.14.2
         - 1.14.3
+        - 1.14.4
         - 1.9.1
         - 1.9.4
   - source: docker.io/rancher/mirrored-ingress-nginx-kube-webhook-certgen
@@ -1665,6 +1670,7 @@ sync:
         - 3.6.13
         - 3.6.7
         - 3.6.9
+        - 3.7.4
   - source: docker.io/rancher/mirrored-longhornio-csi-attacher
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-longhornio-csi-attacher'
     type: repository
@@ -2455,6 +2461,7 @@ sync:
         - v1.34.6-k3s1
         - v1.34.7-k3s1
         - v1.34.8-k3s1
+        - v1.34.9-k3s1
         - v1.35.0-k3s1
         - v1.35.0-k3s3
         - v1.35.1-k3s1
@@ -2462,8 +2469,10 @@ sync:
         - v1.35.3-k3s1
         - v1.35.4-k3s1
         - v1.35.5-k3s1
+        - v1.35.6-k3s1
         - v1.36.0-k3s1
         - v1.36.1-k3s1
+        - v1.36.2-k3s1
   - source: docker.io/rancher/system-agent-installer-rke2
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-rke2'
     type: repository
