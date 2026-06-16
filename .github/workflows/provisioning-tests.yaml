@@ -48,7 +48,6 @@ jobs:
       - runs-on
       - spot=false
       - runner=4cpu-linux-x64
-      - image=legacy-cgroups-for-x64
       - run-id=${{ github.run_id }}
     timeout-minutes: 90
     strategy:
