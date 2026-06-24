@@ -151,7 +151,7 @@ jobs:
           fi
       - name: Upload Plain Text Test Results
         if: always()
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: "Test Results ${{ matrix.dist }} ${{ matrix.k8s-minor }} ${{ steps.test_output.outputs.suite }}"
           path: "/tmp/report-${{ matrix.dist }}-${{ matrix.k8s-minor }}-${{ steps.test_output.outputs.suite }}.*"
@@ -195,7 +195,7 @@ jobs:
             "$(go env GOPATH)/bin/go-junit-report" < "$file" > "${file%.txt}.xml"
           done
       - name: Upload XML Test Results
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: 'XML Results'
           path: "/tmp/test-results/report-*.xml"
@@ -207,7 +207,7 @@ jobs:
     container: registry.suse.com/bci/bci-base:15.7
     steps:
       - name: Upload GH Event File
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: 'Event File'
           path: ${{ github.event_path }}
