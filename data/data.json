@@ -68343,7 +68343,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -71334,7 +71340,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -71696,7 +71708,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -72058,7 +72076,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -72420,7 +72444,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -72782,7 +72812,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -73144,7 +73180,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -75166,7 +75208,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -75531,7 +75579,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -75896,7 +75950,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -76261,7 +76321,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -76626,7 +76692,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -76991,7 +77063,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -77359,7 +77437,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -77727,7 +77811,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -78095,7 +78185,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -78463,7 +78559,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -78831,7 +78933,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -79199,7 +79307,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -79564,7 +79678,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -79929,7 +80049,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -80294,7 +80420,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -80659,7 +80791,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -81024,7 +81162,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -81389,7 +81533,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -81757,7 +81907,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -82125,7 +82281,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -82493,7 +82655,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -82861,7 +83029,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -83229,7 +83403,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -83594,7 +83774,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -83959,7 +84145,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -84324,7 +84516,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -84689,7 +84887,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -85057,7 +85261,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -85425,7 +85635,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -85793,7 +86009,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -86161,7 +86383,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -86529,7 +86757,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -86901,7 +87135,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
@@ -87273,7 +87513,13 @@
      "tls-san-security": {
       "type": "boolean"
      },
+     "write-kubeconfig": {
+      "type": "string"
+     },
      "write-kubeconfig-group": {
+      "type": "string"
+     },
+     "write-kubeconfig-mode": {
       "type": "string"
      }
     },
