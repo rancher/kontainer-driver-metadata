@@ -3665,10 +3665,6 @@ releases:
         type: string
       enable-servicelb:
         type: boolean
-      write-kubeconfig:
-        type: string
-      write-kubeconfig-mode:
-        type: string
     agentArgs: &agentArgsv1-31-13-rke2r1
       <<: *agentArgsv1-31-12-rke2r1
       container-runtime-endpoint:
@@ -3686,8 +3682,6 @@ releases:
       control-plane-probe-configuration:
         type: array
       nonroot-devices:
-        type: boolean
-      node-name-from-cloud-provider-metadata:
         type: boolean
     featureVersions: *featureVersions-v1
   - version: v1.31.14+rke2r1
@@ -4054,10 +4048,6 @@ releases:
         type: string
       enable-servicelb:
         type: boolean
-      write-kubeconfig:
-        type: string
-      write-kubeconfig-mode:
-        type: string
     agentArgs: &agentArgsv1-32-9-rke2r1
       <<: *agentArgsv1-32-8-rke2r1
       container-runtime-endpoint:
@@ -4075,8 +4065,6 @@ releases:
       control-plane-probe-configuration:
         type: array
       nonroot-devices:
-        type: boolean
-      node-name-from-cloud-provider-metadata:
         type: boolean
     featureVersions: *featureVersions-v1
   - version: v1.32.10+rke2r1
@@ -4500,10 +4488,6 @@ releases:
         type: string
       enable-servicelb:
         type: boolean
-      write-kubeconfig:
-        type: string
-      write-kubeconfig-mode:
-        type: string
     agentArgs: &agentArgsv1-33-5-rke2r1
       <<: *agentArgsv1-33-4-rke2r1
       container-runtime-endpoint:
@@ -4521,8 +4505,6 @@ releases:
       control-plane-probe-configuration:
         type: array
       nonroot-devices:
-        type: boolean
-      node-name-from-cloud-provider-metadata:
         type: boolean
     featureVersions: *featureVersions-v1
   - version: v1.33.6+rke2r1
