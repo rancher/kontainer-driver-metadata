@@ -121,7 +121,7 @@ jobs:
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
           PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
           PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
-          CATTLE_AGENT_IMAGE: "rancher/rancher-agent:head" # TODO: change to v2.15-head after v2.15.0 is released
+          CATTLE_AGENT_IMAGE: "rancher/rancher-agent:v2.15-head"
       - name: Move plaintext test results for upload
         if: always()
         id: test_output
