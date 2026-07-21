@@ -598,6 +598,10 @@ releases:
         type: boolean
       write-kubeconfig-group:
         type: string
+      write-kubeconfig-mode:
+        type: string
+      write-kubeconfig:
+        type: string
     agentArgs: &agentArgs-v6
       <<: *agentArgs-v5
       enable-pprof:
