@@ -24,7 +24,7 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 1
       - name: Set up Docker Buildx
@@ -61,7 +61,7 @@ jobs:
       REGISTRY: "172.17.0.2:5000"
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: "0"
       - name: testdata
@@ -169,7 +169,7 @@ jobs:
     permissions:
       contents: read
     runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
-    container: registry.suse.com/bci/bci-base:15.7
+    container: registry.suse.com/bci/bci-base:16.1
     steps:
       - name: Install golang
         run: |
@@ -204,7 +204,7 @@ jobs:
     permissions:
       contents: read
     runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
-    container: registry.suse.com/bci/bci-base:15.7
+    container: registry.suse.com/bci/bci-base:16.1
     steps:
       - name: Upload GH Event File
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
