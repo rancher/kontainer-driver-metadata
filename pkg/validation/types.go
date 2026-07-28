@@ -1,4 +1,4 @@
-package main
+package validation
 
 type RKEReleases struct {
 	Channels    []Channels    `yaml:"channels" json:"channels"`
@@ -47,10 +47,10 @@ type ArrayArgument struct {
 // EnumArgument represents an enum argument with options and optional default
 
 type EnumArgument struct {
-	Type     string      `yaml:"type" json:"type"`
-	Default  interface{} `yaml:"default,omitempty" json:"default,omitempty"`
-	Options  []string    `yaml:"options" json:"options"`
-	Nullable bool        `yaml:"nullable,omitempty" json:"nullable,omitempty"`
+	Type     string   `yaml:"type" json:"type"`
+	Default  any      `yaml:"default,omitempty" json:"default,omitempty"`
+	Options  []string `yaml:"options" json:"options"`
+	Nullable bool     `yaml:"nullable,omitempty" json:"nullable,omitempty"`
 }
 
 // CNIArgument represents the CNIArgument configuration with options
@@ -108,7 +108,9 @@ type ServerArgs struct {
 	DatastoreCertfile             GenericArgument `yaml:"datastore-certfile,omitempty" json:"datastore-certfile,omitempty"`
 	DatastoreKeyfile              GenericArgument `yaml:"datastore-keyfile,omitempty" json:"datastore-keyfile,omitempty"`
 	SupervisorMetrics             GenericArgument `yaml:"supervisor-metrics,omitempty" json:"supervisor-metrics,omitempty"`
+	WriteKubeconfig               GenericArgument `yaml:"write-kubeconfig,omitempty" json:"write-kubeconfig,omitempty"`
 	WriteKubeconfigGroup          GenericArgument `yaml:"write-kubeconfig-group,omitempty" json:"write-kubeconfig-group,omitempty"`
+	WriteKubeconfigMode           GenericArgument `yaml:"write-kubeconfig-mode,omitempty" json:"write-kubeconfig-mode,omitempty"`
 	IngressController             EnumArgument    `yaml:"ingress-controller,omitempty" json:"ingress-controller,omitempty"`
 	HelmJobImage                  GenericArgument `yaml:"helm-job-image,omitempty" json:"helm-job-image,omitempty"`
 	ServicelbNamespace            GenericArgument `yaml:"servicelb-namespace,omitempty" json:"servicelb-namespace,omitempty"`
@@ -180,28 +182,24 @@ type Chart struct {
 // Charts represents all available Helm charts keyed by chart name.
 type Charts map[string]*Chart
 
-// FeatureVersions represents feature version information
-type FeatureVersions struct {
-	EncryptionKeyRotation *string `yaml:"encryption-key-rotation" json:"encryption-key-rotation"`
-}
-
 // Message represents a release message.
 type Message struct {
-	ID       *string `yaml:"id" json:"id"`
-	Type     *string `yaml:"type" json:"type"`
-	Severity *string `yaml:"severity,omitempty" json:"severity,omitempty"`
-	Summary  *string `yaml:"summary" json:"summary"`
-	Message  *string `yaml:"message" json:"message"`
+	ID       string          `yaml:"id,omitempty" json:"id,omitempty"`
+	Type     MessageType     `yaml:"type,omitempty" json:"type,omitempty"`
+	Severity MessageSeverity `yaml:"severity,omitempty" json:"severity,omitempty"`
+	Summary  string          `yaml:"summary,omitempty" json:"summary,omitempty"`
+	Message  string          `yaml:"message,omitempty" json:"message,omitempty"`
 }
 
 // Releases represents a specific RKE2 release with its configuration
 type Releases struct {
-	Version                 string           `yaml:"version" json:"version"`
-	MinChannelServerVersion string           `yaml:"minChannelServerVersion" json:"minChannelServerVersion"`
-	MaxChannelServerVersion string           `yaml:"maxChannelServerVersion" json:"maxChannelServerVersion"`
-	ServerArgs              *ServerArgs      `yaml:"serverArgs,omitempty" json:"serverArgs,omitempty"`
-	AgentArgs               *AgentArgs       `yaml:"agentArgs,omitempty" json:"agentArgs,omitempty"`
-	Charts                  Charts           `yaml:"charts,omitempty" json:"charts,omitempty"`
-	FeatureVersions         *FeatureVersions `yaml:"featureVersions,omitempty" json:"featureVersions,omitempty"`
-	Messages                []Message        `yaml:"messages,omitempty" json:"messages,omitempty"`
+	Version                 string      `yaml:"version" json:"version"`
+	MinChannelServerVersion string      `yaml:"minChannelServerVersion" json:"minChannelServerVersion"`
+	MaxChannelServerVersion string      `yaml:"maxChannelServerVersion" json:"maxChannelServerVersion"`
+	ServerArgs              *ServerArgs `yaml:"serverArgs,omitempty" json:"serverArgs,omitempty"`
+	AgentArgs               *AgentArgs  `yaml:"agentArgs,omitempty" json:"agentArgs,omitempty"`
+	Charts                  Charts      `yaml:"charts,omitempty" json:"charts,omitempty"`
+	// FeatureVersions is retained solely for decoding legacy release metadata.
+	FeatureVersions map[string]string `yaml:"featureVersions,omitempty" json:"featureVersions,omitempty"`
+	Messages        []Message         `yaml:"messages,omitempty" json:"messages,omitempty"`
 }

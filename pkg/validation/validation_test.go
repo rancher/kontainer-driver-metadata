@@ -1,13 +1,9 @@
-package main
+package validation
 
 import (
 	"strings"
 	"testing"
 )
-
-func strPtr(s string) *string {
-	return &s
-}
 
 func releaseWithMessages(messages ...Message) Releases {
 	return Releases{
@@ -31,11 +27,11 @@ func TestValidateMessages(t *testing.T) {
 		{
 			name: "release with valid single message",
 			release: releaseWithMessages(Message{
-				ID:       strPtr("test-warning-1"),
-				Type:     strPtr("warning"),
-				Severity: strPtr("high"),
-				Summary:  strPtr("Test warning"),
-				Message:  strPtr("This is a test warning message"),
+				ID:       "test-warning-1",
+				Type:     MessageTypeWarning,
+				Severity: MessageSeverityHigh,
+				Summary:  "Test warning",
+				Message:  "This is a test warning message",
 			}),
 			shouldErr: false,
 		},
@@ -43,18 +39,18 @@ func TestValidateMessages(t *testing.T) {
 			name: "release with valid multiple messages",
 			release: releaseWithMessages(
 				Message{
-					ID:       strPtr("msg-1"),
-					Type:     strPtr("warning"),
-					Severity: strPtr("high"),
-					Summary:  strPtr("Issue 1"),
-					Message:  strPtr("Description 1"),
+					ID:       "msg-1",
+					Type:     MessageTypeWarning,
+					Severity: MessageSeverityHigh,
+					Summary:  "Issue 1",
+					Message:  "Description 1",
 				},
 				Message{
-					ID:       strPtr("msg-2"),
-					Type:     strPtr("info"),
-					Severity: strPtr("low"),
-					Summary:  strPtr("Issue 2"),
-					Message:  strPtr("Description 2"),
+					ID:       "msg-2",
+					Type:     MessageTypeInfo,
+					Severity: MessageSeverityLow,
+					Summary:  "Issue 2",
+					Message:  "Description 2",
 				},
 			),
 			shouldErr: false,
@@ -62,10 +58,10 @@ func TestValidateMessages(t *testing.T) {
 		{
 			name: "message missing id",
 			release: releaseWithMessages(Message{
-				Type:     strPtr("warning"),
-				Severity: strPtr("high"),
-				Summary:  strPtr("Test"),
-				Message:  strPtr("Description"),
+				Type:     MessageTypeWarning,
+				Severity: MessageSeverityHigh,
+				Summary:  "Test",
+				Message:  "Description",
 			}),
 			shouldErr: true,
 			errMsg:    "missing required field 'id'",
@@ -73,11 +69,11 @@ func TestValidateMessages(t *testing.T) {
 		{
 			name: "message with empty id",
 			release: releaseWithMessages(Message{
-				ID:       strPtr(""),
-				Type:     strPtr("warning"),
-				Severity: strPtr("high"),
-				Summary:  strPtr("Test"),
-				Message:  strPtr("Description"),
+				ID:       "",
+				Type:     MessageTypeWarning,
+				Severity: MessageSeverityHigh,
+				Summary:  "Test",
+				Message:  "Description",
 			}),
 			shouldErr: true,
 			errMsg:    "missing required field 'id'",
@@ -85,10 +81,10 @@ func TestValidateMessages(t *testing.T) {
 		{
 			name: "message missing type",
 			release: releaseWithMessages(Message{
-				ID:       strPtr("msg-1"),
-				Severity: strPtr("high"),
-				Summary:  strPtr("Test"),
-				Message:  strPtr("Description"),
+				ID:       "msg-1",
+				Severity: MessageSeverityHigh,
+				Summary:  "Test",
+				Message:  "Description",
 			}),
 			shouldErr: true,
 			errMsg:    "missing required field 'type'",
@@ -96,11 +92,11 @@ func TestValidateMessages(t *testing.T) {
 		{
 			name: "message with invalid type",
 			release: releaseWithMessages(Message{
-				ID:       strPtr("msg-1"),
-				Type:     strPtr("invalid"),
-				Severity: strPtr("high"),
-				Summary:  strPtr("Test"),
-				Message:  strPtr("Description"),
+				ID:       "msg-1",
+				Type:     MessageType("invalid"),
+				Severity: MessageSeverityHigh,
+				Summary:  "Test",
+				Message:  "Description",
 			}),
 			shouldErr: true,
 			errMsg:    "invalid type 'invalid'",
@@ -108,11 +104,11 @@ func TestValidateMessages(t *testing.T) {
 		{
 			name: "message with invalid severity",
 			release: releaseWithMessages(Message{
-				ID:       strPtr("msg-1"),
-				Type:     strPtr("warning"),
-				Severity: strPtr("critical"),
-				Summary:  strPtr("Test"),
-				Message:  strPtr("Description"),
+				ID:       "msg-1",
+				Type:     MessageTypeWarning,
+				Severity: MessageSeverity("critical"),
+				Summary:  "Test",
+				Message:  "Description",
 			}),
 			shouldErr: true,
 			errMsg:    "invalid severity 'critical'",
@@ -120,10 +116,10 @@ func TestValidateMessages(t *testing.T) {
 		{
 			name: "message missing summary",
 			release: releaseWithMessages(Message{
-				ID:       strPtr("msg-1"),
-				Type:     strPtr("warning"),
-				Severity: strPtr("high"),
-				Message:  strPtr("Description"),
+				ID:       "msg-1",
+				Type:     MessageTypeWarning,
+				Severity: MessageSeverityHigh,
+				Message:  "Description",
 			}),
 			shouldErr: true,
 			errMsg:    "missing required field 'summary'",
@@ -131,10 +127,10 @@ func TestValidateMessages(t *testing.T) {
 		{
 			name: "message missing message field",
 			release: releaseWithMessages(Message{
-				ID:       strPtr("msg-1"),
-				Type:     strPtr("warning"),
-				Severity: strPtr("high"),
-				Summary:  strPtr("Test"),
+				ID:       "msg-1",
+				Type:     MessageTypeWarning,
+				Severity: MessageSeverityHigh,
+				Summary:  "Test",
 			}),
 			shouldErr: true,
 			errMsg:    "missing required field 'message'",
@@ -142,10 +138,10 @@ func TestValidateMessages(t *testing.T) {
 		{
 			name: "message without optional severity field",
 			release: releaseWithMessages(Message{
-				ID:      strPtr("msg-1"),
-				Type:    strPtr("info"),
-				Summary: strPtr("Informational"),
-				Message: strPtr("Just informational"),
+				ID:      "msg-1",
+				Type:    MessageTypeInfo,
+				Summary: "Informational",
+				Message: "Just informational",
 			}),
 			shouldErr: false,
 		},
@@ -182,18 +178,18 @@ func TestValidateMessageDuplicateIDs(t *testing.T) {
 			name: "no duplicate IDs across releases",
 			releases: []Releases{
 				releaseWithMessages(Message{
-					ID:       strPtr("msg-1"),
-					Type:     strPtr("warning"),
-					Severity: strPtr("high"),
-					Summary:  strPtr("Issue 1"),
-					Message:  strPtr("Description 1"),
+					ID:       "msg-1",
+					Type:     MessageTypeWarning,
+					Severity: MessageSeverityHigh,
+					Summary:  "Issue 1",
+					Message:  "Description 1",
 				}),
 				releaseWithMessages(Message{
-					ID:       strPtr("msg-2"),
-					Type:     strPtr("info"),
-					Severity: strPtr("low"),
-					Summary:  strPtr("Issue 2"),
-					Message:  strPtr("Description 2"),
+					ID:       "msg-2",
+					Type:     MessageTypeInfo,
+					Severity: MessageSeverityLow,
+					Summary:  "Issue 2",
+					Message:  "Description 2",
 				}),
 			},
 			shouldErr: false,
@@ -202,18 +198,18 @@ func TestValidateMessageDuplicateIDs(t *testing.T) {
 			name: "duplicate IDs across releases are rejected",
 			releases: []Releases{
 				releaseWithMessages(Message{
-					ID:       strPtr("msg-dup"),
-					Type:     strPtr("warning"),
-					Severity: strPtr("high"),
-					Summary:  strPtr("Issue"),
-					Message:  strPtr("Description"),
+					ID:       "msg-dup",
+					Type:     MessageTypeWarning,
+					Severity: MessageSeverityHigh,
+					Summary:  "Issue",
+					Message:  "Description",
 				}),
 				releaseWithMessages(Message{
-					ID:       strPtr("msg-dup"),
-					Type:     strPtr("info"),
-					Severity: strPtr("low"),
-					Summary:  strPtr("Same issue"),
-					Message:  strPtr("Another description"),
+					ID:       "msg-dup",
+					Type:     MessageTypeInfo,
+					Severity: MessageSeverityLow,
+					Summary:  "Same issue",
+					Message:  "Another description",
 				}),
 			},
 			shouldErr: true,
@@ -224,18 +220,18 @@ func TestValidateMessageDuplicateIDs(t *testing.T) {
 			releases: []Releases{
 				releaseWithMessages(
 					Message{
-						ID:       strPtr("msg-dup"),
-						Type:     strPtr("warning"),
-						Severity: strPtr("high"),
-						Summary:  strPtr("Issue 1"),
-						Message:  strPtr("Description 1"),
+						ID:       "msg-dup",
+						Type:     MessageTypeWarning,
+						Severity: MessageSeverityHigh,
+						Summary:  "Issue 1",
+						Message:  "Description 1",
 					},
 					Message{
-						ID:       strPtr("msg-dup"),
-						Type:     strPtr("info"),
-						Severity: strPtr("low"),
-						Summary:  strPtr("Issue 2"),
-						Message:  strPtr("Description 2"),
+						ID:       "msg-dup",
+						Type:     MessageTypeInfo,
+						Severity: MessageSeverityLow,
+						Summary:  "Issue 2",
+						Message:  "Description 2",
 					},
 				),
 			},
@@ -274,11 +270,11 @@ func TestValidateMessageAllTypes(t *testing.T) {
 	types := []MessageType{MessageTypeInfo, MessageTypeWarning, MessageTypeCritical}
 	for _, msgType := range types {
 		release := releaseWithMessages(Message{
-			ID:       strPtr("msg-test"),
-			Type:     strPtr(string(msgType)),
-			Severity: strPtr("medium"),
-			Summary:  strPtr("Test message"),
-			Message:  strPtr("Test description"),
+			ID:       "msg-test",
+			Type:     msgType,
+			Severity: MessageSeverityMedium,
+			Summary:  "Test message",
+			Message:  "Test description",
 		})
 		seenIDs := make(map[string]bool)
 		if err := validateMessages(release, seenIDs); err != nil {
@@ -291,11 +287,11 @@ func TestValidateMessageAllSeverities(t *testing.T) {
 	severities := []MessageSeverity{MessageSeverityLow, MessageSeverityMedium, MessageSeverityHigh}
 	for _, severity := range severities {
 		release := releaseWithMessages(Message{
-			ID:       strPtr("msg-test-" + string(severity)),
-			Type:     strPtr("warning"),
-			Severity: strPtr(string(severity)),
-			Summary:  strPtr("Test message"),
-			Message:  strPtr("Test description"),
+			ID:       "msg-test-" + string(severity),
+			Type:     MessageTypeWarning,
+			Severity: severity,
+			Summary:  "Test message",
+			Message:  "Test description",
 		})
 		seenIDs := make(map[string]bool)
 		if err := validateMessages(release, seenIDs); err != nil {
@@ -306,21 +302,21 @@ func TestValidateMessageAllSeverities(t *testing.T) {
 
 func TestLoadReleasesStrictValidation(t *testing.T) {
 	t.Run("loads valid typed releases", func(t *testing.T) {
-		loaded, err := loadReleases(map[string]interface{}{
-			"releases": []interface{}{
-				map[string]interface{}{
+		loaded, err := loadReleases(map[string]any{
+			"releases": []any{
+				map[string]any{
 					"version": "v1.25.11",
-					"featureVersions": map[string]interface{}{
-						"encryption-key-rotation": "enabled",
-					},
-					"charts": map[string]interface{}{
-						"rke2-cilium": map[string]interface{}{
+					"charts": map[string]any{
+						"rke2-cilium": map[string]any{
 							"repo":    "rancher-rke2-charts",
 							"version": "1.0.0",
 						},
 					},
-					"messages": []interface{}{
-						map[string]interface{}{
+					"featureVersions": map[string]any{
+						"encryption-key-rotation": "v1.25.11",
+					},
+					"messages": []any{
+						map[string]any{
 							"id":       "msg-1",
 							"type":     "warning",
 							"severity": "high",
@@ -340,54 +336,53 @@ func TestLoadReleasesStrictValidation(t *testing.T) {
 		if loaded.Releases[0].Charts == nil || loaded.Releases[0].Charts["rke2-cilium"] == nil {
 			t.Fatalf("expected typed chart data to load")
 		}
-		if loaded.Releases[0].FeatureVersions == nil || loaded.Releases[0].FeatureVersions.EncryptionKeyRotation == nil {
-			t.Fatalf("expected typed featureVersions data to load")
-		}
 		if len(loaded.Releases[0].Messages) != 1 {
 			t.Fatalf("expected 1 message, got %d", len(loaded.Releases[0].Messages))
 		}
 	})
 
 	t.Run("loads k3s args keys used in data.json", func(t *testing.T) {
-		loaded, err := loadReleases(map[string]interface{}{
-			"releases": []interface{}{
-				map[string]interface{}{
+		loaded, err := loadReleases(map[string]any{
+			"releases": []any{
+				map[string]any{
 					"version": "v1.33.0+k3s1",
-					"serverArgs": map[string]interface{}{
-						"default-local-storage-path": map[string]interface{}{"type": "string", "default": "/var/lib/rancher/k3s/storage"},
-						"disable-apiserver":          map[string]interface{}{"type": "boolean", "default": false},
-						"disable-controller-manager": map[string]interface{}{"type": "boolean", "default": false},
-						"disable-etcd":               map[string]interface{}{"type": "boolean", "default": false},
-						"disable-network-policy":     map[string]interface{}{"type": "boolean", "default": false},
-						"etcd-s3-bucket-lookup-type": map[string]interface{}{"type": "enum", "default": "auto", "options": []interface{}{"auto", "dns", "path"}},
-						"flannel-backend":            map[string]interface{}{"type": "enum", "options": []interface{}{"none", "vxlan", "ipsec", "host-gw", "wireguard-native"}},
-						"flannel-ipv6-masq":          map[string]interface{}{"type": "boolean"},
-						"kine-tls":                   map[string]interface{}{"type": "boolean"},
-						"secrets-encryption":         map[string]interface{}{"type": "boolean", "default": false},
-						"secrets-encryption-provider": map[string]interface{}{
+					"serverArgs": map[string]any{
+						"default-local-storage-path": map[string]any{"type": "string", "default": "/var/lib/rancher/k3s/storage"},
+						"disable-apiserver":          map[string]any{"type": "boolean", "default": false},
+						"disable-controller-manager": map[string]any{"type": "boolean", "default": false},
+						"disable-etcd":               map[string]any{"type": "boolean", "default": false},
+						"disable-network-policy":     map[string]any{"type": "boolean", "default": false},
+						"etcd-s3-bucket-lookup-type": map[string]any{"type": "enum", "default": "auto", "options": []any{"auto", "dns", "path"}},
+						"flannel-backend":            map[string]any{"type": "enum", "options": []any{"none", "vxlan", "ipsec", "host-gw", "wireguard-native"}},
+						"flannel-ipv6-masq":          map[string]any{"type": "boolean"},
+						"kine-tls":                   map[string]any{"type": "boolean"},
+						"secrets-encryption":         map[string]any{"type": "boolean", "default": false},
+						"secrets-encryption-provider": map[string]any{
 							"type":    "enum",
 							"default": "aescbc",
-							"options": []interface{}{"aescbc", "secretbox"},
+							"options": []any{"aescbc", "secretbox"},
 						},
+						"write-kubeconfig":      map[string]any{"type": "string"},
+						"write-kubeconfig-mode": map[string]any{"type": "string"},
 					},
-					"agentArgs": map[string]interface{}{
-						"disable-apiserver-lb": map[string]interface{}{"type": "boolean"},
-						"docker":               map[string]interface{}{"type": "boolean", "default": false},
-						"flannel-cni-conf":     map[string]interface{}{"type": "string"},
-						"flannel-conf":         map[string]interface{}{"type": "string"},
-						"flannel-iface":        map[string]interface{}{"type": "string"},
-						"image-service-endpoint": map[string]interface{}{
+					"agentArgs": map[string]any{
+						"disable-apiserver-lb": map[string]any{"type": "boolean"},
+						"docker":               map[string]any{"type": "boolean", "default": false},
+						"flannel-cni-conf":     map[string]any{"type": "string"},
+						"flannel-conf":         map[string]any{"type": "string"},
+						"flannel-iface":        map[string]any{"type": "string"},
+						"image-service-endpoint": map[string]any{
 							"type": "string",
 						},
-						"node-external-dns": map[string]interface{}{"type": "array"},
-						"node-internal-dns": map[string]interface{}{"type": "array"},
-						"pause-image":       map[string]interface{}{"type": "string"},
-						"prefer-bundled-bin": map[string]interface{}{
+						"node-external-dns": map[string]any{"type": "array"},
+						"node-internal-dns": map[string]any{"type": "array"},
+						"pause-image":       map[string]any{"type": "string"},
+						"prefer-bundled-bin": map[string]any{
 							"type": "boolean",
 						},
-						"snapshotter":   map[string]interface{}{"type": "string"},
-						"vpn-auth":      map[string]interface{}{"type": "string"},
-						"vpn-auth-file": map[string]interface{}{"type": "string"},
+						"snapshotter":   map[string]any{"type": "string"},
+						"vpn-auth":      map[string]any{"type": "string"},
+						"vpn-auth-file": map[string]any{"type": "string"},
 					},
 				},
 			},
@@ -410,6 +405,12 @@ func TestLoadReleasesStrictValidation(t *testing.T) {
 		if loaded.Releases[0].ServerArgs.DefaultLocalStoragePath.Default != "/var/lib/rancher/k3s/storage" {
 			t.Fatalf("expected default-local-storage-path default to decode")
 		}
+		if loaded.Releases[0].ServerArgs.WriteKubeconfig.Type != "string" {
+			t.Fatalf("expected write-kubeconfig type to decode")
+		}
+		if loaded.Releases[0].ServerArgs.WriteKubeconfigMode.Type != "string" {
+			t.Fatalf("expected write-kubeconfig-mode type to decode")
+		}
 		if loaded.Releases[0].AgentArgs.Docker.Type != "boolean" {
 			t.Fatalf("expected docker type to decode")
 		}
@@ -419,12 +420,12 @@ func TestLoadReleasesStrictValidation(t *testing.T) {
 	})
 
 	t.Run("rejects unexpected message field", func(t *testing.T) {
-		_, err := loadReleases(map[string]interface{}{
-			"releases": []interface{}{
-				map[string]interface{}{
+		_, err := loadReleases(map[string]any{
+			"releases": []any{
+				map[string]any{
 					"version": "v1.20.0+rke2r1",
-					"messages": []interface{}{
-						map[string]interface{}{
+					"messages": []any{
+						map[string]any{
 							"id":       "msg-1",
 							"type":     "warning",
 							"severity": "high",
@@ -445,11 +446,11 @@ func TestLoadReleasesStrictValidation(t *testing.T) {
 	})
 
 	t.Run("rejects invalid message format", func(t *testing.T) {
-		_, err := loadReleases(map[string]interface{}{
-			"releases": []interface{}{
-				map[string]interface{}{
+		_, err := loadReleases(map[string]any{
+			"releases": []any{
+				map[string]any{
 					"version": "v1.20.0+rke2r1",
-					"messages": []interface{}{
+					"messages": []any{
 						"not a map",
 					},
 				},
@@ -457,44 +458,6 @@ func TestLoadReleasesStrictValidation(t *testing.T) {
 		})
 		if err == nil {
 			t.Fatalf("expected error but got none")
-		}
-	})
-}
-
-func TestValidateEncryptedKeyRotation(t *testing.T) {
-	t.Run("skips versions before threshold", func(t *testing.T) {
-		release := Releases{Version: "v1.25.10"}
-		if err := validateEncryptedKeyRotation(release); err != nil {
-			t.Fatalf("expected no error, got: %v", err)
-		}
-	})
-
-	t.Run("requires featureVersions at threshold", func(t *testing.T) {
-		release := Releases{Version: "v1.25.11"}
-		if err := validateEncryptedKeyRotation(release); err == nil {
-			t.Fatalf("expected error but got none")
-		}
-	})
-
-	t.Run("requires encryption-key-rotation field", func(t *testing.T) {
-		release := Releases{
-			Version:         "v1.25.11",
-			FeatureVersions: &FeatureVersions{},
-		}
-		if err := validateEncryptedKeyRotation(release); err == nil {
-			t.Fatalf("expected error but got none")
-		}
-	})
-
-	t.Run("accepts encryption-key-rotation field", func(t *testing.T) {
-		release := Releases{
-			Version: "v1.25.11",
-			FeatureVersions: &FeatureVersions{
-				EncryptionKeyRotation: strPtr("enabled"),
-			},
-		}
-		if err := validateEncryptedKeyRotation(release); err != nil {
-			t.Fatalf("expected no error, got: %v", err)
 		}
 	})
 }

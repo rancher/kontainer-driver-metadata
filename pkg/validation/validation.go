@@ -1,9 +1,8 @@
-package main
+package validation
 
 import (
 	"bytes"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"os"
 	"os/exec"
@@ -14,7 +13,6 @@ import (
 	"github.com/rancher/kontainer-driver-metadata/pkg/data"
 	"github.com/rancher/kontainer-driver-metadata/pkg/images"
 	"github.com/sirupsen/logrus"
-	"golang.org/x/mod/semver"
 	yamlv3 "gopkg.in/yaml.v3"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"sigs.k8s.io/yaml"
@@ -45,16 +43,6 @@ const (
 var (
 	releaseDataURL    = "https://releases.rancher.com/kontainer-driver-metadata/%s/data.json"
 	releaseRegSyncURL = "https://raw.githubusercontent.com/rancher/kontainer-driver-metadata/%s/regsync.yaml"
-	versionsToSkip    = map[string]bool{
-		"v1.30.12+rke2r1": true,
-		"v1.31.8+rke2r1":  true,
-		"v1.32.4+rke2r1":  true,
-		"v1.30.12+k3s1":   true,
-		"v1.31.8+k3s1":    true,
-		"v1.32.4+k3s1":    true,
-		"v1.33.0+rke2r1":  true,
-		"v1.33.0+k3s1":    true,
-	}
 
 	validMessageTypes      = []MessageType{MessageTypeInfo, MessageTypeWarning, MessageTypeCritical}
 	validMessageSeverities = []MessageSeverity{MessageSeverityLow, MessageSeverityMedium, MessageSeverityHigh}
@@ -63,31 +51,31 @@ var (
 // imageTags holds images and their tags as nested maps to make the comparison easy
 type imageTags map[string]map[string]bool
 
-func main() {
-	args := os.Args
+func Run(args []string) error {
 	if len(args) < 2 {
-		logrus.Fatal("Usage: go run validation.go <release> [ <release>...]")
+		return fmt.Errorf("usage: go run ./cmd/validation <release> [ <release>...]")
 	}
 
 	dev, err := utilities.FromLocalFile()
 	if err != nil {
-		logrus.Fatalf("failed to get the KDM data from the local file: %v", err)
+		return fmt.Errorf("failed to get the KDM data from the local file: %w", err)
 	}
 
 	for _, release := range args[1:] {
 		logrus.Infof("validating [%s]", release)
 		released, err := utilities.FromURL(fmt.Sprintf(releaseDataURL, release))
 		if err != nil {
-			logrus.Fatalf("failed to get the KDM data for release [%s]: %v", release, err)
+			return fmt.Errorf("failed to get the KDM data for release [%s]: %w", release, err)
 		}
 		if err = validate(dev, released); err != nil {
-			logrus.Fatalf("failed to validte the KDM data for the release [%s]: %v", release, err)
+			return fmt.Errorf("failed to validate the KDM data for the release [%s]: %w", release, err)
 		}
 		if err := validateRegSync(release); err != nil {
-			logrus.Fatalf("failed to validte the regsync file for the release [%s]: %v", release, err)
+			return fmt.Errorf("failed to validate the regsync file for the release [%s]: %w", release, err)
 		}
 	}
 	logrus.Info("validation is passed")
+	return nil
 }
 
 func validateRegSync(release string) error {
@@ -158,7 +146,7 @@ func validateRegSync(release string) error {
 }
 
 func getImageTags(source []byte) (imageTags, error) {
-	var upstream map[string]interface{}
+	var upstream map[string]any
 	if err := yaml.Unmarshal(source, &upstream); err != nil {
 		return nil, fmt.Errorf("failed to unmarshal: %v", err)
 	}
@@ -168,11 +156,15 @@ func getImageTags(source []byte) (imageTags, error) {
 	}
 	upstreamImageTag := imageTags{}
 	for _, item := range sync {
-		source, _, err := unstructured.NestedString(item.(map[string]interface{}), "source")
+		sourceItem, ok := item.(map[string]any)
+		if !ok {
+			return nil, fmt.Errorf("failed to parse sync item: expected map, got %T", item)
+		}
+		source, _, err := unstructured.NestedString(sourceItem, "source")
 		if err != nil {
 			return nil, err
 		}
-		allowTags, _, err := unstructured.NestedSlice(item.(map[string]interface{}), "tags", "allow")
+		allowTags, _, err := unstructured.NestedSlice(sourceItem, "tags", "allow")
 		if err != nil {
 			return nil, err
 		}
@@ -186,7 +178,7 @@ func getImageTags(source []byte) (imageTags, error) {
 	return upstreamImageTag, nil
 }
 
-func loadReleases(source map[string]interface{}) (*RKEReleases, error) {
+func loadReleases(source map[string]any) (*RKEReleases, error) {
 	raw, err := json.Marshal(source)
 	if err != nil {
 		return nil, fmt.Errorf("failed to marshal release data: %w", err)
@@ -200,6 +192,15 @@ func loadReleases(source map[string]interface{}) (*RKEReleases, error) {
 	}
 
 	return &releases, nil
+}
+
+type releaseValidator func(Releases) error
+
+type distroValidationTarget struct {
+	name       string
+	dev        []Releases
+	released   []Releases
+	validators []releaseValidator
 }
 
 // validate checks the versions in the local data.json by comparing with the released data.json,
@@ -222,26 +223,32 @@ func validate(dev, released data.Data) error {
 	if err != nil {
 		return fmt.Errorf("failed to load released K3S releases: %v", err)
 	}
-	for _, distro := range []string{utilities.RKE2, utilities.K3S} {
-		if err := validateDistro(distro, devRKE2, releasedRKE2, devK3S, releasedK3S, seenMessageIDs); err != nil {
-			return fmt.Errorf("failed to validate the distro [%s]: %v", distro, err)
+	targets := []distroValidationTarget{
+		{
+			name:       utilities.RKE2,
+			dev:        devRKE2.Releases,
+			released:   releasedRKE2.Releases,
+			validators: []releaseValidator{validateRKE2Charts},
+		},
+		{
+			name:     utilities.K3S,
+			dev:      devK3S.Releases,
+			released: releasedK3S.Releases,
+		},
+	}
+	for _, target := range targets {
+		if err := validateDistro(target, seenMessageIDs); err != nil {
+			return fmt.Errorf("failed to validate the distro [%s]: %v", target.name, err)
 		}
 	}
 	return nil
 }
 
-func validateDistro(distro string, devRKE2, releasedRKE2, devK3S, releasedK3S *RKEReleases, seenMessageIDs map[string]bool) error {
-	logrus.Infof("validating the distro [%s]", distro)
-	var versionsInDev, versionsInRelease []string
-	var err error
-	switch distro {
-	case utilities.RKE2:
-		versionsInDev, versionsInRelease, err = getVersions(devRKE2.Releases, releasedRKE2.Releases)
-	case utilities.K3S:
-		versionsInDev, versionsInRelease, err = getVersions(devK3S.Releases, releasedK3S.Releases)
-	}
+func validateDistro(target distroValidationTarget, seenMessageIDs map[string]bool) error {
+	logrus.Infof("validating the distro [%s]", target.name)
+	versionsInDev, versionsInRelease, err := getVersions(target.dev, target.released)
 	if err != nil {
-		return fmt.Errorf("failed to get versions for [%s]: %v", distro, err)
+		return fmt.Errorf("failed to get versions for [%s]: %v", target.name, err)
 	}
 	if len(versionsInDev) < len(versionsInRelease) {
 		return fmt.Errorf("the number of versions found in the dev is less than in the released")
@@ -258,54 +265,16 @@ func validateDistro(distro string, devRKE2, releasedRKE2, devK3S, releasedK3S *R
 		}
 	}
 
-	// check charts for RKE2 release
-	if distro == utilities.RKE2 {
-		for _, release := range devRKE2.Releases {
-			if err := validateRKE2Charts(release); err != nil {
-				logrus.Infof("the release: %+v", release)
-				return fmt.Errorf("failed to validate RKE2 charts: %v", err)
-			}
-			if err := validateEncryptedKeyRotation(release); err != nil {
-				return fmt.Errorf("failed to validate rke2 encrypted key rotation: %v", err)
-			}
-			if err := validateMessages(release, seenMessageIDs); err != nil {
-				return fmt.Errorf("failed to validate messages: %v", err)
+	for _, release := range target.dev {
+		for _, validator := range target.validators {
+			if err := validator(release); err != nil {
+				return fmt.Errorf("failed to run distro validator for release [%s]: %v", release.Version, err)
 			}
 		}
-	}
-
-	if distro == utilities.K3S {
-		for _, release := range devK3S.Releases {
-			if err := validateEncryptedKeyRotation(release); err != nil {
-				return fmt.Errorf("failed to validate k3s encrypted key rotation: %w", err)
-			}
-			if err := validateMessages(release, seenMessageIDs); err != nil {
-				return fmt.Errorf("failed to validate messages: %v", err)
-			}
+		if err := validateMessages(release, seenMessageIDs); err != nil {
+			return fmt.Errorf("failed to validate messages: %v", err)
 		}
 	}
-	return nil
-}
-
-func validateEncryptedKeyRotation(release Releases) error {
-	version := release.Version
-	// this is the first version that hasn't reached its end of life that requires
-	// the encrypted-key-rotation key to exist when this validation is being written
-	const firstVersionToCheckEncryptedKeyRotation = "v1.25.11"
-	compareVersions := semver.Compare(firstVersionToCheckEncryptedKeyRotation, version)
-	if compareVersions > 0 || versionsToSkip[version] {
-		return nil
-	}
-	logrus.Info("validating encrypted key rotation key on version: " + version)
-
-	if release.FeatureVersions == nil {
-		return errors.New("missing featureVersions on version: " + version)
-	}
-
-	if release.FeatureVersions.EncryptionKeyRotation == nil {
-		return errors.New("missing encryption-key-rotation on version: " + version)
-	}
-
 	return nil
 }
 
@@ -335,7 +304,7 @@ func validateRKE2Charts(release Releases) error {
 			continue
 		}
 		logrus.Infof("checking RKE2 %s %s/%s:%s", rke2Version, repo, chartName, chartVersion)
-		var info map[string]interface{}
+		var info map[string]any
 		bytes, err := os.ReadFile(fmt.Sprintf("%s/charts/%s.yaml", dir, chartName))
 		if err != nil {
 			return err
@@ -386,34 +355,31 @@ func validateMessages(release Releases, seenMessageIDs map[string]bool) error {
 	logrus.Debugf("validating messages for version %s", version)
 
 	for i, msg := range release.Messages {
-		if msg.ID == nil || *msg.ID == "" {
+		if msg.ID == "" {
 			return fmt.Errorf("message at index %d in version %s is missing required field 'id'", i, version)
 		}
-		msgID := *msg.ID
 
 		// Check for duplicate IDs globally
-		if seenMessageIDs[msgID] {
-			return fmt.Errorf("message at index %d in version %s has duplicate id '%s'", i, version, msgID)
+		if seenMessageIDs[msg.ID] {
+			return fmt.Errorf("message at index %d in version %s has duplicate id '%s'", i, version, msg.ID)
 		}
-		seenMessageIDs[msgID] = true
+		seenMessageIDs[msg.ID] = true
 
-		if msg.Type == nil || *msg.Type == "" {
+		if msg.Type == "" {
 			return fmt.Errorf("message at index %d in version %s is missing required field 'type'", i, version)
-		} else if !slices.Contains(validMessageTypes, MessageType(*msg.Type)) {
-			return fmt.Errorf("message at index %d in version %s has invalid type '%s': must be one of info, warning, critical", i, version, *msg.Type)
+		} else if !slices.Contains(validMessageTypes, msg.Type) {
+			return fmt.Errorf("message at index %d in version %s has invalid type '%s': must be one of info, warning, critical", i, version, msg.Type)
 		}
 
-		if msg.Severity != nil {
-			if !slices.Contains(validMessageSeverities, MessageSeverity(*msg.Severity)) {
-				return fmt.Errorf("message at index %d in version %s has invalid severity '%s': must be one of low, medium, high", i, version, *msg.Severity)
-			}
+		if msg.Severity != "" && !slices.Contains(validMessageSeverities, msg.Severity) {
+			return fmt.Errorf("message at index %d in version %s has invalid severity '%s': must be one of low, medium, high", i, version, msg.Severity)
 		}
 
-		if msg.Summary == nil || *msg.Summary == "" {
+		if msg.Summary == "" {
 			return fmt.Errorf("message at index %d in version %s is missing required field 'summary'", i, version)
 		}
 
-		if msg.Message == nil || *msg.Message == "" {
+		if msg.Message == "" {
 			return fmt.Errorf("message at index %d in version %s is missing required field 'message'", i, version)
 		}
 
