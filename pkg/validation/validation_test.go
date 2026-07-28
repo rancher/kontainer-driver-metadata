@@ -356,6 +356,7 @@ func TestLoadReleasesStrictValidation(t *testing.T) {
 						"flannel-backend":            map[string]any{"type": "enum", "options": []any{"none", "vxlan", "ipsec", "host-gw", "wireguard-native"}},
 						"flannel-ipv6-masq":          map[string]any{"type": "boolean"},
 						"kine-tls":                   map[string]any{"type": "boolean"},
+						"prime":                      map[string]any{"type": "boolean"},
 						"secrets-encryption":         map[string]any{"type": "boolean", "default": false},
 						"secrets-encryption-provider": map[string]any{
 							"type":    "enum",
@@ -404,6 +405,9 @@ func TestLoadReleasesStrictValidation(t *testing.T) {
 		}
 		if loaded.Releases[0].ServerArgs.DefaultLocalStoragePath.Default != "/var/lib/rancher/k3s/storage" {
 			t.Fatalf("expected default-local-storage-path default to decode")
+		}
+		if loaded.Releases[0].ServerArgs.Prime.Type != "boolean" {
+			t.Fatalf("expected prime type to decode")
 		}
 		if loaded.Releases[0].ServerArgs.WriteKubeconfig.Type != "string" {
 			t.Fatalf("expected write-kubeconfig type to decode")

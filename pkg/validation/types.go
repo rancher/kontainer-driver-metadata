@@ -99,6 +99,7 @@ type ServerArgs struct {
 	FlannelBackend                EnumArgument    `yaml:"flannel-backend,omitempty" json:"flannel-backend,omitempty"`
 	FlannelIPv6Masq               BooleanArgument `yaml:"flannel-ipv6-masq,omitempty" json:"flannel-ipv6-masq,omitempty"`
 	KineTLS                       BooleanArgument `yaml:"kine-tls,omitempty" json:"kine-tls,omitempty"`
+	Prime                         BooleanArgument `yaml:"prime,omitempty" json:"prime,omitempty"`
 	SecretsEncryption             BooleanArgument `yaml:"secrets-encryption,omitempty" json:"secrets-encryption,omitempty"`
 	SecretsEncryptionProvider     EnumArgument    `yaml:"secrets-encryption-provider,omitempty" json:"secrets-encryption-provider,omitempty"`
 	TLSSanSecurity                GenericArgument `yaml:"tls-san-security,omitempty" json:"tls-san-security,omitempty"`
