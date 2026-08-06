@@ -17,9 +17,9 @@ RUN go install golang.org/x/tools/cmd/goimports@${GOIMPORTS_REF}
 RUN if [[ "${ARCH}" == "amd64" ]]; then \
         go install github.com/golangci/golangci-lint/cmd/golangci-lint@${GOLANGCI_LINT_REF}; \
         # renovate: datasource=github-release-attachments depName=rancher/wharfie
-        WHARFIE_VERSION=v0.6.1 && \
-        # renovate: datasource=github-release-attachments depName=rancher/wharfie digestVersion=v0.6.1
-        WHARFIE_SUM=7be7e1640f87389a8818916fb9e310ddb2f3b26f41193bd783f0086f97f0d206 && \
+        WHARFIE_VERSION=v0.7.1 && \
+        # renovate: datasource=github-release-attachments depName=rancher/wharfie digestVersion=v0.7.1
+        WHARFIE_SUM=72967d44b588484d3bc2e025b98e98d7b9ae5dd9e8aad20cd8b03699052683ec && \
         curl -sL "https://github.com/rancher/wharfie/releases/download/${WHARFIE_VERSION}/wharfie-amd64" -o /bin/wharfie && \
         echo "${WHARFIE_SUM}  /bin/wharfie" | sha256sum -c - && \
         chmod +x /bin/wharfie; \
