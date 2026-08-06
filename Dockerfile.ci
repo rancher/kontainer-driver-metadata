@@ -46,7 +46,7 @@ RUN wget -q "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_
     rm /tmp/yq.tar.gz
 
 # --- K3s binaries (pinned tag, stable cache key) ---
-COPY --from=rancher/k3s:v1.34.1-k3s1 \
+COPY --from=rancher/k3s:v1.36.2-k3s1 \
     /bin/blkid \
     /bin/bandwidth \
     /bin/cni \
