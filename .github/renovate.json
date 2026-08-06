@@ -13,6 +13,14 @@
   "packageRules": [
     {
       "matchBaseBranches": [
+        "dev-v2.15"
+      ],
+      "extends": [
+        "github>rancher/renovate-config//rancher-2.15#release"
+      ]
+    },
+    {
+      "matchBaseBranches": [
         "dev-v2.14"
       ],
       "extends": [
