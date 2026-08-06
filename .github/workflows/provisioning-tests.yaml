@@ -24,13 +24,13 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           fetch-depth: 1
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd # v4
+        uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4
       - name: Build and cache CI image
-        uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7
+        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7
         with:
           context: .
           file: Dockerfile.ci
@@ -61,15 +61,15 @@ jobs:
       REGISTRY: "172.17.0.2:5000"
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           fetch-depth: "0"
       - name: testdata
         run: mkdir -p build/testdata
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd # v4
+        uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4
       - name: Build CI image
-        uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7
+        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7
         with:
           context: .
           file: Dockerfile.ci
@@ -151,13 +151,13 @@ jobs:
           fi
       - name: Upload Plain Text Test Results
         if: always()
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: "Test Results ${{ matrix.dist }} ${{ matrix.k8s-minor }} ${{ steps.test_output.outputs.suite }}"
           path: "/tmp/report-${{ matrix.dist }}-${{ matrix.k8s-minor }}-${{ steps.test_output.outputs.suite }}.*"
       - name: Upload logdump artifact if we had some tests failures
         if: failure()
-        uses: rancherlabs/cowboy@73acfb7bc97b55bc18ea5bc1ee8232a8ffcb4576
+        uses: rancherlabs/cowboy@61de86d99456805424f9af0dadfcf362413cd745
         with:
           log-file-path: ./build/provtest_output.txt
           artifact-retention-days: 7
@@ -195,7 +195,7 @@ jobs:
             "$(go env GOPATH)/bin/go-junit-report" < "$file" > "${file%.txt}.xml"
           done
       - name: Upload XML Test Results
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: 'XML Results'
           path: "/tmp/test-results/report-*.xml"
@@ -207,7 +207,7 @@ jobs:
     container: registry.suse.com/bci/bci-base:15.7
     steps:
       - name: Upload GH Event File
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: 'Event File'
           path: ${{ github.event_path }}
