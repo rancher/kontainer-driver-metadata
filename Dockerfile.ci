@@ -24,9 +24,9 @@ RUN if [[ "${ARCH}" == "amd64" ]]; then \
         echo "${WHARFIE_SUM}  /bin/wharfie" | sha256sum -c - && \
         chmod +x /bin/wharfie; \
         # renovate: datasource=github-release-attachments depName=regclient/regclient
-        REGSYNC_VERSION=v0.9.0 && \
-        # renovate: datasource=github-release-attachments depName=regclient/regclient digestVersion=v0.9.0
-        REGSYNC_SUM=fe8068cfe2fbd81d607608aa627b001311d191be32b8d8e1943fe68c84794522 && \
+        REGSYNC_VERSION=v0.11.5 && \
+        # renovate: datasource=github-release-attachments depName=regclient/regclient digestVersion=v0.11.5
+        REGSYNC_SUM=486d5fcac076e31837864632446de22519d88101db4a4b4cfaa4ee3350e41606 && \
         curl -sL "https://github.com/regclient/regclient/releases/download/${REGSYNC_VERSION}/regsync-linux-amd64" -o /bin/regsync && \
         echo "${REGSYNC_SUM}  /bin/regsync" | sha256sum -c - && \
         chmod +x /bin/regsync; \
