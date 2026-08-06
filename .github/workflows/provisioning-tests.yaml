@@ -115,13 +115,13 @@ jobs:
             --env STAGE_REGISTRY_ENDPOINT \
             kdm-ci provisioning-tests | tee ./build/provtest_output.txt
         env:
-          LAST_COMMUNITY_RANCHER: v2.15.99
+          LAST_COMMUNITY_RANCHER: v2.16.99
           V2PROV_TEST_DIST: ${{ matrix.dist }}
           V2PROV_TEST_RUN_REGEX: ${{ matrix.test-regex }}
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
           PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
           PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
-          CATTLE_AGENT_IMAGE: "rancher/rancher-agent:head" # TODO: change to v2.15-head after v2.15.0 is released
+          CATTLE_AGENT_IMAGE: "rancher/rancher-agent:head" # TODO: change to v2.16-head after v2.16.0 is released
       - name: Move plaintext test results for upload
         if: always()
         id: test_output
