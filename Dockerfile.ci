@@ -1,8 +1,8 @@
-ARG RANCHER_VERSION=v2.14-head
+ARG RANCHER_VERSION=v2.15-head
 
 FROM rancher/rancher:$RANCHER_VERSION AS rancher
 
-FROM registry.suse.com/bci/golang:1.25
+FROM registry.suse.com/bci/golang:1.26
 
 # --- Tool installations (most expensive, no dependency on rancher content) ---
 ARG TARGETARCH=amd64
