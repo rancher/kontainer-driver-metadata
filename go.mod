@@ -1,6 +1,6 @@
 module github.com/rancher/kontainer-driver-metadata
 
-go 1.25
+go 1.25.0
 
 replace (
 	github.com/knative/pkg => github.com/rancher/pkg v0.0.0-20190514055449-b30ab9de040e
@@ -12,7 +12,7 @@ require (
 	github.com/rancher/rke v1.5.6
 	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.8.4
-	golang.org/x/mod v0.12.0
+	golang.org/x/mod v0.40.0
 	k8s.io/apimachinery v0.27.6
 	sigs.k8s.io/yaml v1.3.0
 )
