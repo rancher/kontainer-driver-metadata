@@ -355,6 +355,7 @@ func TestLoadReleasesStrictValidation(t *testing.T) {
 						"etcd-s3-bucket-lookup-type": map[string]any{"type": "enum", "default": "auto", "options": []any{"auto", "dns", "path"}},
 						"flannel-backend":            map[string]any{"type": "enum", "options": []any{"none", "vxlan", "ipsec", "host-gw", "wireguard-native"}},
 						"flannel-ipv6-masq":          map[string]any{"type": "boolean"},
+						"helm-controller-arg":        map[string]any{"type": "string"},
 						"kine-tls":                   map[string]any{"type": "boolean"},
 						"prime":                      map[string]any{"type": "boolean"},
 						"secrets-encryption":         map[string]any{"type": "boolean", "default": false},
@@ -408,6 +409,9 @@ func TestLoadReleasesStrictValidation(t *testing.T) {
 		}
 		if loaded.Releases[0].ServerArgs.Prime.Type != "boolean" {
 			t.Fatalf("expected prime type to decode")
+		}
+		if loaded.Releases[0].ServerArgs.HelmControllerArg.Type != "string" {
+			t.Fatalf("expected helm-controller-arg type to decode")
 		}
 		if loaded.Releases[0].ServerArgs.WriteKubeconfig.Type != "string" {
 			t.Fatalf("expected write-kubeconfig type to decode")

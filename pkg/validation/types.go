@@ -113,6 +113,7 @@ type ServerArgs struct {
 	WriteKubeconfigGroup          GenericArgument `yaml:"write-kubeconfig-group,omitempty" json:"write-kubeconfig-group,omitempty"`
 	WriteKubeconfigMode           GenericArgument `yaml:"write-kubeconfig-mode,omitempty" json:"write-kubeconfig-mode,omitempty"`
 	IngressController             EnumArgument    `yaml:"ingress-controller,omitempty" json:"ingress-controller,omitempty"`
+	HelmControllerArg             GenericArgument `yaml:"helm-controller-arg,omitempty" json:"helm-controller-arg,omitempty"`
 	HelmJobImage                  GenericArgument `yaml:"helm-job-image,omitempty" json:"helm-job-image,omitempty"`
 	ServicelbNamespace            GenericArgument `yaml:"servicelb-namespace,omitempty" json:"servicelb-namespace,omitempty"`
 	EnableServicelb               GenericArgument `yaml:"enable-servicelb,omitempty" json:"enable-servicelb,omitempty"`
