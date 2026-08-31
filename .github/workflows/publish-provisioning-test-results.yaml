@@ -8,17 +8,29 @@ permissions: {}
 
 jobs:
   publish-provisioning-test-results:
-    runs-on: runs-on,runner=4cpu-linux-x64,image=ubuntu22-full-x64,run-id=${{ github.run_id }}
+    runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
+    container: registry.suse.com/bci/bci-base:15.7
     if: github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure'
     permissions:
       checks: write
       pull-requests: write
       actions: read
     steps:
+      - name: Install Python Deps
+        run: |
+          # install python
+          zypper --non-interactive install python311 python311-pip python311-virtualenv which
+
+          # set python as the default python (essentially just a symlink)
+          update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
+
       - name: mkdir test-results
         run: mkdir -p /tmp/test-results
       - name: Download All XML Test Reports
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        id: xml_reports
+        # don't error the entire job if the artifact is not there
+        continue-on-error: true
         with:
           run-id: ${{ github.event.workflow_run.id }}
           # needed per https://github.com/orgs/community/discussions/106300#discussioncomment-8369881
@@ -28,6 +40,9 @@ jobs:
           name: "XML Results"
       - name: Download the Event File
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        id: event_file
+        continue-on-error: true
+        if: steps.xml_reports.outcome == 'success'
         with:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ github.token }}
@@ -36,7 +51,7 @@ jobs:
           name: "Event File"
       - name: Publish Test Results
         uses: rancher/publish-unit-test-result-action/linux@29a85161a9d18bf8cbf186abc523927ce71221b0
-        if: (!cancelled())
+        if: steps.xml_reports.outcome == 'success' && steps.event_file.outcome == 'success'
         with:
           check_name: Provisioning Tests Results
           commit: ${{ github.event.workflow_run.head_sha }}
