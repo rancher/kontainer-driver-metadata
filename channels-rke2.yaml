@@ -69,6 +69,7 @@ releases:
       disable-kube-proxy:
         type: boolean
         default: false
+        agentRestart: true
       cluster-cidr:
         type: string
       audit-policy-file:

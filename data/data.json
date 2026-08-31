@@ -35877,6 +35877,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -36121,6 +36122,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -36365,6 +36367,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -36609,6 +36612,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -36853,6 +36857,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -37100,6 +37105,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -37347,6 +37353,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -37594,6 +37601,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -37841,6 +37849,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -38088,6 +38097,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -38335,6 +38345,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -38585,6 +38596,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -38832,6 +38844,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -39079,6 +39092,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -39326,6 +39340,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -39573,6 +39588,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -39820,6 +39836,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -40067,6 +40084,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -40314,6 +40332,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -40567,6 +40586,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -40820,6 +40840,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -41073,6 +41094,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -41326,6 +41348,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -41576,6 +41599,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -41823,6 +41847,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -42073,6 +42098,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -42320,6 +42346,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -42567,6 +42594,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -42820,6 +42848,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -43073,6 +43102,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -43323,6 +43353,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -43576,6 +43607,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -43829,6 +43861,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -44082,6 +44115,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -44335,6 +44369,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -44588,6 +44623,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -44841,6 +44877,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -45094,6 +45131,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -45347,6 +45385,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -45600,6 +45639,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -45853,6 +45893,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -46106,6 +46147,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -46359,6 +46401,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -46612,6 +46655,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -46865,6 +46909,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -47118,6 +47163,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -47382,6 +47428,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -47635,6 +47682,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -47902,6 +47950,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -48166,6 +48215,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -48430,6 +48480,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -48694,6 +48745,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -48958,6 +49010,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -49226,6 +49279,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -49497,6 +49551,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -49767,6 +49822,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -50031,6 +50087,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -50295,6 +50352,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -50559,6 +50617,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -50827,6 +50886,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -51098,6 +51158,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -51369,6 +51430,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -51641,6 +51703,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -51913,6 +51976,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -52183,6 +52247,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -52451,6 +52516,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -52722,6 +52788,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -52993,6 +53060,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -53265,6 +53333,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -53537,6 +53606,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -53825,6 +53895,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -54113,6 +54184,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -54407,6 +54479,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -54707,6 +54780,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -55007,6 +55081,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -55291,6 +55366,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -55588,6 +55664,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -55885,6 +55962,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -56188,6 +56266,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -56497,6 +56576,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -56814,6 +56894,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -57131,6 +57212,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -57448,6 +57530,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -57743,6 +57826,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -58040,6 +58124,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -58337,6 +58422,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -58634,6 +58720,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -58931,6 +59018,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -59236,6 +59324,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -59541,6 +59630,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -59846,6 +59936,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -60151,6 +60242,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -60456,6 +60548,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -60765,6 +60858,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -61074,6 +61168,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -61383,6 +61478,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -61688,6 +61784,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -61991,6 +62088,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -62308,6 +62406,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -62633,6 +62732,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -62958,6 +63058,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -63283,6 +63384,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -63608,6 +63710,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -63933,6 +64036,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -64262,6 +64366,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -64591,6 +64696,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -64920,6 +65026,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -65246,6 +65353,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -65575,6 +65683,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -65904,6 +66013,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -66233,6 +66343,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -66558,6 +66669,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -66883,6 +66995,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -67208,6 +67321,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -67533,6 +67647,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -67858,6 +67973,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -68187,6 +68303,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -68516,6 +68633,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -68845,6 +68963,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -69171,6 +69290,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -69500,6 +69620,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -69829,6 +69950,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -70158,6 +70280,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -70487,6 +70610,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -70840,6 +70964,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -71184,6 +71309,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -71513,6 +71639,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -71842,6 +71969,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -72168,6 +72296,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -72497,6 +72626,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -72826,6 +72956,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -73155,6 +73286,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -73484,6 +73616,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -73837,6 +73970,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -74205,6 +74339,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -74573,6 +74708,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -74941,6 +75077,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -75309,6 +75446,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -75677,6 +75815,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -76021,6 +76160,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -76353,6 +76493,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -76685,6 +76826,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -77017,6 +77159,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -77349,6 +77492,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -77705,6 +77849,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -78076,6 +78221,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -78447,6 +78593,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -78818,6 +78965,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -79189,6 +79337,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -79560,6 +79709,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -79931,6 +80081,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -80305,6 +80456,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -80679,6 +80831,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -81053,6 +81206,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -81427,6 +81581,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -81801,6 +81956,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -82178,6 +82334,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -82549,6 +82706,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -82920,6 +83078,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -83291,6 +83450,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -83662,6 +83822,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -84033,6 +84194,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -84404,6 +84566,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -84778,6 +84941,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -85152,6 +85316,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -85526,6 +85691,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -85900,6 +86066,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -86274,6 +86441,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -87028,6 +87196,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -87399,6 +87568,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -87770,6 +87940,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -88141,6 +88312,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -88512,6 +88684,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -88886,6 +89059,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -89260,6 +89434,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -89634,6 +89809,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -90008,6 +90184,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -90382,6 +90559,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -91140,6 +91318,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -91518,6 +91697,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -91896,6 +92076,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
