@@ -1,6 +1,6 @@
 module github.com/rancher/kontainer-driver-metadata
 
-go 1.25
+go 1.25.0
 
 replace (
 	github.com/knative/pkg => github.com/rancher/pkg v0.0.0-20190514055449-b30ab9de040e
@@ -41,7 +41,7 @@ require (
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/rancher/rke v1.8.8
 	github.com/sirupsen/logrus v1.9.3
-	golang.org/x/mod v0.23.0
+	golang.org/x/mod v0.36.0
 	k8s.io/apimachinery v0.34.6
 	sigs.k8s.io/yaml v1.6.0
 )
@@ -81,11 +81,11 @@ require (
 	go.opentelemetry.io/otel/trace v1.35.0 // indirect
 	go.yaml.in/yaml/v2 v2.4.2 // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
-	golang.org/x/net v0.38.0 // indirect
+	golang.org/x/net v0.56.0 // indirect
 	golang.org/x/oauth2 v0.27.0 // indirect
-	golang.org/x/sys v0.31.0 // indirect
-	golang.org/x/term v0.30.0 // indirect
-	golang.org/x/text v0.23.0 // indirect
+	golang.org/x/sys v0.46.0 // indirect
+	golang.org/x/term v0.44.0 // indirect
+	golang.org/x/text v0.38.0 // indirect
 	golang.org/x/time v0.9.0 // indirect
 	google.golang.org/protobuf v1.36.5 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
