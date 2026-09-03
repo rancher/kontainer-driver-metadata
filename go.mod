@@ -41,7 +41,7 @@ require (
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/rancher/rke v1.8.8
 	github.com/sirupsen/logrus v1.9.4
-	golang.org/x/mod v0.29.0
+	golang.org/x/mod v0.37.0
 	k8s.io/apimachinery v0.35.3
 	sigs.k8s.io/yaml v1.6.0
 )
@@ -84,7 +84,7 @@ require (
 	golang.org/x/oauth2 v0.30.0 // indirect
 	golang.org/x/sys v0.38.0 // indirect
 	golang.org/x/term v0.37.0 // indirect
-	golang.org/x/text v0.31.0 // indirect
+	golang.org/x/text v0.39.0 // indirect
 	golang.org/x/time v0.9.0 // indirect
 	google.golang.org/protobuf v1.36.8 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
