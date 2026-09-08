@@ -1208,3 +1208,9 @@ releases:
     serverArgs: *serverArgs-v14
     agentArgs: *agentArgs-v8
     featureVersions: *featureVersions-v1
+  - version: v1.34.11+k3s1
+    minChannelServerVersion: v2.13.0-alpha1
+    maxChannelServerVersion: v2.13.99
+    serverArgs: *serverArgs-v14
+    agentArgs: *agentArgs-v8
+    featureVersions: *featureVersions-v1
