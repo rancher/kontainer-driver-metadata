@@ -849,12 +849,15 @@ sync:
         - v1.35.6-k3s1
         - v1.35.7-k3s1
         - v1.35.8-k3s1
+        - v1.35.9-rc2-k3s1
         - v1.36.0-k3s1
         - v1.36.1-k3s1
         - v1.36.2-k3s1
         - v1.36.3-k3s1
         - v1.36.4-k3s1
+        - v1.36.5-rc2-k3s1
         - v1.37.0-k3s1
+        - v1.37.1-rc2-k3s1
   - source: docker.io/rancher/klipper-helm
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/klipper-helm'
     type: repository
@@ -2693,12 +2696,15 @@ sync:
         - v1.35.6-k3s1
         - v1.35.7-k3s1
         - v1.35.8-k3s1
+        - v1.35.9-rc2-k3s1
         - v1.36.0-k3s1
         - v1.36.1-k3s1
         - v1.36.2-k3s1
         - v1.36.3-k3s1
         - v1.36.4-k3s1
+        - v1.36.5-rc2-k3s1
         - v1.37.0-k3s1
+        - v1.37.1-rc2-k3s1
   - source: docker.io/rancher/system-agent-installer-rke2
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-rke2'
     type: repository
