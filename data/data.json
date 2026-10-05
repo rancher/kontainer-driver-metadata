@@ -36552,6 +36552,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -36607,9 +36608,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -36639,6 +36642,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -36686,6 +36690,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -36788,6 +36793,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -36851,9 +36857,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -36883,6 +36891,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -36930,6 +36939,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -37032,6 +37042,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -37095,9 +37106,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -37127,6 +37140,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -37174,6 +37188,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -37276,6 +37291,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -37339,9 +37355,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -37371,6 +37389,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -37418,6 +37437,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -37520,6 +37540,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -37583,9 +37604,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -37615,6 +37638,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -37665,6 +37689,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -37767,6 +37792,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -37830,9 +37856,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -37862,6 +37890,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -37912,6 +37941,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -38014,6 +38044,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -38077,9 +38108,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -38109,6 +38142,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -38159,6 +38193,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -38261,6 +38296,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -38324,9 +38360,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -38356,6 +38394,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -38406,6 +38445,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -38508,6 +38548,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -38571,9 +38612,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -38603,6 +38646,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -38653,6 +38697,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -38755,6 +38800,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -38818,9 +38864,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -38850,6 +38898,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -38900,6 +38949,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -39002,6 +39052,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -39065,9 +39116,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -39097,6 +39150,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -39147,6 +39201,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -39249,6 +39304,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -39315,9 +39371,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -39347,6 +39405,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -39397,6 +39456,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -39499,6 +39559,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -39562,9 +39623,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -39594,6 +39657,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -39644,6 +39708,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -39746,6 +39811,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -39809,9 +39875,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -39841,6 +39909,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -39891,6 +39960,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -39993,6 +40063,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -40056,9 +40127,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -40088,6 +40161,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -40138,6 +40212,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -40240,6 +40315,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -40303,9 +40379,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -40335,6 +40413,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -40385,6 +40464,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -40487,6 +40567,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -40550,9 +40631,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -40582,6 +40665,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -40632,6 +40716,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -40734,6 +40819,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -40797,9 +40883,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -40829,6 +40917,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -40879,6 +40968,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -40981,6 +41071,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -41044,9 +41135,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -41076,6 +41169,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -41083,6 +41177,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -41129,6 +41224,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -41231,6 +41327,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -41297,9 +41394,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -41329,6 +41428,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -41336,6 +41436,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -41382,6 +41483,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -41484,6 +41586,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -41550,9 +41653,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -41582,6 +41687,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -41589,6 +41695,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -41635,6 +41742,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -41737,6 +41845,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -41803,9 +41912,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -41835,6 +41946,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -41842,6 +41954,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -41888,6 +42001,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -41990,6 +42104,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -42056,9 +42171,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -42088,6 +42205,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -42095,6 +42213,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -42141,6 +42260,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -42243,6 +42363,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -42306,9 +42427,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -42338,6 +42461,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -42388,6 +42512,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -42490,6 +42615,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -42553,9 +42679,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -42585,6 +42713,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -42592,6 +42721,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -42638,6 +42768,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -42740,6 +42871,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -42803,9 +42935,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -42835,6 +42969,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -42885,6 +43020,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -42987,6 +43123,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -43050,9 +43187,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -43082,6 +43221,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -43132,6 +43272,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -43234,6 +43375,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -43297,9 +43439,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -43329,6 +43473,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -43336,6 +43481,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -43382,6 +43528,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -43484,6 +43631,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -43550,9 +43698,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -43582,6 +43732,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -43589,6 +43740,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -43635,6 +43787,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -43737,6 +43890,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -43803,9 +43957,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -43835,6 +43991,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -43842,6 +43999,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -43888,6 +44046,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -43990,6 +44149,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -44053,9 +44213,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -44085,6 +44247,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -44092,6 +44255,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -44138,6 +44302,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -44240,6 +44405,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -44306,9 +44472,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -44338,6 +44506,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -44345,6 +44514,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -44391,6 +44561,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -44493,6 +44664,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -44559,9 +44731,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -44591,6 +44765,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -44598,6 +44773,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -44644,6 +44820,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -44746,6 +44923,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -44812,9 +44990,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -44844,6 +45024,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -44851,6 +45032,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -44897,6 +45079,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -44999,6 +45182,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -45065,9 +45249,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -45097,6 +45283,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -45104,6 +45291,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -45150,6 +45338,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -45252,6 +45441,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -45318,9 +45508,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -45350,6 +45542,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -45357,6 +45550,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -45403,6 +45597,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -45505,6 +45700,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -45571,9 +45767,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -45603,6 +45801,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -45610,6 +45809,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -45656,6 +45856,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -45758,6 +45959,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -45824,9 +46026,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -45856,6 +46060,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -45863,6 +46068,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -45909,6 +46115,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -46011,6 +46218,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -46077,9 +46285,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -46109,6 +46319,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -46116,6 +46327,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -46162,6 +46374,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -46264,6 +46477,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -46330,9 +46544,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -46362,6 +46578,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -46369,6 +46586,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -46415,6 +46633,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -46517,6 +46736,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -46583,9 +46803,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -46615,6 +46837,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -46622,6 +46845,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -46668,6 +46892,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -46770,6 +46995,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -46836,9 +47062,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -46868,6 +47096,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -46875,6 +47104,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -46921,6 +47151,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -47023,6 +47254,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -47089,9 +47321,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -47121,6 +47355,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -47128,6 +47363,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -47174,6 +47410,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -47276,6 +47513,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -47342,9 +47580,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -47374,6 +47614,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -47381,6 +47622,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -47427,6 +47669,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -47529,6 +47772,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -47595,9 +47839,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -47627,6 +47873,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -47634,6 +47881,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -47680,6 +47928,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -47782,6 +48031,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -47848,9 +48098,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -47880,6 +48132,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -47887,6 +48140,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -47933,6 +48187,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -48034,6 +48289,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -48112,9 +48368,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -48144,6 +48402,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -48151,6 +48410,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -48197,6 +48457,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -48299,6 +48560,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -48365,9 +48627,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -48397,6 +48661,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -48404,6 +48669,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -48450,6 +48716,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -48554,6 +48821,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -48632,9 +48900,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -48664,6 +48934,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -48671,6 +48942,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -48717,6 +48989,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -48818,6 +49091,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -48896,9 +49170,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -48928,6 +49204,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -48935,6 +49212,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -48981,6 +49259,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -49082,6 +49361,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -49160,9 +49440,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -49192,6 +49474,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -49199,6 +49482,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -49245,6 +49529,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -49346,6 +49631,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -49424,9 +49710,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -49456,6 +49744,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -49463,6 +49752,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -49509,6 +49799,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -49610,6 +49901,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -49688,9 +49980,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -49720,6 +50014,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -49727,6 +50022,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -49773,6 +50069,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -49878,6 +50175,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -49956,9 +50254,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -49988,6 +50288,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -49995,6 +50296,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -50044,6 +50346,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -50149,6 +50452,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -50227,9 +50531,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -50259,6 +50565,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -50266,6 +50573,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -50315,6 +50623,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -50419,6 +50728,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -50497,9 +50807,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -50529,6 +50841,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -50536,6 +50849,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -50582,6 +50896,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -50683,6 +50998,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -50761,9 +51077,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -50793,6 +51111,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -50800,6 +51119,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -50846,6 +51166,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -50947,6 +51268,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -51025,9 +51347,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -51057,6 +51381,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -51064,6 +51389,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -51110,6 +51436,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -51211,6 +51538,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -51289,9 +51617,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -51321,6 +51651,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -51328,6 +51659,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -51374,6 +51706,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -51479,6 +51812,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -51557,9 +51891,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -51589,6 +51925,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -51596,6 +51933,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -51645,6 +51983,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -51750,6 +52089,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -51828,9 +52168,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -51860,6 +52202,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -51867,6 +52210,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -51916,6 +52260,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -52021,6 +52366,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -52099,9 +52445,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -52131,6 +52479,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -52138,6 +52487,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -52187,6 +52537,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -52292,6 +52643,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -52370,9 +52722,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -52403,6 +52757,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -52410,6 +52765,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -52459,6 +52815,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -52564,6 +52921,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -52642,9 +53000,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -52675,6 +53035,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -52682,6 +53043,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -52731,6 +53093,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -52835,6 +53198,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -52913,9 +53277,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -52945,6 +53311,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -52952,6 +53319,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -52998,6 +53366,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -53103,6 +53472,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -53181,9 +53551,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -53213,6 +53585,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -53220,6 +53593,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -53269,6 +53643,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -53374,6 +53749,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -53452,9 +53828,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -53484,6 +53862,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -53491,6 +53870,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -53540,6 +53920,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -53645,6 +54026,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -53723,9 +54105,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -53755,6 +54139,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -53762,6 +54147,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -53811,6 +54197,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -53916,6 +54303,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -53994,9 +54382,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -54027,6 +54417,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -54034,6 +54425,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -54083,6 +54475,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -54188,6 +54581,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -54266,9 +54660,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -54299,6 +54695,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -54306,6 +54703,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -54355,6 +54753,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -54460,6 +54859,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -54542,9 +54942,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -54587,6 +54989,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -54594,6 +54997,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -54643,6 +55047,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -54748,6 +55153,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -54830,9 +55236,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -54875,6 +55283,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -54882,6 +55291,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -54931,6 +55341,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -55042,6 +55453,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -55124,9 +55536,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -55169,6 +55583,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -55176,6 +55591,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -55225,12 +55641,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -55342,6 +55760,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -55424,9 +55843,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -55469,6 +55890,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -55476,6 +55898,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -55525,12 +55948,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -55642,6 +56067,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -55724,9 +56150,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -55769,6 +56197,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -55776,6 +56205,7 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "etcd-arg": {
@@ -55825,12 +56255,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -55942,6 +56374,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -56020,9 +56453,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -56053,6 +56488,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -56060,9 +56496,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -56112,6 +56550,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -56223,6 +56662,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -56305,9 +56745,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -56350,6 +56792,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -56357,9 +56800,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -56409,6 +56854,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -56520,6 +56966,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -56602,9 +57049,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -56647,6 +57096,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -56654,9 +57104,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -56706,6 +57158,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -56823,6 +57276,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -56905,9 +57359,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -56950,6 +57406,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -56957,9 +57414,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -57009,12 +57468,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -57132,6 +57593,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -57214,9 +57676,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -57259,6 +57723,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -57266,9 +57731,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -57326,12 +57793,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -57449,6 +57918,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -57531,9 +58001,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -57576,6 +58048,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -57583,9 +58056,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -57643,12 +58118,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -57766,6 +58243,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -57848,9 +58326,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -57893,6 +58373,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -57900,9 +58381,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -57960,12 +58443,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -58083,6 +58568,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -58165,9 +58651,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -58210,6 +58698,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -58217,9 +58706,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -58277,12 +58768,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -58394,6 +58887,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -58472,9 +58966,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -58505,6 +59001,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -58512,9 +59009,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -58564,6 +59063,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -58675,6 +59175,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -58757,9 +59258,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -58802,6 +59305,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -58809,9 +59313,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -58861,6 +59367,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -58972,6 +59479,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -59054,9 +59562,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -59099,6 +59609,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -59106,9 +59617,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -59158,6 +59671,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -59269,6 +59783,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -59351,9 +59866,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -59396,6 +59913,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -59403,9 +59921,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -59455,6 +59975,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -59566,6 +60087,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -59648,9 +60170,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -59693,6 +60217,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -59700,9 +60225,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -59760,6 +60287,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -59871,6 +60399,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -59953,9 +60482,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -59998,6 +60529,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -60005,9 +60537,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -60065,6 +60599,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -60176,6 +60711,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -60258,9 +60794,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -60303,6 +60841,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -60310,9 +60849,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -60370,6 +60911,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -60481,6 +61023,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -60563,9 +61106,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -60608,6 +61153,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -60615,9 +61161,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -60675,6 +61223,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -60786,6 +61335,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -60868,9 +61418,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -60913,6 +61465,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -60920,9 +61473,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -60980,6 +61535,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -61091,6 +61647,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -61173,9 +61730,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -61218,6 +61777,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -61225,9 +61785,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -61285,6 +61847,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -61396,6 +61959,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -61482,9 +62046,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -61527,6 +62093,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -61534,9 +62101,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -61594,6 +62163,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -61705,6 +62275,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -61791,9 +62362,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -61836,6 +62409,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -61843,9 +62417,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -61903,6 +62479,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -62014,6 +62591,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -62100,9 +62678,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -62145,6 +62725,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -62152,9 +62733,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -62212,6 +62795,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -62323,6 +62907,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -62405,9 +62990,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -62450,6 +63037,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -62457,9 +63045,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -62509,6 +63099,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
@@ -62626,6 +63217,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -62708,9 +63300,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -62753,6 +63347,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -62760,9 +63355,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -62812,12 +63409,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -62935,6 +63534,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -63025,9 +63625,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -63070,6 +63672,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -63077,9 +63680,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -63137,12 +63742,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -63260,6 +63867,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -63350,9 +63958,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -63395,6 +64005,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -63402,9 +64013,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -63462,12 +64075,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -63585,6 +64200,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -63675,9 +64291,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -63720,6 +64338,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -63727,9 +64346,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -63787,12 +64408,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -63910,6 +64533,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -64000,9 +64624,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -64045,6 +64671,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -64052,9 +64679,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -64112,12 +64741,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -64235,6 +64866,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -64325,9 +64957,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -64370,6 +65004,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -64377,9 +65012,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -64437,12 +65074,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -64560,6 +65199,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -64650,9 +65290,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -64695,6 +65337,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -64702,9 +65345,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -64762,12 +65407,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -64885,6 +65532,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -64979,9 +65627,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -65024,6 +65674,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -65031,9 +65682,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -65091,12 +65744,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -65214,6 +65869,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -65308,9 +65964,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -65353,6 +66011,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -65360,9 +66019,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -65420,12 +66081,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -65543,6 +66206,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -65637,9 +66301,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -65682,6 +66348,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -65689,9 +66356,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -65749,12 +66418,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -65872,6 +66543,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -65963,9 +66635,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -66008,6 +66682,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -66015,9 +66690,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -66075,12 +66752,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -66198,6 +66877,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -66292,9 +66972,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -66337,6 +67019,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -66344,9 +67027,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -66404,12 +67089,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -66527,6 +67214,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -66621,9 +67309,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -66666,6 +67356,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -66673,9 +67364,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -66733,12 +67426,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -66856,6 +67551,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -66950,9 +67646,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -66995,6 +67693,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -67002,9 +67701,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -67062,12 +67763,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -67185,6 +67888,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -67275,9 +67979,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -67320,6 +68026,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -67327,9 +68034,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -67387,12 +68096,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -67510,6 +68221,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -67600,9 +68312,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -67645,6 +68359,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -67652,9 +68367,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -67712,12 +68429,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -67835,6 +68554,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -67925,9 +68645,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -67970,6 +68692,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -67977,9 +68700,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -68037,12 +68762,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -68160,6 +68887,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -68250,9 +68978,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -68295,6 +69025,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -68302,9 +69033,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -68362,12 +69095,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -68485,6 +69220,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -68575,9 +69311,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -68620,6 +69358,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -68627,9 +69366,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -68687,12 +69428,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -68810,6 +69553,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -68904,9 +69648,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -68949,6 +69695,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -68956,9 +69703,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -69016,12 +69765,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -69139,6 +69890,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -69233,9 +69985,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -69278,6 +70032,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -69285,9 +70040,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -69345,12 +70102,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -69468,6 +70227,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -69562,9 +70322,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -69607,6 +70369,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -69614,9 +70377,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -69674,12 +70439,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -69797,6 +70564,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -69888,9 +70656,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -69933,6 +70703,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -69940,9 +70711,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -70000,12 +70773,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -70123,6 +70898,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -70217,9 +70993,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -70262,6 +71040,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -70269,9 +71048,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -70329,12 +71110,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -70452,6 +71235,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -70546,9 +71330,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -70591,6 +71377,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -70598,9 +71385,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -70658,12 +71447,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -70781,6 +71572,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -70875,9 +71667,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -70920,6 +71714,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -70927,9 +71722,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -70987,12 +71784,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -71110,6 +71909,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -71204,9 +72004,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -71249,6 +72051,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -71256,9 +72059,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -71316,12 +72121,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -71463,6 +72270,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -71557,9 +72365,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -71602,6 +72412,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -71609,9 +72420,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -71675,6 +72488,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -71684,6 +72498,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -71807,6 +72622,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -71901,9 +72717,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -71946,6 +72764,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -71953,9 +72772,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -72013,12 +72834,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -72136,6 +72959,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -72230,9 +73054,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -72275,6 +73101,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -72282,9 +73109,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -72342,12 +73171,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -72465,6 +73296,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -72559,9 +73391,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -72604,6 +73438,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -72611,9 +73446,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -72671,12 +73508,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -72794,6 +73633,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -72885,9 +73725,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -72930,6 +73772,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -72937,9 +73780,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -72997,12 +73842,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -73120,6 +73967,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -73214,9 +74062,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -73259,6 +74109,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -73266,9 +74117,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -73326,12 +74179,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -73449,6 +74304,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -73543,9 +74399,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -73588,6 +74446,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -73595,9 +74454,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -73655,12 +74516,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -73778,6 +74641,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -73872,9 +74736,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -73917,6 +74783,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -73924,9 +74791,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -73984,12 +74853,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -74107,6 +74978,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -74201,9 +75073,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -74246,6 +75120,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -74253,9 +75128,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -74313,12 +75190,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -74460,6 +75339,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -74554,9 +75434,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -74599,6 +75481,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -74606,9 +75489,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -74672,6 +75557,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -74681,6 +75567,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -74828,6 +75715,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -74922,9 +75810,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -74967,6 +75857,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -74974,9 +75865,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -75040,6 +75933,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -75049,6 +75943,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -75196,6 +76091,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -75290,9 +76186,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -75335,6 +76233,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -75342,9 +76241,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -75408,6 +76309,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -75417,6 +76319,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -75564,6 +76467,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -75658,9 +76562,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -75703,6 +76609,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -75710,9 +76617,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -75776,6 +76685,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -75785,6 +76695,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -75932,6 +76843,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -76026,9 +76938,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -76071,6 +76985,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -76078,9 +76993,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -76144,6 +77061,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -76153,6 +77071,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -76300,6 +77219,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -76394,9 +77314,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -76439,6 +77361,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -76446,9 +77369,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -76512,6 +77437,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -76521,6 +77447,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -76647,6 +77574,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -76738,9 +77666,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -76783,6 +77713,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -76790,9 +77721,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -76850,12 +77783,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -76976,6 +77911,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -77070,9 +78006,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -77115,6 +78053,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -77122,9 +78061,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -77182,12 +78123,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -77308,6 +78251,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -77402,9 +78346,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -77447,6 +78393,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -77454,9 +78401,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -77514,12 +78463,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -77640,6 +78591,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -77734,9 +78686,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -77779,6 +78733,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -77786,9 +78741,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -77846,12 +78803,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -77972,6 +78931,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -78066,9 +79026,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -78111,6 +79073,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -78118,9 +79081,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "etcd-arg": {
@@ -78178,12 +79143,14 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "snapshotter": {
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -78328,6 +79295,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -78422,9 +79390,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -78467,6 +79437,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -78474,9 +79445,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -78540,6 +79513,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -78549,6 +79523,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -78699,6 +79674,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -78793,9 +79769,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -78838,6 +79816,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -78845,9 +79824,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -78911,6 +79892,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -78920,6 +79902,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -79070,6 +80053,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -79164,9 +80148,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -79209,6 +80195,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -79216,9 +80203,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -79282,6 +80271,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -79291,6 +80281,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -79441,6 +80432,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -79535,9 +80527,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -79580,6 +80574,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -79587,9 +80582,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -79653,6 +80650,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -79662,6 +80660,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -79812,6 +80811,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -79906,9 +80906,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -79951,6 +80953,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -79958,9 +80961,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -80024,6 +81029,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -80033,6 +81039,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -80183,6 +81190,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -80277,9 +81285,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -80322,6 +81332,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -80329,9 +81340,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -80395,6 +81408,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -80404,6 +81418,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -80554,6 +81569,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -80648,9 +81664,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -80693,6 +81711,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -80700,9 +81719,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -80769,6 +81790,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -80778,6 +81800,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -80928,6 +81951,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -81022,9 +82046,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -81067,6 +82093,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -81074,9 +82101,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -81143,6 +82172,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -81152,6 +82182,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -81302,6 +82333,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -81396,9 +82428,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -81441,6 +82475,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -81448,9 +82483,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -81517,6 +82554,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -81526,6 +82564,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -81676,6 +82715,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -81770,9 +82810,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -81815,6 +82857,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -81822,9 +82865,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -81891,6 +82936,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -81900,6 +82946,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -82050,6 +83097,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -82144,9 +83192,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -82189,6 +83239,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -82196,9 +83247,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -82265,6 +83318,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -82274,6 +83328,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -82424,6 +83479,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -82518,9 +83574,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -82563,6 +83621,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -82570,9 +83629,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -82642,6 +83703,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -82651,6 +83713,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -82801,6 +83864,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -82895,9 +83959,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -82940,6 +84006,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -82947,9 +84014,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -83013,6 +84082,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -83022,6 +84092,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -83172,6 +84243,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -83266,9 +84338,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -83311,6 +84385,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -83318,9 +84393,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -83384,6 +84461,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -83393,6 +84471,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -83543,6 +84622,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -83637,9 +84717,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -83682,6 +84764,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -83689,9 +84772,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -83755,6 +84840,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -83764,6 +84850,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -83914,6 +85001,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -84008,9 +85096,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -84053,6 +85143,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -84060,9 +85151,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -84126,6 +85219,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -84135,6 +85229,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -84285,6 +85380,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -84379,9 +85475,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -84424,6 +85522,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -84431,9 +85530,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -84497,6 +85598,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -84506,6 +85608,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -84656,6 +85759,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -84750,9 +85854,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -84795,6 +85901,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -84802,9 +85909,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -84868,6 +85977,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -84877,6 +85987,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -85027,6 +86138,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -85121,9 +86233,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -85166,6 +86280,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -85173,9 +86288,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -85242,6 +86359,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -85251,6 +86369,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -85401,6 +86520,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -85495,9 +86615,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -85540,6 +86662,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -85547,9 +86670,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -85616,6 +86741,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -85625,6 +86751,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -85775,6 +86902,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -85869,9 +86997,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -85914,6 +87044,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -85921,9 +87052,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -85990,6 +87123,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -85999,6 +87133,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -86149,6 +87284,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -86243,9 +87379,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -86288,6 +87426,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -86295,9 +87434,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -86364,6 +87505,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -86373,6 +87515,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -86523,6 +87666,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -86617,9 +87761,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -86662,6 +87808,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -86669,9 +87816,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -86738,6 +87887,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -86747,6 +87897,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -86897,6 +88048,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -86991,9 +88143,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -87036,6 +88190,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -87043,9 +88198,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -87115,6 +88272,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -87124,6 +88282,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -87274,6 +88433,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -88122,9 +89282,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -88167,6 +89329,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -88174,9 +89337,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -88240,6 +89405,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -88249,6 +89415,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -88399,6 +89566,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -88493,9 +89661,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -88538,6 +89708,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -88545,9 +89716,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -88611,6 +89784,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -88620,6 +89794,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -88770,6 +89945,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -88864,9 +90040,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -88909,6 +90087,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -88916,9 +90095,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -88982,6 +90163,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -88991,6 +90173,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -89141,6 +90324,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -89235,9 +90419,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -89280,6 +90466,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -89287,9 +90474,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -89353,6 +90542,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -89362,6 +90552,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -89512,6 +90703,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -89606,9 +90798,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -89651,6 +90845,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -89658,9 +90853,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -89727,6 +90924,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -89736,6 +90934,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -89886,6 +91085,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -89980,9 +91180,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -90025,6 +91227,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -90032,9 +91235,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -90101,6 +91306,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -90110,6 +91316,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -90260,6 +91467,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -90354,9 +91562,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -90399,6 +91609,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -90406,9 +91617,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -90475,6 +91688,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -90484,6 +91698,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -90634,6 +91849,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -90728,9 +91944,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -90773,6 +91991,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -90780,9 +91999,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -90849,6 +92070,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -90858,6 +92080,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -91008,6 +92231,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -91102,9 +92326,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -91147,6 +92373,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -91154,9 +92381,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -91223,6 +92452,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -91232,6 +92462,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -91382,6 +92613,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -91476,9 +92708,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -91521,6 +92755,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -91528,9 +92763,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -91600,6 +92837,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -91609,6 +92847,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -91759,6 +92998,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -92611,9 +93851,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -92656,6 +93898,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -92663,9 +93906,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -92732,6 +93977,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -92741,6 +93987,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -92891,6 +94138,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -92989,9 +94237,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -93034,6 +94284,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -93041,9 +94292,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -93110,6 +94363,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -93119,6 +94373,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {
@@ -93269,6 +94524,7 @@
       "type": "bool"
      },
      "system-default-registry": {
+      "agentRestart": true,
       "type": "string"
      }
     },
@@ -93367,9 +94623,11 @@
       "type": "string"
      },
      "cluster-dns": {
+      "agentRestart": true,
       "type": "string"
      },
      "cluster-domain": {
+      "agentRestart": true,
       "type": "string"
      },
      "cni": {
@@ -93412,6 +94670,7 @@
       "type": "bool"
      },
      "disable-kube-proxy": {
+      "agentRestart": true,
       "default": false,
       "type": "boolean"
      },
@@ -93419,9 +94678,11 @@
       "type": "bool"
      },
      "egress-selector-mode": {
+      "agentRestart": true,
       "type": "string"
      },
      "embedded-registry": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -93491,6 +94752,7 @@
       "type": "string"
      },
      "service-node-port-range": {
+      "agentRestart": true,
       "type": "string"
      },
      "servicelb-namespace": {
@@ -93500,6 +94762,7 @@
       "type": "string"
      },
      "supervisor-metrics": {
+      "agentRestart": true,
       "type": "boolean"
      },
      "tls-san": {

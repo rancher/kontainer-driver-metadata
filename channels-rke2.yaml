@@ -49,6 +49,7 @@ releases:
         type: array
       cluster-dns:
         type: string
+        agentRestart: true
       service-cidr:
         type: string
       kube-controller-manager-arg:
@@ -69,14 +70,17 @@ releases:
       disable-kube-proxy:
         type: boolean
         default: false
+        agentRestart: true
       cluster-cidr:
         type: string
       audit-policy-file:
         type: string
       service-node-port-range:
         type: string
+        agentRestart: true
       cluster-domain:
         type: string
+        agentRestart: true
       cni:
         default: calico
         type: array
@@ -134,6 +138,7 @@ releases:
         type: string
       system-default-registry:
         type: string
+        agentRestart: true
       protect-kernel-defaults:
         type: boolean
         default: false
@@ -574,6 +579,7 @@ releases:
       <<: *serverArgs-v1-22-9-rke2r2
       egress-selector-mode:
         type: string
+        agentRestart: true
     agentArgs: &agentArgs-v1-22-10-rke2r2
       <<: *agentArgs-v1-22-9-rke2r2
     charts: &charts-v1-22-10-rke2r2
@@ -743,6 +749,7 @@ releases:
       <<: *serverArgs-v1-23-6-rke2r2
       egress-selector-mode:
         type: string
+        agentRestart: true
     agentArgs: &agentArgs-v1-23-7-rke2r2
       <<: *agentArgs-v1-23-6-rke2r2
     charts: &charts-v1-23-7-rke2r2
@@ -1936,6 +1943,7 @@ releases:
       <<: *serverArgs-v1-27-13-rke2r1
       supervisor-metrics:
         type: boolean
+        agentRestart: true
       write-kubeconfig-group:
         type: string
     agentArgs: &agentArgs-v1-27-15-rke2r1
@@ -2012,6 +2020,7 @@ releases:
       <<: *serverArgs-v1-27-11-rke2r1
       embedded-registry:
         type: boolean
+        agentRestart: true
     agentArgs: &agentArgs-v1-28-8-rke2r1
       <<: *agentArgs-v1-25-15-rke2r2
       default-runtime:
@@ -2098,6 +2107,7 @@ releases:
       <<: *serverArgs-v1-28-9-rke2r1
       supervisor-metrics:
         type: boolean
+        agentRestart: true
       write-kubeconfig-group:
         type: string
     agentArgs: &agentArgs-v1-28-11-rke2r1
