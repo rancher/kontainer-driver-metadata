@@ -1,0 +1,72 @@
+# This updatecli manifest detects new RKE2 releases from github.com/rancher/rke2
+# and opens a PR to update the kontainer-driver-metadata repository.
+#
+# To test this locally:
+#   have "UPDATECLI_GITHUB_ACTOR" env set to your github username
+#   have "UPDATECLI_GITHUB_TOKEN" env set to your github token
+#   have the latest version of updatecli installed
+#   'updatecli diff --values updatecli/values.yaml --config updatecli/updatecli.d/rke2-release.yaml'
+---
+name: "Detect new RKE2 release"
+
+scms:
+  kontainer-driver-metadata:
+    kind: "github"
+    spec:
+      user: "{{ .github.user }}"
+      email: "{{ .github.email }}"
+      username: "{{ requiredEnv .github.username }}"
+      token: '{{ requiredEnv .github.token }}'
+      owner: rancher
+      repository: kontainer-driver-metadata
+      branch: dev-v2.13
+
+sources:
+  rke2-release:
+    name: "Get latest RKE2 release"
+    kind: "githubrelease"
+    spec:
+      owner: rancher
+      repository: rke2
+      token: '{{ requiredEnv .github.token }}'
+      username: '{{ requiredEnv .github.username }}'
+      typefilter:
+        release: true
+        draft: false
+        prerelease: false
+      versionfilter:
+        kind: regex
+        # pattern matches RKE2 release tags like v1.32.1+rke2r1
+        pattern: 'v[0-9]+\.[0-9]+\.[0-9]+\+rke2r[0-9]+'
+
+conditions:
+  checkIfReleaseExists:
+    name: "Check if RKE2 release already exists in channels-rke2.yaml"
+    kind: file
+    disablesourceinput: true
+    spec:
+      file: channels-rke2.yaml
+      matchpattern: '{{ source "rke2-release" }}'
+    scmid: kontainer-driver-metadata
+    failwhen: true
+
+actions:
+  github:
+    kind: "github/pullrequest"
+    scmid: "kontainer-driver-metadata"
+    spec:
+      automerge: false
+      draft: false
+      mergemethod: squash
+      title: 'New RKE2 release detected: {{ source "rke2-release" }}'
+      description: |
+        A new RKE2 release has been detected: **{{ source "rke2-release" }}**
+        
+        This PR was automatically created by updatecli.
+        
+        Please review and add the necessary configuration for this release to `channels-rke2.yaml`.
+        
+        Release URL: https://github.com/rancher/rke2/releases/tag/{{ source "rke2-release" }}
+      labels:
+        - updatecli
+        - rke2
