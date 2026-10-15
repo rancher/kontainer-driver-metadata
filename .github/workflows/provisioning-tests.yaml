@@ -100,7 +100,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        k8s-minor: [35, 36, 37]
+        k8s-minor: [35] # TODO: restore [35, 36, 37] once the new CI matrix has been validated
         shard: ${{ fromJSON(needs.setup-matrix.outputs.matrix).include }}
     env:
       # registry-cache container is reachable from the CI container via the Docker bridge IP
@@ -154,6 +154,7 @@ jobs:
             --env V2PROV_TEST_PARALLELISM \
             --env CATTLE_FEATURES \
             --env KDM_TEST_K8S_MINOR \
+            --env FORCE_PROVISIONING_TESTS \
             --env PREV_COMMIT_PR_SHA \
             --env PREV_COMMIT_PUSH_SHA \
             --env CATTLE_AGENT_IMAGE \
@@ -169,6 +170,7 @@ jobs:
           V2PROV_TEST_PARALLELISM: ${{ matrix.shard.V2PROV_TEST_PARALLELISM }}
           CATTLE_FEATURES: ${{ matrix.shard.CATTLE_FEATURES }}
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
+          FORCE_PROVISIONING_TESTS: "1" # TODO: remove once the new CI matrix has been validated
           PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
           PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
           CATTLE_AGENT_IMAGE: "rancher/rancher-agent:v2.15-head" # TODO: change to v2.16-head after v2.16.0 is released

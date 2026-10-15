@@ -1,38 +1,20 @@
 #!/bin/bash
 set -ex
 
-cd $(dirname $0)/..
+# Fetches rancher's provisioning test scopes and matrix resolver, then prints the GHA matrix
+# as {"include":[...]} on stdout. Only explicit scopes and ALL=1 are meaningful here, since
+# change detection would diff this repo against rancher's path rules.
 
-# Create binary directory for running provisioning tests
-mkdir -p "./bin"
-BIN_DIR="$(realpath ./bin)"
+# TODO: restore rancher/rancher and release/v2.15 once the dependent changes merge upstream
+MATRIX_REPO=${MATRIX_REPO:-harrisonwaffel/rancher}
+MATRIX_REF=${MATRIX_REF:-kdm-ci-improvements-2.16}
 
 TMP_DIR=$(TMPDIR=/var/tmp mktemp -d)
+trap 'rm -rf "$TMP_DIR"' EXIT
 
-pushd "$TMP_DIR" 1>&2
+for f in resolve-provisioning-matrix.sh provisioning-test-scopes.yaml; do
+  curl -fsSL "https://raw.githubusercontent.com/${MATRIX_REPO}/${MATRIX_REF}/.github/scripts/${f}" -o "$TMP_DIR/$f"
+done
 
-IMAGE_REPO=${IMAGE_REPO:-rancher/rancher}
-IMAGE_TAG=${IMAGE_TAG:-v2.15-head}
-IMAGE=${IMAGE:-$IMAGE_REPO:$IMAGE_TAG}
-
-# Inspect image, get server version and extract rancher commit
-if [ -n "$RANCHER_COMMIT" ]; then
-  RANCHER_COMMIT=$(awk -F '=' '{print $2}' <<< "$CATTLE_SERVER_VERSION")
-  case $RANCHER_COMMIT in *-head)
-    # If the rancher commit ends with '-head', it is usually of the form 'v2.x-<COMMIT>-head', so extract everything between dashes
-    RANCHER_COMMIT=$(awk -F '[-]' '{print $2}' <<< "$RANCHER_COMMIT");;
-  esac
-fi
-
-mkdir -p rancher
-
-GIT_URL=${GIT_URL:-https://github.com/rancher/rancher.git}
-GIT_BRANCH=${GIT_BRANCH:-release/v2.15}
-
-git clone --depth 1 -b $GIT_BRANCH $GIT_URL ./rancher
-
-pushd ./rancher 1>&2
-
-git checkout $RANCHER_COMMIT 1>&2
-
-./.github/scripts/resolve-provisioning-matrix.sh
+# The resolver reads the scopes file from its own directory
+bash "$TMP_DIR/resolve-provisioning-matrix.sh"
