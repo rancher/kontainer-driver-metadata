@@ -1,0 +1,20 @@
+#!/bin/bash
+set -ex
+
+# Fetches rancher's provisioning test scopes and matrix resolver, then prints the GHA matrix
+# as {"include":[...]} on stdout. Only explicit scopes and ALL=1 are meaningful here, since
+# change detection would diff this repo against rancher's path rules.
+
+# TODO: restore rancher/rancher and release/v2.15 once the dependent changes merge upstream
+MATRIX_REPO=${MATRIX_REPO:-harrisonwaffel/rancher}
+MATRIX_REF=${MATRIX_REF:-kdm-ci-improvements-2.16}
+
+TMP_DIR=$(TMPDIR=/var/tmp mktemp -d)
+trap 'rm -rf "$TMP_DIR"' EXIT
+
+for f in resolve-provisioning-matrix.sh provisioning-test-scopes.yaml; do
+  curl -fsSL "https://raw.githubusercontent.com/${MATRIX_REPO}/${MATRIX_REF}/.github/scripts/${f}" -o "$TMP_DIR/$f"
+done
+
+# The resolver reads the scopes file from its own directory
+bash "$TMP_DIR/resolve-provisioning-matrix.sh"

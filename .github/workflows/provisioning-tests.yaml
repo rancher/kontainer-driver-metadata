@@ -39,23 +39,69 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+  setup-matrix:
+    name: Build Test Matrix
+    runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
+    container: ghcr.io/rancher/ci-image/go1.27 # zizmor: ignore[unpinned-images] -- internal image is exempt from this rule
+    permissions:
+      contents: read
+    outputs:
+      matrix: ${{ steps.build.outputs.matrix }}
+      count: ${{ steps.build.outputs.count }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Build matrix
+        id: build
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          EXPLICIT_SCOPES: "kdm"
+        run: |
+          set -eo pipefail
+
+          if [ -z "$EXPLICIT_SCOPES" ]; then
+            export ALL=1
+          fi
+
+          MATRIX="$(bash ./scripts/fetch-provisioning-matrix)"
+
+          # Expect compact {"include":[...]} JSON on a single line, bail otherwise.
+          if ! echo "$MATRIX" | jq -e 'has("include") and (.include | type == "array")' >/dev/null; then
+            echo "error: unexpected matrix output: $MATRIX" >&2
+            exit 1
+          fi
+
+          # An empty matrix is an error in GHA, so the test job below is gated on count instead.
+          COUNT="$(echo "$MATRIX" | jq '.include | length')"
+
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+
+          echo "event=$EVENT_NAME, entries=$COUNT"
+          echo "$MATRIX" | jq .
+
   provisioning-test:
-    needs: [build-ci-image]
+    name: ${{ matrix.shard.V2PROV_TEST_DIST }} 1.${{ matrix.k8s-minor }} ${{ matrix.shard.V2PROV_TEST_RUN_REGEX }}
+    needs: [build-ci-image, setup-matrix]
+    if: needs.setup-matrix.outputs.count != '0'
     permissions:
       contents: read
       id-token: write
     runs-on:
       - runs-on
       - spot=false
-      - runner=4cpu-linux-x64
+      - runner=${{ matrix.shard.V2PROV_TEST_CPUS }}cpu-linux-x64
       - run-id=${{ github.run_id }}
     timeout-minutes: 90
     strategy:
       fail-fast: false
       matrix:
-        dist: [rke2, k3s]
-        k8s-minor: [35, 36, 37]
-        test-regex: ["^Test_Provisioning_.*$", "^Test_Operation_SetA_.*$", "^Test_Operation_SetB_.*$"]
+        k8s-minor: [35] # TODO: restore [35, 36, 37] once the new CI matrix has been validated
+        shard: ${{ fromJSON(needs.setup-matrix.outputs.matrix).include }}
     env:
       # registry-cache container is reachable from the CI container via the Docker bridge IP
       REGISTRY: "172.17.0.2:5000"
@@ -105,7 +151,10 @@ jobs:
             --env LAST_COMMUNITY_RANCHER \
             --env V2PROV_TEST_DIST \
             --env V2PROV_TEST_RUN_REGEX \
+            --env V2PROV_TEST_PARALLELISM \
+            --env CATTLE_FEATURES \
             --env KDM_TEST_K8S_MINOR \
+            --env FORCE_PROVISIONING_TESTS \
             --env PREV_COMMIT_PR_SHA \
             --env PREV_COMMIT_PUSH_SHA \
             --env CATTLE_AGENT_IMAGE \
@@ -116,19 +165,28 @@ jobs:
             kdm-ci provisioning-tests | tee ./build/provtest_output.txt
         env:
           LAST_COMMUNITY_RANCHER: v2.16.99
-          V2PROV_TEST_DIST: ${{ matrix.dist }}
-          V2PROV_TEST_RUN_REGEX: ${{ matrix.test-regex }}
+          V2PROV_TEST_DIST: ${{ matrix.shard.V2PROV_TEST_DIST }}
+          V2PROV_TEST_RUN_REGEX: ${{ matrix.shard.V2PROV_TEST_RUN_REGEX }}
+          V2PROV_TEST_PARALLELISM: ${{ matrix.shard.V2PROV_TEST_PARALLELISM }}
+          CATTLE_FEATURES: ${{ matrix.shard.CATTLE_FEATURES }}
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
+          FORCE_PROVISIONING_TESTS: "1" # TODO: remove once the new CI matrix has been validated
           PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
           PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
           CATTLE_AGENT_IMAGE: "rancher/rancher-agent:v2.15-head" # TODO: change to v2.16-head after v2.16.0 is released
       - name: Move plaintext test results for upload
         if: always()
         id: test_output
+        env:
+          TEST_REGEX: ${{ matrix.shard.V2PROV_TEST_RUN_REGEX }}
         run: |
-          export TESTSUITE="$(echo '${{ matrix.test-regex }}' | sed 's/Test//' | tr -d '()|_^.*$')"
+          # Regexes can be hundreds of characters long, so keep a short readable prefix and
+          # append a hash to stay unique and within filename / artifact name limits.
+          SUITE_PREFIX="$(printf '%s' "$TEST_REGEX" | sed 's/Test//' | tr -cd 'A-Za-z0-9-' | cut -c1-40)"
+          SUITE_HASH="$(printf '%s' "$TEST_REGEX" | sha1sum | cut -c1-8)"
+          export TESTSUITE="${SUITE_PREFIX}-${SUITE_HASH}"
           echo "suite=${TESTSUITE}" >> $GITHUB_OUTPUT
-          REPORT_PATH="/tmp/report-${{ matrix.dist }}-${{ matrix.k8s-minor }}-$TESTSUITE.txt"
+          REPORT_PATH="/tmp/report-${{ matrix.shard.V2PROV_TEST_DIST }}-${{ matrix.k8s-minor }}-$TESTSUITE.txt"
 
           # check to see if the test results exist - if they do move them out, otherwise just create
           # an empty file (empty test results)
@@ -153,15 +211,43 @@ jobs:
         if: always()
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
-          name: "Test Results ${{ matrix.dist }} ${{ matrix.k8s-minor }} ${{ steps.test_output.outputs.suite }}"
-          path: "/tmp/report-${{ matrix.dist }}-${{ matrix.k8s-minor }}-${{ steps.test_output.outputs.suite }}.*"
+          name: "Test Results ${{ matrix.shard.V2PROV_TEST_DIST }} ${{ matrix.k8s-minor }} ${{ steps.test_output.outputs.suite }}"
+          path: "/tmp/report-${{ matrix.shard.V2PROV_TEST_DIST }}-${{ matrix.k8s-minor }}-${{ steps.test_output.outputs.suite }}.*"
       - name: Upload logdump artifact if we had some tests failures
         if: failure()
         uses: rancherlabs/cowboy@73acfb7bc97b55bc18ea5bc1ee8232a8ffcb4576
         with:
           log-file-path: ./build/provtest_output.txt
           artifact-retention-days: 7
-          artifact-name: "Parsed Failure Log Dump (${{ matrix.dist }}, ${{ matrix.k8s-minor }}, ${{ steps.test_output.outputs.suite }})"
+          artifact-name: "Parsed Failure Log Dump (${{ matrix.shard.V2PROV_TEST_DIST }}, ${{ matrix.k8s-minor }}, ${{ steps.test_output.outputs.suite }})"
+
+  # provisioning_tests_summary prints a friendly summary of what tests ran. It's true purpose
+  # is to act as an anchor, giving us a single check that forwards the results of the dynamic matrix
+  # which we can use as a 'required check'
+  provisioning_tests_summary:
+    if: always()
+    name: Provisioning Tests Summary
+    needs: [build-ci-image, setup-matrix, provisioning-test]
+    runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
+    container: ghcr.io/rancher/ci-image/go1.27 # zizmor: ignore[unpinned-images] -- internal image is exempt from this rule
+    env:
+      SETUP_MATRIX_RESULT: ${{ needs.setup-matrix.result }}
+      PROVISIONING_TESTS_RESULT: ${{ needs.provisioning-test.result }}
+    steps:
+      - name: Generate provisioning tests summary
+        shell: bash
+        run: |
+          echo "Provisioning Test Summary"
+          echo "--------------------------------"
+          if [[ "${SETUP_MATRIX_RESULT}" != "success" && "${SETUP_MATRIX_RESULT}" != "skipped" ]]; then
+            echo "Failed to setup test matrix."
+            exit 1
+          fi
+
+          if [[ "${PROVISIONING_TESTS_RESULT}" != "success" && "${PROVISIONING_TESTS_RESULT}" != "skipped" ]]; then
+            echo "Some provisioning tests failed. Please check the logs for details."
+            exit 1
+          fi
 
   convert-to-xml:
     needs: [provisioning-test]
