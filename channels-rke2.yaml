@@ -49,6 +49,8 @@ releases:
         type: array
       cluster-dns:
         type: string
+        restartScope:
+          - downstream
       service-cidr:
         type: string
       kube-controller-manager-arg:
@@ -69,6 +71,8 @@ releases:
       disable-kube-proxy:
         type: boolean
         default: false
+        restartScope:
+          - downstream
       cluster-cidr:
         type: string
       audit-policy-file:
@@ -77,6 +81,8 @@ releases:
         type: string
       cluster-domain:
         type: string
+        restartScope:
+          - downstream
       cni:
         default: calico
         type: array
@@ -574,6 +580,8 @@ releases:
       <<: *serverArgs-v1-22-9-rke2r2
       egress-selector-mode:
         type: string
+        restartScope:
+          - downstream
     agentArgs: &agentArgs-v1-22-10-rke2r2
       <<: *agentArgs-v1-22-9-rke2r2
     charts: &charts-v1-22-10-rke2r2
@@ -743,6 +751,8 @@ releases:
       <<: *serverArgs-v1-23-6-rke2r2
       egress-selector-mode:
         type: string
+        restartScope:
+          - downstream
     agentArgs: &agentArgs-v1-23-7-rke2r2
       <<: *agentArgs-v1-23-6-rke2r2
     charts: &charts-v1-23-7-rke2r2
@@ -2012,6 +2022,8 @@ releases:
       <<: *serverArgs-v1-27-11-rke2r1
       embedded-registry:
         type: boolean
+        restartScope:
+          - downstream
     agentArgs: &agentArgs-v1-28-8-rke2r1
       <<: *agentArgs-v1-25-15-rke2r2
       default-runtime:
