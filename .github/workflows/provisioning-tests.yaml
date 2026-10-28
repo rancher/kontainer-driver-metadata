@@ -96,8 +96,9 @@ jobs:
       - spot=false
       - runner=${{ matrix.shard.V2PROV_TEST_CPUS }}cpu-linux-x64
       - run-id=${{ github.run_id }}
-    timeout-minutes: 90
+    #timeout-minutes: 90
     strategy:
+      max-parallel: 6
       fail-fast: false
       matrix:
         k8s-minor: [35] # TODO: restore [35, 36, 37] once the new CI matrix has been validated

@@ -87,6 +87,19 @@ if [ -z "${SOME_K8S_VERSION}" ]; then
   export SOME_K8S_VERSION
 fi
 
+# Previous patch on the same minor, or the latest patch of the previous minor for .0 releases
+if [ -z "${SOME_K8S_VERSION_PREV}" ]; then
+  SOME_K8S_VERSION_PREV=$(jq -er --arg dist "$V2PROV_TEST_DIST" --arg current "$SOME_K8S_VERSION" '
+    def parts: capture("^v(?<major>[0-9]+)\\.(?<minor>[0-9]+)\\.(?<patch>[0-9]+)") | map_values(tonumber);
+    ($current | parts) as $c
+    | [.[$dist].releases[].version
+        | select(parts | .major == $c.major and
+            if $c.patch == 0 then .minor == $c.minor - 1 else .minor == $c.minor and .patch == $c.patch - 1 end)]
+    | last // error("No previous Kubernetes release found for \($current) in \($dist) metadata")
+  ' <"$METADATA_DIR/data.json")
+fi
+export SOME_K8S_VERSION_PREV
+
 source scripts/prime-route
 
 
