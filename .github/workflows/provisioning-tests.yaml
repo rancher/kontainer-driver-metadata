@@ -101,7 +101,7 @@ jobs:
       max-parallel: 18
       fail-fast: false
       matrix:
-        k8s-minor: [35] # TODO: restore [35, 36, 37] once the new CI matrix has been validated
+        k8s-minor: [35, 36, 37] # TODO: restore [35, 36, 37] once the new CI matrix has been validated
         shard: ${{ fromJSON(needs.setup-matrix.outputs.matrix).include }}
     env:
       # registry-cache container is reachable from the CI container via the Docker bridge IP
