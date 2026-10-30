@@ -7,7 +7,7 @@ set -ex
 
 # TODO: restore rancher/rancher and release/v2.15 once the dependent changes merge upstream
 MATRIX_REPO=${MATRIX_REPO:-harrisonwaffel/rancher}
-MATRIX_REF=${MATRIX_REF:-kdm-ci-improvements-2.16}
+MATRIX_REF=${MATRIX_REF:-kdm-refactor}
 
 TMP_DIR=$(TMPDIR=/var/tmp mktemp -d)
 trap 'rm -rf "$TMP_DIR"' EXIT
