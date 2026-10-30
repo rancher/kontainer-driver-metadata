@@ -462,6 +462,7 @@ sync:
         - v1.34.1-rke2r1-build20250910
         - v1.34.10-rke2r1-build20260723
         - v1.34.11-rke2r1-build20260821
+        - v1.34.12-rke2r1-build20260923
         - v1.34.2-rke2r1-build20251112
         - v1.34.3-rke2r1-build20251210
         - v1.34.3-rke2r3-build20260127
@@ -849,6 +850,7 @@ sync:
         - v1.35.0-k3s1
         - v1.35.0-k3s3
         - v1.35.1-k3s1
+        - v1.35.10-rc2-k3s1
         - v1.35.2-k3s1
         - v1.35.3-k3s1
         - v1.35.4-k3s1
@@ -863,8 +865,10 @@ sync:
         - v1.36.3-k3s1
         - v1.36.4-k3s1
         - v1.36.5-k3s1
+        - v1.36.6-rc2-k3s1
         - v1.37.0-k3s1
         - v1.37.1-k3s1
+        - v1.37.2-rc2-k3s1
   - source: docker.io/rancher/klipper-helm
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/klipper-helm'
     type: repository
@@ -875,6 +879,7 @@ sync:
         - v0.13.3-build20260727
         - v0.13.3-build20260820
         - v0.13.3-build20260909
+        - v0.13.3-build20261021
         - v0.7.3-build20220613
         - v0.7.4-build20221121
         - v0.7.6-build20230223
@@ -1845,6 +1850,7 @@ sync:
         - 3.6.7
         - 3.6.9
         - 3.7.13
+        - 3.7.15
         - 3.7.4
         - 3.7.8
   - source: docker.io/rancher/mirrored-longhornio-csi-attacher
@@ -2068,6 +2074,7 @@ sync:
         - v1.33.7-0.20251210094413-291666bcc1a4-build20251210
         - v1.33.8-0.20260211145912-3552cfc26032-build20260211
         - v1.34.11-0.20260817193950-75826e8afefa-build20260820
+        - v1.34.12-0.20260915234148-f2918dc7011c-build20260916
         - v1.34.2-0.20251010190833-cf0d35a732d1-build20251017
         - v1.34.3-0.20251210094406-1ff6ebef7028-build20251210
         - v1.34.4-0.20260211145917-c6017918a65c-build20260211
@@ -2348,6 +2355,8 @@ sync:
         - v1.34.10-rke2r1-windows-amd64
         - v1.34.11-rke2r1
         - v1.34.11-rke2r1-windows-amd64
+        - v1.34.12-rke2r1
+        - v1.34.12-rke2r1-windows-amd64
         - v1.34.2-rke2r1
         - v1.34.2-rke2r1-windows-amd64
         - v1.34.3-rke2r1
@@ -2547,6 +2556,7 @@ sync:
         - v1.34.1-rke2r1
         - v1.34.10-rke2r1
         - v1.34.11-rke2r1
+        - v1.34.12-rke2r1
         - v1.34.2-rke2r1
         - v1.34.3-rke2r1
         - v1.34.3-rke2r3
@@ -2719,6 +2729,7 @@ sync:
         - v1.35.0-k3s1
         - v1.35.0-k3s3
         - v1.35.1-k3s1
+        - v1.35.10-rc2-k3s1
         - v1.35.2-k3s1
         - v1.35.3-k3s1
         - v1.35.4-k3s1
@@ -2733,8 +2744,10 @@ sync:
         - v1.36.3-k3s1
         - v1.36.4-k3s1
         - v1.36.5-k3s1
+        - v1.36.6-rc2-k3s1
         - v1.37.0-k3s1
         - v1.37.1-k3s1
+        - v1.37.2-rc2-k3s1
   - source: docker.io/rancher/system-agent-installer-rke2
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-rke2'
     type: repository
@@ -2869,6 +2882,7 @@ sync:
         - v1.34.1-rke2r1
         - v1.34.10-rke2r1
         - v1.34.11-rke2r1
+        - v1.34.12-rke2r1
         - v1.34.2-rke2r1
         - v1.34.3-rke2r1
         - v1.34.3-rke2r3
