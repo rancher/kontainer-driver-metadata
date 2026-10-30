@@ -39,129 +39,122 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+  setup-matrix:
+    name: Build Test Matrix
+    runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
+    container: ghcr.io/rancher/ci-image/go1.27 # zizmor: ignore[unpinned-images] -- internal image is exempt from this rule
+    permissions:
+      contents: read
+    outputs:
+      matrix: ${{ steps.build.outputs.matrix }}
+      count: ${{ steps.build.outputs.count }}
+      k8s-minors: ${{ steps.build.outputs.k8s-minors }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Build matrix
+        id: build
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          EXPLICIT_SCOPES: "kdm"
+          K8S_MINORS: "[35, 36, 37]" # TODO: restore [35, 36, 37] once the new CI matrix has been validated
+        run: |
+          set -eo pipefail
+
+          if [ -z "$EXPLICIT_SCOPES" ]; then
+            export ALL=1
+          fi
+
+          MATRIX="$(bash ./scripts/fetch-provisioning-matrix)"
+
+          # Expect compact {"include":[...]} JSON on a single line, bail otherwise.
+          if ! echo "$MATRIX" | jq -e 'has("include") and (.include | type == "array")' >/dev/null; then
+            echo "error: unexpected matrix output: $MATRIX" >&2
+            exit 1
+          fi
+
+          # An empty matrix is an error in GHA, so the test job below is gated on count instead.
+          COUNT="$(echo "$MATRIX" | jq '.include | length')"
+
+          {
+            echo "matrix=$MATRIX"
+            echo "count=$COUNT"
+            echo "k8s-minors=$(echo "$K8S_MINORS" | jq -c .)"
+          } >> "$GITHUB_OUTPUT"
+
+          echo "event=$EVENT_NAME, entries=$COUNT"
+          echo "$MATRIX" | jq .
+
+          # Held-back matrix jobs don't appear in the UI until they start, so publish the full plan up front.
+          # Rows are ordered like GHA expands the matrix (k8s-minor outer, shard inner) so # matches the
+          # [index/total] prefix in each job name.
+          TOTAL="$(jq -n --argjson m "$MATRIX" --argjson k "$K8S_MINORS" '($m.include | length) * ($k | length)')"
+          {
+            echo "## Provisioning tests: $TOTAL jobs"
+            echo
+            echo "| # | Dist | K8s | Regex |"
+            echo "|---|------|-----|-------|"
+            jq -rn --argjson m "$MATRIX" --argjson k "$K8S_MINORS" '
+              [$k[] as $minor | $m.include[] | {minor: $minor, s: .}]
+              | to_entries[]
+              | "| \(.key) | \(.value.s.V2PROV_TEST_DIST) | 1.\(.value.minor) | `\(.value.s.V2PROV_TEST_RUN_REGEX | gsub("\\|"; "\\|"))` |"'
+          } >> "$GITHUB_STEP_SUMMARY"
+
   provisioning-test:
-    needs: [build-ci-image]
+    name: "[${{ strategy.job-index }}/${{ strategy.job-total }}] ${{ matrix.shard.V2PROV_TEST_DIST }} 1.${{ matrix.k8s-minor }} ${{ matrix.shard.V2PROV_TEST_RUN_REGEX }}"
+    needs: [build-ci-image, setup-matrix]
+    if: needs.setup-matrix.outputs.count != '0'
     permissions:
       contents: read
       id-token: write
-    runs-on:
-      - runs-on
-      - spot=false
-      - runner=4cpu-linux-x64
-      - run-id=${{ github.run_id }}
-    timeout-minutes: 90
     strategy:
+      # Must call a reusable workflow for this to work with RunsOn. Inline matrix jobs are all created
+      # up front, so a runner is launched per cell and the held-back ones idle out before being scheduled.
+      max-parallel: 18
       fail-fast: false
       matrix:
-        dist: [rke2, k3s]
-        k8s-minor: [35, 36, 37]
-        test-regex: ["^Test_Provisioning_.*$", "^Test_Operation_SetA_.*$", "^Test_Operation_SetB_.*$"]
+        k8s-minor: ${{ fromJSON(needs.setup-matrix.outputs.k8s-minors) }}
+        shard: ${{ fromJSON(needs.setup-matrix.outputs.matrix).include }}
+    uses: ./.github/workflows/provisioning-test-shard.yaml
+    with:
+      k8s-minor: ${{ matrix.k8s-minor }}
+      dist: ${{ matrix.shard.V2PROV_TEST_DIST }}
+      run-regex: ${{ matrix.shard.V2PROV_TEST_RUN_REGEX }}
+      parallelism: ${{ matrix.shard.V2PROV_TEST_PARALLELISM }}
+      cattle-features: ${{ matrix.shard.CATTLE_FEATURES }}
+      cpus: ${{ matrix.shard.V2PROV_TEST_CPUS }}
+
+  # provisioning_tests_summary prints a friendly summary of what tests ran. It's true purpose
+  # is to act as an anchor, giving us a single check that forwards the results of the dynamic matrix
+  # which we can use as a 'required check'
+  provisioning_tests_summary:
+    if: always()
+    name: Provisioning Tests Summary
+    needs: [build-ci-image, setup-matrix, provisioning-test]
+    runs-on: org-${{ github.repository_owner_id }}-amd64-k8s
+    container: ghcr.io/rancher/ci-image/go1.27 # zizmor: ignore[unpinned-images] -- internal image is exempt from this rule
     env:
-      # registry-cache container is reachable from the CI container via the Docker bridge IP
-      REGISTRY: "172.17.0.2:5000"
+      SETUP_MATRIX_RESULT: ${{ needs.setup-matrix.result }}
+      PROVISIONING_TESTS_RESULT: ${{ needs.provisioning-test.result }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-        with:
-          fetch-depth: "0"
-      - name: testdata
-        run: mkdir -p build/testdata
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd # v4
-      - name: Build CI image
-        uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7
-        with:
-          context: .
-          file: Dockerfile.ci
-          tags: kdm-ci:latest
-          load: true
-          cache-from: type=gha
-      - name: Remove BuildKit builder
-        # The BuildKit builder container would auto-restart after `sudo systemctl restart docker`,
-        # taking the 172.17.0.2 bridge IP before kdm-ci does. The registry-cache pod inside kdm-ci
-        # uses hostPort:5000, so the rancher provisioning-tests script hard-codes 172.17.0.2:5000
-        # as the registry address. Removing the builder here ensures kdm-ci is the first container
-        # on the bridge after Docker restarts and therefore gets 172.17.0.2.
-        run: docker buildx rm
-      - name: Configure Docker for cgroupfs/insecure-registry
+      - name: Generate provisioning tests summary
+        shell: bash
         run: |
-          echo '{"insecure-registries": ["172.17.0.2:5000"]}' | sudo tee /etc/docker/daemon.json
-          sudo systemctl restart docker
-          sudo docker info
-      - name: Retrieve Registry Endpoint
-        if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
-        uses: rancher-eio/read-vault-secrets@0da85151ad1f19ed7986c41587e45aac1ace74b6 # v3
-        with:
-          secrets: |
-            secret/data/github/repo/${{ github.repository }}/rancher-prime-stg-registry/credentials registry | STAGE_REGISTRY_ENDPOINT;
-      - name: Provisioning Operations tests
-        run: |
-          set -eo pipefail
-          docker run --rm \
-            -v ${{ github.workspace }}:/go/src/github.com/rancher/kontainer-driver-metadata \
-            -v ${{ github.workspace }}/build:/tmp \
-            -v /var/run/docker.sock:/var/run/docker.sock \
-            --privileged \
-            --env LAST_COMMUNITY_RANCHER \
-            --env V2PROV_TEST_DIST \
-            --env V2PROV_TEST_RUN_REGEX \
-            --env KDM_TEST_K8S_MINOR \
-            --env PREV_COMMIT_PR_SHA \
-            --env PREV_COMMIT_PUSH_SHA \
-            --env CATTLE_AGENT_IMAGE \
-            --env GITHUB_EVENT_NAME \
-            --env GITHUB_RUN_NUMBER \
-            --env CI \
-            --env STAGE_REGISTRY_ENDPOINT \
-            kdm-ci provisioning-tests | tee ./build/provtest_output.txt
-        env:
-          LAST_COMMUNITY_RANCHER: v2.16.99
-          V2PROV_TEST_DIST: ${{ matrix.dist }}
-          V2PROV_TEST_RUN_REGEX: ${{ matrix.test-regex }}
-          KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
-          PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
-          PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
-          CATTLE_AGENT_IMAGE: "rancher/rancher-agent:v2.15-head" # TODO: change to v2.16-head after v2.16.0 is released
-      - name: Move plaintext test results for upload
-        if: always()
-        id: test_output
-        run: |
-          export TESTSUITE="$(echo '${{ matrix.test-regex }}' | sed 's/Test//' | tr -d '()|_^.*$')"
-          echo "suite=${TESTSUITE}" >> $GITHUB_OUTPUT
-          REPORT_PATH="/tmp/report-${{ matrix.dist }}-${{ matrix.k8s-minor }}-$TESTSUITE.txt"
-
-          # check to see if the test results exist - if they do move them out, otherwise just create
-          # an empty file (empty test results)
-          if [ -f ./build/out.txt ]; then
-            echo "test results found at ./build/out.txt, moving to $REPORT_PATH"
-            mv ./build/out.txt "$REPORT_PATH"
-          else
-            echo "No test results found at ./build/out.txt, creating empty report at $REPORT_PATH"
-            touch "$REPORT_PATH"
+          echo "Provisioning Test Summary"
+          echo "--------------------------------"
+          if [[ "${SETUP_MATRIX_RESULT}" != "success" && "${SETUP_MATRIX_RESULT}" != "skipped" ]]; then
+            echo "Failed to setup test matrix."
+            exit 1
           fi
 
-          # Collect Rancher server log (includes embedded k3s output) for debugging startup failures.
-          # /tmp inside the container is bind-mounted to ./build on the host, so rancher.log is at ./build/rancher.log.
-          RANCHER_LOG_PATH="${REPORT_PATH%.txt}.rancher.log"
-          if [ -f ./build/rancher.log ]; then
-            echo "Rancher server log found at ./build/rancher.log, copying to $RANCHER_LOG_PATH"
-            cp ./build/rancher.log "$RANCHER_LOG_PATH"
-          else
-            echo "No Rancher server log found at ./build/rancher.log"
+          if [[ "${PROVISIONING_TESTS_RESULT}" != "success" && "${PROVISIONING_TESTS_RESULT}" != "skipped" ]]; then
+            echo "Some provisioning tests failed. Please check the logs for details."
+            exit 1
           fi
-      - name: Upload Plain Text Test Results
-        if: always()
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
-        with:
-          name: "Test Results ${{ matrix.dist }} ${{ matrix.k8s-minor }} ${{ steps.test_output.outputs.suite }}"
-          path: "/tmp/report-${{ matrix.dist }}-${{ matrix.k8s-minor }}-${{ steps.test_output.outputs.suite }}.*"
-      - name: Upload logdump artifact if we had some tests failures
-        if: failure()
-        uses: rancherlabs/cowboy@73acfb7bc97b55bc18ea5bc1ee8232a8ffcb4576
-        with:
-          log-file-path: ./build/provtest_output.txt
-          artifact-retention-days: 7
-          artifact-name: "Parsed Failure Log Dump (${{ matrix.dist }}, ${{ matrix.k8s-minor }}, ${{ steps.test_output.outputs.suite }})"
 
   convert-to-xml:
     needs: [provisioning-test]

@@ -1,0 +1,163 @@
+name: Provisioning test shard
+
+# Called once per matrix cell from provisioning-tests.yaml. This lives in a reusable workflow so that
+# max-parallel on the caller defers job creation; inline matrix jobs are all created (and request a
+# RunsOn runner) up front, and runners for held-back jobs idle out before they are scheduled.
+on:
+  workflow_call:
+    inputs:
+      k8s-minor:
+        required: true
+        type: string
+      dist:
+        required: true
+        type: string
+      run-regex:
+        required: true
+        type: string
+      parallelism:
+        required: false
+        type: string
+        default: ""
+      cattle-features:
+        required: false
+        type: string
+        default: ""
+      cpus:
+        required: true
+        type: string
+
+permissions: {}
+
+jobs:
+  test:
+    name: test
+    permissions:
+      contents: read
+      id-token: write
+    runs-on:
+      - runs-on
+      - spot=false
+      - runner=${{ inputs.cpus }}cpu-linux-x64
+      - run-id=${{ github.run_id }}
+    #timeout-minutes: 90
+    env:
+      # registry-cache container is reachable from the CI container via the Docker bridge IP
+      REGISTRY: "172.17.0.2:5000"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          fetch-depth: "0"
+      - name: testdata
+        run: mkdir -p build/testdata
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd # v4
+      - name: Build CI image
+        uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7
+        with:
+          context: .
+          file: Dockerfile.ci
+          tags: kdm-ci:latest
+          load: true
+          cache-from: type=gha
+      - name: Remove BuildKit builder
+        # The BuildKit builder container would auto-restart after `sudo systemctl restart docker`,
+        # taking the 172.17.0.2 bridge IP before kdm-ci does. The registry-cache pod inside kdm-ci
+        # uses hostPort:5050, so the rancher provisioning-tests script hard-codes 172.17.0.2:5050
+        # as the registry address. Removing the builder here ensures kdm-ci is the first container
+        # on the bridge after Docker restarts and therefore gets 172.17.0.2.
+        run: docker buildx rm
+      - name: Configure Docker for cgroupfs/insecure-registry
+        run: |
+          echo '{"insecure-registries": ["172.17.0.2:5050","172.17.0.2:5000"]}' | sudo tee /etc/docker/daemon.json
+          sudo systemctl restart docker
+          sudo docker info
+      - name: Retrieve Registry Endpoint
+        if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
+        uses: rancher-eio/read-vault-secrets@0da85151ad1f19ed7986c41587e45aac1ace74b6 # v3
+        with:
+          secrets: |
+            secret/data/github/repo/${{ github.repository }}/rancher-prime-stg-registry/credentials registry | STAGE_REGISTRY_ENDPOINT;
+      - name: Provisioning Operations tests
+        run: |
+          set -eo pipefail
+          docker run --rm \
+            -v ${{ github.workspace }}:/go/src/github.com/rancher/kontainer-driver-metadata \
+            -v ${{ github.workspace }}/build:/tmp \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            --privileged \
+            --env LAST_COMMUNITY_RANCHER \
+            --env V2PROV_TEST_DIST \
+            --env V2PROV_TEST_RUN_REGEX \
+            --env V2PROV_TEST_PARALLELISM \
+            --env CATTLE_FEATURES \
+            --env KDM_TEST_K8S_MINOR \
+            --env FORCE_PROVISIONING_TESTS \
+            --env PREV_COMMIT_PR_SHA \
+            --env PREV_COMMIT_PUSH_SHA \
+            --env CATTLE_AGENT_IMAGE \
+            --env GITHUB_EVENT_NAME \
+            --env GITHUB_RUN_NUMBER \
+            --env CI \
+            --env STAGE_REGISTRY_ENDPOINT \
+            kdm-ci provisioning-tests | tee ./build/provtest_output.txt
+        env:
+          LAST_COMMUNITY_RANCHER: v2.16.99
+          V2PROV_TEST_DIST: ${{ inputs.dist }}
+          V2PROV_TEST_RUN_REGEX: ${{ inputs.run-regex }}
+          V2PROV_TEST_PARALLELISM: ${{ inputs.parallelism }}
+          CATTLE_FEATURES: ${{ inputs.cattle-features }}
+          KDM_TEST_K8S_MINOR: ${{ inputs.k8s-minor }}
+          FORCE_PROVISIONING_TESTS: "1" # TODO: remove once the new CI matrix has been validated
+          PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
+          PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
+          CATTLE_AGENT_IMAGE: "rancher/rancher-agent:v2.15-head" # TODO: change to v2.16-head after v2.16.0 is released
+      - name: Move plaintext test results for upload
+        if: always()
+        id: test_output
+        env:
+          TEST_REGEX: ${{ inputs.run-regex }}
+          TEST_DIST: ${{ inputs.dist }}
+          K8S_MINOR: ${{ inputs.k8s-minor }}
+        run: |
+          # Regexes can be hundreds of characters long, so keep a short readable prefix and
+          # append a hash to stay unique and within filename / artifact name limits.
+          SUITE_PREFIX="$(printf '%s' "$TEST_REGEX" | sed 's/Test//' | tr -cd 'A-Za-z0-9-' | cut -c1-40)"
+          SUITE_HASH="$(printf '%s' "$TEST_REGEX" | sha1sum | cut -c1-8)"
+          export TESTSUITE="${SUITE_PREFIX}-${SUITE_HASH}"
+          echo "suite=${TESTSUITE}" >> $GITHUB_OUTPUT
+          REPORT_PATH="/tmp/report-${TEST_DIST}-${K8S_MINOR}-$TESTSUITE.txt"
+
+          # check to see if the test results exist - if they do move them out, otherwise just create
+          # an empty file (empty test results)
+          if [ -f ./build/out.txt ]; then
+            echo "test results found at ./build/out.txt, moving to $REPORT_PATH"
+            mv ./build/out.txt "$REPORT_PATH"
+          else
+            echo "No test results found at ./build/out.txt, creating empty report at $REPORT_PATH"
+            touch "$REPORT_PATH"
+          fi
+
+          # Collect Rancher server log (includes embedded k3s output) for debugging startup failures.
+          # /tmp inside the container is bind-mounted to ./build on the host, so rancher.log is at ./build/rancher.log.
+          RANCHER_LOG_PATH="${REPORT_PATH%.txt}.rancher.log"
+          if [ -f ./build/rancher.log ]; then
+            echo "Rancher server log found at ./build/rancher.log, copying to $RANCHER_LOG_PATH"
+            cp ./build/rancher.log "$RANCHER_LOG_PATH"
+          else
+            echo "No Rancher server log found at ./build/rancher.log"
+          fi
+      - name: Upload Plain Text Test Results
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
+        with:
+          name: "Test Results ${{ inputs.dist }} ${{ inputs.k8s-minor }} ${{ steps.test_output.outputs.suite }}"
+          path: "/tmp/report-${{ inputs.dist }}-${{ inputs.k8s-minor }}-${{ steps.test_output.outputs.suite }}.*"
+      - name: Upload logdump artifact if we had some tests failures
+        if: failure()
+        uses: rancherlabs/cowboy@73acfb7bc97b55bc18ea5bc1ee8232a8ffcb4576
+        with:
+          log-file-path: ./build/provtest_output.txt
+          artifact-retention-days: 7
+          artifact-name: "Parsed Failure Log Dump (${{ inputs.dist }}, ${{ inputs.k8s-minor }}, ${{ steps.test_output.outputs.suite }})"
