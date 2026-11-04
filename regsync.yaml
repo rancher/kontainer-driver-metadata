@@ -32,6 +32,7 @@ sync:
         - 1.8.23-build20260717
         - 1.8.23-build20260819
         - 1.8.23-build20260909
+        - 1.8.24-build20261021
   - source: docker.io/rancher/hardened-calico
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-calico'
     type: repository
@@ -75,6 +76,7 @@ sync:
         - v3.32.1-build20260722
         - v3.32.1-build20260827
         - v3.32.2-build20260909
+        - v3.32.2-build20261022
   - source: docker.io/rancher/hardened-cluster-autoscaler
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-cluster-autoscaler'
     type: repository
@@ -92,6 +94,7 @@ sync:
         - v1.10.3-build20260604
         - v1.10.3-build20260717
         - v1.10.3-build20260819
+        - v1.11.0-build20261020
         - v1.8.10-build20240124
         - v1.8.11-build20240910
         - v1.8.11-build20241014
@@ -136,6 +139,7 @@ sync:
         - v1.9.1-build20260717
         - v1.9.1-build20260819
         - v1.9.1-build20260903
+        - v1.9.1-build20261022
   - source: docker.io/rancher/hardened-coredns
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-coredns'
     type: repository
@@ -165,6 +169,7 @@ sync:
         - v1.14.6-build20260722
         - v1.14.7-build20260819
         - v1.14.7-build20260909
+        - v1.14.7-build20261020
         - v1.9.3-build20220613
         - v1.9.3-build20221011
   - source: docker.io/rancher/hardened-csi-snapshotter
@@ -179,6 +184,7 @@ sync:
         - v8.6.0-build20260608
         - v8.6.0-build20260708
         - v8.6.0-build20260909
+        - v8.6.0-build20261026
   - source: docker.io/rancher/hardened-dns-node-cache
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-dns-node-cache'
     type: repository
@@ -208,6 +214,7 @@ sync:
         - 1.26.8-build20260722
         - 1.26.8-build20260819
         - 1.27.0-r1-build20260923
+        - 1.27.2-r1-build20261022
   - source: docker.io/rancher/hardened-etcd
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-etcd'
     type: repository
@@ -234,6 +241,7 @@ sync:
         - v3.6.14-k3s1-build20260723
         - v3.6.14-k3s1-build20260819
         - v3.6.14-k3s3-build20260915
+        - v3.6.14-k3s3-build20261020
         - v3.6.4-k3s3-build20250908
         - v3.6.5-k3s1-build20251017
         - v3.6.6-k3s1-build20251210
@@ -279,6 +287,7 @@ sync:
         - v0.27.4-build20251204
         - v0.28.0-build20260119
         - v0.28.1-build20260206
+        - v0.28.10-build20261022
         - v0.28.2-build20260327
         - v0.28.4-build20260415
         - v0.28.4-build20260511
@@ -325,6 +334,7 @@ sync:
         - v0.9.0-build20260722
         - v0.9.0-build20260819
         - v0.9.0-build20260909
+        - v0.9.0-build20261020
   - source: docker.io/rancher/hardened-kubernetes
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-kubernetes'
     type: repository
@@ -460,6 +470,7 @@ sync:
         - v1.34.10-rke2r1-build20260723
         - v1.34.11-rke2r1-build20260821
         - v1.34.12-rke2r1-build20260923
+        - v1.34.13-rke2r1-build20261029
         - v1.34.2-rke2r1-build20251112
         - v1.34.3-rke2r1-build20251210
         - v1.34.3-rke2r3-build20260127
@@ -501,6 +512,7 @@ sync:
         - v4.2.4-build20260310
         - v4.3.0-build20260722
         - v4.3.1-build20260910
+        - v4.3.1-build20261022
   - source: docker.io/rancher/hardened-multus-dynamic-networks-controller
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-multus-dynamic-networks-controller'
     type: repository
@@ -513,6 +525,7 @@ sync:
         - v0.3.7-build20260310
         - v0.3.8-build20260722
         - v0.3.8-build20260909
+        - v0.3.9-build20261020
   - source: docker.io/rancher/hardened-multus-thick
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-multus-thick'
     type: repository
@@ -528,6 +541,7 @@ sync:
         - v4.2.4-build20260310
         - v4.3.0-build20260722
         - v4.3.1-build20260910
+        - v4.3.1-build20261022
   - source: docker.io/rancher/hardened-node-feature-discovery
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-node-feature-discovery'
     type: repository
@@ -547,6 +561,7 @@ sync:
         - v8.6.0-build20260722
         - v8.6.0-build20260819
         - v8.6.0-build20260909
+        - v8.7.0-build20261021
   - source: docker.io/rancher/hardened-sriov-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-sriov-cni'
     type: repository
@@ -622,6 +637,7 @@ sync:
         - v3.6.9-build20260226
         - v3.7.11-build20260819
         - v3.7.13-build20260910
+        - v3.7.16-build20261028
         - v3.7.4-build20260608
         - v3.7.8-build20260717
   - source: docker.io/rancher/hardened-whereabouts
@@ -654,6 +670,7 @@ sync:
         - v0.9.4-build20260604
         - v0.9.4-build20260721
         - v0.9.4-build20260819
+        - v0.9.4-build20261022
   - source: docker.io/rancher/harvester-cloud-provider
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/harvester-cloud-provider'
     type: repository
@@ -663,6 +680,7 @@ sync:
         - v0.1.5
         - v0.2.0
         - v0.2.1
+        - v0.2.10
         - v0.2.2
         - v0.2.4
         - v0.2.5
@@ -680,6 +698,7 @@ sync:
         - v0.1.7
         - v0.2.1
         - v0.2.10
+        - v0.2.11
         - v0.2.2
         - v0.2.3
         - v0.2.4
@@ -1329,6 +1348,7 @@ sync:
         - v0.3.2
         - v0.4.1
         - v0.4.11
+        - v0.4.13
         - v0.4.3
         - v0.4.6
   - source: docker.io/rancher/mirrored-cilium-cilium
@@ -1371,6 +1391,7 @@ sync:
         - v1.19.4
         - v1.19.6
         - v1.20.2
+        - v1.20.4
   - source: docker.io/rancher/mirrored-cilium-cilium-envoy
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-cilium-envoy'
     type: repository
@@ -1403,6 +1424,7 @@ sync:
         - v1.36.6-1778235340-b87d1e32f522b33bd51701c6476d199326f01496
         - v1.36.9-1782267392-edeb3f2af56c37c407efa1f63f0b32f595399bbc
         - v1.37.6-1789133542-cbec91f666af0bf742da986d43832932dbb26b82
+        - v1.39.5-1792733054-8c73b2816bc8239e27f1fd53b271884688137459
   - source: docker.io/rancher/mirrored-cilium-cilium-etcd-operator
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-cilium-etcd-operator'
     type: repository
@@ -1446,6 +1468,7 @@ sync:
         - v1.19.4
         - v1.19.6
         - v1.20.2
+        - v1.20.4
   - source: docker.io/rancher/mirrored-cilium-hubble-relay
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-hubble-relay'
     type: repository
@@ -1483,6 +1506,7 @@ sync:
         - v1.19.4
         - v1.19.6
         - v1.20.2
+        - v1.20.4
   - source: docker.io/rancher/mirrored-cilium-hubble-ui
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-hubble-ui'
     type: repository
@@ -1563,6 +1587,7 @@ sync:
         - v1.19.4
         - v1.19.6
         - v1.20.2
+        - v1.20.4
   - source: docker.io/rancher/mirrored-cilium-operator-azure
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-operator-azure'
     type: repository
@@ -1603,6 +1628,7 @@ sync:
         - v1.19.4
         - v1.19.6
         - v1.20.2
+        - v1.20.4
   - source: docker.io/rancher/mirrored-cilium-operator-generic
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-operator-generic'
     type: repository
@@ -1643,6 +1669,7 @@ sync:
         - v1.19.4
         - v1.19.6
         - v1.20.2
+        - v1.20.4
   - source: docker.io/rancher/mirrored-cilium-startup-script
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cilium-startup-script'
     type: repository
@@ -1698,6 +1725,7 @@ sync:
         - v3.5.0
         - v3.7.2
         - v3.7.3
+        - v3.8.0
   - source: docker.io/rancher/mirrored-cloud-provider-vsphere-csi-release-syncer
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-cloud-provider-vsphere-csi-release-syncer'
     type: repository
@@ -1715,6 +1743,7 @@ sync:
         - v3.5.0
         - v3.7.2
         - v3.7.3
+        - v3.8.0
   - source: docker.io/rancher/mirrored-coredns-coredns
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-coredns-coredns'
     type: repository
@@ -1762,6 +1791,7 @@ sync:
         - v0.9.2
         - v1.1.2
         - v1.2.3
+        - v1.2.4
   - source: docker.io/rancher/mirrored-library-busybox
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-library-busybox'
     type: repository
@@ -1770,6 +1800,7 @@ sync:
         - 1.34.1
         - 1.36.1
         - 1.37.0
+        - 1.38.0
   - source: docker.io/rancher/mirrored-library-traefik
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-library-traefik'
     type: repository
@@ -1862,6 +1893,7 @@ sync:
     tags:
       allow:
         - v3.4.0
+        - v4.10.0
         - v4.2.0
         - v4.3.0
         - v4.5.1
@@ -1876,6 +1908,7 @@ sync:
         - v2.10.1
         - v2.12.0
         - v2.13.0
+        - v2.14.0
         - v2.5.0
         - v2.5.1
         - v2.7.0
@@ -1900,6 +1933,7 @@ sync:
         - v1.4.0
         - v1.7.0
         - v1.8.0
+        - v2.0.0
   - source: docker.io/rancher/mirrored-sig-storage-csi-snapshotter
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-sig-storage-csi-snapshotter'
     type: repository
@@ -1917,6 +1951,7 @@ sync:
         - v2.12.0
         - v2.14.0
         - v2.15.0
+        - v2.17.0
         - v2.6.0
         - v2.7.0
         - v2.9.0
@@ -2019,6 +2054,7 @@ sync:
         - v1.33.8-0.20260211145912-3552cfc26032-build20260211
         - v1.34.11-0.20260817193950-75826e8afefa-build20260820
         - v1.34.12-0.20260915234148-f2918dc7011c-build20260916
+        - v1.34.13-0.20261016153036-a722e6511b81-build20261021
         - v1.34.2-0.20251010190833-cf0d35a732d1-build20251017
         - v1.34.3-0.20251210094406-1ff6ebef7028-build20251210
         - v1.34.4-0.20260211145917-c6017918a65c-build20260211
@@ -2289,6 +2325,8 @@ sync:
         - v1.34.11-rke2r1-windows-amd64
         - v1.34.12-rke2r1
         - v1.34.12-rke2r1-windows-amd64
+        - v1.34.13-rke2r1
+        - v1.34.13-rke2r1-windows-amd64
         - v1.34.2-rke2r1
         - v1.34.2-rke2r1-windows-amd64
         - v1.34.3-rke2r1
@@ -2444,6 +2482,7 @@ sync:
         - v1.34.10-rke2r1
         - v1.34.11-rke2r1
         - v1.34.12-rke2r1
+        - v1.34.13-rke2r1
         - v1.34.2-rke2r1
         - v1.34.3-rke2r1
         - v1.34.3-rke2r3
@@ -2731,6 +2770,7 @@ sync:
         - v1.34.10-rke2r1
         - v1.34.11-rke2r1
         - v1.34.12-rke2r1
+        - v1.34.13-rke2r1
         - v1.34.2-rke2r1
         - v1.34.3-rke2r1
         - v1.34.3-rke2r3
