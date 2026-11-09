@@ -117,4 +117,9 @@ cd "$RANCHER_DIR"
 sed -i -e '3,5d' ./scripts/provisioning-tests
 
 export CATTLE_AGENT_IMAGE=${CATTLE_AGENT_IMAGE:-rancher/rancher-agent:v2.15-head}
+
+# KDM doesn't rebuild the agent, so we need to pull the image to ensure it exists locally for provisioning tests
+# which expect it to be in the pull through registry cache.
+docker pull ${CATTLE_AGENT_IMAGE}
+
 ./scripts/provisioning-tests
