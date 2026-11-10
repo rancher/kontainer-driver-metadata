@@ -12,6 +12,11 @@ on:
 
 permissions: {}
 
+env:
+  # Set to a single version from data/data.json (e.g. v1.36.5+rke2r1 or v1.36.5+k3s1) to force provisioning
+  # tests for only that distro and version, regardless of what changed. Intended for temporary use in a PR.
+  FORCE_PROVISIONING_VERSION: ""
+
 jobs:
   build-ci-image:
     permissions:
@@ -62,7 +67,7 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           TARGET_BRANCH: ${{ github.base_ref || github.ref_name }}
           EXPLICIT_SCOPES: "kdm"
-          K8S_MINORS: "[36]" # TODO: restore [35, 36, 37] once the new CI matrix has been validated
+          K8S_MINORS: "[35, 36, 37]"
         run: |
           set -eo pipefail
 
@@ -88,6 +93,24 @@ jobs:
             :
           else
             MATRIX="$(echo "$MATRIX" | jq -c '.include = []')"
+          fi
+
+          if [ -n "$FORCE_PROVISIONING_VERSION" ]; then
+            case "$FORCE_PROVISIONING_VERSION" in
+              *+rke2*) DIST=rke2 ;;
+              *+k3s*) DIST=k3s ;;
+              *)
+                echo "error: FORCE_PROVISIONING_VERSION=$FORCE_PROVISIONING_VERSION is not an rke2 or k3s version" >&2
+                exit 1
+                ;;
+            esac
+            if ! jq -e --arg d "$DIST" --arg v "$FORCE_PROVISIONING_VERSION" '.[$d].releases | any(.version == $v)' data/data.json >/dev/null; then
+              echo "error: FORCE_PROVISIONING_VERSION=$FORCE_PROVISIONING_VERSION not found in data/data.json" >&2
+              exit 1
+            fi
+            K8S_MINORS="[$(echo "$FORCE_PROVISIONING_VERSION" | sed -E 's/^v1\.([0-9]+)\..*/\1/')]"
+            MATRIX="$(echo "$MATRIX" | jq -c --arg d "$DIST" '.include |= map(select(.V2PROV_TEST_DIST == $d))')"
+            echo "Forcing provisioning tests for $FORCE_PROVISIONING_VERSION"
           fi
 
           # An empty matrix is an error in GHA, so the test job below is gated on count instead.
@@ -204,7 +227,7 @@ jobs:
             --env V2PROV_TEST_TIMEOUT \
             --env CATTLE_FEATURES \
             --env KDM_TEST_K8S_MINOR \
-            --env FORCE_PROVISIONING_TESTS \
+            --env SOME_K8S_VERSION \
             --env PREV_COMMIT_PR_SHA \
             --env PREV_COMMIT_PUSH_SHA \
             --env CATTLE_AGENT_IMAGE \
@@ -221,7 +244,7 @@ jobs:
           V2PROV_TEST_TIMEOUT: ${{ matrix.shard.V2PROV_TEST_TIMEOUT }}
           CATTLE_FEATURES: ${{ matrix.shard.CATTLE_FEATURES }}
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
-          FORCE_PROVISIONING_TESTS: "1" # TODO: remove once the new CI matrix has been validated
+          SOME_K8S_VERSION: ${{ env.FORCE_PROVISIONING_VERSION }}
           PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
           PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
           CATTLE_AGENT_IMAGE: "rancher/rancher-agent:v2.15-head" # TODO: change to v2.16-head after v2.16.0 is released
