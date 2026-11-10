@@ -126,8 +126,8 @@ jobs:
           CATTLE_AGENT_IMAGE: "rancher/rancher-agent:v2.15-head"
           # Test and package parallelism should be adjusted
           # based off of the GHA runner configuration / capacity.
-          V2PROV_PACKAGE_PARALLELISM: 4
-          V2PROV_TEST_PARALLELISM: 4
+          V2PROV_PACKAGE_PARALLELISM: 3
+          V2PROV_TEST_PARALLELISM: 1
       - name: Move plaintext test results for upload
         if: always()
         id: test_output
