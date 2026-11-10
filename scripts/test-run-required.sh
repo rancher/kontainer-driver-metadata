@@ -9,9 +9,8 @@ if [ -z "$CI" ]; then
   exit 0
 fi
 
-# TODO: remove once the new CI matrix has been validated in a PR
-if [ "$FORCE_PROVISIONING_TESTS" = "1" ]; then
-  echo "FORCE_PROVISIONING_TESTS=1, rancher integration testing is required"
+if [ -n "$SOME_K8S_VERSION" ]; then
+  echo "SOME_K8S_VERSION=$SOME_K8S_VERSION was explicitly set, rancher integration testing is required"
   exit 0
 fi
 
