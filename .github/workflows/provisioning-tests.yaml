@@ -83,16 +83,12 @@ jobs:
             exit 1
           fi
 
-          # Dev branches run every test, giving full coverage when new rke2/k3s versions
-          # are initially introduced. Release branches skip tests marked
+          # Every branch runs the full suite, giving full coverage when new rke2/k3s versions
+          # are initially introduced. Only release branches skip tests marked
           # V2PROV_TEST_RUN_ON_RELEASE=false to keep CI runtime reasonable on release day.
           if [[ "$TARGET_BRANCH" =~ ^release-v2\.[0-9]+$ ]]; then
             MATRIX="$(echo "$MATRIX" | jq -c '
               .include |= map(select(.V2PROV_TEST_RUN_ON_RELEASE | tostring != "false"))')"
-          elif [[ "$TARGET_BRANCH" =~ ^dev-v2\.[0-9]+$ ]]; then
-            :
-          else
-            MATRIX="$(echo "$MATRIX" | jq -c '.include = []')"
           fi
 
           if [ -n "$FORCE_PROVISIONING_VERSION" ]; then
@@ -236,7 +232,7 @@ jobs:
             --env CI \
             --env STAGE_REGISTRY_ENDPOINT \
             kdm-ci provisioning-tests | tee ./build/provtest_output.txt
-        env:
+        env:  
           LAST_COMMUNITY_RANCHER: v2.16.99
           V2PROV_TEST_DIST: ${{ matrix.shard.V2PROV_TEST_DIST }}
           V2PROV_TEST_RUN_REGEX: ${{ matrix.shard.V2PROV_TEST_RUN_REGEX }}
