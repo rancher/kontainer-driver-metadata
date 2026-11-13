@@ -7,6 +7,5 @@
 .cache/
 .config/
 build/
-split-regsync/
 .kube/
 .gitconfig
