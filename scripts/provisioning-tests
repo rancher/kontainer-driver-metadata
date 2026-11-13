@@ -1,9 +1,6 @@
 #!/bin/bash
 set -x
 
-SECONDS=0
-trap 'printf "Provisioning tests total runtime: %s seconds\n" "$SECONDS"' EXIT
-
 cd "$(dirname "$0")/.." || exit 1
 
 # If not running in CI, populate k8s versions for testing
@@ -35,9 +32,6 @@ if [ "${GITHUB_EVENT_NAME}" == "push" ]; then
 elif [ "${GITHUB_EVENT_NAME}" == "pull_request" ]; then
   export PREV_COMMIT_SHA=${PREV_COMMIT_PR_SHA}
 fi
-
-# To be removed/changed once drone setup is removed from rancher/rancher repo. 
-export DRONE_BUILD_NUMBER=${GITHUB_RUN_NUMBER}
 
 if ! ./scripts/test-run-required.sh; then
   exit
@@ -114,7 +108,8 @@ sed -i -e '3,5d' ./scripts/provisioning-tests
 export CATTLE_AGENT_IMAGE=${CATTLE_AGENT_IMAGE:-rancher/rancher-agent:v2.15-head}
 
 # KDM doesn't rebuild the agent, so we need to pull the image to ensure it exists locally for provisioning tests
-# which expect it to be in the pull through registry cache.
+# which expect it to be in the pull through registry cache. Now that Rancher enforces the registry cache the agent must always
+# be present.
 docker pull ${CATTLE_AGENT_IMAGE}
 
 ./scripts/provisioning-tests

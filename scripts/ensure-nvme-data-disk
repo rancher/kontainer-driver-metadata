@@ -4,13 +4,11 @@ set -ex
 # Fetches rancher's ensure-nvme-data-disk.sh and runs it with the given arguments. It puts the
 # provisioning tests' data on the runner's local NVMe and fails if it can't. Must run as root.
 
-# TODO: restore rancher/rancher and release/v2.15 once the dependent changes merge upstream
-NVME_SCRIPT_REPO=${NVME_SCRIPT_REPO:-harrisonwaffel/rancher}
-NVME_SCRIPT_REF=${NVME_SCRIPT_REF:-kdm-refactor}
+source "$(dirname "$0")/version"
 
 TMP_DIR=$(TMPDIR=/var/tmp mktemp -d)
 trap 'rm -rf "$TMP_DIR"' EXIT
 
-curl -fsSL "https://raw.githubusercontent.com/${NVME_SCRIPT_REPO}/${NVME_SCRIPT_REF}/.github/scripts/ensure-nvme-data-disk.sh" -o "$TMP_DIR/ensure-nvme-data-disk.sh"
+curl -fsSL "https://raw.githubusercontent.com/${RANCHER_REPO}/${RANCHER_REF}/.github/scripts/ensure-nvme-data-disk.sh" -o "$TMP_DIR/ensure-nvme-data-disk.sh"
 
 bash "$TMP_DIR/ensure-nvme-data-disk.sh" "$@"
