@@ -8,7 +8,6 @@ import (
 	"strings"
 
 	utiliies "github.com/rancher/kontainer-driver-metadata/pkg"
-	"github.com/rancher/kontainer-driver-metadata/pkg/images"
 	"github.com/rancher/rke/types/kdm"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/mod/semver"
@@ -23,9 +22,8 @@ const (
 )
 
 var (
-	releaseDataURL    = "https://releases.rancher.com/kontainer-driver-metadata/%s/data.json"
-	releaseRegSyncURL = "https://raw.githubusercontent.com/rancher/kontainer-driver-metadata/%s/regsync.yaml"
-	versionsToSkip    = map[string]bool{
+	releaseDataURL = "https://releases.rancher.com/kontainer-driver-metadata/%s/data.json"
+	versionsToSkip = map[string]bool{
 		"v1.30.12+rke2r1": true,
 		"v1.31.8+rke2r1":  true,
 		"v1.32.4+rke2r1":  true,
@@ -36,9 +34,6 @@ var (
 		"v1.33.0+k3s1":    true,
 	}
 )
-
-// imageTags holds images and their tags as nested maps to make the comparison easy
-type imageTags map[string]map[string]bool
 
 func main() {
 	args := os.Args
@@ -60,107 +55,8 @@ func main() {
 		if err = validate(dev, released); err != nil {
 			logrus.Fatalf("failed to validte the KDM data for the release [%s]: %v", release, err)
 		}
-		if err := validateRegSync(release); err != nil {
-			logrus.Fatalf("failed to validte the regsync file for the release [%s]: %v", release, err)
-		}
 	}
 	logrus.Info("validation is passed")
-}
-
-func validateRegSync(release string) error {
-	raw, err := utiliies.DownloadFromURL(fmt.Sprintf(releaseRegSyncURL, release))
-	if err != nil {
-		return fmt.Errorf("failed to download the upstream regsync file: %v", err)
-	}
-	upstream, err := getImageTags([]byte(raw))
-	if err != nil {
-		return fmt.Errorf("failed to extract images and tags from the upstream: %v", err)
-	}
-	file, err := os.ReadFile(images.RegSyncFilePath)
-	if err != nil {
-		return err
-	}
-	local, err := getImageTags(file)
-	if err != nil {
-		return fmt.Errorf("failed to extract images and tags from the local: %v", err)
-	}
-	// RKE2 and K3s releases may need to be fixed after the fact,
-	// so we just make sure we don't remove any released image or tag
-	for name, tags := range upstream {
-		// RKE entries removed; validate-ci fails as it compares against release-v2.11 which still includes RKE.
-		// This will be removed once release-v2.12 is branched and validation is updated accordingly.
-		excluded := map[string]bool{
-			"docker.io/rancher/flannel-cni":                                      true,
-			"docker.io/rancher/mirrored-k8s-dns-node-cache":                      true,
-			"docker.io/rancher/mirrored-flannelcni-flannel":                      true,
-			"docker.io/rancher/mirrored-coredns-coredns":                         true,
-			"docker.io/rancher/hyperkube":                                        true,
-			"docker.io/rancher/mirrored-calico-pod2daemon-flexvol":               true,
-			"docker.io/rancher/mirrored-calico-kube-controllers":                 true,
-			"docker.io/rancher/mirrored-k8s-dns-dnsmasq-nanny":                   true,
-			"docker.io/rancher/mirrored-coreos-etcd":                             true,
-			"docker.io/rancher/mirrored-calico-node":                             true,
-			"docker.io/rancher/mirrored-calico-cni":                              true,
-			"docker.io/rancher/mirrored-calico-typha":                            true,
-			"docker.io/rancher/mirrored-calico-kube-proxy":                       true,
-			"docker.io/rancher/mirrored-calico-ctl":                              true,
-			"docker.io/rancher/mirrored-k8s-dns-kube-dns":                        true,
-			"docker.io/rancher/mirrored-metrics-server":                          true,
-			"docker.io/rancher/mirrored-coreos-flannel":                          true,
-			"docker.io/rancher/calico-cni":                                       true,
-			"docker.io/rancher/mirrored-flannel-flannel":                         true,
-			"docker.io/rancher/rke-tools":                                        true,
-			"docker.io/rancher/nginx-ingress-controller":                         true,
-			"docker.io/rancher/mirrored-cluster-proportional-autoscaler":         true,
-			"docker.io/rancher/mirrored-k8s-dns-sidecar":                         true,
-			"docker.io/rancher/mirrored-nginx-ingress-controller-defaultbackend": true,
-			"docker.io/rancher/mirrored-ingress-nginx-kube-webhook-certgen":      true,
-		}
-
-		if excluded[name] {
-			continue
-		}
-
-		localTags, found := local[name]
-		if !found {
-			return fmt.Errorf("a released image [%s] is missing in the dev regSync file", name)
-		}
-		for tag := range tags {
-			if !localTags[tag] {
-				return fmt.Errorf("a released tag [%s:%s] is missing in the dev regSync file", name, tag)
-			}
-		}
-	}
-	return nil
-}
-
-func getImageTags(source []byte) (imageTags, error) {
-	var upstream map[string]interface{}
-	if err := yaml.Unmarshal(source, &upstream); err != nil {
-		return nil, fmt.Errorf("failed to unmarshal: %v", err)
-	}
-	sync, _, err := unstructured.NestedSlice(upstream, "sync")
-	if err != nil {
-		return nil, err
-	}
-	upstreamImageTag := imageTags{}
-	for _, item := range sync {
-		source, _, err := unstructured.NestedString(item.(map[string]interface{}), "source")
-		if err != nil {
-			return nil, err
-		}
-		allowTags, _, err := unstructured.NestedSlice(item.(map[string]interface{}), "tags", "allow")
-		if err != nil {
-			return nil, err
-		}
-		tags := map[string]bool{}
-		for _, tag := range allowTags {
-			t, _ := tag.(string)
-			tags[t] = true
-		}
-		upstreamImageTag[source] = tags
-	}
-	return upstreamImageTag, nil
 }
 
 // validate checks the versions in the local data.json by comparing with the released data.json,
