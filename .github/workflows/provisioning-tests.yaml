@@ -115,7 +115,7 @@ jobs:
             --env STAGE_REGISTRY_ENDPOINT \
             kdm-ci provisioning-tests | tee ./build/provtest_output.txt
         env:
-          LAST_COMMUNITY_RANCHER: v2.14.99
+          LAST_COMMUNITY_RANCHER: v2.14.3
           V2PROV_TEST_DIST: ${{ matrix.dist }}
           V2PROV_TEST_RUN_REGEX: ${{ matrix.test-regex }}
           KDM_TEST_K8S_MINOR: ${{ matrix.k8s-minor }}
