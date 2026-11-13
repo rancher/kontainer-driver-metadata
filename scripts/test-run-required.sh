@@ -9,6 +9,11 @@ if [ -z "$CI" ]; then
   exit 0
 fi
 
+if [ -n "$SOME_K8S_VERSION" ]; then
+  echo "SOME_K8S_VERSION=$SOME_K8S_VERSION was explicitly set, rancher integration testing is required"
+  exit 0
+fi
+
 if [ -z "$KDM_TEST_K8S_MINOR" ]; then
   echo "Error: KDM_TEST_K8S_MINOR not defined. This should not be happening in CI"
   exit 1

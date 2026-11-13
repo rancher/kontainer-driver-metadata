@@ -1,0 +1,14 @@
+#!/bin/bash
+set -ex
+
+# Fetches rancher's ensure-nvme-data-disk.sh and runs it with the given arguments. It puts the
+# provisioning tests' data on the runner's local NVMe and fails if it can't. Must run as root.
+
+source "$(dirname "$0")/version"
+
+TMP_DIR=$(TMPDIR=/var/tmp mktemp -d)
+trap 'rm -rf "$TMP_DIR"' EXIT
+
+curl -fsSL "https://raw.githubusercontent.com/${RANCHER_REPO}/${RANCHER_REF}/.github/scripts/ensure-nvme-data-disk.sh" -o "$TMP_DIR/ensure-nvme-data-disk.sh"
+
+bash "$TMP_DIR/ensure-nvme-data-disk.sh" "$@"

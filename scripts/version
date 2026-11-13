@@ -1,10 +1,15 @@
 #!/bin/bash
 
+# Upstream rancher source for the provisioning tests and CI helper scripts. Update RANCHER_REF
+# when branching for a new release line.
+RANCHER_REPO=${RANCHER_REPO:-rancher/rancher}
+RANCHER_REF=${RANCHER_REF:-release/v2.16}
+
 if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
     DIRTY="-dirty"
 fi
 
-COMMIT=$(git rev-parse --short HEAD)
+COMMIT=$(git rev-parse --short HEAD 2>/dev/null || echo unknown)
 
 GIT_TAG=$(git tag -l --contains HEAD | head -n 1)
 if [[ "$GITHUB_EVENT_NAME" = "push" && "$GITHUB_REF_TYPE" = "tag" ]]; then
@@ -18,7 +23,7 @@ else
 fi
 
 if [ -z "$ARCH" ]; then
-    ARCH=$(go env GOHOSTARCH)
+    ARCH=$(go env GOHOSTARCH 2>/dev/null || echo amd64)
 fi
 
 SUFFIX="-${ARCH}"
