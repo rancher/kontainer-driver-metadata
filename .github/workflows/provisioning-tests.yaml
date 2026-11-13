@@ -121,22 +121,20 @@ jobs:
           echo "event=$EVENT_NAME, entries=$COUNT"
           echo "$MATRIX" | jq .
 
-          # Publish the full plan up front. Rows are ordered like GHA expands the matrix (k8s-minor outer,
-          # shard inner) so # matches the [index/total] prefix in each job name.
+          # Publish the full plan up front.
           TOTAL="$(jq -n --argjson m "$MATRIX" --argjson k "$K8S_MINORS" '($m.include | length) * ($k | length)')"
           {
             echo "## Provisioning tests: $TOTAL jobs"
             echo
-            echo "| # | Dist | K8s | Regex |"
-            echo "|---|------|-----|-------|"
+            echo "| Dist | K8s | Regex |"
+            echo "|------|-----|-------|"
             jq -rn --argjson m "$MATRIX" --argjson k "$K8S_MINORS" '
-              [$k[] as $minor | $m.include[] | {minor: $minor, s: .}]
-              | to_entries[]
-              | "| \(.key) | \(.value.s.V2PROV_TEST_DIST) | 1.\(.value.minor) | `\(.value.s.V2PROV_TEST_RUN_REGEX | gsub("\\|"; "\\|"))` |"'
+              $k[] as $minor | $m.include[]
+              | "| \(.V2PROV_TEST_DIST) | 1.\($minor) | `\(.V2PROV_TEST_RUN_REGEX | gsub("\\|"; "\\|"))` |"'
           } >> "$GITHUB_STEP_SUMMARY"
 
   provisioning-test:
-    name: "[${{ strategy.job-index }}/${{ strategy.job-total }}] ${{ matrix.shard.V2PROV_TEST_DIST }} 1.${{ matrix.k8s-minor }} ${{ matrix.shard.V2PROV_TEST_RUN_REGEX }}"
+    name: "${{ matrix.shard.V2PROV_TEST_DIST }} 1.${{ matrix.k8s-minor }} ${{ matrix.shard.V2PROV_TEST_RUN_REGEX }}"
     needs: [build-ci-image, setup-matrix]
     if: needs.setup-matrix.outputs.count != '0'
     permissions:
