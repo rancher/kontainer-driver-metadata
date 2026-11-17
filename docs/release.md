@@ -125,7 +125,7 @@ RKE2/K3s: (Reviewers: @ShylajaDevadiga @snasovich)
 ## Release KDM
 
 1. PRs to be merged by @kinarashah or @snasovich 
-2. Once merged, look at the Github Action pipeline and ensure that all prime images have been successfully pushed to the trusted registry (monitor at https://github.com/rancher/kontainer-driver-metadata/actions/workflows/workflow.yaml) 
+2. Once merged, look at the Github Action pipeline and ensure that the KDM data was successfully uploaded (monitor at https://github.com/rancher/kontainer-driver-metadata/actions/workflows/workflow.yaml) 
 3. Ping QA in Slack to perform post release checks for KDM once the GHA tasks are successfully completed 
 4. QA to perform post sync checks for Rancher prime after GHA publish tasks are successfully completed
 5. Release RKE1 (refer to Release RKE1 section)
