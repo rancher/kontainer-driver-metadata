@@ -38,7 +38,6 @@ replace (
 )
 
 require (
-	github.com/blang/semver v3.5.1+incompatible
 	github.com/sirupsen/logrus v1.9.4
 	gopkg.in/yaml.v3 v3.0.1
 	k8s.io/apimachinery v0.37.0
