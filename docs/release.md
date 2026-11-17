@@ -107,7 +107,7 @@ While a release line is at or near the prime cutoff, CI in **rancher/rancher** s
 
 ## Prime images update
 
-The KDM release process will automatically sync the newly released images into the rancher prime registry once a release occurs.
+KDM no longer syncs images into the rancher prime registry. Images for new RKE2 and K3s releases must be published to the prime registries by their own release workflows.
 
 ### Prepare release notes for KDM (TBD)
 
