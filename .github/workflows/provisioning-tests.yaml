@@ -15,7 +15,7 @@ permissions: {}
 env:
   # Set to a single version from data/data.json (e.g. v1.36.5+rke2r1 or v1.36.5+k3s1) to force provisioning
   # tests for only that distro and version, regardless of what changed. Intended for temporary use in a PR.
-  FORCE_PROVISIONING_VERSION: ""
+  FORCE_PROVISIONING_VERSION: "v1.36.5+rke2r1"
 
 jobs:
   build-ci-image:
