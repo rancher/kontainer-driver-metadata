@@ -3,6 +3,8 @@ set -ex
 
 cd $(dirname $0)/..
 
+source ./scripts/version
+
 # Create binary directory for running provisioning tests
 mkdir -p "./bin"
 BIN_DIR="$(realpath ./bin)"
@@ -12,7 +14,7 @@ TMP_DIR=$(TMPDIR=/var/tmp mktemp -d)
 pushd "$TMP_DIR"
 
 IMAGE_REPO=${IMAGE_REPO:-rancher/rancher}
-IMAGE_TAG=${IMAGE_TAG:-v2.15-head}
+IMAGE_TAG=${IMAGE_TAG:-v2.16-head}
 IMAGE=${IMAGE:-$IMAGE_REPO:$IMAGE_TAG}
 
 # Inspect image, get server version and extract rancher commit 
@@ -28,10 +30,7 @@ mkdir -p rancher
 
 # Although using the commit so the image matches the source code, use the default branch associated with that release line
 # Git clones must have a branch, and the release branch is likely to contain the commit anyway
-GIT_URL=${GIT_URL:-https://github.com/rancher/rancher.git}
-GIT_BRANCH=${GIT_BRANCH:-release/v2.15}
-
-git clone --depth 1 -b $GIT_BRANCH $GIT_URL ./rancher
+git clone --depth 1 -b "$RANCHER_REF" "https://github.com/${RANCHER_REPO}.git" ./rancher
 
 export RANCHER_DIR=$TMP_DIR/rancher
 
