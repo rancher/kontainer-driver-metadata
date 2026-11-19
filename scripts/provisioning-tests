@@ -111,5 +111,6 @@ export CATTLE_AGENT_IMAGE=${CATTLE_AGENT_IMAGE:-rancher/rancher-agent:v2.15-head
 # which expect it to be in the pull through registry cache. Now that Rancher enforces the registry cache the agent must always
 # be present.
 docker pull ${CATTLE_AGENT_IMAGE}
+docker image tag ${CATTLE_AGENT_IMAGE} 172.17.0.2:5050/rancher/rancher-agent:v2.16-head
 
 ./scripts/provisioning-tests
