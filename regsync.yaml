@@ -243,6 +243,7 @@ sync:
         - v3.6.14-k3s1-build20260819
         - v3.6.14-k3s3-build20260915
         - v3.6.14-k3s3-build20261020
+        - v3.6.14-k3s3-build20261119
         - v3.6.4-k3s3-build20250908
         - v3.6.5-k3s1-build20251017
         - v3.6.6-k3s1-build20251210
@@ -501,6 +502,7 @@ sync:
         - v1.36.4-rke2r1-build20260821
         - v1.36.5-rke2r1-build20260923
         - v1.36.6-rke2r1-build20261029
+        - v1.36.6-rke2r2-build20261119
   - source: docker.io/rancher/hardened-multus-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/hardened-multus-cni'
     type: repository
@@ -658,6 +660,7 @@ sync:
         - v3.7.11-build20260819
         - v3.7.13-build20260910
         - v3.7.16-build20261028
+        - v3.7.19-build20261118
         - v3.7.4-build20260608
         - v3.7.8-build20260717
   - source: docker.io/rancher/hardened-whereabouts
@@ -2111,6 +2114,7 @@ sync:
         - v1.35.6-0.20260610221957-158346759a70-build20260710
         - v1.35.8-0.20260817193936-20fc9c33a412-build20260820
         - v1.35.9-0.20260915234130-a341ba01f9eb-build20260916
+        - v1.36-r2-build20261116
         - v1.36.1-0.20260508014929-7bbbf7c9b258-build20260515
         - v1.36.2-0.20260610225606-10b320a3ba51-build20260709
         - v1.36.4-0.20260817193921-a2fc9574e060-build20260820
@@ -2441,6 +2445,8 @@ sync:
         - v1.36.5-rke2r1-windows-amd64
         - v1.36.6-rke2r1
         - v1.36.6-rke2r1-windows-amd64
+        - v1.36.6-rke2r2
+        - v1.36.6-rke2r2-windows-amd64
   - source: docker.io/rancher/rke2-upgrade
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/rke2-upgrade'
     type: repository
@@ -2606,6 +2612,7 @@ sync:
         - v1.36.4-rke2r1
         - v1.36.5-rke2r1
         - v1.36.6-rke2r1
+        - v1.36.6-rke2r2
   - source: docker.io/rancher/system-agent-installer-k3s
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/system-agent-installer-k3s'
     type: repository
@@ -2932,3 +2939,4 @@ sync:
         - v1.36.4-rke2r1
         - v1.36.5-rke2r1
         - v1.36.6-rke2r1
+        - v1.36.6-rke2r2
