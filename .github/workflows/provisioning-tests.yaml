@@ -122,34 +122,40 @@ jobs:
           PREV_COMMIT_PR_SHA: ${{ github.event.pull_request.base.sha }}
           PREV_COMMIT_PUSH_SHA: ${{ github.event.before }}
           CATTLE_AGENT_IMAGE: "rancher/rancher-agent:v2.15-head" # TODO: change to v2.16-head after v2.16.0 is released
-      - name: Move plaintext test results for upload
+      - name: Move test results for upload
         if: always()
         id: test_output
         run: |
           export TESTSUITE="$(echo '${{ matrix.test-regex }}' | sed 's/Test//' | tr -d '()|_^.*$')"
           echo "suite=${TESTSUITE}" >> $GITHUB_OUTPUT
-          REPORT_PATH="/tmp/report-${{ matrix.dist }}-${{ matrix.k8s-minor }}-$TESTSUITE.txt"
+          REPORT_BASE="/tmp/report-${{ matrix.dist }}-${{ matrix.k8s-minor }}-$TESTSUITE"
 
-          # check to see if the test results exist - if they do move them out, otherwise just create
-          # an empty file (empty test results)
-          if [ -f ./build/out.txt ]; then
-            echo "test results found at ./build/out.txt, moving to $REPORT_PATH"
-            mv ./build/out.txt "$REPORT_PATH"
-          else
-            echo "No test results found at ./build/out.txt, creating empty report at $REPORT_PATH"
-            touch "$REPORT_PATH"
-          fi
+          # out.txt is the plaintext `go test -v` rendering, out.json is the raw `go test -json`
+          # event stream. Parallel tests interleave their output in out.txt, so the JUnit
+          # conversion parses out.json instead. If a file is missing, create an empty one
+          # (empty test results).
+          for ext in txt json; do
+            SOURCE_PATH="./build/out.${ext}"
+            REPORT_PATH="${REPORT_BASE}.${ext}"
+            if [ -f "$SOURCE_PATH" ]; then
+              echo "test results found at $SOURCE_PATH, moving to $REPORT_PATH"
+              mv "$SOURCE_PATH" "$REPORT_PATH"
+            else
+              echo "No test results found at $SOURCE_PATH, creating empty report at $REPORT_PATH"
+              touch "$REPORT_PATH"
+            fi
+          done
 
           # Collect Rancher server log (includes embedded k3s output) for debugging startup failures.
           # /tmp inside the container is bind-mounted to ./build on the host, so rancher.log is at ./build/rancher.log.
-          RANCHER_LOG_PATH="${REPORT_PATH%.txt}.rancher.log"
+          RANCHER_LOG_PATH="${REPORT_BASE}.rancher.log"
           if [ -f ./build/rancher.log ]; then
             echo "Rancher server log found at ./build/rancher.log, copying to $RANCHER_LOG_PATH"
             cp ./build/rancher.log "$RANCHER_LOG_PATH"
           else
             echo "No Rancher server log found at ./build/rancher.log"
           fi
-      - name: Upload Plain Text Test Results
+      - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
@@ -174,7 +180,7 @@ jobs:
       - name: Install golang
         run: |
           zypper --non-interactive install golang
-      - name: Fetch plaintext test output
+      - name: Fetch test output
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           merge-multiple: true
@@ -182,8 +188,11 @@ jobs:
           pattern: "!*.dockerbuild"
       - name: Convert test results to XML
         run: |
+          set -eo pipefail
           shopt -s nullglob
-          files=(/tmp/test-results/report-*.txt)
+          # Parse the raw `go test -json` stream rather than the plaintext report,
+          # since output from parallel tests is interleaved in the plaintext.
+          files=(/tmp/test-results/report-*.json)
           if [ ${#files[@]} -eq 0 ]; then
             echo "No report files found in /tmp/test-results/, skipping conversion."
             exit 0
@@ -191,8 +200,9 @@ jobs:
           # renovate: datasource=github-tags depName=jstemmer/go-junit-report digestVersion=v2.1.0
           go install github.com/jstemmer/go-junit-report/v2@14d61e6e75e3f3c74551d757ad936e8e88014464
           for file in "${files[@]}"; do
-            echo "Processing $file..."
-            "$(go env GOPATH)/bin/go-junit-report" < "$file" > "${file%.txt}.xml"
+            xml_file="$(echo "$file" | sed -E 's/\.json$/.xml/')"
+            echo "Processing $file into $xml_file..."
+            "$(go env GOPATH)/bin/go-junit-report" -parser gojson < "$file" > "$xml_file"
           done
       - name: Upload XML Test Results
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
