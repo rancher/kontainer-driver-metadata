@@ -864,6 +864,7 @@ sync:
         - v1.35.0-k3s3
         - v1.35.1-k3s1
         - v1.35.10-k3s1
+        - v1.35.11-rc1-k3s1
         - v1.35.2-k3s1
         - v1.35.3-k3s1
         - v1.35.4-k3s1
@@ -883,6 +884,7 @@ sync:
         - v0.13.3-build20260820
         - v0.13.3-build20260909
         - v0.13.3-build20261021
+        - v0.14.0-build20261106
         - v0.7.3-build20220613
         - v0.7.4-build20221121
         - v0.7.6-build20230223
@@ -916,6 +918,7 @@ sync:
         - v0.4.15
         - v0.4.16
         - v0.4.17
+        - v0.4.18
         - v0.4.3
         - v0.4.4
         - v0.4.5
@@ -1792,6 +1795,7 @@ sync:
         - 1.14.4
         - 1.14.6
         - 1.14.7
+        - 1.15.0
         - 1.9.1
         - 1.9.4
   - source: docker.io/rancher/mirrored-ingress-nginx-kube-webhook-certgen
@@ -1856,6 +1860,7 @@ sync:
         - 3.6.9
         - 3.7.13
         - 3.7.15
+        - 3.7.19
         - 3.7.4
         - 3.7.8
   - source: docker.io/rancher/mirrored-longhornio-csi-attacher
@@ -1908,6 +1913,7 @@ sync:
         - v0.8.0
         - v0.8.1
         - v0.9.0
+        - v0.9.1
   - source: docker.io/rancher/mirrored-pause
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/mirrored-pause'
     type: repository
@@ -2715,6 +2721,7 @@ sync:
         - v1.35.0-k3s3
         - v1.35.1-k3s1
         - v1.35.10-k3s1
+        - v1.35.11-rc1-k3s1
         - v1.35.2-k3s1
         - v1.35.3-k3s1
         - v1.35.4-k3s1
