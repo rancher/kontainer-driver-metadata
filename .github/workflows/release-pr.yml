@@ -1,0 +1,89 @@
+name: Create Release PR
+
+# Opens the PR that merges a dev branch into its corresponding release branch,
+# e.g. dev-v2.15 -> release-v2.15, titled "[v2.15] Release KDM", with review
+# requested from the hostbusters team and the maintainers with merge access.
+on:
+  workflow_dispatch:
+    inputs:
+      dev_branch:
+        type: choice
+        description: "Dev branch to merge into its release branch"
+        default: dev-v2.15
+        options:
+          - dev-v2.15
+          - dev-v2.14
+          - dev-v2.13
+
+permissions: {}
+
+jobs:
+  create-release-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      id-token: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      DEV_BRANCH: ${{ inputs.dev_branch }}
+    steps:
+      - name: Compute release branch and PR title
+        id: vars
+        run: |
+          RELEASE_BRANCH="${DEV_BRANCH/dev-/release-}"
+          VERSION="${DEV_BRANCH#dev-v}"
+          echo "release_branch=${RELEASE_BRANCH}" >> "$GITHUB_OUTPUT"
+          echo "pr_title=[v${VERSION}] Release KDM" >> "$GITHUB_OUTPUT"
+
+      - name: Check for existing release PR
+        id: existing
+        env:
+          RELEASE_BRANCH: ${{ steps.vars.outputs.release_branch }}
+        run: |
+          EXISTING_PR=$(gh pr list --repo "${{ github.repository }}" \
+            --head "${DEV_BRANCH}" --base "${RELEASE_BRANCH}" --state open \
+            --json url --jq '.[0].url')
+          echo "pr_url=${EXISTING_PR}" >> "$GITHUB_OUTPUT"
+
+      - name: Read App Secrets
+        if: ${{ steps.existing.outputs.pr_url == '' }}
+        uses: rancher-eio/read-vault-secrets@0da85151ad1f19ed7986c41587e45aac1ace74b6 # v3
+        with:
+          secrets: |
+            secret/data/github/repo/${{ github.repository }}/github/app-credentials appId | APP_ID ;
+            secret/data/github/repo/${{ github.repository }}/github/app-credentials privateKey | PRIVATE_KEY
+
+      - name: Create App Token
+        if: ${{ steps.existing.outputs.pr_url == '' }}
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2.2.2
+        id: app-token
+        with:
+          app-id: ${{ env.APP_ID }}
+          private-key: ${{ env.PRIVATE_KEY }}
+          permission-pull-requests: write
+
+      - name: Create Pull Request
+        if: ${{ steps.existing.outputs.pr_url == '' }}
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          RELEASE_BRANCH: ${{ steps.vars.outputs.release_branch }}
+          PR_TITLE: ${{ steps.vars.outputs.pr_title }}
+        run: |
+          PR_URL=$(gh pr create --repo "${{ github.repository }}" \
+            --head "${DEV_BRANCH}" \
+            --base "${RELEASE_BRANCH}" \
+            --title "${PR_TITLE}" \
+            --body "" \
+            --reviewer rancher/rancher-team-2-hostbusters-dev \
+            --reviewer kinarashah \
+            --reviewer snasovich)
+
+          echo "Pull Request URL - ${PR_URL}"
+          echo "::notice title=Release PR created::${PR_URL}"
+
+      - name: Report existing PR
+        if: ${{ steps.existing.outputs.pr_url != '' }}
+        run: |
+          echo "A release PR from ${DEV_BRANCH} already exists: ${{ steps.existing.outputs.pr_url }}"
+          echo "::notice title=Release PR already exists::${{ steps.existing.outputs.pr_url }}"
