@@ -37369,9 +37369,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -37402,6 +37408,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -37613,9 +37622,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -37646,6 +37661,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -37857,9 +37875,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -37890,6 +37914,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -38101,9 +38128,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -38134,6 +38167,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -38345,9 +38381,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -38378,6 +38420,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -38592,9 +38637,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -38625,6 +38676,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -38839,9 +38893,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -38872,6 +38932,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -39086,9 +39149,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -39119,6 +39188,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -39333,9 +39405,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -39366,6 +39444,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -39580,9 +39661,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -39613,6 +39700,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -39827,9 +39917,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -39860,6 +39956,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -40077,9 +40176,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -40110,6 +40215,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -40324,9 +40432,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -40357,6 +40471,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -40571,9 +40688,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -40604,6 +40727,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -40818,9 +40944,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -40851,6 +40983,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -41065,9 +41200,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -41098,6 +41239,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -41312,9 +41456,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -41345,6 +41495,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -41559,9 +41712,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -41592,6 +41751,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -41806,9 +41968,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -41839,12 +42007,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -42059,9 +42233,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -42092,12 +42272,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -42312,9 +42498,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -42345,12 +42537,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -42565,9 +42763,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -42598,12 +42802,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -42818,9 +43028,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -42851,12 +43067,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -43068,9 +43290,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -43101,6 +43329,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -43315,9 +43546,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -43348,12 +43585,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -43565,9 +43808,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -43598,6 +43847,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -43812,9 +44064,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -43845,6 +44103,9 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
@@ -44059,9 +44320,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -44092,12 +44359,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -44312,9 +44585,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -44345,12 +44624,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -44565,9 +44850,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -44598,12 +44889,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -44815,9 +45112,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -44848,12 +45151,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -45068,9 +45377,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -45101,12 +45416,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -45321,9 +45642,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -45354,12 +45681,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -45574,9 +45907,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -45607,12 +45946,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -45827,9 +46172,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -45860,12 +46211,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -46080,9 +46437,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -46113,12 +46476,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -46333,9 +46702,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -46366,12 +46741,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -46586,9 +46967,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -46619,12 +47006,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -46839,9 +47232,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -46872,12 +47271,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -47092,9 +47497,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -47125,12 +47536,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -47345,9 +47762,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -47378,12 +47801,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -47598,9 +48027,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -47631,12 +48066,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -47851,9 +48292,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -47884,12 +48331,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -48104,9 +48557,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -48137,12 +48596,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -48357,9 +48822,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -48390,12 +48861,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -48610,9 +49087,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -48643,12 +49126,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -48874,9 +49363,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -48907,12 +49402,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -49127,9 +49628,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -49160,12 +49667,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -49394,9 +49907,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -49427,12 +49946,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -49658,9 +50183,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -49691,12 +50222,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -49922,9 +50459,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -49955,12 +50498,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -50186,9 +50735,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -50219,12 +50774,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -50450,9 +51011,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -50483,12 +51050,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -50718,9 +51291,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -50751,12 +51330,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -50989,9 +51574,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -51022,12 +51613,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -51259,9 +51856,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -51292,12 +51895,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -51523,9 +52132,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -51556,12 +52171,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -51787,9 +52408,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -51820,12 +52447,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -52051,9 +52684,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -52084,12 +52723,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -52319,9 +52964,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -52352,12 +53003,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -52590,9 +53247,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -52623,12 +53286,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -52861,9 +53530,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -52894,12 +53569,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -53132,9 +53813,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -53166,12 +53853,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -53404,9 +54097,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -53438,12 +54137,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -53675,9 +54380,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -53708,12 +54419,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -53943,9 +54660,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -53976,12 +54699,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -54214,9 +54943,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -54247,12 +54982,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -54485,9 +55226,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -54518,12 +55265,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -54756,9 +55509,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -54790,12 +55549,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -55028,9 +55793,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -55062,12 +55833,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -55304,9 +56081,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -55350,12 +56133,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -55592,9 +56381,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -55638,12 +56433,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -55886,9 +56687,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -55932,12 +56739,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -56186,9 +56999,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -56232,12 +57051,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -56486,9 +57311,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -56532,12 +57363,18 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "etcd-arg": {
@@ -56782,9 +57619,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -56816,15 +57659,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -57067,9 +57919,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -57113,15 +57971,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -57364,9 +58231,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -57410,15 +58283,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -57667,9 +58549,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -57713,15 +58601,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -57976,9 +58873,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -58022,15 +58925,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -58293,9 +59205,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -58339,15 +59257,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -58610,9 +59537,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -58656,15 +59589,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -58927,9 +59869,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -58973,15 +59921,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -59234,9 +60191,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -59268,15 +60231,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -59519,9 +60491,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -59565,15 +60543,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -59816,9 +60803,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -59862,15 +60855,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -60113,9 +61115,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -60159,15 +61167,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -60410,9 +61427,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -60456,15 +61479,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -60715,9 +61747,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -60761,15 +61799,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -61020,9 +62067,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -61066,15 +62119,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -61325,9 +62387,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -61371,15 +62439,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -61630,9 +62707,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -61676,15 +62759,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -61935,9 +63027,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -61981,15 +63079,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -62244,9 +63351,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -62290,15 +63403,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -62553,9 +63675,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -62599,15 +63727,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -62862,9 +63999,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -62908,15 +64051,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -63167,9 +64319,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -63213,15 +64371,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -63470,9 +64637,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -63516,15 +64689,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -63787,9 +64969,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -63833,15 +65021,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -64112,9 +65309,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -64158,15 +65361,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -64437,9 +65649,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -64483,15 +65701,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -64762,9 +65989,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -64808,15 +66041,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -65087,9 +66329,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -65133,15 +66381,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -65412,9 +66669,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -65458,15 +66721,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -65741,9 +67013,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -65787,15 +67065,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -66070,9 +67357,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -66116,15 +67409,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -66399,9 +67701,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -66445,15 +67753,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -66725,9 +68042,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -66771,15 +68094,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -67054,9 +68386,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -67100,15 +68438,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -67383,9 +68730,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -67429,15 +68782,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -67712,9 +69074,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -67758,15 +69126,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -68037,9 +69414,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -68083,15 +69466,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -68362,9 +69754,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -68408,15 +69806,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -68687,9 +70094,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -68733,15 +70146,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -69012,9 +70434,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -69058,15 +70486,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -69337,9 +70774,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -69383,15 +70826,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -69666,9 +71118,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -69712,15 +71170,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -69995,9 +71462,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -70041,15 +71514,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -70324,9 +71806,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -70370,15 +71858,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -70650,9 +72147,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -70696,15 +72199,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -70979,9 +72491,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -71025,15 +72543,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -71308,9 +72835,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -71354,15 +72887,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -71637,9 +73179,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -71683,15 +73231,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -71966,9 +73523,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -72012,15 +73575,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -72319,9 +73891,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -72365,15 +73943,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -72663,9 +74250,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -72709,15 +74302,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -72992,9 +74594,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -73038,15 +74646,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -73321,9 +74938,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -73367,15 +74990,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -73647,9 +75279,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -73693,15 +75331,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -73976,9 +75623,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -74022,15 +75675,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -74305,9 +75967,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -74351,15 +76019,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -74634,9 +76311,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -74680,15 +76363,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -74963,9 +76655,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -75009,15 +76707,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -75316,9 +77023,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -75362,15 +77075,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -75684,9 +77406,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -75730,15 +77458,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -76052,9 +77789,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -76098,15 +77841,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -76420,9 +78172,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -76466,15 +78224,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -76788,9 +78555,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -76834,15 +78607,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -77156,9 +78938,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -77202,15 +78990,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -77500,9 +79297,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -77546,15 +79349,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -77832,9 +79644,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -77878,15 +79696,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -78164,9 +79991,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -78210,15 +80043,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -78496,9 +80338,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -78542,15 +80390,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -78828,9 +80685,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -78874,15 +80737,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "etcd-arg": {
@@ -79184,9 +81056,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -79230,15 +81108,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -79555,9 +81442,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -79601,15 +81494,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -79926,9 +81828,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -79972,15 +81880,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -80297,9 +82214,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -80343,15 +82266,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -80668,9 +82600,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -80714,15 +82652,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -81039,9 +82986,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -81085,15 +83038,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -81410,9 +83372,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -81456,15 +83424,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -81784,9 +83761,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -81830,15 +83813,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -82158,9 +84150,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -82204,15 +84202,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -82532,9 +84539,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -82578,15 +84591,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -82906,9 +84928,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -82952,15 +84980,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -83280,9 +85317,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -83326,15 +85369,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -83657,9 +85709,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -83703,15 +85761,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -84028,9 +86095,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -84074,15 +86147,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -84399,9 +86481,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -84445,15 +86533,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -84770,9 +86867,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -84816,15 +86919,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -85141,9 +87253,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -85187,15 +87305,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -85512,9 +87639,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -85558,15 +87691,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -85883,9 +88025,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -85929,15 +88077,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -86257,9 +88414,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -86303,15 +88466,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -86631,9 +88803,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -86677,15 +88855,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -87005,9 +89192,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -87051,15 +89244,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -87379,9 +89581,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -87425,15 +89633,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -87753,9 +89970,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -87799,15 +90022,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -88130,9 +90362,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -88176,15 +90414,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -88507,9 +90754,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -88553,15 +90806,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -89261,9 +91523,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -89307,15 +91575,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -89632,9 +91909,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -89678,15 +91961,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -90003,9 +92295,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -90049,15 +92347,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -90374,9 +92681,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -90420,15 +92733,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -90745,9 +93067,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -90791,15 +93119,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -91119,9 +93456,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -91165,15 +93508,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -91493,9 +93845,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -91539,15 +93897,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -91867,9 +94234,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -91913,15 +94286,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -92241,9 +94623,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -92287,15 +94675,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -92615,9 +95012,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -92661,15 +95064,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -92992,9 +95404,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -93038,15 +95456,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -93369,9 +95796,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -93415,15 +95848,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -94127,9 +96569,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -94173,15 +96621,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -94505,9 +96962,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -94551,15 +97014,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -94883,9 +97355,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -94929,15 +97407,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -95264,9 +97751,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -95310,15 +97803,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
@@ -95645,9 +98147,15 @@
       "type": "string"
      },
      "cluster-dns": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cluster-domain": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "cni": {
@@ -95691,15 +98199,24 @@
      },
      "disable-kube-proxy": {
       "default": false,
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "disable-scheduler": {
       "type": "bool"
      },
      "egress-selector-mode": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "string"
      },
      "embedded-registry": {
+      "restartScope": [
+       "downstream"
+      ],
       "type": "boolean"
      },
      "enable-servicelb": {
